@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-navy: #0B132B;
+  --color-brand-darknavy: #1C2541;
+  --color-brand-charcoal: #0F172A;
+  --color-brand-slate: #334155;
+  --color-brand-platinum: #F1F5F9;
+  --color-brand-silver: #94A3B8;
+  --color-brand-white: #FFFFFF;
+  --color-brand-offwhite: #F8FAFC;
+  --color-brand-gold: #C5A059;
+  --font-serif: "var(--font-noto-serif)", "Noto Serif JP", serif;
+  --font-sans: "var(--font-inter)", "Noto Sans JP", sans-serif;
+}
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #0F172A;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Smooth fade-in animation */
+.fade-in-section {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
