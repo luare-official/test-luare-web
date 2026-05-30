@@ -46,8 +46,11 @@ export default function Navbar() {
           <a href="#strengths" className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors ${isScrolled ? "text-brand-slate hover:text-brand-navy" : "text-brand-silver hover:text-brand-platinum"}`}>
             Strengths
           </a>
-          <a href="#insights" className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors ${isScrolled ? "text-brand-slate hover:text-brand-navy" : "text-brand-silver hover:text-brand-platinum"}`}>
+          <a href="/insights" className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors ${isScrolled ? "text-brand-slate hover:text-brand-navy" : "text-brand-silver hover:text-brand-platinum"}`}>
             Insights
+          </a>
+          <a href="/about" className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors ${isScrolled ? "text-brand-slate hover:text-brand-navy" : "text-brand-silver hover:text-brand-platinum"}`}>
+            Leadership
           </a>
         </nav>
 

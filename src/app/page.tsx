@@ -15,8 +15,8 @@ export default function Home() {
         <Hero />
         <ConceptDiagram />
         <Services />
-        <Strengths />
         <ComparisonMatrix />
+        <Strengths />
         <Insights />
       </main>
       <Footer />

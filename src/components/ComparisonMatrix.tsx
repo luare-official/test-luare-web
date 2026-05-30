@@ -1,27 +1,27 @@
 const rows = [
   {
-    item: "年間コスト（決算申告込）",
-    luare: "400万円",
+    item: "年間コスト（目安）",
+    luare: "約400万円〜",
     big4: "600万〜1,000万円以上",
-    inhouse: "1,500万円前後（総人件費換算）",
+    inhouse: "1,500万円以上（採用・維持費込）",
   },
   {
     item: "バイリンガル対応",
-    luare: "完全対応（標準ネイティブ）",
-    big4: "対応（個別高額オプション）",
-    inhouse: "属人的（市場での採用が極めて困難）",
+    luare: "ネイティブ水準（標準提供）",
+    big4: "高額な追加オプション",
+    inhouse: "採用難易度が極めて高い",
   },
   {
-    item: "システム構築",
-    luare: "財務特化型AI × クラウド（OPEX化）",
-    big4: "レガシーシステム（オンプレミス等）",
-    inhouse: "ゼロからの自社構築",
+    item: "インフラ・DX",
+    luare: "AI・クラウド型（最新鋭）",
+    big4: "レガシーシステム",
+    inhouse: "自社構築の初期投資が莫大",
   },
   {
-    item: "柔軟性・リスク",
-    luare: "極めて高い（ライトアセット運営）",
-    big4: "官僚的・変更に時間がかかる",
-    inhouse: "退職リスク大・固定費の硬直化",
+    item: "機動力・拡張性",
+    luare: "圧倒的に高い（即時対応）",
+    big4: "官僚的で承認フローが長い",
+    inhouse: "属人的（退職による崩壊リスク有）",
   },
 ];
 
@@ -33,104 +33,140 @@ export default function ComparisonMatrix() {
     >
       <div className="mx-auto max-w-5xl px-6 sm:px-10">
 
-        {/* Heading block */}
-        <div className="max-w-2xl mb-16">
+        {/* ── Section heading ── */}
+        <div className="max-w-2xl mb-20">
           <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
-            Diagnostic Comparison
+            The Value Vacuum
           </span>
           <h2 className="font-serif text-2xl sm:text-3xl font-medium tracking-wide text-brand-charcoal mt-4 leading-[1.4]">
-            大手ファームの品質を、最適化されたバリューで。
+            圧倒的なコストパフォーマンス
           </h2>
           <p className="mt-5 text-sm text-brand-slate/80 leading-relaxed max-w-xl">
-            従来の直接雇用や大手ファーム依存における「高コスト・硬直化」の課題を解消。Luareはテクノロジーと高度人材を融合させた運営プロセスにより、圧倒的なコストパフォーマンスとガバナンスの両立を実現します。
+            Big 4水準の専門性を、最適化された適正コストで。
           </p>
         </div>
 
         {/* ── TABLE ── */}
         <div className="overflow-x-auto -mx-2 px-2">
-          <table className="w-full min-w-[640px] border-collapse">
+          <table className="w-full min-w-[700px] border-collapse">
             <thead>
               <tr>
-                {/* Item header — empty */}
-                <th className="w-[22%] py-4 pr-6 text-left align-bottom">
+                {/* Column 1: 比較項目 */}
+                <th className="w-[22%] py-5 pr-6 text-left align-bottom">
                   <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-slate/40">
                     比較項目
                   </span>
                 </th>
 
-                {/* Luare — highlighted */}
-                <th className="w-[26%] px-6 py-4 text-center align-bottom bg-brand-navy/[0.04] border-x border-brand-navy/10 rounded-t-sm">
-                  <span className="text-[9px] font-bold uppercase tracking-[0.35em] text-brand-navy/70 block mb-1">
-                    Our Service
+                {/* Column 2: Luare — gold highlighted */}
+                <th
+                  className="w-[26%] px-6 py-5 text-center align-bottom border-x-[1.5px]"
+                  style={{
+                    borderColor: '#C5A059',
+                    backgroundColor: 'rgba(197, 160, 89, 0.06)',
+                  }}
+                >
+                  {/* Gold top accent bar */}
+                  <div
+                    className="absolute top-0 left-0 right-0 h-[2.5px]"
+                    style={{ backgroundColor: '#C5A059' }}
+                  />
+                  <span
+                    className="text-[9px] font-bold uppercase tracking-[0.35em] block mb-1.5"
+                    style={{ color: '#C5A059' }}
+                  >
+                    Recommended
                   </span>
-                  <span className="font-serif text-base font-bold text-brand-navy">
-                    Luare
+                  <span className="font-serif text-base font-bold text-brand-charcoal">
+                    Luare Consulting
                   </span>
                 </th>
 
-                {/* Big 4 */}
-                <th className="w-[26%] px-6 py-4 text-center align-bottom border-b border-slate-200">
-                  <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-slate/40 block mb-1">
+                {/* Column 3: Big 4 */}
+                <th className="w-[26%] px-6 py-5 text-center align-bottom border-b border-slate-100">
+                  <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-slate/35 block mb-1.5">
                     Alternative A
                   </span>
-                  <span className="font-serif text-sm font-medium text-brand-slate/60">
-                    Big 4 / 外資系BPO
+                  <span className="font-serif text-sm font-medium text-brand-slate/50">
+                    Big 4 / グローバルBPO
                   </span>
                 </th>
 
-                {/* In-house */}
-                <th className="w-[26%] px-6 py-4 text-center align-bottom border-b border-slate-200">
-                  <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-slate/40 block mb-1">
+                {/* Column 4: In-house */}
+                <th className="w-[26%] px-6 py-5 text-center align-bottom border-b border-slate-100">
+                  <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-slate/35 block mb-1.5">
                     Alternative B
                   </span>
-                  <span className="font-serif text-sm font-medium text-brand-slate/60">
-                    In-house（直接雇用）
+                  <span className="font-serif text-sm font-medium text-brand-slate/50">
+                    自社採用（インハウス）
                   </span>
                 </th>
               </tr>
             </thead>
+
             <tbody>
               {rows.map((row, idx) => (
                 <tr
                   key={idx}
-                  className={`group transition-colors duration-150 ${
-                    idx % 2 === 0 ? "bg-white" : "bg-slate-50/50"
+                  className={`group transition-colors duration-150 hover:bg-slate-50/60 ${
+                    idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/30'
                   }`}
                 >
                   {/* Item label */}
                   <td className="py-5 pr-6 align-middle border-t border-slate-100">
-                    <span className="text-xs font-bold text-brand-charcoal/80 leading-snug">
+                    <span className="text-xs font-bold text-brand-charcoal/80 leading-snug tracking-wide">
                       {row.item}
                     </span>
                   </td>
 
-                  {/* Luare — highlighted column */}
-                  <td className="px-6 py-5 text-center align-middle border-t border-brand-navy/10 bg-brand-navy/[0.04] border-x border-brand-navy/10">
-                    <span className="text-xs font-bold text-brand-navy leading-snug">
+                  {/* Luare — gold highlighted column */}
+                  <td
+                    className="px-6 py-5 text-center align-middle border-t border-x-[1.5px]"
+                    style={{
+                      borderColor: '#C5A059',
+                      borderTopColor: 'rgba(197, 160, 89, 0.2)',
+                      backgroundColor: 'rgba(197, 160, 89, 0.06)',
+                    }}
+                  >
+                    <span className="text-xs font-bold text-brand-charcoal leading-snug">
                       {row.luare}
                     </span>
                   </td>
 
                   {/* Big 4 */}
                   <td className="px-6 py-5 text-center align-middle border-t border-slate-100">
-                    <span className="text-xs text-brand-slate/55 font-medium leading-snug">
+                    <span className="text-xs text-brand-slate/45 font-medium leading-snug">
                       {row.big4}
                     </span>
                   </td>
 
                   {/* In-house */}
                   <td className="px-6 py-5 text-center align-middle border-t border-slate-100">
-                    <span className="text-xs text-brand-slate/55 font-medium leading-snug">
+                    <span className="text-xs text-brand-slate/45 font-medium leading-snug">
                       {row.inhouse}
                     </span>
                   </td>
                 </tr>
               ))}
 
-              {/* Bottom border of Luare column */}
+              {/* Bottom border cap for Luare column */}
               <tr>
                 <td className="py-0 border-t border-slate-100" />
-                <td className="py-0 border-t border-brand-navy/10 bg-brand-navy/[0.04] border-x border-brand-navy/10 rounded-b-sm" />
+                <td
+                  className="py-0 border-x-[1.5px]"
+                  style={{
+                    borderColor: '#C5A059',
+                    borderTopColor: 'rgba(197, 160, 89, 0.2)',
+                    backgroundColor: 'rgba(197, 160, 89, 0.06)',
+                    height: '3px',
+                  }}
+                >
+                  {/* Gold bottom bar */}
+                  <div
+                    className="w-full h-[2.5px]"
+                    style={{ backgroundColor: '#C5A059' }}
+                  />
+                </td>
                 <td className="py-0 border-t border-slate-100" />
                 <td className="py-0 border-t border-slate-100" />
               </tr>
@@ -138,9 +174,9 @@ export default function ComparisonMatrix() {
           </table>
         </div>
 
-        {/* Footnote */}
-        <p className="mt-6 text-[10px] text-brand-slate/40 leading-relaxed">
-          ※ 年間コストは中規模クロスボーダー企業（日本法人設立済、従業員50名以下）を想定した概算値です。個別の状況に応じて異なります。
+        {/* ── Footnote ── */}
+        <p className="mt-8 text-[11px] text-brand-slate/45 leading-relaxed tracking-wide">
+          ※Luareは最新の財務AIとPMO体制を駆使することで中間コストを排除し、専門家の『実務価値』のみをお客様に提供します。
         </p>
 
       </div>
