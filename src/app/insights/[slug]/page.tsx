@@ -74,7 +74,7 @@ export default async function InsightPostPage({
             </Link>
           </nav>
           <Link
-            href="/#contact"
+            href="/contact"
             className="hidden sm:inline-flex items-center justify-center border border-brand-platinum text-brand-platinum hover:bg-brand-platinum hover:text-brand-navy px-5 py-2 text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-300"
           >
             Contact
@@ -163,7 +163,7 @@ export default async function InsightPostPage({
                 関連サービスを見る
               </Link>
               <Link
-                href="/#contact"
+                href="/contact"
                 className="w-full sm:w-auto inline-flex items-center justify-center border px-8 py-3.5 text-[11px] font-bold uppercase tracking-[0.25em] transition-all duration-300 border-brand-navy bg-brand-navy text-white hover:bg-brand-navy/90"
               >
                 無料相談を予約する

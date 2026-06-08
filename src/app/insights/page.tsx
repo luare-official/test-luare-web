@@ -45,7 +45,7 @@ export default function InsightsPage() {
             </Link>
           </nav>
           <Link
-            href="/#contact"
+            href="/contact"
             className="hidden sm:inline-flex items-center justify-center border border-brand-platinum text-brand-platinum hover:bg-brand-platinum hover:text-brand-navy px-5 py-2 text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-300"
           >
             Contact
