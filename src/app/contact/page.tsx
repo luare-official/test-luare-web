@@ -118,23 +118,38 @@ export default function ContactPage() {
                 <h3 className="text-sm font-bold text-brand-navy border-b border-brand-silver/30 pb-2 uppercase tracking-widest mb-6">
                   ご相談内容
                 </h3>
+
+                {/* 現在の経理体制 */}
+                <div>
+                  <label className="block text-xs font-bold text-brand-navy mb-2 tracking-wide">
+                    現在の経理体制 <span className="text-[10px] text-red-600 font-normal ml-1 bg-red-50 px-1 py-0.5">必須</span>
+                  </label>
+                  <div className="relative md:w-1/2">
+                    <select defaultValue="" className="w-full border border-brand-silver/40 p-3 text-sm appearance-none focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50" required>
+                      <option value="" disabled>選択してください</option>
+                      <option value="経理担当者なし">経理担当者なし</option>
+                      <option value="経理担当者1名">経理担当者1名</option>
+                      <option value="2〜5名">2〜5名</option>
+                      <option value="6名以上">6名以上</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-brand-navy">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </div>
+                  </div>
+                </div>
                 
                 {/* 複数選択項目 */}
-                <div>
+                <div className="pt-2">
                   <label className="block text-xs font-bold text-brand-navy mb-4 tracking-wide">
-                    ご関心のあるテーマ（複数選択可）
+                    相談種別（複数選択可）
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6">
                     {[
-                      "経理業務の効率化",
-                      "経理担当者の退職・引継ぎ",
-                      "経理人材の採用難",
-                      "月次決算の早期化",
-                      "経理業務の外部委託",
-                      "内部統制の整備",
-                      "日本法人設立支援",
-                      "Finance Setup",
-                      "親会社向けレポーティング",
+                      "採用の代替を探している",
+                      "経理業務を効率化したい",
+                      "月次決算を改善したい",
+                      "内部統制を整備したい",
+                      "外資系日本法人の支援を探している",
                       "その他",
                     ].map((item) => (
                       <label key={item} className="flex items-start gap-3 cursor-pointer group">
