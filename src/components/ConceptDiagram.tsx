@@ -1,20 +1,4 @@
-const tableRows = [
-  {
-    global: "海外への財務報告 (IFRS / US-GAAP)",
-    luare: "月次決算コンバージョン (基準変換)",
-    japan: "日本国内の会社法・税法への準拠",
-  },
-  {
-    global: "グローバルな内部統制・ガバナンス",
-    luare: "確かな品質統制 (AI × Expert Review)",
-    japan: "確実なローカルコンプライアンス (税務申告)",
-  },
-  {
-    global: "現地のリアルタイムな状況把握",
-    luare: "財務BPO・データの一元化",
-    japan: "日常の国内オペレーション (ベンダー決済等)",
-  },
-];
+
 
 export default function ConceptDiagram() {
   return (
@@ -267,61 +251,7 @@ export default function ConceptDiagram() {
 
         </div>
 
-        {/* ── OPERATIONS TABLE ── */}
-        <div className="border-t border-slate-100 pt-12">
 
-          {/* Table header */}
-          <div className="grid grid-cols-3 gap-6 md:gap-10 mb-5 pb-4 border-b border-slate-100">
-            <div>
-              <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-slate/50 leading-tight">
-                海外本社の要求
-              </span>
-            </div>
-            <div className="text-center">
-              <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-navy/70 leading-tight">
-                Luareの統合・調整
-              </span>
-            </div>
-            <div className="text-right">
-              <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-slate/50 leading-tight">
-                日本拠点の要件
-              </span>
-            </div>
-          </div>
-
-          {/* Rows */}
-          <div className="divide-y divide-slate-50">
-            {tableRows.map((row, idx) => (
-              <div
-                key={idx}
-                className="grid grid-cols-3 gap-6 md:gap-10 py-4 group hover:bg-slate-50/70 transition-colors duration-200 -mx-4 px-4 rounded-sm"
-              >
-                {/* Global column */}
-                <div className="flex items-center">
-                  <p className="text-[11px] text-brand-slate/75 font-medium leading-relaxed">
-                    {row.global}
-                  </p>
-                </div>
-
-                {/* Luare column — center */}
-                <div className="flex items-center justify-center relative gap-2">
-                  <div className="hidden md:block w-0 h-0 border-t-[3px] border-b-[3px] border-r-[5px] border-t-transparent border-b-transparent border-r-slate-300" />
-                  <p className="text-[11px] font-bold text-brand-navy/80 leading-relaxed text-center">
-                    {row.luare}
-                  </p>
-                  <div className="hidden md:block w-0 h-0 border-t-[3px] border-b-[3px] border-l-[5px] border-t-transparent border-b-transparent border-l-slate-300" />
-                </div>
-
-                {/* Japan column */}
-                <div className="flex items-center justify-end">
-                  <p className="text-[11px] text-brand-slate/75 font-medium leading-relaxed text-right">
-                    {row.japan}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
 
       </div>
     </section>

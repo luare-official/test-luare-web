@@ -3,7 +3,13 @@ const rows = [
     item: "年間コスト（目安）",
     luare: "約400万円〜",
     big4: "600万〜1,000万円以上",
-    inhouse: "1,500万円以上（採用・維持費込）",
+    inhouse: (
+      <>
+        約1,500万円
+        <br />
+        <span className="text-[10px]">（バイリンガルFM約1,000万円＋事務員約500万円）</span>
+      </>
+    ),
   },
   {
     item: "バイリンガル対応",
@@ -42,7 +48,7 @@ export default function ComparisonMatrix() {
             圧倒的なコストパフォーマンス
           </h2>
           <p className="mt-5 text-sm text-brand-slate/80 leading-relaxed max-w-xl">
-            Big 4水準の専門性を、最適化された適正コストで。
+            グローバル水準の専門性を、最適化されたコストで。
           </p>
         </div>
 
@@ -88,7 +94,7 @@ export default function ComparisonMatrix() {
                     Alternative A
                   </span>
                   <span className="font-serif text-sm font-medium text-brand-slate/50">
-                    Big 4 / グローバルBPO
+                    大手グローバルBPO
                   </span>
                 </th>
 

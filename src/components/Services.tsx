@@ -7,7 +7,7 @@ export default function Services() {
       <div className="mx-auto max-w-6xl px-6 sm:px-10">
 
         {/* Section heading */}
-        <div className="max-w-2xl mb-16 md:mb-20">
+        <div className="max-w-2xl mb-12 md:mb-16">
           <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
             Core Solutions
           </span>
@@ -19,8 +19,31 @@ export default function Services() {
           </p>
         </div>
 
-        {/* ── GROWTH CURVE DIAGRAM ── */}
-        <div className="relative w-full">
+        {/* ── ENCOMPASSING FRAME: BPO FOUNDATION ── */}
+        <div className="relative w-full rounded-3xl border-[1.5px] border-[#C5A059]/20 bg-white/70 p-6 sm:p-10 md:p-14 shadow-sm overflow-hidden backdrop-blur-sm">
+          
+          {/* Subtle gold glow inside the frame */}
+          <div className="absolute inset-0 z-0 bg-gradient-to-b from-white/90 to-transparent pointer-events-none" />
+
+          {/* BPO Label (Top left inside the frame) */}
+          <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 border-b border-[#C5A059]/15 pb-6">
+            <div>
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-8 h-[1px] bg-[#C5A059]" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#C5A059]">
+                  Foundation
+                </span>
+              </div>
+              <h3 className="font-serif text-2xl font-bold tracking-wide text-brand-charcoal mb-2">
+                AI-Powered Finance BPO
+              </h3>
+              <p className="text-xs sm:text-sm text-brand-slate/60 tracking-wide font-medium">
+                企業成長に応じて進化する統合型経理・財務支援サービス
+              </p>
+            </div>
+          </div>
+
+          <div className="relative w-full">
 
           {/* ── SVG Background Growth Curve ── */}
           <div className="absolute inset-0 z-0 pointer-events-none">
@@ -87,11 +110,13 @@ export default function Services() {
                   </span>
                 </div>
                 <h3 className="font-serif text-lg font-bold text-brand-charcoal mb-3 leading-snug">
-                  クロスボーダー進出・バックオフィス立ち上げ
+                  ファイナンスセットアップ
+                  <br />
+                  Finance Setup
                 </h3>
                 <div className="w-8 h-[1px] bg-slate-200 mb-4" />
                 <p className="text-sm text-brand-slate/80 leading-[1.85]">
-                  海外企業の日本市場参入と日本企業の海外展開を双方向でサポート。会社設立から初期の経理インフラ構築まで、スムーズな進出をワンストップで伴走します。
+                  会社設立から会計システム導入、経理体制の構築、人材採用支援までを一貫してサポート。成長に耐えうる財務基盤を構築します。
                 </p>
               </div>
             </div>
@@ -108,11 +133,13 @@ export default function Services() {
                   </span>
                 </div>
                 <h3 className="font-serif text-lg font-bold text-brand-charcoal mb-3 leading-snug">
-                  ガバナンス強化・内部統制構築
+                  継続的な経理・財務運営
+                  <br />
+                  Finance Operations
                 </h3>
                 <div className="w-8 h-[1px] bg-slate-200 mb-4" />
                 <p className="text-sm text-brand-slate/80 leading-[1.85]">
-                  事業拡大に伴うリスクを管理。親会社への多言語レポート対応や、クラウド会計を用いた内部統制の構築により、強固な管理体制を実現します。
+                  日常の記帳、月次決算、経営レポート作成、親会社向け報告、単発のイレギュラー対応まで継続的に支援。企業の経理・財務機能を安定的に運営します。
                 </p>
               </div>
             </div>
@@ -129,58 +156,22 @@ export default function Services() {
                   </span>
                 </div>
                 <h3 className="font-serif text-lg font-bold text-brand-charcoal mb-3 leading-snug">
-                  グローバル財務・CFOコンサルティング
+                  グローバルガバナンス強化・内部統制構築
+                  <br />
+                  Global Governance & Internal Control
                 </h3>
                 <div className="w-8 h-[1px] bg-slate-200 mb-4" />
                 <p className="text-sm text-brand-slate/80 leading-[1.85]">
-                  日々の財務データを完全に把握した上で、USCPA等の専門家が参画。資金効率化やDXアップグレードなど、経営に直結する高度な財務コンサルティングを提供します。
+                  事業拡大に伴うリスクを管理。親会社への多言語レポート対応や、クラウド会計を用いた内部統制の構築により、強固な管理体制を実現します。
                 </p>
               </div>
             </div>
 
           </div>
 
-          {/* ── BPO FOUNDATION BAR (X-axis base) ── */}
-          <div className="relative z-10 mt-8">
-            <div className="bg-slate-900 rounded-xl px-8 md:px-12 py-6 md:py-7 flex flex-col md:flex-row items-start md:items-center gap-5 shadow-lg">
-              {/* Icon */}
-              <div className="shrink-0 w-11 h-11 rounded-full bg-white/10 flex items-center justify-center">
-                <svg
-                  className="w-5 h-5 text-slate-300"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M2.25 21h19.5m-18-18v18m2.25-18v18m13.5-18v18m2.25-18v18M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"
-                  />
-                </svg>
-              </div>
+          {/* Frame structure closed below */}
 
-              {/* Text */}
-              <div className="flex-1">
-                <span className="text-[9px] font-bold uppercase tracking-[0.35em] text-slate-400 block mb-1">
-                  Foundation — 全フェーズ共通の実務基盤
-                </span>
-                <p className="text-sm font-bold text-slate-200 leading-relaxed">
-                  日常の経理BPO（記帳・決算・税務）を強固な実務基盤として、全フェーズを下支えします。
-                </p>
-              </div>
-
-              {/* Visual: continuous bar indicator */}
-              <div className="hidden md:flex shrink-0 items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-slate-500" />
-                <div className="w-20 h-[2px] bg-slate-500 rounded-full" />
-                <div className="w-2 h-2 rounded-full bg-slate-500" />
-                <div className="w-20 h-[2px] bg-slate-500 rounded-full" />
-                <div className="w-2 h-2 rounded-full bg-slate-500" />
-              </div>
-            </div>
-          </div>
-
+        </div>
         </div>
 
       </div>

@@ -50,7 +50,7 @@ export default function Navbar() {
             Insights
           </a>
           <a href="/about" className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors ${isScrolled ? "text-brand-slate hover:text-brand-navy" : "text-brand-silver hover:text-brand-platinum"}`}>
-            Leadership
+            About Us
           </a>
         </nav>
 

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Leadership | Luare Consulting — 代表略歴",
+  title: "About Us | Luare Consulting — 会社概要・代表略歴",
   description:
     "Luare Consulting 代表取締役 陸 沿青（Yanqing Lu）の経歴。KPMG、三菱UFJモルガン・スタンレー証券等を経て、Big 4品質のハイエンド財務コンサルティングを提供。",
 };
@@ -32,7 +32,7 @@ export default function AboutPage() {
               className="text-xs font-medium uppercase tracking-[0.2em] text-brand-platinum transition-colors"
               style={{ borderBottom: "1px solid #C5A059" }}
             >
-              Leadership
+              About Us
             </Link>
           </nav>
           <Link
@@ -66,11 +66,11 @@ export default function AboutPage() {
               className="inline-block text-[10px] font-bold uppercase tracking-[0.5em] mb-6"
               style={{ color: "#C5A059" }}
             >
-              代表略歴
+              会社概要・代表略歴
             </span>
 
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-wider text-brand-platinum leading-tight">
-              Leadership &amp; Organization
+              About Us
             </h1>
 
             {/* Thin gold divider */}
@@ -201,9 +201,8 @@ export default function AboutPage() {
                     </h3>
                   </div>
 
-                  {/* Quote block */}
                   <blockquote
-                    className="border-l-[3px] pl-6 mb-6"
+                    className="border-l-[3px] pl-6 mb-5"
                     style={{ borderColor: "#C5A059" }}
                   >
                     <p className="font-serif text-lg sm:text-xl font-medium text-brand-charcoal leading-relaxed tracking-wide">
@@ -212,7 +211,7 @@ export default function AboutPage() {
                   </blockquote>
 
                   <p className="text-sm sm:text-[15px] text-brand-slate leading-[1.9] tracking-wide">
-                    事業会社での実務から、監査法人・投資銀行における高度な金融・会計アドバイザリーまで、日米中のビジネスの最前線で培った知見を統合。Luareでは、代表自身が専門家チーム（PMO）を強力に牽引し、全プロジェクトにおける品質統制（クオリティ・コントロール）の最高責任者として、お客様にグローバル水準のガバナンスと圧倒的なコストパフォーマンスをお約束します。
+                    日米中のビジネス最前線で培った知見を統合。代表自身が品質統制の最高責任者として、お客様にグローバル水準のガバナンスをお約束します。
                   </p>
                 </div>
               </div>
@@ -307,6 +306,44 @@ export default function AboutPage() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════════════════════════
+            COMPANY INFORMATION
+           ══════════════════════════════════════════════════════════════ */}
+        <section className="bg-brand-white py-24 sm:py-32">
+          <div className="mx-auto max-w-5xl px-6 sm:px-10">
+            <div className="flex items-center gap-3 mb-12">
+              <div
+                className="w-8 h-[1.5px] shrink-0"
+                style={{ backgroundColor: "#C5A059" }}
+              />
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
+                Company Information
+              </h3>
+            </div>
+
+            <div className="border-t border-slate-200">
+              <dl className="divide-y divide-slate-100">
+                <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                  <dt className="text-xs font-bold uppercase tracking-wider text-brand-slate/70">会社名</dt>
+                  <dd className="mt-1 text-sm font-medium text-brand-charcoal sm:col-span-2 sm:mt-0">株式会社Luare Consulting</dd>
+                </div>
+                <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                  <dt className="text-xs font-bold uppercase tracking-wider text-brand-slate/70">事業内容</dt>
+                  <dd className="mt-1 text-sm font-medium text-brand-charcoal sm:col-span-2 sm:mt-0">Finance BPO / 財務コンサルティング / 内部統制構築支援</dd>
+                </div>
+                <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                  <dt className="text-xs font-bold uppercase tracking-wider text-brand-slate/70">対応言語</dt>
+                  <dd className="mt-1 text-sm font-medium text-brand-charcoal sm:col-span-2 sm:mt-0">日本語 / 英語 / 中国語</dd>
+                </div>
+                <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                  <dt className="text-xs font-bold uppercase tracking-wider text-brand-slate/70">代表</dt>
+                  <dd className="mt-1 text-sm font-medium text-brand-charcoal sm:col-span-2 sm:mt-0">陸 沿青 (USCPA)</dd>
+                </div>
+              </dl>
             </div>
           </div>
         </section>
