@@ -28,7 +28,7 @@ export default function Hero() {
           {/* Small label */}
           <div className="flex flex-col items-start gap-4 mb-8">
             <span className="inline-block text-[11px] sm:text-xs font-bold uppercase tracking-[0.4em] text-brand-gold pb-1 border-b border-brand-gold/30">
-              AI × Finance Professionals
+              AI × Accounting & Finance Professionals
             </span>
             <span className="inline-block text-sm sm:text-base font-medium tracking-[0.25em] text-brand-gold/90">
               大手品質を、最適コストで。

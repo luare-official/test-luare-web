@@ -12,56 +12,58 @@ export default function Services({ activeTab }: ServicesProps) {
         {/* ── DOMESTIC SERVICES ── */}
         {activeTab === "domestic" && (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-            {/* Section heading */}
+            {/* Section heading (Supplementary Style) */}
             <div className="max-w-2xl mb-10 md:mb-14">
               <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
-                Domestic Services
+                Service Areas
               </span>
               <h2 className="font-serif text-2xl sm:text-3xl font-medium tracking-wide text-brand-charcoal mt-4 leading-[1.4]">
-                国内企業向けサービス
+                サービス領域
               </h2>
               <p className="mt-4 text-sm text-brand-slate/80 leading-relaxed max-w-xl font-medium">
-                採用難や属人化に悩まない、持続可能な経理体制へ。
+                「アプローチ」を実現するための具体的な提供サービス群です。
               </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-brand-gold/10 text-brand-navy text-[11px] sm:text-xs font-bold border border-brand-gold/20 shadow-sm">
-                  <svg className="w-3.5 h-3.5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                  経理担当者1名の企業から導入可能
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-brand-gold/10 text-brand-navy text-[11px] sm:text-xs font-bold border border-brand-gold/20 shadow-sm">
-                  <svg className="w-3.5 h-3.5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                  必要な業務だけを柔軟にサポート
-                </span>
-              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-              {/* Service 1 */}
-              <div className="bg-white border border-slate-200 shadow-sm rounded-xl p-8 hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 rounded-full bg-brand-offwhite flex items-center justify-center mb-6 text-brand-gold">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                </div>
-                <span className="text-[9px] font-mono tracking-widest text-brand-gold uppercase block mb-2">AI-Powered Accounting Team</span>
-                <h3 className="font-serif text-lg font-bold text-brand-charcoal mb-3">経理チーム代行</h3>
-                <p className="text-sm text-brand-slate leading-relaxed">経理担当者の退職や採用難に左右されない、継続可能な経理体制を提供。</p>
+              {/* Service 1: 診断 */}
+              <div className="bg-white border border-slate-200 shadow-sm rounded-xl p-8 transition-shadow">
+                <span className="text-[9px] font-mono tracking-widest text-brand-gold uppercase block mb-2">Phase 01</span>
+                <h3 className="font-serif text-xl font-bold text-brand-charcoal mb-4 pb-4 border-b border-slate-100">診断</h3>
+                <ul className="flex flex-col gap-3">
+                  {["業務棚卸", "課題可視化", "ボトルネック分析"].map((item, idx) => (
+                    <li key={idx} className="flex items-center gap-2 text-sm text-brand-slate font-medium">
+                      <div className="w-1.5 h-1.5 rounded-full bg-brand-gold/50" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              {/* Service 2 */}
-              <div className="bg-white border border-slate-200 shadow-sm rounded-xl p-8 hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 rounded-full bg-brand-offwhite flex items-center justify-center mb-6 text-brand-gold">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-                </div>
-                <span className="text-[9px] font-mono tracking-widest text-brand-gold uppercase block mb-2">Monthly Finance Operations</span>
-                <h3 className="font-serif text-lg font-bold text-brand-charcoal mb-3">月次経理・財務運営支援</h3>
-                <p className="text-sm text-brand-slate leading-relaxed">記帳、月次決算、経営レポートまで、経理業務の継続運営を支援。</p>
+              {/* Service 2: 構築 */}
+              <div className="bg-white border border-slate-200 shadow-sm rounded-xl p-8 transition-shadow">
+                <span className="text-[9px] font-mono tracking-widest text-brand-gold uppercase block mb-2">Phase 02</span>
+                <h3 className="font-serif text-xl font-bold text-brand-charcoal mb-4 pb-4 border-b border-slate-100">構築</h3>
+                <ul className="flex flex-col gap-3">
+                  {["業務標準化", "内部統制", "引継ぎ体制整備"].map((item, idx) => (
+                    <li key={idx} className="flex items-center gap-2 text-sm text-brand-slate font-medium">
+                      <div className="w-1.5 h-1.5 rounded-full bg-brand-gold/50" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              {/* Service 3 */}
-              <div className="bg-white border border-slate-200 shadow-sm rounded-xl p-8 hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 rounded-full bg-brand-offwhite flex items-center justify-center mb-6 text-brand-gold">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                </div>
-                <span className="text-[9px] font-mono tracking-widest text-brand-gold uppercase block mb-2">Internal Control Support</span>
-                <h3 className="font-serif text-lg font-bold text-brand-charcoal mb-3">業務標準化・内部統制支援</h3>
-                <p className="text-sm text-brand-slate leading-relaxed">属人化を防ぎ、再現性の高い経理体制を構築。</p>
+              {/* Service 3: 運営 */}
+              <div className="bg-white border border-slate-200 shadow-sm rounded-xl p-8 transition-shadow">
+                <span className="text-[9px] font-mono tracking-widest text-brand-gold uppercase block mb-2">Phase 03</span>
+                <h3 className="font-serif text-xl font-bold text-brand-charcoal mb-4 pb-4 border-b border-slate-100">運営</h3>
+                <ul className="flex flex-col gap-3">
+                  {["月次決算", "経営レポート", "管理会計", "継続支援"].map((item, idx) => (
+                    <li key={idx} className="flex items-center gap-2 text-sm text-brand-slate font-medium">
+                      <div className="w-1.5 h-1.5 rounded-full bg-brand-gold/50" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>

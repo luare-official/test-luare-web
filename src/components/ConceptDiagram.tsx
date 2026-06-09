@@ -16,7 +16,15 @@ export default function ConceptDiagram({ activeTab, setActiveTab }: ConceptDiagr
             Concept
           </span>
           <h2 className="font-serif text-2xl sm:text-3xl font-medium tracking-wide text-brand-charcoal mt-4 leading-[1.4]">
-            財務の複雑な要件を、シンプルに。
+            {activeTab === "domestic" ? (
+              <>
+                経理を、<br className="hidden sm:block" />個人の頑張りから仕組みへ。
+              </>
+            ) : (
+              <>
+                日本法人の財務機能を、<br className="hidden sm:block" />立ち上げから運営まで。
+              </>
+            )}
           </h2>
         </div>
 
@@ -48,61 +56,103 @@ export default function ConceptDiagram({ activeTab, setActiveTab }: ConceptDiagr
         {activeTab === "domestic" && (
           <div className="animate-in fade-in duration-500">
             <div className="flex flex-col w-full max-w-5xl mx-auto mb-4 md:mb-10">
-              <div className="flex flex-col md:flex-row items-center md:items-stretch w-full gap-6 md:gap-0">
-                
-                {/* LEFT: Management */}
-                <div className="flex flex-col items-center text-center px-6 sm:px-8 py-12 md:py-14 w-full md:w-[32%] shrink-0 bg-white rounded-2xl md:rounded-r-none shadow-xl border border-slate-200 md:border-r-0 relative z-10">
-                  <div className="w-16 h-16 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center mb-8 shadow-sm">
-                    <svg className="w-7 h-7 text-brand-slate" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                  </div>
-                  <h3 className="font-serif text-xl font-bold text-brand-charcoal mb-2">経営者・事業部門</h3>
-                  <p className="text-xs text-brand-slate leading-relaxed font-medium">
-                    コア業務への集中。<br />リアルタイムな経営数値の把握。
-                  </p>
-                </div>
-
-                {/* CENTER: AI x Expert BPO */}
-                <div className="flex flex-col items-center justify-center w-full md:w-[36%] shrink-0 py-8 px-4 relative z-0 md:-mx-4">
-                  <div className="w-full bg-brand-navy rounded-2xl shadow-2xl p-8 border border-[#C5A059]/30 relative overflow-hidden text-center">
-                    <div className="absolute inset-0 bg-gradient-to-br from-brand-gold/10 to-transparent pointer-events-none" />
-                    <span className="relative z-10 text-[9px] font-bold uppercase tracking-[0.2em] text-brand-gold mb-3 block">
-                      Luare Finance Platform
-                    </span>
-                    <h3 className="relative z-10 font-serif text-lg font-bold text-white mb-2">
-                      AI × Expert BPO
-                    </h3>
-                    <p className="relative z-10 text-[11px] text-slate-300 leading-relaxed font-medium">
-                      退職や採用難に影響されない<br />持続可能な経理チーム
-                    </p>
-                  </div>
-                </div>
-
-                {/* RIGHT: Operations */}
-                <div className="flex flex-col items-center text-center px-6 sm:px-8 py-12 md:py-14 w-full md:w-[32%] shrink-0 bg-white rounded-2xl md:rounded-l-none shadow-xl border border-slate-200 md:border-l-0 relative z-10">
-                  <div className="w-16 h-16 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center mb-8 shadow-sm">
-                    <svg className="w-7 h-7 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                  </div>
-                  <h3 className="font-serif text-xl font-bold text-brand-charcoal mb-4">月次決算・経理実務</h3>
-                  <div className="flex flex-wrap justify-center gap-2">
-                    <span className="px-2 py-1 bg-slate-100 border border-slate-200 text-brand-slate text-[10px] font-medium rounded-md">請求書管理</span>
-                    <span className="px-2 py-1 bg-slate-100 border border-slate-200 text-brand-slate text-[10px] font-medium rounded-md">経費精算</span>
-                    <span className="px-2 py-1 bg-slate-100 border border-slate-200 text-brand-slate text-[10px] font-medium rounded-md">月次レポート</span>
-                  </div>
-                </div>
+              
+              {/* コンセプト文 */}
+              <div className="max-w-3xl mb-12 sm:mb-16">
+                <p className="text-[15px] sm:text-lg text-brand-slate leading-[1.8] font-medium tracking-wide">
+                  経理担当者を置き換えるのではありません。<br />
+                  今いる社員を活かしながら、属人化や退職リスクを減らし、<br className="hidden sm:block" />
+                  持続可能な経理・財務体制を構築します。<br />
+                  <br />
+                  Luareは、AIと財務専門家の力を活用し、<br className="hidden sm:block" />
+                  業務標準化から管理会計までを支援します。
+                </p>
               </div>
 
-              {/* BOTTOM TIER: Foundation Text */}
-              <div className="mt-8 rounded-2xl px-8 md:px-16 py-10 flex flex-col items-center text-center border bg-slate-50 border-slate-200 shadow-sm">
-                <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-brand-navy/60 mb-4">
-                  Sustainable Operations
-                </span>
-                <p className="text-sm md:text-base font-medium text-brand-slate leading-relaxed max-w-2xl">
-                  AIによる業務の仕組み化と、財務専門家による品質管理。属人化を排除し、いつまでも安定して稼働する「自社の経理チーム」として伴走します。
-                </p>
+              {/* Before / After コンテナ */}
+              <div className="flex flex-col md:flex-row gap-6 md:gap-10 w-full">
+                
+                {/* BEFORE カード */}
+                <div className="flex-1 bg-[#F8FAFC] border border-slate-200 rounded-2xl p-8 sm:p-10 shadow-sm flex flex-col items-center">
+                  <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-6">
+                    Before
+                  </div>
+                  
+                  <div className="w-full bg-white border border-slate-200 rounded-xl py-4 px-6 text-center shadow-sm mb-6">
+                    <span className="font-serif font-bold text-lg text-brand-charcoal">経理担当者</span>
+                  </div>
+
+                  <div className="flex flex-col items-center py-2">
+                    <div className="h-6 border-l-[1.5px] border-slate-300"></div>
+                    <svg className="w-4 h-4 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
+                  </div>
+
+                  <div className="w-full flex flex-col gap-3 mt-2">
+                    {["請求書処理", "経費精算", "Excel管理", "転記作業"].map((item, idx) => (
+                      <div key={idx} className="w-full bg-white border border-slate-200 rounded-lg py-3 text-center text-sm font-medium text-slate-500 shadow-sm">
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-col items-center py-4">
+                    <div className="h-6 border-l-[1.5px] border-slate-300"></div>
+                    <svg className="w-4 h-4 text-slate-400 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
+                  </div>
+
+                  <div className="w-full flex flex-col gap-3">
+                    {["残業増加", "属人化", "退職リスク"].map((item, idx) => (
+                      <div key={idx} className="w-full bg-slate-100/80 border border-slate-200 rounded-lg py-3 text-center text-sm font-bold text-brand-slate">
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* AFTER カード */}
+                <div className="flex-1 bg-white border border-slate-200 rounded-2xl p-8 sm:p-10 shadow-xl flex flex-col items-center relative overflow-hidden">
+                  {/* Subtle Background Accent */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-brand-gold/10 to-transparent rounded-bl-[100px] pointer-events-none" />
+
+                  <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-gold mb-6 relative z-10">
+                    After
+                  </div>
+                  
+                  <div className="w-full bg-brand-navy border border-brand-navy/80 rounded-xl py-4 px-6 text-center shadow-md mb-6 relative z-10">
+                    <span className="font-serif font-bold text-base sm:text-lg text-white">経理担当者 <span className="text-brand-gold mx-1 sm:mx-2">＋</span> Luare <span className="text-brand-gold mx-1 sm:mx-2">＋</span> AI</span>
+                  </div>
+
+                  <div className="flex flex-col items-center w-full relative z-10">
+                    {[
+                      { label: "業務標準化", highlight: false },
+                      { label: "残業削減", highlight: false },
+                      { label: "属人化解消", highlight: false },
+                      { label: "継続運営", highlight: false },
+                      { label: "経営数字の可視化", highlight: true }
+                    ].map((step, idx) => (
+                      <div key={idx} className="w-full flex flex-col items-center">
+                        <div className="flex flex-col items-center py-2">
+                          <div className="h-5 sm:h-6 border-l-[1.5px] border-brand-gold/40"></div>
+                          <svg className="w-4 h-4 text-brand-gold/60 -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                          </svg>
+                        </div>
+                        <div className={`w-full border rounded-lg py-3 sm:py-3.5 text-center text-sm font-bold shadow-sm transition-all ${
+                          step.highlight 
+                            ? "bg-brand-navy border-brand-navy text-white shadow-md mt-1" 
+                            : "bg-white border-brand-gold/30 text-brand-charcoal"
+                        }`}>
+                          {step.label}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                </div>
               </div>
             </div>
           </div>

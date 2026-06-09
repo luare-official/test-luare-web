@@ -44,6 +44,11 @@ const domesticRows = [
     inhouse: "3〜6ヶ月以上（見つからないリスク）",
   },
   {
+    item: "教育・引継ぎ",
+    luare: "不要（即戦力かつ組織単位でノウハウ蓄積）",
+    inhouse: "実務指導からカルチャーフィット、引継ぎまで多大",
+  },
+  {
     item: "退職リスク",
     luare: "ゼロ（当社内で安定的にチーム運営）",
     inhouse: "常に存在（突然の退職で業務停止）",
@@ -54,11 +59,6 @@ const domesticRows = [
     inhouse: "特定担当者の頭の中にノウハウが偏在",
   },
   {
-    item: "教育コスト",
-    luare: "不要（即戦力のプロフェッショナル）",
-    inhouse: "実務指導からカルチャーフィットまで多大",
-  },
-  {
     item: "継続運営",
     luare: "安定稼働を保証（欠員による停止なし）",
     inhouse: "担当者の休暇・休職時に業務が停滞",
@@ -67,6 +67,11 @@ const domesticRows = [
     item: "柔軟性",
     luare: "事業フェーズに応じてリソースを増減可能",
     inhouse: "業務量に応じた細かな人員調整が困難",
+  },
+  {
+    item: "総コスト",
+    luare: "業務量に応じた最適化（採用・退職コストゼロ）",
+    inhouse: "固定人件費 ＋ 採用費 ＋ 見えない退職コスト",
   },
 ];
 
@@ -82,15 +87,12 @@ export default function ComparisonMatrix({ activeTab }: ComparisonMatrixProps) {
               <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
                 Why Us
               </span>
-              <h2 className="font-serif text-2xl sm:text-3xl font-medium tracking-wide text-brand-charcoal mt-4 leading-[1.4]">
-                なぜ経理チーム代行なのか
+              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-medium tracking-wide text-brand-charcoal mt-4 leading-[1.4]">
+                なぜ、自社で「採用」を増やす前に仕組みを整えるべきなのか？
               </h2>
-              <p className="mt-5 text-sm text-brand-slate/80 leading-relaxed max-w-xl">
-                自社での採用・育成と比較し、圧倒的なスピードと安定性を提供します。
-              </p>
             </div>
 
-            <div className="overflow-x-auto -mx-2 px-2">
+            <div className="overflow-x-auto -mx-2 px-2 mb-16">
               <table className="w-full min-w-[600px] border-collapse">
                 <thead>
                   <tr>
@@ -149,47 +151,67 @@ export default function ComparisonMatrix({ activeTab }: ComparisonMatrixProps) {
               </table>
             </div>
 
-            {/* ── Cost Performance Visual ── */}
-            <div className="mt-12 p-8 sm:p-10 bg-slate-50 border border-slate-200 rounded-2xl shadow-sm flex flex-col md:flex-row items-center gap-10">
-              <div className="w-full md:w-[45%]">
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-brand-charcoal mb-4 leading-snug">
-                  必要な業務だけを、<br />必要な分だけ。
+            {/* ── Psychological Supplement ── */}
+            <div className="mb-12 max-w-3xl">
+              <p className="text-[15px] sm:text-[17px] leading-[1.8] font-bold text-brand-navy">
+                新しく人を雇う場合、求人費・社保・退職リスクといった「見えないコスト」が常に発生します。<br className="hidden sm:block" />
+                Luareは業務量に応じた最適化設計で、これらのリスクとコストを根本から排除します。
+              </p>
+            </div>
+
+            {/* ── Loop Diagram (from RationalChoice) ── */}
+            <div className="flex flex-col md:flex-row gap-8 sm:gap-12">
+              
+              {/* Left: Hiring Loop */}
+              <div className="flex-1 bg-white border border-slate-200 rounded-2xl p-8 sm:p-12 shadow-sm text-center relative overflow-hidden group">
+                <div className="absolute top-0 left-0 w-full h-1 bg-slate-300"></div>
+                <h3 className="font-serif text-lg font-bold text-slate-400 mb-10 tracking-wide uppercase">
+                  一般的な採用のループ
                 </h3>
-                <p className="text-sm text-brand-slate leading-relaxed font-medium">
-                  採用・教育・退職リスクを含めた<br />
-                  <span className="text-brand-navy font-bold">総コスト最適化</span>を支援します。
-                </p>
-              </div>
-              <div className="w-full md:w-[55%] flex flex-col gap-6">
-                {/* Traditional In-house */}
-                <div>
-                  <div className="flex justify-between text-[11px] sm:text-xs font-bold text-brand-slate mb-2 uppercase tracking-wide">
-                    <span>自社採用（インハウス）の総コスト</span>
-                    <span>100%</span>
-                  </div>
-                  <div className="w-full h-10 bg-slate-100 rounded-sm overflow-hidden flex shadow-inner">
-                    <div className="h-full bg-slate-300/80 w-[40%] border-r border-white/40 flex items-center justify-center">
-                      <span className="text-[10px] text-brand-slate/80 font-bold whitespace-nowrap px-2">採用・教育コスト</span>
+                
+                <div className="flex flex-col items-center gap-2">
+                  {["新規採用", "教 育", "引継ぎ", "属人化再発", "退職リスク", "再採用"].map((item, idx, arr) => (
+                    <div key={idx} className="flex flex-col items-center w-full">
+                      <div className="w-full max-w-[200px] py-3 px-6 bg-slate-50 border border-slate-200 text-slate-500 font-bold rounded shadow-sm text-sm tracking-widest">
+                        {item}
+                      </div>
+                      {idx < arr.length - 1 && (
+                        <div className="h-6 w-[1px] bg-slate-300 my-1 flex items-center justify-center relative">
+                          <div className="absolute bottom-0 w-2 h-2 border-r border-b border-slate-300 rotate-45 translate-y-[3px]"></div>
+                        </div>
+                      )}
                     </div>
-                    <div className="h-full bg-slate-400 w-[60%] flex items-center justify-center">
-                      <span className="text-[10px] text-white font-bold whitespace-nowrap px-2">見えない退職リスク + 人件費</span>
-                    </div>
-                  </div>
-                </div>
-                {/* Luare */}
-                <div>
-                  <div className="flex justify-between text-[11px] sm:text-xs font-bold text-brand-charcoal mb-2 uppercase tracking-wide">
-                    <span>Luare 経理チーム代行</span>
-                    <span className="text-brand-gold font-bold">最大約50%最適化</span>
-                  </div>
-                  <div className="w-full h-10 bg-slate-100 rounded-sm overflow-hidden flex shadow-inner">
-                    <div className="h-full bg-brand-navy w-[50%] flex items-center justify-center relative overflow-hidden group">
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                      <span className="text-[10px] text-white font-bold whitespace-nowrap px-2">プロフェッショナルの実務価値のみ</span>
-                    </div>
+                  ))}
+                  {/* Loop back indicator */}
+                  <div className="mt-6 w-full max-w-[240px] h-12 border-b-2 border-l-2 border-r-2 border-slate-200 rounded-b-xl relative">
+                     <div className="absolute -top-1 -left-[5px] w-2 h-2 border-t-2 border-r-2 border-slate-200 rotate-45"></div>
                   </div>
                 </div>
               </div>
+
+              {/* Right: Luare Flow */}
+              <div className="flex-1 bg-white border border-brand-gold/30 rounded-2xl p-8 sm:p-12 shadow-md text-center relative overflow-hidden group">
+                <div className="absolute top-0 left-0 w-full h-1 bg-brand-gold"></div>
+                <h3 className="font-serif text-lg font-bold text-brand-navy mb-10 tracking-wide uppercase">
+                  Luareの最適化アプローチ
+                </h3>
+                
+                <div className="flex flex-col items-center gap-2">
+                  {["業務棚卸", "標準化", "継続運営", "残業削減", "増員抑制", "継続運営"].map((item, idx, arr) => (
+                    <div key={idx} className="flex flex-col items-center w-full">
+                      <div className={`w-full max-w-[200px] py-3 px-6 border font-bold rounded shadow-sm text-sm tracking-widest ${idx >= 3 ? 'bg-brand-navy text-white border-brand-navy' : 'bg-brand-gold/10 text-brand-navy border-brand-gold/20'}`}>
+                        {item}
+                      </div>
+                      {idx < arr.length - 1 && (
+                        <div className={`h-6 w-[1px] my-1 flex items-center justify-center relative ${idx >= 2 ? 'bg-brand-navy/30' : 'bg-brand-gold/50'}`}>
+                          <div className={`absolute bottom-0 w-2 h-2 border-r border-b rotate-45 translate-y-[3px] ${idx >= 2 ? 'border-brand-navy/30' : 'border-brand-gold/50'}`}></div>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
             </div>
           </div>
         )}
