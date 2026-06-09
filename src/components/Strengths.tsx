@@ -32,7 +32,7 @@ export default function Strengths() {
     },
     {
       title: "将来の成長・外資対応も",
-      subtitle: "GLOBAL FINANCE CAPABILITY",
+      subtitle: "GLOBAL ACCOUNTING & FINANCE CAPABILITY",
       desc: "国内企業の月次決算から、将来的なIFRS/US-GAAP対応、海外展開までシームレスに対応します。",
       icon: (
         <svg className="w-6 h-6 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>

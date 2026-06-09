@@ -6,10 +6,10 @@ export default function GlobalDataPipeline() {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-gold mb-4 block">
-            Architecture
+            GLOBAL ACCOUNTING & FINANCE STRUCTURE
           </span>
           <h2 className="font-serif text-2xl sm:text-3xl font-medium tracking-wide text-brand-charcoal">
-            統合財務インフラストラクチャ
+            本社と在外現地法人をシームレスに繋ぐ経理・財務連携
           </h2>
         </div>
 
@@ -69,19 +69,19 @@ export default function GlobalDataPipeline() {
                 <rect x="0" y="124" width="128" height="4" fill="#E2E8F0" rx="0"/>
               </svg>
             </div>
-            <h3 className="font-serif text-2xl font-bold text-brand-charcoal mb-1">Headquarters</h3>
-            <span className="text-[11px] font-normal tracking-wider text-brand-slate/60 mb-5 block">
-              グローバル本社：日本または海外
+            <h3 className="font-serif text-2xl font-bold text-brand-charcoal mb-1">本社</h3>
+            <span className="text-[11px] font-bold tracking-widest uppercase text-brand-slate/60 mb-5 block">
+              Global HQ
             </span>
             <p className="text-sm text-brand-slate leading-relaxed font-medium max-w-xs">
-              IFRS/US-GAAP準拠。海外・国内からのガバナンス要求を満たし、リアルタイムな経営状況の把握を実現。
+              高度な経営数値を早期に可視化し、タイムリーな経営判断を支援。グローバル本社（HQ）の要求を満たすレポート品質とガバナンス体制を構築・提供します。
             </p>
           </div>
 
           {/* CENTER: Pipeline */}
           <div className="hidden md:flex flex-col items-center justify-center w-[36%] shrink-0 py-8 px-2">
-            <span className="text-[10px] font-bold uppercase tracking-[0.35em] mb-5" style={{ color: '#C5A059' }}>
-              Luare Integrated Data Pipeline
+            <span className="text-[10px] font-bold uppercase tracking-[0.1em] mb-5 whitespace-nowrap" style={{ color: '#C5A059' }}>
+              シームレスな経理財務情報連携<br/>(Seamless Financial Reporting)
             </span>
             <div className="relative w-full rounded-full border-[1.5px] overflow-hidden bg-transparent" style={{ borderColor: '#C5A059', padding: '14px 0' }}>
               <div className="absolute top-[28%] left-0 w-full h-[3px] overflow-hidden pointer-events-none">
@@ -100,9 +100,9 @@ export default function GlobalDataPipeline() {
             </div>
           </div>
 
-          <div className="flex md:hidden flex-col items-center justify-center py-6 w-full">
-            <span className="text-[9px] font-bold uppercase tracking-[0.35em] mb-3" style={{ color: '#C5A059' }}>
-              Luare Integrated Data Pipeline
+          <div className="flex md:hidden flex-col items-center justify-center py-6 w-full text-center">
+            <span className="text-[9px] font-bold uppercase tracking-[0.1em] mb-3" style={{ color: '#C5A059' }}>
+              シームレスな経理財務情報連携<br/>(Seamless Financial Reporting)
             </span>
             <div className="relative rounded-full border-[1.5px] overflow-hidden bg-transparent" style={{ borderColor: '#C5A059', width: '44px', height: '120px' }}>
               <div className="absolute left-[28%] top-0 w-[3px] h-full overflow-hidden pointer-events-none">
@@ -157,23 +157,20 @@ export default function GlobalDataPipeline() {
                 <rect x="0" y="124" width="128" height="4" fill="#E2E8F0"/>
               </svg>
             </div>
-            <h3 className="font-serif text-2xl font-bold text-brand-charcoal mb-1">Subsidiary</h3>
-            <span className="text-[11px] font-normal tracking-wider text-brand-slate/60 mb-5 block">
-              現地子会社：日本または海外
+            <h3 className="font-serif text-2xl font-bold text-brand-charcoal mb-1">在外現地法人</h3>
+            <span className="text-[11px] font-bold tracking-widest uppercase text-brand-slate/60 mb-5 block">
+              Subsidiary
             </span>
             <p className="text-sm text-brand-slate leading-relaxed font-medium max-w-xs">
-              進出先の会社法・税法への確実な準拠。ローカル取引における100%のコンプライアンスを両立。
+              大手ファームが対応しない『日本独自の日常的な記帳・証憑管理』を専門チームで完全に巻き取り、迅速なデータ連携を実現します。
             </p>
           </div>
         </div>
 
         {/* BOTTOM TIER: Foundation Text */}
         <div className="mt-8 rounded-2xl px-8 md:px-16 py-10 flex flex-col items-center text-center border" style={{ backgroundColor: 'rgba(15, 23, 42, 0.95)', borderColor: 'rgba(197, 160, 89, 0.2)' }}>
-          <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-400 mb-4">
-            Luare 統合財務インフラストラクチャ
-          </span>
           <p className="text-sm md:text-base font-medium text-slate-300 leading-relaxed max-w-2xl">
-            Luareは両拠点の間に介入するのではなく、データ・ガバナンスを裏側から一元化し、ブラックボックスを排除する『透明かつ強固な財務インフラ』として機能します。
+            Luareは、現地法人とグローバル本社の間において、経理・財務情報とガバナンスを本社の要求水準に引き上げます。迅速かつ精度の高いデータ連携を可能にする『透明かつ強固な経理財務インフラ』として機能し、構築から日々の運用までを一気通貫で伴走します。
           </p>
         </div>
       </div>

@@ -9,6 +9,8 @@ import LuareApproach from "./LuareApproach";
 import DomesticCTA from "./DomesticCTA";
 import Services from "./Services";
 import GlobalDataPipeline from "./GlobalDataPipeline";
+import Strengths from "./Strengths";
+import GlobalCTA from "./GlobalCTA";
 
 export type TabType = "domestic" | "global" | null;
 
@@ -27,6 +29,7 @@ export default function SolutionExperience() {
               <ComparisonMatrix activeTab={activeTab} />
               <CaseStudies />
               <LuareApproach />
+              <Strengths />
               <DomesticCTA />
             </>
           )}
@@ -36,6 +39,8 @@ export default function SolutionExperience() {
               <GlobalDataPipeline />
               <Services activeTab={activeTab} />
               <ComparisonMatrix activeTab={activeTab} />
+              <Strengths />
+              <GlobalCTA />
             </>
           )}
         </div>

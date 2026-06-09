@@ -75,13 +75,13 @@ export default function Services({ activeTab }: ServicesProps) {
             {/* Section heading */}
             <div className="max-w-2xl mb-10 md:mb-14">
               <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
-                Global Services
+                Our Services
               </span>
               <h2 className="font-serif text-2xl sm:text-3xl font-medium tracking-wide text-brand-charcoal mt-4 leading-[1.4]">
-                外資系企業向けサービス
+                経理・財務アウトソーシング ＆ Virtual CFO
               </h2>
               <p className="mt-4 text-sm text-brand-slate/80 leading-relaxed max-w-xl font-medium">
-                日本進出からガバナンス強化まで、ワンストップで支援。
+                日本法人の日常的な記帳業務（BPO）から、グローバル本社への高度なレポーティング（Virtual CFO）までを一気通貫で支援します。
               </p>
             </div>
 
@@ -101,10 +101,10 @@ export default function Services({ activeTab }: ServicesProps) {
                     </span>
                   </div>
                   <h3 className="font-serif text-2xl font-bold tracking-wide text-brand-charcoal mb-2">
-                    Finance BPO
+                    Accounting & Finance BPO
                   </h3>
                   <p className="text-xs sm:text-sm text-brand-slate/70 tracking-wide font-medium leading-relaxed">
-                    企業成長に応じて進化する統合型財務支援サービス<br />
+                    企業成長フェーズに応じて進化する、経理・財務の支援サービス<br />
                     <span className="text-brand-navy font-bold inline-block mt-1.5 bg-brand-navy/5 px-2 py-0.5 rounded-sm">
                       設立から月次運営、親会社レポーティング、内部統制まで一貫対応
                     </span>
@@ -166,13 +166,11 @@ export default function Services({ activeTab }: ServicesProps) {
                         </span>
                       </div>
                       <h3 className="font-serif text-lg font-bold text-brand-charcoal mb-3 leading-snug">
-                        ファイナンスセットアップ
-                        <br />
-                        Finance Setup
+                        会社設立・ファイナンスセットアップ
                       </h3>
                       <div className="w-8 h-[1px] bg-slate-200 mb-4" />
                       <p className="text-sm text-brand-slate/80 leading-[1.85]">
-                        会社設立から会計システム導入、経理体制の構築、人材採用支援までを一貫してサポート。成長に耐えうる財務基盤を構築します。
+                        法人設立代行、会計財務チームの構築、人材採用支援まで強固な事業運営の土台となるバックオフィス体制を構築します。
                       </p>
                     </div>
                   </div>
@@ -190,8 +188,6 @@ export default function Services({ activeTab }: ServicesProps) {
                       </div>
                       <h3 className="font-serif text-lg font-bold text-brand-charcoal mb-3 leading-snug">
                         継続的な経理・財務運営
-                        <br />
-                        Finance Operations
                       </h3>
                       <div className="w-8 h-[1px] bg-slate-200 mb-4" />
                       <p className="text-sm text-brand-slate/80 leading-[1.85]">
@@ -212,13 +208,11 @@ export default function Services({ activeTab }: ServicesProps) {
                         </span>
                       </div>
                       <h3 className="font-serif text-lg font-bold text-brand-charcoal mb-3 leading-snug">
-                        グローバルガバナンス強化
-                        <br />
-                        Global Governance
+                        グローバルガバナンス強化・DX支援
                       </h3>
                       <div className="w-8 h-[1px] bg-slate-200 mb-4" />
                       <p className="text-sm text-brand-slate/80 leading-[1.85]">
-                        事業拡大に伴うリスクを管理。親会社への多言語レポート対応や、クラウド会計を用いた内部統制の構築により、強固な管理体制を実現します。
+                        事業拡大に伴うガバナンス体制の強化をサポートします。グローバル本社の要求水準に準拠した、内部統制の構築から評価までを支援し、透明で強固な管理体制を実現します。
                       </p>
                     </div>
                   </div>

@@ -14,7 +14,7 @@ const globalRows = [
       <>
         約1,500万円
         <br />
-        <span className="text-[10px]">（バイリンガルFM約1,000万円＋事務員約500万円）</span>
+        <span className="text-[10px]">（バイリンガル経理・財務マネージャー約1,000万円＋事務員約500万円）</span>
       </>
     ),
   },
@@ -34,7 +34,7 @@ const globalRows = [
     item: "機動力・拡張性",
     luare: "圧倒的に高い（即時対応）",
     big4: "官僚的で承認フローが長い",
-    inhouse: "属人的（退職による崩壊リスク有）",
+    inhouse: "業務の属人化と、退職による体制崩壊リスク",
   },
 ];
 
@@ -223,7 +223,7 @@ export default function ComparisonMatrix({ activeTab }: ComparisonMatrixProps) {
         {/* ── GLOBAL COMPARISON ── */}
         {activeTab === "global" && (
           <div className="animate-in fade-in duration-500">
-            <div className="max-w-2xl mb-16">
+            <div className="max-w-3xl mb-16">
               <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
                 The Value Vacuum
               </span>
@@ -233,6 +233,13 @@ export default function ComparisonMatrix({ activeTab }: ComparisonMatrixProps) {
               <p className="mt-5 text-sm text-brand-slate/80 leading-relaxed max-w-xl">
                 グローバル水準の専門性を、最適化されたコストで。
               </p>
+              
+              {/* Lead Statement */}
+              <div className="mt-10 mb-2">
+                <p className="text-[15px] sm:text-[17px] leading-[1.8] font-bold text-brand-navy">
+                  Luareは、自社構築した最先端AIの仕組みと専門家による支援体制を駆使することで、専門家の『実務価値』と自動化による『速度』を、最適化された適正価格で提供します。
+                </p>
+              </div>
             </div>
 
             <div className="overflow-x-auto -mx-2 px-2">
@@ -291,9 +298,6 @@ export default function ComparisonMatrix({ activeTab }: ComparisonMatrixProps) {
                 </tbody>
               </table>
             </div>
-            <p className="mt-8 text-[11px] text-brand-slate/45 leading-relaxed tracking-wide">
-              ※Luareは最新の財務AIとPMO体制を駆使することで中間コストを排除し、専門家の『実務価値』のみをお客様に提供します。
-            </p>
           </div>
         )}
 

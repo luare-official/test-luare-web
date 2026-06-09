@@ -79,10 +79,10 @@ export default function ConceptDiagram({ activeTab, setActiveTab }: ConceptDiagr
                 外資系企業・グローバル向け
               </div>
               <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-6 leading-tight transition-colors group-hover:text-brand-gold">
-                日本進出・グローバルガバナンス<br className="hidden lg:block"/>の支援
+                日本進出・経理財務の<br className="hidden lg:block"/>アウトソーシング（BPO）支援
               </h3>
               <p className="text-[15px] sm:text-base text-white/80 leading-relaxed font-medium mb-8">
-                外資系法人の日本進出にともなう財務セットアップ、IFRS/US-GAAP準拠の月次決算、親会社向けの英語レポーティングに完全対応します。
+                日本法人の日常的な記帳業務から、IFRS/US-GAAP準拠の月次決算、グローバル本社（HQ）の要求水準を満たす英語レポーティングまで、スピーディかつワンストップで代行します。
               </p>
               
               <div className="bg-white/5 border border-white/10 rounded-lg p-5 mb-12">

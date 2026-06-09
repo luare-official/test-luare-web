@@ -12,8 +12,8 @@ export default function Footer() {
               株式会社Luare Consulting
             </span>
             <div className="text-xs text-brand-silver/80 leading-relaxed tracking-wider space-y-4 max-w-md">
-              <p>
-                Luare Consultingは、国内企業および外資系企業に対し、Finance BPO・財務オペレーション構築・内部統制支援を提供しています。
+              <p className="text-sm leading-relaxed text-slate-300">
+                Luare Consultingは、国内企業および外資系企業に対し、Accounting & Finance BPO・財務オペレーション構築・内部統制支援を提供しています。
               </p>
               <p>
                 AIと財務専門家の知見を融合し、企業の持続的な成長を支える強固な財務基盤の構築を支援します。
@@ -29,10 +29,13 @@ export default function Footer() {
               </h4>
               <ul className="space-y-4 text-xs text-brand-silver/80">
                 <li className="tracking-wide">
+                  Accounting & Finance BPO
+                </li>
+                <li className="tracking-wide">
                   Finance Setup
                 </li>
                 <li className="tracking-wide">
-                  Finance Operations
+                  Accounting & Finance Operations
                 </li>
                 <li className="tracking-wide">
                   Governance & Internal Control
