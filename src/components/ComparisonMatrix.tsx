@@ -1,4 +1,5 @@
 import type { TabType } from "./SolutionExperience";
+import CostReductionChart from "./CostReductionChart";
 
 interface ComparisonMatrixProps {
   activeTab: TabType;
@@ -158,6 +159,9 @@ export default function ComparisonMatrix({ activeTab }: ComparisonMatrixProps) {
                 Luareは業務量に応じた最適化設計で、これらのリスクとコストを根本から排除します。
               </p>
             </div>
+
+            {/* ── Vertical Cost Reduction Chart ── */}
+            <CostReductionChart />
 
             {/* ── Loop Diagram (from RationalChoice) ── */}
             <div className="flex flex-col md:flex-row gap-8 sm:gap-12">

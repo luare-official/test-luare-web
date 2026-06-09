@@ -7,33 +7,38 @@ import ComparisonMatrix from "./ComparisonMatrix";
 import CaseStudies from "./CaseStudies";
 import LuareApproach from "./LuareApproach";
 import DomesticCTA from "./DomesticCTA";
-import Services from "./Services"; // Keep for global if needed
+import Services from "./Services";
+import GlobalDataPipeline from "./GlobalDataPipeline";
 
-export type TabType = "domestic" | "global";
+export type TabType = "domestic" | "global" | null;
 
 export default function SolutionExperience() {
-  const [activeTab, setActiveTab] = useState<TabType>("domestic");
+  const [activeTab, setActiveTab] = useState<TabType>(null);
 
   return (
     <div className="flex flex-col">
       <ConceptDiagram activeTab={activeTab} setActiveTab={setActiveTab} />
       
-      {activeTab === "domestic" && (
-        <>
-          <DomesticPainPoints />
-          <ComparisonMatrix activeTab={activeTab} />
-          <CaseStudies />
-          <LuareApproach />
-          <DomesticCTA />
-        </>
-      )}
+      {activeTab !== null && (
+        <div id="solution-content" className="scroll-mt-20">
+          {activeTab === "domestic" && (
+            <>
+              <DomesticPainPoints />
+              <ComparisonMatrix activeTab={activeTab} />
+              <CaseStudies />
+              <LuareApproach />
+              <DomesticCTA />
+            </>
+          )}
 
-      {/* For Global Tab, we only render ComparisonMatrix and Services to preserve its original flow. */}
-      {activeTab === "global" && (
-        <>
-          <Services activeTab={activeTab} />
-          <ComparisonMatrix activeTab={activeTab} />
-        </>
+          {activeTab === "global" && (
+            <>
+              <GlobalDataPipeline />
+              <Services activeTab={activeTab} />
+              <ComparisonMatrix activeTab={activeTab} />
+            </>
+          )}
+        </div>
       )}
     </div>
   );
