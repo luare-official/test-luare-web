@@ -6,7 +6,7 @@ interface ServicesProps {
 
 export default function Services({ activeTab }: ServicesProps) {
   return (
-    <section id="services" className="py-24 sm:py-32 bg-brand-offwhite border-b border-slate-100 overflow-hidden">
+    <section id="services" className="py-16 sm:py-24 md:py-32 bg-brand-offwhite border-b border-slate-100 overflow-hidden">
       <div className="mx-auto max-w-6xl px-6 sm:px-10">
 
         {/* ── DOMESTIC SERVICES ── */}
@@ -98,7 +98,7 @@ export default function Services({ activeTab }: ServicesProps) {
                     Accounting & Finance BPO
                   </h3>
                   <p className="text-xs sm:text-sm text-brand-slate/70 tracking-wide font-medium leading-relaxed">
-                    企業成長フェーズに応じて進化する、経理・財務の支援サービス<br />
+                    企業成長フェーズに応じて進化する、経理・財務の支援サービス<br className="hidden sm:inline" />
                     <span className="text-brand-navy font-bold inline-block mt-1.5 bg-brand-navy/5 px-2 py-0.5 rounded-sm">
                       設立から月次運営、親会社レポーティング、内部統制まで一貫対応
                     </span>

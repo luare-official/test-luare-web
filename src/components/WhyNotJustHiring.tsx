@@ -1,6 +1,6 @@
 export default function WhyNotJustHiring() {
   return (
-    <section className="w-full bg-white py-24 sm:py-32 border-b border-slate-100 relative overflow-hidden">
+    <section className="w-full bg-white py-16 sm:py-24 md:py-32 border-b border-slate-100 relative overflow-hidden">
       
       {/* Premium subtle background accents */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-full bg-gradient-to-b from-brand-gold/[0.02] to-transparent pointer-events-none" />
@@ -33,7 +33,7 @@ export default function WhyNotJustHiring() {
           </p>
           <div className="pt-4 mt-8 border-t border-slate-200 inline-block w-16 mx-auto" />
           <p className="text-lg sm:text-xl font-bold text-brand-navy">
-            Luareは採用の代替ではありません。<br />
+            Luareは採用の代替ではありません。<br className="hidden sm:block" />
             採用だけに頼らない経理体制を構築します。
           </p>
         </div>

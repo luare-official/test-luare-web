@@ -23,7 +23,7 @@ export default function TargetCompanies() {
   ];
 
   return (
-    <section className="w-full bg-white py-24 sm:py-32 border-b border-slate-100 relative overflow-hidden">
+    <section className="w-full bg-white py-16 sm:py-24 md:py-32 border-b border-slate-100 relative overflow-hidden">
       <div className="mx-auto max-w-5xl px-6 sm:px-10 relative z-10">
         
         {/* Header */}

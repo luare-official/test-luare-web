@@ -1,6 +1,6 @@
 export default function LogoCloud() {
   return (
-    <section className="py-16 border-b border-brand-silver/10 bg-brand-white">
+    <section className="py-10 md:py-16 border-b border-brand-silver/10 bg-brand-white">
       <div className="mx-auto max-w-7xl px-6 sm:px-8">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center opacity-60 hover:opacity-80 transition-opacity duration-500">
           

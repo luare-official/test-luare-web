@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Insights & Knowledge | Luare Consulting",
@@ -14,44 +15,7 @@ export default function InsightsPage() {
 
   return (
     <>
-      {/* ──────────────── NAVBAR ──────────────── */}
-      <header className="fixed top-0 left-0 w-full z-50 bg-brand-navy/95 backdrop-blur-md border-b border-brand-silver/10">
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 sm:px-8">
-          <Link
-            href="/"
-            className="font-serif text-lg sm:text-xl font-medium tracking-wider text-brand-platinum hover:text-white transition-colors"
-          >
-            株式会社 Luare Consulting
-          </Link>
-          <nav className="hidden md:flex items-center gap-10">
-            <Link
-              href="/"
-              className="text-xs font-medium uppercase tracking-[0.2em] text-brand-silver hover:text-brand-platinum transition-colors"
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              className="text-xs font-medium uppercase tracking-[0.2em] text-brand-silver hover:text-brand-platinum transition-colors"
-            >
-              Leadership
-            </Link>
-            <Link
-              href="/insights"
-              className="text-xs font-medium uppercase tracking-[0.2em] text-brand-platinum transition-colors"
-              style={{ borderBottom: "1px solid #C5A059" }}
-            >
-              Insights
-            </Link>
-          </nav>
-          <Link
-            href="/contact"
-            className="hidden sm:inline-flex items-center justify-center border border-brand-platinum text-brand-platinum hover:bg-brand-platinum hover:text-brand-navy px-5 py-2 text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-300"
-          >
-            Contact
-          </Link>
-        </div>
-      </header>
+      <Navbar theme="light" solid={true} />
 
       <main className="flex-1">
         {/* ══════════ HERO ══════════ */}

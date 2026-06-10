@@ -10,7 +10,7 @@ export default function GlobalCTA() {
   return (
     <div className="flex flex-col">
       {/* Foreign Enterprise CTA */}
-      <section className="relative py-24 sm:py-32 bg-brand-navy overflow-hidden">
+      <section className="relative py-16 sm:py-24 md:py-32 bg-brand-navy overflow-hidden">
         {/* Decorative Background Elements */}
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
@@ -27,7 +27,7 @@ export default function GlobalCTA() {
             日本法人に最適な財務体制を<br />シミュレーションしませんか？
           </h2>
 
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-8 sm:p-12 backdrop-blur-sm text-left max-w-3xl mx-auto mb-16">
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-12 backdrop-blur-sm text-left max-w-3xl mx-auto mb-16">
             <h3 className="text-brand-gold font-bold text-sm tracking-widest uppercase mb-8 border-b border-white/10 pb-4 text-center sm:text-left">
               無料相談で得られるもの
             </h3>
@@ -50,9 +50,9 @@ export default function GlobalCTA() {
           <div className="flex justify-center">
             <Link
               href="/contact"
-              className="group relative inline-flex items-center justify-center px-10 py-5 text-sm sm:text-base font-bold text-brand-navy bg-brand-gold overflow-hidden rounded-full transition-all duration-300 hover:shadow-[0_0_40px_-10px_rgba(197,160,89,0.5)] hover:scale-105"
+              className="group relative inline-flex items-center justify-center px-6 py-4 sm:px-10 sm:py-5 text-xs sm:text-base font-bold text-brand-navy bg-brand-gold overflow-hidden rounded-full transition-all duration-300 hover:shadow-[0_0_40px_-10px_rgba(197,160,89,0.5)] hover:scale-105 w-full sm:w-auto text-center"
             >
-              <span className="relative z-10 flex items-center gap-3 tracking-wider">
+              <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3 tracking-wider">
                 外資系企業向けの無料オンライン相談を予約する
                 <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
@@ -65,7 +65,7 @@ export default function GlobalCTA() {
       </section>
 
       {/* Partners CTA */}
-      <section className="relative py-20 sm:py-24 bg-brand-charcoal overflow-hidden border-t border-white/10">
+      <section className="relative py-12 sm:py-16 md:py-24 bg-brand-charcoal overflow-hidden border-t border-white/10">
         <div className="relative z-10 mx-auto max-w-4xl px-6 sm:px-10 text-center">
           
           <h2 className="font-serif text-2xl sm:text-3xl font-bold tracking-wide text-white mb-6">
@@ -82,9 +82,9 @@ export default function GlobalCTA() {
           <div className="flex justify-center">
             <Link
               href="/contact"
-              className="group relative inline-flex items-center justify-center px-8 py-4 text-sm font-bold text-white bg-transparent border-2 border-brand-gold overflow-hidden rounded-full transition-all duration-300 hover:bg-brand-gold hover:text-brand-navy"
+              className="group relative inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 text-xs sm:text-sm font-bold text-white bg-transparent border-2 border-brand-gold overflow-hidden rounded-full transition-all duration-300 hover:bg-brand-gold hover:text-brand-navy w-full sm:w-auto text-center"
             >
-              <span className="relative z-10 flex items-center gap-3 tracking-wider">
+              <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3 tracking-wider">
                 士業・パートナー向けの協業について問い合わせる
                 <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />

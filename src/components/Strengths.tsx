@@ -43,7 +43,7 @@ export default function Strengths() {
   ];
 
   return (
-    <section id="strengths" className="relative py-24 sm:py-32 bg-brand-offwhite border-b border-brand-silver/20 overflow-hidden">
+    <section id="strengths" className="relative py-16 sm:py-24 md:py-32 bg-brand-offwhite border-b border-brand-silver/20 overflow-hidden">
       
       {/* Background AI Finance Image with ~8% opacity */}
       <div 
@@ -54,7 +54,7 @@ export default function Strengths() {
       <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8">
         
         {/* Title Section */}
-        <div className="max-w-3xl mb-24">
+        <div className="max-w-3xl mb-12 sm:mb-16 md:mb-24">
           <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-slate">
             Why Luare
           </span>

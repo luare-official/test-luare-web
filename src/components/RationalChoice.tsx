@@ -18,15 +18,15 @@ export default function RationalChoice() {
   ];
 
   return (
-    <section className="w-full bg-[#F8FAFC] py-24 sm:py-32 border-b border-slate-200">
-      <div className="mx-auto max-w-6xl px-6 sm:px-10">
+    <section className="w-full bg-[#F8FAFC] py-16 sm:py-24 md:py-32 border-b border-slate-200">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-10">
         
         {/* --- Header Section --- */}
         <div className="text-center max-w-3xl mx-auto mb-20 sm:mb-28">
           <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-gold mb-6 block">
             Rational Choice
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-wide text-brand-navy mb-8 leading-[1.4]">
+          <h2 className="font-serif text-xl sm:text-3xl md:text-5xl font-medium tracking-wide text-brand-navy mb-8 leading-[1.4]">
             なぜ採用より<br className="sm:hidden" />合理的なのか
           </h2>
           <p className="text-xl sm:text-2xl font-bold text-brand-charcoal mb-10 tracking-wide">
@@ -34,19 +34,17 @@ export default function RationalChoice() {
           </p>
           <div className="space-y-6 text-[15px] sm:text-base text-brand-slate leading-relaxed font-medium">
             <p>
-              経理担当者を採用しても、業務が整理されていなければ、<br className="hidden sm:block" />
-              属人化や引継ぎ問題は繰り返されます。
+              経理担当者を採用しても、業務が整理されていなければ、属人化や引継ぎ問題は繰り返されます。
             </p>
             <p>
-              Luareは、人を増やす前に業務を整理し、標準化し、<br className="hidden sm:block" />
-              継続運営できる強固な体制を構築します。
+              Luareは、人を増やす前に業務を整理し、標準化し、継続運営できる強固な体制を構築します。
             </p>
           </div>
         </div>
 
 
         {/* --- Diagram Section --- */}
-        <div className="flex flex-col md:flex-row gap-8 sm:gap-12 mb-32">
+        <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-12 mb-16 sm:mb-24 md:mb-32">
           
           {/* Left: Hiring Loop */}
           <div className="flex-1 bg-white border border-slate-200 rounded-2xl p-8 sm:p-12 shadow-sm text-center relative overflow-hidden group">

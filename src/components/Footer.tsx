@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-brand-charcoal text-brand-silver border-t border-brand-darknavy/40 pt-20 pb-12">
+    <footer id="contact" className="bg-brand-charcoal text-brand-silver border-t border-brand-darknavy/40 pt-12 md:pt-20 pb-8 md:pb-12">
       <div className="mx-auto max-w-7xl px-6 sm:px-8">
         
         {/* Top Flex Container */}

@@ -21,19 +21,19 @@ export default function LuareApproach() {
   ];
 
   return (
-    <div className="w-full bg-[#F8FAFC] py-24 sm:py-32 border-y border-slate-200 animate-in fade-in duration-700 relative overflow-hidden">
+    <div className="w-full bg-[#F8FAFC] py-16 sm:py-24 md:py-32 border-y border-slate-200 animate-in fade-in duration-700 relative overflow-hidden">
       
       {/* Background Subtle Gradient */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-brand-gold/5 via-brand-navy/5 to-transparent rounded-full blur-3xl opacity-50 pointer-events-none -translate-y-1/2 translate-x-1/4" />
 
-      <div className="mx-auto max-w-5xl px-6 sm:px-10 relative z-10">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 md:px-10 relative z-10">
         
         {/* Header */}
-        <div className="mb-20 sm:mb-28 text-center sm:text-left max-w-3xl">
+        <div className="mb-14 sm:mb-20 md:mb-28 text-center sm:text-left max-w-3xl">
           <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.35em] text-brand-gold block mb-4">
             Our Approach
           </span>
-          <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-wide text-brand-navy leading-[1.3] mb-6">
+          <h3 className="font-serif text-2xl sm:text-3xl md:text-5xl font-bold tracking-wide text-brand-navy leading-[1.3] mb-6">
             「作業の代行」ではなく、<br className="sm:hidden" />「経理組織のアップグレード」を。
           </h3>
           <p className="text-base sm:text-lg text-brand-slate leading-relaxed font-medium">

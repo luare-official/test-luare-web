@@ -1,6 +1,6 @@
 export default function GlobalDataPipeline() {
   return (
-    <div className="bg-brand-white py-16 sm:py-24 animate-in fade-in duration-500 border-b border-slate-100">
+    <div className="bg-brand-white py-12 sm:py-16 md:py-24 animate-in fade-in duration-500 border-b border-slate-100">
       <div className="flex flex-col w-full max-w-6xl mx-auto px-6 sm:px-10">
 
         {/* Header */}
@@ -74,10 +74,10 @@ export default function GlobalDataPipeline() {
               Global HQ
             </span>
             <p className="text-sm text-brand-slate leading-relaxed font-medium max-w-xs">
-              高度な経営数値を早期に可視化し、<br />
-              タイムリーな経営判断を支援。<br />
-              グローバル本社（HQ）の要求を満たす<br />
-              レポート品質とガバナンス体制を<br />
+              高度な経営数値を早期に可視化し、<br className="hidden md:inline" />
+              タイムリーな経営判断を支援。<br className="hidden md:inline" />
+              グローバル本社（HQ）の要求を満たす<br className="hidden md:inline" />
+              レポート品質とガバナンス体制を<br className="hidden md:inline" />
               構築・提供します。
             </p>
           </div>
@@ -168,8 +168,8 @@ export default function GlobalDataPipeline() {
               Subsidiary
             </span>
             <p className="text-sm text-brand-slate leading-relaxed font-medium max-w-xs">
-              『日本独自の日常的な記帳・証憑管理』を<br />
-              専門チームで完全に巻き取り、<br />
+              『日本独自の日常的な記帳・証憑管理』を<br className="hidden md:inline" />
+              専門チームで完全に巻き取り、<br className="hidden md:inline" />
               迅速なデータ連携を実現します。
             </p>
           </div>
@@ -178,9 +178,9 @@ export default function GlobalDataPipeline() {
         {/* BOTTOM TIER: Foundation Text */}
         <div className="mt-8 rounded-2xl px-8 md:px-16 py-10 flex flex-col items-center text-center border" style={{ backgroundColor: 'rgba(15, 23, 42, 0.95)', borderColor: 'rgba(197, 160, 89, 0.2)' }}>
           <p className="text-sm md:text-base font-medium text-slate-300 leading-relaxed max-w-2xl">
-            Luare Consultingでは、現地法人とグローバル本社の間において、経理・財務情報と<br />
-            ガバナンスを本社の要求水準に引き上げます。<br />
-            迅速かつ精度の高いデータ連携を可能にする『透明かつ強固な<br />
+            Luare Consultingでは、現地法人とグローバル本社の間において、経理・財務情報と<br className="hidden md:inline" />
+            ガバナンスを本社の要求水準に引き上げます。<br className="hidden md:inline" />
+            迅速かつ精度の高いデータ連携を可能にする『透明かつ強固な<br className="hidden md:inline" />
             経理財務インフラ』として機能し、構築から日々の運用までを一気通貫で伴走します。
           </p>
         </div>

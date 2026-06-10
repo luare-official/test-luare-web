@@ -20,9 +20,9 @@ const notoSans = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "Luare | ハイエンド財務コンサルティング＆BPOファーム",
-  description: "中国・アジア企業の日本進出、および日本企業の海外バックオフィス構築に特化した、財務特化型AIと高度専門人材のハイエンドな統合型BPO・コンサルティングファーム。",
-  keywords: ["財務コンサルティング", "BPO", "日本進出", "海外展開", "内部統制", "USCPA", "Luare", "ルアーレ"],
+  title: "Luare Consulting | 人に依存しない次世代型AI経理BPO",
+  description: "採用・教育・退職リスクをゼロに。AIエージェントと専門家チームが一体となった次世代型経理BPOで、中堅企業の経理財務体制を根本から最適化します。",
+  keywords: ["経理BPO", "AIエージェント", "経理アウトソーシング", "財務コンサルティング", "月次決算", "内部統制", "USCPA", "Luare", "ルアーレ"],
 };
 
 import ScrollToTop from "@/components/ScrollToTop";

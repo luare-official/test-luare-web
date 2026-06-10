@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 export default function ContactPage() {
   return (
     <>
-      <Navbar />
+      <Navbar theme="dark" solid={true} />
       
       <main className="flex-1 pt-24 pb-24 lg:pt-32 lg:pb-32 bg-brand-offwhite">
         <div className="mx-auto max-w-4xl px-6 sm:px-8">

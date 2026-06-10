@@ -96,7 +96,7 @@ const domesticRows = [
 
 export default function ComparisonMatrix({ activeTab }: ComparisonMatrixProps) {
   return (
-    <section id="comparison" className="py-24 sm:py-32 bg-brand-white border-b border-slate-100">
+    <section id="comparison" className="py-16 sm:py-24 md:py-32 bg-brand-white border-b border-slate-100">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
 
         {/* ── DOMESTIC COMPARISON ── */}
@@ -170,17 +170,11 @@ export default function ComparisonMatrix({ activeTab }: ComparisonMatrixProps) {
               </table>
             </div>
 
-            {/* ── Psychological Supplement ── */}
             <div className="mb-12 max-w-3xl">
-              <p className="text-[15px] sm:text-[17px] leading-[1.8] font-bold text-brand-navy">
-                新しく人材を採用する場合、求人費・社保・退職リスク
-                <br />
-                といった「見えないコスト」が常に発生します。
-                <br />
-                <br />
-                Luare Consultingでは、業務量に応じた最適化設計で
-                <br />
-                これらのリスクとコストを根本から排除します。
+              <p className="text-base sm:text-lg leading-relaxed font-bold text-brand-navy">
+                新しく人材を採用する場合、求人費・社保・退職リスクといった「見えないコスト」が常に発生します。
+                <br className="hidden sm:block" /><br className="hidden sm:block" />
+                Luare Consultingでは、業務量に応じた最適化設計でこれらのリスクとコストを根本から排除します。
               </p>
             </div>
 
