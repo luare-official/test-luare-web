@@ -97,7 +97,7 @@ const domesticRows = [
 export default function ComparisonMatrix({ activeTab }: ComparisonMatrixProps) {
   return (
     <section id="comparison" className="pt-4 md:pt-6 pb-16 sm:pb-24 md:pb-32 bg-brand-white border-b border-slate-100">
-      <div className="mx-auto max-w-7xl px-6 sm:px-10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-10">
 
         {/* ── DOMESTIC COMPARISON ── */}
         {activeTab === "domestic" && (
@@ -106,7 +106,7 @@ export default function ComparisonMatrix({ activeTab }: ComparisonMatrixProps) {
               <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
                 Why Us
               </span>
-              <h2 className="font-serif text-xl sm:text-2xl md:text-4xl font-medium tracking-wide text-brand-charcoal mt-4 leading-[1.4] break-keep">
+              <h2 className="font-serif text-xl sm:text-2xl md:text-4xl font-medium tracking-wide text-brand-charcoal mt-4 leading-[1.4]">
                 なぜ、自社で「採用」を増やす前に<br />仕組みを整えるべきなのか？
               </h2>
             </div>
