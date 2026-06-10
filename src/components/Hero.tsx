@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative flex items-center justify-start overflow-hidden min-h-[640px] h-auto lg:h-[calc(100vh-80px)] w-full bg-brand-white">
+    <section className="relative flex items-center justify-start overflow-hidden min-h-[640px] lg:min-h-[calc(100vh-80px)] h-auto w-full bg-brand-white">
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -21,7 +21,7 @@ export default function Hero() {
       <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-brand-gold/30 to-transparent z-10" />
 
       {/* Content Area */}
-      <div className="relative z-10 mx-auto max-w-[1280px] w-full px-6 sm:px-12 md:px-20 py-20 sm:py-28 lg:pt-[220px] lg:pb-32">
+      <div className="relative z-10 mx-auto max-w-[1280px] w-full px-6 sm:px-12 md:px-20 py-20 sm:py-28 lg:pt-36 lg:pb-32">
         <div className="fade-in-section">
 
           {/* Small label */}

@@ -10,7 +10,7 @@ export default function GlobalCTA() {
   return (
     <div className="flex flex-col">
       {/* Foreign Enterprise CTA */}
-      <section className="relative py-16 sm:py-24 md:py-32 bg-brand-navy overflow-hidden">
+      <section className="relative h-auto md:h-auto py-16 sm:py-24 md:pt-24 md:pb-20 bg-brand-navy overflow-hidden">
         {/* Decorative Background Elements */}
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
@@ -65,7 +65,7 @@ export default function GlobalCTA() {
       </section>
 
       {/* Partners CTA */}
-      <section className="relative py-12 sm:py-16 md:py-24 bg-brand-charcoal overflow-hidden border-t border-white/10">
+      <section className="relative h-auto md:h-auto py-12 sm:py-16 md:pt-24 md:pb-20 bg-brand-charcoal overflow-hidden border-t border-white/10">
         <div className="relative z-10 mx-auto max-w-4xl px-6 sm:px-10 text-center">
           
           <h2 className="font-serif text-2xl sm:text-3xl font-bold tracking-wide text-white mb-6">

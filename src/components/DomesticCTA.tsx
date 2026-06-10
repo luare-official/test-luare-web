@@ -8,7 +8,7 @@ export default function DomesticCTA() {
   ];
 
   return (
-    <section className="relative py-16 sm:py-24 md:py-32 bg-brand-navy overflow-hidden">
+    <section className="relative h-auto md:h-auto py-16 sm:py-24 md:pt-24 md:pb-20 bg-brand-navy overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />

@@ -323,7 +323,7 @@ export default function AboutPage() {
             CTA BOTTOM BAR
            ══════════════════════════════════════════════════════════════ */}
         <section
-          className="border-t py-16"
+          className="border-t h-auto md:h-auto py-16 md:pt-24 md:pb-20"
           style={{
             backgroundColor: "rgba(15, 23, 42, 0.97)",
             borderColor: "rgba(197, 160, 89, 0.15)",
