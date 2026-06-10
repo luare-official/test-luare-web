@@ -22,7 +22,11 @@ export default function ContactPage() {
 
           {/* Form Container */}
           <div className="bg-white p-8 md:p-12 shadow-xl border border-brand-silver/20 fade-in-section" style={{ animationDelay: "0.2s" }}>
-            <form className="space-y-10">
+            <form
+              action="https://formspree.io/f/mojppoor"
+              method="POST"
+              className="space-y-10"
+            >
               
               {/* 基本情報セクション */}
               <div className="space-y-6">
@@ -36,7 +40,13 @@ export default function ContactPage() {
                     <label className="block text-xs font-bold text-brand-navy mb-2 tracking-wide">
                       会社名 <span className="text-[10px] text-red-600 font-normal ml-1 bg-red-50 px-1 py-0.5">必須</span>
                     </label>
-                    <input type="text" className="w-full border border-brand-silver/40 p-3 text-sm focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50" placeholder="株式会社Luare Consulting" required />
+                    <input
+                      type="text"
+                      name="company"
+                      className="w-full border border-brand-silver/40 p-3 text-sm focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50"
+                      placeholder="株式会社Luare Consulting"
+                      required
+                    />
                   </div>
 
                   {/* お名前 */}
@@ -44,7 +54,13 @@ export default function ContactPage() {
                     <label className="block text-xs font-bold text-brand-navy mb-2 tracking-wide">
                       お名前 <span className="text-[10px] text-red-600 font-normal ml-1 bg-red-50 px-1 py-0.5">必須</span>
                     </label>
-                    <input type="text" className="w-full border border-brand-silver/40 p-3 text-sm focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50" placeholder="山田 太郎" required />
+                    <input
+                      type="text"
+                      name="name"
+                      className="w-full border border-brand-silver/40 p-3 text-sm focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50"
+                      placeholder="山田 太郎"
+                      required
+                    />
                   </div>
 
                   {/* メールアドレス */}
@@ -52,7 +68,13 @@ export default function ContactPage() {
                     <label className="block text-xs font-bold text-brand-navy mb-2 tracking-wide">
                       メールアドレス <span className="text-[10px] text-red-600 font-normal ml-1 bg-red-50 px-1 py-0.5">必須</span>
                     </label>
-                    <input type="email" className="w-full border border-brand-silver/40 p-3 text-sm focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50" placeholder="info@example.com" required />
+                    <input
+                      type="email"
+                      name="email"
+                      className="w-full border border-brand-silver/40 p-3 text-sm focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50"
+                      placeholder="info@example.com"
+                      required
+                    />
                   </div>
 
                   {/* 電話番号（任意） */}
@@ -60,7 +82,12 @@ export default function ContactPage() {
                     <label className="block text-xs font-bold text-brand-navy mb-2 tracking-wide">
                       電話番号 <span className="text-[10px] text-brand-silver font-normal ml-1 bg-brand-silver/10 px-1 py-0.5">任意</span>
                     </label>
-                    <input type="tel" className="w-full border border-brand-silver/40 p-3 text-sm focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50" placeholder="03-1234-5678" />
+                    <input
+                      type="tel"
+                      name="phone"
+                      className="w-full border border-brand-silver/40 p-3 text-sm focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50"
+                      placeholder="03-1234-5678"
+                    />
                   </div>
                 </div>
               </div>
@@ -78,7 +105,12 @@ export default function ContactPage() {
                       会社種別 <span className="text-[10px] text-red-600 font-normal ml-1 bg-red-50 px-1 py-0.5">必須</span>
                     </label>
                     <div className="relative">
-                      <select defaultValue="" className="w-full border border-brand-silver/40 p-3 text-sm appearance-none focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50" required>
+                      <select
+                        name="company_type"
+                        defaultValue=""
+                        className="w-full border border-brand-silver/40 p-3 text-sm appearance-none focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50"
+                        required
+                      >
                         <option value="" disabled>選択してください</option>
                         <option value="国内企業">国内企業</option>
                         <option value="外資系日本法人">外資系日本法人</option>
@@ -97,7 +129,12 @@ export default function ContactPage() {
                       会社規模 <span className="text-[10px] text-red-600 font-normal ml-1 bg-red-50 px-1 py-0.5">必須</span>
                     </label>
                     <div className="relative">
-                      <select defaultValue="" className="w-full border border-brand-silver/40 p-3 text-sm appearance-none focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50" required>
+                      <select
+                        name="company_size"
+                        defaultValue=""
+                        className="w-full border border-brand-silver/40 p-3 text-sm appearance-none focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50"
+                        required
+                      >
                         <option value="" disabled>選択してください</option>
                         <option value="1～10名">1～10名</option>
                         <option value="11～50名">11～50名</option>
@@ -125,7 +162,12 @@ export default function ContactPage() {
                     現在の経理体制 <span className="text-[10px] text-red-600 font-normal ml-1 bg-red-50 px-1 py-0.5">必須</span>
                   </label>
                   <div className="relative md:w-1/2">
-                    <select defaultValue="" className="w-full border border-brand-silver/40 p-3 text-sm appearance-none focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50" required>
+                    <select
+                      name="accounting_team"
+                      defaultValue=""
+                      className="w-full border border-brand-silver/40 p-3 text-sm appearance-none focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50"
+                      required
+                    >
                       <option value="" disabled>選択してください</option>
                       <option value="経理担当者なし">経理担当者なし</option>
                       <option value="経理担当者1名">経理担当者1名</option>
@@ -154,7 +196,8 @@ export default function ContactPage() {
                     ].map((item) => (
                       <label key={item} className="flex items-start gap-3 cursor-pointer group">
                         <div className="relative flex items-center justify-center w-4 h-4 mt-0.5 border border-brand-silver/60 bg-brand-offwhite/50 group-hover:border-brand-navy transition-colors">
-                          <input type="checkbox" className="peer absolute opacity-0 w-full h-full cursor-pointer" value={item} />
+                          {/* name="consultation_type" allows Formspree to collect all checked values */}
+                          <input type="checkbox" name="consultation_type" className="peer absolute opacity-0 w-full h-full cursor-pointer" value={item} />
                           <svg className="w-3 h-3 text-brand-navy opacity-0 peer-checked:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                           </svg>
@@ -172,8 +215,9 @@ export default function ContactPage() {
                   <label className="block text-xs font-bold text-brand-navy mb-2 tracking-wide">
                     現在のお悩み・ご相談内容 <span className="text-[10px] text-red-600 font-normal ml-1 bg-red-50 px-1 py-0.5">必須</span>
                   </label>
-                  <textarea 
-                    className="w-full border border-brand-silver/40 p-4 text-sm focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50 min-h-[160px] resize-y" 
+                  <textarea
+                    name="message"
+                    className="w-full border border-brand-silver/40 p-4 text-sm focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50 min-h-[160px] resize-y"
                     placeholder="経理担当者の退職予定 / 採用難 / 月次決算の遅れ / 海外親会社へのレポート対応 / などをご記入ください。"
                     required
                   ></textarea>
@@ -183,7 +227,7 @@ export default function ContactPage() {
               {/* Submit Button */}
               <div className="pt-8 text-center">
                 <button
-                  type="button"
+                  type="submit"
                   className="inline-flex items-center justify-center bg-brand-navy text-white px-12 py-5 text-sm font-bold uppercase tracking-[0.2em] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 hover:bg-brand-darknavy w-full sm:w-auto min-w-[300px]"
                 >
                   無料相談を申し込む
