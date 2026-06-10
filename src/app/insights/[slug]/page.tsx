@@ -126,6 +126,7 @@ export default async function InsightPostPage({
                   alt="陸 沿青"
                   fill
                   className="object-cover grayscale contrast-125"
+                  unoptimized
                 />
               </div>
               

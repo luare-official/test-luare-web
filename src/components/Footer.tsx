@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer id="contact" className="bg-brand-charcoal text-brand-silver border-t border-brand-darknavy/40 pt-20 pb-12">
@@ -49,14 +51,14 @@ export default function Footer() {
               </h4>
               <ul className="space-y-4 text-xs">
                 <li>
-                  <a href="/insights" className="hover:text-brand-platinum transition-colors tracking-wide text-brand-silver/80">
+                  <Link href="/insights" className="hover:text-brand-platinum transition-colors tracking-wide text-brand-silver/80">
                     Insights (ブログ)
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/about" className="hover:text-brand-platinum transition-colors tracking-wide text-brand-silver/80">
+                  <Link href="/about" className="hover:text-brand-platinum transition-colors tracking-wide text-brand-silver/80">
                     会社概要 (About Us)
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

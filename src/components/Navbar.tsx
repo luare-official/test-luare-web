@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [lang, setLang] = useState<"JP" | "EN" | "ZH">("JP");
@@ -25,12 +26,12 @@ export default function Navbar() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 sm:px-8">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <a
+          <Link
             href="/"
             className="font-serif text-lg sm:text-xl font-medium tracking-wider transition-colors text-brand-navy"
           >
             株式会社 Luare Consulting
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
@@ -44,12 +45,12 @@ export default function Navbar() {
           <a href="#strengths" className="text-xs font-medium uppercase tracking-[0.2em] transition-colors text-brand-slate hover:text-brand-navy">
             Strengths
           </a>
-          <a href="/insights" className="text-xs font-medium uppercase tracking-[0.2em] transition-colors text-brand-slate hover:text-brand-navy">
+          <Link href="/insights" className="text-xs font-medium uppercase tracking-[0.2em] transition-colors text-brand-slate hover:text-brand-navy">
             Insights
-          </a>
-          <a href="/about" className="text-xs font-medium uppercase tracking-[0.2em] transition-colors text-brand-slate hover:text-brand-navy">
+          </Link>
+          <Link href="/about" className="text-xs font-medium uppercase tracking-[0.2em] transition-colors text-brand-slate hover:text-brand-navy">
             About Us
-          </a>
+          </Link>
         </nav>
 
         {/* Right Controls: Lang Toggle & CTA */}
@@ -72,12 +73,12 @@ export default function Navbar() {
           </div>
 
           {/* Contact Button */}
-          <a
+          <Link
             href="/contact"
             className="hidden sm:inline-flex items-center justify-center border px-5 py-2 text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-300 border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white"
           >
             Contact
-          </a>
+          </Link>
         </div>
       </div>
     </header>

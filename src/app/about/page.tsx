@@ -105,6 +105,7 @@ export default function AboutPage() {
                       height={700}
                       className="w-full h-auto object-cover grayscale contrast-[1.05] brightness-[1.02]"
                       priority
+                      unoptimized={true}
                     />
 
                     {/* Bottom gradient overlay with name */}
