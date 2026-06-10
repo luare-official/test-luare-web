@@ -39,7 +39,7 @@ export default function Navbar() {
           <a href="#concept" className="text-xs font-medium uppercase tracking-[0.2em] transition-colors text-brand-slate hover:text-brand-navy">
             Concept
           </a>
-          <a href="#services" className="text-xs font-medium uppercase tracking-[0.2em] transition-colors text-brand-slate hover:text-brand-navy">
+          <a href="#gateway" className="text-xs font-medium uppercase tracking-[0.2em] transition-colors text-brand-slate hover:text-brand-navy">
             Services
           </a>
           <a href="#strengths" className="text-xs font-medium uppercase tracking-[0.2em] transition-colors text-brand-slate hover:text-brand-navy">

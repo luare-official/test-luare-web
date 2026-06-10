@@ -154,7 +154,7 @@ export default async function InsightPostPage({
             </h3>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/#services"
+                href="/#gateway"
                 className="w-full sm:w-auto inline-flex items-center justify-center border px-8 py-3.5 text-[11px] font-bold uppercase tracking-[0.25em] transition-all duration-300 bg-transparent hover:bg-slate-50"
                 style={{
                   borderColor: "#C5A059",

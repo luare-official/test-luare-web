@@ -11,10 +11,7 @@ export default function DomesticPainPoints() {
       <div className="mx-auto max-w-4xl px-6 sm:px-10">
         
         {/* Header */}
-        <div className="text-center mb-16">
-          <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60 block mb-4">
-            Pain Points
-          </span>
+        <div className="text-center mb-12">
           <h3 className="font-serif text-2xl sm:text-3xl font-medium tracking-wide text-brand-charcoal leading-[1.5]">
             経理部門に、こんな課題は<br className="sm:hidden" />ありませんか？
           </h3>

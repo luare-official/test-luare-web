@@ -94,12 +94,6 @@ export default function Services({ activeTab }: ServicesProps) {
               {/* BPO Label (Top left inside the frame) */}
               <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 border-b border-[#C5A059]/15 pb-6">
                 <div>
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-8 h-[1px] bg-[#C5A059]" />
-                    <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-[#C5A059]">
-                      Foundation
-                    </span>
-                  </div>
                   <h3 className="font-serif text-2xl font-bold tracking-wide text-brand-charcoal mb-2">
                     Accounting & Finance BPO
                   </h3>
@@ -147,7 +141,6 @@ export default function Services({ activeTab }: ServicesProps) {
                     <circle cx="200" cy="510" r="6" fill="#0B132B" opacity="0.2" />
                     <circle cx="600" cy="300" r="6" fill="#0B132B" opacity="0.2" />
                     <circle cx="1000" cy="60" r="6" fill="#0B132B" opacity="0.2" />
-                    <text x="16" y="30" fill="#94A3B8" fontSize="11" fontFamily="sans-serif" opacity="0.6">LTV ↑</text>
                   </svg>
                 </div>
 

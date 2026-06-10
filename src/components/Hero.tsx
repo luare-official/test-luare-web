@@ -88,7 +88,7 @@ export default function Hero() {
             
             {/* Secondary CTA */}
             <Link
-              href="#services"
+              href="#gateway"
               className="inline-flex items-center justify-center bg-white text-brand-navy border-[1.5px] border-brand-navy px-8 sm:px-12 py-4 sm:py-5 text-sm font-bold uppercase tracking-[0.15em] hover:bg-brand-navy/5 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 w-full sm:w-auto rounded-sm"
             >
               サービスを見る

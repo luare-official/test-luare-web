@@ -17,8 +17,8 @@ export default function GlobalDataPipeline() {
         <div className="flex flex-col md:flex-row items-center md:items-stretch w-full">
 
           {/* LEFT: Headquarters */}
-          <div className="flex flex-col items-center text-center px-6 sm:px-8 py-12 md:py-14 w-full md:w-[32%] shrink-0 bg-white rounded-2xl md:rounded-r-none shadow-xl border border-slate-200 md:border-r-0">
-            <div className="mb-8 w-36 h-36 flex items-end justify-center">
+          <div className="flex flex-col items-center text-center px-6 sm:px-8 pt-8 pb-6 md:pt-10 md:pb-8 w-full md:w-[32%] shrink-0 bg-white rounded-2xl md:rounded-r-none shadow-xl border border-slate-200 md:border-r-0">
+            <div className="mb-4 w-36 h-36 flex items-end justify-center">
               <svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-md">
                 <rect x="4" y="28" width="26" height="96" fill="#1C2541" rx="1"/>
                 <rect x="6" y="32" width="5" height="7" fill="#F1F5F9" rx="0.5" opacity="0.8"/>
@@ -70,32 +70,38 @@ export default function GlobalDataPipeline() {
               </svg>
             </div>
             <h3 className="font-serif text-2xl font-bold text-brand-charcoal mb-1">本社</h3>
-            <span className="text-[11px] font-bold tracking-widest uppercase text-brand-slate/60 mb-5 block">
+            <span className="text-[11px] font-bold tracking-widest uppercase text-brand-slate/60 mb-3 block">
               Global HQ
             </span>
             <p className="text-sm text-brand-slate leading-relaxed font-medium max-w-xs">
-              高度な経営数値を早期に可視化し、タイムリーな経営判断を支援。グローバル本社（HQ）の要求を満たすレポート品質とガバナンス体制を構築・提供します。
+              高度な経営数値を早期に可視化し、<br />
+              タイムリーな経営判断を支援。<br />
+              グローバル本社（HQ）の要求を満たす<br />
+              レポート品質とガバナンス体制を<br />
+              構築・提供します。
             </p>
           </div>
 
           {/* CENTER: Pipeline */}
-          <div className="hidden md:flex flex-col items-center justify-center w-[36%] shrink-0 py-8 px-2">
-            <span className="text-[10px] font-bold uppercase tracking-[0.1em] mb-5 whitespace-nowrap" style={{ color: '#C5A059' }}>
-              シームレスな経理財務情報連携<br/>(Seamless Financial Reporting)
-            </span>
-            <div className="relative w-full rounded-full border-[1.5px] overflow-hidden bg-transparent" style={{ borderColor: '#C5A059', padding: '14px 0' }}>
-              <div className="absolute top-[28%] left-0 w-full h-[3px] overflow-hidden pointer-events-none">
-                <div className="beam-right h-full rounded-full" style={{ background: 'linear-gradient(90deg, transparent 0%, #C5A059 40%, #C5A059 60%, transparent 100%)' }} />
-                <div className="beam-right h-full rounded-full" style={{ background: 'linear-gradient(90deg, transparent 0%, #C5A059 40%, #C5A059 60%, transparent 100%)', animationDelay: '1.4s' }} />
-              </div>
-              <div className="absolute bottom-[28%] left-0 w-full h-[3px] overflow-hidden pointer-events-none">
-                <div className="beam-left h-full rounded-full" style={{ background: 'linear-gradient(90deg, transparent 0%, #C5A059 40%, #C5A059 60%, transparent 100%)' }} />
-                <div className="beam-left h-full rounded-full" style={{ background: 'linear-gradient(90deg, transparent 0%, #C5A059 40%, #C5A059 60%, transparent 100%)', animationDelay: '1.4s' }} />
-              </div>
-              <div className="relative z-10 flex items-center justify-center w-full px-5">
-                <div className="w-0 h-0 border-t-[5px] border-b-[5px] border-r-[8px] border-t-transparent border-b-transparent border-r-[#C5A059] shrink-0" />
-                <div className="flex-1 h-[2px] bg-[#C5A059]" />
-                <div className="w-0 h-0 border-t-[5px] border-b-[5px] border-l-[8px] border-t-transparent border-b-transparent border-l-[#C5A059] shrink-0" />
+          <div className="hidden md:flex flex-col items-center justify-center w-[36%] shrink-0 px-2">
+            <div className="flex flex-col items-center gap-3 w-full">
+              <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-center whitespace-nowrap" style={{ color: '#C5A059' }}>
+                シームレスな経理財務情報連携<br/>(Seamless Financial Reporting)
+              </span>
+              <div className="relative w-full rounded-full border-[1.5px] overflow-hidden bg-transparent" style={{ borderColor: '#C5A059', padding: '14px 0' }}>
+                <div className="absolute top-[28%] left-0 w-full h-[3px] overflow-hidden pointer-events-none">
+                  <div className="beam-right h-full rounded-full" style={{ background: 'linear-gradient(90deg, transparent 0%, #C5A059 40%, #C5A059 60%, transparent 100%)' }} />
+                  <div className="beam-right h-full rounded-full" style={{ background: 'linear-gradient(90deg, transparent 0%, #C5A059 40%, #C5A059 60%, transparent 100%)', animationDelay: '1.4s' }} />
+                </div>
+                <div className="absolute bottom-[28%] left-0 w-full h-[3px] overflow-hidden pointer-events-none">
+                  <div className="beam-left h-full rounded-full" style={{ background: 'linear-gradient(90deg, transparent 0%, #C5A059 40%, #C5A059 60%, transparent 100%)' }} />
+                  <div className="beam-left h-full rounded-full" style={{ background: 'linear-gradient(90deg, transparent 0%, #C5A059 40%, #C5A059 60%, transparent 100%)', animationDelay: '1.4s' }} />
+                </div>
+                <div className="relative z-10 flex items-center justify-center w-full px-5">
+                  <div className="w-0 h-0 border-t-[5px] border-b-[5px] border-r-[8px] border-t-transparent border-b-transparent border-r-[#C5A059] shrink-0" />
+                  <div className="flex-1 h-[2px] bg-[#C5A059]" />
+                  <div className="w-0 h-0 border-t-[5px] border-b-[5px] border-l-[8px] border-t-transparent border-b-transparent border-l-[#C5A059] shrink-0" />
+                </div>
               </div>
             </div>
           </div>
@@ -122,8 +128,8 @@ export default function GlobalDataPipeline() {
           </div>
 
           {/* RIGHT: Subsidiary */}
-          <div className="flex flex-col items-center text-center px-6 sm:px-8 py-12 md:py-14 w-full md:w-[32%] shrink-0 bg-white rounded-2xl md:rounded-l-none shadow-xl border border-slate-200 md:border-l-0">
-            <div className="mb-8 w-36 h-36 flex items-end justify-center">
+          <div className="flex flex-col items-center text-center px-6 sm:px-8 pt-8 pb-6 md:pt-10 md:pb-8 w-full md:w-[32%] shrink-0 bg-white rounded-2xl md:rounded-l-none shadow-xl border border-slate-200 md:border-l-0">
+            <div className="mb-4 w-36 h-36 flex items-end justify-center">
               <svg viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-md">
                 <rect x="2" y="56" width="18" height="68" fill="#CBD5E1" rx="1"/>
                 <rect x="4" y="60" width="4" height="5" fill="#F1F5F9" rx="0.5" opacity="0.7"/>
@@ -158,11 +164,13 @@ export default function GlobalDataPipeline() {
               </svg>
             </div>
             <h3 className="font-serif text-2xl font-bold text-brand-charcoal mb-1">在外現地法人</h3>
-            <span className="text-[11px] font-bold tracking-widest uppercase text-brand-slate/60 mb-5 block">
+            <span className="text-[11px] font-bold tracking-widest uppercase text-brand-slate/60 mb-3 block">
               Subsidiary
             </span>
             <p className="text-sm text-brand-slate leading-relaxed font-medium max-w-xs">
-              大手ファームが対応しない『日本独自の日常的な記帳・証憑管理』を専門チームで完全に巻き取り、迅速なデータ連携を実現します。
+              『日本独自の日常的な記帳・証憑管理』を<br />
+              専門チームで完全に巻き取り、<br />
+              迅速なデータ連携を実現します。
             </p>
           </div>
         </div>
@@ -170,7 +178,10 @@ export default function GlobalDataPipeline() {
         {/* BOTTOM TIER: Foundation Text */}
         <div className="mt-8 rounded-2xl px-8 md:px-16 py-10 flex flex-col items-center text-center border" style={{ backgroundColor: 'rgba(15, 23, 42, 0.95)', borderColor: 'rgba(197, 160, 89, 0.2)' }}>
           <p className="text-sm md:text-base font-medium text-slate-300 leading-relaxed max-w-2xl">
-            Luareは、現地法人とグローバル本社の間において、経理・財務情報とガバナンスを本社の要求水準に引き上げます。迅速かつ精度の高いデータ連携を可能にする『透明かつ強固な経理財務インフラ』として機能し、構築から日々の運用までを一気通貫で伴走します。
+            Luare Consultingでは、現地法人とグローバル本社の間において、経理・財務情報と<br />
+            ガバナンスを本社の要求水準に引き上げます。<br />
+            迅速かつ精度の高いデータ連携を可能にする『透明かつ強固な<br />
+            経理財務インフラ』として機能し、構築から日々の運用までを一気通貫で伴走します。
           </p>
         </div>
       </div>

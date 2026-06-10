@@ -103,7 +103,7 @@ export default function AboutPage() {
                       alt="陸 沿青 — 代表取締役 / Managing Partner"
                       width={560}
                       height={700}
-                      className="w-full h-auto object-cover grayscale contrast-[1.05] brightness-[1.02]"
+                      className="w-full h-auto object-cover"
                       priority
                       unoptimized={true}
                     />
@@ -207,12 +207,12 @@ export default function AboutPage() {
                     style={{ borderColor: "#C5A059" }}
                   >
                     <p className="font-serif text-lg sm:text-xl font-medium text-brand-charcoal leading-relaxed tracking-wide">
-                      「Big 4品質の専門性を、最適化された組織モデルで提供する。」
+                      「見えない経理リスク」から、経営者を解放するパートナーへ。
                     </p>
                   </blockquote>
 
                   <p className="text-sm sm:text-[15px] text-brand-slate leading-[1.9] tracking-wide">
-                    日米中のビジネス最前線で培った知見を統合。代表自身が品質統制の最高責任者として、お客様にグローバル水準のガバナンスをお約束します。
+                    採用難や退職による体制崩壊リスクなど、経理部門が抱える慢性的な課題。私たちは、グローバル基準のプロの伴走とテクノロジーの力でこれらの不安を根本から取り除き、経営の意思決定を加速させるクリアな財務オペレーションを構築します。
                   </p>
                 </div>
               </div>
@@ -262,7 +262,7 @@ export default function AboutPage() {
                   {
                     label: "Investment Banking",
                     title: "三菱UFJモルガン・スタンレー証券",
-                    desc: "投資銀行部門にて金融アドバイザリーに従事",
+                    desc: "投資銀行部門にてM＆Aアドバイザリーに従事",
                   },
                   {
                     label: "Venture / US CPA",
@@ -272,7 +272,7 @@ export default function AboutPage() {
                   {
                     label: "Founder",
                     title: "株式会社 Luare Consulting 設立",
-                    desc: "ハイエンド財務コンサルティング＆BPOファームとして独立",
+                    desc: "経理財務コンサルティング＆AIエージェントファーム設立",
                   },
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-start gap-6 group">
@@ -334,7 +334,7 @@ export default function AboutPage() {
                 </div>
                 <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-xs font-bold uppercase tracking-wider text-brand-slate/70">事業内容</dt>
-                  <dd className="mt-1 text-sm font-medium text-brand-charcoal sm:col-span-2 sm:mt-0">Finance BPO / 財務コンサルティング / 内部統制構築支援</dd>
+                  <dd className="mt-1 text-sm font-medium text-brand-charcoal sm:col-span-2 sm:mt-0">Accounting & Finance BPO / 会計コンサルティングサービス</dd>
                 </div>
                 <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-xs font-bold uppercase tracking-wider text-brand-slate/70">対応言語</dt>
@@ -342,7 +342,7 @@ export default function AboutPage() {
                 </div>
                 <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-xs font-bold uppercase tracking-wider text-brand-slate/70">代表</dt>
-                  <dd className="mt-1 text-sm font-medium text-brand-charcoal sm:col-span-2 sm:mt-0">陸 沿青 (USCPA)</dd>
+                  <dd className="mt-1 text-sm font-medium text-brand-charcoal sm:col-span-2 sm:mt-0">陸 沿青 (US.CPA)</dd>
                 </div>
               </dl>
             </div>

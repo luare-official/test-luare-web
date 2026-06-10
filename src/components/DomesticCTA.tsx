@@ -2,10 +2,9 @@ import Link from "next/link";
 
 export default function DomesticCTA() {
   const benefits = [
-    "経理部門の「属人化・ブラックボックス化」のリスク診断",
     "本当に「新規採用・増員」が必要かどうかの客観的な判断",
     "自社で取り組むべき「業務棚卸・効率化」の具体的な方向性",
-    "AIや自動化ツールで削減できる「残業時間」の予測"
+    "貴社の業務ボリュームに合わせた、最適なアウトソーシング体制と概算イメージの共有"
   ];
 
   return (
@@ -23,11 +22,11 @@ export default function DomesticCTA() {
         </span>
         
         <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-wide text-white mb-8 leading-[1.4]">
-          まずは、貴社の経理に潜む<br className="sm:hidden" />リスクを可視化しませんか？
+          「採用」か「外注」か。<br className="sm:hidden" />まずは経理の最適解を診断しませんか？
         </h2>
         
         <p className="text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl mx-auto mb-16">
-          現状の業務フローをお伺いし、どこに「属人化リスク」や「無駄なコスト」が潜んでいるかをプロの目で診断します。強引な営業は一切ありませんのでご安心ください。
+          「経理が何をしているか見えない」「現場から増員を求められているが、本当に採用すべきか迷っている」——そんな経営者様のリアルなお悩みに寄り添います。現状の課題を整理し、自社採用とアウトソーシングのどちらが最適か、客観的にアドバイスいたします。強引な営業は一切ありませんのでご安心ください。
         </p>
 
         <div className="bg-white/5 border border-white/10 rounded-2xl p-8 sm:p-12 backdrop-blur-sm text-left max-w-3xl mx-auto mb-16">

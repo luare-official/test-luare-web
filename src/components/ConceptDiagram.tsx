@@ -19,7 +19,7 @@ export default function ConceptDiagram({ activeTab, setActiveTab }: ConceptDiagr
   };
 
   return (
-    <section className="relative w-full bg-[#FAFAFA] py-20 sm:py-28 overflow-hidden border-b border-slate-200">
+    <section id="gateway" className="relative w-full bg-[#FAFAFA] py-20 sm:py-28 overflow-hidden border-b border-slate-200 scroll-mt-20">
       <div className="mx-auto max-w-6xl px-6 sm:px-10 relative z-10">
         
         {/* Header */}
@@ -28,7 +28,7 @@ export default function ConceptDiagram({ activeTab, setActiveTab }: ConceptDiagr
             Gateway
           </span>
           <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-medium tracking-wide text-brand-charcoal leading-[1.4]">
-            貴社の現在のフェーズ、または<br className="sm:hidden" />ご相談の目的に合わせてお進みください。
+            貴社の事業環境や目的に応じて、<br />最適なサービスをお選びください。
           </h2>
         </div>
 
@@ -38,19 +38,19 @@ export default function ConceptDiagram({ activeTab, setActiveTab }: ConceptDiagr
           {/* Card 1: Domestic */}
           <div 
             onClick={() => handleTabClick("domestic")}
-            className={`group cursor-pointer relative bg-white border rounded-2xl p-8 sm:p-12 flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-xl ${
+            className={`group cursor-pointer relative bg-white border rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-xl ${
               activeTab === "domestic" ? "border-brand-gold ring-1 ring-brand-gold" : "border-slate-200 hover:border-brand-gold/50"
             }`}
           >
             <div>
-              <div className="inline-block px-3 py-1 bg-slate-100 text-brand-slate text-[10px] font-bold uppercase tracking-widest rounded mb-6">
+              <div className="inline-block px-4 py-2 bg-brand-navy text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded mb-6 shadow-sm">
                 国内企業向け
               </div>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-brand-charcoal mb-6 leading-tight transition-colors group-hover:text-brand-gold">
+              <h3 className="font-serif text-xl sm:text-2xl lg:text-[1.65rem] font-bold text-brand-charcoal mb-6 leading-tight transition-colors group-hover:text-brand-gold">
                 採用に頼らない、<br />強い経理部門へ
               </h3>
               <p className="text-[15px] sm:text-base text-brand-slate/90 leading-relaxed font-medium mb-12">
-                経理担当者の退職リスク、属人化、ブラックボックス化を、最新テクノロジーによる標準化とプロの伴走で根本解決します。
+                経理担当者の退職リスク、属人化・ブラックボックス化を、経理財務特化型AIによる標準化と会計専門家の伴走で根本解決します。
               </p>
             </div>
             
@@ -64,38 +64,28 @@ export default function ConceptDiagram({ activeTab, setActiveTab }: ConceptDiagr
             </div>
           </div>
 
-          {/* Card 2: Global & Partners */}
+          {/* Card 2: Global */}
           <div 
             onClick={() => handleTabClick("global")}
-            className={`group cursor-pointer relative bg-brand-charcoal border rounded-2xl p-8 sm:p-12 flex flex-col justify-between transition-all duration-300 shadow-md hover:shadow-2xl overflow-hidden ${
-              activeTab === "global" ? "border-brand-gold ring-1 ring-brand-gold" : "border-brand-navy hover:border-brand-gold/50"
+            className={`group cursor-pointer relative bg-white border rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-xl ${
+              activeTab === "global" ? "border-brand-gold ring-1 ring-brand-gold" : "border-slate-200 hover:border-brand-gold/50"
             }`}
           >
-            {/* Dark background accent */}
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-navy to-brand-charcoal opacity-50 z-0"></div>
-            
-            <div className="relative z-10">
-              <div className="inline-block px-3 py-1 bg-white/10 text-white text-[10px] font-bold uppercase tracking-widest rounded mb-6">
+            <div>
+              <div className="inline-block px-4 py-2 bg-brand-navy text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded mb-6 shadow-sm">
                 外資系企業・グローバル向け
               </div>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-6 leading-tight transition-colors group-hover:text-brand-gold">
-                日本進出・経理財務の<br className="hidden lg:block"/>アウトソーシング（BPO）支援
+              <h3 className="font-serif text-xl sm:text-2xl lg:text-[1.65rem] font-bold text-brand-charcoal mb-6 leading-tight transition-colors group-hover:text-brand-gold">
+                国境や言語の壁を感じさせない、<br />透明な経理・財務体制へ
               </h3>
-              <p className="text-[15px] sm:text-base text-white/80 leading-relaxed font-medium mb-8">
-                日本法人の日常的な記帳業務から、IFRS/US-GAAP準拠の月次決算、グローバル本社（HQ）の要求水準を満たす英語レポーティングまで、スピーディかつワンストップで代行します。
+              <p className="text-[15px] sm:text-base text-brand-slate/90 leading-relaxed font-medium mb-12">
+                日本独自の複雑な記帳業務から、グローバル本社が求める高度な英語レポーティングまで。外資系特有の情報の分断を、経理財務特化型AIと会計専門家の伴走で根本解決します。
               </p>
-              
-              <div className="bg-white/5 border border-white/10 rounded-lg p-5 mb-12">
-                <p className="text-[13px] text-white/70 leading-relaxed">
-                  <span className="text-brand-gold font-bold mr-1">※</span>
-                  海外クライアントを持つ司法書士・行政書士・税理士・社労士の先生方との、業務協業・パートナーシップのご相談もこちらから承っております。
-                </p>
-              </div>
             </div>
             
-            <div className="relative z-10 mt-auto">
-              <button className="w-full py-4 px-6 border-2 border-brand-gold text-brand-gold font-bold rounded-full transition-all duration-300 group-hover:bg-brand-gold group-hover:text-brand-navy flex items-center justify-center gap-2">
-                外資系企業・士業向けの詳細を見る
+            <div className="mt-auto">
+              <button className="w-full py-4 px-6 border-2 border-brand-navy text-brand-navy font-bold rounded-full transition-all duration-300 group-hover:bg-brand-navy group-hover:text-white flex items-center justify-center gap-2">
+                外資系企業向けの詳細を見る
                 <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                 </svg>

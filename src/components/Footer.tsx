@@ -5,67 +5,26 @@ export default function Footer() {
     <footer id="contact" className="bg-brand-charcoal text-brand-silver border-t border-brand-darknavy/40 pt-20 pb-12">
       <div className="mx-auto max-w-7xl px-6 sm:px-8">
         
-        {/* Top Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 pb-16 border-b border-brand-silver/10">
+        {/* Top Flex Container */}
+        <div className="flex flex-col md:flex-row justify-between gap-12 pb-16 border-b border-brand-silver/10">
           
           {/* Left Column: Company Brief */}
-          <div className="md:col-span-5 flex flex-col items-start">
+          <div className="max-w-md flex flex-col items-start">
             <span className="font-serif text-lg font-medium tracking-[0.2em] text-brand-platinum mb-6">
               株式会社Luare Consulting
             </span>
-            <div className="text-xs text-brand-silver/80 leading-relaxed tracking-wider space-y-4 max-w-md">
+            <div className="text-xs text-brand-silver/80 leading-relaxed tracking-wider space-y-4">
               <p className="text-sm leading-relaxed text-slate-300">
-                Luare Consultingは、国内企業および外資系企業に対し、Accounting & Finance BPO・財務オペレーション構築・内部統制支援を提供しています。
+                Luare Consultingは、国内企業および外資系企業に対し、Accounting & Finance BPO/会計コンサルティングサービスを提供しています。
               </p>
               <p>
-                AIと財務専門家の知見を融合し、企業の持続的な成長を支える強固な財務基盤の構築を支援します。
+                財務専門家の知見とAI技術を融合し、企業の持続的な成長を支える強固なバックオフィス体制の構築を支援します。
               </p>
-            </div>
-          </div>
-
-          {/* Center Column: Services & Links */}
-          <div className="md:col-span-4 grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div>
-              <h4 className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-platinum mb-6">
-                Services
-              </h4>
-              <ul className="space-y-4 text-xs text-brand-silver/80">
-                <li className="tracking-wide">
-                  Accounting & Finance BPO
-                </li>
-                <li className="tracking-wide">
-                  Finance Setup
-                </li>
-                <li className="tracking-wide">
-                  Accounting & Finance Operations
-                </li>
-                <li className="tracking-wide">
-                  Governance & Internal Control
-                </li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-platinum mb-6">
-                Links
-              </h4>
-              <ul className="space-y-4 text-xs">
-                <li>
-                  <Link href="/insights" className="hover:text-brand-platinum transition-colors tracking-wide text-brand-silver/80">
-                    Insights (ブログ)
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about" className="hover:text-brand-platinum transition-colors tracking-wide text-brand-silver/80">
-                    会社概要 (About Us)
-                  </Link>
-                </li>
-              </ul>
             </div>
           </div>
 
           {/* Right Column: CONTACT */}
-          <div className="md:col-span-3">
+          <div className="w-full md:w-[320px] shrink-0">
             <h4 className="text-[10px] font-bold uppercase tracking-[0.25em] text-brand-platinum mb-6">
               Contact
             </h4>
@@ -80,9 +39,6 @@ export default function Footer() {
                 <span className="block text-[8px] font-semibold tracking-widest text-brand-silver/40 uppercase mb-1">Mail</span>
                 <a href="mailto:Y.Lu@Luare-Consulting.com" className="hover:text-brand-platinum transition-colors tracking-wide block">
                   Y.Lu@Luare-Consulting.com
-                </a>
-                <a href="mailto:contact@luare-consulting.com" className="hover:text-brand-platinum transition-colors tracking-wide block mt-1">
-                  contact@luare-consulting.com
                 </a>
               </li>
               <li>

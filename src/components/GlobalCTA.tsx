@@ -24,7 +24,7 @@ export default function GlobalCTA() {
           </span>
           
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-wide text-white mb-16 leading-[1.4]">
-            日本法人に最適な財務体制を<br className="sm:hidden" />シミュレーションしませんか？
+            日本法人に最適な財務体制を<br />シミュレーションしませんか？
           </h2>
 
           <div className="bg-white/5 border border-white/10 rounded-2xl p-8 sm:p-12 backdrop-blur-sm text-left max-w-3xl mx-auto mb-16">
@@ -76,7 +76,7 @@ export default function GlobalCTA() {
           </span>
           
           <p className="text-sm sm:text-base text-white/80 leading-[1.8] max-w-2xl mx-auto mb-12 font-medium">
-            海外クライアントの日本進出、および高度な経理・財務サポートに関する業務協業を歓迎しております。<br className="hidden sm:block" />クライアント様への同行提案なども可能ですので、お気軽にご相談ください。
+            海外クライアントの日本進出、および高度な経理・財務サポートに関する業務協業を歓迎しております。クライアント様への同行提案なども可能ですので、お気軽にご相談ください。
           </p>
 
           <div className="flex justify-center">

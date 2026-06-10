@@ -4,8 +4,7 @@ import { useState } from "react";
 import ConceptDiagram from "./ConceptDiagram";
 import DomesticPainPoints from "./DomesticPainPoints";
 import ComparisonMatrix from "./ComparisonMatrix";
-import CaseStudies from "./CaseStudies";
-import LuareApproach from "./LuareApproach";
+
 import DomesticCTA from "./DomesticCTA";
 import Services from "./Services";
 import GlobalDataPipeline from "./GlobalDataPipeline";
@@ -27,8 +26,6 @@ export default function SolutionExperience() {
             <>
               <DomesticPainPoints />
               <ComparisonMatrix activeTab={activeTab} />
-              <CaseStudies />
-              <LuareApproach />
               <Strengths />
               <DomesticCTA />
             </>
