@@ -177,7 +177,9 @@ export default function AboutPage() {
                     style={{ borderColor: "#C5A059" }}
                   >
                     <p className="font-serif text-lg sm:text-xl font-medium text-brand-charcoal leading-relaxed tracking-wide">
-                      「見えない経理リスク」から、経営者を解放するパートナーへ。
+                      「見えない経理リスク」から、
+                      <br />
+                      経営者を解放するパートナーへ。
                     </p>
                   </blockquote>
 
@@ -352,13 +354,9 @@ export default function AboutPage() {
         </section>
       </main>
 
-      {/* ──────────────── FOOTER ──────────────── */}
       <footer className="bg-brand-charcoal text-brand-silver border-t border-brand-darknavy/40 pt-12 pb-8">
         <div className="mx-auto max-w-7xl px-6 sm:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <span className="font-serif text-sm tracking-[0.2em] text-brand-platinum">
-              LUARE
-            </span>
             <span className="text-[10px] tracking-widest text-brand-silver/40 font-mono">
               Luare Consulting Group © 2026
             </span>

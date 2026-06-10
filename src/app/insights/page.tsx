@@ -126,13 +126,9 @@ export default function InsightsPage() {
         </section>
       </main>
 
-      {/* ──────────────── FOOTER ──────────────── */}
       <footer className="bg-brand-charcoal text-brand-silver border-t border-brand-darknavy/40 pt-12 pb-8">
         <div className="mx-auto max-w-7xl px-6 sm:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <span className="font-serif text-sm tracking-[0.2em] text-brand-platinum">
-              LUARE
-            </span>
             <span className="text-[10px] tracking-widest text-brand-silver/40 font-mono">
               Luare Consulting Group © 2026
             </span>

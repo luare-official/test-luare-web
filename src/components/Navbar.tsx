@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface NavbarProps {
   theme?: "light" | "dark";
@@ -9,7 +10,8 @@ interface NavbarProps {
 }
 
 export default function Navbar({ theme = "dark", solid = false }: NavbarProps) {
-  const [lang, setLang] = useState<"JP" | "EN" | "ZH">("JP");
+  const pathname = usePathname() || "";
+  const currentLang: "JP" | "EN" | "ZH" = pathname.startsWith("/en") ? "EN" : pathname.startsWith("/zh") ? "ZH" : "JP";
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -101,17 +103,30 @@ export default function Navbar({ theme = "dark", solid = false }: NavbarProps) {
 
           {/* Lang Selector */}
           <div className={`flex items-center border rounded-none overflow-hidden p-0.5 transition-colors ${toggleContainerBg}`}>
-            {(["JP", "EN", "ZH"] as const).map((l) => (
-              <button
-                key={l}
-                onClick={() => setLang(l)}
-                className={`px-3 py-1 text-[10px] font-semibold tracking-wider transition-all rounded-none cursor-pointer ${
-                  lang === l ? toggleBtnActive : toggleBtnInactive
-                }`}
-              >
-                {l}
-              </button>
-            ))}
+            <Link
+              href="/"
+              className={`px-3 py-1 text-[10px] font-semibold tracking-wider transition-all rounded-none cursor-pointer ${
+                currentLang === "JP" ? toggleBtnActive : toggleBtnInactive
+              }`}
+            >
+              JP
+            </Link>
+            <Link
+              href="/en"
+              className={`px-3 py-1 text-[10px] font-semibold tracking-wider transition-all rounded-none cursor-pointer ${
+                currentLang === "EN" ? toggleBtnActive : toggleBtnInactive
+              }`}
+            >
+              EN
+            </Link>
+            <button
+              onClick={() => {}}
+              className={`px-3 py-1 text-[10px] font-semibold tracking-wider transition-all rounded-none cursor-pointer ${
+                currentLang === "ZH" ? toggleBtnActive : toggleBtnInactive
+              }`}
+            >
+              ZH
+            </button>
           </div>
 
           {/* Contact Button */}
@@ -127,17 +142,30 @@ export default function Navbar({ theme = "dark", solid = false }: NavbarProps) {
         <div className="flex md:hidden items-center gap-4">
           {/* Lang Selector (Small) */}
           <div className={`flex items-center border rounded-none overflow-hidden p-0.5 transition-colors ${toggleContainerBg}`}>
-            {(["JP", "EN", "ZH"] as const).map((l) => (
-              <button
-                key={l}
-                onClick={() => setLang(l)}
-                className={`px-2 py-0.5 text-[9px] font-semibold tracking-wider transition-all rounded-none cursor-pointer ${
-                  lang === l ? toggleBtnActive : toggleBtnInactive
-                }`}
-              >
-                {l}
-              </button>
-            ))}
+            <Link
+              href="/"
+              className={`px-2 py-0.5 text-[9px] font-semibold tracking-wider transition-all rounded-none cursor-pointer ${
+                currentLang === "JP" ? toggleBtnActive : toggleBtnInactive
+              }`}
+            >
+              JP
+            </Link>
+            <Link
+              href="/en"
+              className={`px-2 py-0.5 text-[9px] font-semibold tracking-wider transition-all rounded-none cursor-pointer ${
+                currentLang === "EN" ? toggleBtnActive : toggleBtnInactive
+              }`}
+            >
+              EN
+            </Link>
+            <button
+              onClick={() => {}}
+              className={`px-2 py-0.5 text-[9px] font-semibold tracking-wider transition-all rounded-none cursor-pointer ${
+                currentLang === "ZH" ? toggleBtnActive : toggleBtnInactive
+              }`}
+            >
+              ZH
+            </button>
           </div>
 
           {/* Hamburger Menu Button */}
