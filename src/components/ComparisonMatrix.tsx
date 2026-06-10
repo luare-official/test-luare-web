@@ -106,8 +106,8 @@ export default function ComparisonMatrix({ activeTab }: ComparisonMatrixProps) {
               <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
                 Why Us
               </span>
-              <h2 className="font-serif text-lg sm:text-xl md:text-4xl font-medium tracking-wide text-brand-charcoal mt-4 leading-[1.4] break-keep">
-                なぜ、自社で「採用」を増やす前に<br className="hidden md:block" />仕組みを整えるべきなのか？
+              <h2 className="font-serif text-xl sm:text-2xl md:text-4xl font-medium tracking-wide text-brand-charcoal mt-4 leading-[1.4] break-keep">
+                なぜ、自社で「採用」を増やす前に<br />仕組みを整えるべきなのか？
               </h2>
             </div>
 
