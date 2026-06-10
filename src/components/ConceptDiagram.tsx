@@ -19,11 +19,11 @@ export default function ConceptDiagram({ activeTab, setActiveTab }: ConceptDiagr
   };
 
   return (
-    <section id="gateway" className="relative w-full bg-[#FAFAFA] py-14 sm:py-20 md:py-28 overflow-hidden border-b border-slate-200 scroll-mt-20">
+    <section id="gateway" className="relative w-full bg-[#FAFAFA] py-14 sm:py-20 md:py-16 overflow-hidden border-b border-slate-200 scroll-mt-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-10 relative z-10">
         
         {/* Header */}
-        <div className="text-center mb-14 sm:mb-20">
+        <div className="text-center mb-14 sm:mb-20 md:mb-12">
           <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-gold mb-6 block">
             Gateway
           </span>
@@ -38,18 +38,18 @@ export default function ConceptDiagram({ activeTab, setActiveTab }: ConceptDiagr
           {/* Card 1: Domestic */}
           <div 
             onClick={() => handleTabClick("domestic")}
-            className={`group cursor-pointer relative bg-white border rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-xl ${
+            className={`group cursor-pointer relative bg-white border rounded-2xl p-6 sm:p-8 md:p-6 lg:p-7 flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-xl ${
               activeTab === "domestic" ? "border-brand-gold ring-1 ring-brand-gold" : "border-slate-200 hover:border-brand-gold/50"
             }`}
           >
             <div>
-              <div className="inline-block px-4 py-2 bg-brand-navy text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded mb-6 shadow-sm">
+              <div className="inline-block px-4 py-2 bg-brand-navy text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded mb-6 md:mb-4 shadow-sm">
                 国内企業向け
               </div>
-              <h3 className="font-serif text-lg sm:text-xl lg:text-[1.65rem] font-bold text-brand-charcoal mb-6 leading-tight transition-colors group-hover:text-brand-gold">
+              <h3 className="font-serif text-lg sm:text-xl lg:text-[1.65rem] font-bold text-brand-charcoal mb-6 md:mb-4 leading-tight transition-colors group-hover:text-brand-gold">
                 採用に頼らない、強い経理部門へ
               </h3>
-              <p className="text-[15px] sm:text-base text-brand-slate/90 leading-relaxed font-medium mb-12">
+              <p className="text-[15px] sm:text-[17px] md:text-base text-brand-slate/90 leading-relaxed font-medium mb-12 md:mb-8">
                 経理担当者の退職リスク、属人化・ブラックボックス化を、経理財務特化型AIによる標準化と会計専門家の伴走で根本解決します。
               </p>
             </div>
@@ -67,18 +67,18 @@ export default function ConceptDiagram({ activeTab, setActiveTab }: ConceptDiagr
           {/* Card 2: Global */}
           <div 
             onClick={() => handleTabClick("global")}
-            className={`group cursor-pointer relative bg-white border rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-xl ${
+            className={`group cursor-pointer relative bg-white border rounded-2xl p-6 sm:p-8 md:p-6 lg:p-7 flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-xl ${
               activeTab === "global" ? "border-brand-gold ring-1 ring-brand-gold" : "border-slate-200 hover:border-brand-gold/50"
             }`}
           >
             <div>
-              <div className="inline-block px-4 py-2 bg-brand-navy text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded mb-6 shadow-sm">
+              <div className="inline-block px-4 py-2 bg-brand-navy text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded mb-6 md:mb-4 shadow-sm">
                 外資系企業・グローバル向け
               </div>
-              <h3 className="font-serif text-lg sm:text-xl lg:text-[1.65rem] font-bold text-brand-charcoal mb-6 leading-tight transition-colors group-hover:text-brand-gold">
+              <h3 className="font-serif text-lg sm:text-xl lg:text-[1.65rem] font-bold text-brand-charcoal mb-6 md:mb-4 leading-tight transition-colors group-hover:text-brand-gold">
                 国境や言語の壁を感じさせない、<br className="hidden md:inline" />透明な経理・財務体制へ
               </h3>
-              <p className="text-[15px] sm:text-base text-brand-slate/90 leading-relaxed font-medium mb-12">
+              <p className="text-[15px] sm:text-[17px] md:text-base text-brand-slate/90 leading-relaxed font-medium mb-12 md:mb-8">
                 日本独自の複雑な記帳業務から、グローバル本社が求める高度な英語レポーティングまで。外資系特有の情報の分断を、経理財務特化型AIと会計専門家の伴走で根本解決します。
               </p>
             </div>

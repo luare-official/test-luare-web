@@ -7,7 +7,7 @@ export default function DomesticPainPoints() {
   ];
 
   return (
-    <div className="w-full bg-brand-white py-16 sm:py-24 animate-in fade-in duration-700">
+    <div className="w-full bg-brand-white pt-16 pb-4 sm:pt-24 sm:pb-6 animate-in fade-in duration-700">
       <div className="mx-auto max-w-4xl px-6 sm:px-10">
         
         {/* Header */}

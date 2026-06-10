@@ -84,14 +84,6 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
               無料相談を予約する
             </Link>
-
-            {/* Secondary CTA */}
-            <Link
-              href="#gateway"
-              className="inline-flex items-center justify-center bg-white text-brand-navy border-[1.5px] border-brand-navy px-8 sm:px-12 py-4 sm:py-5 text-sm font-bold uppercase tracking-[0.15em] hover:bg-brand-navy/5 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 w-full sm:w-auto rounded-sm"
-            >
-              サービスを見る
-            </Link>
           </div>
 
         </div>

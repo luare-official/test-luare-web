@@ -96,7 +96,7 @@ const domesticRows = [
 
 export default function ComparisonMatrix({ activeTab }: ComparisonMatrixProps) {
   return (
-    <section id="comparison" className="py-16 sm:py-24 md:py-32 bg-brand-white border-b border-slate-100">
+    <section id="comparison" className="pt-4 md:pt-6 pb-16 sm:pb-24 md:pb-32 bg-brand-white border-b border-slate-100">
       <div className="mx-auto max-w-7xl px-6 sm:px-10">
 
         {/* ── DOMESTIC COMPARISON ── */}
@@ -111,17 +111,17 @@ export default function ComparisonMatrix({ activeTab }: ComparisonMatrixProps) {
               </h2>
             </div>
 
-            <div className="max-w-5xl mx-auto overflow-x-auto mb-16">
+            <div className="max-w-5xl md:max-w-[1000px] mx-auto overflow-x-auto mb-16">
               <table className="w-full min-w-[600px] border-collapse">
                 <thead>
                   <tr>
-                    <th className="w-auto whitespace-nowrap py-5 pr-8 text-left align-bottom">
+                    <th className="w-auto md:w-[35%] whitespace-nowrap py-5 pr-8 md:pr-0 text-left md:text-center align-bottom">
                       <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-slate/40">
                         比較項目
                       </span>
                     </th>
                     <th
-                      className="w-1/2 px-8 py-5 text-left align-bottom border-x-[1.5px] relative"
+                      className="w-1/2 md:w-[30%] px-4 md:px-6 py-5 text-left md:text-center align-bottom border-x-[1.5px] relative"
                       style={{ borderColor: '#C5A059', backgroundColor: 'rgba(197, 160, 89, 0.06)' }}
                     >
                       <div className="absolute top-0 left-0 right-0 h-[2.5px]" style={{ backgroundColor: '#C5A059' }} />
@@ -132,7 +132,7 @@ export default function ComparisonMatrix({ activeTab }: ComparisonMatrixProps) {
                         Luare Consulting
                       </span>
                     </th>
-                    <th className="w-1/2 px-8 py-5 text-left align-bottom border-b border-slate-100">
+                    <th className="w-1/2 md:w-[35%] px-4 md:px-6 py-5 text-left md:text-center align-bottom border-b border-slate-100">
                       <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-slate/35 block mb-1.5">
                         Traditional Option
                       </span>
@@ -145,17 +145,23 @@ export default function ComparisonMatrix({ activeTab }: ComparisonMatrixProps) {
                 <tbody>
                   {domesticRows.map((row, idx) => (
                     <tr key={idx} className={`group transition-colors duration-150 hover:bg-slate-50/60 ${idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/30'}`}>
-                      <td className="py-5 pr-8 align-middle border-t border-slate-100 whitespace-nowrap">
-                        <span className="text-xs font-bold text-brand-charcoal/80 leading-snug tracking-wide">{row.item}</span>
+                      <td className="py-5 pr-8 md:pr-0 align-middle border-t border-slate-100 whitespace-nowrap">
+                        <div className="text-left md:text-center text-xs font-bold text-brand-charcoal/80 whitespace-normal leading-snug tracking-wide">
+                          {row.item}
+                        </div>
                       </td>
                       <td
-                        className="px-8 py-5 text-left align-middle border-t border-x-[1.5px]"
+                        className="px-4 md:px-6 py-5 align-middle border-t border-x-[1.5px]"
                         style={{ borderColor: '#C5A059', borderTopColor: 'rgba(197, 160, 89, 0.2)', backgroundColor: 'rgba(197, 160, 89, 0.06)' }}
                       >
-                        <span className="text-xs font-bold text-brand-charcoal leading-snug">{row.luare}</span>
+                        <div className="text-left md:text-center text-xs font-bold text-brand-charcoal leading-snug">
+                          {row.luare}
+                        </div>
                       </td>
-                      <td className="px-8 py-5 text-left align-middle border-t border-slate-100">
-                        <span className="text-xs text-brand-slate/45 font-medium leading-snug">{row.inhouse}</span>
+                      <td className="px-4 md:px-6 py-5 align-middle border-t border-slate-100">
+                        <div className="text-left md:text-center text-xs text-brand-slate/45 font-medium leading-snug">
+                          {row.inhouse}
+                        </div>
                       </td>
                     </tr>
                   ))}
@@ -172,9 +178,13 @@ export default function ComparisonMatrix({ activeTab }: ComparisonMatrixProps) {
 
             <div className="mb-12 max-w-3xl">
               <p className="text-base sm:text-lg leading-relaxed font-bold text-brand-navy">
-                新しく人材を採用する場合、求人費・社保・退職リスクといった「見えないコスト」が常に発生します。
+                新しく人材を採用する場合、求人費・社保・退職リスク
+                <br />
+                といった「見えないコスト」が常に発生します。
                 <br className="hidden sm:block" /><br className="hidden sm:block" />
-                Luare Consultingでは、業務量に応じた最適化設計でこれらのリスクとコストを根本から排除します。
+                Luare Consultingでは、業務量に応じた最適化設計で
+                <br />
+                これらのリスクとコストを根本から排除します。
               </p>
             </div>
 
@@ -253,25 +263,25 @@ export default function ComparisonMatrix({ activeTab }: ComparisonMatrixProps) {
               </div>
             </div>
 
-            <div className="max-w-5xl mx-auto overflow-x-auto">
+            <div className="max-w-5xl md:max-w-4xl mx-auto overflow-x-auto">
               <table className="w-full min-w-[700px] border-collapse">
                 <thead>
                   <tr>
-                    <th className="w-auto whitespace-nowrap py-5 pr-8 text-left align-bottom">
+                    <th className="w-auto md:w-[22%] whitespace-nowrap py-5 pr-8 md:pr-0 text-left md:text-center align-bottom">
                       <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-slate/40">比較項目</span>
                     </th>
                     <th
-                      className="w-1/3 px-8 py-5 text-left align-bottom border-x-[1.5px] relative"
+                      className="w-1/3 md:w-[26%] px-4 md:px-6 py-5 text-left md:text-center align-bottom border-x-[1.5px] relative"
                       style={{ borderColor: '#C5A059', backgroundColor: 'rgba(197, 160, 89, 0.06)' }}
                     >
                       <div className="absolute top-0 left-0 right-0 h-[2.5px]" style={{ backgroundColor: '#C5A059' }} />
                       <span className="text-[9px] font-bold uppercase tracking-[0.35em] block mb-1.5" style={{ color: '#C5A059' }}>Recommended</span>
                       <span className="font-serif text-base font-bold text-brand-charcoal">Luare Consulting</span>
                     </th>
-                    <th className="w-1/3 px-8 py-5 text-left align-bottom border-b border-slate-100">
+                    <th className="w-1/3 md:w-[26%] px-4 md:px-6 py-5 text-left md:text-center align-bottom border-b border-slate-100">
                       <span className="font-serif text-sm font-medium text-brand-slate/50">大手グローバルBPO</span>
                     </th>
-                    <th className="w-1/3 px-8 py-5 text-left align-bottom border-b border-slate-100">
+                    <th className="w-1/3 md:w-[26%] px-4 md:px-6 py-5 text-left md:text-center align-bottom border-b border-slate-100">
                       <span className="font-serif text-sm font-medium text-brand-slate/50">自社採用（インハウス）</span>
                     </th>
                   </tr>
@@ -279,20 +289,28 @@ export default function ComparisonMatrix({ activeTab }: ComparisonMatrixProps) {
                 <tbody>
                   {globalRows.map((row, idx) => (
                     <tr key={idx} className={`group transition-colors duration-150 hover:bg-slate-50/60 ${idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/30'}`}>
-                      <td className="py-5 pr-8 align-middle border-t border-slate-100 whitespace-nowrap">
-                        <span className="text-xs font-bold text-brand-charcoal/80 leading-snug tracking-wide">{row.item}</span>
+                      <td className="py-5 pr-8 md:pr-0 align-middle border-t border-slate-100 whitespace-nowrap">
+                        <div className="text-left md:text-center text-xs font-bold text-brand-charcoal/80 whitespace-normal leading-snug tracking-wide">
+                          {row.item}
+                        </div>
                       </td>
                       <td
-                        className="px-8 py-5 text-left align-middle border-t border-x-[1.5px]"
+                        className="px-4 md:px-6 py-5 align-middle border-t border-x-[1.5px]"
                         style={{ borderColor: '#C5A059', borderTopColor: 'rgba(197, 160, 89, 0.2)', backgroundColor: 'rgba(197, 160, 89, 0.06)' }}
                       >
-                        <span className="text-xs font-bold text-brand-charcoal leading-snug">{row.luare}</span>
+                        <div className="text-left md:text-center text-xs font-bold text-brand-charcoal leading-snug">
+                          {row.luare}
+                        </div>
                       </td>
-                      <td className="px-8 py-5 text-left align-middle border-t border-slate-100">
-                        <span className="text-xs text-brand-slate/45 font-medium leading-snug">{row.big4}</span>
+                      <td className="px-4 md:px-6 py-5 align-middle border-t border-slate-100">
+                        <div className="text-left md:text-center text-xs text-brand-slate/45 font-medium leading-snug">
+                          {row.big4}
+                        </div>
                       </td>
-                      <td className="px-8 py-5 text-left align-middle border-t border-slate-100">
-                        <span className="text-xs text-brand-slate/45 font-medium leading-snug">{row.inhouse}</span>
+                      <td className="px-4 md:px-6 py-5 align-middle border-t border-slate-100">
+                        <div className="text-left md:text-center text-xs text-brand-slate/45 font-medium leading-snug">
+                          {row.inhouse}
+                        </div>
                       </td>
                     </tr>
                   ))}

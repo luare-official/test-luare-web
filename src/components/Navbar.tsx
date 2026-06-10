@@ -84,27 +84,21 @@ export default function Navbar({ theme = "dark", solid = false }: NavbarProps) {
           </Link>
         </div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6 lg:gap-10">
-          <Link href="/#concept" className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors ${linkColor}`}>
-            Concept
-          </Link>
-          <Link href="/#gateway" className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors ${linkColor}`}>
-            Services
-          </Link>
-          <Link href="/#strengths" className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors ${linkColor}`}>
-            Strengths
-          </Link>
-          <Link href="/insights" className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors ${linkColor}`}>
-            Insights
-          </Link>
-          <Link href="/about" className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors ${linkColor}`}>
-            About Us
-          </Link>
-        </nav>
+        {/* Right side group (Navigation + Controls - Desktop) */}
+        <div className="hidden md:flex items-center gap-6 lg:gap-10">
+          {/* Desktop Navigation */}
+          <nav className="flex items-center gap-6 lg:gap-10">
+            <Link href="/#gateway" className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors ${linkColor}`}>
+              Services
+            </Link>
+            <Link href="/insights" className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors ${linkColor}`}>
+              Insights
+            </Link>
+            <Link href="/about" className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors ${linkColor}`}>
+              About Us
+            </Link>
+          </nav>
 
-        {/* Right Controls: Lang Toggle & CTA (Desktop) */}
-        <div className="hidden md:flex items-center gap-6">
           {/* Lang Selector */}
           <div className={`flex items-center border rounded-none overflow-hidden p-0.5 transition-colors ${toggleContainerBg}`}>
             {(["JP", "EN", "ZH"] as const).map((l) => (
@@ -123,7 +117,7 @@ export default function Navbar({ theme = "dark", solid = false }: NavbarProps) {
           {/* Contact Button */}
           <Link
             href="/contact"
-            className={`inline-flex items-center justify-center border px-5 py-2 text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-300 ${contactBtnStyle}`}
+            className={`inline-flex items-center justify-center border px-5 py-2 text-[10px] font-bold uppercase tracking-[0.25em] transition-all duration-300 ${contactBtnStyle}`}
           >
             Contact
           </Link>
@@ -173,25 +167,11 @@ export default function Navbar({ theme = "dark", solid = false }: NavbarProps) {
         <div className="md:hidden fixed inset-x-0 top-20 bottom-0 bg-brand-navy z-40 flex flex-col justify-between px-6 py-8 border-t border-brand-silver/10 overflow-y-auto animate-in fade-in slide-in-from-top-4 duration-300">
           <nav className="flex flex-col gap-6 text-left">
             <Link
-              href="/#concept"
-              onClick={() => setIsMenuOpen(false)}
-              className="text-sm font-semibold tracking-[0.2em] text-brand-silver hover:text-brand-platinum transition-colors py-2 border-b border-white/5 uppercase"
-            >
-              Concept
-            </Link>
-            <Link
               href="/#gateway"
               onClick={() => setIsMenuOpen(false)}
               className="text-sm font-semibold tracking-[0.2em] text-brand-silver hover:text-brand-platinum transition-colors py-2 border-b border-white/5 uppercase"
             >
               Services
-            </Link>
-            <Link
-              href="/#strengths"
-              onClick={() => setIsMenuOpen(false)}
-              className="text-sm font-semibold tracking-[0.2em] text-brand-silver hover:text-brand-platinum transition-colors py-2 border-b border-white/5 uppercase"
-            >
-              Strengths
             </Link>
             <Link
               href="/insights"
