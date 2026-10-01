@@ -1,20 +1,21 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import SolutionExperience from "@/components/SolutionExperience";
+import HomeSections from "@/components/HomeSections";
 import Insights from "@/components/Insights";
+import HomeContact from "@/components/HomeContact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <main className="flex-1">
+      <Navbar overlay />
+      <main className="flex-1 luare-home">
         <Hero />
-        <SolutionExperience />
+        <HomeSections />
         <Insights />
+        <HomeContact />
       </main>
       <Footer />
     </>
   );
 }
-
