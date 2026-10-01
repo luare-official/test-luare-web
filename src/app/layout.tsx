@@ -38,6 +38,14 @@ export default function RootLayout({
       lang="ja"
       className={`${inter.variable} ${notoSerif.variable} ${notoSans.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-brand-white text-brand-charcoal font-sans selection:bg-brand-navy selection:text-white">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-39MBNBLCY1"
