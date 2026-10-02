@@ -79,6 +79,55 @@ export default function HomeSections() {
         </div>
       </section>
 
+      <section className="luare-section luare-professionals" id="professionals">
+        <div className="luare-container">
+          <div className="luare-two-col-heading">
+            <ScrollReveal>
+              <p className="luare-eyebrow">professionals / trust</p>
+            </ScrollReveal>
+            <ScrollReveal delay={80}>
+              <h2 className="luare-h2">
+                専門家とともに、
+                <br />
+                確かな品質を。
+              </h2>
+              <p className="luare-intro">
+                無形のAccounting &amp; Finance支援だからこそ、「誰が関わるのか」が見えることを大切にします。
+              </p>
+            </ScrollReveal>
+          </div>
+
+          <div className="luare-professional-grid">
+            {[
+              ["Luare Consulting", "Representative", "USCPA, Guam, Inactive"],
+              ["Professional", "Professional 01", "日本橋国際会計事務所｜仮配置"],
+              ["Professional", "Professional 02", "日本橋国際会計事務所｜仮配置"],
+            ].map(([role, name, meta], index) => (
+              <ScrollReveal key={name} delay={index * 80}>
+                <article className="luare-professional">
+                  <div className="luare-professional-photo">
+                    <Image
+                      src="/images/Photo.png"
+                      alt="専門家プロフィール写真（仮配置）"
+                      width={900}
+                      height={1125}
+                      className="h-full w-full object-cover"
+                      unoptimized
+                    />
+                  </div>
+                  <p className="luare-professional-role">{role}</p>
+                  <h3>{name}</h3>
+                  <p className="luare-professional-meta">{meta}</p>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
+          <p className="luare-professional-note">
+            ※ 現在はレイアウト確認用として同じ写真を仮配置しています。正式公開時に許諾済み写真と正確な肩書き・関係性へ差し替えます。
+          </p>
+        </div>
+      </section>
+
       <section className="luare-photo-story">
         <div className="luare-photo-story-grid">
           <div className="luare-photo-story-media">
