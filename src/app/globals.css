@@ -1397,24 +1397,21 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  transform: scale(1.02);
-  animation: luareHumanHeroZoom 12s ease-out both;
-}
-
-@keyframes luareHumanHeroZoom {
-  from { transform: scale(1.035); }
-  to { transform: scale(1); }
+  transform: none;
+  animation: none;
+  filter: none;
+  image-rendering: auto;
 }
 
 .luare-hero-human .luare-hero-overlay {
   background:
     linear-gradient(90deg,
-      rgba(255,255,255,.98) 0%,
-      rgba(255,255,255,.95) 25%,
-      rgba(255,255,255,.72) 42%,
-      rgba(255,255,255,.18) 61%,
-      rgba(255,255,255,0) 78%),
-    linear-gradient(180deg, rgba(255,255,255,.16) 0%, rgba(242,248,252,.06) 100%);
+      rgba(255,255,255,.99) 0%,
+      rgba(255,255,255,.97) 24%,
+      rgba(255,255,255,.82) 35%,
+      rgba(255,255,255,.38) 44%,
+      rgba(255,255,255,.08) 52%,
+      rgba(255,255,255,0) 58%);
 }
 
 .luare-hero-human .luare-hero-inner {
@@ -1493,9 +1490,9 @@ body {
     background:
       linear-gradient(90deg,
         rgba(255,255,255,.98) 0%,
-        rgba(255,255,255,.92) 42%,
-        rgba(255,255,255,.38) 68%,
-        rgba(255,255,255,.08) 100%);
+        rgba(255,255,255,.90) 38%,
+        rgba(255,255,255,.30) 52%,
+        rgba(255,255,255,0) 64%);
   }
 
   .luare-hero-human .luare-hero-copy {
