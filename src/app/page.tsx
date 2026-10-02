@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      <Navbar overlay />
+      <Navbar solid />
       <main className="flex-1 luare-home">
         <Hero />
         <HomeSections />

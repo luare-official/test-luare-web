@@ -99,7 +99,7 @@ export default function HomeSections() {
 
           <div className="luare-professional-grid">
             {[
-              ["Luare Consulting", "Representative", "USCPA, Guam, Inactive"],
+              ["Luare Consulting", "陸 沿青", "Managing Partner / USCPA, Guam, Inactive"],
               ["Professional", "Professional 01", "日本橋国際会計事務所｜仮配置"],
               ["Professional", "Professional 02", "日本橋国際会計事務所｜仮配置"],
             ].map(([role, name, meta], index) => (
