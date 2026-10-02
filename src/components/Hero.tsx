@@ -1,44 +1,32 @@
+import ScrollReveal from "./ScrollReveal";
+
 export default function Hero() {
   return (
-    <section className="luare-hero luare-hero-human">
-      <div className="luare-hero-media" aria-hidden="true">
-        <img
-          className="luare-hero-static-image"
-          src="/images/luare-hero-consulting.avif"
-          alt=""
-        />
-        <div className="luare-hero-overlay" />
+    <section className="luare-v6-hero">
+      <div className="luare-v6-hero-media" aria-hidden="true">
+        <img src="/images/luare-hero-consulting.avif" alt="" className="luare-v6-hero-image" />
+        <div className="luare-v6-hero-overlay" />
       </div>
-
-      <div className="luare-container luare-hero-inner">
-        <div className="luare-hero-copy">
-          <p className="luare-hero-kicker">
-            ACCOUNTING &amp; FINANCE / GLOBAL / OPERATIONS
-          </p>
-
-          <h1 className="luare-hero-title">
-            <span className="luare-title-line">
-              <span>経理・財務を、</span>
-            </span>
-            <span className="luare-title-line">
-              <span>設計から実務まで。</span>
-            </span>
+      <div className="luare-v6-container luare-v6-hero-inner">
+        <ScrollReveal className="luare-v6-hero-copy">
+          <p className="luare-v6-eyebrow">GLOBAL ACCOUNTING &amp; FINANCE</p>
+          <h1>
+            外資系・グローバル企業の
+            <br />
+            会計・税務・監査を、もっとスムーズに。
           </h1>
-
-          <p className="luare-hero-lead">
-            外資系日本法人・海外子会社を持つ企業を中心に、会計・財務コンサルティングから
-            Finance Operations、BPOまで支援します。
+          <p className="luare-v6-hero-lead">
+            IFRS / US-GAAP、海外親会社へのレポーティング、監査、税務、M&amp;A・Valuationまで。
+            国際業務の経験豊富な公認会計士・税理士・USCPAが、日本法人と海外本社の間に立ち、
+            複雑な会計・財務課題を支援します。
           </p>
-
-          <a href="#services" className="luare-hero-text-link">
-            支援領域を見る <span>→</span>
+          <a href="/contact" className="luare-v6-primary-cta">
+            初回無料相談をする <span>→</span>
           </a>
-        </div>
-      </div>
-
-      <div className="luare-scroll-cue" aria-hidden="true">
-        <span>scroll</span>
-        <i />
+          <p className="luare-v6-trustline">
+            初回相談無料 <i /> 英語対応 <i /> IFRS / US-GAAP対応
+          </p>
+        </ScrollReveal>
       </div>
     </section>
   );

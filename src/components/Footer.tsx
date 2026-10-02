@@ -11,24 +11,20 @@ export default function Footer() {
               <small>ACCOUNTING &amp; FINANCE</small>
             </Link>
             <p className="luare-footer-desc">
-              国内企業および外資系・グローバル企業に対し、Accounting &amp; Finance領域の
-              コンサルティング、Finance Operations設計、経理BPOを提供しています。
+              外資系・グローバル企業を中心に、会計・財務、監査・税務、
+              M&amp;A・Valuation、Global Reportingなどの専門課題を支援します。
             </p>
           </div>
-
           <nav className="luare-footer-links" aria-label="Footer navigation">
             <Link href="/#services">Services</Link>
+            <Link href="/#people">People</Link>
+            <Link href="/#case-studies">Case Studies</Link>
             <Link href="/insights">Insights</Link>
             <Link href="/about">About Us</Link>
             <Link href="/contact">Contact</Link>
-            <Link href="/en">English</Link>
-            <Link href="/zh">中文</Link>
           </nav>
         </div>
-
-        <div className="luare-footer-copy">
-          © 2026 Luare Consulting
-        </div>
+        <div className="luare-footer-copy">© 2026 Luare Consulting</div>
       </div>
     </footer>
   );
