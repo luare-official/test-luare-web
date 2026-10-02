@@ -1324,3 +1324,61 @@ body {
     background-position: 55% 52%;
   }
 }
+
+
+/* Professionals / Trust — keeps the ANA-inspired editorial system */
+.luare-professionals {
+  background: #f8fcff;
+}
+.luare-professional-grid {
+  display: grid;
+  grid-template-columns: 1.18fr 1fr 1fr;
+  gap: 26px;
+  margin-top: 68px;
+  padding-top: 34px;
+  border-top: 1px solid #e1e7eb;
+}
+.luare-professional-photo {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #eaf3f8;
+}
+.luare-professional-grid > .luare-reveal:first-child .luare-professional-photo {
+  aspect-ratio: 1.05 / 1;
+}
+.luare-professional-role {
+  margin-top: 18px;
+  color: #05a9e6;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+.luare-professional h3 {
+  margin-top: 5px;
+  color: #34383d;
+  font-size: 20px;
+  font-weight: 500;
+}
+.luare-professional-meta {
+  margin-top: 5px;
+  color: #7b8790;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.luare-professional-note {
+  margin-top: 25px;
+  color: #939ca4;
+  font-size: 11px;
+}
+@media (max-width: 900px) {
+  .luare-professional-grid { grid-template-columns: 1fr 1fr; }
+  .luare-professional-grid > .luare-reveal:first-child { grid-column: 1 / -1; }
+  .luare-professional-grid > .luare-reveal:first-child .luare-professional-photo { aspect-ratio: 1.55 / 1; }
+}
+@media (max-width: 580px) {
+  .luare-professional-grid { grid-template-columns: 1fr; }
+  .luare-professional-grid > .luare-reveal:first-child { grid-column: auto; }
+  .luare-professional-grid > .luare-reveal:first-child .luare-professional-photo { aspect-ratio: 4 / 5; }
+}
