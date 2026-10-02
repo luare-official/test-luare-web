@@ -4,7 +4,7 @@ export default function Hero() {
       <div className="luare-hero-media" aria-hidden="true">
         <img
           className="luare-hero-static-image"
-          src="/images/luare-hero-consulting.webp"
+          src="/images/luare-hero-consulting.avif"
           alt=""
         />
         <div className="luare-hero-overlay" />
