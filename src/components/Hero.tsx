@@ -5,16 +5,16 @@ import { useEffect, useState } from "react";
 
 const slides = [
   {
+    src: "https://images.pexels.com/photos/31698252/pexels-photo-31698252.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    alt: "京都・伏見稲荷大社の朱色の鳥居",
+  },
+  {
+    src: "https://images.pexels.com/photos/31071545/pexels-photo-31071545.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    alt: "桜と富士山の日本の春景色",
+  },
+  {
     src: "/images/tokyo_tower_bg.png",
-    alt: "東京の都市景観",
-  },
-  {
-    src: "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=2200",
-    alt: "青空と都市のオフィスビル",
-  },
-  {
-    src: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=2200",
-    alt: "グローバルビジネスのミーティング",
+    alt: "東京の夜景",
   },
 ];
 
