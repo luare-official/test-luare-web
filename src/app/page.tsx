@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      <Navbar solid />
+      <Navbar heroStyle />
       <main className="flex-1 luare-home luare-home-v6">
         <Hero />
         <HomeSections />
