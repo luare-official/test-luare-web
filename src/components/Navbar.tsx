@@ -1,255 +1,291 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 interface NavbarProps {
   theme?: "light" | "dark";
   solid?: boolean;
+  overlay?: boolean;
+  heroStyle?: boolean;
 }
 
-export default function Navbar({ theme = "dark", solid = false }: NavbarProps) {
+export default function Navbar({
+  theme = "dark",
+  solid = false,
+  overlay = false,
+  heroStyle = false,
+}: NavbarProps) {
   const pathname = usePathname() || "";
-  const currentLang: "JP" | "EN" | "ZH" = pathname.startsWith("/en") ? "EN" : pathname.startsWith("/zh") ? "ZH" : "JP";
+  const currentLang: "JP" | "EN" | "ZH" = pathname.startsWith("/en")
+    ? "EN"
+    : pathname.startsWith("/zh")
+      ? "ZH"
+      : "JP";
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServiceOpen, setIsServiceOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 48);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu when window size changes to desktop
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setIsMenuOpen(false);
-      }
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const hasBackground = solid || isScrolled;
-
-  // Header styles based on theme and scroll/solid states
-  const headerBg = hasBackground
-    ? theme === "light"
-      ? "bg-brand-navy/95 backdrop-blur-md border-brand-silver/10 shadow-sm"
-      : "bg-brand-white/95 backdrop-blur-md border-brand-silver/20 shadow-sm"
-    : "bg-transparent border-transparent";
-
-  // Text color styles
-  const linkColor = theme === "light"
-    ? "text-brand-silver hover:text-brand-platinum"
-    : "text-brand-slate hover:text-brand-navy";
-
-  const logoColor = theme === "light"
-    ? "text-brand-platinum hover:text-white"
-    : "text-brand-navy hover:text-brand-charcoal";
-
-  const toggleContainerBg = theme === "light"
-    ? "border-brand-silver/20 bg-white/5"
-    : "border-brand-silver/30 bg-brand-offwhite";
-
-  const toggleBtnActive = theme === "light"
-    ? "bg-brand-gold text-brand-navy"
-    : "bg-brand-navy text-white";
-
-  const toggleBtnInactive = theme === "light"
-    ? "text-brand-silver hover:text-white"
-    : "text-brand-slate hover:text-brand-navy";
-
-  const contactBtnStyle = theme === "light"
-    ? "border-brand-platinum text-brand-platinum hover:bg-brand-platinum hover:text-brand-navy"
-    : "border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white";
-
-  const hamburgerIconColor = theme === "light" ? "text-brand-platinum" : "text-brand-navy";
-
-  // Texts
-  const aboutText = currentLang === "ZH" ? "代表简介 / 关于我们" : currentLang === "EN" ? "Representative Profile / About" : "About Us";
-  const contactText = currentLang === "ZH" ? "联系我们" : "Contact";
-
-  // Links
-  const servicesLink = currentLang === "ZH" ? "/zh/#services" : currentLang === "EN" ? "/en/#services" : "/#gateway";
-  const insightsLink = currentLang === "ZH" ? "/zh/insights" : currentLang === "EN" ? "/en/insights" : "/insights";
-  const aboutLink = currentLang === "ZH" ? "/zh/about" : currentLang === "EN" ? "/en/about" : "/about";
-  const contactLink = currentLang === "ZH" ? "/zh/contact" : currentLang === "EN" ? "/en/contact" : "/contact";
-
-  // Language URL generator
   const getLangUrl = (targetLang: "JP" | "EN" | "ZH") => {
     let baseRoute = pathname;
     if (baseRoute.startsWith("/en")) baseRoute = baseRoute.replace("/en", "");
     else if (baseRoute.startsWith("/zh")) baseRoute = baseRoute.replace("/zh", "");
-    
     if (baseRoute === "") baseRoute = "/";
-
     if (targetLang === "JP") return baseRoute;
-    if (targetLang === "EN") return baseRoute === "/" ? "/en" : `/en${baseRoute}`;
-    if (targetLang === "ZH") return baseRoute === "/" ? "/zh" : `/zh${baseRoute}`;
-    return "/";
+    if (baseRoute === "/bpo" || baseRoute === "/services/audit-assurance") return targetLang === "EN" ? "/en" : "/zh";
+    if (targetLang === "EN") return baseRoute === "/" ? "/en" : "/en" + baseRoute;
+    return baseRoute === "/" ? "/zh" : "/zh" + baseRoute;
   };
 
-  return (
-    <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 border-b ${headerBg}`}
-    >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 sm:px-8">
-        
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          <Link
-            href="/"
-            className={`font-serif text-sm sm:text-base md:text-lg lg:text-xl font-medium tracking-wider transition-colors whitespace-nowrap ${logoColor}`}
-          >
-            株式会社 Luare Consulting
-          </Link>
-        </div>
+  const prefix = currentLang === "JP" ? "" : currentLang === "EN" ? "/en" : "/zh";
+  const sectionLink = (hash: string) => (prefix || "") + "/#" + hash;
+  const contactLink = currentLang === "JP" ? "/contact" : prefix + "/contact";
+  const contactText = currentLang === "JP" ? "お問い合わせ" : currentLang === "ZH" ? "联系我们" : "Contact";
 
-        {/* Right side group (Navigation + Controls - Desktop) */}
-        <div className="hidden md:flex items-center gap-6 lg:gap-10">
-          {/* Desktop Navigation */}
-          <nav className="flex items-center gap-6 lg:gap-10">
-            <Link href={servicesLink} className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors ${linkColor}`}>
-              Services
-            </Link>
-            <Link href={insightsLink} className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors ${linkColor}`}>
-              Insights
-            </Link>
-            <Link href={aboutLink} className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors ${linkColor}`}>
-              {aboutText}
-            </Link>
+  const navItems = currentLang === "JP"
+    ? [
+        [sectionLink("people"), "Luareについて"],
+        [sectionLink("case-studies"), "事例"],
+      ]
+    : [
+        [prefix + "/#services", "Services"],
+        [prefix + "/insights", "Insights"],
+        [prefix + "/about", currentLang === "ZH" ? "关于我们" : "About"],
+      ];
+
+  const serviceMenu = [
+    [sectionLink("services"), "サービス一覧"],
+    ["/services/audit-assurance", "監査・監査対応支援"],
+    ["/bpo", "Luare BPO"],
+  ];
+
+  if (heroStyle) {
+    return (
+      <header className="luare-unicell-header">
+        <Link href={prefix || "/"} className="luare-unicell-logo-box" aria-label="Luare Consulting">
+          <img src="/images/luare-consulting-logo.jpg" alt="Luare Consulting" />
+        </Link>
+
+        <div className="luare-unicell-nav-bubble">
+          <nav>
+            {currentLang === "JP" ? (
+              <>
+                <Link href={sectionLink("people")}>Luareについて</Link>
+                <div className={"luare-service-menu luare-service-menu-hero " + (isServiceOpen ? "is-open" : "")}>
+                  <button
+                    type="button"
+                    aria-haspopup="true"
+                    aria-expanded={isServiceOpen}
+                    onClick={() => setIsServiceOpen((open) => !open)}
+                  >
+                    サービス <span aria-hidden="true">⌄</span>
+                  </button>
+                  <div className="luare-service-dropdown">
+                    {serviceMenu.map(([href, label]) => (
+                      <Link key={href} href={href} onClick={() => setIsServiceOpen(false)}>
+                        {label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                <Link href={sectionLink("case-studies")}>事例</Link>
+              </>
+            ) : (
+              navItems.map(([href, label]) => (
+                <Link key={href} href={href}>
+                  {label}
+                </Link>
+              ))
+            )}
           </nav>
 
-          {/* Lang Selector */}
-          <div className={`flex items-center border rounded-none overflow-hidden p-0.5 transition-colors ${toggleContainerBg}`}>
-            <Link
-              href={getLangUrl("JP")}
-              className={`px-3 py-1 text-[10px] font-semibold tracking-wider transition-all rounded-none cursor-pointer ${
-                currentLang === "JP" ? toggleBtnActive : toggleBtnInactive
-              }`}
-            >
-              JP
-            </Link>
-            <Link
-              href={getLangUrl("EN")}
-              className={`px-3 py-1 text-[10px] font-semibold tracking-wider transition-all rounded-none cursor-pointer ${
-                currentLang === "EN" ? toggleBtnActive : toggleBtnInactive
-              }`}
-            >
-              EN
-            </Link>
-            <Link
-              href={getLangUrl("ZH")}
-              className={`px-3 py-1 text-[10px] font-semibold tracking-wider transition-all rounded-none cursor-pointer ${
-                currentLang === "ZH" ? toggleBtnActive : toggleBtnInactive
-              }`}
-            >
-              ZH
-            </Link>
+          <div className="luare-unicell-lang">
+            {(["JP", "EN", "ZH"] as const).map((lang, index) => (
+              <span key={lang}>
+                {index > 0 && <i>/</i>}
+                <Link
+                  href={getLangUrl(lang)}
+                  className={currentLang === lang ? "is-active" : ""}
+                >
+                  <i className={"luare-nav-flag luare-nav-flag-" + lang.toLowerCase()} aria-hidden="true" />
+                  <b>{lang}</b>
+                </Link>
+              </span>
+            ))}
           </div>
 
-          {/* Contact Button */}
+          <Link href={contactLink} className="luare-unicell-contact">
+            {contactText}
+          </Link>
+        </div>
+      </header>
+    );
+  }
+
+  const hasBackground = solid || isScrolled;
+  const overlayMode = overlay && !hasBackground;
+  const headerBg = overlayMode
+    ? "bg-transparent border-transparent"
+    : hasBackground
+      ? theme === "light"
+        ? "bg-[#153f72]/95 backdrop-blur-md border-white/10 shadow-sm"
+        : "bg-white/95 backdrop-blur-md border-slate-200/70 shadow-sm"
+      : "bg-transparent border-transparent";
+
+  const linkColor = overlayMode
+    ? "text-white/90 hover:text-white"
+    : theme === "light"
+      ? "text-white/75 hover:text-white"
+      : "text-[#4b5967] hover:text-[#27323b]";
+
+  const logoColor = overlayMode || theme === "light" ? "text-white" : "text-[#30383f]";
+  const hamburgerColor = overlayMode || theme === "light" ? "text-white" : "text-[#30383f]";
+  const languageText = overlayMode || theme === "light" ? "text-white/70" : "text-[#6c7883]";
+  const languageActive = overlayMode || theme === "light" ? "text-white" : "text-[#058dca]";
+
+  const standardNavItems =
+    currentLang === "JP"
+      ? [
+          [sectionLink("people"), "People"],
+          [sectionLink("case-studies"), "Case Studies"],
+          [sectionLink("faq"), "FAQ"],
+        ]
+      : [
+          [prefix + "/#services", "Services"],
+          [prefix + "/insights", "Insights"],
+          [prefix + "/about", currentLang === "ZH" ? "代表简介 / 关于我们" : "About Us"],
+        ];
+
+  return (
+    <header className={"fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 " + headerBg}>
+      <div className="mx-auto flex h-[78px] max-w-[1240px] items-center justify-between px-5 sm:px-8">
+        <Link href={prefix || "/"} className={"transition-colors " + logoColor}>
+          <span className="block font-[var(--font-inter)] text-[16px] font-semibold tracking-[0.04em] sm:text-[17px]">
+            Luare Consulting
+          </span>
+          <span className="mt-0.5 block font-[var(--font-inter)] text-[7px] font-medium tracking-[0.2em] opacity-70 sm:text-[8px]">
+            ACCOUNTING &amp; FINANCE
+          </span>
+        </Link>
+
+        <div className="hidden items-center gap-6 md:flex lg:gap-8">
+          <nav className="flex items-center gap-5 lg:gap-7">
+            {currentLang === "JP" && (
+              <div className={"luare-service-menu luare-service-menu-standard " + (isServiceOpen ? "is-open" : "")}>
+                <button
+                  type="button"
+                  className={"luare-nav-link " + linkColor}
+                  aria-haspopup="true"
+                  aria-expanded={isServiceOpen}
+                  onClick={() => setIsServiceOpen((open) => !open)}
+                >
+                  Services <span aria-hidden="true">⌄</span>
+                </button>
+                <div className="luare-service-dropdown">
+                  {serviceMenu.map(([href, label]) => (
+                    <Link key={href} href={href} onClick={() => setIsServiceOpen(false)}>
+                      {label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+            {standardNavItems.map(([href, label]) => (
+              <Link key={href} href={href} className={"luare-nav-link " + linkColor}>
+                {label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className={"flex items-center gap-2 font-[var(--font-inter)] text-[10px] font-medium tracking-[0.08em] " + languageText}>
+            {(["JP", "EN", "ZH"] as const).map((lang, index) => (
+              <span key={lang} className="flex items-center gap-2">
+                {index > 0 && <span className="opacity-35">/</span>}
+                <Link
+                  href={getLangUrl(lang)}
+                  className={"transition-colors hover:opacity-100 " + (currentLang === lang ? languageActive : "")}
+                >
+                  {lang}
+                </Link>
+              </span>
+            ))}
+          </div>
+
           <Link
             href={contactLink}
-            className={`inline-flex items-center justify-center border px-5 py-2 text-[10px] font-bold uppercase tracking-[0.25em] transition-all duration-300 ${contactBtnStyle}`}
+            className="rounded-full bg-[#078fcf] px-5 py-3 text-[10px] font-semibold tracking-[0.12em] text-white transition-colors hover:bg-[#0678ad]"
           >
             {contactText}
           </Link>
         </div>
 
-        {/* Mobile controls (Lang Toggle & Hamburger) */}
-        <div className="flex md:hidden items-center gap-4">
-          {/* Lang Selector (Small) */}
-          <div className={`flex items-center border rounded-none overflow-hidden p-0.5 transition-colors ${toggleContainerBg}`}>
-            <Link
-              href={getLangUrl("JP")}
-              className={`px-2 py-0.5 text-[9px] font-semibold tracking-wider transition-all rounded-none cursor-pointer ${
-                currentLang === "JP" ? toggleBtnActive : toggleBtnInactive
-              }`}
-            >
-              JP
-            </Link>
-            <Link
-              href={getLangUrl("EN")}
-              className={`px-2 py-0.5 text-[9px] font-semibold tracking-wider transition-all rounded-none cursor-pointer ${
-                currentLang === "EN" ? toggleBtnActive : toggleBtnInactive
-              }`}
-            >
-              EN
-            </Link>
-            <Link
-              href={getLangUrl("ZH")}
-              className={`px-2 py-0.5 text-[9px] font-semibold tracking-wider transition-all rounded-none cursor-pointer ${
-                currentLang === "ZH" ? toggleBtnActive : toggleBtnInactive
-              }`}
-            >
-              ZH
-            </Link>
+        <div className="flex items-center gap-3 md:hidden">
+          <div className={"flex items-center gap-1.5 font-[var(--font-inter)] text-[9px] font-medium " + languageText}>
+            <Link href={getLangUrl("JP")} className={currentLang === "JP" ? languageActive : ""}>JP</Link>
+            <span className="opacity-35">/</span>
+            <Link href={getLangUrl("EN")} className={currentLang === "EN" ? languageActive : ""}>EN</Link>
+            <span className="opacity-35">/</span>
+            <Link href={getLangUrl("ZH")} className={currentLang === "ZH" ? languageActive : ""}>ZH</Link>
           </div>
-
-          {/* Hamburger Menu Button */}
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`p-1.5 focus:outline-none transition-colors ${hamburgerIconColor}`}
+            type="button"
+            onClick={() => setIsMenuOpen((open) => !open)}
+            className={"p-1.5 transition-colors " + hamburgerColor}
             aria-label="Toggle navigation menu"
           >
-            {isMenuOpen ? (
-              // X Icon
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              // Hamburger Icon
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
+            <span className="flex w-6 flex-col gap-[5px]">
+              <i className={"h-px w-full bg-current transition-transform " + (isMenuOpen ? "translate-y-[6px] rotate-45" : "")} />
+              <i className={"h-px w-full bg-current transition-opacity " + (isMenuOpen ? "opacity-0" : "")} />
+              <i className={"h-px w-full bg-current transition-transform " + (isMenuOpen ? "-translate-y-[6px] -rotate-45" : "")} />
+            </span>
           </button>
         </div>
-
       </div>
 
-      {/* Mobile Menu Dropdown Panel */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-x-0 top-20 bottom-0 bg-brand-navy z-40 flex flex-col justify-between px-6 py-8 border-t border-brand-silver/10 overflow-y-auto animate-in fade-in slide-in-from-top-4 duration-300">
-          <nav className="flex flex-col gap-6 text-left">
-            <Link
-              href={servicesLink}
-              onClick={() => setIsMenuOpen(false)}
-              className="text-sm font-semibold tracking-[0.2em] text-brand-silver hover:text-brand-platinum transition-colors py-2 border-b border-white/5 uppercase"
-            >
-              Services
-            </Link>
-            <Link
-              href={insightsLink}
-              onClick={() => setIsMenuOpen(false)}
-              className="text-sm font-semibold tracking-[0.2em] text-brand-silver hover:text-brand-platinum transition-colors py-2 border-b border-white/5 uppercase"
-            >
-              Insights
-            </Link>
-            <Link
-              href={aboutLink}
-              onClick={() => setIsMenuOpen(false)}
-              className="text-sm font-semibold tracking-[0.2em] text-brand-silver hover:text-brand-platinum transition-colors py-2 border-b border-white/5 uppercase"
-            >
-              {aboutText}
-            </Link>
+        <div className="fixed inset-x-0 bottom-0 top-[78px] z-40 overflow-y-auto bg-[#123e68] px-7 py-10 md:hidden">
+          <nav className="flex flex-col">
+            {currentLang === "JP" && (
+              <div className="luare-mobile-service-group">
+                <span>Services</span>
+                {serviceMenu.map(([href, label]) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    onClick={() => { setIsMenuOpen(false); setIsServiceOpen(false); }}
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            )}
+            {standardNavItems.map(([href, label]) => (
+              <Link
+                key={href}
+                href={href}
+                onClick={() => setIsMenuOpen(false)}
+                className="border-b border-white/12 py-5 font-[var(--font-inter)] text-sm font-medium tracking-[0.1em] text-white/88"
+              >
+                {label}
+              </Link>
+            ))}
           </nav>
-
-          <div className="flex flex-col gap-4 mt-8">
-            <Link
-              href={contactLink}
-              onClick={() => setIsMenuOpen(false)}
-              className="w-full inline-flex items-center justify-center border border-brand-gold text-brand-gold bg-transparent hover:bg-brand-gold hover:text-brand-navy py-4 text-xs font-bold uppercase tracking-[0.25em] transition-all duration-300 rounded-sm"
-            >
-              {contactText}
-            </Link>
-          </div>
+          <Link
+            href={contactLink}
+            onClick={() => setIsMenuOpen(false)}
+            className="mt-9 flex w-full items-center justify-center rounded-full bg-white py-4 text-xs font-semibold tracking-[0.12em] text-[#123e68]"
+          >
+            {contactText}
+          </Link>
         </div>
       )}
     </header>
