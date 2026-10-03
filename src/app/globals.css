@@ -2170,3 +2170,23 @@ body {
   .luare-people-horizontal-track>div:nth-child(even){margin-top:28px}
   .luare-people-horizontal-photo{border-radius:44px 20px 44px 20px}
 }
+
+
+/* WHO WE HELP — typography-led cards + line motion */
+.luare-who-refined-head{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.75fr);gap:48px;align-items:end;margin-bottom:52px}
+.luare-who-refined-head h2{margin:10px 0 0;color:#0a3153;font-size:clamp(36px,4.4vw,62px);font-weight:700;line-height:1.13;letter-spacing:-.055em}
+.luare-who-refined-head>p{margin:0;color:#647e8d;font-size:14px;line-height:1.9}
+.luare-who-refined-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.luare-who-refined-grid>div{height:100%}
+.luare-who-refined-card{position:relative;min-height:285px;height:100%;padding:29px;background:#fff;border:1px solid #d9e7ed;border-radius:33px;overflow:hidden;transition:transform .38s cubic-bezier(.2,.7,.2,1),box-shadow .38s,border-color .38s}
+.luare-who-refined-card:before{content:"";position:absolute;left:-20%;top:86px;width:140%;height:1px;background:#b8dce9;transform:translateX(-12%) rotate(-7deg);opacity:.5;transition:transform .55s ease,opacity .4s}
+.luare-who-refined-card:after{content:"";position:absolute;left:29px;right:29px;bottom:0;height:3px;background:#45b8df;transform:scaleX(0);transform-origin:left center;transition:transform .42s cubic-bezier(.2,.7,.2,1)}
+.luare-who-refined-card:hover{transform:translateY(-7px);border-color:#bdd9e4;box-shadow:0 22px 48px rgba(10,49,83,.09)}
+.luare-who-refined-card:hover:before{transform:translateX(13%) rotate(-7deg);opacity:1}
+.luare-who-refined-card:hover:after{transform:scaleX(1)}
+.luare-who-refined-no{position:relative;z-index:2;display:block;color:#dcecf3;font-family:Manrope,Inter,sans-serif;font-size:clamp(40px,4vw,58px);font-weight:700;line-height:1;letter-spacing:-.07em;transition:color .35s,transform .35s}
+.luare-who-refined-card:hover .luare-who-refined-no{color:#c8e6f1;transform:translateX(4px)}
+.luare-who-refined-card h3{position:relative;z-index:2;margin:38px 0 10px;color:#0a3153;font-size:20px;font-weight:700;line-height:1.55;letter-spacing:-.025em}
+.luare-who-refined-card p{position:relative;z-index:2;margin:0;color:#687f8c;font-size:12.5px;line-height:1.85;max-width:92%}
+@media(max-width:850px){.luare-who-refined-head{grid-template-columns:1fr;gap:14px}.luare-who-refined-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.luare-who-refined-grid{grid-template-columns:1fr}.luare-who-refined-card{min-height:245px}}
