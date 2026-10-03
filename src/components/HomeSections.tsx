@@ -199,17 +199,6 @@ const faqs = [
 export default function HomeSections() {
   return (
     <>
-      <section className="luare-v6-metrics" aria-label="Luare Consulting at a glance">
-        <div className="luare-v6-container">
-          <ScrollReveal className="luare-v6-metric-strip">
-            <div><b>3</b><span>Languages</span><small>日本語 / English / 中文</small></div>
-            <div><b>4</b><span>Service Areas</span><small>監査・税務・Advisory・Reporting</small></div>
-            <div><b>¥0</b><span>Initial Consultation</span><small>初回相談無料</small></div>
-            <div><b>1</b><span>Contact Point</span><small>複数領域をまとめて相談</small></div>
-          </ScrollReveal>
-        </div>
-      </section>
-
       <section className="luare-v6-section" id="people">
         <div className="luare-v6-container">
           <ScrollReveal className="luare-v6-section-head luare-v6-section-head-split">
