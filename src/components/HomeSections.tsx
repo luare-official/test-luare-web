@@ -124,8 +124,8 @@ const services = [
   {
     icon: "audit" as IconName,
     no: "01",
-    title: "監査・Assurance",
-    items: ["外資系企業監査", "会社法監査", "連結子会社監査", "IFRS / US-GAAP監査", "その他保証業務"],
+    title: "監査・監査対応支援",
+    items: ["Audit Readiness", "Group Audit対応", "監査資料準備", "IFRS / US-GAAP Reporting", "監査法人との連携"],
   },
   {
     icon: "tax" as IconName,
