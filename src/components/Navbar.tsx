@@ -41,7 +41,7 @@ export default function Navbar({
     else if (baseRoute.startsWith("/zh")) baseRoute = baseRoute.replace("/zh", "");
     if (baseRoute === "") baseRoute = "/";
     if (targetLang === "JP") return baseRoute;
-    if (baseRoute === "/bpo") return targetLang === "EN" ? "/en" : "/zh";
+    if (baseRoute === "/bpo" || baseRoute === "/services/audit-assurance") return targetLang === "EN" ? "/en" : "/zh";
     if (targetLang === "EN") return baseRoute === "/" ? "/en" : "/en" + baseRoute;
     return baseRoute === "/" ? "/zh" : "/zh" + baseRoute;
   };
