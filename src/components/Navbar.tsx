@@ -85,7 +85,8 @@ export default function Navbar({
                   href={getLangUrl(lang)}
                   className={currentLang === lang ? "is-active" : ""}
                 >
-                  {lang}
+                  <i className={"luare-nav-flag luare-nav-flag-" + lang.toLowerCase()} aria-hidden="true" />
+                  <b>{lang}</b>
                 </Link>
               </span>
             ))}
