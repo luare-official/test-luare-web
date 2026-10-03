@@ -2259,3 +2259,43 @@ body {
 
 @media(max-width:850px){.luare-services-photo-card{height:330px}.luare-services-variant-3 .luare-services-photo-copy{right:38%}}
 @media(max-width:560px){.luare-services-photo-card{height:310px}.luare-services-photo-copy h3{font-size:22px}.luare-services-photo-items span{font-size:13px}}
+
+
+/* SERVICES comparison v3 — all cards keep variant-3 copy geometry; full-photo + readable translucent copy planes */
+.luare-services-photo-card{height:330px}
+.luare-services-photo-card .luare-services-photo-image{inset:0!important;bottom:0!important;left:0!important;border-radius:0!important;opacity:1;filter:none;transform:none;background-size:cover}
+.luare-services-photo-card .luare-services-photo-copy{z-index:3;top:26px!important;left:28px!important;right:34%!important;bottom:auto!important}
+.luare-services-photo-card .luare-services-photo-no{font-size:38px}
+.luare-services-photo-card .luare-services-photo-copy h3{font-size:24px;line-height:1.35;margin:8px 0 15px}
+.luare-services-photo-card .luare-services-photo-items span{font-size:14px;line-height:1.65}
+.luare-services-photo-card .luare-services-photo-arrow{z-index:5}
+
+/* 01 — diagonal frosted plane, left high -> right low */
+.luare-services-variant-1 .luare-services-photo-cut{z-index:2;height:100%;background:rgba(255,255,255,.86);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);clip-path:polygon(0 0,57% 0,77% 100%,0 100%)}
+.luare-services-variant-1:hover .luare-services-photo-image{transform:scale(1.07)}
+.luare-services-variant-1:hover .luare-services-photo-cut{height:100%;clip-path:polygon(0 0,61% 0,81% 100%,0 100%);background:rgba(255,255,255,.9)}
+
+/* 02 — soft horizontal glass fade */
+.luare-services-variant-2 .luare-services-photo-cut{z-index:2;height:100%;background:linear-gradient(90deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.86) 48%,rgba(255,255,255,.36) 73%,rgba(255,255,255,0) 100%);clip-path:none;backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+.luare-services-variant-2:hover .luare-services-photo-image{opacity:1;filter:none;transform:scale(1.065) translateX(5px)}
+.luare-services-variant-2:hover .luare-services-photo-cut{height:100%;clip-path:none;background:linear-gradient(90deg,rgba(255,255,255,.96),rgba(255,255,255,.82) 50%,rgba(235,248,253,.2) 82%,transparent)}
+
+/* 03 — rounded translucent panel floating over the full photo */
+.luare-services-variant-3 .luare-services-photo-cut{z-index:2;left:18px;right:31%;top:18px;bottom:18px;height:auto;background:rgba(255,255,255,.86);border:1px solid rgba(255,255,255,.7);border-radius:27px;clip-path:none;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);box-shadow:0 12px 34px rgba(10,49,83,.08)}
+.luare-services-variant-3 .luare-services-photo-copy{left:42px!important;right:35%!important;top:39px!important}
+.luare-services-variant-3:hover .luare-services-photo-image{transform:scale(1.075)}
+.luare-services-variant-3:hover .luare-services-photo-cut{height:auto;clip-path:none;transform:translateY(-4px);background:rgba(255,255,255,.91)}
+
+/* 04 — low-opacity photo wash beneath the copy + moving blue line */
+.luare-services-variant-4:before{content:"";position:absolute;z-index:1;inset:0;background:rgba(236,247,251,.35);transition:background .4s}
+.luare-services-variant-4 .luare-services-photo-cut{z-index:2;height:100%;background:linear-gradient(110deg,rgba(255,255,255,.93) 0%,rgba(255,255,255,.78) 56%,rgba(255,255,255,.08) 100%);clip-path:polygon(0 0,62% 0,84% 100%,0 100%);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.luare-services-variant-4:hover:before{background:rgba(223,243,250,.18)}
+.luare-services-variant-4:hover .luare-services-photo-image{transform:scale(1.07)}
+.luare-services-variant-4:hover .luare-services-photo-cut{height:100%;clip-path:polygon(0 0,66% 0,88% 100%,0 100%);background:linear-gradient(110deg,rgba(255,255,255,.95),rgba(255,255,255,.74) 58%,rgba(255,255,255,.04))}
+.luare-services-variant-4:after{z-index:6}
+
+@media(max-width:560px){
+ .luare-services-photo-card .luare-services-photo-copy{right:22%!important}
+ .luare-services-variant-3 .luare-services-photo-cut{right:18px}
+ .luare-services-variant-3 .luare-services-photo-copy{right:24px!important}
+}
