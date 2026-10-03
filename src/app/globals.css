@@ -2026,3 +2026,53 @@ body {
     transition:none;
   }
 }
+
+
+/* LUARE FIXED CONSULTATION RAIL — screenshot matched */
+.luare-consult-rail{
+  position:fixed;z-index:90;right:0;top:50%;transform:translateY(-50%);
+  width:80px;padding:16px 10px 14px;display:flex;flex-direction:column;align-items:center;
+  background:#fff;border:1px solid #d7e4eb;border-right:0;border-radius:20px 0 0 20px;
+  box-shadow:0 10px 28px rgba(21,59,85,.12);color:#0b3458;overflow:hidden;
+}
+.luare-consult-rail::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:#0b3458}
+.luare-consult-video{position:relative;width:43px;height:43px;flex:none;border-radius:50%;background:#0b3458}
+.luare-consult-video::before{content:"";position:absolute;left:11px;top:14px;width:17px;height:13px;border:2px solid #fff;border-radius:2px}
+.luare-consult-video::after{content:"";position:absolute;right:7px;top:16px;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:7px solid #fff}
+.luare-consult-rail>strong{margin:12px 0 0;writing-mode:vertical-rl;text-orientation:upright;color:#0b3458;font-size:15px;font-weight:900;line-height:1.05;letter-spacing:.055em}
+.luare-consult-rule{width:42px;height:1px;margin:13px 0 10px;background:#bcd2df}
+.luare-consult-languages{width:100%;display:flex;flex-direction:column;align-items:center}
+.luare-consult-language{width:100%;display:flex;flex-direction:column;align-items:center;gap:3px}
+.luare-consult-language+ .luare-consult-language{margin-top:8px;padding-top:8px;border-top:1px solid #c5d8e2}
+.luare-consult-language b{color:#0b3458;font-family:var(--font-inter),Arial,sans-serif;font-size:11px;font-weight:800;line-height:1}
+.luare-line-flag{position:relative;display:block;width:34px;height:23px;border:2px solid #0b3458;background:#fff;border-radius:1px;overflow:hidden}
+.luare-line-flag-jp::after{content:"";position:absolute;left:9px;top:4px;width:12px;height:12px;border:2px solid #0b3458;border-radius:50%}
+.luare-line-flag-en{background:repeating-linear-gradient(to bottom,#fff 0 2px,#0b3458 2px 3.5px)}
+.luare-line-flag-en::before{content:"";position:absolute;z-index:2;left:0;top:0;width:14px;height:11px;background:#fff;border-right:2px solid #0b3458;border-bottom:2px solid #0b3458}
+.luare-line-flag-en::after{content:"•••";position:absolute;z-index:3;left:2px;top:-3px;color:#0b3458;font-size:7px;letter-spacing:-1px}
+.luare-line-flag-cn::before{content:"★";position:absolute;left:3px;top:-2px;color:#0b3458;font-size:12px}
+.luare-line-flag-cn::after{content:"· ·\A · ·";white-space:pre;position:absolute;right:3px;top:0;color:#0b3458;font-size:8px;font-weight:900;line-height:7px}
+.luare-consult-popover{
+  position:fixed;z-index:89;right:92px;top:50%;transform:translate(8px,-50%);
+  width:176px;padding:18px 17px 16px;background:#fff;border:1px solid #d8e5ec;border-radius:15px;
+  box-shadow:0 10px 28px rgba(21,59,85,.11);color:#0b3458;opacity:0;visibility:hidden;
+  pointer-events:none;transition:opacity .18s ease,transform .18s ease,visibility .18s ease;
+}
+.luare-consult-popover::after{content:"";position:absolute;right:-9px;top:46%;width:18px;height:18px;background:#fff;border-top:1px solid #d8e5ec;border-right:1px solid #d8e5ec;transform:rotate(45deg)}
+.luare-consult-popover button{position:absolute;right:10px;top:6px;border:0;background:transparent;color:#b5c7d3;font-size:23px;line-height:1}
+.luare-consult-people{position:relative;display:block;width:44px;height:29px;margin:0 0 8px}
+.luare-consult-people i{position:absolute;top:7px;width:9px;height:9px;border:2px solid #0b3458;border-radius:50%}
+.luare-consult-people i:nth-child(1){left:2px}.luare-consult-people i:nth-child(2){left:17px}.luare-consult-people i:nth-child(3){left:32px}
+.luare-consult-people::before{content:"";position:absolute;left:2px;top:0;width:38px;height:7px;border:2px solid #0b3458;border-bottom:0}
+.luare-consult-people::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:8px;border-top:2px solid #0b3458}
+.luare-consult-popover>strong{display:block;font-size:14px;font-weight:900;line-height:1.35}
+.luare-consult-popover p{margin:10px 0 0;color:#365a72;font-size:10px;font-weight:500;line-height:1.65}
+.luare-consult-rail:hover + .luare-consult-popover,
+.luare-consult-rail:focus-visible + .luare-consult-popover{opacity:1;visibility:visible;transform:translate(0,-50%)}
+@media(max-width:760px){
+  .luare-consult-rail{top:auto;right:10px;bottom:12px;transform:none;width:66px;max-height:72vh;padding:10px 8px;border-right:1px solid #d7e4eb;border-radius:17px}
+  .luare-consult-video{width:36px;height:36px}.luare-consult-video::before{left:9px;top:12px;width:14px;height:11px}.luare-consult-video::after{right:6px;top:14px}
+  .luare-consult-rail>strong{font-size:12px;margin-top:8px}.luare-consult-rule{width:34px;margin:9px 0 7px}
+  .luare-line-flag{width:28px;height:19px}.luare-consult-language+ .luare-consult-language{margin-top:5px;padding-top:5px}
+  .luare-consult-popover{display:none}
+}
