@@ -231,24 +231,31 @@ export default function HomeSections() {
         </div>
       </section>
 
-      <section className="luare-v6-section luare-v6-soft" id="who-we-help">
+      <section className="luare-v6-section luare-v6-soft luare-who-refined" id="who-we-help">
         <div className="luare-v6-container">
-          <ScrollReveal className="luare-v6-section-head">
-            <p className="luare-v6-eyebrow">WHO WE HELP</p>
-            <h2>このような企業をご支援しています。</h2>
+          <ScrollReveal className="luare-who-refined-head">
+            <div>
+              <p className="luare-v6-eyebrow">WHO WE HELP</p>
+              <h2>このような企業を<br />ご支援しています。</h2>
+            </div>
+            <p>日本と海外をまたぐ会計・財務の課題に。<br />Luare Consultingが専門家として伴走します。</p>
           </ScrollReveal>
 
-          <div className="luare-v6-who-grid">
-            {whoWeHelp.map(([icon, title, text], index) => (
-              <ScrollReveal key={title} delay={(index % 3) * 60}>
-                <article className="luare-v6-who-card">
-                  <div className="luare-v6-icon-disc"><LineIcon name={icon} /></div>
-                  <span className="luare-v6-card-no">0{index + 1}</span>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                </article>
-              </ScrollReveal>
-            ))}
+          <div className="luare-who-refined-grid">
+            {whoWeHelp.map(([, title, text], index) => {
+              const displayTitle = title === "英語で本社とのやり取りが必要な企業"
+                ? "英語・中国語で本社とのやり取りが必要な企業"
+                : title;
+              return (
+                <ScrollReveal key={title} delay={(index % 3) * 60}>
+                  <article className="luare-who-refined-card">
+                    <span className="luare-who-refined-no">{String(index + 1).padStart(2, "0")}</span>
+                    <h3>{displayTitle}</h3>
+                    <p>{text}</p>
+                  </article>
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>
