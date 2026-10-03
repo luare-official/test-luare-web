@@ -2190,3 +2190,30 @@ body {
 .luare-who-refined-card p{position:relative;z-index:2;margin:0;color:#687f8c;font-size:12.5px;line-height:1.85;max-width:92%}
 @media(max-width:850px){.luare-who-refined-head{grid-template-columns:1fr;gap:14px}.luare-who-refined-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.luare-who-refined-grid{grid-template-columns:1fr}.luare-who-refined-card{min-height:245px}}
+
+
+/* SERVICES — approved diagonal photo card / animation A */
+.luare-services-photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.luare-services-photo-grid>div{height:100%}
+.luare-services-photo-card{position:relative;display:block;height:430px;overflow:hidden;border:1px solid #d8e6ec;border-radius:34px;background:#dcebf2;color:#0a3153;text-decoration:none;isolation:isolate;transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s,border-color .4s}
+.luare-services-photo-image{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .68s cubic-bezier(.2,.7,.2,1),filter .5s}
+.luare-services-photo-grid>div:nth-child(1) .luare-services-photo-image{background-position:58% 45%}
+.luare-services-photo-grid>div:nth-child(2) .luare-services-photo-image{background-position:50% 28%}
+.luare-services-photo-grid>div:nth-child(3) .luare-services-photo-image{background-position:center}
+.luare-services-photo-grid>div:nth-child(4) .luare-services-photo-image{background-position:center}
+.luare-services-photo-cut{position:absolute;z-index:1;left:-2%;right:-2%;bottom:-1px;height:59%;background:rgba(255,255,255,.97);clip-path:polygon(0 22%,100% 0,100% 100%,0 100%);transition:height .58s cubic-bezier(.2,.7,.2,1),clip-path .58s cubic-bezier(.2,.7,.2,1)}
+.luare-services-photo-copy{position:absolute;z-index:2;left:32px;right:74px;bottom:28px}
+.luare-services-photo-no{display:block;color:#8bb7d8;font-family:Manrope,Inter,sans-serif;font-size:42px;font-weight:600;line-height:1}
+.luare-services-photo-copy h3{margin:7px 0 14px;color:#0a3153;font-size:23px;font-weight:700;line-height:1.35;letter-spacing:-.025em}
+.luare-services-photo-items{display:flex;flex-wrap:wrap;gap:6px 13px}
+.luare-services-photo-items span{position:relative;color:#607987;font-size:12px;line-height:1.6}
+.luare-services-photo-items span:not(:last-child):after{content:"";position:absolute;right:-7px;top:.6em;width:2px;height:2px;border-radius:50%;background:#8ba3af}
+.luare-services-photo-arrow{position:absolute;z-index:3;right:29px;bottom:29px;width:46px;height:46px;border:1px solid #9bcce0;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.76);color:#168ebd;font-family:Manrope,sans-serif;font-size:21px;transition:transform .4s,background .4s,color .4s,border-color .4s}
+.luare-services-photo-card:hover{transform:translateY(-6px);border-color:#bad7e2;box-shadow:0 24px 50px rgba(10,49,83,.11)}
+.luare-services-photo-card:hover .luare-services-photo-image{transform:scale(1.085)}
+.luare-services-photo-card:hover .luare-services-photo-cut{height:64%;clip-path:polygon(0 13%,100% 0,100% 100%,0 100%)}
+.luare-services-photo-card:hover .luare-services-photo-arrow{transform:translateX(5px);background:#0a3153;color:#fff;border-color:#0a3153}
+.luare-services-photo-card:focus-visible{outline:3px solid #45b8df;outline-offset:4px}
+@media(max-width:850px){.luare-services-photo-grid{grid-template-columns:1fr}.luare-services-photo-card{height:410px}}
+@media(max-width:560px){.luare-services-photo-card{height:385px;border-radius:28px}.luare-services-photo-copy{left:23px;right:65px;bottom:22px}.luare-services-photo-arrow{right:21px;bottom:22px;width:40px;height:40px}.luare-services-photo-copy h3{font-size:20px}.luare-services-photo-no{font-size:36px}}
+@media(prefers-reduced-motion:reduce){.luare-services-photo-card,.luare-services-photo-image,.luare-services-photo-cut,.luare-services-photo-arrow{transition:none}}
