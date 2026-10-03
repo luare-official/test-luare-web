@@ -278,7 +278,7 @@ export default function HomeSections() {
               ];
               return (
                 <ScrollReveal key={service.no} delay={(index % 2) * 75}>
-                  <Link href={href} className="luare-services-photo-card" aria-label={service.title + "の詳細を見る"}>
+                  <Link href={href} className={`luare-services-photo-card luare-services-variant-${index + 1}`} aria-label={service.title + "の詳細を見る"}>
                     <div
                       className="luare-services-photo-image"
                       style={{ backgroundImage: `url("${photos[index]}")` }}
