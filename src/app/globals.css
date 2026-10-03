@@ -2557,3 +2557,13 @@ body {
 @media(prefers-reduced-motion:reduce){
   .bpo-card,.bpo-button,.bpo-faq summary span,.bpo-form button{transition:none}
 }
+
+
+/* Featured fifth service: Luare BPO */
+@media(min-width:851px){
+  .luare-services-photo-grid>div:nth-child(5){
+    grid-column:1/-1;
+    width:calc((100% - 22px)/2);
+    justify-self:center;
+  }
+}
