@@ -1781,12 +1781,12 @@ body {
 .luare-unicell-talk-photo{
   position:absolute;
   z-index:4;
-  left:20%;
-  top:21%;
-  width:67%;
-  height:50%;
+  left:16%;
+  top:17%;
+  width:74%;
+  height:57%;
   overflow:hidden;
-  border-radius:98px 98px 148px 148px / 78px 78px 114px 114px;
+  border-radius:104px 104px 154px 154px / 84px 84px 120px 120px;
 }
 .luare-unicell-talk-photo img{
   display:block;
@@ -1934,11 +1934,11 @@ body {
     border-radius:78px;
   }
   .luare-unicell-talk-photo{
-    left:9%;
-    top:24%;
-    width:83%;
-    height:35%;
-    border-radius:56px 56px 82px 82px / 48px 48px 66px 66px;
+    left:6%;
+    top:21%;
+    width:89%;
+    height:40%;
+    border-radius:58px 58px 84px 84px / 50px 50px 68px 68px;
   }
   .luare-unicell-talk-photo img{
     object-position:67% 48%;
@@ -1986,11 +1986,11 @@ body {
     border-radius:54px 54px 74px 74px / 44px 44px 60px 60px;
   }
   .luare-unicell-talk-photo{
-    left:6%;
-    top:22%;
-    width:88%;
-    height:38%;
-    border-radius:50px 50px 70px 70px / 42px 42px 58px 58px;
+    left:3%;
+    top:19%;
+    width:94%;
+    height:43%;
+    border-radius:52px 52px 72px 72px / 44px 44px 60px 60px;
   }
   .luare-unicell-talk-photo img{
     object-position:65% 48%;
