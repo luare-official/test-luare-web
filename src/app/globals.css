@@ -2299,3 +2299,68 @@ body {
  .luare-services-variant-3 .luare-services-photo-cut{right:18px}
  .luare-services-variant-3 .luare-services-photo-copy{right:24px!important}
 }
+
+
+/* SERVICES final direction — unify all four to approved variant 02.
+   Full-bleed photography stays visible; only the copy side carries a lighter glass veil.
+   Existing copy, links and hover motion remain unchanged. */
+.luare-services-photo-card .luare-services-photo-image{
+  inset:0!important;
+  opacity:1!important;
+  filter:none!important;
+  background-size:cover;
+}
+.luare-services-photo-card .luare-services-photo-cut{
+  z-index:2!important;
+  inset:0!important;
+  height:100%!important;
+  clip-path:none!important;
+  background:linear-gradient(
+    90deg,
+    rgba(255,255,255,.89) 0%,
+    rgba(255,255,255,.82) 38%,
+    rgba(255,255,255,.48) 58%,
+    rgba(255,255,255,.12) 76%,
+    rgba(255,255,255,0) 100%
+  )!important;
+  backdrop-filter:blur(1.25px);
+  -webkit-backdrop-filter:blur(1.25px);
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  transform:none;
+}
+.luare-services-photo-card .luare-services-photo-copy{
+  z-index:3;
+  top:30px!important;
+  left:30px!important;
+  right:34%!important;
+  bottom:auto!important;
+}
+.luare-services-photo-card:hover .luare-services-photo-image{
+  opacity:1!important;
+  filter:none!important;
+  transform:scale(1.065) translateX(5px)!important;
+}
+.luare-services-photo-card:hover .luare-services-photo-cut{
+  height:100%!important;
+  clip-path:none!important;
+  transform:none!important;
+  background:linear-gradient(
+    90deg,
+    rgba(255,255,255,.91) 0%,
+    rgba(255,255,255,.80) 40%,
+    rgba(235,248,253,.38) 61%,
+    rgba(235,248,253,.06) 82%,
+    transparent 100%
+  )!important;
+}
+/* remove comparison-only decoration so every card is the same design */
+.luare-services-variant-4:before{display:none!important}
+.luare-services-variant-4:after{display:none!important}
+@media(max-width:560px){
+  .luare-services-photo-card .luare-services-photo-copy{right:20%!important}
+  .luare-services-photo-card .luare-services-photo-cut{
+    background:linear-gradient(90deg,rgba(255,255,255,.91),rgba(255,255,255,.76) 58%,rgba(255,255,255,.16) 86%,transparent)!important;
+  }
+}
