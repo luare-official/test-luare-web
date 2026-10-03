@@ -271,10 +271,10 @@ export default function HomeSections() {
             {services.map((service, index) => {
               const href = index === 3 ? "/services/global-finance" : "/services/accounting-finance-consulting";
               const photos = [
-                "/images/luare-hero-consulting.avif",
-                "/images/Photo.png",
-                "/images/ai_finance_concept.png",
-                "/images/global_cities_skyline.png",
+                "https://unsplash.com/photos/0oZpRxG5Hkk/download?force=true",
+                "https://unsplash.com/photos/gMsnXqILjp4/download?force=true",
+                "https://unsplash.com/photos/KdeqA3aTnBY/download?force=true",
+                "https://unsplash.com/photos/YI_9SivVt_s/download?force=true",
               ];
               return (
                 <ScrollReveal key={service.no} delay={(index % 2) * 75}>
