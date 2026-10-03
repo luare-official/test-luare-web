@@ -199,31 +199,35 @@ const faqs = [
 export default function HomeSections() {
   return (
     <>
-      <section className="luare-v6-section" id="people">
+      <section className="luare-v6-section luare-people-horizontal" id="people">
         <div className="luare-v6-container">
-          <ScrollReveal className="luare-v6-section-head luare-v6-section-head-split">
-            <div>
-              <p className="luare-v6-eyebrow">PEOPLE</p>
-              <h2>国際業務の現場を知る専門家が、<br />直接支援します。</h2>
-            </div>
-            <p>正式版では、許諾済みの専門家写真と正確な肩書き・強みへ差し替えます。</p>
+          <ScrollReveal className="luare-people-horizontal-head">
+            <p className="luare-v6-eyebrow">PEOPLE</p>
+            <h2>Meet our professionals.</h2>
+            <p>国際業務の現場を知る専門家が、会計・財務の課題を直接支援します。</p>
           </ScrollReveal>
 
-          <div className="luare-v6-people-grid">
+          <div className="luare-people-horizontal-track">
             {people.map(([name, role, strength], index) => (
               <ScrollReveal key={name} delay={index * 55}>
-                <article className="luare-v6-person">
-                  <div className="luare-v6-person-photo">
-                    <LineIcon name="people" />
-                    <span>PHOTO {String(index + 1).padStart(2, "0")}</span>
+                <article className={"luare-people-horizontal-card luare-people-horizontal-card-" + (index + 1)}>
+                  <div className="luare-people-horizontal-photo">
+                    <Image
+                      src="/images/luare-hero-consulting.avif"
+                      alt="専門家プロフィール写真（仮）"
+                      width={900}
+                      height={1125}
+                      unoptimized
+                    />
                   </div>
                   <h3>{name}</h3>
                   <p>{role}</p>
-                  <span className="luare-v6-strength">{strength}</span>
+                  <span>{strength}</span>
                 </article>
               </ScrollReveal>
             ))}
           </div>
+          <p className="luare-people-horizontal-note">※現在はレイアウト確認用のダミー写真・プロフィールです。正式公開前に許諾済みの専門家情報へ差し替えます。</p>
         </div>
       </section>
 
