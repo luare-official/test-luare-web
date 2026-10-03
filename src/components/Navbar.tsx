@@ -26,6 +26,7 @@ export default function Navbar({
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServiceOpen, setIsServiceOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 48);
@@ -40,6 +41,7 @@ export default function Navbar({
     else if (baseRoute.startsWith("/zh")) baseRoute = baseRoute.replace("/zh", "");
     if (baseRoute === "") baseRoute = "/";
     if (targetLang === "JP") return baseRoute;
+    if (baseRoute === "/bpo" || baseRoute === "/services/audit-assurance") return targetLang === "EN" ? "/en" : "/zh";
     if (targetLang === "EN") return baseRoute === "/" ? "/en" : "/en" + baseRoute;
     return baseRoute === "/" ? "/zh" : "/zh" + baseRoute;
   };
@@ -52,7 +54,6 @@ export default function Navbar({
   const navItems = currentLang === "JP"
     ? [
         [sectionLink("people"), "Luareについて"],
-        [sectionLink("services"), "サービス"],
         [sectionLink("case-studies"), "事例"],
       ]
     : [
@@ -60,6 +61,12 @@ export default function Navbar({
         [prefix + "/insights", "Insights"],
         [prefix + "/about", currentLang === "ZH" ? "关于我们" : "About"],
       ];
+
+  const serviceMenu = [
+    [sectionLink("services"), "サービス一覧"],
+    ["/services/audit-assurance", "監査・監査対応支援"],
+    ["/bpo", "Luare BPO"],
+  ];
 
   if (heroStyle) {
     return (
@@ -70,11 +77,35 @@ export default function Navbar({
 
         <div className="luare-unicell-nav-bubble">
           <nav>
-            {navItems.map(([href, label]) => (
-              <Link key={href} href={href}>
-                {label}
-              </Link>
-            ))}
+            {currentLang === "JP" ? (
+              <>
+                <Link href={sectionLink("people")}>Luareについて</Link>
+                <div className={"luare-service-menu luare-service-menu-hero " + (isServiceOpen ? "is-open" : "")}>
+                  <button
+                    type="button"
+                    aria-haspopup="true"
+                    aria-expanded={isServiceOpen}
+                    onClick={() => setIsServiceOpen((open) => !open)}
+                  >
+                    サービス <span aria-hidden="true">⌄</span>
+                  </button>
+                  <div className="luare-service-dropdown">
+                    {serviceMenu.map(([href, label]) => (
+                      <Link key={href} href={href} onClick={() => setIsServiceOpen(false)}>
+                        {label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                <Link href={sectionLink("case-studies")}>事例</Link>
+              </>
+            ) : (
+              navItems.map(([href, label]) => (
+                <Link key={href} href={href}>
+                  {label}
+                </Link>
+              ))
+            )}
           </nav>
 
           <div className="luare-unicell-lang">
@@ -124,7 +155,6 @@ export default function Navbar({
   const standardNavItems =
     currentLang === "JP"
       ? [
-          [sectionLink("services"), "Services"],
           [sectionLink("people"), "People"],
           [sectionLink("case-studies"), "Case Studies"],
           [sectionLink("faq"), "FAQ"],
@@ -149,6 +179,26 @@ export default function Navbar({
 
         <div className="hidden items-center gap-6 md:flex lg:gap-8">
           <nav className="flex items-center gap-5 lg:gap-7">
+            {currentLang === "JP" && (
+              <div className={"luare-service-menu luare-service-menu-standard " + (isServiceOpen ? "is-open" : "")}>
+                <button
+                  type="button"
+                  className={"luare-nav-link " + linkColor}
+                  aria-haspopup="true"
+                  aria-expanded={isServiceOpen}
+                  onClick={() => setIsServiceOpen((open) => !open)}
+                >
+                  Services <span aria-hidden="true">⌄</span>
+                </button>
+                <div className="luare-service-dropdown">
+                  {serviceMenu.map(([href, label]) => (
+                    <Link key={href} href={href} onClick={() => setIsServiceOpen(false)}>
+                      {label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
             {standardNavItems.map(([href, label]) => (
               <Link key={href} href={href} className={"luare-nav-link " + linkColor}>
                 {label}
@@ -204,6 +254,20 @@ export default function Navbar({
       {isMenuOpen && (
         <div className="fixed inset-x-0 bottom-0 top-[78px] z-40 overflow-y-auto bg-[#123e68] px-7 py-10 md:hidden">
           <nav className="flex flex-col">
+            {currentLang === "JP" && (
+              <div className="luare-mobile-service-group">
+                <span>Services</span>
+                {serviceMenu.map(([href, label]) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    onClick={() => { setIsMenuOpen(false); setIsServiceOpen(false); }}
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            )}
             {standardNavItems.map(([href, label]) => (
               <Link
                 key={href}
