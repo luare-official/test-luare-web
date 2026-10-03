@@ -145,6 +145,12 @@ const services = [
     title: "Global Reporting",
     items: ["海外親会社向けレポーティング", "連結パッケージ作成", "英文財務資料作成", "決算書・開示書類等の翻訳", "海外本社との会計コミュニケーション支援"],
   },
+  {
+    icon: "people" as IconName,
+    no: "05",
+    title: "Luare BPO",
+    items: ["外資系日本法人向け経理BPO", "月次決算", "海外本社Reporting", "Intercompany", "SOP・Closing Calendar"],
+  },
 ];
 
 const why = [
@@ -179,13 +185,6 @@ const cases = [
   },
 ];
 
-const fees = [
-  ["税務顧問", "月額 50,000円〜"],
-  ["IFRS / US-GAAPコンバージェンス", "初年度 1,200,000円〜"],
-  ["月次レポーティング", "300,000円〜"],
-  ["簡易企業価値評価", "300,000円〜"],
-  ["簡易財務デューデリジェンス", "300,000円〜"],
-];
 
 const faqs = [
   ["初回相談に費用はかかりますか？", "いいえ。初回相談は1時間程度無料です。ご相談内容を確認したうえで、対応可能な業務内容とお見積りをご提示します。"],
@@ -269,12 +268,13 @@ export default function HomeSections() {
 
           <div className="luare-services-photo-grid">
             {services.map((service, index) => {
-              const href = index === 3 ? "/services/global-finance" : "/services/accounting-finance-consulting";
+              const href = index === 4 ? "/bpo" : index === 3 ? "/services/global-finance" : "/services/accounting-finance-consulting";
               const photos = [
                 "https://unsplash.com/photos/0oZpRxG5Hkk/download?force=true",
                 "https://unsplash.com/photos/gMsnXqILjp4/download?force=true",
                 "https://unsplash.com/photos/KdeqA3aTnBY/download?force=true",
                 "https://unsplash.com/photos/YI_9SivVt_s/download?force=true",
+                "/images/luare-hero-consulting.avif",
               ];
               return (
                 <ScrollReveal key={service.no} delay={(index % 2) * 75}>
@@ -391,24 +391,6 @@ export default function HomeSections() {
             ))}
           </div>
           <p className="luare-v6-note">※実案件を確認したうえで、匿名でも具体的な事例を3〜6件掲載する前提の仮配置です。</p>
-        </div>
-      </section>
-
-      <section className="luare-v6-section" id="fee">
-        <div className="luare-v6-container">
-          <ScrollReveal className="luare-v6-section-head">
-            <p className="luare-v6-eyebrow">FEE</p>
-            <h2>料金をできるだけ透明に。</h2>
-            <p>専門サービスだからこそ、「相談してみないと金額が全く分からない」という不安を減らしたいと考えています。</p>
-          </ScrollReveal>
-          <div className="luare-v6-fee-table">
-            {fees.map(([label, price], index) => (
-              <ScrollReveal key={label} delay={index * 35}>
-                <div className="luare-v6-fee-row"><b>{label}</b><span>{price}</span></div>
-              </ScrollReveal>
-            ))}
-          </div>
-          <p className="luare-v6-note">案件の規模・複雑性・必要工数によって料金は異なります。初回相談・お見積りは無料です。</p>
         </div>
       </section>
 
