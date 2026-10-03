@@ -268,7 +268,7 @@ export default function HomeSections() {
 
           <div className="luare-services-photo-grid">
             {services.map((service, index) => {
-              const href = index === 4 ? "/bpo" : index === 3 ? "/services/global-finance" : "/services/accounting-finance-consulting";
+              const href = index === 0 ? "/services/audit-assurance" : index === 4 ? "/bpo" : index === 3 ? "/services/global-finance" : "/services/accounting-finance-consulting";
               const photos = [
                 "https://unsplash.com/photos/0oZpRxG5Hkk/download?force=true",
                 "https://unsplash.com/photos/gMsnXqILjp4/download?force=true",
