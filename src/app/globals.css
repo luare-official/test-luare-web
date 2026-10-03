@@ -2076,3 +2076,51 @@ body {
   .luare-line-flag{width:28px;height:19px}.luare-consult-language+ .luare-consult-language{margin-top:5px;padding-top:5px}
   .luare-consult-popover{display:none}
 }
+
+
+/* CONSULTATION RAIL V2 — reference flags + after-hero reveal */
+.luare-consult-rail{
+  opacity:0;visibility:hidden;pointer-events:none;
+  transform:translate(22px,-50%);
+  transition:opacity .5s ease,transform .55s cubic-bezier(.22,1,.36,1),visibility .5s ease;
+}
+.luare-consult-rail.is-visible{opacity:1;visibility:visible;pointer-events:auto;transform:translate(0,-50%)}
+.luare-consult-popover:not(.is-rail-visible){display:none}
+
+/* redraw flags to match the supplied single-stroke reference */
+.luare-line-flag{width:35px;height:23px;border:2px solid #0b3458;background:#fff}
+.luare-line-flag-jp::after{left:10px;top:4px;width:11px;height:11px;border:2px solid #0b3458}
+.luare-line-flag-en{background:#fff}
+.luare-line-flag-en::before{
+  left:3px;top:3px;width:10px;height:8px;background:
+  radial-gradient(circle at 2px 2px,#0b3458 1.1px,transparent 1.3px),
+  radial-gradient(circle at 6px 2px,#0b3458 1.1px,transparent 1.3px),
+  radial-gradient(circle at 2px 6px,#0b3458 1.1px,transparent 1.3px),
+  radial-gradient(circle at 6px 6px,#0b3458 1.1px,transparent 1.3px);
+  border:0;
+}
+.luare-line-flag-en::after{
+  content:"";left:15px;right:3px;top:4px;height:2px;background:#0b3458;
+  box-shadow:0 4px 0 #0b3458,0 8px 0 #0b3458,0 12px 0 #0b3458;
+}
+.luare-line-flag-cn::before{left:4px;top:0;font-size:11px}
+.luare-line-flag-cn::after{content:"· ·\A  · ·";right:4px;top:0;font-size:8px;line-height:7px}
+
+/* miniature versions beside JP / EN / ZH in hero navigation */
+.luare-unicell-lang span{gap:4px}
+.luare-unicell-lang a{display:flex;align-items:center;gap:3px}
+.luare-unicell-lang a b{font:inherit}
+.luare-nav-flag{position:relative;display:inline-block;width:16px;height:11px;border:1.3px solid currentColor;background:#fff;overflow:hidden;flex:none}
+.luare-nav-flag-jp::after{content:"";position:absolute;left:5px;top:2px;width:5px;height:5px;border:1.2px solid currentColor;border-radius:50%}
+.luare-nav-flag-en::before{content:"";position:absolute;left:1px;top:1px;width:5px;height:4px;background:radial-gradient(circle,currentColor 1px,transparent 1.1px);background-size:3px 3px}
+.luare-nav-flag-en::after{content:"";position:absolute;left:7px;right:1px;top:2px;height:1px;background:currentColor;box-shadow:0 2.5px 0 currentColor,0 5px 0 currentColor}
+.luare-nav-flag-zh::before{content:"★";position:absolute;left:1px;top:-3px;font-size:7px;color:currentColor}
+.luare-nav-flag-zh::after{content:"··";position:absolute;right:1px;top:-3px;font-size:6px;color:currentColor}
+
+@media(max-width:760px){
+  .luare-consult-rail{transform:translateX(22px)}
+  .luare-consult-rail.is-visible{transform:translateX(0)}
+}
+@media(prefers-reduced-motion:reduce){
+  .luare-consult-rail,.luare-consult-rail.is-visible{transition:none}
+}
