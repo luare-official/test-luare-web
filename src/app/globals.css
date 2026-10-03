@@ -2217,3 +2217,45 @@ body {
 @media(max-width:850px){.luare-services-photo-grid{grid-template-columns:1fr}.luare-services-photo-card{height:410px}}
 @media(max-width:560px){.luare-services-photo-card{height:385px;border-radius:28px}.luare-services-photo-copy{left:23px;right:65px;bottom:22px}.luare-services-photo-arrow{right:21px;bottom:22px;width:40px;height:40px}.luare-services-photo-copy h3{font-size:20px}.luare-services-photo-no{font-size:36px}}
 @media(prefers-reduced-motion:reduce){.luare-services-photo-card,.luare-services-photo-image,.luare-services-photo-cut,.luare-services-photo-arrow{transition:none}}
+
+
+/* SERVICES comparison v2 — four live variants, copy/content preserved */
+.luare-services-photo-card{height:330px}
+.luare-services-photo-cut{height:78%;clip-path:polygon(0 0,100% 18%,100% 100%,0 100%)} /* left -> right slopes downward */
+.luare-services-photo-copy{left:30px;right:76px;bottom:27px}
+.luare-services-photo-no{font-size:38px}
+.luare-services-photo-copy h3{font-size:25px;margin:7px 0 16px}
+.luare-services-photo-items span{font-size:14px;line-height:1.65}
+.luare-services-photo-card:hover .luare-services-photo-cut{height:80%;clip-path:polygon(0 0,100% 14%,100% 100%,0 100%)}
+
+/* 01: compact diagonal — photo is a narrow accent */
+.luare-services-variant-1 .luare-services-photo-image{bottom:68%;background-position:58% 43%}
+.luare-services-variant-1 .luare-services-photo-cut{height:76%}
+.luare-services-variant-1:hover .luare-services-photo-image{transform:scale(1.1)}
+.luare-services-variant-1:hover .luare-services-photo-cut{height:80%}
+
+/* 02: watermark — photo continues softly behind the copy */
+.luare-services-variant-2 .luare-services-photo-image{filter:grayscale(.15) saturate(.75);opacity:.18;transform:scale(1.03)}
+.luare-services-variant-2 .luare-services-photo-cut{height:100%;background:linear-gradient(105deg,rgba(255,255,255,.96) 5%,rgba(255,255,255,.88) 55%,rgba(239,248,252,.78));clip-path:none}
+.luare-services-variant-2 .luare-services-photo-copy{top:30px;bottom:auto}
+.luare-services-variant-2:hover .luare-services-photo-image{opacity:.28;transform:scale(1.09) translateX(5px)}
+.luare-services-variant-2:hover .luare-services-photo-cut{height:100%;clip-path:none;background:linear-gradient(105deg,rgba(255,255,255,.94),rgba(238,248,252,.72))}
+
+/* 03: corner-photo window — diagonal edge travels on hover */
+.luare-services-variant-3 .luare-services-photo-image{left:58%;bottom:43%;border-bottom-left-radius:52px}
+.luare-services-variant-3 .luare-services-photo-cut{height:100%;background:#fff;clip-path:polygon(0 0,60% 0,73% 27%,100% 37%,100% 100%,0 100%)}
+.luare-services-variant-3 .luare-services-photo-copy{top:28px;bottom:auto;right:42%}
+.luare-services-variant-3:hover .luare-services-photo-image{transform:scale(1.12) translate(-4px,4px)}
+.luare-services-variant-3:hover .luare-services-photo-cut{height:100%;clip-path:polygon(0 0,56% 0,69% 24%,100% 34%,100% 100%,0 100%)}
+
+/* 04: photo band + translucent text plane */
+.luare-services-variant-4 .luare-services-photo-image{bottom:56%;filter:saturate(.85)}
+.luare-services-variant-4 .luare-services-photo-cut{height:69%;background:rgba(255,255,255,.91);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.luare-services-variant-4:hover{transform:translateY(-8px)}
+.luare-services-variant-4:hover .luare-services-photo-image{transform:scale(1.07) translateY(-4px)}
+.luare-services-variant-4:hover .luare-services-photo-cut{height:74%;background:rgba(255,255,255,.95)}
+.luare-services-variant-4:after{content:"";position:absolute;z-index:4;left:30px;right:30px;bottom:0;height:3px;background:#45b8df;transform:scaleX(0);transform-origin:left;transition:transform .42s cubic-bezier(.2,.7,.2,1)}
+.luare-services-variant-4:hover:after{transform:scaleX(1)}
+
+@media(max-width:850px){.luare-services-photo-card{height:330px}.luare-services-variant-3 .luare-services-photo-copy{right:38%}}
+@media(max-width:560px){.luare-services-photo-card{height:310px}.luare-services-photo-copy h3{font-size:22px}.luare-services-photo-items span{font-size:13px}}
