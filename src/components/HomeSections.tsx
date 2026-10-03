@@ -260,29 +260,43 @@ export default function HomeSections() {
         </div>
       </section>
 
-      <section className="luare-v6-section" id="services">
+      <section className="luare-v6-section luare-services-photo" id="services">
         <div className="luare-v6-container">
           <ScrollReveal className="luare-v6-section-head">
             <p className="luare-v6-eyebrow">SERVICES</p>
             <h2>グローバル企業の会計・財務を、<br />ワンストップで。</h2>
           </ScrollReveal>
 
-          <div className="luare-v6-service-grid">
-            {services.map((service, index) => (
-              <ScrollReveal key={service.no} delay={(index % 2) * 75}>
-                <article className="luare-v6-service-card">
-                  <div className="luare-v6-service-top">
-                    <div className="luare-v6-icon-disc"><LineIcon name={service.icon} /></div>
-                    <span>{service.no}</span>
-                  </div>
-                  <h3>{service.title}</h3>
-                  <div className="luare-v6-service-items">
-                    {service.items.map((item) => <span key={item}>{item}</span>)}
-                  </div>
-                  <Link href="/contact">詳しく相談する <b>→</b></Link>
-                </article>
-              </ScrollReveal>
-            ))}
+          <div className="luare-services-photo-grid">
+            {services.map((service, index) => {
+              const href = index === 3 ? "/services/global-finance" : "/services/accounting-finance-consulting";
+              const photos = [
+                "/images/luare-hero-consulting.avif",
+                "/images/Photo.png",
+                "/images/ai_finance_concept.png",
+                "/images/global_cities_skyline.png",
+              ];
+              return (
+                <ScrollReveal key={service.no} delay={(index % 2) * 75}>
+                  <Link href={href} className="luare-services-photo-card" aria-label={service.title + "の詳細を見る"}>
+                    <div
+                      className="luare-services-photo-image"
+                      style={{ backgroundImage: `url("${photos[index]}")` }}
+                      aria-hidden="true"
+                    />
+                    <div className="luare-services-photo-cut" aria-hidden="true" />
+                    <div className="luare-services-photo-copy">
+                      <span className="luare-services-photo-no">{service.no}</span>
+                      <h3>{service.title}</h3>
+                      <div className="luare-services-photo-items">
+                        {service.items.map((item) => <span key={item}>{item}</span>)}
+                      </div>
+                    </div>
+                    <span className="luare-services-photo-arrow" aria-hidden="true">→</span>
+                  </Link>
+                </ScrollReveal>
+              );
+            })}
           </div>
 
           <ScrollReveal>
