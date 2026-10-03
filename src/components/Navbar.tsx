@@ -40,6 +40,7 @@ export default function Navbar({
     else if (baseRoute.startsWith("/zh")) baseRoute = baseRoute.replace("/zh", "");
     if (baseRoute === "") baseRoute = "/";
     if (targetLang === "JP") return baseRoute;
+    if (baseRoute === "/bpo") return targetLang === "EN" ? "/en" : "/zh";
     if (targetLang === "EN") return baseRoute === "/" ? "/en" : "/en" + baseRoute;
     return baseRoute === "/" ? "/zh" : "/zh" + baseRoute;
   };
@@ -53,6 +54,7 @@ export default function Navbar({
     ? [
         [sectionLink("people"), "Luareについて"],
         [sectionLink("services"), "サービス"],
+        ["/bpo", "Luare BPO"],
         [sectionLink("case-studies"), "事例"],
       ]
     : [
@@ -125,6 +127,7 @@ export default function Navbar({
     currentLang === "JP"
       ? [
           [sectionLink("services"), "Services"],
+          ["/bpo", "Luare BPO"],
           [sectionLink("people"), "People"],
           [sectionLink("case-studies"), "Case Studies"],
           [sectionLink("faq"), "FAQ"],
