@@ -17,6 +17,7 @@ export default function Footer() {
           </div>
           <nav className="luare-footer-links" aria-label="Footer navigation">
             <Link href="/#services">Services</Link>
+            <Link href="/services/audit-assurance">Audit Support</Link>
             <Link href="/bpo">Luare BPO</Link>
             <Link href="/#people">People</Link>
             <Link href="/#case-studies">Case Studies</Link>
