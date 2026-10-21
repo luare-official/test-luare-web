@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
+import InteractiveServiceGallery from "./InteractiveServiceGallery";
 
 type IconName =
   | "building"
@@ -266,38 +267,7 @@ export default function HomeSections() {
             <h2>グローバル企業の会計・財務を、<br />ワンストップで。</h2>
           </ScrollReveal>
 
-          <div className="luare-services-photo-grid">
-            {services.map((service, index) => {
-              const href = index === 0 ? "/services/audit-assurance" : index === 4 ? "/bpo" : index === 3 ? "/services/global-finance" : "/services/accounting-finance-consulting";
-              const photos = [
-                "https://unsplash.com/photos/0oZpRxG5Hkk/download?force=true",
-                "https://unsplash.com/photos/gMsnXqILjp4/download?force=true",
-                "https://unsplash.com/photos/KdeqA3aTnBY/download?force=true",
-                "https://unsplash.com/photos/YI_9SivVt_s/download?force=true",
-                "/images/luare-hero-consulting.avif",
-              ];
-              return (
-                <ScrollReveal key={service.no} delay={(index % 2) * 75}>
-                  <Link href={href} className={`luare-services-photo-card luare-services-variant-${index + 1}`} aria-label={service.title + "の詳細を見る"}>
-                    <div
-                      className="luare-services-photo-image"
-                      style={{ backgroundImage: `url("${photos[index]}")` }}
-                      aria-hidden="true"
-                    />
-                    <div className="luare-services-photo-cut" aria-hidden="true" />
-                    <div className="luare-services-photo-copy">
-                      <span className="luare-services-photo-no">{service.no}</span>
-                      <h3>{service.title}</h3>
-                      <div className="luare-services-photo-items">
-                        {service.items.map((item) => <span key={item}>{item}</span>)}
-                      </div>
-                    </div>
-                    <span className="luare-services-photo-arrow" aria-hidden="true">→</span>
-                  </Link>
-                </ScrollReveal>
-              );
-            })}
-          </div>
+          <InteractiveServiceGallery services={services} />
 
           <ScrollReveal>
             <Link href="/contact" className="luare-v6-primary-cta luare-v6-section-cta">
