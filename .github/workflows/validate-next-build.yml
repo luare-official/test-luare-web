@@ -21,8 +21,8 @@ jobs:
       - name: Check generated pages
         run: |
           test -f out/index.html
-          test -d out/services/internal-control
-          test -d out/services/accounting-management
-          test -d out/services/finance-ops
-          test -d out/services/ma-finance
-          test -d out/services/global-finance
+          test -f out/services/internal-control.html
+          test -f out/services/accounting-management.html
+          test -f out/services/finance-ops.html
+          test -f out/services/ma-finance.html
+          test -f out/services/global-finance.html
