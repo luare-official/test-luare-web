@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
+import InteractiveServiceGallery from "./InteractiveServiceGallery";
 
 type IconName =
   | "building"
@@ -120,38 +121,7 @@ const whoWeHelp = [
   ["puzzle", "経理・税務・監査をまとめて任せたい企業", "複数の専門家や業者への依頼をできるだけ一本化したい。"],
 ] as const;
 
-const services = [
-  {
-    icon: "audit" as IconName,
-    no: "01",
-    title: "監査・監査対応支援",
-    items: ["Audit Readiness", "Group Audit対応", "監査資料準備", "IFRS / US-GAAP Reporting", "監査法人との連携"],
-  },
-  {
-    icon: "tax" as IconName,
-    no: "02",
-    title: "会計・税務",
-    items: ["月次・年次決算", "税務顧問・税務申告", "記帳・レポーティング", "会社設立支援", "国際税務", "IFRS / US-GAAPコンバージェンス"],
-  },
-  {
-    icon: "ma" as IconName,
-    no: "03",
-    title: "M&A・Finance Advisory",
-    items: ["財務デューデリジェンス", "税務デューデリジェンス", "企業価値・株価算定", "ストックオプション評価", "PMI", "内部統制・内部監査"],
-  },
-  {
-    icon: "report" as IconName,
-    no: "04",
-    title: "Global Reporting",
-    items: ["海外親会社向けレポーティング", "連結パッケージ作成", "英文財務資料作成", "決算書・開示書類等の翻訳", "海外本社との会計コミュニケーション支援"],
-  },
-  {
-    icon: "people" as IconName,
-    no: "05",
-    title: "Luare BPO",
-    items: ["外資系日本法人向け経理BPO", "月次決算", "海外本社Reporting", "Intercompany", "SOP・Closing Calendar"],
-  },
-];
+
 
 const why = [
   ["01", "国際会計に強い専門家チーム", "IFRS・US-GAAP・国際税務・クロスボーダーM&Aなど、一般的な国内会計事務所では対応が難しい領域にも対応します。"],
@@ -266,38 +236,7 @@ export default function HomeSections() {
             <h2>グローバル企業の会計・財務を、<br />ワンストップで。</h2>
           </ScrollReveal>
 
-          <div className="luare-services-photo-grid">
-            {services.map((service, index) => {
-              const href = index === 0 ? "/services/audit-assurance" : index === 4 ? "/bpo" : index === 3 ? "/services/global-finance" : "/services/accounting-finance-consulting";
-              const photos = [
-                "https://unsplash.com/photos/0oZpRxG5Hkk/download?force=true",
-                "https://unsplash.com/photos/gMsnXqILjp4/download?force=true",
-                "https://unsplash.com/photos/KdeqA3aTnBY/download?force=true",
-                "https://unsplash.com/photos/YI_9SivVt_s/download?force=true",
-                "/images/luare-hero-consulting.avif",
-              ];
-              return (
-                <ScrollReveal key={service.no} delay={(index % 2) * 75}>
-                  <Link href={href} className={`luare-services-photo-card luare-services-variant-${index + 1}`} aria-label={service.title + "の詳細を見る"}>
-                    <div
-                      className="luare-services-photo-image"
-                      style={{ backgroundImage: `url("${photos[index]}")` }}
-                      aria-hidden="true"
-                    />
-                    <div className="luare-services-photo-cut" aria-hidden="true" />
-                    <div className="luare-services-photo-copy">
-                      <span className="luare-services-photo-no">{service.no}</span>
-                      <h3>{service.title}</h3>
-                      <div className="luare-services-photo-items">
-                        {service.items.map((item) => <span key={item}>{item}</span>)}
-                      </div>
-                    </div>
-                    <span className="luare-services-photo-arrow" aria-hidden="true">→</span>
-                  </Link>
-                </ScrollReveal>
-              );
-            })}
-          </div>
+          <InteractiveServiceGallery />
 
           <ScrollReveal>
             <Link href="/contact" className="luare-v6-primary-cta luare-v6-section-cta">

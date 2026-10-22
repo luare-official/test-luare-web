@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ServiceTopicSections from "@/components/ServiceTopicSections";
 import BpoDiagnosisForm from "@/components/BpoDiagnosisForm";
 
 export const metadata: Metadata = {
@@ -410,6 +411,8 @@ export default function BpoPage() {
             </div>
           </div>
         </section>
+
+        <ServiceTopicSections page="bpo" compact />
 
         <section className="bpo-final-cta">
           <div className="bpo-shell">

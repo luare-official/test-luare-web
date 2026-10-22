@@ -2695,3 +2695,72 @@ body {
 @media(prefers-reduced-motion:reduce){
   .audit-card,.audit-button,.audit-faq summary span,.luare-service-dropdown,.luare-service-menu>button span{transition:none}
 }
+
+
+/* PHOTO-FREE SERVICES A: scoped component; restrained disclosure, no decorative photos. */
+.luare-guide{color:#294b58;background:#fafaf8;border-top:1px solid #e7ecea;border-bottom:1px solid #e7ecea;padding:31px 39px 37px;border-radius:3px}
+.luare-guide-intro{display:flex;align-items:baseline;justify-content:space-between;gap:28px;padding:0 0 21px}
+.luare-guide-intro h3{margin:0;font-size:23px;font-weight:650;line-height:1.45;letter-spacing:-.035em}
+.luare-guide-intro p{margin:0;max-width:490px;font-size:12px;color:#687e87;line-height:1.85}
+.luare-guide-row{border-top:1px solid #d9e1df}
+.luare-guide-row:last-child{border-bottom:1px solid #d9e1df}
+.luare-guide-row-heading{margin:0;font:inherit}
+.luare-guide-trigger{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:grid;grid-template-columns:46px minmax(0,1fr) 25px;align-items:center;gap:15px;padding:22px 3px 23px;text-align:left;color:#344e53}
+.luare-guide-trigger:focus-visible{outline:3px solid #1686a6;outline-offset:3px;border-radius:4px}
+.luare-guide-number{align-self:start;padding-top:3px;color:#729087;font:400 24px/1.25 Georgia,serif}
+.luare-guide-title{display:block;font-size:19px;font-weight:650;line-height:1.5;letter-spacing:-.025em}
+.luare-guide-lead{display:block;margin-top:5px;color:#657980;line-height:1.85;font-size:12px;font-weight:400}
+.luare-guide-chevron{justify-self:end;color:#718b86;font-size:24px;line-height:1;transform:rotate(0deg);transition:transform .34s cubic-bezier(.24,.76,.29,1),color .25s;opacity:.85}
+.luare-guide-row.is-open .luare-guide-chevron{transform:rotate(180deg);color:#317b8b}
+@media(hover:hover){.luare-guide-trigger:hover .luare-guide-title{color:#14718a}}
+.luare-guide-panel{display:grid;grid-template-rows:0fr;opacity:0;visibility:hidden;transition:grid-template-rows .42s cubic-bezier(.2,.77,.31,1),opacity .34s ease,visibility 0s linear .42s}
+.luare-guide-row.is-open .luare-guide-panel{grid-template-rows:1fr;opacity:1;visibility:visible;transition:grid-template-rows .42s cubic-bezier(.2,.77,.31,1),opacity .34s ease,visibility 0s}
+.luare-guide-panel-clip{min-height:0;overflow:hidden}
+.luare-guide-panel-body{display:grid;grid-template-columns:160px minmax(0,1fr);gap:16px;padding:3px 43px 25px 63px;transform:translateY(7px);transition:transform .36s ease}
+.luare-guide-row.is-open .luare-guide-panel-body{transform:translateY(0)}
+.luare-guide-panel-caption{font-size:11px;color:#718982;font-weight:650;padding-top:12px;letter-spacing:.03em}
+.luare-guide-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}
+.luare-guide-link{display:flex;justify-content:space-between;align-items:center;min-height:51px;gap:12px;padding:10px 1px;border-bottom:1px solid #e0e7e4;color:#304f5a;font-size:13px;line-height:1.55;font-weight:500;text-decoration:none}
+.luare-guide-link-icon{color:#668992;flex:none;font-size:18px;line-height:1}
+.luare-guide-link:hover{color:#006e8f;text-decoration:underline;text-underline-offset:4px}
+.luare-guide-link:focus-visible{outline:2px solid #1686a6;outline-offset:1px;border-radius:3px}
+@media(max-width:930px){
+ .luare-guide-intro{align-items:flex-start;flex-direction:column;gap:5px}
+ .luare-guide-panel-body{grid-template-columns:1fr;gap:5px}
+ .luare-guide-panel-caption{padding-top:3px}
+}
+@media(max-width:720px){
+ .luare-guide{padding:18px 17px 25px}
+ .luare-guide-intro{padding-bottom:15px}
+ .luare-guide-intro h3{font-size:20px}
+ .luare-guide-intro p{font-size:12px}
+ .luare-guide-trigger{grid-template-columns:31px minmax(0,1fr) 20px;gap:10px;padding:18px 1px}
+ .luare-guide-number{font-size:19px}
+ .luare-guide-title{font-size:16px}
+ .luare-guide-lead{font-size:12px;line-height:1.65}
+ .luare-guide-chevron{font-size:21px}
+ .luare-guide-panel-body{padding:0 1px 17px 41px}
+ .luare-guide-panel-caption{font-size:11px}
+ .luare-guide-links{grid-template-columns:1fr;gap:0}
+ .luare-guide-link{min-height:45px;font-size:13px;line-height:1.55}
+}
+@media(prefers-reduced-motion:reduce){
+ .luare-guide-panel,.luare-guide-panel-body,.luare-guide-chevron{transition:none!important}
+}
+/* Shared anchored service subsection for all 24 direct-link targets */
+.luare-guide-detail{background:#fff;color:#25485a;padding:78px 0;border-top:1px solid #e3ebed}
+.luare-guide-detail-inner{width:min(1050px,calc(100% - 50px));margin:0 auto}
+.luare-guide-detail-kicker{font:700 11px Arial,sans-serif;letter-spacing:.14em;color:#387b90}
+.luare-guide-detail h1,.luare-guide-detail h2{margin:9px 0 16px;font-size:clamp(26px,3.2vw,38px);line-height:1.35}
+.luare-guide-detail-intro{color:#587382;max-width:800px;line-height:1.9}
+.luare-guide-detail-list{margin-top:33px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.luare-guide-detail-topic{scroll-margin-top:112px;padding:25px 26px;border:1px solid #dae6ea;border-radius:8px;background:#fff;min-width:0}
+.luare-guide-detail-topic:target{border-color:#8cb7c4;background:#f4fafb}
+.luare-guide-detail-topic h3{font-size:19px;line-height:1.55;margin:0 0 11px}
+.luare-guide-detail-topic p{font-size:14px;line-height:1.85;color:#586e7a;margin:0}
+.luare-guide-detail-cta{display:inline-block;border-radius:5px;background:#1d657f;color:#fff;text-decoration:none;padding:13px 22px;margin-top:34px;font-size:14px;font-weight:600}
+.luare-guide-detail-cta:hover{background:#0b4e68}
+.luare-guide-detail-breadcrumb{display:flex;gap:11px;flex-wrap:wrap;font-size:12px;color:#728691;margin:0 0 25px}
+.luare-guide-detail-breadcrumb a{color:#29758c}
+@media(max-width:710px){.luare-guide-detail{padding:52px 0}.luare-guide-detail-inner{width:calc(100% - 36px)}.luare-guide-detail-list{grid-template-columns:1fr;gap:11px}.luare-guide-detail-topic{padding:21px 19px}}
+

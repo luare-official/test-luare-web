@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ServiceTopicSections from "@/components/ServiceTopicSections";
 
 export const metadata: Metadata = {
   title: "外資系・中国系企業の監査・監査対応支援 | Luare Consulting",
@@ -174,6 +175,8 @@ export default function AuditAssurancePage() {
             </div>
           </div>
         </section>
+
+        <ServiceTopicSections page="audit-assurance" compact />
 
         <section className="audit-final">
           <div className="audit-shell">
