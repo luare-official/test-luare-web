@@ -1,0 +1,28 @@
+name: Validate Next.js build
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install
+        run: npm ci
+      - name: Next.js production build (no deploy)
+        run: npm run build
+      - name: Check generated pages
+        run: |
+          test -f out/index.html
+          test -d out/services/internal-control
+          test -d out/services/accounting-management
+          test -d out/services/finance-ops
+          test -d out/services/ma-finance
+          test -d out/services/global-finance
