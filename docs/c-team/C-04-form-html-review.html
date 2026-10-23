@@ -27,16 +27,16 @@ footer{padding-top:26px;text-align:center;color:var(--muted);font-size:11px}
 </style></head>
 <body><header>Luare Consulting</header><main><small class="topline">Service &amp; Pricing Guide</small>
 <h1>料金・サービス資料を<br>メールで受け取る</h1>
-<p class="lead">サービスの概要とお見積りに関する考え方をまとめた資料をご案内する予定です。正式な費用は、対象業務や体制を伺ったうえで個別にご提案します。</p>
-<p class="notice" role="note"><strong>C班のHTMLデザイン確認用です。</strong> 送信機能は一切ありません。実際の氏名・メールアドレスなどの個人情報は入力しないでください。料金、送信文、利用目的、同意文は未承認です。</p>
+<p class="lead">サービスの概要とお見積りに関する考え方をまとめた資料をご案内する予定です。実際の受付では、入力されたメールアドレス宛にPDFを添付したメールを1通送信し、メール認証は行わない方針です。正式な費用は、対象業務や体制を伺ったうえで個別にご提案します。</p>
+<p class="notice" role="note"><strong>C班のHTMLデザイン確認用です。</strong> 送信機能は一切ありません。実際の氏名・メールアドレスなどの個人情報は入力しないでください。本人確認なし・PDF添付メール1通の仕様に更新しましたが、料金、送信文、利用目的、同意文は未承認です。</p>
 <form id="review-form">
 <div class="field"><label class="field-label" for="company">会社名<span class="req">必須</span></label><input id="company" name="company" type="text" maxlength="100" autocomplete="off" placeholder="例：株式会社〇〇" required></div>
 <div class="field"><label class="field-label" for="fullName">お名前<span class="req">必須</span></label><input id="fullName" name="fullName" type="text" maxlength="80" autocomplete="off" placeholder="例：山田 太郎" required></div>
-<div class="field"><label class="field-label" for="email">会社メールアドレス<span class="req">必須</span></label><input id="email" name="email" type="email" maxlength="254" autocomplete="off" inputmode="email" placeholder="例：sample@example.com" required></div>
+<div class="field"><label class="field-label" for="email">会社メールアドレス<span class="req">必須</span></label><input id="email" name="email" type="email" maxlength="254" autocomplete="off" inputmode="email" placeholder="例：sample@example.com" aria-describedby="email-hint" required><p id="email-hint" class="hint">入力されたメールアドレスにPDFを1通お送りします。送信前にメールアドレスをご確認ください。（モックは送信しません）</p></div>
 <div class="field"><label class="field-label" for="interest">関心のある分野<span class="opt">任意</span></label><select id="interest" name="interest"><option value="">選択してください</option><option>Luare BPO</option><option>監査・監査対応支援</option><option>会計・税務</option><option>M&amp;A・Finance Advisory</option><option>Global Reporting</option><option>その他</option></select></div>
 <div class="field"><label class="field-label" for="message">ご相談内容<span class="opt">任意</span></label><textarea id="message" name="message" maxlength="1000" placeholder="任意：お困りのことや資料で確認したいこと"></textarea></div>
 <label class="consent" for="consent"><input id="consent" name="consent" type="checkbox" required><span>資料のご案内に必要な範囲で、入力した個人情報を利用することに同意します。<br><strong>※文面・プライバシーポリシーURLは承認前の仮表記です。</strong></span></label>
-<button type="submit">資料をメールで受け取る（モック）</button>
+<button type="submit">PDF資料をメールで受け取る（モック）</button>
 <p class="result" id="result" role="status" aria-live="polite">HTML確認専用のため、メール送信・データ保存は行っていません。</p>
 </form><footer>Luare Consulting — C班デザイン案（未承認・非公開用途）</footer></main>
 <script>
@@ -44,7 +44,7 @@ document.querySelector("#review-form").addEventListener("submit",function(event)
  event.preventDefault();
  const result=document.querySelector("#result");
  result.classList.add("show");
- result.textContent="これはHTML確認用のモックです。外部への通信・保存・メール送信は行いません。";
+ result.textContent="受付画面の確認用です。実際には、入力アドレスへPDF添付メールを1通送信する設計ですが、このモックでは外部通信・保存・メール送信は一切行いません。";
 });
 </script>
 </body></html>
