@@ -5,7 +5,7 @@
 ## PR/CI証跡
 | PR/班 | SHA | コード変更範囲 | GitHub Actions（確認した範囲） | 状態 |
 | --- | --- | --- | --- | --- |
-| [#3 A班](https://github.com/luare-official/test-luare-web/pull/3) | `ddcc00005af1` | サービス詳細ページ、J-SOX LP、関連CSS・QA | Build [39916386478](https://github.com/luare-official/test-luare-web/actions/runs/39916386478) success。Aリンク/アンカー [39916386673](https://github.com/luare-official/test-luare-web/actions/runs/39916386673) のjob/各ステップはsuccess（run全体の最終状態は別途確認） | Draft・監修待ち |
+| [#3 A班](https://github.com/luare-official/test-luare-web/pull/3) | `ddcc00005af1` | サービス詳細ページ、J-SOX LP、関連CSS・QA | Build [39916386478](https://github.com/luare-official/test-luare-web/actions/runs/39916386478) success。Aリンク/アンカー [39916386673](https://github.com/luare-official/test-luare-web/actions/runs/39916386673) も**最終success**（24項目・親ページ・アンカーの静的出力検査） | Draft・監修待ち |
 | [#5 B班](https://github.com/luare-official/test-luare-web/pull/5) | `f9a2ab11ee45` | 未承認記事3件・`src/lib/posts.ts`ガード | Build [39904362158](https://github.com/luare-official/test-luare-web/actions/runs/39904362158) success | Draft・公開保留 |
 | [#6 B班](https://github.com/luare-official/test-luare-web/pull/6) | `94c6382e961b` | `src/components/cases/CaseGallery.*` の独立UIのみ | Build [39915858946](https://github.com/luare-official/test-luare-web/actions/runs/39915858946) success | Draft・事例許諾待ち |
 | [#4 C班](https://github.com/luare-official/test-luare-web/pull/4) | `faf9b75d8d50` 作業中に更新あり | C班のみの仕様・モック・QA | Build [39911298713](https://github.com/luare-official/test-luare-web/actions/runs/39911298713) success、C静的QA [39911298705](https://github.com/luare-official/test-luare-web/actions/runs/39911298705) success（13件モック＋24リンク） | Draft・料金/配信未承認 |
