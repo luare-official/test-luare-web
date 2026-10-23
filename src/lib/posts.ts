@@ -26,6 +26,12 @@ export function getAllSlugs(): string[] {
   return fs
     .readdirSync(contentDirectory)
     .filter((f) => f.endsWith(".md"))
+    .filter((file) => {
+      // Unapproved editorial drafts must never be included in the public static site.
+      const raw = fs.readFileSync(path.join(contentDirectory, file), "utf-8");
+      const { data } = matter(raw);
+      return data.draft !== true;
+    })
     .map((f) => f.replace(/\.md$/, ""));
 }
 
@@ -57,6 +63,8 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   if (!fs.existsSync(filePath)) return null;
   const raw = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(raw);
+  // Defense in depth: never render an unapproved draft via a direct slug lookup.
+  if (data.draft === true) return null;
 
   const result = await remark()
     .use(html, { sanitize: false })
