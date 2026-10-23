@@ -1883,6 +1883,25 @@ body {
   background:#9fb7c7;
 }
 
+/* Keep the approved hero composition while separating the headline from the photo
+   on shorter desktop screens. No typography, imagery or palette changes. */
+@media(min-width:761px){
+  .luare-unicell-stage{min-height:max(840px,calc(100svh - 36px));}
+  .luare-unicell-white-shape{top:16%;height:50%;}
+  .luare-unicell-talk-photo{top:14%;height:48%;}
+  .luare-unicell-small-copy{top:25%;}
+  .luare-unicell-vertical{top:25%;}
+  .luare-unicell-hero-copy{bottom:6.5%;width:70%;}
+}
+@media(min-width:761px) and (max-width:1100px){
+  .luare-unicell-stage{min-height:max(900px,calc(100svh - 36px));}
+  .luare-unicell-hero-copy{width:84%;}
+  .luare-unicell-hero-copy h1{font-size:clamp(34px,4vw,42px);}
+  .luare-unicell-hero-copy h1 span{white-space:normal;}
+}
+/* Both home-section deep links remain usable on a fresh URL load. */
+.luare-home-v6 #representative,.luare-home-v6 #case-studies{scroll-margin-top:20px;}
+
 @media(max-width:1000px){
   .luare-unicell-nav-bubble{
     right:16px;
@@ -1918,10 +1937,11 @@ body {
     right:12px;
     padding:5px;
   }
-  .luare-unicell-nav-bubble nav,
-  .luare-unicell-lang{
-    display:none;
-  }
+  .luare-unicell-lang{display:none;}
+  .luare-unicell-nav-bubble nav{display:flex;}
+  .luare-unicell-nav-bubble nav .luare-service-menu,
+  .luare-unicell-nav-bubble nav>a:not(.luare-unicell-representative-link){display:none;}
+  .luare-unicell-nav-bubble nav>a.luare-unicell-representative-link{font-size:11px;padding:10px 8px;}
   .luare-unicell-contact{
     padding:12px 18px;
     font-size:12px;
