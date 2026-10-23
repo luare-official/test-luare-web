@@ -63,7 +63,7 @@ export default function Navbar({
       ];
 
   const serviceMenu = [
-    [sectionLink("services"), "サービス一覧"],
+    ["/services", "サービス一覧"],
     ["/services/audit-assurance", "監査・監査対応支援"],
     ["/bpo", "Luare BPO"],
   ];
