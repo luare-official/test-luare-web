@@ -1,0 +1,27 @@
+name: C-team static export QA
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'next.config.ts'
+      - 'package*.json'
+      - 'scripts/qa/**'
+      - '.github/workflows/c-team-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  static-export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Validate 24 service deep links, pages, SEO, and basic secrets
+        run: node scripts/qa/c09-static-export.mjs
