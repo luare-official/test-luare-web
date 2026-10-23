@@ -5,9 +5,10 @@ import { getAllPosts } from "@/lib/posts";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Insights & Knowledge | Luare Consulting",
+  title: "会計・経理・内部統制の読みもの | Luare Consulting",
   description:
-    "クロスボーダービジネスとガバナンスに関する専門的な知見。IFRS、内部統制、日本進出など、グローバル財務の最前線から。",
+    "日本法人の経理体制、海外子会社管理、内部統制など、会計・財務の実務に関する記事をご紹介します。",
+  alternates: { canonical: "https://luare-consulting.com/insights" },
 };
 
 export default function InsightsPage() {
@@ -39,11 +40,11 @@ export default function InsightsPage() {
             </span>
 
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-wider text-brand-platinum leading-tight">
-              Insights &amp; Knowledge
+              会計・経理の読みもの
             </h1>
 
             <p className="mt-6 text-sm sm:text-base text-brand-silver/70 tracking-wider max-w-xl mx-auto leading-relaxed">
-              クロスボーダービジネスとガバナンスに関する専門的な知見
+              日本法人の経理体制や海外子会社管理、内部統制など、実務に役立つテーマをご紹介します。
             </p>
 
             <div
@@ -108,7 +109,7 @@ export default function InsightsPage() {
                           className="text-[10px] font-bold uppercase tracking-[0.2em] group-hover:tracking-[0.3em] transition-all duration-300"
                           style={{ color: "#C5A059" }}
                         >
-                          Read More
+                          記事を読む
                         </span>
                         <span
                           className="text-xs transition-transform duration-300 group-hover:translate-x-1"
