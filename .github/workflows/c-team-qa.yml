@@ -22,6 +22,8 @@ jobs:
           node-version: '20'
           cache: npm
       - run: npm ci
+      - name: C-08 safe mock delivery contract tests (no external mail)
+        run: node --test scripts/qa/c08-mock-delivery.test.mjs
       - run: npm run build
       - name: Validate 24 service deep links, pages, SEO, and basic secrets
         run: node scripts/qa/c09-static-export.mjs
