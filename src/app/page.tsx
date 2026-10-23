@@ -49,6 +49,21 @@ function FreeConsultationRail() {
 }
 
 export default function Home() {
+  // A direct /#case-studies or /#representative visit should land on its section
+  // after hydration instead of remaining on the full-screen hero.
+  useEffect(() => {
+    const jumpToSection = () => {
+      const target = window.location.hash.slice(1);
+      if (target !== "case-studies" && target !== "representative") return;
+      requestAnimationFrame(() => {
+        document.getElementById(target)?.scrollIntoView({ block: "start", behavior: "instant" });
+      });
+    };
+    jumpToSection();
+    window.addEventListener("hashchange", jumpToSection);
+    return () => window.removeEventListener("hashchange", jumpToSection);
+  }, []);
+
   return (
     <>
       <Navbar heroStyle />
