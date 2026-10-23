@@ -2,7 +2,7 @@ import type {Metadata} from "next";
 import JsoxLandingPage from "@/components/JsoxLandingPage";
 
 // The HTML visual design was approved on 2026-10-23.
-// Public release remains gated on professional-content review and cross-team QA.
+// Release is gated on cross-team technical QA; husband reviews professional wording after launch.
 export const metadata:Metadata={
   title:"内部統制・J-SOX構築・3点セット整備支援 | Luare Consulting",
   description:"内部統制・J-SOXの3点セット整備、整備・運用評価、内部監査を実務に沿って支援。日本法人・海外拠点の管理体制に関するご相談も承ります。",
