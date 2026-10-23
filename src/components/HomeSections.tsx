@@ -331,7 +331,7 @@ export default function HomeSections() {
           </div>
           <p className="luare-v6-note">※掲載内容は確認用の仮原稿です。個別企業の実績や成果は、事実関係と掲載許諾の確認後に更新します。</p>
           <div className="mt-8 text-center">
-            <Link href="/cases" className="inline-flex items-center justify-center border border-[#335b67] px-7 py-3 text-sm font-semibold text-[#335b67] transition-colors hover:bg-[#335b67] hover:text-white">
+            <Link href="/#services" className="inline-flex items-center justify-center border border-[#335b67] px-7 py-3 text-sm font-semibold text-[#335b67] transition-colors hover:bg-[#335b67] hover:text-white">
               支援内容を詳しく見る <span className="ml-3" aria-hidden="true">→</span>
             </Link>
           </div>
