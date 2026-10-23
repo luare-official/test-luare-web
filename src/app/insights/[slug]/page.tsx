@@ -39,6 +39,7 @@ export async function generateMetadata({
   return {
     title: `${post.title} | Insights | Luare Consulting`,
     description: post.excerpt,
+    robots: post.review ? { index: false, follow: false } : undefined,
     alternates: {
       canonical: "https://luare-consulting.com/insights/" + post.slug,
     },
@@ -91,6 +92,12 @@ export default async function InsightPostPage({
             </h1>
           </header>
 
+          {post.review && (
+            <div className="mb-10 border border-[#d6e2df] bg-[#f2f7f4] px-5 py-4 text-sm leading-relaxed text-[#4e6870]">
+              この記事は、代表による専門監修前の確認用原稿です。内容は今後修正される場合があります。
+            </div>
+          )}
+
           {/* ══════════ ARTICLE CONTENT (Markdown) ══════════ */}
           <div
             className="insight-content"
@@ -98,7 +105,7 @@ export default async function InsightPostPage({
           />
 
           {/* ══════════ E-E-A-T AUTHOR BLOCK ══════════ */}
-          <div className="mt-20 p-8 sm:p-10 bg-slate-50 border border-slate-100 rounded-sm">
+          {!post.review && <div className="mt-20 p-8 sm:p-10 bg-slate-50 border border-slate-100 rounded-sm">
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8">
               {/* Photo Placeholder / Portrait */}
               <div className="w-24 h-24 sm:w-28 sm:h-28 shrink-0 relative rounded-full overflow-hidden border-2 shadow-sm" style={{ borderColor: 'rgba(197, 160, 89, 0.5)' }}>
@@ -126,7 +133,7 @@ export default async function InsightPostPage({
                 </div>
               </div>
             </div>
-          </div>
+          </div>}
 
           {/* ══════════ CTA BLOCK ══════════ */}
           <div className="mt-16 text-center border-t border-slate-100 pt-16">

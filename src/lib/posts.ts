@@ -12,6 +12,7 @@ export interface PostMeta {
   date: string;
   category: string;
   excerpt: string;
+  review?: boolean;
 }
 
 export interface Post extends PostMeta {
@@ -50,6 +51,7 @@ export function getAllPosts(): PostMeta[] {
       date: (data.date as string) ?? "",
       category: (data.category as string) ?? "",
       excerpt: (data.excerpt as string) ?? "",
+      review: data.review === true,
     };
   });
   return posts.sort((a, b) => (a.date > b.date ? -1 : 1));
@@ -76,6 +78,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     date: (data.date as string) ?? "",
     category: (data.category as string) ?? "",
     excerpt: (data.excerpt as string) ?? "",
+    review: data.review === true,
     contentHtml: result.toString(),
   };
 }
