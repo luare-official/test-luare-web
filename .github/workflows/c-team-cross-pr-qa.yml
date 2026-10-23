@@ -1,0 +1,59 @@
+name: C-team offline cross-PR integration QA
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/c-team-cross-pr-qa.yml'
+      - 'scripts/qa/c09-integrated-preview.mjs'
+      - 'scripts/qa/c09-static-export.mjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  combined-static-build:
+    name: A in main + B PRs + C (ephemeral only)
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    env:
+      SEND_ENABLED: 'false'
+      TEST_MODE: 'true'
+      CI: 'true'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Fetch and pin B-team PRs without pushing or modifying main
+        shell: bash
+        run: |
+          set -euo pipefail
+          # This checks the current approved GitHub feature branches at the pinned review snapshot.
+          git fetch --no-tags origin \
+            refs/pull/5/head:refs/remotes/qa/b-content \
+            refs/pull/6/head:refs/remotes/qa/b-cases \
+            refs/pull/7/head:refs/remotes/qa/b-insights
+          test "$(git rev-parse refs/remotes/qa/b-content)" = "f9a2ab11ee45b5ce6616990549043dabcc8d9fd8"
+          test "$(git rev-parse refs/remotes/qa/b-cases)" = "94c6382e961ba310daa4f821f41d5aa1da85db9a"
+          test "$(git rev-parse refs/remotes/qa/b-insights)" = "1c18bf7d8871d4501ffc179fbc5d1b2f7f225e66"
+          git config user.name "C-team offline QA"
+          git config user.email "c-team-qa@users.noreply.github.com"
+          git checkout -B qa-ephemeral-only HEAD
+          git -c rerere.enabled=false merge --no-ff --no-edit refs/remotes/qa/b-content
+          git -c rerere.enabled=false merge --no-ff --no-edit refs/remotes/qa/b-cases
+          git -c rerere.enabled=false merge --no-ff --no-edit refs/remotes/qa/b-insights
+          echo "Ephemeral integration SHA: $(git rev-parse HEAD)"
+          echo "No git push is executed. All merges are local to this CI runner."
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Install without changing lockfile
+        run: npm ci
+      - name: Build ephemeral combined website (no deployment)
+        run: npm run build
+      - name: Validate C-team 24 links and basic safety
+        run: node scripts/qa/c09-static-export.mjs
+      - name: Validate A-team service anchors
+        run: node scripts/verify-a-service-routes.mjs
+      - name: Validate unpublished B articles and case UI stay unexposed
+        run: node scripts/qa/c09-integrated-preview.mjs
