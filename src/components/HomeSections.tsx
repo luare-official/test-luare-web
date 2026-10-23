@@ -133,25 +133,25 @@ const why = [
 
 const cases = [
   {
-    label: "CASE 01｜外資系企業 日本法人",
-    title: "海外親会社向けUS-GAAPレポーティング",
-    issue: "海外親会社からUS-GAAPベースのレポーティングを求められているものの、日本法人内に対応できる人材がいない。",
-    support: "日本基準とUS-GAAPの差異整理から、レポーティング・親会社とのコミュニケーションまで支援。",
-    tags: "US-GAAP / MONTHLY CLOSING / REPORTING",
+    label: "CASE 01｜決算・業務改善",
+    title: "決算資料の作成と業務フローの整理",
+    issue: "部門ごとの集計方法や情報共有の時期に応じて、決算工程を整理する必要があります。",
+    support: "決算関連資料の作成や、情報の入手・確認・締め工程の整理について、支援内容を確認中です。",
+    tags: "CLOSING / FINANCE OPERATIONS",
   },
   {
-    label: "CASE 02｜海外上場企業 日本子会社",
-    title: "Group Auditorとの監査コミュニケーション",
-    issue: "グループ監査への対応や英語での監査コミュニケーションに大きな負担が発生。",
-    support: "日本法人と海外Group Auditorの間に入り、監査・レポーティング対応を支援。",
-    tags: "AUDIT / IFRS / ENGLISH COMMUNICATION",
+    label: "CASE 02｜グローバル内部統制",
+    title: "内部統制の運用と資料整理",
+    issue: "グループの統制方針と現場の業務を照らし合わせ、手順や役割を整理する必要があります。",
+    support: "統制の進め方や担当者の役割、証跡の管理について、支援内容を確認中です。",
+    tags: "INTERNAL CONTROL / OPERATIONS",
   },
   {
-    label: "CASE 03｜クロスボーダーM&A",
-    title: "Financial Due Diligence / Valuation",
-    issue: "海外企業を含むM&Aで、財務面の調査と企業価値評価を専門家に依頼したい。",
-    support: "Financial Due DiligenceからValuation、必要に応じて英語でのレポーティングまで対応。",
-    tags: "FDD / VALUATION / CROSS-BORDER M&A",
+    label: "CASE 03｜海外拠点のJ-SOX",
+    title: "海外拠点のJ-SOX文書化支援",
+    issue: "現地業務を把握し、関係者と認識をそろえて文書化を進める必要があります。",
+    support: "ヒアリングや業務フロー整理、J-SOXの3点セットに関する支援内容を確認中です。",
+    tags: "J-SOX / PROCESS DOCUMENTATION",
   },
 ];
 
@@ -329,7 +329,12 @@ export default function HomeSections() {
               </ScrollReveal>
             ))}
           </div>
-          <p className="luare-v6-note">※実案件を確認したうえで、匿名でも具体的な事例を3〜6件掲載する前提の仮配置です。</p>
+          <p className="luare-v6-note">※掲載内容は確認用の仮原稿です。個別企業の実績や成果は、事実関係と掲載許諾の確認後に更新します。</p>
+          <div className="mt-8 text-center">
+            <Link href="/cases" className="inline-flex items-center justify-center border border-[#335b67] px-7 py-3 text-sm font-semibold text-[#335b67] transition-colors hover:bg-[#335b67] hover:text-white">
+              支援内容を詳しく見る <span className="ml-3" aria-hidden="true">→</span>
+            </Link>
+          </div>
         </div>
       </section>
 

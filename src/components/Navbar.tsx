@@ -41,7 +41,7 @@ export default function Navbar({
     else if (baseRoute.startsWith("/zh")) baseRoute = baseRoute.replace("/zh", "");
     if (baseRoute === "") baseRoute = "/";
     if (targetLang === "JP") return baseRoute;
-    if (baseRoute === "/bpo" || baseRoute === "/services/audit-assurance") return targetLang === "EN" ? "/en" : "/zh";
+    if (baseRoute === "/bpo" || baseRoute === "/cases" || baseRoute === "/services/audit-assurance") return targetLang === "EN" ? "/en" : "/zh";
     if (targetLang === "EN") return baseRoute === "/" ? "/en" : "/en" + baseRoute;
     return baseRoute === "/" ? "/zh" : "/zh" + baseRoute;
   };
@@ -54,7 +54,7 @@ export default function Navbar({
   const navItems = currentLang === "JP"
     ? [
         [sectionLink("people"), "Luareについて"],
-        [sectionLink("case-studies"), "事例"],
+        ["/cases", "事例"],
       ]
     : [
         [prefix + "/#services", "Services"],
@@ -97,7 +97,7 @@ export default function Navbar({
                     ))}
                   </div>
                 </div>
-                <Link href={sectionLink("case-studies")}>事例</Link>
+                <Link href="/cases">事例</Link>
               </>
             ) : (
               navItems.map(([href, label]) => (
@@ -156,7 +156,7 @@ export default function Navbar({
     currentLang === "JP"
       ? [
           [sectionLink("people"), "People"],
-          [sectionLink("case-studies"), "Case Studies"],
+          ["/cases", "Case Studies"],
           [sectionLink("faq"), "FAQ"],
         ]
       : [
