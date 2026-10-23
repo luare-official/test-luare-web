@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
+import Link from "next/link";
 import Footer from "@/components/Footer";
 import CaseGallery, { type ApprovedCaseStudy } from "@/components/cases/CaseGallery";
 
@@ -72,6 +73,21 @@ export default function CasesPage() {
           ご確認用の仮原稿です。現在、実績の事実関係と掲載範囲を確認しています。
         </div>
         <CaseGallery cases={previewCases} introduction="決算・業務改善や内部統制など、支援内容をご紹介します。掲載している文章は確認用の仮原稿です。" />
+        <section className="mx-auto max-w-[1160px] px-5 pb-20 sm:px-10" aria-labelledby="fpa-model">
+          <div className="border-t border-[#d8e3df] bg-[#eef2ef] px-6 py-8 sm:px-10 sm:py-11">
+            <span className="text-xs font-semibold tracking-[0.12em] text-[#55717a]">SUPPORT MODEL / 参考</span>
+            <h2 id="fpa-model" className="mt-3 text-2xl font-semibold tracking-tight text-[#294f61] sm:text-3xl">
+              FP&amp;Aの支援モデル
+            </h2>
+            <p className="mt-3 max-w-[750px] text-sm leading-8 text-[#546f75]">
+              海外事業の現場データと本社の管理指標をそろえ、予算・実績の分析やKPI管理を行うための支援イメージです。
+              こちらは顧客の実績事例ではなく、提供内容を検討するためのモデルです。
+            </p>
+            <Link href="/services/accounting-management#fpa" className="mt-6 inline-block border-b border-[#447985] pb-1 text-sm font-semibold text-[#326879] hover:border-transparent">
+              FP&amp;Aのサービス内容を見る →
+            </Link>
+          </div>
+        </section>
       </main>
       <Footer />
     </>
