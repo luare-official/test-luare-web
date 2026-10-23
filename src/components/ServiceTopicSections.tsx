@@ -8,7 +8,7 @@ type InternalControlDetail = { work: readonly string[]; documents: readonly stri
  * A-03 review draft. Scope and wording require professional review before main merge.
  * No changes to existing service IDs, hrefs, or top-page design.
  */
-const internalControlDetails: Record<string, InternalControlDetail> = {
+const serviceTopicDetails: Record<string, InternalControlDetail> = {
   internal: {
     work: ["対象業務の主要リスクを整理", "既存ルールと担当者・承認者の役割を確認"],
     documents: ["統制対象業務・論点の整理", "構築・改善に向けた検討事項"],
@@ -96,8 +96,8 @@ export default function ServiceTopicSections({page,compact=false}: Props){
       <p className="luare-guide-detail-intro">{meta.intro}</p>
       <div className="luare-guide-detail-list">
         {topics.map(item=>{
-          const detail=page!=="audit-assurance" && page!=="ma-finance" && page!=="bpo" ? internalControlDetails[item.id] : undefined;
-          return <article key={item.id} id={item.id} className="luare-guide-detail-topic">
+          const detail=page!=="audit-assurance" && page!=="ma-finance" && page!=="bpo" ? serviceTopicDetails[item.id] : undefined;
+          return <article key={item.id} id={page==="audit-assurance" && item.id==="group-audit" ? undefined : item.id} className="luare-guide-detail-topic">
             <h3>{item.name}</h3><p>{item.description}</p>
             {detail && <div className="mt-4 grid gap-4 border-t border-[#dae6ea] pt-4">
               <div>
