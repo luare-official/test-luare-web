@@ -5,3 +5,7 @@
 @media(prefers-reduced-motion:reduce){.jsox-lp{scroll-behavior:auto}}
 
 .jsox-lp{isolation:isolate;position:relative;overflow-x:clip}
+
+/* Preview status strip is removed on the published page, so the mobile menu
+   opens directly below the 66px header rather than leaving a 41px gap. */
+@media(max-width:610px){.jsox-lp .nav.open{top:66px}}
