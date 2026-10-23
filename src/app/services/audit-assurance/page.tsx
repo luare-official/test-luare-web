@@ -24,7 +24,7 @@ const supports = [
   ["01", "監査体制の設計・コーディネーション", "監査の目的、対象範囲、適用会計基準、海外親会社からの要求事項などを整理。監査が必要な場合には、提携監査法人と連携し、案件に適した監査体制をご案内します。"],
   ["02", "Audit Readiness／監査準備支援", "監査開始前に必要となる資料や会計データを整理し、PBC資料、勘定科目明細、契約書、会計処理根拠など、監査で求められる資料の準備も支援します。"],
   ["03", "IFRS / US-GAAP対応", "日本基準とIFRS・US-GAAPとの差異整理、会計処理の検討、Reporting Package作成など、海外親会社向け財務報告を支援します。"],
-  ["04", "Group Audit対応", "海外親会社のGroup AuditorからのAudit Instructionを確認し、日本法人側で必要となる対応を整理します。"],
+  ["04", "Group Audit対応", "海外親会社のGroup Auditorから届くAudit Instructionの内容と提出期限を整理し、日本法人側で必要となる資料の準備、担当者間の連携、照会対応を支援します。"],
   ["05", "監査人対応", "監査人からの質問や資料依頼を整理し、日本法人側の経理・財務担当者の負担を軽減します。"],
   ["06", "海外本社とのコミュニケーション", "日本語・英語・中国語に対応。単なる翻訳ではなく、会計・財務の内容を理解した専門家が関係者間のコミュニケーションを支援します。"],
 ];
@@ -118,7 +118,7 @@ export default function AuditAssurancePage() {
             </div>
             <div className="audit-support-list">
               {supports.map(([no, title, text]) => (
-                <article key={no}><span>{no}</span><div><h3>{title}</h3><p>{text}</p></div></article>
+                <article key={no} id={title==="Group Audit対応" ? "group-audit" : undefined} className={title==="Group Audit対応" ? "scroll-mt-28" : undefined}><span>{no}</span><div><h3>{title}</h3><p>{text}</p></div></article>
               ))}
             </div>
           </div>
