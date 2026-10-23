@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import ApprovedServiceDetailLayout from "@/components/ApprovedServiceDetailLayout";
 import {servicePages,type ServicePageKey} from "@/lib/serviceCatalog";
 
-const pageId = "accounting-management" as ServicePageKey;
+const pageId = "accounting-management" satisfies ServicePageKey;
 const page = servicePages[pageId];
 export const metadata:Metadata={
   title: `${page.title} | Luare Consulting`,
