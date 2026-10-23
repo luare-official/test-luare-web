@@ -1,7 +1,7 @@
 /**
  * Public review copy for Luare Consulting's service directory.
  * Source: approved photo-free A layout and r5 service scope drafts.
- * Requires final professional/legal review before production publication.
+ * User direction (2026-10-23): husband reviews professional wording after initial launch.
  * Do not add pricing, customer-identifying case details, or secrets here.
  */
 export type ServiceCategory = {
