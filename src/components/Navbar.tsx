@@ -53,8 +53,8 @@ export default function Navbar({
 
   const navItems = currentLang === "JP"
     ? [
-        [sectionLink("people"), "Luareについて"],
-        ["/cases", "事例"],
+        [sectionLink("representative"), "代表プロフィール"],
+        [sectionLink("case-studies"), "事例"],
       ]
     : [
         [prefix + "/#services", "Services"],
@@ -79,7 +79,7 @@ export default function Navbar({
           <nav>
             {currentLang === "JP" ? (
               <>
-                <Link href={sectionLink("people")}>Luareについて</Link>
+                <Link className="luare-unicell-representative-link" href={sectionLink("representative")}>代表プロフィール</Link>
                 <div className={"luare-service-menu luare-service-menu-hero " + (isServiceOpen ? "is-open" : "")}>
                   <button
                     type="button"
@@ -97,7 +97,7 @@ export default function Navbar({
                     ))}
                   </div>
                 </div>
-                <Link href="/cases">事例</Link>
+                <Link href={sectionLink("case-studies")}>事例</Link>
               </>
             ) : (
               navItems.map(([href, label]) => (
@@ -155,8 +155,8 @@ export default function Navbar({
   const standardNavItems =
     currentLang === "JP"
       ? [
-          [sectionLink("people"), "People"],
-          ["/cases", "Case Studies"],
+          [sectionLink("representative"), "代表プロフィール"],
+          [sectionLink("case-studies"), "Case Studies"],
           [sectionLink("faq"), "FAQ"],
         ]
       : [
