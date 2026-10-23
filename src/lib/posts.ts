@@ -63,6 +63,8 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   if (!fs.existsSync(filePath)) return null;
   const raw = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(raw);
+  // Defense in depth: never render an unapproved draft via a direct slug lookup.
+  if (data.draft === true) return null;
 
   const result = await remark()
     .use(html, { sanitize: false })
