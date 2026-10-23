@@ -1,20 +1,17 @@
-import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import ServiceTopicSections from "@/components/ServiceTopicSections";
-import {servicePages,type ServicePageKey} from "@/lib/serviceCatalog";
+import type {Metadata} from "next";
+import JsoxLandingPage from "@/components/JsoxLandingPage";
 
-const pageId = "internal-control" as ServicePageKey;
-const page = servicePages[pageId];
+// The HTML visual design was approved on 2026-10-23.
+// Release is gated on cross-team technical QA; husband reviews professional wording after launch.
 export const metadata:Metadata={
-  title: `${page.title} | Luare Consulting`,
-  description: page.intro,
-  alternates:{canonical:`https://luare-consulting.com/services/${pageId}`}
+  title:"内部統制・J-SOX構築・3点セット整備支援 | Luare Consulting",
+  description:"内部統制・J-SOXの3点セット整備、整備・運用評価、内部監査を実務に沿って支援。日本法人・海外拠点の管理体制に関するご相談も承ります。",
+  alternates:{canonical:"https://luare-consulting.com/services/internal-control"},
+  openGraph:{
+    title:"内部統制・J-SOX構築支援 | Luare Consulting",
+    description:"業務記述書・フローチャート・RCMから運用評価まで。内部統制を現場で続けられる仕組みに。",
+    url:"https://luare-consulting.com/services/internal-control",
+    type:"website"
+  }
 };
-export default function Page(){
-  return <>
-    <Navbar/>
-    <main><ServiceTopicSections page={pageId}/></main>
-    <Footer/>
-  </>;
-}
+export default function Page(){return <JsoxLandingPage/>;}

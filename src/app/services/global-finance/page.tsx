@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ServiceTopicSections from "@/components/ServiceTopicSections";
+import ApprovedServiceDetailLayout from "@/components/ApprovedServiceDetailLayout";
 import {servicePages,type ServicePageKey} from "@/lib/serviceCatalog";
 
-const pageId = "global-finance" as ServicePageKey;
+const pageId = "global-finance" satisfies ServicePageKey;
 const page = servicePages[pageId];
 export const metadata:Metadata={
   title: `${page.title} | Luare Consulting`,
@@ -14,7 +14,7 @@ export const metadata:Metadata={
 export default function Page(){
   return <>
     <Navbar/>
-    <main><ServiceTopicSections page={pageId}/></main>
+    <ApprovedServiceDetailLayout page={pageId}/>
     <Footer/>
   </>;
 }

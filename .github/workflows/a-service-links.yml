@@ -1,0 +1,29 @@
+name: A班 Service Links and Anchors QA
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/app/services/**"
+      - "src/app/bpo/**"
+      - "src/components/ApprovedServiceDetailLayout*"
+      - "src/components/JsoxLandingPage*"
+      - "src/components/ServiceTopicSections.tsx"
+      - "src/lib/serviceCatalog.ts"
+      - "scripts/verify-a-service-routes.mjs"
+      - ".github/workflows/a-service-links.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
+      - run: npm run build
+      - name: Verify all homepage service routes and anchors in exported HTML
+        run: node scripts/verify-a-service-routes.mjs
