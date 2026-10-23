@@ -8,7 +8,7 @@ type InternalControlDetail = { work: readonly string[]; documents: readonly stri
  * A-03 review draft. Scope and wording require professional review before main merge.
  * No changes to existing service IDs, hrefs, or top-page design.
  */
-const serviceTopicDetails: Record<string, InternalControlDetail> = {
+export const serviceTopicDetails: Record<string, InternalControlDetail> = {
   internal: {
     work: ["対象業務の主要リスクを整理", "既存ルールと担当者・承認者の役割を確認"],
     documents: ["統制対象業務・論点の整理", "構築・改善に向けた検討事項"],
