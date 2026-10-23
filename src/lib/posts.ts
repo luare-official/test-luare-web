@@ -26,6 +26,12 @@ export function getAllSlugs(): string[] {
   return fs
     .readdirSync(contentDirectory)
     .filter((f) => f.endsWith(".md"))
+    .filter((file) => {
+      // Unapproved editorial drafts must never be included in the public static site.
+      const raw = fs.readFileSync(path.join(contentDirectory, file), "utf-8");
+      const { data } = matter(raw);
+      return data.draft !== true;
+    })
     .map((f) => f.replace(/\.md$/, ""));
 }
 
