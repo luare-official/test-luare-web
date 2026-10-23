@@ -1,0 +1,41 @@
+name: C-team live browser QA (read-only)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/c-team-live-browser-qa.yml'
+      - 'scripts/qa/c01-live-browser.mjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    env:
+      CI: 'true'
+      SEND_ENABLED: 'false'
+      TEST_MODE: 'true'
+      QA_BASE_URL: 'https://luare-consulting.com'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Install dependencies for read-only browser QA
+        run: |
+          npm ci
+          npm install --no-save --package-lock=false playwright@1.58.2
+          npx playwright install --with-deps chromium
+      - name: Screenshot PC/mobile and check 24 live service links, SEO routes
+        run: node scripts/qa/c01-live-browser.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c-team-live-browser-evidence
+          path: qa-artifacts/
+          if-no-files-found: warn
+          retention-days: 7
