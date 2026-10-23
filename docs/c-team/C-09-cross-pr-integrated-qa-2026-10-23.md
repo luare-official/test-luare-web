@@ -3,7 +3,7 @@
 **合格範囲：ソース統合と静的ビルド・リンク・未承認コンテンツ公開防止。未実施：実際のPC/スマホ画面と本番HTTP。**
 
 ## 最新ブランチ構成
-- GitHub `main`は既にA班のサービス改修を取り込んだ状態。以前のA班PR #3はOpen一覧に存在せず、メインのSHAは調査時`bd8cd9da66d07d6e85164a2b56d56e9c1a33435f`だった。
+- GitHub `main`は既にA班のサービス改修を取り込んだ状態。以前のA班PR #3はOpen一覧に存在せず、GitHub APIで確認した`main`のGit**ツリーSHA**は調査時`bd8cd9da66d07d6e85164a2b56d56e9c1a33435f`だった（コミットSHAとは異なる）。
 - C班Draft PR #4：`feature/hp-c-conversion`。PDF資料送付1通の仕様・無送信HTMLモック・匿名計測案・自動QA。
 - B班Draft PR #5：`feature/hp-b-content` / `f9a2ab11ee45b5ce6616990549043dabcc8d9fd8`。3つの未承認記事と非公開フラグ。
 - B班Draft PR #6：`feature/hp-b-cases-approved-ui` / `94c6382e961ba310daa4f821f41d5aa1da85db9a`。支援事例の未接続UI。
