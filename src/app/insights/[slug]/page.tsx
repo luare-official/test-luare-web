@@ -5,6 +5,18 @@ import { getPostBySlug, getAllSlugs } from "@/lib/posts";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 
+/**
+ * B-10: Only link to verified published service URLs/anchors.
+ * These slugs are editorial topics, not claims of client delivery.
+ */
+const relatedServices: Record<string, string> = {
+  "china-japan-market-entry": "/services/global-finance#finance-setup",
+  "governance-overseas-subsidiaries": "/services/internal-control#three-documents",
+  "close-process-early-improvement": "/services/finance-ops#close-improvement",
+  "overseas-jsox-three-documents": "/services/internal-control#three-documents",
+  "japan-subsidiary-finance-setup": "/services/global-finance#finance-setup",
+};
+
 // Next.js App Router dynamic params generation
 export function generateStaticParams() {
   const slugs = getAllSlugs();
@@ -27,6 +39,9 @@ export async function generateMetadata({
   return {
     title: `${post.title} | Insights | Luare Consulting`,
     description: post.excerpt,
+    alternates: {
+      canonical: "https://luare-consulting.com/insights/" + post.slug,
+    },
   };
 }
 
@@ -41,6 +56,8 @@ export default async function InsightPostPage({
   if (!post) {
     notFound();
   }
+
+  const relatedServiceHref = relatedServices[post.slug] ?? "/#services";
 
   return (
     <>
@@ -104,7 +121,7 @@ export default async function InsightPostPage({
                 </p>
                 <div className="mt-4">
                   <Link href="/about" className="text-xs font-bold tracking-widest uppercase transition-colors" style={{ color: '#C5A059' }}>
-                    View Profile →
+                    代表プロフィールを見る →
                   </Link>
                 </div>
               </div>
@@ -114,11 +131,11 @@ export default async function InsightPostPage({
           {/* ══════════ CTA BLOCK ══════════ */}
           <div className="mt-16 text-center border-t border-slate-100 pt-16">
             <h3 className="font-serif text-xl sm:text-2xl font-medium text-brand-navy tracking-wide mb-8">
-              海外子会社の管理・内部統制でお悩みですか？
+              この記事に関連するサービス
             </h3>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/#gateway"
+                href={relatedServiceHref}
                 className="w-full sm:w-auto inline-flex items-center justify-center border px-8 py-3.5 text-[11px] font-bold uppercase tracking-[0.25em] transition-all duration-300 bg-transparent hover:bg-slate-50"
                 style={{
                   borderColor: "#C5A059",
@@ -131,7 +148,7 @@ export default async function InsightPostPage({
                 href="/contact"
                 className="w-full sm:w-auto inline-flex items-center justify-center border px-8 py-3.5 text-[11px] font-bold uppercase tracking-[0.25em] transition-all duration-300 border-brand-navy bg-brand-navy text-white hover:bg-brand-navy/90"
               >
-                無料相談を予約する
+                お問い合わせ
               </Link>
             </div>
           </div>
