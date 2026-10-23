@@ -4,13 +4,15 @@ import {serviceTopicDetails} from "@/components/ServiceTopicSections";
 import styles from "./ApprovedServiceDetailLayout.module.css";
 
 type ApprovedPage = "audit-assurance" | "accounting-management" | "finance-ops" | "global-finance";
+type ServiceTab = ApprovedPage | "internal-control";
 type LayoutProps = { page: ApprovedPage };
 
-const tabs: readonly {page:ApprovedPage;label:string;number:string}[] = [
-  {page:"audit-assurance",label:"海外監査・Group Audit",number:"01"},
-  {page:"accounting-management",label:"決算・FP&A",number:"02"},
-  {page:"finance-ops",label:"業務改善・AI",number:"03"},
-  {page:"global-finance",label:"Finance Setup",number:"04"}
+const tabs: readonly {page:ServiceTab;label:string;number:string}[] = [
+  {page:"internal-control",label:"内部統制・J-SOX",number:"01"},
+  {page:"audit-assurance",label:"海外監査・Group Audit",number:"02"},
+  {page:"accounting-management",label:"決算・FP&A",number:"03"},
+  {page:"finance-ops",label:"業務改善・AI",number:"04"},
+  {page:"global-finance",label:"Finance Setup",number:"05"}
 ];
 
 const pageCopy: Record<ApprovedPage,{eyebrow:string;lead:string;title?:string}> = {
