@@ -5,7 +5,7 @@ type Props = { page: ServicePageKey; compact?: boolean };
 
 type InternalControlDetail = { work: readonly string[]; documents: readonly string[] };
 /**
- * A-03 review draft. Scope and wording require professional review before main merge.
+ * User direction: publish the existing approved service scope, then husband reviews on the live site.
  * No changes to existing service IDs, hrefs, or top-page design.
  */
 export const serviceTopicDetails: Record<string, InternalControlDetail> = {
