@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C-04 料金資料請求 HTML確認用｜Luare Consulting</title>
+<style>
+:root{color-scheme:light;--ink:#203b52;--muted:#64717c;--line:#d7dde1;--paper:#f6f7f7;--deep:#153f72}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;line-height:1.8}
+header{background:white;border-bottom:1px solid var(--line);padding:22px max(20px,calc((100% - 1100px)/2));font-size:16px;letter-spacing:.05em;font-weight:650}
+main{max-width:800px;margin:auto;padding:72px 24px 100px}
+small.topline{display:block;letter-spacing:.22em;text-transform:uppercase;color:#667988;font-size:10px;font-weight:bold}
+h1{font-family:Georgia,"Noto Serif JP","Yu Mincho",serif;font-weight:500;font-size:clamp(30px,4.3vw,39px);line-height:1.4;margin:15px 0 20px}
+.lead{color:var(--muted);font-size:14px;max-width:630px;margin-bottom:32px}
+.notice{font-size:13px;color:#635f50;background:#f1efdf;border-left:3px solid #aa996c;padding:12px 16px;margin:0 0 28px}
+form{background:white;border:1px solid #e3e7e9;padding:48px 52px;box-shadow:0 12px 38px rgba(20,47,70,.035)}
+.field{margin:0 0 26px}label.field-label{display:block;margin-bottom:8px;font-size:13px;font-weight:650}
+.req{font-size:10px;color:#9b3942;padding:2px 7px;background:#faf1f1;margin-left:7px}
+.opt{font-size:10px;color:#61717d;padding:2px 7px;background:#f3f5f5;margin-left:7px}
+input:not([type=checkbox]),textarea,select{display:block;width:100%;min-height:49px;border:1px solid #cbd4db;border-radius:2px;background:#fdfefe;padding:12px 14px;font-size:16px;color:var(--ink);font-family:inherit}
+textarea{resize:vertical;min-height:120px}input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible{outline:3px solid #72b3d7;outline-offset:2px}
+.hint{color:var(--muted);font-size:12px;margin:8px 0 0}
+.consent{display:flex;align-items:flex-start;gap:12px;border-top:1px solid var(--line);padding-top:26px;font-size:13px;line-height:1.8}.consent input{height:19px;width:19px;min-width:19px;margin-top:3px}
+button{border:0;background:var(--deep);color:white;font-weight:700;letter-spacing:.07em;font-size:14px;min-height:54px;width:100%;margin-top:26px;cursor:pointer}
+button:hover{background:#2b577e}button:disabled{background:#8396a7}
+.result{margin-top:20px;color:#3e5f75;font-size:13px;display:none}.result.show{display:block}
+footer{padding-top:26px;text-align:center;color:var(--muted);font-size:11px}
+@media(max-width:600px){main{padding:44px 16px 70px}form{padding:28px 20px}header{padding:18px 18px}.lead{font-size:13px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style></head>
+<body><header>Luare Consulting</header><main><small class="topline">Service &amp; Pricing Guide</small>
+<h1>料金・サービス資料を<br>メールで受け取る</h1>
+<p class="lead">サービスの概要とお見積りに関する考え方をまとめた資料をご案内する予定です。正式な費用は、対象業務や体制を伺ったうえで個別にご提案します。</p>
+<p class="notice" role="note"><strong>C班のHTMLデザイン確認用です。</strong> 送信機能は一切ありません。実際の氏名・メールアドレスなどの個人情報は入力しないでください。料金、送信文、利用目的、同意文は未承認です。</p>
+<form id="review-form" novalidate>
+<div class="field"><label class="field-label" for="company">会社名<span class="req">必須</span></label><input id="company" name="company" type="text" maxlength="100" autocomplete="off" placeholder="例：株式会社〇〇" required></div>
+<div class="field"><label class="field-label" for="fullName">お名前<span class="req">必須</span></label><input id="fullName" name="fullName" type="text" maxlength="80" autocomplete="off" placeholder="例：山田 太郎" required></div>
+<div class="field"><label class="field-label" for="email">会社メールアドレス<span class="req">必須</span></label><input id="email" name="email" type="email" maxlength="254" autocomplete="off" inputmode="email" placeholder="例：sample@example.com" required></div>
+<div class="field"><label class="field-label" for="interest">関心のある分野<span class="opt">任意</span></label><select id="interest" name="interest"><option value="">選択してください</option><option>Luare BPO</option><option>監査・監査対応支援</option><option>会計・税務</option><option>M&amp;A・Finance Advisory</option><option>Global Reporting</option><option>その他</option></select></div>
+<div class="field"><label class="field-label" for="message">ご相談内容<span class="opt">任意</span></label><textarea id="message" name="message" maxlength="1000" placeholder="任意：お困りのことや資料で確認したいこと"></textarea></div>
+<label class="consent" for="consent"><input id="consent" name="consent" type="checkbox" required><span>資料のご案内に必要な範囲で、入力した個人情報を利用することに同意します。<br><strong>※文面・プライバシーポリシーURLは承認前の仮表記です。</strong></span></label>
+<button type="submit">資料をメールで受け取る（モック）</button>
+<p class="result" id="result" role="status" aria-live="polite">HTML確認専用のため、メール送信・データ保存は行っていません。</p>
+</form><footer>Luare Consulting — C班デザイン案（未承認・非公開用途）</footer></main>
+<script>
+document.querySelector("#review-form").addEventListener("submit",function(event){
+ event.preventDefault();
+ const result=document.querySelector("#result");
+ result.classList.add("show");
+ result.textContent="これはHTML確認用のモックです。外部への通信・保存・メール送信は行いません。";
+});
+</script>
+</body></html>
