@@ -38,5 +38,10 @@
 
 ## 5. 実行ログ
 - 新QA専用PR：[PR #12](https://github.com/luare-official/test-luare-web/pull/12)（Draft、main未変更）
-- GitHub ActionsブラウザQA：結果と証跡は完走確認後に追記。
+- **[公開ブラウザQA run 40049987222](https://github.com/luare-official/test-luare-web/actions/runs/40049987222)：success**。ブラウザ訪問14画面（7ルート×PC1440/SP390）、フォーム6描画（3言語×2幅）、画像14枚、エラー0。公開ページを読むだけの検査であり**実送信・クリック送信なし**。
+- **[スクリーンショット14枚＋JSONの証跡](https://github.com/luare-official/test-luare-web/actions/runs/40049987222/artifacts/12543375430)**（Actions artifact 7日保持）。
+- **既存の公開フォーム3言語すべてで、ラベルとフォーム部品のプログラム上の関連付けが8箇所不足／フォーム内にプライバシーポリシーへのリンクなし**。同じ問題がPC/スマホ双方に再現（ラベルの未関連付け計8×3言語、画面幅による重複件数は除外）。
+- **`/en/contact`と`/zh/contact`のHTML langが`ja`**。SEOの`/robots.txt`・`/sitemap.xml`はともに**HTTP404**、ホームのcanonical未設定。フォームの正式プライバシー表記が最優先確認事項。
+- B班の`/cases`にnoindex非設定警告は出なかった（静的なmetaのみの確認）。B班の専門記事3件は現在閲覧可能な`review:true`・noindexの確認用原稿であり、閲覧制限ではない。
+- GitHub Actionsのsuccessは**検査処理の成功**であって、公開サイトの警告項目が修正済みという意味ではない。画素一致、Lighthouse、フォームの送信結果・受信結果は未確認。
 - 本番変更0件、実フォーム投稿0件、実顧客へのメール0件。価格PDFや代替料金提示の実装・検討0件。
