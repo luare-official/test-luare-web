@@ -19,7 +19,16 @@ export default function Page(){
   return <>
     <Navbar solid />
     <main className="bg-white text-[#25485a]">
-      <nav aria-label="パンくずリスト" className="mx-auto max-w-6xl px-5 pt-28 text-xs text-[#657e89] sm:px-8 sm:pt-32">
+      <nav aria-label="専門サービス" className="border-b border-[#dce6ea] bg-white px-5 pt-24 sm:px-8 sm:pt-28">
+        <div className="mx-auto flex max-w-6xl gap-1 overflow-x-auto">
+          <Link href="/services/internal-control" className="border-b-2 border-transparent text-[#536e7c] hover:text-[#17617b] shrink-0 px-3 py-3 text-xs font-semibold sm:px-4">内部統制・J-SOX</Link>
+          <Link href="/services/audit-assurance" className="border-b-2 border-transparent text-[#536e7c] hover:text-[#17617b] shrink-0 px-3 py-3 text-xs font-semibold sm:px-4">会計監査対応</Link>
+          <Link href="/services/accounting-management" aria-current="page" className="border-b-2 border-[#17617b] bg-[#f5f9fa] text-[#17617b] shrink-0 px-3 py-3 text-xs font-semibold sm:px-4">決算・FP&A</Link>
+          <Link href="/services/finance-ops" className="border-b-2 border-transparent text-[#536e7c] hover:text-[#17617b] shrink-0 px-3 py-3 text-xs font-semibold sm:px-4">業務改善・AI</Link>
+          <Link href="/services/global-finance" className="border-b-2 border-transparent text-[#536e7c] hover:text-[#17617b] shrink-0 px-3 py-3 text-xs font-semibold sm:px-4">日本進出・Finance Setup</Link>
+        </div>
+      </nav>
+      <nav aria-label="パンくずリスト" className="mx-auto max-w-6xl px-5 pt-5 text-xs text-[#657e89] sm:px-8 sm:pt-6">
         <Link href="/" className="hover:underline">ホーム</Link><span className="mx-2">/</span>
         <Link href="/services" className="hover:underline">サービス</Link><span className="mx-2">/</span><span aria-current="page">月次・年次・連結決算／FP&A・KPI分析</span>
       </nav>
