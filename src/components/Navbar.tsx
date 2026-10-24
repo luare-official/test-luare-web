@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { serviceCategories } from "@/lib/serviceCatalog";
 
 interface NavbarProps {
   theme?: "light" | "dark";
@@ -62,11 +63,12 @@ export default function Navbar({
         [prefix + "/about", currentLang === "ZH" ? "关于我们" : "About"],
       ];
 
-  const serviceMenu = [
-    ["/services", "サービス一覧"],
-    ["/services/audit-assurance", "監査・監査対応支援"],
-    ["/bpo", "Luare BPO"],
-  ];
+  // Use the same five major categories and anchor IDs as the approved /services page.
+  const serviceMenu = serviceCategories.map(({ number, title }) => ({
+    number,
+    label: title,
+    href: `/services#category-${number}`,
+  }));
 
   if (heroStyle) {
     return (
@@ -90,11 +92,18 @@ export default function Navbar({
                     サービス <span aria-hidden="true">⌄</span>
                   </button>
                   <div className="luare-service-dropdown">
-                    {serviceMenu.map(([href, label]) => (
+                    {serviceMenu.map(({ href, label, number }) => (
                       <Link key={href} href={href} onClick={() => setIsServiceOpen(false)}>
-                        {label}
+                        <span className="luare-service-option-number" aria-hidden="true">{number}</span>
+                        <span className="luare-service-option-label">{label}</span>
+                        <span className="luare-service-option-arrow" aria-hidden="true">↗</span>
                       </Link>
                     ))}
+                    <div className="luare-service-dropdown-divider" aria-hidden="true" />
+                    <Link href="/services" className="luare-service-all-link" onClick={() => setIsServiceOpen(false)}>
+                      <span>サービスをすべて見る</span>
+                      <span aria-hidden="true">→</span>
+                    </Link>
                   </div>
                 </div>
                 <Link href={sectionLink("case-studies")}>事例</Link>
@@ -191,11 +200,18 @@ export default function Navbar({
                   Services <span aria-hidden="true">⌄</span>
                 </button>
                 <div className="luare-service-dropdown">
-                  {serviceMenu.map(([href, label]) => (
+                  {serviceMenu.map(({ href, label, number }) => (
                     <Link key={href} href={href} onClick={() => setIsServiceOpen(false)}>
-                      {label}
+                      <span className="luare-service-option-number" aria-hidden="true">{number}</span>
+                      <span className="luare-service-option-label">{label}</span>
+                      <span className="luare-service-option-arrow" aria-hidden="true">↗</span>
                     </Link>
                   ))}
+                  <div className="luare-service-dropdown-divider" aria-hidden="true" />
+                  <Link href="/services" className="luare-service-all-link" onClick={() => setIsServiceOpen(false)}>
+                    <span>サービスをすべて見る</span>
+                    <span aria-hidden="true">→</span>
+                  </Link>
                 </div>
               </div>
             )}
@@ -257,15 +273,19 @@ export default function Navbar({
             {currentLang === "JP" && (
               <div className="luare-mobile-service-group">
                 <span>Services</span>
-                {serviceMenu.map(([href, label]) => (
+                {serviceMenu.map(({ href, label, number }) => (
                   <Link
                     key={href}
                     href={href}
                     onClick={() => { setIsMenuOpen(false); setIsServiceOpen(false); }}
                   >
+                    <span className="luare-mobile-service-number" aria-hidden="true">{number}</span>
                     {label}
                   </Link>
                 ))}
+                <Link href="/services" onClick={() => { setIsMenuOpen(false); setIsServiceOpen(false); }}>
+                  サービスをすべて見る →
+                </Link>
               </div>
             )}
             {standardNavItems.map(([href, label]) => (
