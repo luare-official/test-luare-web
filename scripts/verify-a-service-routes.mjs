@@ -52,7 +52,18 @@ const jsox=content("internal-control");
 for(const element of ["three-documents","evaluation","internal-audit","training","faq"]){
   assert(idCount(jsox,element)===1,`Missing J-SOX target ${element}`);
 }
-assert(jsox.includes('href="/contact"'),"J-SOX contact CTA is not linked");
+// Earlier LPs used a /contact link. The approved A layout embeds a compact
+// form, wired to exactly the same Formspree destination as /contact.
+const hasContactLink=jsox.includes('href="/contact"');
+const hasEmbeddedContactForm=
+  jsox.includes('action="https://formspree.io/f/mojppoor"') &&
+  jsox.includes('method="POST"') &&
+  jsox.includes('name="company"') &&
+  jsox.includes('name="email"') &&
+  jsox.includes('name="language"') &&
+  jsox.includes('name="topic"') &&
+  jsox.includes('type="submit"');
+assert(hasContactLink||hasEmbeddedContactForm,"J-SOX contact CTA and live contact form are both missing");
 console.log(`A班 static QA: checked ${checked} homepage routes, ${htmlCache.size} parent pages and 5 service tabs.`);
 if(problems.length){
   for(const message of problems) console.error("FAIL:",message);
