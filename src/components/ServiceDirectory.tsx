@@ -99,9 +99,11 @@ export default function ServiceDirectory() {
         <h2 className="text-lg font-semibold text-[#23485c]">関連する専門サービス</h2>
         <p className="mt-2 text-sm leading-7 text-[#667e8b]">上記4つの基本分類とは別に、個別のご相談を承るサービスです。</p>
         <div className="mt-5 flex flex-wrap gap-3 text-[13px] font-semibold text-[#22687e]">
-          <Link className="rounded-full border border-[#c9dfe5] bg-white px-4 py-2.5 hover:bg-[#e9f5f7]" href="/services/audit-assurance">会計監査対応・Group Audit ↗</Link>
-          <Link className="rounded-full border border-[#c9dfe5] bg-white px-4 py-2.5 hover:bg-[#e9f5f7]" href="/bpo">経理BPO ↗</Link>
-          <Link className="rounded-full border border-[#c9dfe5] bg-white px-4 py-2.5 hover:bg-[#e9f5f7]" href="/services/ma-finance">M&amp;A・財務アドバイザリー ↗</Link>
+          <Link className="rounded-full border border-[#c9dfe5] bg-white px-4 py-2.5 hover:bg-[#e9f5f7]" href="/services/audit-assurance#group-audit">Group Audit・海外監査人対応 ↗</Link>
+          <Link className="rounded-full border border-[#c9dfe5] bg-white px-4 py-2.5 hover:bg-[#e9f5f7]" href="/bpo">Luare BPO ↗</Link>
+          <Link className="rounded-full border border-[#c9dfe5] bg-white px-4 py-2.5 hover:bg-[#e9f5f7]" href="/services/ma-finance#fdd">財務デューデリジェンス ↗</Link>
+          <Link className="rounded-full border border-[#c9dfe5] bg-white px-4 py-2.5 hover:bg-[#e9f5f7]" href="/services/ma-finance#valuation">企業価値・株価算定 ↗</Link>
+          <Link className="rounded-full border border-[#c9dfe5] bg-white px-4 py-2.5 hover:bg-[#e9f5f7]" href="/services/ma-finance#pmi">PMI・統合後の管理体制 ↗</Link>
         </div>
       </div>
     </section>
