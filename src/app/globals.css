@@ -2594,15 +2594,24 @@ body {
 .luare-service-menu>button{border:0;background:transparent;font:inherit;cursor:pointer}
 .luare-service-menu>button span{display:inline-block;margin-left:4px;font-size:.9em;transition:transform .22s ease}
 .luare-service-menu.is-open>button span,.luare-service-menu:focus-within>button span,.luare-service-menu:hover>button span{transform:rotate(180deg)}
-.luare-service-dropdown{position:absolute;top:calc(100% + 14px);left:50%;z-index:80;display:grid;width:230px;padding:9px;border:1px solid rgba(15,49,82,.10);border-radius:20px;background:rgba(255,255,255,.98);box-shadow:0 20px 55px rgba(15,49,82,.14);opacity:0;visibility:hidden;transform:translate(-50%,-8px);transition:opacity .22s ease,transform .22s ease,visibility .22s}
+.luare-service-dropdown{position:absolute;top:calc(100% + 14px);left:50%;z-index:80;display:grid;width:min(326px,calc(100vw - 32px));max-height:min(500px,calc(100dvh - 115px));overflow-y:auto;padding:9px;border:1px solid rgba(15,49,82,.10);border-radius:20px;background:rgba(255,255,255,.98);box-shadow:0 20px 55px rgba(15,49,82,.14);opacity:0;visibility:hidden;transform:translate(-50%,-8px);transition:opacity .22s ease,transform .22s ease,visibility .22s}
 .luare-service-menu:hover .luare-service-dropdown,.luare-service-menu:focus-within .luare-service-dropdown,.luare-service-menu.is-open .luare-service-dropdown{opacity:1;visibility:visible;transform:translate(-50%,0)}
 .luare-service-dropdown a{display:flex!important;align-items:center!important;min-height:42px!important;padding:10px 12px!important;border-radius:12px!important;color:#183b58!important;font-family:var(--font-sans),sans-serif!important;font-size:12px!important;font-weight:700!important;letter-spacing:.01em!important;text-decoration:none!important;white-space:nowrap;transition:background .2s,color .2s}
 .luare-service-dropdown a:hover{background:#edf7fb;color:#078fcf!important}
+.luare-service-dropdown a:focus-visible{outline:2px solid #078fcf;outline-offset:-2px;background:#edf7fb}
+.luare-service-dropdown .luare-service-option-number{flex:0 0 22px;color:#7e95a0;font-size:11px;letter-spacing:.07em}
+.luare-service-dropdown .luare-service-option-label{flex:1;min-width:0}
+.luare-service-dropdown .luare-service-option-arrow{margin-left:auto;color:#7e95a0}
+.luare-service-dropdown-divider{height:1px;margin:7px 5px;background:#e1e8eb}
+.luare-service-dropdown .luare-service-all-link{justify-content:space-between;color:#55707f!important}
+.luare-mobile-service-number{display:inline-block;min-width:30px;color:#82c8e6;font-size:11px}
+
 .luare-service-menu-hero>button{padding:0;color:#173a56;font-size:12px;font-weight:700;letter-spacing:.02em}
 .luare-service-menu-standard>button{display:flex;align-items:center;gap:2px;padding:0}
 .luare-mobile-service-group{padding:4px 0 14px;border-bottom:1px solid rgba(255,255,255,.12)}
 .luare-mobile-service-group>span{display:block;padding:14px 0 8px;color:#82c8e6;font:700 10px Manrope,Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase}
 .luare-mobile-service-group>a{display:block;padding:10px 0;color:#fff;font-size:14px;font-weight:600;text-decoration:none}
+.luare-mobile-service-group>a:last-child{margin-top:5px;border-top:1px solid rgba(255,255,255,.16);padding-top:16px;color:#bddfed}
 
 /* ================================
    Audit / Assurance support
