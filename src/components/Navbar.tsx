@@ -42,7 +42,7 @@ export default function Navbar({
     else if (baseRoute.startsWith("/zh")) baseRoute = baseRoute.replace("/zh", "");
     if (baseRoute === "") baseRoute = "/";
     if (targetLang === "JP") return baseRoute;
-    if (baseRoute === "/bpo" || baseRoute === "/cases" || baseRoute === "/services/audit-assurance") return targetLang === "EN" ? "/en" : "/zh";
+    if (baseRoute === "/bpo" || baseRoute === "/cases" || baseRoute === "/services/audit-assurance" || baseRoute === "/pricing") return targetLang === "EN" ? "/en" : "/zh";
     if (targetLang === "EN") return baseRoute === "/" ? "/en" : "/en" + baseRoute;
     return baseRoute === "/" ? "/zh" : "/zh" + baseRoute;
   };
@@ -54,8 +54,11 @@ export default function Navbar({
 
   const navItems = currentLang === "JP"
     ? [
+        ["/", "ホーム"],
+        ["/cases", "支援事例"],
+        ["/insights", "ブログ"],
+        ["/pricing", "料金"],
         [sectionLink("representative"), "代表プロフィール"],
-        [sectionLink("case-studies"), "事例"],
       ]
     : [
         [prefix + "/#services", "Services"],
@@ -63,7 +66,7 @@ export default function Navbar({
         [prefix + "/about", currentLang === "ZH" ? "关于我们" : "About"],
       ];
 
-  // Use the same five major categories and anchor IDs as the approved /services page.
+  // Keep the four main categories consistent with the husband's r5 structure.
   const serviceMenu = serviceCategories.map(({ number, title }) => ({
     number,
     label: title,
@@ -81,7 +84,7 @@ export default function Navbar({
           <nav>
             {currentLang === "JP" ? (
               <>
-                <Link className="luare-unicell-representative-link" href={sectionLink("representative")}>代表プロフィール</Link>
+                <Link href="/">ホーム</Link>
                 <div className={"luare-service-menu luare-service-menu-hero " + (isServiceOpen ? "is-open" : "")}>
                   <button
                     type="button"
@@ -106,7 +109,10 @@ export default function Navbar({
                     </Link>
                   </div>
                 </div>
-                <Link href={sectionLink("case-studies")}>事例</Link>
+                <Link href="/cases">支援事例</Link>
+                <Link href="/insights">ブログ</Link>
+                <Link href="/pricing">料金</Link>
+                <Link className="luare-unicell-representative-link" href={sectionLink("representative")}>代表プロフィール</Link>
               </>
             ) : (
               navItems.map(([href, label]) => (
@@ -132,10 +138,24 @@ export default function Navbar({
             ))}
           </div>
 
-          <Link href={contactLink} className="luare-unicell-contact">
-            {contactText}
-          </Link>
+          <button type="button" className="luare-unicell-hero-menu-toggle" aria-expanded={isMenuOpen} aria-label="メニューを開く" onClick={()=>setIsMenuOpen(open=>!open)}>
+            {isMenuOpen?"閉じる ×":"メニュー ☰"}
+          </button>
+          <Link href={contactLink} className="luare-unicell-contact">{contactText}</Link>
         </div>
+        {isMenuOpen && (
+          <nav className="luare-unicell-hero-mobile-menu" aria-label="モバイルメニュー">
+            <Link href="/" onClick={()=>setIsMenuOpen(false)}>ホーム</Link>
+            <Link href="/services" onClick={()=>setIsMenuOpen(false)}>サービス</Link>
+            {serviceMenu.map(({href,label,number})=>(
+              <Link key={href} href={href} onClick={()=>setIsMenuOpen(false)} className="luare-unicell-mobile-subnav">{number} {label}</Link>
+            ))}
+            <Link href="/cases" onClick={()=>setIsMenuOpen(false)}>支援事例</Link>
+            <Link href="/insights" onClick={()=>setIsMenuOpen(false)}>ブログ</Link>
+            <Link href="/pricing" onClick={()=>setIsMenuOpen(false)}>料金</Link>
+            <Link href={sectionLink("representative")} onClick={()=>setIsMenuOpen(false)}>代表プロフィール</Link>
+          </nav>
+        )}
       </header>
     );
   }
@@ -164,9 +184,10 @@ export default function Navbar({
   const standardNavItems =
     currentLang === "JP"
       ? [
+          ["/cases", "支援事例"],
+          ["/insights", "ブログ"],
+          ["/pricing", "料金"],
           [sectionLink("representative"), "代表プロフィール"],
-          [sectionLink("case-studies"), "Case Studies"],
-          [sectionLink("faq"), "FAQ"],
         ]
       : [
           [prefix + "/#services", "Services"],
@@ -186,8 +207,9 @@ export default function Navbar({
           </span>
         </Link>
 
-        <div className="hidden items-center gap-6 md:flex lg:gap-8">
-          <nav className="flex items-center gap-5 lg:gap-7">
+        <div className="hidden items-center gap-3 xl:flex xl:gap-6">
+          <nav className="flex items-center gap-3 xl:gap-5">
+            {currentLang === "JP" && <Link href="/" className={"luare-nav-link " + linkColor}>ホーム</Link>}
             {currentLang === "JP" && (
               <div className={"luare-service-menu luare-service-menu-standard " + (isServiceOpen ? "is-open" : "")}>
                 <button
@@ -197,7 +219,7 @@ export default function Navbar({
                   aria-expanded={isServiceOpen}
                   onClick={() => setIsServiceOpen((open) => !open)}
                 >
-                  Services <span aria-hidden="true">⌄</span>
+                  サービス <span aria-hidden="true">⌄</span>
                 </button>
                 <div className="luare-service-dropdown">
                   {serviceMenu.map(({ href, label, number }) => (
@@ -244,7 +266,7 @@ export default function Navbar({
           </Link>
         </div>
 
-        <div className="flex items-center gap-3 md:hidden">
+        <div className="flex items-center gap-3 xl:hidden">
           <div className={"flex items-center gap-1.5 font-[var(--font-inter)] text-[9px] font-medium " + languageText}>
             <Link href={getLangUrl("JP")} className={currentLang === "JP" ? languageActive : ""}>JP</Link>
             <span className="opacity-35">/</span>
@@ -268,7 +290,7 @@ export default function Navbar({
       </div>
 
       {isMenuOpen && (
-        <div className="fixed inset-x-0 bottom-0 top-[78px] z-40 overflow-y-auto bg-[#123e68] px-7 py-10 md:hidden">
+        <div className="fixed inset-x-0 bottom-0 top-[78px] z-40 overflow-y-auto bg-[#123e68] px-7 py-10 xl:hidden">
           <nav className="flex flex-col">
             {currentLang === "JP" && (
               <div className="luare-mobile-service-group">

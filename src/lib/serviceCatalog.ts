@@ -18,11 +18,10 @@ export type ServiceItem = {
   href: string;
 };
 export const serviceCategories: readonly ServiceCategory[] = [
-  { number:"01", title:"監査・監査対応支援", lead:"監査準備や海外監査人とのやりとりから、内部統制の整備・運用まで。", itemIds:["internal","three-documents","evaluation","internal-audit","training","accounting-advisory","group-audit"] },
-  { number:"02", title:"会計・税務", lead:"経理・決算の実務と、経営判断につながる数字の整備を支えます。", itemIds:["closing","fpa","cashflow","close-improvement","process","system-implementation"] },
-  { number:"03", title:"M&A・Finance Advisory", lead:"重要な意思決定に必要な財務の検討と、実行段階の支援を行います。", itemIds:["fdd","valuation","pmi"] },
-  { number:"04", title:"Global Reporting", lead:"日本法人の立ち上げから海外本社への報告まで、国内外の業務をつなぎます。", itemIds:["market-entry","finance-setup","hq-reporting","coordination"] },
-  { number:"05", title:"Luare BPO", lead:"経理の継続運営を、現場に合った仕組みと実務の両面から支えます。", itemIds:["outsourcing","ai","operating-model","reporting"] }
+  { number:"01", title:"内部統制・J-SOX・内部監査", lead:"構築から評価・改善まで、実務に根付く内部統制を支援。", itemIds:["internal","three-documents","evaluation","internal-audit","training"] },
+  { number:"02", title:"会計・決算・経営管理支援", lead:"数字を作る実務から、意思決定に使える経営情報の整備まで。", itemIds:["closing","outsourcing","fpa","cashflow","accounting-advisory"] },
+  { number:"03", title:"業務改善・AI・システム支援", lead:"現場の工程を見極め、仕組みとテクノロジーの両面から改善。", itemIds:["close-improvement","process","ai","system-implementation","operating-model"] },
+  { number:"04", title:"日本進出・海外拠点支援", lead:"日本と海外、現地実務と本社経営管理の接点を整備。", itemIds:["market-entry","finance-setup","reporting","hq-reporting","coordination"] },
 ] as const;
 
 const topics: readonly [string,string,string,string][] = [
