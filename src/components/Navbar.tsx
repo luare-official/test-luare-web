@@ -207,7 +207,7 @@ export default function Navbar({
           </span>
         </Link>
 
-        <div className="hidden items-center gap-3 lg:flex xl:gap-6">
+        <div className="hidden items-center gap-3 xl:flex xl:gap-6">
           <nav className="flex items-center gap-3 xl:gap-5">
             {currentLang === "JP" && <Link href="/" className={"luare-nav-link " + linkColor}>ホーム</Link>}
             {currentLang === "JP" && (
@@ -266,7 +266,7 @@ export default function Navbar({
           </Link>
         </div>
 
-        <div className="flex items-center gap-3 lg:hidden">
+        <div className="flex items-center gap-3 xl:hidden">
           <div className={"flex items-center gap-1.5 font-[var(--font-inter)] text-[9px] font-medium " + languageText}>
             <Link href={getLangUrl("JP")} className={currentLang === "JP" ? languageActive : ""}>JP</Link>
             <span className="opacity-35">/</span>
@@ -290,7 +290,7 @@ export default function Navbar({
       </div>
 
       {isMenuOpen && (
-        <div className="fixed inset-x-0 bottom-0 top-[78px] z-40 overflow-y-auto bg-[#123e68] px-7 py-10 lg:hidden">
+        <div className="fixed inset-x-0 bottom-0 top-[78px] z-40 overflow-y-auto bg-[#123e68] px-7 py-10 xl:hidden">
           <nav className="flex flex-col">
             {currentLang === "JP" && (
               <div className="luare-mobile-service-group">
