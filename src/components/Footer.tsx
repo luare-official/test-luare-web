@@ -16,14 +16,15 @@ export default function Footer() {
             </p>
           </div>
           <nav className="luare-footer-links" aria-label="Footer navigation">
-            <Link href="/services">Services</Link>
-            <Link href="/services/audit-assurance">Audit Support</Link>
-            <Link href="/bpo">Luare BPO</Link>
-            <Link href="/#people">People</Link>
-            <Link href="/#case-studies">Case Studies</Link>
-            <Link href="/insights">Insights</Link>
-            <Link href="/about">About Us</Link>
-            <Link href="/contact">Contact</Link>
+            <Link href="/">ホーム</Link>
+            <Link href="/services">サービス</Link>
+            <Link href="/cases">支援事例</Link>
+            <Link href="/insights">ブログ</Link>
+            <Link href="/pricing">料金</Link>
+            <Link href="/#representative">代表プロフィール</Link>
+            <Link href="/services/audit-assurance">会計監査対応</Link>
+            <Link href="/bpo">経理BPO</Link>
+            <Link href="/contact">お問い合わせ</Link>
           </nav>
         </div>
         <div className="luare-footer-copy">© 2026 Luare Consulting</div>
