@@ -32,8 +32,8 @@ export default function GlobalDataPipelineEn() {
                 <rect x="20" y="56" width="7" height="7" fill="#F1F5F9" rx="0.5" opacity="0.4"/>
                 <rect x="6" y="68" width="5" height="7" fill="#F1F5F9" rx="0.5" opacity="0.4"/>
                 <rect x="13" y="68" width="5" height="7" fill="#F1F5F9" rx="0.5" opacity="0.4"/>
-                <rect x="36" y="4" width="36" height="120" fill="#0B132B" rx="1"/>
-                <rect x="46" y="0" width="16" height="8" fill="#0B132B" rx="1"/>
+                <rect x="36" y="4" width="36" height="120" fill="#0B3158" rx="1"/>
+                <rect x="46" y="0" width="16" height="8" fill="#0B3158" rx="1"/>
                 <rect x="52" y="-2" width="4" height="6" fill="#334155" rx="0.5"/>
                 <rect x="39" y="10" width="8" height="10" fill="#F1F5F9" rx="0.5" opacity="0.9"/>
                 <rect x="50" y="10" width="8" height="10" fill="#F1F5F9" rx="0.5" opacity="0.9"/>
@@ -81,44 +81,44 @@ export default function GlobalDataPipelineEn() {
           {/* CENTER: Pipeline */}
           <div className="hidden md:flex flex-col items-center justify-center w-[36%] shrink-0 px-2">
             <div className="flex flex-col items-center gap-3 w-full">
-              <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-center whitespace-nowrap" style={{ color:'#C5A059' }}>
+              <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-center whitespace-nowrap" style={{ color:'#1766A0' }}>
                 Seamless Financial Data Integration<br/>(HQ-Subsidiary Reporting Pipeline)
               </span>
-              <div className="relative w-full rounded-full border-[1.5px] overflow-hidden bg-transparent" style={{ borderColor:'#C5A059', padding: '14px 0' }}>
+              <div className="relative w-full rounded-full border-[1.5px] overflow-hidden bg-transparent" style={{ borderColor:'#1766A0', padding: '14px 0' }}>
                 <div className="absolute top-[28%] left-0 w-full h-[3px] overflow-hidden pointer-events-none">
-                  <div className="beam-right h-full rounded-full" style={{ background: 'linear-gradient(90deg, transparent 0%, #C5A059 40%, #C5A059 60%, transparent 100%)' }} />
-                  <div className="beam-right h-full rounded-full" style={{ background: 'linear-gradient(90deg, transparent 0%, #C5A059 40%, #C5A059 60%, transparent 100%)', animationDelay: '1.4s' }} />
+                  <div className="beam-right h-full rounded-full" style={{ background: 'linear-gradient(90deg, transparent 0%, #1766A0 40%, #1766A0 60%, transparent 100%)' }} />
+                  <div className="beam-right h-full rounded-full" style={{ background: 'linear-gradient(90deg, transparent 0%, #1766A0 40%, #1766A0 60%, transparent 100%)', animationDelay: '1.4s' }} />
                 </div>
                 <div className="absolute bottom-[28%] left-0 w-full h-[3px] overflow-hidden pointer-events-none">
-                  <div className="beam-left h-full rounded-full" style={{ background: 'linear-gradient(90deg, transparent 0%, #C5A059 40%, #C5A059 60%, transparent 100%)' }} />
-                  <div className="beam-left h-full rounded-full" style={{ background: 'linear-gradient(90deg, transparent 0%, #C5A059 40%, #C5A059 60%, transparent 100%)', animationDelay: '1.4s' }} />
+                  <div className="beam-left h-full rounded-full" style={{ background: 'linear-gradient(90deg, transparent 0%, #1766A0 40%, #1766A0 60%, transparent 100%)' }} />
+                  <div className="beam-left h-full rounded-full" style={{ background: 'linear-gradient(90deg, transparent 0%, #1766A0 40%, #1766A0 60%, transparent 100%)', animationDelay: '1.4s' }} />
                 </div>
                 <div className="relative z-10 flex items-center justify-center w-full px-5">
-                  <div className="w-0 h-0 border-t-[5px] border-b-[5px] border-r-[8px] border-t-transparent border-b-transparent border-r-[#C5A059] shrink-0" />
-                  <div className="flex-1 h-[2px] bg-[#C5A059]" />
-                  <div className="w-0 h-0 border-t-[5px] border-b-[5px] border-l-[8px] border-t-transparent border-b-transparent border-l-[#C5A059] shrink-0" />
+                  <div className="w-0 h-0 border-t-[5px] border-b-[5px] border-r-[8px] border-t-transparent border-b-transparent border-r-[#1766A0] shrink-0" />
+                  <div className="flex-1 h-[2px] bg-[#1766A0]" />
+                  <div className="w-0 h-0 border-t-[5px] border-b-[5px] border-l-[8px] border-t-transparent border-b-transparent border-l-[#1766A0] shrink-0" />
                 </div>
               </div>
             </div>
           </div>
 
           <div className="flex md:hidden flex-col items-center justify-center py-6 w-full text-center">
-            <span className="text-[9px] font-bold uppercase tracking-[0.1em] mb-3" style={{ color:'#C5A059' }}>
+            <span className="text-[9px] font-bold uppercase tracking-[0.1em] mb-3" style={{ color:'#1766A0' }}>
               Seamless Financial Data Integration<br/>(HQ-Subsidiary Reporting Pipeline)
             </span>
-            <div className="relative rounded-full border-[1.5px] overflow-hidden bg-transparent" style={{ borderColor:'#C5A059', width: '44px', height: '120px' }}>
+            <div className="relative rounded-full border-[1.5px] overflow-hidden bg-transparent" style={{ borderColor:'#1766A0', width: '44px', height: '120px' }}>
               <div className="absolute left-[28%] top-0 w-[3px] h-full overflow-hidden pointer-events-none">
-                <div className="beam-down w-full rounded-full" style={{ background: 'linear-gradient(180deg, transparent 0%, #C5A059 40%, #C5A059 60%, transparent 100%)' }} />
-                <div className="beam-down w-full rounded-full" style={{ background: 'linear-gradient(180deg, transparent 0%, #C5A059 40%, #C5A059 60%, transparent 100%)', animationDelay: '1.4s' }} />
+                <div className="beam-down w-full rounded-full" style={{ background: 'linear-gradient(180deg, transparent 0%, #1766A0 40%, #1766A0 60%, transparent 100%)' }} />
+                <div className="beam-down w-full rounded-full" style={{ background: 'linear-gradient(180deg, transparent 0%, #1766A0 40%, #1766A0 60%, transparent 100%)', animationDelay: '1.4s' }} />
               </div>
               <div className="absolute right-[28%] top-0 w-[3px] h-full overflow-hidden pointer-events-none">
-                <div className="beam-up w-full rounded-full" style={{ background: 'linear-gradient(180deg, transparent 0%, #C5A059 40%, #C5A059 60%, transparent 100%)' }} />
-                <div className="beam-up w-full rounded-full" style={{ background: 'linear-gradient(180deg, transparent 0%, #C5A059 40%, #C5A059 60%, transparent 100%)', animationDelay: '1.4s' }} />
+                <div className="beam-up w-full rounded-full" style={{ background: 'linear-gradient(180deg, transparent 0%, #1766A0 40%, #1766A0 60%, transparent 100%)' }} />
+                <div className="beam-up w-full rounded-full" style={{ background: 'linear-gradient(180deg, transparent 0%, #1766A0 40%, #1766A0 60%, transparent 100%)', animationDelay: '1.4s' }} />
               </div>
               <div className="relative z-10 flex flex-col items-center justify-center h-full py-3">
-                <div className="w-0 h-0 border-l-[5px] border-r-[5px] border-b-[8px] border-l-transparent border-r-transparent border-b-[#C5A059] shrink-0" />
-                <div className="w-[2px] flex-1 bg-[#C5A059]" />
-                <div className="w-0 h-0 border-l-[5px] border-r-[5px] border-t-[8px] border-l-transparent border-r-transparent border-t-[#C5A059] shrink-0" />
+                <div className="w-0 h-0 border-l-[5px] border-r-[5px] border-b-[8px] border-l-transparent border-r-transparent border-b-[#1766A0] shrink-0" />
+                <div className="w-[2px] flex-1 bg-[#1766A0]" />
+                <div className="w-0 h-0 border-l-[5px] border-r-[5px] border-t-[8px] border-l-transparent border-r-transparent border-t-[#1766A0] shrink-0" />
               </div>
             </div>
           </div>
@@ -148,7 +148,7 @@ export default function GlobalDataPipelineEn() {
                 <rect x="44" y="76" width="10" height="10" fill="#F1F5F9" rx="0.5" opacity="0.5"/>
                 <rect x="58" y="76" width="10" height="10" fill="#F1F5F9" rx="0.5" opacity="0.5"/>
                 <rect x="72" y="76" width="10" height="10" fill="#F1F5F9" rx="0.5" opacity="0.5"/>
-                <rect x="46" y="106" width="20" height="18" fill="#0B132B" rx="1"/>
+                <rect x="46" y="106" width="20" height="18" fill="#0B3158" rx="1"/>
                 <rect x="55" y="108" width="2" height="16" fill="#334155"/>
                 <rect x="94" y="44" width="22" height="80" fill="#94A3B8" rx="1"/>
                 <rect x="96" y="49" width="6" height="7" fill="#F1F5F9" rx="0.5" opacity="0.7"/>
