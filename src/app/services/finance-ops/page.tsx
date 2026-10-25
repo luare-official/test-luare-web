@@ -22,11 +22,11 @@ export default function Page(){
     <main className="bg-white text-[#0B3158]">
       <nav aria-label="専門サービス" className="border-b border-[#CBD5E1] bg-white px-5 pt-24 sm:px-8 sm:pt-28">
         <div className="mx-auto flex max-w-6xl gap-1 overflow-x-auto">
-          <Link href="/services/internal-control" className="border-b-2 border-transparent text-[#475569] hover:text-[#0B3158] shrink-0 px-3 py-3 text-xs font-semibold sm:px-4">内部統制・J-SOX</Link>
-          <Link href="/services/audit-assurance" className="border-b-2 border-transparent text-[#475569] hover:text-[#0B3158] shrink-0 px-3 py-3 text-xs font-semibold sm:px-4">会計監査対応</Link>
-          <Link href="/services/accounting-management" className="border-b-2 border-transparent text-[#475569] hover:text-[#0B3158] shrink-0 px-3 py-3 text-xs font-semibold sm:px-4">決算・FP&A</Link>
-          <Link href="/services/finance-ops" aria-current="page" className="border-b-2 border-[#0B3158] bg-[#EDF5FC] text-[#0B3158] shrink-0 px-3 py-3 text-xs font-semibold sm:px-4">業務改善・AI</Link>
-          <Link href="/services/global-finance" className="border-b-2 border-transparent text-[#475569] hover:text-[#0B3158] shrink-0 px-3 py-3 text-xs font-semibold sm:px-4">日本進出・Finance Setup</Link>
+          <Link href="/services/internal-control" className="border-b-2 border-transparent text-[#475569] hover:text-[#1766A0] shrink-0 px-3 py-3 text-xs font-semibold sm:px-4">内部統制・J-SOX</Link>
+          <Link href="/services/audit-assurance" className="border-b-2 border-transparent text-[#475569] hover:text-[#1766A0] shrink-0 px-3 py-3 text-xs font-semibold sm:px-4">会計監査対応</Link>
+          <Link href="/services/accounting-management" className="border-b-2 border-transparent text-[#475569] hover:text-[#1766A0] shrink-0 px-3 py-3 text-xs font-semibold sm:px-4">決算・FP&A</Link>
+          <Link href="/services/finance-ops" aria-current="page" className="border-b-2 border-[#1766A0] bg-[#EDF5FC] text-[#1766A0] shrink-0 px-3 py-3 text-xs font-semibold sm:px-4">業務改善・AI</Link>
+          <Link href="/services/global-finance" className="border-b-2 border-transparent text-[#475569] hover:text-[#1766A0] shrink-0 px-3 py-3 text-xs font-semibold sm:px-4">日本進出・Finance Setup</Link>
         </div>
       </nav>
       <nav aria-label="パンくずリスト" className="mx-auto max-w-6xl px-5 pt-5 text-xs text-[#475569] sm:px-8 sm:pt-6">
@@ -39,8 +39,8 @@ export default function Page(){
           <h1 className="max-w-4xl text-[30px] font-bold leading-[1.45] tracking-wide text-[#0B3158] sm:text-[44px]">決算早期化・業務改善・AI活用支援</h1>
           <p className="mt-5 max-w-3xl text-base leading-[2] text-[#475569] sm:text-lg">属人化した経理業務や二重入力、決算の遅れを見直します。業務フローの整理からシステム・AIの活用、運用定着まで支援します。</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/contact" className="inline-flex min-h-12 items-center justify-center rounded-sm bg-[#0B3158] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0B3158]">このサービスについて相談する <span className="ml-3" aria-hidden="true">↗</span></Link>
-            <a href="#service-details" className="inline-flex min-h-12 items-center justify-center rounded-sm border border-[#CBD5E1] px-6 py-3 text-sm text-[#0B3158] hover:bg-white">依頼できる業務を見る ↓</a>
+            <Link href="/contact" className="inline-flex min-h-12 items-center justify-center rounded-sm bg-[#1766A0] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0B3158]">このサービスについて相談する <span className="ml-3" aria-hidden="true">↗</span></Link>
+            <a href="#service-details" className="inline-flex min-h-12 items-center justify-center rounded-sm border border-[#CBD5E1] px-6 py-3 text-sm text-[#1766A0] hover:bg-white">依頼できる業務を見る ↓</a>
           </div>
         </div>
       </section>
@@ -59,7 +59,7 @@ export default function Page(){
           <h2 id="services-heading" className="mt-3 text-2xl font-bold sm:text-3xl">依頼できる業務・成果物</h2>
           <p className="mt-4 max-w-3xl text-sm leading-[1.9] text-[#475569]">必要な業務だけからご相談いただけます。具体的な担当範囲・資料は初回の確認後に決定します。</p>
           <nav aria-label="ページ内の支援内容" className="mt-6 flex flex-wrap gap-2">
-            {services.map(item=><a key={item.id} href={`#${item.id}`} className="rounded-sm border border-[#CBD5E1] bg-white px-3 py-2 text-xs text-[#0B3158] hover:underline">{item.short}</a>)}
+            {services.map(item=><a key={item.id} href={`#${item.id}`} className="rounded-sm border border-[#CBD5E1] bg-white px-3 py-2 text-xs text-[#1766A0] hover:underline">{item.short}</a>)}
           </nav>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             {services.map((item,index)=><article id={item.id} key={item.id} className="scroll-mt-24 rounded-sm border border-[#CBD5E1] bg-white p-6 sm:p-7">
@@ -99,7 +99,7 @@ export default function Page(){
           <p className="mt-3 text-sm leading-[1.9] text-[#475569]">改善対象の業務範囲、システムの状況、必要な検証工数に応じてお見積りします。AI導入に固有の定額料金は設定していません。</p>
         </div>
         <p className="mt-5 text-xs leading-[1.85] text-[#475569]">※ 実際の料金は業務範囲・工数・期間等に応じて個別に算定します。税区分、諸経費、契約条件等はお見積り時に確認します。</p>
-        <Link href="/contact" className="mt-6 inline-flex min-h-12 items-center rounded-sm bg-[#0B3158] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0B3158]">見積り・支援範囲を相談する ↗</Link>
+        <Link href="/contact" className="mt-6 inline-flex min-h-12 items-center rounded-sm bg-[#1766A0] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0B3158]">見積り・支援範囲を相談する ↗</Link>
       </section>
       <section id="faq" className="bg-[#EDF5FC] py-16 sm:py-20" aria-labelledby="faq-heading">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
@@ -116,7 +116,7 @@ export default function Page(){
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <h2 className="text-2xl font-bold sm:text-3xl">まずは、現在の状況をお聞かせください。</h2>
           <p className="mt-4 max-w-3xl text-sm leading-[1.9] text-[#475569]">ご相談内容を伺い、必要な業務や進め方をご案内します。すべてをまとめて依頼する必要はありません。</p>
-          <Link href="/contact" className="mt-7 inline-flex min-h-12 items-center rounded-sm bg-[#0B3158] px-7 py-3 text-sm font-semibold text-white hover:bg-[#0B3158]">お問い合わせへ進む ↗</Link>
+          <Link href="/contact" className="mt-7 inline-flex min-h-12 items-center rounded-sm bg-[#1766A0] px-7 py-3 text-sm font-semibold text-white hover:bg-[#0B3158]">お問い合わせへ進む ↗</Link>
         </div>
       </section>
     </main>
