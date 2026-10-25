@@ -34,7 +34,7 @@ export default function InsightsPage() {
           <div className="relative z-10 mx-auto max-w-5xl px-6 sm:px-10 py-28 sm:py-36 text-center">
             <span
               className="inline-block text-[10px] font-bold uppercase tracking-[0.5em] mb-6"
-              style={{ color:"#C5A059" }}
+              style={{ color:"#EDF5FC" }}
             >
               専門知見
             </span>
@@ -49,7 +49,7 @@ export default function InsightsPage() {
 
             <div
               className="mx-auto mt-8 w-16 h-[1.5px]"
-              style={{ backgroundColor:"#C5A059" }}
+              style={{ backgroundColor:"#1766A0" }}
             />
           </div>
         </section>
@@ -72,7 +72,7 @@ export default function InsightsPage() {
                     {/* Card top accent */}
                     <div
                       className="h-[2px] w-full"
-                      style={{ backgroundColor:"#C5A059" }}
+                      style={{ backgroundColor:"#1766A0" }}
                     />
 
                     <div className="flex flex-col flex-1 px-7 py-8">
@@ -81,7 +81,7 @@ export default function InsightsPage() {
                         <span
                           className="text-[9px] font-bold uppercase tracking-[0.3em] px-2.5 py-1 border rounded-sm"
                           style={{
-                            color:"#C5A059",
+                            color:"#1766A0",
                             borderColor: "rgba(23,102,160,0.35)",
                             backgroundColor: "rgba(23,102,160,0.06)",
                           }}
@@ -107,13 +107,13 @@ export default function InsightsPage() {
                       <div className="mt-6 flex items-center gap-2">
                         <span
                           className="text-[10px] font-bold uppercase tracking-[0.2em] group-hover:tracking-[0.3em] transition-all duration-300"
-                          style={{ color:"#C5A059" }}
+                          style={{ color:"#1766A0" }}
                         >
                           記事を読む
                         </span>
                         <span
                           className="text-xs transition-transform duration-300 group-hover:translate-x-1"
-                          style={{ color:"#C5A059" }}
+                          style={{ color:"#1766A0" }}
                         >
                           →
                         </span>
