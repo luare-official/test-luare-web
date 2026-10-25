@@ -1,6 +1,6 @@
 export default function CaseStudies() {
   return (
-    <section className="w-full bg-[#F8FAFC] py-24 sm:py-32 border-b border-slate-200">
+    <section className="w-full bg-[#EDF5FC] py-24 sm:py-32 border-b border-slate-200">
       <div className="mx-auto max-w-5xl px-6 sm:px-10">
         {/* --- Case Studies Section --- */}
         <div className="text-center mb-16">
