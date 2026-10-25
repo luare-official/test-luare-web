@@ -28,3 +28,13 @@
 #luare-audit-lp .auditFirmCredit{font-size:12px;color:#718792;line-height:2;margin:28px 0 12px;padding:12px 0;border-top:1px solid #d8e4e8}
 #luare-audit-lp .auditFirmCredit span{color:#80939b}
 @media(max-width:680px){#luare-audit-lp .heroGrid{display:block;max-width:100%;padding:46px 0 56px}}
+
+
+/* 2026-10-25 editorial review: concise Luare-first statutory-audit page */
+#luare-audit-lp .heroGrid{max-width:860px;padding:65px 0 75px;min-height:0;display:block;margin:0}
+#luare-audit-lp .heroBody{margin-top:22px;max-width:770px;font-size:15px;line-height:2}
+#luare-audit-lp .statutory{padding-top:74px}
+#luare-audit-lp .statutory .sectionTitle{margin-bottom:27px}
+#luare-audit-lp .partnerDisclaimer{font-size:12px;line-height:2;padding:19px 24px;margin:28px 0 0;border-left:3px solid #79a6b4;background:#f4f8f9;color:#4e6d7c}
+#luare-audit-lp .steps .stepGrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:680px){#luare-audit-lp .heroGrid{padding:46px 0 56px;max-width:100%}#luare-audit-lp .steps .stepGrid{grid-template-columns:1fr}#luare-audit-lp .steps .step:last-child{grid-column:auto}}
