@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Link from "next/link";
 
 export default function BpoDiagnosisForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
@@ -52,6 +53,10 @@ export default function BpoDiagnosisForm() {
           <span>会社メールアドレス <b>必須</b></span>
           <input name="email" type="email" autoComplete="email" inputMode="email" required />
         </label>
+        <label>
+          <span>電話番号 <b>任意</b></span>
+          <input name="phone" type="tel" autoComplete="tel" />
+        </label>
         <label className="bpo-form-wide">
           <span>ご相談内容 <b>必須</b></span>
           <textarea
@@ -65,7 +70,7 @@ export default function BpoDiagnosisForm() {
 
       <label className="bpo-privacy">
         <input name="privacy_agree" type="checkbox" value="同意する" required />
-        <span>プライバシーに関する取扱いに同意して送信します。</span>
+        <span><Link href="/privacy" className="underline underline-offset-2">プライバシーポリシー</Link>を確認し、個人情報の取扱いに同意して送信します。</span>
       </label>
 
       {status === "error" && <p className="bpo-form-error" role="alert">{error}</p>}
