@@ -2417,13 +2417,13 @@ body {background-color:var(--background);color:var(--foreground);font-family:var
 .bpo-hero-footnote{margin:28px 0 0;color:#475569;font-size:13px;line-height:1.8}
 .bpo-hero-diagram{position:relative;padding:28px;border:1px solid #CBD5E1;border-radius:42px;background:#EDF5FC}
 .bpo-flow-node{padding:24px;border-radius:26px;background:#FFFFFF;border:1px solid #CBD5E1;box-shadow:0 16px 36px rgba(15,49,82,.05)}
-.bpo-flow-node span{display:block;color:#1766A0;font:700 11px Manrope;letter-spacing:.12em}
+.bpo-flow-node span{display:block;color:#1766A0;font:700 11px var(--luare-font);letter-spacing:.12em}
 .bpo-flow-node strong{display:block;margin:7px 0 5px;color:#0B3158;font-size:20px}
 .bpo-flow-node small{color:#475569;font-size:11px;line-height:1.5}
 .bpo-flow-node-main{background:#0B3158;border-color:#0B3158}
 .bpo-flow-node-main strong,.bpo-flow-node-main small{color:#FFFFFF}
 .bpo-flow-node-main span{color:#EDF5FC}
-.bpo-flow-arrow{text-align:center;color:#1766A0;font:700 24px Manrope;padding:10px 0}
+.bpo-flow-arrow{text-align:center;color:#1766A0;font:700 24px var(--luare-font);padding:10px 0}
 
 .bpo-card-grid{display:grid;gap:20px}
 .bpo-card-grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -2432,7 +2432,7 @@ body {background-color:var(--background);color:var(--foreground);font-family:var
 .bpo-card:after{content:"";position:absolute;left:30px;right:30px;bottom:0;height:3px;background:#1766A0;transform:scaleX(0);transform-origin:left;transition:.4s}
 .bpo-card:hover{transform:translateY(-6px);border-color:#CBD5E1;box-shadow:0 20px 44px rgba(15,49,82,.08)}
 .bpo-card:hover:after{transform:scaleX(1)}
-.bpo-card-no{display:block;color:#EDF5FC;font:700 42px/1 Manrope;letter-spacing:-.06em}
+.bpo-card-no{display:block;color:#EDF5FC;font:700 42px/1 var(--luare-font);letter-spacing:-.06em}
 .bpo-card h3{margin:24px 0 12px;color:#0B3158;font-size:20px;line-height:1.5}
 .bpo-card p{margin:0;color:#475569;font-size:14px;line-height:1.8}
 .bpo-service-card ul,.bpo-scope-card ul{margin:16px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 18px}
@@ -2441,7 +2441,7 @@ body {background-color:var(--background);color:var(--foreground);font-family:var
 
 .bpo-benefit-list{border-top:1px solid #CBD5E1}
 .bpo-benefit-list article{display:grid;grid-template-columns:74px .9fr 1.1fr;gap:24px;align-items:start;padding:26px 0;border-bottom:1px solid #CBD5E1}
-.bpo-benefit-list article>span{color:#1766A0;font:700 28px Manrope}
+.bpo-benefit-list article>span{color:#1766A0;font:700 28px var(--luare-font)}
 .bpo-benefit-list h3{margin:0;color:#0B3158;font-size:20px}
 .bpo-benefit-list p{margin:3px 0 0;color:#475569;font-size:14px;line-height:1.8}
 
@@ -2450,7 +2450,7 @@ body {background-color:var(--background);color:var(--foreground);font-family:var
 .bpo-operations-flow{display:grid;grid-template-columns:1fr auto 1.1fr auto 1fr;gap:16px;align-items:stretch}
 .bpo-operations-flow>div{padding:30px;border:1px solid #CBD5E1;border-radius:28px;background:#FFFFFF}
 .bpo-operations-flow>div.is-main{background:#0B3158;border-color:#0B3158;color:#FFFFFF}
-.bpo-operations-flow span{display:block;color:#1766A0;font:700 11px Manrope;letter-spacing:.1em}
+.bpo-operations-flow span{display:block;color:#1766A0;font:700 11px var(--luare-font);letter-spacing:.1em}
 .bpo-operations-flow strong{display:block;margin:8px 0 15px;font-size:24px}
 .bpo-operations-flow p{margin:0;color:#475569;font-size:13px;line-height:1.8}
 .bpo-operations-flow .is-main p{color:#EDF5FC}
@@ -2482,16 +2482,16 @@ body {background-color:var(--background);color:var(--foreground);font-family:var
 
 .bpo-step-list{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
 .bpo-step-list article{padding:24px 18px;border-radius:24px;background:#EDF5FC;border:1px solid #CBD5E1}
-.bpo-step-list span{color:#1766A0;font:700 28px Manrope}
+.bpo-step-list span{color:#1766A0;font:700 28px var(--luare-font)}
 .bpo-step-list h3{margin:14px 0 8px;font-size:16px}
 .bpo-step-list p{margin:0;color:#475569;font-size:12px;line-height:1.7}
 
 .bpo-pricing-structure{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:36px 0}
 .bpo-pricing-structure>div{padding:26px;border:1px solid rgba(255,255,255,.16);border-radius:24px;background:rgba(255,255,255,.06)}
-.bpo-pricing-structure span{display:block;margin-bottom:8px;color:#EDF5FC;font:700 11px Manrope;letter-spacing:.1em}
+.bpo-pricing-structure span{display:block;margin-bottom:8px;color:#EDF5FC;font:700 11px var(--luare-font);letter-spacing:.1em}
 .bpo-pricing-structure strong{color:#FFFFFF;font-size:18px}
 
-.bpo-scope-label{display:inline-flex;padding:7px 10px;border-radius:999px;background:#EDF5FC;color:#1766A0;font:700 10px Manrope;letter-spacing:.08em}
+.bpo-scope-label{display:inline-flex;padding:7px 10px;border-radius:999px;background:#EDF5FC;color:#1766A0;font:700 10px var(--luare-font);letter-spacing:.08em}
 .bpo-addon-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .bpo-addon-list article{padding:24px;border:1px solid #CBD5E1;border-radius:22px;background:#FFFFFF}
 .bpo-addon-list h3{margin:0 0 9px;color:#0B3158;font-size:16px}
