@@ -17,30 +17,30 @@ export const metadata: Metadata = {
 };
 
 const inputStyle =
-  "mt-2 block min-h-12 w-full rounded-md border border-[#cbd8de] bg-white px-4 py-3 text-[15px] text-[#233b4a] placeholder:text-[#9aaab2] outline-none transition-colors focus:border-[#26718b] focus:ring-2 focus:ring-[#26718b]/15";
-const labelStyle = "block text-[14px] font-semibold text-[#2b4554]";
+  "mt-2 block min-h-12 w-full rounded-md border border-[#CBD5E1] bg-white px-4 py-3 text-[15px] text-[#0B3158] placeholder:text-[#475569] outline-none transition-colors focus:border-[#1766A0] focus:ring-2 focus:ring-[#1766A0]/15";
+const labelStyle = "block text-[14px] font-semibold text-[#0B3158]";
 
 function Required() {
-  return <span className="ml-2 text-[11px] font-medium text-[#687f8a]">必須</span>;
+  return <span className="ml-2 text-[11px] font-medium text-[#475569]">必須</span>;
 }
 
 export default function ContactPage() {
   return (
     <>
       <Navbar theme="dark" solid={true} />
-      <main className="flex-1 bg-[#f6f9fa] px-5 pb-20 pt-28 text-[#293b45] [font-family:var(--font-noto-sans),Meiryo,sans-serif] sm:px-8 sm:pb-24 sm:pt-36">
+      <main className="flex-1 bg-[#EDF5FC] px-5 pb-20 pt-28 text-[#0B3158] [font-family:var(--font-noto-sans),Meiryo,sans-serif] sm:px-8 sm:pb-24 sm:pt-36">
         <div className="mx-auto max-w-[820px]">
           <header className="mb-10 text-center sm:mb-12">
-            <p className="text-[11px] font-semibold tracking-[0.22em] text-[#397f96]">CONTACT</p>
-            <h1 className="mt-4 text-[30px] font-semibold tracking-[-0.03em] text-[#233e50] sm:text-[40px]">
+            <p className="text-[11px] font-semibold tracking-[0.22em] text-[#1766A0]">CONTACT</p>
+            <h1 className="mt-4 text-[30px] font-semibold tracking-[-0.03em] text-[#0B3158] sm:text-[40px]">
               お問い合わせ
             </h1>
-            <p className="mt-4 text-[14px] leading-[1.9] text-[#627883]">
+            <p className="mt-4 text-[14px] leading-[1.9] text-[#475569]">
               初回相談は無料です。
             </p>
           </header>
 
-          <div className="rounded-lg border border-[#dce7eb] bg-white px-5 py-8 shadow-[0_14px_44px_rgba(24,57,77,0.05)] sm:px-10 sm:py-12">
+          <div className="rounded-lg border border-[#CBD5E1] bg-white px-5 py-8 shadow-[0_14px_44px_rgba(24,57,77,0.05)] sm:px-10 sm:py-12">
             <form action="https://formspree.io/f/mojppoor" method="POST">
               <div className="grid gap-x-7 gap-y-7 sm:grid-cols-2">
                 <div>
@@ -91,7 +91,7 @@ export default function ContactPage() {
                 <div>
                   <label htmlFor="contact-phone" className={labelStyle}>
                     電話番号
-                    <span className="ml-2 text-[11px] font-medium text-[#8297a1]">任意</span>
+                    <span className="ml-2 text-[11px] font-medium text-[#475569]">任意</span>
                   </label>
                   <input
                     id="contact-phone"
@@ -117,14 +117,14 @@ export default function ContactPage() {
                 />
               </div>
 
-              <div className="mt-10 border-t border-[#e2eaee] pt-8 text-center">
+              <div className="mt-10 border-t border-[#CBD5E1] pt-8 text-center">
                 <button
                   type="submit"
-                  className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-md bg-[#24657d] px-8 py-3 text-[14px] font-semibold text-white transition-colors hover:bg-[#174d63] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#24657d] sm:w-auto sm:min-w-[260px]"
+                  className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-md bg-[#0B3158] px-8 py-3 text-[14px] font-semibold text-white transition-colors hover:bg-[#0B3158] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0B3158] sm:w-auto sm:min-w-[260px]"
                 >
                   送信する <span aria-hidden="true">→</span>
                 </button>
-                <p className="mt-4 text-[11px] leading-[1.8] text-[#8297a1]">
+                <p className="mt-4 text-[11px] leading-[1.8] text-[#475569]">
                   送信前に入力内容をご確認ください。
                 </p>
               </div>
