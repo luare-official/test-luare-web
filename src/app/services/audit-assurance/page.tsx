@@ -1,3 +1,4 @@
+import RelatedCaseLinks from "@/components/RelatedCaseLinks";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -15,7 +16,8 @@ export default function AuditAssurancePage() {
     <>
       <Navbar solid />
       <AuditLandingPage />
-      <Footer />
+      <RelatedCaseLinks topic="audit" />
+    <Footer />
     </>
   );
 }
