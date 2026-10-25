@@ -6,7 +6,7 @@ import ServiceDirectory from "@/components/ServiceDirectory";
 
 export const metadata: Metadata = {
   title: "専門サービス | Luare Consulting",
-  description: "内部統制・J-SOX、会計・決算・経営管理、業務改善・AI、日本進出・海外拠点の4領域をご紹介。日系企業・海外子会社／外資系企業・日本法人の課題別にお選びいただけます。",
+  description: "内部統制・J-SOX、会計・決算・経営管理、業務改善・AI、日本進出・海外拠点、監査・保証業務の5領域をご紹介。法定監査・任意監査は提携監査法人と連携してご案内します。",
   alternates: { canonical: "https://luare-consulting.com/services" },
 };
 
@@ -25,7 +25,7 @@ export default function ServicesPage() {
             <p className="mb-3 text-[11px] font-semibold tracking-[.22em] text-[#41829a]">OUR SERVICES</p>
             <h1 className="text-[clamp(32px,4.5vw,48px)] font-semibold leading-tight text-[#203e52]">専門サービス</h1>
             <p className="mt-5 max-w-3xl text-[14px] leading-8 text-[#5a7786] sm:text-base">
-              内部統制、決算・経営管理、業務改善、日本進出。
+              内部統制、決算・経営管理、業務改善、日本進出、監査・保証業務。
               会社の状況に合わせて、必要な業務からご相談いただけます。
             </p>
           </div>

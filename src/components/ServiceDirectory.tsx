@@ -12,11 +12,13 @@ const variants: Record<Exclude<Audience,"all">, Record<string,Variant>> = {
     "02": {title:"決算・FP&A・経営管理支援",lead:"決算高度化から予実・事業KPI分析まで、国内外の経営管理を支援。"},
     "03": {title:"決算早期化・業務改善・AI活用",lead:"現場業務に踏み込み、工程と管理プロセスを見直す。"},
     "04": {title:"海外拠点・グループ経営管理",lead:"海外子会社の経理・報告・内部統制と本社連携を支援。"},
+    "05": {title:"監査・保証業務",lead:"法定監査・任意監査などのご相談に、提携監査法人と連携して対応。"},
   },
   international: {
     "04": {title:"日本進出・Finance Setup",lead:"設立準備から会計基盤の構築・日本法人の運営体制まで。"},
     "02": {title:"日本法人の経理・決算運営",lead:"記帳・月次決算・海外本社向けレポーティングを支援。"},
     "01": {title:"日本法人の内部統制・本社基準対応",lead:"日本の業務実態とグループの統制方針をつなぐ。"},
+    "05": {title:"監査・保証業務",lead:"法定監査・任意監査などのご相談に、提携監査法人と連携して対応。"},
   },
 };
 
@@ -28,7 +30,7 @@ const selectors: readonly {id:Audience; label:string}[] = [
 
 export default function ServiceDirectory() {
   const [audience, setAudience] = useState<Audience>("all");
-  const order = audience==="international" ? ["04","02","01"] : ["01","02","03","04"];
+  const order = audience==="international" ? ["04","02","01","05"] : ["01","02","03","04","05"];
   const groups=order.flatMap(number=>{
     const group=serviceCategories.find(x=>x.number===number);
     if(!group)return [];
@@ -95,11 +97,11 @@ export default function ServiceDirectory() {
           </section>
         ))}
       </div>
-      <div id="category-05" className="scroll-mt-28 mt-16 rounded-xl border border-[#dce7e9] bg-[#f5f9fa] p-6 sm:p-8">
+      <div id="related-expertise" className="scroll-mt-28 mt-16 rounded-xl border border-[#dce7e9] bg-[#f5f9fa] p-6 sm:p-8">
         <h2 className="text-lg font-semibold text-[#23485c]">関連する専門サービス</h2>
-        <p className="mt-2 text-sm leading-7 text-[#667e8b]">上記4つの基本分類とは別に、個別のご相談を承るサービスです。</p>
+        <p className="mt-2 text-sm leading-7 text-[#667e8b]">上記5つの基本分類のほかにも、必要な領域について個別のご相談を承ります。</p>
         <div className="mt-5 flex flex-wrap gap-3 text-[13px] font-semibold text-[#22687e]">
-          <Link className="rounded-full border border-[#c9dfe5] bg-white px-4 py-2.5 hover:bg-[#e9f5f7]" href="/services/audit-assurance#group-audit">Group Audit・海外監査人対応 ↗</Link>
+          
           <Link className="rounded-full border border-[#c9dfe5] bg-white px-4 py-2.5 hover:bg-[#e9f5f7]" href="/bpo">Luare BPO ↗</Link>
           <Link className="rounded-full border border-[#c9dfe5] bg-white px-4 py-2.5 hover:bg-[#e9f5f7]" href="/services/ma-finance#fdd">財務デューデリジェンス ↗</Link>
           <Link className="rounded-full border border-[#c9dfe5] bg-white px-4 py-2.5 hover:bg-[#e9f5f7]" href="/services/ma-finance#valuation">企業価値・株価算定 ↗</Link>
