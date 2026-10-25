@@ -188,18 +188,18 @@ export default function CaseGallery({
             <aside className={styles.detailSide}><span>分野：{selected.category}</span></aside>
             <div className={styles.detailCopy}>
               <h2>相談の背景</h2><p>{selected.background}</p>
-              {selected.issues && <ul className="my-5 list-disc space-y-2 pl-5 text-sm leading-7 text-[#4f6975]">
+              {selected.issues && <ul className="my-5 list-disc space-y-2 pl-5 text-sm leading-7 text-[#475569]">
                 {selected.issues.map((x)=><li key={x}>{x}</li>)}
               </ul>}
               <h2>Luareによる支援内容</h2><p>{selected.support}</p>
-              {selected.actions && <ol className="my-5 list-decimal space-y-2 pl-5 text-sm leading-7 text-[#4f6975]">
+              {selected.actions && <ol className="my-5 list-decimal space-y-2 pl-5 text-sm leading-7 text-[#475569]">
                 {selected.actions.map((x)=><li key={x}>{x}</li>)}
               </ol>}
               <h2>成果物・整理した事項の例</h2><p>{selected.relatedMaterials}</p>
-              {selected.outputs && <ul className="my-5 list-disc space-y-2 pl-5 text-sm leading-7 text-[#4f6975]">
+              {selected.outputs && <ul className="my-5 list-disc space-y-2 pl-5 text-sm leading-7 text-[#475569]">
                 {selected.outputs.map((x)=><li key={x}>{x}</li>)}
               </ul>}
-              <p className="mt-4 text-xs leading-6 text-[#647780]">※ 掲載内容を確認中です。実際の成果物や公開範囲は、事実確認・許諾後に確定します。</p>
+              <p className="mt-4 text-xs leading-6 text-[#475569]">※ 掲載内容を確認中です。実際の成果物や公開範囲は、事実確認・許諾後に確定します。</p>
               <div className={styles.tagList}>
                 {selected.tags.map((tag) => <em className={styles.tag} key={tag}>{tag}</em>)}
               </div>
