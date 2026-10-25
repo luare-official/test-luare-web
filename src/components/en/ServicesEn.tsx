@@ -19,13 +19,13 @@ export default function ServicesEn() {
           </div>
 
           {/* ── ENCOMPASSING FRAME: BPO FOUNDATION ── */}
-          <div className="relative w-full rounded-3xl border-[1.5px] border-[#C5A059]/20 bg-white/70 p-6 sm:p-10 md:p-14 shadow-sm overflow-hidden backdrop-blur-sm">
+          <div className="relative w-full rounded-3xl border-[1.5px] border-[#1766A0]/20 bg-white/70 p-6 sm:p-10 md:p-14 shadow-sm overflow-hidden backdrop-blur-sm">
             
             {/* Subtle gold glow inside the frame */}
             <div className="absolute inset-0 z-0 bg-gradient-to-b from-white/90 to-transparent pointer-events-none" />
 
             {/* BPO Label */}
-            <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 border-b border-[#C5A059]/15 pb-6">
+            <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 border-b border-[#1766A0]/15 pb-6">
               <div>
                 <h3 className="font-serif text-2xl font-bold tracking-wide text-brand-charcoal mb-2">
                   Accounting &amp; Finance BPO
@@ -55,8 +55,8 @@ export default function ServicesEn() {
                   <line x1="0" y1="450" x2="1200" y2="450" stroke="#E2E8F0" strokeWidth="0.5" strokeDasharray="8 6" />
                   <defs>
                     <linearGradient id="curveGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#0B132B" stopOpacity="0.08" />
-                      <stop offset="100%" stopColor="#0B132B" stopOpacity="0.01" />
+                      <stop offset="0%" stopColor="#0B3158" stopOpacity="0.08" />
+                      <stop offset="100%" stopColor="#0B3158" stopOpacity="0.01" />
                     </linearGradient>
                   </defs>
                   <path
@@ -65,15 +65,15 @@ export default function ServicesEn() {
                   />
                   <path
                     d="M 0 540 C 100 530, 200 510, 300 470 C 400 430, 500 370, 600 300 C 700 230, 800 160, 900 110 C 1000 60, 1100 30, 1200 20"
-                    stroke="#C5A059"
+                    stroke="#1766A0"
                     strokeWidth="2.5"
                     strokeOpacity="0.85"
                     fill="none"
                     strokeLinecap="round"
                   />
-                  <circle cx="200" cy="510" r="6" fill="#0B132B" opacity="0.2" />
-                  <circle cx="600" cy="300" r="6" fill="#0B132B" opacity="0.2" />
-                  <circle cx="1000" cy="60" r="6" fill="#0B132B" opacity="0.2" />
+                  <circle cx="200" cy="510" r="6" fill="#0B3158" opacity="0.2" />
+                  <circle cx="600" cy="300" r="6" fill="#0B3158" opacity="0.2" />
+                  <circle cx="1000" cy="60" r="6" fill="#0B3158" opacity="0.2" />
                 </svg>
               </div>
 
