@@ -45,7 +45,7 @@ export default function TargetCompanies() {
           {cases.map((item, idx) => (
             <div 
               key={idx}
-              className="bg-[#F8FAFC] border border-slate-200 rounded-xl p-8 hover:shadow-md hover:bg-white transition-all duration-300 group"
+              className="bg-[#EDF5FC] border border-slate-200 rounded-xl p-8 hover:shadow-md hover:bg-white transition-all duration-300 group"
             >
               <div className="text-[10px] font-mono tracking-widest text-brand-gold uppercase mb-4 opacity-70 group-hover:opacity-100 transition-opacity">
                 Case 0{idx + 1}
