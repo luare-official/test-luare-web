@@ -97,7 +97,7 @@ export default function AuditFirmsCollaborationPage() {
 
               <Link
                 href="/contact"
-                className="mt-8 inline-flex min-h-12 items-center justify-center rounded-[4px] bg-[#0B3158] px-6 py-3 text-[13px] font-semibold text-white hover:bg-[#0B3158]"
+                className="mt-8 inline-flex min-h-12 items-center justify-center rounded-[4px] bg-[#1766A0] px-6 py-3 text-[13px] font-semibold text-white hover:bg-[#0B3158]"
               >
                 案件について相談する <span className="ml-2" aria-hidden="true">→</span>
               </Link>
