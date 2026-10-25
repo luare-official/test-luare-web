@@ -57,6 +57,7 @@ export default function FooterEn() {
           <span className="text-[10px] tracking-widest text-brand-silver/40 font-mono">
             © 2026 Luare Consulting Co., Ltd. All Rights Reserved.
           </span>
+          <a href="/privacy" className="text-xs text-slate-300 hover:text-white underline underline-offset-4">Privacy Policy (日本語 / English / 中文)</a>
         </div>
 
       </div>
