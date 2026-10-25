@@ -2862,10 +2862,10 @@ body {
 }
 .luare-who-band .luare-who-band-inner{
   display:grid;
-  grid-template-columns:275px minmax(0,1fr);
-  gap:34px;
-  align-items:center;
-  padding:36px 0;
+  grid-template-columns:minmax(0,1fr);
+  gap:28px;
+  align-items:start;
+  padding:54px 0 56px;
   font-family:var(--font-noto-sans),Meiryo,sans-serif;
 }
 .luare-who-band .luare-v6-eyebrow{
@@ -2875,7 +2875,7 @@ body {
 .luare-who-band h2{
   margin:0;
   color:#fff;
-  font-size:clamp(21px,2vw,28px);
+  font-size:clamp(25px,2.7vw,34px);
   font-weight:700;
   line-height:1.5;
   letter-spacing:-.04em;
@@ -2909,8 +2909,8 @@ body {
 @media(max-width:760px){
   .luare-who-band .luare-who-band-inner{
     grid-template-columns:1fr;
-    gap:19px;
-    padding:30px 0;
+    gap:23px;
+    padding:37px 0 40px;
   }
   .luare-who-band h2{font-size:24px}
   .luare-who-band-list{grid-template-columns:1fr}
