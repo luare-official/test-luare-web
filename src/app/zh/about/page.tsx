@@ -44,7 +44,7 @@ export default function AboutPageZh() {
             {/* Gold accent label */}
             <span
               className="inline-block text-[10px] font-bold uppercase tracking-[0.5em] mb-6"
-              style={{ color: "#C5A059" }}
+              style={{ color: "#1766A0" }}
             >
               公司简介与代表简历
             </span>
@@ -56,7 +56,7 @@ export default function AboutPageZh() {
             {/* Thin gold divider */}
             <div
               className="mx-auto mt-8 w-16 h-[1.5px]"
-              style={{ backgroundColor: "#C5A059" }}
+              style={{ backgroundColor: "#1766A0" }}
             />
           </div>
         </section>
@@ -73,7 +73,7 @@ export default function AboutPageZh() {
                   {/* Gold accent frame behind the photo */}
                   <div
                     className="absolute -top-3 -left-3 w-full h-full rounded-sm border"
-                    style={{ borderColor: "rgba(197, 160, 89, 0.35)" }}
+                    style={{ borderColor: "rgba(23,102,160, 0.35)" }}
                   />
 
                   {/* Photo container */}
@@ -103,11 +103,11 @@ export default function AboutPageZh() {
                   <div className="mt-6 flex items-center gap-3">
                     <div
                       className="w-8 h-[1.5px] shrink-0"
-                      style={{ backgroundColor: "#C5A059" }}
+                      style={{ backgroundColor: "#1766A0" }}
                     />
                     <span
                       className="text-[11px] font-bold uppercase tracking-[0.25em]"
-                      style={{ color: "#C5A059" }}
+                      style={{ color: "#1766A0" }}
                     >
                       代表董事
                     </span>
@@ -121,7 +121,7 @@ export default function AboutPageZh() {
                 <div className="mb-12">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                     {/* Qualification */}
-                    <div className="border-l-2 pl-5" style={{ borderColor: "#C5A059" }}>
+                    <div className="border-l-2 pl-5" style={{ borderColor: "#1766A0" }}>
                       <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-slate/50 block mb-2">
                         持有资格
                       </span>
@@ -133,7 +133,7 @@ export default function AboutPageZh() {
                     </div>
 
                     {/* Education */}
-                    <div className="border-l-2 pl-5" style={{ borderColor: "#C5A059" }}>
+                    <div className="border-l-2 pl-5" style={{ borderColor: "#1766A0" }}>
                       <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-slate/50 block mb-2">
                         教育背景
                       </span>
@@ -154,7 +154,7 @@ export default function AboutPageZh() {
                   <div className="flex items-center gap-3 mb-6">
                     <div
                       className="w-6 h-[1.5px] shrink-0"
-                      style={{ backgroundColor: "#C5A059" }}
+                      style={{ backgroundColor: "#1766A0" }}
                     />
                     <h3 className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
                       个人经历
@@ -176,7 +176,7 @@ export default function AboutPageZh() {
                   <div className="flex items-center gap-3 mb-6">
                     <div
                       className="w-6 h-[1.5px] shrink-0"
-                      style={{ backgroundColor: "#C5A059" }}
+                      style={{ backgroundColor: "#1766A0" }}
                     />
                     <h3 className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
                       经营理念
@@ -185,7 +185,7 @@ export default function AboutPageZh() {
 
                   <blockquote
                     className="border-l-[3px] pl-6 mb-5"
-                    style={{ borderColor: "#C5A059" }}
+                    style={{ borderColor: "#1766A0" }}
                   >
                     <p className="font-serif text-lg sm:text-xl font-medium text-brand-charcoal leading-relaxed tracking-wide">
                       成为将经营者从“隐形财务风险”中
@@ -211,7 +211,7 @@ export default function AboutPageZh() {
             <div className="flex items-center gap-3 mb-14">
               <div
                 className="w-8 h-[1.5px] shrink-0"
-                style={{ backgroundColor: "#C5A059" }}
+                style={{ backgroundColor: "#1766A0" }}
               />
               <h3 className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
                 职业历程
@@ -222,7 +222,7 @@ export default function AboutPageZh() {
               {/* Vertical gold line */}
               <div
                 className="absolute left-[11px] top-2 bottom-2 w-[1.5px]"
-                style={{ backgroundColor: "rgba(197, 160, 89, 0.25)" }}
+                style={{ backgroundColor: "rgba(23,102,160, 0.25)" }}
               />
 
               <div className="space-y-10">
@@ -263,11 +263,11 @@ export default function AboutPageZh() {
                     <div className="relative shrink-0 mt-1">
                       <div
                         className="w-[23px] h-[23px] rounded-full border-[2px] flex items-center justify-center bg-white transition-all duration-300 group-hover:scale-110"
-                        style={{ borderColor: "#C5A059" }}
+                        style={{ borderColor: "#1766A0" }}
                       >
                         <div
                           className="w-[7px] h-[7px] rounded-full"
-                          style={{ backgroundColor: "#C5A059" }}
+                          style={{ backgroundColor: "#1766A0" }}
                         />
                       </div>
                     </div>
@@ -276,7 +276,7 @@ export default function AboutPageZh() {
                     <div>
                       <span
                         className="text-[9px] font-bold uppercase tracking-[0.3em] block mb-1"
-                        style={{ color: "#C5A059" }}
+                        style={{ color: "#1766A0" }}
                       >
                         {item.label}
                       </span>
@@ -302,7 +302,7 @@ export default function AboutPageZh() {
             <div className="flex items-center gap-3 mb-12">
               <div
                 className="w-8 h-[1.5px] shrink-0"
-                style={{ backgroundColor: "#C5A059" }}
+                style={{ backgroundColor: "#1766A0" }}
               />
               <h3 className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
                 公司信息
@@ -339,7 +339,7 @@ export default function AboutPageZh() {
           className="border-t h-auto md:h-auto py-16 md:pt-24 md:pb-20"
           style={{
             backgroundColor: "rgba(15, 23, 42, 0.97)",
-            borderColor: "rgba(197, 160, 89, 0.15)",
+            borderColor: "rgba(23,102,160, 0.15)",
           }}
         >
           <div className="mx-auto max-w-4xl px-6 sm:px-10 flex flex-col sm:flex-row items-center justify-between gap-8">
@@ -355,8 +355,8 @@ export default function AboutPageZh() {
               href="/zh/contact"
               className="inline-flex items-center justify-center border px-8 py-3 text-[10px] font-bold uppercase tracking-[0.25em] transition-all duration-300"
               style={{
-                borderColor: "#C5A059",
-                color: "#C5A059",
+                borderColor: "#1766A0",
+                color: "#1766A0",
               }}
             >
               联系我们 →
