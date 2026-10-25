@@ -55,6 +55,10 @@ export default function PricingPage() {
               業務の専門性、対象範囲、必要な工数に応じてお見積りします。
               以下はご相談内容をイメージいただくための参考試算です。
             </p>
+          </div>          <div className="mx-auto max-w-[1080px] px-5 pb-8 sm:px-10">
+            <p className="mt-3 max-w-3xl text-xs leading-7 text-[#607682]">
+              参考金額は「対象業務ごとの時間単価 × 想定工数」によって計算しています。時間単価は支援内容によって異なるため、すべての業務に共通する一律単価ではありません。
+            </p>
           </div>
         </section>
 
