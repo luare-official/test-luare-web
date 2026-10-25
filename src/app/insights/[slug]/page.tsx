@@ -74,9 +74,9 @@ export default async function InsightPostPage({
               <span
                 className="text-[10px] font-bold uppercase tracking-[0.3em] px-3 py-1.5 border rounded-sm"
                 style={{
-                  color: "#C5A059",
-                  borderColor: "rgba(197, 160, 89, 0.35)",
-                  backgroundColor: "rgba(197, 160, 89, 0.06)",
+                  color:"#C5A059",
+                  borderColor: "rgba(23,102,160,0.35)",
+                  backgroundColor: "rgba(23,102,160,0.06)",
                 }}
               >
                 {post.category}
@@ -93,7 +93,7 @@ export default async function InsightPostPage({
           </header>
 
           {post.review && (
-            <div className="mb-10 border border-[#d6e2df] bg-[#f2f7f4] px-5 py-4 text-sm leading-relaxed text-[#4e6870]">
+            <div className="mb-10 border border-[#CBD5E1] bg-[#f2f7f4] px-5 py-4 text-sm leading-relaxed text-[#475569]">
               この記事は、代表による専門監修前の確認用原稿です。内容は今後修正される場合があります。
             </div>
           )}
@@ -108,7 +108,7 @@ export default async function InsightPostPage({
           {!post.review && <div className="mt-20 p-8 sm:p-10 bg-slate-50 border border-slate-100 rounded-sm">
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8">
               {/* Photo Placeholder / Portrait */}
-              <div className="w-24 h-24 sm:w-28 sm:h-28 shrink-0 relative rounded-full overflow-hidden border-2 shadow-sm" style={{ borderColor: 'rgba(197, 160, 89, 0.5)' }}>
+              <div className="w-24 h-24 sm:w-28 sm:h-28 shrink-0 relative rounded-full overflow-hidden border-2 shadow-sm" style={{ borderColor: 'rgba(23,102,160,0.5)' }}>
                 <Image
                   src="/images/Photo.png"
                   alt="陸 沿青"
@@ -127,7 +127,7 @@ export default async function InsightPostPage({
                   監修：陸 沿青 (USCPA) / Luare Consulting 代表取締役 Managing Partner。Big4監査法人や投資銀行を経て独立。グローバル企業の内部統制・財務基盤構築を多数支援。
                 </p>
                 <div className="mt-4">
-                  <Link href="/about" className="text-xs font-bold tracking-widest uppercase transition-colors" style={{ color: '#C5A059' }}>
+                  <Link href="/about" className="text-xs font-bold tracking-widest uppercase transition-colors" style={{ color:'#C5A059' }}>
                     代表プロフィールを見る →
                   </Link>
                 </div>
@@ -145,8 +145,8 @@ export default async function InsightPostPage({
                 href={relatedServiceHref}
                 className="w-full sm:w-auto inline-flex items-center justify-center border px-8 py-3.5 text-[11px] font-bold uppercase tracking-[0.25em] transition-all duration-300 bg-transparent hover:bg-slate-50"
                 style={{
-                  borderColor: "#C5A059",
-                  color: "#C5A059",
+                  borderColor:"#C5A059",
+                  color:"#C5A059",
                 }}
               >
                 関連サービスを見る
