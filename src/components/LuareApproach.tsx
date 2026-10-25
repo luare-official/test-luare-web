@@ -21,7 +21,7 @@ export default function LuareApproach() {
   ];
 
   return (
-    <div className="w-full bg-[#F8FAFC] py-16 sm:py-24 md:py-32 border-y border-slate-200 animate-in fade-in duration-700 relative overflow-hidden">
+    <div className="w-full bg-[#EDF5FC] py-16 sm:py-24 md:py-32 border-y border-slate-200 animate-in fade-in duration-700 relative overflow-hidden">
       
       {/* Background Subtle Gradient */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-brand-gold/5 via-brand-navy/5 to-transparent rounded-full blur-3xl opacity-50 pointer-events-none -translate-y-1/2 translate-x-1/4" />
