@@ -47,6 +47,21 @@ html,body{margin:0;padding:0;background:#fff}
 #luare-audit-lp .partnerDisclaimer{font-size:12px;line-height:2;padding:19px 24px;margin:28px 0 0;border-left:3px solid #79a6b4;background:#f4f8f9;color:#4e6d7c}
 #luare-audit-lp .steps .stepGrid{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media(max-width:680px){#luare-audit-lp .heroGrid{padding:46px 0 56px;max-width:100%}#luare-audit-lp .steps .stepGrid{grid-template-columns:1fr}#luare-audit-lp .steps .step:last-child{grid-column:auto}}
+
+/* Review addition: three restrained audit-service benefits, isolated to audit LP */
+#luare-audit-lp .luareAuditBenefits{background:#f5f9f9;border-top:1px solid #e5edef;border-bottom:1px solid #e5edef}
+#luare-audit-lp .benefitsIntro{max-width:790px;margin:0 0 36px}
+#luare-audit-lp .benefitsIntro .sectionTitle{margin-bottom:13px}
+#luare-audit-lp .benefitsGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:white;border:1px solid #dbe6e9}
+#luare-audit-lp .benefit{padding:34px 31px 37px;min-width:0}
+#luare-audit-lp .benefit+.benefit{border-left:1px solid #dbe6e9}
+#luare-audit-lp .benefitNo{font-family:Arial,sans-serif;font-size:25px;line-height:1.25;color:#9cbcc6;margin:0 0 23px;letter-spacing:-.03em}
+#luare-audit-lp .benefitNo span{font-size:10px;letter-spacing:.16em;font-weight:700;color:#668d9a;vertical-align:middle;margin-left:9px}
+#luare-audit-lp .benefit h3{font-size:20px;line-height:1.65;letter-spacing:-.015em;color:#23495b;margin:0 0 16px;font-weight:700}
+#luare-audit-lp .benefit>p:last-child{font-size:13px;line-height:2;color:#667d89;margin:0}
+@media(max-width:900px){#luare-audit-lp .benefit{padding:28px 22px}#luare-audit-lp .benefit h3{font-size:18px}}
+@media(max-width:700px){#luare-audit-lp .benefitsIntro{margin-bottom:25px}#luare-audit-lp .benefitsGrid{grid-template-columns:1fr}#luare-audit-lp .benefit{padding:26px 24px 28px}#luare-audit-lp .benefit+.benefit{border-left:0;border-top:1px solid #dbe6e9}#luare-audit-lp .benefitNo{margin-bottom:12px}#luare-audit-lp .benefit h3{font-size:19px}}
+
 </style>
 </head>
 <body>
@@ -71,6 +86,22 @@ html,body{margin:0;padding:0;background:#fff}
   
   
   
+ </div>
+</section>
+
+
+<section class="section luareAuditBenefits" id="audit-benefits" aria-labelledby="audit-benefits-title">
+ <div class="wrap">
+  <div class="benefitsIntro">
+   <p class="eyebrow">OUR STRENGTHS</p>
+   <h2 class="sectionTitle" id="audit-benefits-title">監査サービスの特長</h2>
+   <p class="sectionLead">専門家の経験を活かし、監査品質・国際対応・費用のバランスを大切にしています。</p>
+  </div>
+  <div class="benefitsGrid">
+   <article class="benefit"><p class="benefitNo">01 <span>EXPERIENCE</span></p><h3>豊富な監査経験を持つ<br>専門家との連携</h3><p>大手監査法人で日本子会社の監査経験を持つ公認会計士と連携し、外資系企業の日本法人や国内企業の監査についてご相談を承ります。</p></article>
+   <article class="benefit"><p class="benefitNo">02 <span>GLOBAL</span></p><h3>国際会計基準・<br>英語対応</h3><p>IFRS・US-GAAPに関する知見を持つ専門家と連携。海外親会社へのレポーティングや、グループ監査人との英語でのやり取りにも対応します。</p></article>
+   <article class="benefit"><p class="benefitNo">03 <span>VALUE</span></p><h3>質の高い監査を、<br>リーズナブルな費用で</h3><p>企業の規模や監査の目的に応じ、少数精鋭の専門家による効率的な監査体制をご案内。監査品質と費用のバランスを重視します。</p></article>
+  </div>
  </div>
 </section>
 
