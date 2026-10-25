@@ -98,7 +98,7 @@ export default function PricingPage() {
               対象業務・担当体制・必要な期間を整理したうえで、個別にご提案します。
               仲介会社を介さず、担当窓口と直接ご相談いただけます。
             </p>
-            <Link href="/contact" className="mt-8 inline-flex items-center gap-4 rounded-full bg-[#0B3158] px-8 py-4 text-sm font-semibold text-white hover:bg-[#0B3158]">
+            <Link href="/contact" className="mt-8 inline-flex items-center gap-4 rounded-full bg-[#1766A0] px-8 py-4 text-sm font-semibold text-white hover:bg-[#0B3158]">
               料金・支援範囲を相談する <span aria-hidden="true">↗</span>
             </Link>
           </div>
