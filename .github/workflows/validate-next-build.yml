@@ -29,3 +29,6 @@ jobs:
 
       - name: Verify sitemap and priority LP indexing (read-only)
         run: node scripts/verify-search-discovery.mjs
+
+      - name: Verify approved Clear Blue brand and protected routes
+        run: node scripts/verify-clear-blue-brand.mjs
