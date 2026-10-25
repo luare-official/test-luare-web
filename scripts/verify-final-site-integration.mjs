@@ -30,6 +30,15 @@ for(const [page,html] of pages){
   const target=findPage(dest);
   assert(!!target,page+" missing link destination "+href);
   if(!target||!parsed.hash)continue;
+  // The approved CaseGallery C design uses client-side '#/case/<id>'
+  // routing, not HTML id anchors. Preserve that behavior and verify IDs.
+  if(dest==="/cases" && parsed.hash.startsWith("#/case/")){
+    const id=parsed.hash.slice("#/case/".length);
+    const cases=readFileSync("src/app/cases/page.tsx","utf8");
+    assert(cases.includes('id:"'+id+'"'),page+" refers to unknown CaseGallery ID "+id);
+    continue;
+  }
+  if(dest==="/cases" && parsed.hash==="#/list")continue;
   let hash=parsed.hash.slice(1);
   try{hash=decodeURIComponent(hash)}catch{}
   const key=target+"#"+hash;
