@@ -1,5 +1,8 @@
 import type { MetadataRoute } from "next";
 
+// Required for Next.js static export (GitHub Pages).
+export const dynamic = "force-static";
+
 /**
  * Only include currently public, indexable pages.
  *
