@@ -43,7 +43,7 @@ export default function AboutPageEn() {
             {/* Gold accent label */}
             <span
               className="inline-block text-[10px] font-bold uppercase tracking-[0.5em] mb-6"
-              style={{ color:"#C5A059" }}
+              style={{ color:"#EDF5FC" }}
             >
               Company Profile & Representative Biography
             </span>
@@ -55,7 +55,7 @@ export default function AboutPageEn() {
             {/* Thin gold divider */}
             <div
               className="mx-auto mt-8 w-16 h-[1.5px]"
-              style={{ backgroundColor:"#C5A059" }}
+              style={{ backgroundColor:"#1766A0" }}
             />
           </div>
         </section>
@@ -102,11 +102,11 @@ export default function AboutPageEn() {
                   <div className="mt-6 flex items-center gap-3">
                     <div
                       className="w-8 h-[1.5px] shrink-0"
-                      style={{ backgroundColor:"#C5A059" }}
+                      style={{ backgroundColor:"#1766A0" }}
                     />
                     <span
                       className="text-[11px] font-bold uppercase tracking-[0.25em]"
-                      style={{ color:"#C5A059" }}
+                      style={{ color:"#1766A0" }}
                     >
                       Managing Partner
                     </span>
@@ -120,7 +120,7 @@ export default function AboutPageEn() {
                 <div className="mb-12">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                     {/* Qualification */}
-                    <div className="border-l-2 pl-5" style={{ borderColor:"#C5A059" }}>
+                    <div className="border-l-2 pl-5" style={{ borderColor:"#1766A0" }}>
                       <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-slate/50 block mb-2">
                         Qualifications
                       </span>
@@ -132,7 +132,7 @@ export default function AboutPageEn() {
                     </div>
 
                     {/* Education */}
-                    <div className="border-l-2 pl-5" style={{ borderColor:"#C5A059" }}>
+                    <div className="border-l-2 pl-5" style={{ borderColor:"#1766A0" }}>
                       <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-slate/50 block mb-2">
                         Education
                       </span>
@@ -153,7 +153,7 @@ export default function AboutPageEn() {
                   <div className="flex items-center gap-3 mb-6">
                     <div
                       className="w-6 h-[1.5px] shrink-0"
-                      style={{ backgroundColor:"#C5A059" }}
+                      style={{ backgroundColor:"#1766A0" }}
                     />
                     <h3 className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
                       Biography
@@ -175,7 +175,7 @@ export default function AboutPageEn() {
                   <div className="flex items-center gap-3 mb-6">
                     <div
                       className="w-6 h-[1.5px] shrink-0"
-                      style={{ backgroundColor:"#C5A059" }}
+                      style={{ backgroundColor:"#1766A0" }}
                     />
                     <h3 className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
                       Philosophy
@@ -184,7 +184,7 @@ export default function AboutPageEn() {
 
                   <blockquote
                     className="border-l-[3px] pl-6 mb-5"
-                    style={{ borderColor:"#C5A059" }}
+                    style={{ borderColor:"#1766A0" }}
                   >
                     <p className="font-serif text-lg sm:text-xl font-medium text-brand-charcoal leading-relaxed tracking-wide">
                       A partner freeing executives from
@@ -210,7 +210,7 @@ export default function AboutPageEn() {
             <div className="flex items-center gap-3 mb-14">
               <div
                 className="w-8 h-[1.5px] shrink-0"
-                style={{ backgroundColor:"#C5A059" }}
+                style={{ backgroundColor:"#1766A0" }}
               />
               <h3 className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
                 Career Highlights
@@ -262,11 +262,11 @@ export default function AboutPageEn() {
                     <div className="relative shrink-0 mt-1">
                       <div
                         className="w-[23px] h-[23px] rounded-full border-[2px] flex items-center justify-center bg-white transition-all duration-300 group-hover:scale-110"
-                        style={{ borderColor:"#C5A059" }}
+                        style={{ borderColor:"#1766A0" }}
                       >
                         <div
                           className="w-[7px] h-[7px] rounded-full"
-                          style={{ backgroundColor:"#C5A059" }}
+                          style={{ backgroundColor:"#1766A0" }}
                         />
                       </div>
                     </div>
@@ -275,7 +275,7 @@ export default function AboutPageEn() {
                     <div>
                       <span
                         className="text-[9px] font-bold uppercase tracking-[0.3em] block mb-1"
-                        style={{ color:"#C5A059" }}
+                        style={{ color:"#1766A0" }}
                       >
                         {item.label}
                       </span>
@@ -301,7 +301,7 @@ export default function AboutPageEn() {
             <div className="flex items-center gap-3 mb-12">
               <div
                 className="w-8 h-[1.5px] shrink-0"
-                style={{ backgroundColor:"#C5A059" }}
+                style={{ backgroundColor:"#1766A0" }}
               />
               <h3 className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
                 Company Information
@@ -354,8 +354,8 @@ export default function AboutPageEn() {
               href="/en/contact"
               className="inline-flex items-center justify-center border px-8 py-3 text-[10px] font-bold uppercase tracking-[0.25em] transition-all duration-300"
               style={{
-                borderColor:"#C5A059",
-                color:"#C5A059",
+                borderColor:"#1766A0",
+                color:"#1766A0",
               }}
             >
               Contact Us →
