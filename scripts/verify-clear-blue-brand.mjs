@@ -26,11 +26,11 @@ assert(jsox.includes("--navy:#0B3158")&&jsox.includes("--blue:#1766A0"),"J-SOX p
 assert(audit.includes("--deep:#0B3158")&&audit.includes("--blue:#1766A0"),"Audit palette mismatch");
 // The homepage hero must remain neutral white; only the hidden professionals
 // section is reserved for the pale blue brand background on its future release.
-assert(/\\.luare-unicell-hero\\s*\\{[^}]*background:\\s*#FFFFFF\\s*;/i.test(css),
+assert(/\.luare-unicell-hero\s*\{[^}]*background:\s*#FFFFFF\s*;/i.test(css),
   "Homepage outer hero background must stay white");
-assert(/\\.luare-unicell-stage\\s*\\{[^}]*background:\\s*#FAFAFA\\s*;/i.test(css),
+assert(/\.luare-unicell-stage\s*\{[^}]*background:\s*#FAFAFA\s*;/i.test(css),
   "Homepage hero stage must stay neutral gray, not pale blue");
-assert(/\\.luare-people-horizontal\\s*\\{[^}]*background:\\s*#EDF5FC\\s*;/i.test(css),
+assert(/\.luare-people-horizontal\s*\{[^}]*background:\s*#EDF5FC\s*;/i.test(css),
   "The future professionals section must retain its approved pale blue");
 assert(!nav.includes("/for-audit-firms"),"Protected collaboration navbar link restored");
 assert(footer.includes('href="/for-audit-firms"'),"Protected collaboration footer missing");
