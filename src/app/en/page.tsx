@@ -11,6 +11,7 @@ import FooterEn from "@/components/en/FooterEn";
 export const metadata: Metadata = {
   title: "Luare Consulting | Zero Local Hiring Risk. Financial Compliance in Japan.",
   description: "Fully hand off your Japanese bookkeeping, payment operations, and localized financial reporting to Luare Consulting. Secure local AI & USCPA oversight.",
+  alternates: { canonical: "https://luare-consulting.com/en" },
 };
 
 export default function EnglishHome() {
