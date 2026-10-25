@@ -47,24 +47,24 @@ export default function ServiceDirectory() {
             type="button"
             aria-pressed={audience===option.id}
             onClick={()=>setAudience(option.id)}
-            className={"rounded-md border px-4 py-3 text-[13px] font-semibold transition-colors sm:px-6 sm:text-sm "+(audience===option.id?"border-[#1d637d] bg-[#1d637d] text-white":"border-[#c6d9e1] bg-white text-[#1a5069] hover:bg-[#eef6f8]")}
+            className={"rounded-md border px-4 py-3 text-[13px] font-semibold transition-colors sm:px-6 sm:text-sm "+(audience===option.id?"border-[#0B3158] bg-[#0B3158] text-white":"border-[#CBD5E1] bg-white text-[#0B3158] hover:bg-[#EDF5FC]")}
           >
             {option.label}
           </button>
         ))}
       </div>
-      <p className="mb-8 mt-5 text-sm leading-7 text-[#627c8b]">
+      <p className="mb-8 mt-5 text-sm leading-7 text-[#475569]">
         {audience==="all"?"サービス領域を一覧でご覧いただけます。":audience==="japanese"?"日系企業と海外子会社の課題に合うサービスをご案内します。":"外資系企業・日本法人の課題に合うサービスをご案内します。"}
       </p>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {groups.map(group=>(
           <a href={`#category-${group.number}`} key={group.number}
-            className="group block rounded-lg border border-[#dae6ea] bg-white px-6 py-7 shadow-[0_6px_22px_rgba(23,63,81,.035)] transition-colors hover:border-[#87b3bf] hover:bg-[#f7fafb] sm:px-7 sm:py-8">
-            <span className="text-sm font-semibold tracking-[.1em] text-[#21809c]">{group.number}</span>
-            <h2 className="mt-3 text-xl font-semibold leading-8 text-[#163b51] sm:text-2xl">{group.title}</h2>
-            <p className="mt-3 min-h-[2.8rem] text-sm leading-7 text-[#657e8a]">{group.lead}</p>
-            <span className="mt-5 inline-flex items-center gap-3 text-sm font-semibold text-[#176783]">
+            className="group block rounded-lg border border-[#CBD5E1] bg-white px-6 py-7 shadow-[0_6px_22px_rgba(23,63,81,.035)] transition-colors hover:border-[#CBD5E1] hover:bg-[#EDF5FC] sm:px-7 sm:py-8">
+            <span className="text-sm font-semibold tracking-[.1em] text-[#1766A0]">{group.number}</span>
+            <h2 className="mt-3 text-xl font-semibold leading-8 text-[#0B3158] sm:text-2xl">{group.title}</h2>
+            <p className="mt-3 min-h-[2.8rem] text-sm leading-7 text-[#475569]">{group.lead}</p>
+            <span className="mt-5 inline-flex items-center gap-3 text-sm font-semibold text-[#0B3158]">
               支援内容を見る <span aria-hidden="true">→</span>
             </span>
           </a>
@@ -73,22 +73,22 @@ export default function ServiceDirectory() {
 
       <div className="mt-16 space-y-14 sm:mt-20 sm:space-y-16">
         {groups.map(group=>(
-          <section key={group.number} id={`category-${group.number}`} className="scroll-mt-28 border-t border-[#d1dfe4] pt-7 sm:pt-9" aria-labelledby={`category-title-${group.number}`}>
+          <section key={group.number} id={`category-${group.number}`} className="scroll-mt-28 border-t border-[#CBD5E1] pt-7 sm:pt-9" aria-labelledby={`category-title-${group.number}`}>
             <div className="grid gap-3 sm:grid-cols-[76px_1fr] sm:gap-7">
-              <span className="pt-1 text-sm font-semibold tracking-widest text-[#6a929f]">{group.number}</span>
+              <span className="pt-1 text-sm font-semibold tracking-widest text-[#475569]">{group.number}</span>
               <div>
-                <h2 id={`category-title-${group.number}`} className="text-[clamp(22px,3vw,31px)] font-semibold leading-snug text-[#23485c]">{group.title}</h2>
-                <p className="mt-3 text-sm leading-7 text-[#637b87]">{group.lead}</p>
+                <h2 id={`category-title-${group.number}`} className="text-[clamp(22px,3vw,31px)] font-semibold leading-snug text-[#0B3158]">{group.title}</h2>
+                <p className="mt-3 text-sm leading-7 text-[#475569]">{group.lead}</p>
                 <div className="mt-7">
                   {group.itemIds.map(id=>{
                     const item=serviceItems.find(x=>x.id===id);
                     if(!item)return null;
-                    return <Link key={item.id} href={item.href} className="group flex items-start justify-between gap-5 border-b border-[#e2e9eb] py-5 hover:bg-[#f7fafb]">
+                    return <Link key={item.id} href={item.href} className="group flex items-start justify-between gap-5 border-b border-[#CBD5E1] py-5 hover:bg-[#EDF5FC]">
                       <div>
-                        <h3 className="text-[15px] font-semibold text-[#23485c] sm:text-[17px]">{item.name}</h3>
-                        <p className="mt-2 text-[13px] leading-7 text-[#66808e]">{item.description}</p>
+                        <h3 className="text-[15px] font-semibold text-[#0B3158] sm:text-[17px]">{item.name}</h3>
+                        <p className="mt-2 text-[13px] leading-7 text-[#475569]">{item.description}</p>
                       </div>
-                      <span aria-hidden="true" className="pt-1 text-xl text-[#608998] transition-transform group-hover:translate-x-1">↗</span>
+                      <span aria-hidden="true" className="pt-1 text-xl text-[#475569] transition-transform group-hover:translate-x-1">↗</span>
                     </Link>;
                   })}
                 </div>
@@ -97,15 +97,15 @@ export default function ServiceDirectory() {
           </section>
         ))}
       </div>
-      <div id="related-expertise" className="scroll-mt-28 mt-16 rounded-xl border border-[#dce7e9] bg-[#f5f9fa] p-6 sm:p-8">
-        <h2 className="text-lg font-semibold text-[#23485c]">関連する専門サービス</h2>
-        <p className="mt-2 text-sm leading-7 text-[#667e8b]">上記5つの基本分類のほかにも、必要な領域について個別のご相談を承ります。</p>
-        <div className="mt-5 flex flex-wrap gap-3 text-[13px] font-semibold text-[#22687e]">
+      <div id="related-expertise" className="scroll-mt-28 mt-16 rounded-xl border border-[#CBD5E1] bg-[#EDF5FC] p-6 sm:p-8">
+        <h2 className="text-lg font-semibold text-[#0B3158]">関連する専門サービス</h2>
+        <p className="mt-2 text-sm leading-7 text-[#475569]">上記5つの基本分類のほかにも、必要な領域について個別のご相談を承ります。</p>
+        <div className="mt-5 flex flex-wrap gap-3 text-[13px] font-semibold text-[#0B3158]">
           
-          <Link className="rounded-full border border-[#c9dfe5] bg-white px-4 py-2.5 hover:bg-[#e9f5f7]" href="/bpo">Luare BPO ↗</Link>
-          <Link className="rounded-full border border-[#c9dfe5] bg-white px-4 py-2.5 hover:bg-[#e9f5f7]" href="/services/ma-finance#fdd">財務デューデリジェンス ↗</Link>
-          <Link className="rounded-full border border-[#c9dfe5] bg-white px-4 py-2.5 hover:bg-[#e9f5f7]" href="/services/ma-finance#valuation">企業価値・株価算定 ↗</Link>
-          <Link className="rounded-full border border-[#c9dfe5] bg-white px-4 py-2.5 hover:bg-[#e9f5f7]" href="/services/ma-finance#pmi">PMI・統合後の管理体制 ↗</Link>
+          <Link className="rounded-full border border-[#CBD5E1] bg-white px-4 py-2.5 hover:bg-[#EDF5FC]" href="/bpo">Luare BPO ↗</Link>
+          <Link className="rounded-full border border-[#CBD5E1] bg-white px-4 py-2.5 hover:bg-[#EDF5FC]" href="/services/ma-finance#fdd">財務デューデリジェンス ↗</Link>
+          <Link className="rounded-full border border-[#CBD5E1] bg-white px-4 py-2.5 hover:bg-[#EDF5FC]" href="/services/ma-finance#valuation">企業価値・株価算定 ↗</Link>
+          <Link className="rounded-full border border-[#CBD5E1] bg-white px-4 py-2.5 hover:bg-[#EDF5FC]" href="/services/ma-finance#pmi">PMI・統合後の管理体制 ↗</Link>
         </div>
       </div>
     </section>
