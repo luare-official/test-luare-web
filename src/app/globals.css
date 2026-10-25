@@ -1744,14 +1744,14 @@ body {background-color:var(--background);color:var(--foreground);font-family:var
   min-height:100vh;
   padding:18px;
   overflow:hidden;
-  background:#f8fbfd;
+  background:#FFFFFF;
 }
 .luare-unicell-stage{
   position:relative;
   min-height:calc(100vh - 36px);
   overflow:hidden;
   border-radius:22px;
-  background:#f5f9fc;
+  background:#FAFAFA;
 }
 .luare-unicell-white-shape{
   position:absolute;
