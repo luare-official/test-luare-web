@@ -260,7 +260,7 @@ export default function Navbar({
 
           <Link
             href={contactLink}
-            className="rounded-full bg-[#1766A0] px-5 py-3 text-[10px] font-semibold tracking-[0.12em] text-white transition-colors hover:bg-[#1766A0]"
+            className="rounded-full bg-[#1766A0] px-5 py-3 text-[10px] font-semibold tracking-[0.12em] text-white transition-colors hover:bg-[#0B3158]"
           >
             {contactText}
           </Link>
