@@ -85,10 +85,10 @@ export default function GlobalDataPipeline() {
           {/* CENTER: Pipeline */}
           <div className="hidden md:flex flex-col items-center justify-center w-[36%] shrink-0 px-2">
             <div className="flex flex-col items-center gap-3 w-full">
-              <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-center whitespace-nowrap" style={{ color: '#C5A059' }}>
+              <span className="text-[10px] font-bold uppercase tracking-[0.1em] text-center whitespace-nowrap" style={{ color:'#C5A059' }}>
                 シームレスな経理財務情報連携<br/>(Seamless Financial Reporting)
               </span>
-              <div className="relative w-full rounded-full border-[1.5px] overflow-hidden bg-transparent" style={{ borderColor: '#C5A059', padding: '14px 0' }}>
+              <div className="relative w-full rounded-full border-[1.5px] overflow-hidden bg-transparent" style={{ borderColor:'#C5A059', padding: '14px 0' }}>
                 <div className="absolute top-[28%] left-0 w-full h-[3px] overflow-hidden pointer-events-none">
                   <div className="beam-right h-full rounded-full" style={{ background: 'linear-gradient(90deg, transparent 0%, #C5A059 40%, #C5A059 60%, transparent 100%)' }} />
                   <div className="beam-right h-full rounded-full" style={{ background: 'linear-gradient(90deg, transparent 0%, #C5A059 40%, #C5A059 60%, transparent 100%)', animationDelay: '1.4s' }} />
@@ -107,10 +107,10 @@ export default function GlobalDataPipeline() {
           </div>
 
           <div className="flex md:hidden flex-col items-center justify-center py-6 w-full text-center">
-            <span className="text-[9px] font-bold uppercase tracking-[0.1em] mb-3" style={{ color: '#C5A059' }}>
+            <span className="text-[9px] font-bold uppercase tracking-[0.1em] mb-3" style={{ color:'#C5A059' }}>
               シームレスな経理財務情報連携<br/>(Seamless Financial Reporting)
             </span>
-            <div className="relative rounded-full border-[1.5px] overflow-hidden bg-transparent" style={{ borderColor: '#C5A059', width: '44px', height: '120px' }}>
+            <div className="relative rounded-full border-[1.5px] overflow-hidden bg-transparent" style={{ borderColor:'#C5A059', width: '44px', height: '120px' }}>
               <div className="absolute left-[28%] top-0 w-[3px] h-full overflow-hidden pointer-events-none">
                 <div className="beam-down w-full rounded-full" style={{ background: 'linear-gradient(180deg, transparent 0%, #C5A059 40%, #C5A059 60%, transparent 100%)' }} />
                 <div className="beam-down w-full rounded-full" style={{ background: 'linear-gradient(180deg, transparent 0%, #C5A059 40%, #C5A059 60%, transparent 100%)', animationDelay: '1.4s' }} />
@@ -176,7 +176,7 @@ export default function GlobalDataPipeline() {
         </div>
 
         {/* BOTTOM TIER: Foundation Text */}
-        <div className="mt-8 rounded-2xl px-8 md:px-16 py-10 flex flex-col items-center text-center border" style={{ backgroundColor: 'rgba(15, 23, 42, 0.95)', borderColor: 'rgba(197, 160, 89, 0.2)' }}>
+        <div className="mt-8 rounded-2xl px-8 md:px-16 py-10 flex flex-col items-center text-center border" style={{ backgroundColor: 'rgba(15, 23, 42, 0.95)', borderColor: 'rgba(23,102,160,0.2)' }}>
           <p className="text-sm md:text-base font-medium text-slate-300 leading-relaxed max-w-2xl">
             Luare Consultingでは、現地法人とグローバル本社の間において、経理・財務情報と<br className="hidden md:inline" />
             ガバナンスを本社の要求水準に引き上げます。<br className="hidden md:inline" />
