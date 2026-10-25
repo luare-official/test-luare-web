@@ -14,7 +14,7 @@ export default function Hero() {
 
         <div className="luare-unicell-talk-photo" aria-hidden="true">
           <img
-            src="/images/luare-hero-consulting.avif"
+            src="/images/luare-hero-consulting-male-20261025.webp"
             alt=""
           />
         </div>
