@@ -40,7 +40,7 @@ export default function ServicesPage() {
             <p className="mt-4 max-w-[720px] text-sm leading-8 text-[#475569]">
               支援内容や進め方は、業務の状況とご希望を伺ったうえで個別にご提案します。
             </p>
-            <Link href="/contact" className="mt-7 inline-flex items-center gap-4 rounded-full bg-[#0B3158] px-7 py-4 text-sm font-semibold text-white hover:bg-[#0B3158]">
+            <Link href="/contact" className="mt-7 inline-flex items-center gap-4 rounded-full bg-[#1766A0] px-7 py-4 text-sm font-semibold text-white hover:bg-[#0B3158]">
               お問い合わせ <span aria-hidden="true">↗</span>
             </Link>
           </div>
