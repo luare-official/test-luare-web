@@ -1,112 +1,126 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 import { serviceCategories, serviceItems } from "@/lib/serviceCatalog";
 
-type Audience = "all" | "japanese" | "international";
-type Variant = { title: string; lead: string };
-const variants: Record<Exclude<Audience,"all">, Record<string,Variant>> = {
-  japanese: {
-    "01": {title:"内部統制・J-SOX・内部監査",lead:"国内外の拠点を対象とした内部統制の構築・評価・改善を支援。"},
-    "02": {title:"決算・FP&A・経営管理支援",lead:"決算高度化から予実・事業KPI分析まで、国内外の経営管理を支援。"},
-    "03": {title:"決算早期化・業務改善・AI活用",lead:"現場業務に踏み込み、工程と管理プロセスを見直す。"},
-    "04": {title:"海外拠点・グループ経営管理",lead:"海外子会社の経理・報告・内部統制と本社連携を支援。"},
-    "05": {title:"監査・保証業務",lead:"法定監査・任意監査などのご相談に、提携監査法人と連携して対応。"},
-  },
-  international: {
-    "04": {title:"日本進出・Finance Setup",lead:"設立準備から会計基盤の構築・日本法人の運営体制まで。"},
-    "02": {title:"日本法人の経理・決算運営",lead:"記帳・月次決算・海外本社向けレポーティングを支援。"},
-    "01": {title:"日本法人の内部統制・本社基準対応",lead:"日本の業務実態とグループの統制方針をつなぐ。"},
-    "05": {title:"監査・保証業務",lead:"法定監査・任意監査などのご相談に、提携監査法人と連携して対応。"},
-  },
+const indexTitles: Record<string, string> = {
+  "01": "内部統制・J-SOX",
+  "02": "会計・決算・経営管理",
+  "03": "業務改善・AI",
+  "04": "日本進出・海外拠点",
+  "05": "監査・保証業務",
 };
 
-const selectors: readonly {id:Audience; label:string}[] = [
-  {id:"all",label:"すべて"},
-  {id:"japanese",label:"日系企業・海外子会社"},
-  {id:"international",label:"外資系企業・日本法人"},
-];
-
 export default function ServiceDirectory() {
-  const [audience, setAudience] = useState<Audience>("all");
-  const order = audience==="international" ? ["04","02","01","05"] : ["01","02","03","04","05"];
-  const groups=order.flatMap(number=>{
-    const group=serviceCategories.find(x=>x.number===number);
-    if(!group)return [];
-    const variant=audience==="all" ? undefined : variants[audience][number];
-    return variant||audience==="all" ? [{...group,title:variant?.title??group.title,lead:variant?.lead??group.lead}] : [];
-  });
-
   return (
-    <section className="mx-auto max-w-[1140px] px-5 py-12 sm:px-10 sm:py-16" aria-label="サービスを探す">
-      <div className="flex flex-wrap gap-2 sm:gap-3" role="group" aria-label="企業区分でサービスを絞り込む">
-        {selectors.map(option=>(
-          <button
-            key={option.id}
-            type="button"
-            aria-pressed={audience===option.id}
-            onClick={()=>setAudience(option.id)}
-            className={"rounded-md border px-4 py-3 text-[13px] font-semibold transition-colors sm:px-6 sm:text-sm "+(audience===option.id?"border-[#1766A0] bg-[#1766A0] text-white":"border-[#CBD5E1] bg-white text-[#0B3158] hover:bg-[#EDF5FC]")}
+    <section
+      className="mx-auto max-w-[1140px] px-5 pb-20 pt-10 sm:px-10 sm:pb-24 sm:pt-12"
+      aria-label="提供サービス一覧"
+    >
+      <div id="index" className="scroll-mt-28">
+        <div className="mb-5 flex flex-wrap items-baseline gap-x-5 gap-y-2">
+          <h2 className="text-[22px] font-bold tracking-tight text-[#0B3158]">
+            サービスを探す
+          </h2>
+          <p className="text-xs leading-6 text-[#475569]">
+            ご相談に近い分野を選ぶと、該当する支援内容へ移動します。
+          </p>
+        </div>
+
+        <nav
+          className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3"
+          aria-label="サービスカテゴリー目次"
+        >
+          {serviceCategories.map(({ number }) => (
+            <a
+              key={number}
+              href={`#category-${number}`}
+              className="group flex min-h-[58px] items-center gap-3 rounded-lg border border-[#CBD5E1] bg-white px-4 py-3.5 text-[#0B3158] transition-colors hover:border-[#9CBDD4] hover:bg-[#EDF5FC] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1766A0]"
+            >
+              <span className="shrink-0 text-[13px] font-extrabold tracking-wider text-[#1766A0]">
+                {number}
+              </span>
+              <span className="min-w-0 flex-1 text-[13px] font-bold leading-6">
+                {indexTitles[number]}
+              </span>
+              <span aria-hidden="true" className="shrink-0 text-[#1766A0]">
+                ↗
+              </span>
+            </a>
+          ))}
+        </nav>
+        <p className="mt-4 text-xs text-[#475569]">
+          5つのサービス領域 ／ 全25項目からお探しいただけます。
+        </p>
+      </div>
+
+      <div className="mt-9 space-y-9 sm:mt-14 sm:space-y-12">
+        {serviceCategories.map((group) => (
+          <section
+            key={group.number}
+            id={`category-${group.number}`}
+            aria-labelledby={`category-title-${group.number}`}
+            className="scroll-mt-28 border-t border-[#CBD5E1] pt-6 sm:pt-8"
           >
-            {option.label}
-          </button>
-        ))}
-      </div>
-      <p className="mb-8 mt-5 text-sm leading-7 text-[#475569]">
-        {audience==="all"?"サービス領域を一覧でご覧いただけます。":audience==="japanese"?"日系企業と海外子会社の課題に合うサービスをご案内します。":"外資系企業・日本法人の課題に合うサービスをご案内します。"}
-      </p>
-
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        {groups.map(group=>(
-          <a href={`#category-${group.number}`} key={group.number}
-            className="group block rounded-lg border border-[#CBD5E1] bg-white px-6 py-7 shadow-[0_6px_22px_rgba(23,63,81,.035)] transition-colors hover:border-[#CBD5E1] hover:bg-[#EDF5FC] sm:px-7 sm:py-8">
-            <span className="text-sm font-semibold tracking-[.1em] text-[#1766A0]">{group.number}</span>
-            <h2 className="mt-3 text-xl font-semibold leading-8 text-[#0B3158] sm:text-2xl">{group.title}</h2>
-            <p className="mt-3 min-h-[2.8rem] text-sm leading-7 text-[#475569]">{group.lead}</p>
-            <span className="mt-5 inline-flex items-center gap-3 text-sm font-semibold text-[#0B3158]">
-              支援内容を見る <span aria-hidden="true">→</span>
-            </span>
-          </a>
-        ))}
-      </div>
-
-      <div className="mt-16 space-y-14 sm:mt-20 sm:space-y-16">
-        {groups.map(group=>(
-          <section key={group.number} id={`category-${group.number}`} className="scroll-mt-28 border-t border-[#CBD5E1] pt-7 sm:pt-9" aria-labelledby={`category-title-${group.number}`}>
-            <div className="grid gap-3 sm:grid-cols-[76px_1fr] sm:gap-7">
-              <span className="pt-1 text-sm font-semibold tracking-widest text-[#475569]">{group.number}</span>
-              <div>
-                <h2 id={`category-title-${group.number}`} className="text-[clamp(22px,3vw,31px)] font-semibold leading-snug text-[#0B3158]">{group.title}</h2>
-                <p className="mt-3 text-sm leading-7 text-[#475569]">{group.lead}</p>
-                <div className="mt-7">
-                  {group.itemIds.map(id=>{
-                    const item=serviceItems.find(x=>x.id===id);
-                    if(!item)return null;
-                    return <Link key={item.id} href={item.href} className="group flex items-start justify-between gap-5 border-b border-[#CBD5E1] py-5 hover:bg-[#EDF5FC]">
-                      <div>
-                        <h3 className="text-[15px] font-semibold text-[#0B3158] sm:text-[17px]">{item.name}</h3>
-                        <p className="mt-2 text-[13px] leading-7 text-[#475569]">{item.description}</p>
-                      </div>
-                      <span aria-hidden="true" className="pt-1 text-xl text-[#475569] transition-transform group-hover:translate-x-1">↗</span>
-                    </Link>;
-                  })}
-                </div>
+            <div className="mb-5 flex flex-wrap items-start gap-x-5 gap-y-3 sm:mb-6">
+              <span
+                aria-hidden="true"
+                className="min-w-10 text-[28px] font-semibold leading-tight tracking-tight text-[#1766A0] sm:min-w-12 sm:text-[33px]"
+              >
+                {group.number}
+              </span>
+              <div className="min-w-0 flex-1">
+                <h2
+                  id={`category-title-${group.number}`}
+                  className="text-xl font-bold leading-snug tracking-tight text-[#0B3158] sm:text-2xl"
+                >
+                  {group.title}
+                </h2>
+                <p className="mt-2 text-xs leading-7 text-[#475569] sm:text-[13px]">
+                  {group.lead}
+                </p>
               </div>
+              <a
+                href="#index"
+                className="ml-10 text-[11px] font-bold whitespace-nowrap text-[#1766A0] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1766A0] sm:ml-0 sm:pt-2"
+                aria-label={`${group.title}からサービス目次へ戻る`}
+              >
+                目次へ ↑
+              </a>
+            </div>
+
+            <div className="border-t border-[#E2E8F0]">
+              {group.itemIds.map((id, itemIndex) => {
+                const item = serviceItems.find((entry) => entry.id === id);
+                if (!item) return null;
+
+                return (
+                  <Link
+                    key={item.id}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${item.name}の詳細ページを新しいタブで開く`}
+                    className="group grid grid-cols-[18px_minmax(0,1fr)_17px] items-center gap-3 border-b border-[#E2E8F0] px-1 py-4 text-[#0B3158] transition-colors hover:bg-[#EDF5FC] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1766A0] sm:grid-cols-[30px_minmax(0,1fr)_23px] sm:gap-5 sm:px-2 sm:py-[18px]"
+                  >
+                    <span className="self-start pt-1 text-[10px] font-bold text-[#8096A7] sm:text-[11px]">
+                      {String(itemIndex + 1).padStart(2, "0")}
+                    </span>
+                    <span className="flex min-w-0 flex-col gap-1.5">
+                      <strong className="text-[13px] font-bold leading-6 sm:text-[15px]">
+                        {item.name}
+                      </strong>
+                      <span className="text-[11px] leading-5 text-[#475569] sm:text-xs sm:leading-6">
+                        {item.description}
+                      </span>
+                    </span>
+                    <span aria-hidden="true" className="text-base text-[#1766A0] sm:text-xl">
+                      ↗
+                    </span>
+                  </Link>
+                );
+              })}
             </div>
           </section>
         ))}
-      </div>
-      <div id="related-expertise" className="scroll-mt-28 mt-16 rounded-xl border border-[#CBD5E1] bg-[#EDF5FC] p-6 sm:p-8">
-        <h2 className="text-lg font-semibold text-[#0B3158]">関連する専門サービス</h2>
-        <p className="mt-2 text-sm leading-7 text-[#475569]">上記5つの基本分類のほかにも、必要な領域について個別のご相談を承ります。</p>
-        <div className="mt-5 flex flex-wrap gap-3 text-[13px] font-semibold text-[#0B3158]">
-          
-          <Link className="rounded-full border border-[#CBD5E1] bg-white px-4 py-2.5 hover:bg-[#EDF5FC]" href="/bpo">Luare BPO ↗</Link>
-          <Link className="rounded-full border border-[#CBD5E1] bg-white px-4 py-2.5 hover:bg-[#EDF5FC]" href="/services/ma-finance#fdd">財務デューデリジェンス ↗</Link>
-          <Link className="rounded-full border border-[#CBD5E1] bg-white px-4 py-2.5 hover:bg-[#EDF5FC]" href="/services/ma-finance#valuation">企業価値・株価算定 ↗</Link>
-          <Link className="rounded-full border border-[#CBD5E1] bg-white px-4 py-2.5 hover:bg-[#EDF5FC]" href="/services/ma-finance#pmi">PMI・統合後の管理体制 ↗</Link>
-        </div>
       </div>
     </section>
   );
