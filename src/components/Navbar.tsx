@@ -103,6 +103,8 @@ export default function Navbar({
                       </Link>
                     ))}
                     <div className="luare-service-dropdown-divider" aria-hidden="true" />
+                  <Link href="/services/audit-assurance#statutory-audit" className="luare-service-all-link" onClick={() => setIsServiceOpen(false)}><span>会計監査（法定・任意）・監査法人連携</span><span aria-hidden="true">↗</span></Link>
+                    <Link href="/services/audit-assurance#statutory-audit" className="luare-service-all-link" onClick={() => setIsServiceOpen(false)}><span>会計監査（法定・任意）・監査法人連携</span><span aria-hidden="true">↗</span></Link>
                     <Link href="/services" className="luare-service-all-link" onClick={() => setIsServiceOpen(false)}>
                       <span>サービスをすべて見る</span>
                       <span aria-hidden="true">→</span>
