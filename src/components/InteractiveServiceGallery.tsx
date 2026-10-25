@@ -62,9 +62,9 @@ export default function InteractiveServiceGallery() {
           </section>;
         })}
       </div>
-      <div className="mt-9 border-t border-[#d9e6eb] pt-6">
-        <p className="mb-3 text-xs font-semibold tracking-wide text-[#5d7e8c]">関連する専門サービス</p>
-        <div className="flex flex-wrap gap-x-6 gap-y-3 text-[13px] font-semibold text-[#285a73]">
+      <div className="mt-9 border-t border-[#CBD5E1] pt-6">
+        <p className="mb-3 text-xs font-semibold tracking-wide text-[#475569]">関連する専門サービス</p>
+        <div className="flex flex-wrap gap-x-6 gap-y-3 text-[13px] font-semibold text-[#0B3158]">
           
           <Link href="/services/ma-finance#fdd" className="hover:underline">財務デューデリジェンス ↗</Link>
           <Link href="/services/ma-finance#valuation" className="hover:underline">企業価値・株価算定 ↗</Link>
