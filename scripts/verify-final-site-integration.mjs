@@ -49,7 +49,7 @@ assert(home.includes("luare-hero-consulting-male-20261025.webp"),"Approved male 
 const nav=readFileSync("src/components/Navbar.tsx","utf8");
 assert(!nav.includes("/for-audit-firms"),"Protected audit-partner nav became visible");
 assert(!nav.includes("--font-inter"),"Legacy font variable still in navbar");
-const special=["about.html","en/about.html","zh/about.html","insights.html",...pages.keys().filter(f=>f.startsWith("insights/"))];
+const special=["about.html","en/about.html","zh/about.html","insights.html",...Array.from(pages.keys()).filter(f=>f.startsWith("insights/"))];
 for(const page of special){
  if(!pages.has(page))continue;
  const html=pages.get(page);
