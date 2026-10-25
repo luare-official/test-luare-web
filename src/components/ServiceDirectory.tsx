@@ -99,6 +99,7 @@ export default function ServiceDirectory() {
         <h2 className="text-lg font-semibold text-[#23485c]">関連する専門サービス</h2>
         <p className="mt-2 text-sm leading-7 text-[#667e8b]">上記4つの基本分類とは別に、個別のご相談を承るサービスです。</p>
         <div className="mt-5 flex flex-wrap gap-3 text-[13px] font-semibold text-[#22687e]">
+          <Link className="rounded-full border border-[#c9dfe5] bg-white px-4 py-2.5 hover:bg-[#e9f5f7]" href="/services/audit-assurance#statutory-audit">会計監査（法定・任意）・監査法人連携 ↗</Link>
           <Link className="rounded-full border border-[#c9dfe5] bg-white px-4 py-2.5 hover:bg-[#e9f5f7]" href="/services/audit-assurance#group-audit">Group Audit・海外監査人対応 ↗</Link>
           <Link className="rounded-full border border-[#c9dfe5] bg-white px-4 py-2.5 hover:bg-[#e9f5f7]" href="/bpo">Luare BPO ↗</Link>
           <Link className="rounded-full border border-[#c9dfe5] bg-white px-4 py-2.5 hover:bg-[#e9f5f7]" href="/services/ma-finance#fdd">財務デューデリジェンス ↗</Link>
