@@ -75,6 +75,36 @@ const hasEmbeddedContactForm=
   jsox.includes('name="topic"') &&
   jsox.includes('type="submit"');
 assert(hasContactLink||hasEmbeddedContactForm,"J-SOX contact CTA and live contact form are both missing");
+
+// Protect the approved, low-profile /for-audit-firms route from stale PRs.
+// Check source for both PC and mobile navigation because closed mobile menus
+// are not represented in server-rendered HTML before client interaction.
+const heroNavbar=readFileSync("src/components/Navbar.tsx","utf8");
+const sharedFooter=readFileSync("src/components/Footer.tsx","utf8");
+const auditCollaborationSource=readFileSync("src/app/for-audit-firms/page.tsx","utf8");
+const auditCollaborationFile="out/for-audit-firms.html";
+assert(!heroNavbar.includes("/for-audit-firms"),
+  "Regression: audit-firm collaboration link must NOT appear in PC or mobile Navbar");
+assert(sharedFooter.includes('<Link href="/for-audit-firms">監査法人・専門家の皆様へ</Link>'),
+  "Regression: approved audit-firm link missing from the shared Footer");
+assert(home.includes('href="/for-audit-firms"'),
+  "Regression: approved audit-firm footer link absent from exported homepage");
+assert(existsSync(auditCollaborationFile), "Audit-firm page missing from static site output");
+if(existsSync(auditCollaborationFile)){
+  const auditHtml=readFileSync(auditCollaborationFile,"utf8");
+  assert(auditHtml.includes('href="/contact"') && auditHtml.includes("案件について相談する"),
+    "Audit-firm consultation CTA must continue to use the approved /contact page");
+  assert(auditHtml.includes("application/ld+json"),
+    "Audit-firm page's approved Service structured data is missing");
+}
+assert(auditCollaborationSource.includes('canonical: "https://luare-consulting.com/for-audit-firms"'),
+  "Audit-firm canonical must remain unchanged");
+assert(auditCollaborationSource.includes("openGraph:") &&
+       auditCollaborationSource.includes('"@type": "Service"'),
+  "Audit-firm SEO metadata or structured data has been removed");
+assert(!/noindex/i.test(auditCollaborationSource),
+  "Audit-firm page must remain indexable and must not include noindex");
+
 console.log(`A班 static QA: checked ${checked} homepage routes, ${htmlCache.size} parent pages and 5 service tabs.`);
 if(problems.length){
   for(const message of problems) console.error("FAIL:",message);
