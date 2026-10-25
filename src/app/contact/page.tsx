@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "お問い合わせ | Luare Consulting",
-  description: "無料相談・お問い合わせはこちらから。経理・財務体制に関するご相談はお気軽にお問い合わせください。初回相談は無料です。",
+  description: "Luare Consultingへのお問い合わせ・初回無料相談はこちらから。",
   alternates: {
     canonical: "https://luare-consulting.com/contact",
     languages: {
@@ -16,248 +16,122 @@ export const metadata: Metadata = {
   },
 };
 
+const inputStyle =
+  "mt-2 block min-h-12 w-full rounded-md border border-[#cbd8de] bg-white px-4 py-3 text-[15px] text-[#233b4a] placeholder:text-[#9aaab2] outline-none transition-colors focus:border-[#26718b] focus:ring-2 focus:ring-[#26718b]/15";
+const labelStyle = "block text-[14px] font-semibold text-[#2b4554]";
+
+function Required() {
+  return <span className="ml-2 text-[11px] font-medium text-[#687f8a]">必須</span>;
+}
+
 export default function ContactPage() {
   return (
     <>
       <Navbar theme="dark" solid={true} />
-      
-      <main className="flex-1 pt-24 pb-24 lg:pt-32 lg:pb-32 bg-brand-offwhite">
-        <div className="mx-auto max-w-4xl px-6 sm:px-8">
-          
-          {/* Header */}
-          <div className="text-center mb-16 fade-in-section">
-            <h1 className="font-serif text-3xl md:text-4xl font-medium text-brand-navy mb-6 tracking-wider">
-              無料相談・お問い合わせ
+      <main className="flex-1 bg-[#f6f9fa] px-5 pb-20 pt-28 text-[#293b45] [font-family:var(--font-noto-sans),Meiryo,sans-serif] sm:px-8 sm:pb-24 sm:pt-36">
+        <div className="mx-auto max-w-[820px]">
+          <header className="mb-10 text-center sm:mb-12">
+            <p className="text-[11px] font-semibold tracking-[0.22em] text-[#397f96]">CONTACT</p>
+            <h1 className="mt-4 text-[30px] font-semibold tracking-[-0.03em] text-[#233e50] sm:text-[40px]">
+              お問い合わせ
             </h1>
-            <p className="text-sm md:text-base text-brand-slate tracking-wide leading-relaxed">
-              経理・財務体制に関するご相談はお気軽にお問い合わせください。<br className="hidden sm:block" />
+            <p className="mt-4 text-[14px] leading-[1.9] text-[#627883]">
               初回相談は無料です。
             </p>
-          </div>
+          </header>
 
-          {/* Form Container */}
-          <div className="bg-white p-8 md:p-12 shadow-xl border border-brand-silver/20 fade-in-section" style={{ animationDelay: "0.2s" }}>
-            <form
-              action="https://formspree.io/f/mojppoor"
-              method="POST"
-              className="space-y-10"
-            >
-              
-              {/* 基本情報セクション */}
-              <div className="space-y-6">
-                <h3 className="text-sm font-bold text-brand-navy border-b border-brand-silver/30 pb-2 uppercase tracking-widest mb-6">
-                  お客様情報
-                </h3>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* 会社名 */}
-                  <div>
-                    <label className="block text-xs font-bold text-brand-navy mb-2 tracking-wide">
-                      会社名 <span className="text-[10px] text-red-600 font-normal ml-1 bg-red-50 px-1 py-0.5">必須</span>
-                    </label>
-                    <input
-                      type="text"
-                      name="company"
-                      className="w-full border border-brand-silver/40 p-3 text-sm focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50"
-                      placeholder="株式会社Luare Consulting"
-                      required
-                    />
-                  </div>
-
-                  {/* お名前 */}
-                  <div>
-                    <label className="block text-xs font-bold text-brand-navy mb-2 tracking-wide">
-                      お名前 <span className="text-[10px] text-red-600 font-normal ml-1 bg-red-50 px-1 py-0.5">必須</span>
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      className="w-full border border-brand-silver/40 p-3 text-sm focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50"
-                      placeholder="山田 太郎"
-                      required
-                    />
-                  </div>
-
-                  {/* メールアドレス */}
-                  <div>
-                    <label className="block text-xs font-bold text-brand-navy mb-2 tracking-wide">
-                      メールアドレス <span className="text-[10px] text-red-600 font-normal ml-1 bg-red-50 px-1 py-0.5">必須</span>
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      className="w-full border border-brand-silver/40 p-3 text-sm focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50"
-                      placeholder="info@example.com"
-                      required
-                    />
-                  </div>
-
-                  {/* 電話番号（任意） */}
-                  <div>
-                    <label className="block text-xs font-bold text-brand-navy mb-2 tracking-wide">
-                      電話番号 <span className="text-[10px] text-brand-silver font-normal ml-1 bg-brand-silver/10 px-1 py-0.5">任意</span>
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      className="w-full border border-brand-silver/40 p-3 text-sm focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50"
-                      placeholder="03-1234-5678"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* 企業属性セクション */}
-              <div className="space-y-6">
-                <h3 className="text-sm font-bold text-brand-navy border-b border-brand-silver/30 pb-2 uppercase tracking-widest mb-6">
-                  企業情報
-                </h3>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* 会社種別 */}
-                  <div>
-                    <label className="block text-xs font-bold text-brand-navy mb-2 tracking-wide">
-                      会社種別 <span className="text-[10px] text-red-600 font-normal ml-1 bg-red-50 px-1 py-0.5">必須</span>
-                    </label>
-                    <div className="relative">
-                      <select
-                        name="company_type"
-                        defaultValue=""
-                        className="w-full border border-brand-silver/40 p-3 text-sm appearance-none focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50"
-                        required
-                      >
-                        <option value="" disabled>選択してください</option>
-                        <option value="国内企業">国内企業</option>
-                        <option value="外資系日本法人">外資系日本法人</option>
-                        <option value="海外企業（日本進出予定）">海外企業（日本進出予定）</option>
-                        <option value="その他">その他</option>
-                      </select>
-                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-brand-navy">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* 会社規模 */}
-                  <div>
-                    <label className="block text-xs font-bold text-brand-navy mb-2 tracking-wide">
-                      会社規模 <span className="text-[10px] text-red-600 font-normal ml-1 bg-red-50 px-1 py-0.5">必須</span>
-                    </label>
-                    <div className="relative">
-                      <select
-                        name="company_size"
-                        defaultValue=""
-                        className="w-full border border-brand-silver/40 p-3 text-sm appearance-none focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50"
-                        required
-                      >
-                        <option value="" disabled>選択してください</option>
-                        <option value="1～10名">1～10名</option>
-                        <option value="11～50名">11～50名</option>
-                        <option value="51～100名">51～100名</option>
-                        <option value="101～300名">101～300名</option>
-                        <option value="301名以上">301名以上</option>
-                      </select>
-                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-brand-navy">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* 相談内容セクション */}
-              <div className="space-y-6">
-                <h3 className="text-sm font-bold text-brand-navy border-b border-brand-silver/30 pb-2 uppercase tracking-widest mb-6">
-                  ご相談内容
-                </h3>
-
-                {/* 現在の経理体制 */}
+          <div className="rounded-lg border border-[#dce7eb] bg-white px-5 py-8 shadow-[0_14px_44px_rgba(24,57,77,0.05)] sm:px-10 sm:py-12">
+            <form action="https://formspree.io/f/mojppoor" method="POST">
+              <div className="grid gap-x-7 gap-y-7 sm:grid-cols-2">
                 <div>
-                  <label className="block text-xs font-bold text-brand-navy mb-2 tracking-wide">
-                    現在の経理体制 <span className="text-[10px] text-red-600 font-normal ml-1 bg-red-50 px-1 py-0.5">必須</span>
+                  <label htmlFor="contact-company" className={labelStyle}>
+                    会社名<Required />
                   </label>
-                  <div className="relative md:w-1/2">
-                    <select
-                      name="accounting_team"
-                      defaultValue=""
-                      className="w-full border border-brand-silver/40 p-3 text-sm appearance-none focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50"
-                      required
-                    >
-                      <option value="" disabled>選択してください</option>
-                      <option value="経理担当者なし">経理担当者なし</option>
-                      <option value="経理担当者1名">経理担当者1名</option>
-                      <option value="2〜5名">2〜5名</option>
-                      <option value="6名以上">6名以上</option>
-                    </select>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-brand-navy">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* 複数選択項目 */}
-                <div className="pt-2">
-                  <label className="block text-xs font-bold text-brand-navy mb-4 tracking-wide">
-                    相談種別（複数選択可）
-                  </label>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6">
-                    {[
-                      "採用の代替を探している",
-                      "経理業務を効率化したい",
-                      "月次決算を改善したい",
-                      "内部統制を整備したい",
-                      "外資系日本法人の支援を探している",
-                      "その他",
-                    ].map((item) => (
-                      <label key={item} className="flex items-start gap-3 cursor-pointer group">
-                        <div className="relative flex items-center justify-center w-4 h-4 mt-0.5 border border-brand-silver/60 bg-brand-offwhite/50 group-hover:border-brand-navy transition-colors">
-                          {/* name="consultation_type" allows Formspree to collect all checked values */}
-                          <input type="checkbox" name="consultation_type" className="peer absolute opacity-0 w-full h-full cursor-pointer" value={item} />
-                          <svg className="w-3 h-3 text-brand-navy opacity-0 peer-checked:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <span className="text-sm text-brand-slate group-hover:text-brand-navy transition-colors select-none">
-                          {item}
-                        </span>
-                      </label>
-                    ))}
-                  </div>
+                  <input
+                    id="contact-company"
+                    type="text"
+                    name="company"
+                    autoComplete="organization"
+                    className={inputStyle}
+                    placeholder="会社名をご入力ください"
+                    required
+                  />
                 </div>
 
-                {/* 自由記述欄 */}
-                <div className="pt-4">
-                  <label className="block text-xs font-bold text-brand-navy mb-2 tracking-wide">
-                    現在のお悩み・ご相談内容 <span className="text-[10px] text-red-600 font-normal ml-1 bg-red-50 px-1 py-0.5">必須</span>
+                <div>
+                  <label htmlFor="contact-name" className={labelStyle}>
+                    お名前<Required />
                   </label>
-                  <textarea
-                    name="message"
-                    className="w-full border border-brand-silver/40 p-4 text-sm focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-colors bg-brand-offwhite/50 min-h-[160px] resize-y"
-                    placeholder="経理担当者の退職予定 / 採用難 / 月次決算の遅れ / 海外親会社へのレポート対応 / などをご記入ください。"
+                  <input
+                    id="contact-name"
+                    type="text"
+                    name="name"
+                    autoComplete="name"
+                    className={inputStyle}
+                    placeholder="お名前をご入力ください"
                     required
-                  ></textarea>
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="contact-email" className={labelStyle}>
+                    メールアドレス<Required />
+                  </label>
+                  <input
+                    id="contact-email"
+                    type="email"
+                    name="email"
+                    autoComplete="email"
+                    className={inputStyle}
+                    placeholder="name@example.com"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="contact-phone" className={labelStyle}>
+                    電話番号
+                    <span className="ml-2 text-[11px] font-medium text-[#8297a1]">任意</span>
+                  </label>
+                  <input
+                    id="contact-phone"
+                    type="tel"
+                    name="phone"
+                    autoComplete="tel"
+                    className={inputStyle}
+                    placeholder="03-1234-5678"
+                  />
                 </div>
               </div>
 
-              {/* Submit Button */}
-              <div className="pt-8 text-center">
+              <div className="mt-8 sm:mt-9">
+                <label htmlFor="contact-message" className={labelStyle}>
+                  ご相談・お問い合わせ内容<Required />
+                </label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  className={inputStyle + " min-h-[176px] resize-y"}
+                  placeholder="ご相談内容を自由にご記入ください"
+                  required
+                />
+              </div>
+
+              <div className="mt-10 border-t border-[#e2eaee] pt-8 text-center">
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center bg-brand-navy text-white px-12 py-5 text-sm font-bold uppercase tracking-[0.2em] transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 hover:bg-brand-darknavy w-full sm:w-auto min-w-[300px]"
+                  className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-md bg-[#24657d] px-8 py-3 text-[14px] font-semibold text-white transition-colors hover:bg-[#174d63] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#24657d] sm:w-auto sm:min-w-[260px]"
                 >
-                  無料相談を申し込む
+                  送信する <span aria-hidden="true">→</span>
                 </button>
-                <p className="text-[10px] text-brand-silver mt-4 tracking-wider">
-                  送信ボタンを押すことで、プライバシーポリシーに同意したものとみなされます。
+                <p className="mt-4 text-[11px] leading-[1.8] text-[#8297a1]">
+                  送信前に入力内容をご確認ください。
                 </p>
               </div>
-
             </form>
           </div>
-          
         </div>
       </main>
-
       <Footer />
     </>
   );
