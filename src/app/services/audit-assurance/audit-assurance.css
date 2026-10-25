@@ -38,3 +38,18 @@
 #luare-audit-lp .partnerDisclaimer{font-size:12px;line-height:2;padding:19px 24px;margin:28px 0 0;border-left:3px solid #79a6b4;background:#f4f8f9;color:#4e6d7c}
 #luare-audit-lp .steps .stepGrid{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media(max-width:680px){#luare-audit-lp .heroGrid{padding:46px 0 56px;max-width:100%}#luare-audit-lp .steps .stepGrid{grid-template-columns:1fr}#luare-audit-lp .steps .step:last-child{grid-column:auto}}
+
+
+/* Review addition: three restrained audit-service benefits, isolated to audit LP */
+#luare-audit-lp .luareAuditBenefits{background:#f5f9f9;border-top:1px solid #e5edef;border-bottom:1px solid #e5edef}
+#luare-audit-lp .benefitsIntro{max-width:790px;margin:0 0 36px}
+#luare-audit-lp .benefitsIntro .sectionTitle{margin-bottom:13px}
+#luare-audit-lp .benefitsGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:white;border:1px solid #dbe6e9}
+#luare-audit-lp .benefit{padding:34px 31px 37px;min-width:0}
+#luare-audit-lp .benefit+.benefit{border-left:1px solid #dbe6e9}
+#luare-audit-lp .benefitNo{font-family:Arial,sans-serif;font-size:25px;line-height:1.25;color:#9cbcc6;margin:0 0 23px;letter-spacing:-.03em}
+#luare-audit-lp .benefitNo span{font-size:10px;letter-spacing:.16em;font-weight:700;color:#668d9a;vertical-align:middle;margin-left:9px}
+#luare-audit-lp .benefit h3{font-size:20px;line-height:1.65;letter-spacing:-.015em;color:#23495b;margin:0 0 16px;font-weight:700}
+#luare-audit-lp .benefit>p:last-child{font-size:13px;line-height:2;color:#667d89;margin:0}
+@media(max-width:900px){#luare-audit-lp .benefit{padding:28px 22px}#luare-audit-lp .benefit h3{font-size:18px}}
+@media(max-width:700px){#luare-audit-lp .benefitsIntro{margin-bottom:25px}#luare-audit-lp .benefitsGrid{grid-template-columns:1fr}#luare-audit-lp .benefit{padding:26px 24px 28px}#luare-audit-lp .benefit+.benefit{border-left:0;border-top:1px solid #dbe6e9}#luare-audit-lp .benefitNo{margin-bottom:12px}#luare-audit-lp .benefit h3{font-size:19px}}
