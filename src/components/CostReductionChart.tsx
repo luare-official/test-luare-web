@@ -71,13 +71,13 @@ export default function CostReductionChart() {
 
         {/* Features list */}
         <div className="flex flex-col gap-3 sm:gap-4 w-full sm:w-auto relative z-10 px-4 sm:px-0 mt-4 md:mt-0">
-          <div className="bg-[#F8FAFC] border border-slate-200 rounded-lg p-4 sm:p-5 shadow-sm w-full sm:w-80">
+          <div className="bg-[#EDF5FC] border border-slate-200 rounded-lg p-4 sm:p-5 shadow-sm w-full sm:w-80">
             <span className="inline-block px-2 py-1 bg-brand-gold text-white text-[10px] font-bold tracking-widest rounded mb-2">特徴1</span>
             <p className="text-xs sm:text-sm text-brand-charcoal font-bold leading-relaxed">
               <span className="text-brand-gold">【採用費・教育費ゼロ】</span><br/>即戦力のプロフェッショナルが稼働。
             </p>
           </div>
-          <div className="bg-[#F8FAFC] border border-slate-200 rounded-lg p-4 sm:p-5 shadow-sm w-full sm:w-80">
+          <div className="bg-[#EDF5FC] border border-slate-200 rounded-lg p-4 sm:p-5 shadow-sm w-full sm:w-80">
             <span className="inline-block px-2 py-1 bg-brand-gold text-white text-[10px] font-bold tracking-widest rounded mb-2">特徴2</span>
             <p className="text-xs sm:text-sm text-brand-charcoal font-bold leading-relaxed">
               <span className="text-brand-gold">【退職リスクゼロ】</span><br/>チーム体制とAIエージェントによる完全標準化で属人化を排除。

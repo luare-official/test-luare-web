@@ -19,7 +19,7 @@ export default function ConceptDiagram({ activeTab, setActiveTab }: ConceptDiagr
   };
 
   return (
-    <section id="gateway" className="relative w-full bg-[#FAFAFA] py-14 sm:py-20 md:py-16 overflow-hidden border-b border-slate-200 scroll-mt-20">
+    <section id="gateway" className="relative w-full bg-[#FFFFFF] py-14 sm:py-20 md:py-16 overflow-hidden border-b border-slate-200 scroll-mt-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-10 relative z-10">
         
         {/* Header */}

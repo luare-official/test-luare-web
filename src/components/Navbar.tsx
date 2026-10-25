@@ -166,7 +166,7 @@ export default function Navbar({
     ? "bg-transparent border-transparent"
     : hasBackground
       ? theme === "light"
-        ? "bg-[#153f72]/95 backdrop-blur-md border-white/10 shadow-sm"
+        ? "bg-[#0B3158]/95 backdrop-blur-md border-white/10 shadow-sm"
         : "bg-white/95 backdrop-blur-md border-slate-200/70 shadow-sm"
       : "bg-transparent border-transparent";
 
@@ -174,12 +174,12 @@ export default function Navbar({
     ? "text-white/90 hover:text-white"
     : theme === "light"
       ? "text-white/75 hover:text-white"
-      : "text-[#4b5967] hover:text-[#27323b]";
+      : "text-[#475569] hover:text-[#0B3158]";
 
-  const logoColor = overlayMode || theme === "light" ? "text-white" : "text-[#30383f]";
-  const hamburgerColor = overlayMode || theme === "light" ? "text-white" : "text-[#30383f]";
-  const languageText = overlayMode || theme === "light" ? "text-white/70" : "text-[#6c7883]";
-  const languageActive = overlayMode || theme === "light" ? "text-white" : "text-[#058dca]";
+  const logoColor = overlayMode || theme === "light" ? "text-white" : "text-[#0B3158]";
+  const hamburgerColor = overlayMode || theme === "light" ? "text-white" : "text-[#0B3158]";
+  const languageText = overlayMode || theme === "light" ? "text-white/70" : "text-[#475569]";
+  const languageActive = overlayMode || theme === "light" ? "text-white" : "text-[#1766A0]";
 
   const standardNavItems =
     currentLang === "JP"
@@ -260,7 +260,7 @@ export default function Navbar({
 
           <Link
             href={contactLink}
-            className="rounded-full bg-[#078fcf] px-5 py-3 text-[10px] font-semibold tracking-[0.12em] text-white transition-colors hover:bg-[#0678ad]"
+            className="rounded-full bg-[#1766A0] px-5 py-3 text-[10px] font-semibold tracking-[0.12em] text-white transition-colors hover:bg-[#0B3158]"
           >
             {contactText}
           </Link>
@@ -290,7 +290,7 @@ export default function Navbar({
       </div>
 
       {isMenuOpen && (
-        <div className="fixed inset-x-0 bottom-0 top-[78px] z-40 overflow-y-auto bg-[#123e68] px-7 py-10 xl:hidden">
+        <div className="fixed inset-x-0 bottom-0 top-[78px] z-40 overflow-y-auto bg-[#0B3158] px-7 py-10 xl:hidden">
           <nav className="flex flex-col">
             {currentLang === "JP" && (
               <div className="luare-mobile-service-group">
@@ -324,7 +324,7 @@ export default function Navbar({
           <Link
             href={contactLink}
             onClick={() => setIsMenuOpen(false)}
-            className="mt-9 flex w-full items-center justify-center rounded-full bg-white py-4 text-xs font-semibold tracking-[0.12em] text-[#123e68]"
+            className="mt-9 flex w-full items-center justify-center rounded-full bg-white py-4 text-xs font-semibold tracking-[0.12em] text-[#0B3158]"
           >
             {contactText}
           </Link>

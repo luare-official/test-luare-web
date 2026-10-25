@@ -19,96 +19,96 @@ const estimates = [];
 export default function Page(){
   return <>
     <Navbar solid />
-    <main className="bg-white text-[#25485a]">
-      <nav aria-label="パンくずリスト" className="mx-auto max-w-6xl px-5 pt-28 text-xs text-[#657e89] sm:px-8 sm:pt-32">
+    <main className="bg-white text-[#0B3158]">
+      <nav aria-label="パンくずリスト" className="mx-auto max-w-6xl px-5 pt-28 text-xs text-[#475569] sm:px-8 sm:pt-32">
         <Link href="/" className="hover:underline">ホーム</Link><span className="mx-2">/</span>
         <Link href="/services" className="hover:underline">サービス</Link><span className="mx-2">/</span><span aria-current="page">外資系日本法人の経理BPO・海外本社報告</span>
       </nav>
-      <section id="top" className="border-b border-[#e1e9ec] bg-[#f7fafb] py-14 sm:py-20">
+      <section id="top" className="border-b border-[#CBD5E1] bg-[#EDF5FC] py-14 sm:py-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <p className="mb-4 text-xs font-bold tracking-[.2em] text-[#33758b]">LUARE BPO / MANAGED FINANCE</p>
-          <h1 className="max-w-4xl text-[30px] font-bold leading-[1.45] tracking-wide text-[#23485a] sm:text-[44px]">外資系日本法人の経理BPO・海外本社報告</h1>
-          <p className="mt-5 max-w-3xl text-base leading-[2] text-[#506e7b] sm:text-lg">海外企業の日本法人向けに、日常経理・月次決算・海外本社への報告を継続支援。採用や退職で業務が止まりにくい体制づくりを支えます。</p>
+          <p className="mb-4 text-xs font-bold tracking-[.2em] text-[#1766A0]">LUARE BPO / MANAGED FINANCE</p>
+          <h1 className="max-w-4xl text-[30px] font-bold leading-[1.45] tracking-wide text-[#0B3158] sm:text-[44px]">外資系日本法人の経理BPO・海外本社報告</h1>
+          <p className="mt-5 max-w-3xl text-base leading-[2] text-[#475569] sm:text-lg">海外企業の日本法人向けに、日常経理・月次決算・海外本社への報告を継続支援。採用や退職で業務が止まりにくい体制づくりを支えます。</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/contact" className="inline-flex min-h-12 items-center justify-center rounded-sm bg-[#17617b] px-6 py-3 text-sm font-semibold text-white hover:bg-[#10465c]">このサービスについて相談する <span className="ml-3" aria-hidden="true">↗</span></Link>
-            <a href="#service-details" className="inline-flex min-h-12 items-center justify-center rounded-sm border border-[#c2d4db] px-6 py-3 text-sm text-[#17617b] hover:bg-white">依頼できる業務を見る ↓</a>
+            <Link href="/contact" className="inline-flex min-h-12 items-center justify-center rounded-sm bg-[#1766A0] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0B3158]">このサービスについて相談する <span className="ml-3" aria-hidden="true">↗</span></Link>
+            <a href="#service-details" className="inline-flex min-h-12 items-center justify-center rounded-sm border border-[#CBD5E1] px-6 py-3 text-sm text-[#1766A0] hover:bg-white">依頼できる業務を見る ↓</a>
           </div>
         </div>
       </section>
       <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20" aria-labelledby="concerns-heading">
-        <p className="text-xs font-bold tracking-[.2em] text-[#33758b]">COMMON CHALLENGES</p>
+        <p className="text-xs font-bold tracking-[.2em] text-[#1766A0]">COMMON CHALLENGES</p>
         <h2 id="concerns-heading" className="mt-3 text-2xl font-bold leading-relaxed sm:text-3xl">こんなお悩みはありませんか</h2>
         <div className="mt-7 grid gap-4 md:grid-cols-3">
-          {concerns.map(([name, detail])=><article key={name} className="rounded-sm border border-[#dce6ea] bg-white p-6">
-            <h3 className="text-lg font-bold leading-[1.65]">{name}</h3><p className="mt-3 text-sm leading-[1.9] text-[#5b7784]">{detail}</p>
+          {concerns.map(([name, detail])=><article key={name} className="rounded-sm border border-[#CBD5E1] bg-white p-6">
+            <h3 className="text-lg font-bold leading-[1.65]">{name}</h3><p className="mt-3 text-sm leading-[1.9] text-[#475569]">{detail}</p>
           </article>)}
         </div>
       </section>
-      <section id="service-details" className="bg-[#f6f9fa] py-16 sm:py-20" aria-labelledby="services-heading">
+      <section id="service-details" className="bg-[#EDF5FC] py-16 sm:py-20" aria-labelledby="services-heading">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <p className="text-xs font-bold tracking-[.2em] text-[#33758b]">WHAT WE DO</p>
+          <p className="text-xs font-bold tracking-[.2em] text-[#1766A0]">WHAT WE DO</p>
           <h2 id="services-heading" className="mt-3 text-2xl font-bold sm:text-3xl">依頼できる業務・成果物</h2>
-          <p className="mt-4 max-w-3xl text-sm leading-[1.9] text-[#5b7784]">必要な業務だけからご相談いただけます。具体的な担当範囲・資料は初回の確認後に決定します。</p>
+          <p className="mt-4 max-w-3xl text-sm leading-[1.9] text-[#475569]">必要な業務だけからご相談いただけます。具体的な担当範囲・資料は初回の確認後に決定します。</p>
           <span id="services" className="block scroll-mt-24" />
           <nav aria-label="ページ内の支援内容" className="mt-6 flex flex-wrap gap-2">
-            {services.map(item=><a key={item.id} href={`#${item.id}`} className="rounded-sm border border-[#bfd2da] bg-white px-3 py-2 text-xs text-[#17617b] hover:underline">{item.short}</a>)}
+            {services.map(item=><a key={item.id} href={`#${item.id}`} className="rounded-sm border border-[#CBD5E1] bg-white px-3 py-2 text-xs text-[#1766A0] hover:underline">{item.short}</a>)}
           </nav>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
-            {services.map((item,index)=><article id={item.id} key={item.id} className="scroll-mt-24 rounded-sm border border-[#dce6ea] bg-white p-6 sm:p-7">
-              <p className="text-xs font-semibold text-[#47829a]">{String(index+1).padStart(2,"0")}</p>
+            {services.map((item,index)=><article id={item.id} key={item.id} className="scroll-mt-24 rounded-sm border border-[#CBD5E1] bg-white p-6 sm:p-7">
+              <p className="text-xs font-semibold text-[#1766A0]">{String(index+1).padStart(2,"0")}</p>
               <h3 className="mt-2 text-lg font-bold leading-[1.6]">{item.title}</h3>
-              <p className="mt-3 text-sm leading-[1.9] text-[#5b7784]">{item.body}</p>
-              <p className="mt-4 border-t border-[#e2eaee] pt-3 text-xs leading-[1.8] text-[#587080]"><strong className="text-[#34596b]">関連資料・成果物の例：</strong>{item.output}</p>
+              <p className="mt-3 text-sm leading-[1.9] text-[#475569]">{item.body}</p>
+              <p className="mt-4 border-t border-[#CBD5E1] pt-3 text-xs leading-[1.8] text-[#475569]"><strong className="text-[#0B3158]">関連資料・成果物の例：</strong>{item.output}</p>
             </article>)}
           </div>
         </div>
       </section>
       <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20" aria-labelledby="strength-heading">
-        <p className="text-xs font-bold tracking-[.2em] text-[#33758b]">WHY LUARE</p>
+        <p className="text-xs font-bold tracking-[.2em] text-[#1766A0]">WHY LUARE</p>
         <h2 id="strength-heading" className="mt-3 text-2xl font-bold sm:text-3xl">Luare Consultingの支援の特長</h2>
         <div className="mt-7 grid gap-x-10 gap-y-6 md:grid-cols-2">
-          {strengths.map(([name,detail])=><div key={name} className="border-l-2 border-[#95b8c5] pl-5">
-            <h3 className="text-base font-bold">{name}</h3><p className="mt-2 text-sm leading-[1.9] text-[#5b7784]">{detail}</p>
+          {strengths.map(([name,detail])=><div key={name} className="border-l-2 border-[#CBD5E1] pl-5">
+            <h3 className="text-base font-bold">{name}</h3><p className="mt-2 text-sm leading-[1.9] text-[#475569]">{detail}</p>
           </div>)}
         </div>
       </section>
-      <section className="bg-[#f6f9fa] py-16 sm:py-20" aria-labelledby="steps-heading">
+      <section className="bg-[#EDF5FC] py-16 sm:py-20" aria-labelledby="steps-heading">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <p className="text-xs font-bold tracking-[.2em] text-[#33758b]">PROCESS</p>
+          <p className="text-xs font-bold tracking-[.2em] text-[#1766A0]">PROCESS</p>
           <h2 id="steps-heading" className="mt-3 text-2xl font-bold sm:text-3xl">ご相談から支援開始まで</h2>
           <ol className="mt-7 grid gap-4 md:grid-cols-4">
-            {steps.map(([name,detail],i)=><li key={name} className="border-t-2 border-[#96b8c5] bg-white p-5">
-              <span className="text-sm font-semibold text-[#47829a]">{String(i+1).padStart(2,"0")}</span><h3 className="mt-2 font-bold">{name}</h3><p className="mt-2 text-sm leading-[1.85] text-[#5b7784]">{detail}</p>
+            {steps.map(([name,detail],i)=><li key={name} className="border-t-2 border-[#CBD5E1] bg-white p-5">
+              <span className="text-sm font-semibold text-[#1766A0]">{String(i+1).padStart(2,"0")}</span><h3 className="mt-2 font-bold">{name}</h3><p className="mt-2 text-sm leading-[1.85] text-[#475569]">{detail}</p>
             </li>)}
           </ol>
         </div>
       </section>
       <section id="pricing" className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20" aria-labelledby="pricing-heading">
-        <p className="text-xs font-bold tracking-[.2em] text-[#33758b]">FEES</p>
+        <p className="text-xs font-bold tracking-[.2em] text-[#1766A0]">FEES</p>
         <h2 id="pricing-heading" className="mt-3 text-2xl font-bold sm:text-3xl">参考料金・お見積り</h2>
-        <div className="mt-6 max-w-3xl border border-[#dce6ea] bg-[#f7fafb] p-6 sm:p-8">
-          <p className="text-2xl font-bold text-[#1d647e]">個別お見積り</p>
-          <p className="mt-3 text-sm leading-[1.9] text-[#587080]">仕訳量、締め日、海外本社の報告要件、Intercompany取引、使用システムと委託範囲に応じてお見積りします。</p>
+        <div className="mt-6 max-w-3xl border border-[#CBD5E1] bg-[#EDF5FC] p-6 sm:p-8">
+          <p className="text-2xl font-bold text-[#0B3158]">個別お見積り</p>
+          <p className="mt-3 text-sm leading-[1.9] text-[#475569]">仕訳量、締め日、海外本社の報告要件、Intercompany取引、使用システムと委託範囲に応じてお見積りします。</p>
         </div>
-        <p className="mt-5 text-xs leading-[1.85] text-[#6d8490]">※ 実際の料金は業務範囲・工数・期間等に応じて個別に算定します。税区分、諸経費、契約条件等はお見積り時に確認します。</p>
-        <Link href="/contact" className="mt-6 inline-flex min-h-12 items-center rounded-sm bg-[#17617b] px-6 py-3 text-sm font-semibold text-white hover:bg-[#10465c]">見積り・支援範囲を相談する ↗</Link>
+        <p className="mt-5 text-xs leading-[1.85] text-[#475569]">※ 実際の料金は業務範囲・工数・期間等に応じて個別に算定します。税区分、諸経費、契約条件等はお見積り時に確認します。</p>
+        <Link href="/contact" className="mt-6 inline-flex min-h-12 items-center rounded-sm bg-[#1766A0] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0B3158]">見積り・支援範囲を相談する ↗</Link>
       </section>
-      <section id="faq" className="bg-[#f6f9fa] py-16 sm:py-20" aria-labelledby="faq-heading">
+      <section id="faq" className="bg-[#EDF5FC] py-16 sm:py-20" aria-labelledby="faq-heading">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <p className="text-xs font-bold tracking-[.2em] text-[#33758b]">FAQ</p>
+          <p className="text-xs font-bold tracking-[.2em] text-[#1766A0]">FAQ</p>
           <h2 id="faq-heading" className="mt-3 text-2xl font-bold sm:text-3xl">よくあるご質問</h2>
           <div className="mt-6 max-w-4xl space-y-3">
-            {faqs.map(([q,a])=><details key={q} className="group rounded-sm border border-[#dce6ea] bg-white p-5">
-              <summary className="cursor-pointer text-sm font-semibold leading-[1.7]">{q}</summary><p className="mt-3 text-sm leading-[1.9] text-[#5b7784]">{a}</p>
+            {faqs.map(([q,a])=><details key={q} className="group rounded-sm border border-[#CBD5E1] bg-white p-5">
+              <summary className="cursor-pointer text-sm font-semibold leading-[1.7]">{q}</summary><p className="mt-3 text-sm leading-[1.9] text-[#475569]">{a}</p>
             </details>)}
           </div>
         </div>
       </section>
-      <section  className="border-t border-[#dce6ea] bg-[#eaf3f6] py-16 sm:py-20">
+      <section  className="border-t border-[#CBD5E1] bg-[#EDF5FC] py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <h2 className="text-2xl font-bold sm:text-3xl">まずは、現在の状況をお聞かせください。</h2>
-          <p className="mt-4 max-w-3xl text-sm leading-[1.9] text-[#536e7c]">ご相談内容を伺い、必要な業務や進め方をご案内します。すべてをまとめて依頼する必要はありません。</p>
-          <Link href="/contact" className="mt-7 inline-flex min-h-12 items-center rounded-sm bg-[#17617b] px-7 py-3 text-sm font-semibold text-white hover:bg-[#10465c]">お問い合わせへ進む ↗</Link>
+          <p className="mt-4 max-w-3xl text-sm leading-[1.9] text-[#475569]">ご相談内容を伺い、必要な業務や進め方をご案内します。すべてをまとめて依頼する必要はありません。</p>
+          <Link href="/contact" className="mt-7 inline-flex min-h-12 items-center rounded-sm bg-[#1766A0] px-7 py-3 text-sm font-semibold text-white hover:bg-[#0B3158]">お問い合わせへ進む ↗</Link>
         </div>
       </section>
     </main>

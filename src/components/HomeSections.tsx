@@ -319,7 +319,7 @@ export default function HomeSections() {
                   <div>
                     <h3>{item.title}</h3>
                     <p><strong>支援</strong><br />{item.support}</p>
-                    <Link href={`/cases#/case/${item.id}`} className="mt-4 inline-block border-b border-current pb-1 text-sm font-semibold text-[#1c637d] hover:opacity-70">事例の詳細を見る ↗</Link>
+                    <Link href={`/cases#/case/${item.id}`} className="mt-4 inline-block border-b border-current pb-1 text-sm font-semibold text-[#0B3158] hover:opacity-70">事例の詳細を見る ↗</Link>
                   </div>
                   <div>
                     <p><strong>課題</strong><br />{item.issue}</p>
@@ -331,7 +331,7 @@ export default function HomeSections() {
           </div>
           <p className="luare-v6-note">※掲載内容は確認用の仮原稿です。個別企業の実績や成果は、事実関係と掲載許諾の確認後に更新します。</p>
           <div className="mt-8 text-center">
-            <Link href="/#services" className="inline-flex items-center justify-center border border-[#335b67] px-7 py-3 text-sm font-semibold text-[#335b67] transition-colors hover:bg-[#335b67] hover:text-white">
+            <Link href="/#services" className="inline-flex items-center justify-center border border-[#0B3158] px-7 py-3 text-sm font-semibold text-[#0B3158] transition-colors hover:bg-[#0B3158] hover:text-white">
               支援内容を詳しく見る <span className="ml-3" aria-hidden="true">→</span>
             </Link>
           </div>
@@ -343,22 +343,22 @@ export default function HomeSections() {
           <ScrollReveal className="luare-v6-section-head">
             <p className="luare-v6-eyebrow">INSIGHTS</p>
             <h2 id="home-articles-title">ニュース・ブログ</h2>
-            <p className="mt-3 text-sm leading-8 text-[#5b7885]">会計・内部統制・日本法人の実務に役立つテーマをご紹介します。</p>
+            <p className="mt-3 text-sm leading-8 text-[#475569]">会計・内部統制・日本法人の実務に役立つテーマをご紹介します。</p>
           </ScrollReveal>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
             {articles.map((article, i)=>(
               <ScrollReveal key={article.slug} delay={i*50}>
-                <Link href={`/insights/${article.slug}`} className="group block h-full rounded-md border border-[#dce8e9] bg-white p-6 shadow-[0_8px_25px_rgba(21,61,79,.035)] transition-colors hover:border-[#96beca] hover:bg-[#f7fafb]">
-                  <span className="text-xs font-semibold text-[#277b94]">{article.category}</span>
-                  <h3 className="mt-4 text-lg font-semibold leading-8 text-[#234b60]">{article.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-[#647b86]">{article.excerpt}</p>
-                  <span className="mt-6 inline-flex text-sm font-semibold text-[#176681] group-hover:underline">記事を読む <span aria-hidden="true" className="ml-2">↗</span></span>
+                <Link href={`/insights/${article.slug}`} className="group block h-full rounded-md border border-[#CBD5E1] bg-white p-6 shadow-[0_8px_25px_rgba(21,61,79,.035)] transition-colors hover:border-[#CBD5E1] hover:bg-[#EDF5FC]">
+                  <span className="text-xs font-semibold text-[#1766A0]">{article.category}</span>
+                  <h3 className="mt-4 text-lg font-semibold leading-8 text-[#0B3158]">{article.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-[#475569]">{article.excerpt}</p>
+                  <span className="mt-6 inline-flex text-sm font-semibold text-[#0B3158] group-hover:underline">記事を読む <span aria-hidden="true" className="ml-2">↗</span></span>
                 </Link>
               </ScrollReveal>
             ))}
           </div>
-          <p className="mt-6 text-xs leading-6 text-[#71828a]">※ 専門監修前の確認用記事を含みます。記載内容は今後更新される場合があります。</p>
-          <div className="mt-7 text-center"><Link href="/insights" className="inline-flex items-center rounded-full border border-[#9dbec8] px-6 py-3 text-sm font-semibold text-[#236781] hover:bg-[#edf5f7]">記事一覧を見る ↗</Link></div>
+          <p className="mt-6 text-xs leading-6 text-[#475569]">※ 専門監修前の確認用記事を含みます。記載内容は今後更新される場合があります。</p>
+          <div className="mt-7 text-center"><Link href="/insights" className="inline-flex items-center rounded-full border border-[#CBD5E1] px-6 py-3 text-sm font-semibold text-[#0B3158] hover:bg-[#EDF5FC]">記事一覧を見る ↗</Link></div>
         </div>
       </section>
 

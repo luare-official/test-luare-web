@@ -68,10 +68,10 @@ export default function ComparisonMatrixEn() {
                   </th>
                   <th
                     className="w-1/3 md:w-[26%] px-4 md:px-6 py-5 text-left md:text-center align-bottom border-x-[1.5px] relative"
-                    style={{ borderColor: '#C5A059', backgroundColor: 'rgba(197, 160, 89, 0.06)' }}
+                    style={{ borderColor:'#C5A059', backgroundColor: 'rgba(23,102,160,0.06)' }}
                   >
-                    <div className="absolute top-0 left-0 right-0 h-[2.5px]" style={{ backgroundColor: '#C5A059' }} />
-                    <span className="text-[9px] font-bold uppercase tracking-[0.35em] block mb-1.5" style={{ color: '#C5A059' }}>Recommended</span>
+                    <div className="absolute top-0 left-0 right-0 h-[2.5px]" style={{ backgroundColor:'#C5A059' }} />
+                    <span className="text-[9px] font-bold uppercase tracking-[0.35em] block mb-1.5" style={{ color:'#C5A059' }}>Recommended</span>
                     <span className="font-serif text-base font-bold text-brand-charcoal">Luare Consulting</span>
                   </th>
                   <th className="w-1/3 md:w-[26%] px-4 md:px-6 py-5 text-left md:text-center align-bottom border-b border-slate-100">
@@ -92,7 +92,7 @@ export default function ComparisonMatrixEn() {
                     </td>
                     <td
                       className="px-4 md:px-6 py-5 align-middle border-t border-x-[1.5px]"
-                      style={{ borderColor: '#C5A059', borderTopColor: 'rgba(197, 160, 89, 0.2)', backgroundColor: 'rgba(197, 160, 89, 0.06)' }}
+                      style={{ borderColor:'#C5A059', borderTopColor: 'rgba(23,102,160,0.2)', backgroundColor: 'rgba(23,102,160,0.06)' }}
                     >
                       <div className="text-left md:text-center text-xs font-bold text-brand-charcoal leading-snug">
                         {row.luare}
@@ -112,8 +112,8 @@ export default function ComparisonMatrixEn() {
                 ))}
                 <tr>
                   <td className="py-0 border-t border-slate-100" />
-                  <td className="py-0 border-x-[1.5px]" style={{ borderColor: '#C5A059', borderTopColor: 'rgba(197, 160, 89, 0.2)', backgroundColor: 'rgba(197, 160, 89, 0.06)', height: '3px' }}>
-                    <div className="w-full h-[2.5px]" style={{ backgroundColor: '#C5A059' }} />
+                  <td className="py-0 border-x-[1.5px]" style={{ borderColor:'#C5A059', borderTopColor: 'rgba(23,102,160,0.2)', backgroundColor: 'rgba(23,102,160,0.06)', height: '3px' }}>
+                    <div className="w-full h-[2.5px]" style={{ backgroundColor:'#C5A059' }} />
                   </td>
                   <td className="py-0 border-t border-slate-100" />
                   <td className="py-0 border-t border-slate-100" />

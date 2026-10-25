@@ -99,16 +99,16 @@ export default function ServiceTopicSections({page,compact=false}: Props){
           const detail=page!=="audit-assurance" && page!=="ma-finance" && page!=="bpo" ? serviceTopicDetails[item.id] : undefined;
           return <article key={item.id} id={page==="audit-assurance" && item.id==="group-audit" ? undefined : item.id} className="luare-guide-detail-topic">
             <h3>{item.name}</h3><p>{item.description}</p>
-            {detail && <div className="mt-4 grid gap-4 border-t border-[#dae6ea] pt-4">
+            {detail && <div className="mt-4 grid gap-4 border-t border-[#CBD5E1] pt-4">
               <div>
-                <h4 className="mb-2 text-[13px] font-semibold text-[#25485a]">主な対応内容</h4>
-                <ul className="list-disc space-y-1 pl-5 text-[13px] leading-[1.8] text-[#586e7a]">
+                <h4 className="mb-2 text-[13px] font-semibold text-[#0B3158]">主な対応内容</h4>
+                <ul className="list-disc space-y-1 pl-5 text-[13px] leading-[1.8] text-[#475569]">
                   {detail.work.map(work=><li key={work}>{work}</li>)}
                 </ul>
               </div>
               <div>
-                <h4 className="mb-2 text-[13px] font-semibold text-[#25485a]">関連する資料・成果物の例</h4>
-                <ul className="list-disc space-y-1 pl-5 text-[13px] leading-[1.8] text-[#586e7a]">
+                <h4 className="mb-2 text-[13px] font-semibold text-[#0B3158]">関連する資料・成果物の例</h4>
+                <ul className="list-disc space-y-1 pl-5 text-[13px] leading-[1.8] text-[#475569]">
                   {detail.documents.map(document=><li key={document}>{document}</li>)}
                 </ul>
               </div>
@@ -116,7 +116,7 @@ export default function ServiceTopicSections({page,compact=false}: Props){
           </article>;
         })}
       </div>
-      {page!=="audit-assurance" && page!=="ma-finance" && page!=="bpo" && <p className="mt-6 text-[13px] leading-[1.8] text-[#586e7a]">※対応範囲・資料の内容は、対象業務とご相談内容に応じて個別に整理します。</p>}
+      {page!=="audit-assurance" && page!=="ma-finance" && page!=="bpo" && <p className="mt-6 text-[13px] leading-[1.8] text-[#475569]">※対応範囲・資料の内容は、対象業務とご相談内容に応じて個別に整理します。</p>}
       <Link href="/contact" className="luare-guide-detail-cta">{meta.title}について相談する →</Link>
     </div>
   </section>;
