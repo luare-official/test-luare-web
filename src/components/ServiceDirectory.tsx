@@ -47,7 +47,7 @@ export default function ServiceDirectory() {
             type="button"
             aria-pressed={audience===option.id}
             onClick={()=>setAudience(option.id)}
-            className={"rounded-md border px-4 py-3 text-[13px] font-semibold transition-colors sm:px-6 sm:text-sm "+(audience===option.id?"border-[#0B3158] bg-[#0B3158] text-white":"border-[#CBD5E1] bg-white text-[#0B3158] hover:bg-[#EDF5FC]")}
+            className={"rounded-md border px-4 py-3 text-[13px] font-semibold transition-colors sm:px-6 sm:text-sm "+(audience===option.id?"border-[#1766A0] bg-[#1766A0] text-white":"border-[#CBD5E1] bg-white text-[#0B3158] hover:bg-[#EDF5FC]")}
           >
             {option.label}
           </button>
