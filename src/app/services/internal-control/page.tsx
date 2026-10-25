@@ -1,3 +1,4 @@
+import RelatedCaseLinks from "@/components/RelatedCaseLinks";
 import type {Metadata} from "next";
 import JsoxLandingPage from "@/components/JsoxLandingPage";
 
@@ -14,4 +15,4 @@ export const metadata:Metadata={
     type:"website"
   }
 };
-export default function Page(){return <JsoxLandingPage/>;}
+export default function Page(){return <><JsoxLandingPage/><RelatedCaseLinks topic="internal"/></>;}
