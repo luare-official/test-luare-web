@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "お問い合わせ | Luare Consulting",
@@ -125,7 +126,8 @@ export default function ContactPage() {
                   送信する <span aria-hidden="true">→</span>
                 </button>
                 <p className="mt-4 text-[11px] leading-[1.8] text-[#475569]">
-                  送信前に入力内容をご確認ください。
+                  送信前に入力内容をご確認ください。<br />
+                  個人情報の取扱いは <Link href="/privacy" className="font-semibold text-[#1766A0] underline">プライバシーポリシー</Link> をご覧ください。
                 </p>
               </div>
             </form>
