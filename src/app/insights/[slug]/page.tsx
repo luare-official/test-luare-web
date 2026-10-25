@@ -4,6 +4,7 @@ import Link from "next/link";
 import { getPostBySlug, getAllSlugs } from "@/lib/posts";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 /**
  * B-10: Only link to verified published service URLs/anchors.
@@ -163,15 +164,7 @@ export default async function InsightPostPage({
         </article>
       </main>
 
-      <footer className="bg-brand-charcoal text-brand-silver border-t border-brand-darknavy/40 pt-12 pb-8">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <span className="text-[10px] tracking-widest text-brand-silver/40 font-mono">
-              Luare Consulting Group © 2026
-            </span>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
