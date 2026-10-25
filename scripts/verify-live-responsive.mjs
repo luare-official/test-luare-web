@@ -30,7 +30,9 @@ for(const v of views){
       images,hasNav:!!document.querySelector("header nav,nav.luare-unicell-hero-mobile-menu,header a[href]"),
       hasPrivacy:!!document.querySelector('a[href="/privacy"]'),
       title:document.title,forms,font:getComputedStyle(document.body).fontFamily,
-      hero:document.querySelector(".luare-unicell-talk-photo img")?.getAttribute("src")||null};
+      hero:document.querySelector(".luare-unicell-talk-photo img")?.getAttribute("src")||null,
+      heroOuterBg:getComputedStyle(document.querySelector(".luare-unicell-hero")||document.body).backgroundColor,
+      heroStageBg:getComputedStyle(document.querySelector(".luare-unicell-stage")||document.body).backgroundColor};
    });
    const label=path==="/"?"home":path.slice(1).replaceAll("/","-");
    const status=response?.status()??0;
@@ -43,6 +45,8 @@ for(const v of views){
    if(data.images.length)warnings.push(v.name+" "+path+" unloaded image(s): "+data.images.slice(0,4));
    if(path==="/"&&data.hero!=="/images/luare-hero-consulting-male-20261025.webp")
      failures.push(v.name+" homepage original image reference returned");
+   if(path==="/" && (data.heroOuterBg!=="rgb(255, 255, 255)" || data.heroStageBg!=="rgb(250, 250, 250)"))
+     failures.push(v.name+" homepage hero reverted to tinted background: "+data.heroOuterBg+" / "+data.heroStageBg);
    if(path.startsWith("/en")&&!data.lang.startsWith("en"))failures.push(v.name+" "+path+" document lang="+data.lang);
    if(path.startsWith("/zh")&&!data.lang.startsWith("zh"))failures.push(v.name+" "+path+" document lang="+data.lang);
    if(path.includes("contact")&&data.forms.some(x=>x.action!=="https://formspree.io/f/mojppoor"))
