@@ -74,7 +74,7 @@ export default async function InsightPostPage({
               <span
                 className="text-[10px] font-bold uppercase tracking-[0.3em] px-3 py-1.5 border rounded-sm"
                 style={{
-                  color:"#C5A059",
+                  color:"#1766A0",
                   borderColor: "rgba(23,102,160,0.35)",
                   backgroundColor: "rgba(23,102,160,0.06)",
                 }}
@@ -127,7 +127,7 @@ export default async function InsightPostPage({
                   監修：陸 沿青 (USCPA) / Luare Consulting 代表取締役 Managing Partner。Big4監査法人や投資銀行を経て独立。グローバル企業の内部統制・財務基盤構築を多数支援。
                 </p>
                 <div className="mt-4">
-                  <Link href="/about" className="text-xs font-bold tracking-widest uppercase transition-colors" style={{ color:'#C5A059' }}>
+                  <Link href="/about" className="text-xs font-bold tracking-widest uppercase transition-colors" style={{ color:'#1766A0' }}>
                     代表プロフィールを見る →
                   </Link>
                 </div>
@@ -145,8 +145,8 @@ export default async function InsightPostPage({
                 href={relatedServiceHref}
                 className="w-full sm:w-auto inline-flex items-center justify-center border px-8 py-3.5 text-[11px] font-bold uppercase tracking-[0.25em] transition-all duration-300 bg-transparent hover:bg-slate-50"
                 style={{
-                  borderColor:"#C5A059",
-                  color:"#C5A059",
+                  borderColor:"#1766A0",
+                  color:"#1766A0",
                 }}
               >
                 関連サービスを見る
