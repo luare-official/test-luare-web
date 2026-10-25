@@ -104,6 +104,9 @@ function LineIcon({ name }: { name: IconName }) {
   );
 }
 
+// Keep the approved five-card layout and image slots for partner photographs.
+// Hide unverified names, roles and dummy photographs until authentic content is provided.
+const SHOW_APPROVED_PROFESSIONALS = false;
 const people = [
   ["Professional 01", "CPA / Partner", "監査 / Assurance"],
   ["Professional 02", "Tax Professional", "国際税務"],
@@ -176,6 +179,7 @@ const faqs = [
 export default function HomeSections() {
   return (
     <>
+      {SHOW_APPROVED_PROFESSIONALS && (
       <section className="luare-v6-section luare-people-horizontal" id="people">
         <div className="luare-v6-container">
           <ScrollReveal className="luare-people-horizontal-head">
@@ -207,6 +211,7 @@ export default function HomeSections() {
           <p className="luare-people-horizontal-note">※現在はレイアウト確認用のダミー写真・プロフィールです。正式公開前に許諾済みの専門家情報へ差し替えます。</p>
         </div>
       </section>
+      )}
 
       <section className="luare-v6-section luare-who-band" id="who-we-help" aria-labelledby="who-we-help-title">
         <div className="luare-v6-container">

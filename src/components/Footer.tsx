@@ -26,6 +26,7 @@ export default function Footer() {
             <Link href="/bpo">経理BPO</Link>
             <Link href="/for-audit-firms">監査法人・専門家の皆様へ</Link>
             <Link href="/contact">お問い合わせ</Link>
+            <Link href="/privacy">プライバシーポリシー</Link>
           </nav>
         </div>
         <div className="luare-footer-copy">© 2026 Luare Consulting</div>

@@ -42,9 +42,10 @@ export default function Navbar({
     else if (baseRoute.startsWith("/zh")) baseRoute = baseRoute.replace("/zh", "");
     if (baseRoute === "") baseRoute = "/";
     if (targetLang === "JP") return baseRoute;
-    if (baseRoute === "/bpo" || baseRoute === "/cases" || baseRoute === "/services/audit-assurance" || baseRoute === "/pricing") return targetLang === "EN" ? "/en" : "/zh";
-    if (targetLang === "EN") return baseRoute === "/" ? "/en" : "/en" + baseRoute;
-    return baseRoute === "/" ? "/zh" : "/zh" + baseRoute;
+    // Only home, about, and contact currently have translated routes.
+    // Other locale switches go to the target-language home instead of a 404.
+    const localeHome = targetLang === "EN" ? "/en" : "/zh";
+    return baseRoute === "/about" || baseRoute === "/contact" ? localeHome + baseRoute : localeHome;
   };
 
   const prefix = currentLang === "JP" ? "" : currentLang === "EN" ? "/en" : "/zh";
@@ -62,7 +63,7 @@ export default function Navbar({
       ]
     : [
         [prefix + "/#services", "Services"],
-        [prefix + "/insights", "Insights"],
+        ["/insights", currentLang === "ZH" ? "ブログ（日本語）" : "Insights (JP)"],
         [prefix + "/about", currentLang === "ZH" ? "关于我们" : "About"],
       ];
 
@@ -191,7 +192,7 @@ export default function Navbar({
         ]
       : [
           [prefix + "/#services", "Services"],
-          [prefix + "/insights", "Insights"],
+          ["/insights", currentLang === "ZH" ? "ブログ（日本語）" : "Insights (JP)"],
           [prefix + "/about", currentLang === "ZH" ? "代表简介 / 关于我们" : "About Us"],
         ];
 
@@ -292,6 +293,9 @@ export default function Navbar({
       {isMenuOpen && (
         <div className="fixed inset-x-0 bottom-0 top-[78px] z-40 overflow-y-auto bg-[#0B3158] px-7 py-10 xl:hidden">
           <nav className="flex flex-col">
+            <Link href={prefix || "/"} onClick={() => setIsMenuOpen(false)} className="border-b border-white/12 py-5 text-sm font-medium tracking-[.1em] text-white/88">
+              {currentLang === "ZH" ? "首页" : currentLang === "EN" ? "Home" : "ホーム"}
+            </Link>
             {currentLang === "JP" && (
               <div className="luare-mobile-service-group">
                 <span>Services</span>

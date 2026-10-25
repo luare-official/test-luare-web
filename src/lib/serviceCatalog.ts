@@ -59,6 +59,7 @@ const topics: readonly [string,string,string,string][] = [
 
 function route(page:string,id:string):string {
   if(page==="bpo") return `/bpo#${id}`;
+  if(id==="statutory-audit" || id==="voluntary-audit") return "/services/audit-assurance#statutory-audit";
   if(page==="contact") return "/contact";
   if(page==="audit-assurance" && id==="group-audit-consultation") return "/services/audit-assurance#group-audit";
   if(page==="audit-assurance" && id==="audit-readiness-consultation") return "/services/audit-assurance#audit-readiness";
