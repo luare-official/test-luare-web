@@ -120,7 +120,7 @@ export default function ContactPage() {
               <div className="mt-10 border-t border-[#CBD5E1] pt-8 text-center">
                 <button
                   type="submit"
-                  className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-md bg-[#0B3158] px-8 py-3 text-[14px] font-semibold text-white transition-colors hover:bg-[#0B3158] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0B3158] sm:w-auto sm:min-w-[260px]"
+                  className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-md bg-[#1766A0] px-8 py-3 text-[14px] font-semibold text-white transition-colors hover:bg-[#0B3158] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0B3158] sm:w-auto sm:min-w-[260px]"
                 >
                   送信する <span aria-hidden="true">→</span>
                 </button>
