@@ -150,6 +150,7 @@ export default function Navbar({
           <nav className="luare-unicell-hero-mobile-menu" aria-label="モバイルメニュー">
             <Link href="/" onClick={()=>setIsMenuOpen(false)}>ホーム</Link>
             <Link href="/services" onClick={()=>setIsMenuOpen(false)}>サービス</Link>
+            <Link href="/services/audit-assurance#statutory-audit" onClick={()=>setIsMenuOpen(false)}>会計監査（法定・任意）・監査法人連携</Link>
             {serviceMenu.map(({href,label,number})=>(
               <Link key={href} href={href} onClick={()=>setIsMenuOpen(false)} className="luare-unicell-mobile-subnav">{number} {label}</Link>
             ))}
@@ -312,6 +313,7 @@ export default function Navbar({
                 <Link href="/services" onClick={() => { setIsMenuOpen(false); setIsServiceOpen(false); }}>
                   サービスをすべて見る →
                 </Link>
+                <Link href="/services/audit-assurance#statutory-audit" onClick={() => { setIsMenuOpen(false); setIsServiceOpen(false); }}>会計監査（法定・任意）・監査法人連携 ↗</Link>
               </div>
             )}
             {standardNavItems.map(([href, label]) => (
