@@ -18,7 +18,7 @@ export default function RationalChoice() {
   ];
 
   return (
-    <section className="w-full bg-[#F8FAFC] py-16 sm:py-24 md:py-32 border-b border-slate-200">
+    <section className="w-full bg-[#EDF5FC] py-16 sm:py-24 md:py-32 border-b border-slate-200">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-10">
         
         {/* --- Header Section --- */}
