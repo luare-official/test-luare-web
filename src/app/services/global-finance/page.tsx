@@ -1,3 +1,4 @@
+import RelatedCaseLinks from "@/components/RelatedCaseLinks";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
@@ -119,6 +120,7 @@ export default function Page(){
         </div>
       </section>
     </main>
+    <RelatedCaseLinks topic="global" />
     <Footer />
   </>;
 }
