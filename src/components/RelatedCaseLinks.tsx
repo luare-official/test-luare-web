@@ -30,19 +30,19 @@ const related: Record<Topic,readonly {title:string,href:string,description:strin
 export default function RelatedCaseLinks({topic}:{topic:Topic}){
   const items=related[topic];
   if(!items.length)return null;
-  return <section className="border-y border-[#d9e6ea] bg-white py-12 sm:py-16" aria-labelledby="related-cases-heading">
+  return <section className="border-y border-[#CBD5E1] bg-white py-12 sm:py-16" aria-labelledby="related-cases-heading">
     <div className="mx-auto max-w-6xl px-5 sm:px-8">
-      <p className="text-xs font-semibold tracking-[.16em] text-[#4f8194]">RELATED CASE STUDIES</p>
-      <h2 id="related-cases-heading" className="mt-3 text-2xl font-bold text-[#24485b]">関連する支援事例</h2>
-      <p className="mt-3 text-sm leading-7 text-[#637d89]">サービスの内容に近い事例・支援モデルをご紹介します。実績の詳細は事実確認・掲載許諾の確認中です。</p>
+      <p className="text-xs font-semibold tracking-[.16em] text-[#1766A0]">RELATED CASE STUDIES</p>
+      <h2 id="related-cases-heading" className="mt-3 text-2xl font-bold text-[#0B3158]">関連する支援事例</h2>
+      <p className="mt-3 text-sm leading-7 text-[#475569]">サービスの内容に近い事例・支援モデルをご紹介します。実績の詳細は事実確認・掲載許諾の確認中です。</p>
       <div className="mt-7 grid gap-4 sm:grid-cols-2">
-        {items.map(item=><Link key={item.href} href={item.href} className="group block rounded-md border border-[#d6e3e7] bg-[#f9fbfc] p-6 hover:border-[#87b4c3]">
-          <h3 className="text-base font-semibold leading-7 text-[#264e63]">{item.title}</h3>
-          <p className="mt-2 text-sm leading-7 text-[#5d7886]">{item.description}</p>
-          <span className="mt-4 inline-block text-sm font-semibold text-[#176785] group-hover:underline">詳細を見る ↗</span>
+        {items.map(item=><Link key={item.href} href={item.href} className="group block rounded-md border border-[#CBD5E1] bg-[#EDF5FC] p-6 hover:border-[#CBD5E1]">
+          <h3 className="text-base font-semibold leading-7 text-[#0B3158]">{item.title}</h3>
+          <p className="mt-2 text-sm leading-7 text-[#475569]">{item.description}</p>
+          <span className="mt-4 inline-block text-sm font-semibold text-[#0B3158] group-hover:underline">詳細を見る ↗</span>
         </Link>)}
       </div>
-      <Link href="/cases" className="mt-6 inline-block text-sm font-semibold text-[#176785] hover:underline">支援事例の一覧へ ↗</Link>
+      <Link href="/cases" className="mt-6 inline-block text-sm font-semibold text-[#0B3158] hover:underline">支援事例の一覧へ ↗</Link>
     </div>
   </section>;
 }
