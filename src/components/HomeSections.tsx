@@ -133,28 +133,36 @@ const why = [
 
 const cases = [
   {
-    label: "CASE 01｜決算・業務改善",
-    title: "決算資料の作成と業務フローの整理",
-    issue: "部門ごとの集計方法や情報共有の時期に応じて、決算工程を整理する必要があります。",
-    support: "決算関連資料の作成や、情報の入手・確認・締め工程の整理について、支援内容を確認中です。",
-    tags: "CLOSING / FINANCE OPERATIONS",
+    id:"accounting-operations",
+    label:"CASE 01｜決算・業務改善",
+    title:"複雑な事業データと決算工程をつなぎ、早期化を支援",
+    issue:"事業ごとに異なる売上集計、限られた人員、部門間の締め工程のずれ。",
+    support:"決算・CF資料の作成と、事業部門から経理部門へデータが届く工程の整理を支援。",
+    tags:"CLOSING / FINANCE OPERATIONS",
   },
   {
-    label: "CASE 02｜グローバル内部統制",
-    title: "内部統制の運用と資料整理",
-    issue: "グループの統制方針と現場の業務を照らし合わせ、手順や役割を整理する必要があります。",
-    support: "統制の進め方や担当者の役割、証跡の管理について、支援内容を確認中です。",
-    tags: "INTERNAL CONTROL / OPERATIONS",
+    id:"global-internal-control",
+    label:"CASE 02｜グローバル内部統制",
+    title:"グローバル方針を現場で継続できる内部統制の運用へ",
+    issue:"本社方針と国内現場の運用、各部門の役割や証跡の管理に課題。",
+    support:"統制上の論点、運用プロセス、責任分担、改善事項を実務に沿って整理。",
+    tags:"INTERNAL CONTROL / OPERATIONS",
   },
   {
-    label: "CASE 03｜海外拠点のJ-SOX",
-    title: "海外拠点のJ-SOX文書化支援",
-    issue: "現地業務を把握し、関係者と認識をそろえて文書化を進める必要があります。",
-    support: "ヒアリングや業務フロー整理、J-SOXの3点セットに関する支援内容を確認中です。",
-    tags: "J-SOX / PROCESS DOCUMENTATION",
+    id:"overseas-jsox",
+    label:"CASE 03｜海外拠点のJ-SOX",
+    title:"海外事業拠点のJ-SOX 3点セットをゼロから構築",
+    issue:"言語・商習慣の異なる海外拠点で、実際の業務を把握して文書化・評価準備を進める。",
+    support:"現地へのヒアリング、業務記述書・フローチャート・RCMの整備、監査関係者との論点整理を支援。",
+    tags:"J-SOX / PROCESS DOCUMENTATION",
   },
 ];
 
+const articles = [
+  { slug:"close-process-early-improvement", category:"決算・業務改善", title:"決算早期化は、経理だけを急がせても進まない", excerpt:"経理部門へ届く前のデータや承認工程を見直し、精度と締め日の両立を考えます。" },
+  { slug:"overseas-jsox-three-documents", category:"内部統制・J-SOX", title:"海外拠点のJ-SOXは、3点セットの前に業務の確認から", excerpt:"業務記述書・フローチャート・RCMを作る前に、現地の業務と証跡を確認します。" },
+  { slug:"japan-subsidiary-finance-setup", category:"日本進出・Finance Setup", title:"海外本社がある日本法人のFinance Setupで最初に決める5つのこと", excerpt:"会計ソフトだけでなく、承認・月次決算・海外本社報告を一つの運用として設計します。" },
+];
 
 const faqs = [
   ["初回相談に費用はかかりますか？", "いいえ。初回相談は1時間程度無料です。ご相談内容を確認したうえで、対応可能な業務内容とお見積りをご提示します。"],
@@ -320,6 +328,7 @@ export default function HomeSections() {
                   <div>
                     <h3>{item.title}</h3>
                     <p><strong>支援</strong><br />{item.support}</p>
+                    <Link href={`/cases#/case/${item.id}`} className="mt-4 inline-block border-b border-current pb-1 text-sm font-semibold text-[#1c637d] hover:opacity-70">事例の詳細を見る ↗</Link>
                   </div>
                   <div>
                     <p><strong>課題</strong><br />{item.issue}</p>
@@ -335,6 +344,30 @@ export default function HomeSections() {
               支援内容を詳しく見る <span className="ml-3" aria-hidden="true">→</span>
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section className="luare-v6-section" id="home-articles" aria-labelledby="home-articles-title">
+        <div className="luare-v6-container">
+          <ScrollReveal className="luare-v6-section-head">
+            <p className="luare-v6-eyebrow">INSIGHTS</p>
+            <h2 id="home-articles-title">ニュース・ブログ</h2>
+            <p className="mt-3 text-sm leading-8 text-[#5b7885]">会計・内部統制・日本法人の実務に役立つテーマをご紹介します。</p>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+            {articles.map((article, i)=>(
+              <ScrollReveal key={article.slug} delay={i*50}>
+                <Link href={`/insights/${article.slug}`} className="group block h-full rounded-md border border-[#dce8e9] bg-white p-6 shadow-[0_8px_25px_rgba(21,61,79,.035)] transition-colors hover:border-[#96beca] hover:bg-[#f7fafb]">
+                  <span className="text-xs font-semibold text-[#277b94]">{article.category}</span>
+                  <h3 className="mt-4 text-lg font-semibold leading-8 text-[#234b60]">{article.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-[#647b86]">{article.excerpt}</p>
+                  <span className="mt-6 inline-flex text-sm font-semibold text-[#176681] group-hover:underline">記事を読む <span aria-hidden="true" className="ml-2">↗</span></span>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+          <p className="mt-6 text-xs leading-6 text-[#71828a]">※ 専門監修前の確認用記事を含みます。記載内容は今後更新される場合があります。</p>
+          <div className="mt-7 text-center"><Link href="/insights" className="inline-flex items-center rounded-full border border-[#9dbec8] px-6 py-3 text-sm font-semibold text-[#236781] hover:bg-[#edf5f7]">記事一覧を見る ↗</Link></div>
         </div>
       </section>
 
