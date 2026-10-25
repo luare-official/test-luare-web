@@ -50,7 +50,7 @@ export default function GlobalCTA() {
           <div className="flex justify-center">
             <Link
               href="/contact"
-              className="group relative inline-flex items-center justify-center px-6 py-4 sm:px-10 sm:py-5 text-xs sm:text-base font-bold text-brand-navy bg-brand-gold overflow-hidden rounded-full transition-all duration-300 hover:shadow-[0_0_40px_-10px_rgba(197,160,89,0.5)] hover:scale-105 w-full sm:w-auto text-center"
+              className="group relative inline-flex items-center justify-center px-6 py-4 sm:px-10 sm:py-5 text-xs sm:text-base font-bold text-brand-navy bg-brand-gold overflow-hidden rounded-full transition-all duration-300 hover:shadow-[0_0_40px_-10px_rgba(23,102,160,0.5)] hover:scale-105 w-full sm:w-auto text-center"
             >
               <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3 tracking-wider">
                 外資系企業向けの無料オンライン相談を予約する
