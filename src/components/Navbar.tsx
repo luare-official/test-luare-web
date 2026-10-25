@@ -29,6 +29,13 @@ export default function Navbar({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServiceOpen, setIsServiceOpen] = useState(false);
 
+  // Keep the document language in sync with the existing translated routes.
+  // The static HTML is Japanese by default; this updates assistive technology
+  // semantics after client navigation without touching translated page content.
+  useEffect(() => {
+    document.documentElement.lang = currentLang === "EN" ? "en" : currentLang === "ZH" ? "zh-CN" : "ja";
+  }, [currentLang]);
+
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 48);
     handleScroll();
@@ -200,10 +207,10 @@ export default function Navbar({
     <header className={"fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 " + headerBg}>
       <div className="mx-auto flex h-[78px] max-w-[1240px] items-center justify-between px-5 sm:px-8">
         <Link href={prefix || "/"} className={"transition-colors " + logoColor}>
-          <span className="block font-[var(--font-inter)] text-[16px] font-semibold tracking-[0.04em] sm:text-[17px]">
+          <span className="block font-sans text-[16px] font-semibold tracking-[0.04em] sm:text-[17px]">
             Luare Consulting
           </span>
-          <span className="mt-0.5 block font-[var(--font-inter)] text-[7px] font-medium tracking-[0.2em] opacity-70 sm:text-[8px]">
+          <span className="mt-0.5 block font-sans text-[7px] font-medium tracking-[0.2em] opacity-70 sm:text-[8px]">
             ACCOUNTING &amp; FINANCE
           </span>
         </Link>
@@ -245,7 +252,7 @@ export default function Navbar({
             ))}
           </nav>
 
-          <div className={"flex items-center gap-2 font-[var(--font-inter)] text-[10px] font-medium tracking-[0.08em] " + languageText}>
+          <div className={"flex items-center gap-2 font-sans text-[10px] font-medium tracking-[0.08em] " + languageText}>
             {(["JP", "EN", "ZH"] as const).map((lang, index) => (
               <span key={lang} className="flex items-center gap-2">
                 {index > 0 && <span className="opacity-35">/</span>}
@@ -268,7 +275,7 @@ export default function Navbar({
         </div>
 
         <div className="flex items-center gap-3 xl:hidden">
-          <div className={"flex items-center gap-1.5 font-[var(--font-inter)] text-[9px] font-medium " + languageText}>
+          <div className={"flex items-center gap-1.5 font-sans text-[9px] font-medium " + languageText}>
             <Link href={getLangUrl("JP")} className={currentLang === "JP" ? languageActive : ""}>JP</Link>
             <span className="opacity-35">/</span>
             <Link href={getLangUrl("EN")} className={currentLang === "EN" ? languageActive : ""}>EN</Link>
@@ -319,7 +326,7 @@ export default function Navbar({
                 key={href}
                 href={href}
                 onClick={() => setIsMenuOpen(false)}
-                className="border-b border-white/12 py-5 font-[var(--font-inter)] text-sm font-medium tracking-[0.1em] text-white/88"
+                className="border-b border-white/12 py-5 font-sans text-sm font-medium tracking-[0.1em] text-white/88"
               >
                 {label}
               </Link>
