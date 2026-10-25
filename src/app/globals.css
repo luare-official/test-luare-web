@@ -2852,3 +2852,68 @@ body {
   .luare-unicell-nav-bubble{gap:2px;}
   .luare-unicell-contact{padding:12px 13px;}
 }
+
+
+/* Compact WHO WE HELP band — approved pattern D (2026-10-25). */
+.luare-v6-section.luare-who-band{
+  padding:0;
+  background:#1b4962;
+  color:#fff;
+}
+.luare-who-band .luare-who-band-inner{
+  display:grid;
+  grid-template-columns:275px minmax(0,1fr);
+  gap:34px;
+  align-items:center;
+  padding:36px 0;
+  font-family:var(--font-noto-sans),Meiryo,sans-serif;
+}
+.luare-who-band .luare-v6-eyebrow{
+  color:#a8cbd9;
+  margin-bottom:8px;
+}
+.luare-who-band h2{
+  margin:0;
+  color:#fff;
+  font-size:clamp(21px,2vw,28px);
+  font-weight:700;
+  line-height:1.5;
+  letter-spacing:-.04em;
+}
+.luare-who-band-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:2px 23px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.luare-who-band-list li{
+  position:relative;
+  padding:10px 0 10px 15px;
+  border-bottom:1px solid rgba(255,255,255,.18);
+  color:#edf4f7;
+  font-size:12.5px;
+  line-height:1.5;
+}
+.luare-who-band-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:19px;
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background:#8bcede;
+}
+@media(max-width:760px){
+  .luare-who-band .luare-who-band-inner{
+    grid-template-columns:1fr;
+    gap:19px;
+    padding:30px 0;
+  }
+  .luare-who-band h2{font-size:24px}
+  .luare-who-band-list{grid-template-columns:1fr}
+  .luare-who-band-list li{padding:12px 0 12px 16px}
+  .luare-who-band-list li::before{top:21px}
+}
