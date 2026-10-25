@@ -27,6 +27,13 @@ const publicPaths = [
   "/contact",
   "/pricing",
   "/insights",
+  "/privacy",
+  "/en",
+  "/en/about",
+  "/en/contact",
+  "/zh",
+  "/zh/about",
+  "/zh/contact",
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {

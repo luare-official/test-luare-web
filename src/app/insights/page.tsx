@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "会計・経理・内部統制の読みもの | Luare Consulting",
@@ -127,15 +128,7 @@ export default function InsightsPage() {
         </section>
       </main>
 
-      <footer className="bg-brand-charcoal text-brand-silver border-t border-brand-darknavy/40 pt-12 pb-8">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <span className="text-[10px] tracking-widest text-brand-silver/40 font-mono">
-              Luare Consulting Group © 2026
-            </span>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

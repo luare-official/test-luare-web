@@ -12,6 +12,7 @@
   --color-brand-gold:#1766A0;
   --font-serif:var(--font-noto-sans), Meiryo, sans-serif;
   --font-sans:var(--font-noto-sans), Meiryo, sans-serif;
+  --font-mono:var(--font-noto-sans), Meiryo, sans-serif;
 }
 :root {
   --luare-main:#0B3158;

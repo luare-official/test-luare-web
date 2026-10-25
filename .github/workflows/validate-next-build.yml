@@ -32,3 +32,6 @@ jobs:
 
       - name: Verify approved Clear Blue brand and protected routes
         run: node scripts/verify-clear-blue-brand.mjs
+
+      - name: Cross-site exported URL, form and footer audit (read-only)
+        run: node scripts/verify-final-site-integration.mjs
