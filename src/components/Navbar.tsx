@@ -113,6 +113,7 @@ export default function Navbar({
                 <Link href="/insights">ブログ</Link>
                 <Link href="/pricing">料金</Link>
                 <Link className="luare-unicell-representative-link" href={sectionLink("representative")}>代表プロフィール</Link>
+                <Link href="/for-audit-firms">監査法人や専門家との協業</Link>
               </>
             ) : (
               navItems.map(([href, label]) => (
@@ -154,6 +155,7 @@ export default function Navbar({
             <Link href="/insights" onClick={()=>setIsMenuOpen(false)}>ブログ</Link>
             <Link href="/pricing" onClick={()=>setIsMenuOpen(false)}>料金</Link>
             <Link href={sectionLink("representative")} onClick={()=>setIsMenuOpen(false)}>代表プロフィール</Link>
+            <Link href="/for-audit-firms" onClick={()=>setIsMenuOpen(false)}>監査法人や専門家との協業</Link>
           </nav>
         )}
       </header>
