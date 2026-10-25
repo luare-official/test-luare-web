@@ -26,3 +26,6 @@ jobs:
           test -f out/services/finance-ops.html
           test -f out/services/ma-finance.html
           test -f out/services/global-finance.html
+
+      - name: Verify sitemap and priority LP indexing (read-only)
+        run: node scripts/verify-search-discovery.mjs
