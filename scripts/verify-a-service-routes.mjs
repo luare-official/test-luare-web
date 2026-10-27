@@ -10,7 +10,7 @@ const entries=matches.map(([,id,page])=>({id,page}));
 const problems=[];
 const assert=(condition,message)=>{if(!condition)problems.push(message);};
 const htmlCache=new Map();
-const outputFile=page=>page==="bpo"?"out/bpo.html":page==="contact"?"out/contact.html":`out/services/${page}.html`;
+const outputFile=page=>page==="bpo"?"out/bpo.html":page==="contact"?"out/contact.html":page==="internal-control"?"out/services/internal-control/overview.html":`out/services/${page}.html`;
 const content=page=>{
   if(!htmlCache.has(page)){
     const filename=outputFile(page);
@@ -39,7 +39,7 @@ for(const {id,page} of entries){
     id==="audit-readiness-consultation"?"audit-readiness":id;
   const href=page==="bpo"?`/bpo#${id}`:
     page==="contact"?"/contact":
-    page==="internal-control"&&id==="internal"?"/services/internal-control":
+    page==="internal-control"?`/services/internal-control/overview#${id}`:
     `/services/${page}#${targetId}`;
   const pageHtml=content(page);
   const normalizedHref=href.replace(/&/g,"&amp;");
@@ -56,21 +56,21 @@ for(const {id,page} of entries){
 for(const p of ["audit-assurance","accounting-management","finance-ops","global-finance"]){
   const html=content(p);
   for(const tab of ["internal-control","audit-assurance","accounting-management","finance-ops","global-finance"]){
-    assert(html.includes(`href="/services/${tab}"`),`Missing five-service navigation /services/${tab} on ${p}`);
+    const url=tab==="internal-control"?"/services/internal-control/overview":`/services/${tab}`;
+    assert(html.includes(`href="${url}"`),`Missing five-service navigation ${url} on ${p}`);
   }
 }
 const jsox=content("internal-control");
 for(const element of ["internal","three-documents","evaluation","internal-audit","training"]){
   assert(idCount(jsox,element)===1,`Missing J-SOX target ${element}`);
 }
-// Per owner decision 2026-10-27, the standard J-SOX page is a standalone r5
-// service page. The pre-existing approved advertising LP survives unchanged
-// at /ads/internal-control. Test both separately.
+// Protect the original ad landing URL and the separate service overview.
 assert(jsox.includes('href="/contact"'),"Standard J-SOX service page lost its contact CTA");
-const adPath="out/ads/internal-control.html";
+const adPath="out/services/internal-control.html";
 assert(existsSync(adPath),"Preserved advertising LP route is missing");
 if(existsSync(adPath)){
   const adHtml=readFileSync(adPath,"utf8");
+  assert(adHtml.includes("Jsox") || adHtml.includes("内部統制"),"Original advertising landing page is empty");
   for(const id of ["internal","faq","consult-form"]){
     assert(idCount(adHtml,id)===1,"Preserved advertising LP missing "+id);
   }
