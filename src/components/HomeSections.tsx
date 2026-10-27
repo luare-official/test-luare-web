@@ -295,7 +295,7 @@ export default function HomeSections() {
               </ScrollReveal>
             ))}
           </div>
-          <p className="luare-v6-note">※掲載内容は確認用の仮原稿です。個別企業の実績や成果は、事実関係と掲載許諾の確認後に更新します。</p>
+          <p className="luare-v6-note">※個別企業名は掲載していません。事例の内容は実際の支援範囲を紹介しています。</p>
           <div className="mt-8 text-center">
             <Link href="/#services" className="inline-flex items-center justify-center border border-[#0B3158] px-7 py-3 text-sm font-semibold text-[#0B3158] transition-colors hover:bg-[#0B3158] hover:text-white">
               支援内容を詳しく見る <span className="ml-3" aria-hidden="true">→</span>
