@@ -45,7 +45,7 @@ export default function InteractiveServiceGalleryZh() {
                   <div className="luare-guide-panel-body">
                     <span className="luare-guide-panel-caption">主要支持内容</span>
                     <div className="luare-guide-links">
-                      {svc.items.map((item,i)=><Link key={item.title} href={"/zh/services/"+svc.slug}
+                      {svc.items.map((item,i)=><Link key={item.title} href={"/zh/services/"+svc.slug+"#scope-"+(i+1)}
                         className="luare-guide-link">
                         <span>{item.title}</span><span className="luare-guide-link-icon" aria-hidden="true">↗</span>
                       </Link>)}
