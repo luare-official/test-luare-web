@@ -6,23 +6,11 @@ export default function Hero() {
       <div className="luare-unicell-stage">
         <div className="luare-unicell-white-shape" />
 
-        <div className="luare-unicell-small-copy" aria-hidden="true">
-          We connect Japan
-          <br />
-          and global finance.
-        </div>
-
         <div className="luare-unicell-talk-photo" aria-hidden="true">
           <img
             src="/images/luare-hero-consulting-male-20261025.webp"
             alt=""
           />
-        </div>
-
-        <div className="luare-unicell-vertical" aria-hidden="true">
-          <div className="luare-unicell-vstrip">会計・税務・監査を横断して支援</div>
-          <div className="luare-unicell-vstrip">海外本社との橋渡し</div>
-          <div className="luare-unicell-vstrip">国際業務に強い専門家チーム</div>
         </div>
 
         <ScrollReveal className="luare-unicell-hero-copy">
