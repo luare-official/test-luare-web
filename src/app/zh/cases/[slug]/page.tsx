@@ -7,7 +7,7 @@ import {zhCases} from "@/lib/zhSite";
 type Props={params:Promise<{slug:string}>};
 export const dynamicParams=false;
 export function generateStaticParams(){return r5Cases.map(c=>({slug:c.id}));}
-export async function generateMetadata({params}:Props):Promise<Metadata>{const slug=(await params).slug;return zhCases[slug]?{title:zhCases[slug].title+" | Luare Consulting",robots:{index:false,follow:false},description:zhCases[slug].impact,alternates:{canonical:"https://luare-consulting.com/zh/cases/"+slug}}:{title:"未找到案例"};}
+export async function generateMetadata({params}:Props):Promise<Metadata>{const slug=(await params).slug;return zhCases[slug]?{title:zhCases[slug].title+" | Luare Consulting",description:zhCases[slug].impact,alternates:{canonical:"https://luare-consulting.com/zh/cases/"+slug}}:{title:"未找到案例"};}
 const quoteZh:Record<string,{name:string;scope:string}>={
 "quote-close":{name:"集团财务结算与流程优化支持",scope:"假设支持结算实务、现金流资料编制、结账流程梳理及改善措施讨论"},
 "quote-jsox":{name:"海外据点J-SOX三件套建设",scope:"假设提供访谈、三件套编制、评价准备及相关方协调"},
