@@ -15,6 +15,7 @@ const pages=[
  {path:"/zh/services",tag:"services-zh"},
  {path:"/zh/cases",tag:"cases-zh"},
  {path:"/zh/pricing",tag:"pricing-zh"},
+ {path:"/zh/about",tag:"profile-zh"},
  {path:"/ads/internal-control",tag:"advertising-lp"}
 ];
 const profiles=[{label:"desktop",width:1440,height:900},{label:"mobile",width:390,height:844}];
@@ -37,6 +38,20 @@ for(const profile of profiles){
   const filename="qa-artifacts/draft-r5/"+p.tag+"-"+profile.label+".png";
   await page.screenshot({path:filename,fullPage:true,animations:"disabled"});
   console.log("CAPTURE",filename,"docWidth",metrics.doc,"viewport",metrics.view);
+  if(p.tag==="profile-jp"||p.tag==="profile-zh"){
+   const positioning=await page.evaluate(()=>{
+    const picture=document.querySelector(".luare-v6-rep-photo");
+    const text=document.querySelector(".luare-v6-rep-copy");
+    if(!picture||!text)return null;
+    const photo=picture.getBoundingClientRect(),copy=text.getBoundingClientRect();
+    return {photo:{left:photo.left,top:photo.top,right:photo.right,bottom:photo.bottom},copy:{left:copy.left,top:copy.top,right:copy.right,bottom:copy.bottom}};
+   });
+   if(!positioning)record(profile.label+" "+p.path+" missing original portrait-and-biography grid");
+   else if(profile.label==="desktop" && positioning.copy.left<=positioning.photo.left+40)
+    record(profile.label+" "+p.path+" biography no longer to right of portrait: "+JSON.stringify(positioning));
+   else if(profile.label==="mobile" && positioning.copy.top<positioning.photo.top+100)
+    record(profile.label+" "+p.path+" mobile portrait/biography stacking invalid: "+JSON.stringify(positioning));
+  }
   if(profile.label==="desktop" && p.tag==="services-jp"){
    const home=page.locator('header a.luare-nav-link').filter({hasText:"ホーム"}).first();
    const service=page.locator('header button.luare-nav-link').filter({hasText:"サービス"}).first();
