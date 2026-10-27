@@ -17,6 +17,7 @@ const requiredPaths = [
   "/about",
   "/contact",
   "/pricing",
+  "/cases",
   "/insights",
 ];
 const origin = "https://luare-consulting.com";
@@ -34,7 +35,9 @@ if(existsSync(filenameSitemap)){
     check(xmlUrls.includes(origin + path), "Missing indexable page from sitemap: " + path);
   }
   check(xmlUrls.length === new Set(xmlUrls).size, "Duplicate URLs in sitemap");
-  check(!xmlUrls.includes(origin + "/cases"), "Review-only /cases must remain out of sitemap");
+  for(const suffix of ["/cases","/cases/case-close","/cases/case-music","/cases/case-jsox","/cases/case-fpa"]){
+    check(xmlUrls.includes(origin + suffix), "Approved case page missing from sitemap: " + suffix);
+  }
   check(!xmlUrls.some(u=>u.startsWith(origin + "/insights/")),
     "Review-only article detail URLs must remain out of sitemap");
   check(xmlUrls.every(u=>u.startsWith(origin + "/")),
@@ -65,6 +68,6 @@ if(errors.length){
   for(const error of errors) console.error("FAIL: " + error);
   process.exitCode = 1;
 } else {
-  console.log("PASS: public sitemap, crawlable noindex policy, and J-SOX/BPO canonical checks.");
+  console.log("PASS: public sitemap, approved case indexing, unreviewed blog noindex policy, and J-SOX/BPO canonicals.");
   console.log("NOTE: ad conversion success and live form delivery are NOT tested by this script.");
 }
