@@ -3,7 +3,7 @@ import Link from "next/link";
 import ZhPageFrame from "@/components/zh/ZhPageFrame";
 import {r5Cases} from "@/lib/r5Cases";
 import {zhCases} from "@/lib/zhSite";
-export const metadata:Metadata={title:"支持案例 | Luare Consulting",description:"了解财务结算、跨国集团内部控制、海外J-SOX等支持案例及FP&A支持模式。",robots:{index:false,follow:false},alternates:{canonical:"https://luare-consulting.com/zh/cases"}};
+export const metadata:Metadata={title:"支持案例 | Luare Consulting",description:"了解财务结算、跨国集团内部控制、海外J-SOX等支持案例及FP&A支持模式。",alternates:{canonical:"https://luare-consulting.com/zh/cases"}};
 function Card({id,num}:{id:string;num:string}){const c=zhCases[id];return <Link href={"/zh/cases/"+id} className="group flex h-full flex-col rounded-lg border border-[#CBD5E1] bg-white p-7 hover:border-[#1766A0] hover:bg-[#F8FAFC]">
 <span className="text-xs font-bold tracking-widest text-[#1766A0]">{c.model?"SUPPORT MODEL":"CASE "+num}</span>
 <p className="mt-3 text-xs leading-6 text-[#475569]">{c.industry}</p><h3 className="mt-3 text-lg font-semibold leading-8">{c.title}</h3>
