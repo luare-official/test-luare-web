@@ -66,7 +66,7 @@ export default function Navbar({
         ["/cases", "支援事例"],
         ["/insights", "ブログ"],
         ["/pricing", "料金"],
-        [sectionLink("representative"), "代表プロフィール"],
+        ["/about", "代表プロフィール"],
       ]
     : [
         [prefix + "/#services", "Services"],
@@ -78,7 +78,7 @@ export default function Navbar({
   const serviceMenu = serviceCategories.map(({ number, title }) => ({
     number,
     label: title,
-    href: `/services#category-${number}`,
+    href: ({ "01": "/services/internal-control", "02": "/services/accounting-management", "03": "/services/finance-ops", "04": "/services/global-finance", "05": "/services/audit-assurance" } as Record<string,string>)[number] || "/services",
   }));
 
   if (heroStyle) {
@@ -120,7 +120,7 @@ export default function Navbar({
                 <Link href="/cases">支援事例</Link>
                 <Link href="/insights">ブログ</Link>
                 <Link href="/pricing">料金</Link>
-                <Link className="luare-unicell-representative-link" href={sectionLink("representative")}>代表プロフィール</Link>
+                <Link className="luare-unicell-representative-link" href={"/about"}>代表プロフィール</Link>
               </>
             ) : (
               navItems.map(([href, label]) => (
@@ -161,7 +161,7 @@ export default function Navbar({
             <Link href="/cases" onClick={()=>setIsMenuOpen(false)}>支援事例</Link>
             <Link href="/insights" onClick={()=>setIsMenuOpen(false)}>ブログ</Link>
             <Link href="/pricing" onClick={()=>setIsMenuOpen(false)}>料金</Link>
-            <Link href={sectionLink("representative")} onClick={()=>setIsMenuOpen(false)}>代表プロフィール</Link>
+            <Link href={"/about"} onClick={()=>setIsMenuOpen(false)}>代表プロフィール</Link>
           </nav>
         )}
       </header>
@@ -195,7 +195,7 @@ export default function Navbar({
           ["/cases", "支援事例"],
           ["/insights", "ブログ"],
           ["/pricing", "料金"],
-          [sectionLink("representative"), "代表プロフィール"],
+          ["/about", "代表プロフィール"],
         ]
       : [
           [prefix + "/#services", "Services"],
