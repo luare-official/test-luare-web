@@ -100,6 +100,11 @@ assert(!!adJsox,"Archived advertising LP is missing");
 assert(adJsox.includes('href="/privacy"'),"Advertising LP missing privacy link");
 assert(adJsox.includes('action="https://formspree.io/f/mojppoor"'),"Advertising LP form destination changed");
 assert(existsSync("out/robots.txt")&&existsSync("out/sitemap.xml"),"SEO crawler files missing");
+const gallerySource=readFileSync("src/app/cases/page.tsx","utf8");
+const cDesign=readFileSync("src/components/cases/CaseGallery.tsx","utf8");
+assert(gallerySource.includes("CaseGallery cases={approvedCases}")&&cDesign.includes("className={styles.filter}"),
+ "Previously approved B-team C case-card and filtering design must be preserved");
+assert(!home.includes("掲載内容は確認用の仮原稿です"),"Case homepage notice incorrectly claims approval pending");
 const cases=pages.get("cases.html")||"";
 assert(!cases.includes("noindex"),"Approved published cases should not remain noindex");
 if(errors.length){console.error("FAILED static QA: "+errors.length);for(const e of errors.slice(0,100))console.error(" - "+e);process.exitCode=1;}
