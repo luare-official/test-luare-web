@@ -7,7 +7,7 @@ import FooterZh from "@/components/zh/FooterZh";
 export const metadata: Metadata = {
   title: "公司简介 | Luare Consulting",
   description:
-    "Luare Consulting 代表董事 陆沿青（US.CPA）的简历。曾任职于毕马威（KPMG）、三菱UFJ摩根士丹利证券等，通过AI代理与专家团队提供次世代AI财务BPO服务。",
+    "Luare Consulting代表董事陆沿青的履历及专业背景。曾任职于毕马威（KPMG）、三菱UFJ摩根士丹利证券等机构，熟悉国际财务、内部控制与跨国业务。",
   alternates: {
     canonical: "https://luare-consulting.com/zh/about",
     languages: {
@@ -146,58 +146,7 @@ export default function AboutPageZh() {
                   </div>
                 </div>
 
-                {/* ── Divider ── */}
-                <div className="w-full h-px bg-slate-100 mb-12" />
 
-                {/* ── Biography ── */}
-                <div className="mb-12">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div
-                      className="w-6 h-[1.5px] shrink-0"
-                      style={{ backgroundColor: "#1766A0" }}
-                    />
-                    <h3 className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
-                      个人经历
-                    </h3>
-                  </div>
-                  <p className="text-sm sm:text-[15px] text-brand-slate leading-[1.9] tracking-wide">
-                    在澳大利亚取得商学学士学位后，曾就职于日本上市专业商社及美国大型制造企业日本分公司，积累了丰富的全球财务会计实务经验。随后，在毕马威（KPMG）Azsa审计法人从事会计咨询业务，协助多家跨国企业构建内部控制及财务基础架构。
-                  </p>
-                  <p className="text-sm sm:text-[15px] text-brand-slate leading-[1.9] tracking-wide mt-4">
-                    此后，历经三菱UFJ摩根士丹利证券投资银行部、美资创投会计师事务所，最终独立创办Luare Consulting。
-                  </p>
-                </div>
-
-                {/* ── Divider ── */}
-                <div className="w-full h-px bg-slate-100 mb-12" />
-
-                {/* ── Philosophy ── */}
-                <div>
-                  <div className="flex items-center gap-3 mb-6">
-                    <div
-                      className="w-6 h-[1.5px] shrink-0"
-                      style={{ backgroundColor: "#1766A0" }}
-                    />
-                    <h3 className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
-                      经营理念
-                    </h3>
-                  </div>
-
-                  <blockquote
-                    className="border-l-[3px] pl-6 mb-5"
-                    style={{ borderColor: "#1766A0" }}
-                  >
-                    <p className="font-serif text-lg sm:text-xl font-medium text-brand-charcoal leading-relaxed tracking-wide">
-                      成为将经营者从“隐形财务风险”中
-                      <br />
-                      解放出来的合作伙伴。
-                    </p>
-                  </blockquote>
-
-                  <p className="text-sm sm:text-[15px] text-brand-slate leading-[1.9] tracking-wide">
-                    招聘困难、人员流失导致的体系崩溃风险等，是企业财务部门长期面临的顽疾。我们通过全球标准的专业陪跑与科技力量，从根本上消除这些隐患，构建加速经营决策的清晰财务运营体系。
-                  </p>
-                </div>
               </div>
             </div>
           </div>
