@@ -62,7 +62,7 @@ export default function HomeZh(){return <>
  <div className="luare-v6-section-head"><p className="luare-v6-eyebrow">CASE STUDIES</p><h2>支持案例与服务模式</h2></div>
  <div className="grid gap-4 sm:grid-cols-2">{r5Cases.map(s=>{const c=zhCases[s.id];return <Link key={s.id} href={"/zh/cases/"+s.id} className="flex flex-col rounded-lg border border-[#CBD5E1] bg-white p-6 hover:bg-[#EDF5FC]">
   <span className="text-xs font-bold text-[#1766A0]">{c.model?"SUPPORT MODEL":"CASE "+s.index}</span><h3 className="mt-3 text-lg font-semibold leading-8 text-[#0B3158]">{c.title}</h3><p className="mt-3 flex-1 text-sm leading-7 text-[#475569]">{c.impact}</p><span className="mt-4 text-sm font-semibold text-[#1766A0]">查看详情 ↗</span>
- </Link>})}</div><p className="mt-5 text-xs leading-6 text-[#475569]">※部分内容仍在审核中。FP&A为服务模式，并非客户实绩。</p>
+ </Link>})}</div><p className="mt-5 text-xs leading-6 text-[#475569]">※FP&A为服务模式，并非客户实绩。</p>
  <div className="mt-7 text-center"><Link href="/zh/cases" className="inline-flex border border-[#0B3158] px-7 py-3 text-sm font-semibold text-[#0B3158]">支持案例一览 ↗</Link></div>
 </div></section>
 <section className="luare-v6-section luare-v6-soft" id="insights"><div className="luare-v6-container">
