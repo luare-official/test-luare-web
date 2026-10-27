@@ -34,6 +34,15 @@ const publicPaths = [
   "/zh",
   "/zh/about",
   "/zh/contact",
+  "/zh/services",
+  "/zh/services/internal-control",
+  "/zh/services/accounting-management",
+  "/zh/services/finance-ops",
+  "/zh/services/global-finance",
+  "/zh/services/audit-assurance",
+  "/zh/services/ma-finance",
+  "/zh/pricing",
+  "/zh/insights",
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
