@@ -16,6 +16,7 @@ const publicPaths = [
   "/",
   "/services",
   "/services/internal-control",
+  "/services/internal-control/overview",
   "/bpo",
   "/services/accounting-management",
   "/services/finance-ops",
