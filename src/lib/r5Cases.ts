@@ -1,5 +1,5 @@
 /** Source of truth: user-supplied content_master_r5.json (husband's r5). 
- * Draft professional claims and pricing require approval before any publication.
+ * User approved publishing case content and indicative rates. Branch release is still gated by visual/technical review.
  */
 export const r5Cases = [
   {
