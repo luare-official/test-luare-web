@@ -78,8 +78,12 @@ for(const lang of ["","en/","zh/"]){
  assert(html.includes('action="https://formspree.io/f/mojppoor"'),page+" Formspree action changed");
 }
 const jsox=pages.get("services/internal-control.html")||"";
-assert(jsox.includes('href="/privacy"'),"J-SOX LP missing privacy link");
-assert(jsox.includes('action="https://formspree.io/f/mojppoor"'),"J-SOX form destination changed");
+assert(jsox.includes('href="/privacy"'),"Standard J-SOX service page missing privacy link");
+assert(jsox.includes('href="/contact"'),"Standard J-SOX service consultation link changed");
+const adJsox=pages.get("ads/internal-control.html")||"";
+assert(!!adJsox,"Archived advertising LP is missing");
+assert(adJsox.includes('href="/privacy"'),"Advertising LP missing privacy link");
+assert(adJsox.includes('action="https://formspree.io/f/mojppoor"'),"Advertising LP form destination changed");
 assert(existsSync("out/robots.txt")&&existsSync("out/sitemap.xml"),"SEO crawler files missing");
 const cases=pages.get("cases.html")||"";
 assert(cases.includes("noindex"),"Unreviewed cases are no longer noindex");
