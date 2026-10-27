@@ -21,7 +21,7 @@ export default function Footer() {
             <Link href="/cases">支援事例</Link>
             <Link href="/insights">ブログ</Link>
             <Link href="/pricing">料金</Link>
-            <Link href="/#representative">代表プロフィール</Link>
+            <Link href="/about">代表プロフィール</Link>
             <Link href="/services/audit-assurance">会計監査対応</Link>
             <Link href="/bpo">経理BPO</Link>
             <Link href="/for-audit-firms">監査法人・専門家の皆様へ</Link>
