@@ -90,7 +90,9 @@ export default function CaseGallery({
     const syncHash = () => {
       const found = window.location.hash.match(/^#\/case\/([a-z0-9-]+)$/i);
       const id = found?.[1];
-      setSelectedId(id && cases.some((item) => item.id === id) ? id : null);
+      const legacy: Record<string,string> = { "accounting-operations": "case-close", "global-internal-control": "case-music", "overseas-jsox": "case-jsox" };
+      const resolved = id ? (legacy[id] || id) : null;
+      setSelectedId(resolved && cases.some((item) => item.id === resolved) ? resolved : null);
     };
     window.addEventListener("hashchange", syncHash);
     syncHash();
