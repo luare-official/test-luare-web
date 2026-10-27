@@ -1,0 +1,32 @@
+# Safe validation for the 2026-10-27 r5 redesign; NEVER publishes the website.
+name: Validate HP changes (no deployment)
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: TypeScript + Next.js static export
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Install
+        run: npm ci
+      - name: Static export and type validation (no deployment)
+        run: npm run build
+      - name: Ensure required localized routes exist
+        run: |
+          test -f out/index.html
+          test -f out/services/internal-control.html || test -f out/services/internal-control/index.html
+          test -f out/cases/case-jsox.html || test -f out/cases/case-jsox/index.html
+          test -f out/zh/index.html || test -f out/zh.html
+          test -f out/zh/pricing.html || test -f out/zh/pricing/index.html
