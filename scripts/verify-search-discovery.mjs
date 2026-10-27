@@ -7,6 +7,7 @@ const requiredPaths = [
   "/",
   "/services",
   "/services/internal-control",
+  "/services/internal-control/overview",
   "/bpo",
   "/services/accounting-management",
   "/services/finance-ops",
@@ -52,7 +53,7 @@ if(existsSync(filenameRobots)){
     "Review-only URLs need to remain crawlable so their noindex can be read");
 }
 
-for (const path of ["/services/internal-control", "/bpo"]){
+for (const path of ["/services/internal-control", "/services/internal-control/overview", "/bpo"]){
   const filename = "out" + path + ".html";
   check(existsSync(filename), "Missing priority LP: " + path);
   if(existsSync(filename)){
