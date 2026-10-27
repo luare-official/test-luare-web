@@ -5,12 +5,12 @@ import styles from "./CaseGallery.module.css";
 
 /**
  * Approved B班 design C (2026-10-23): card overview -> individual detail.
- * UI ONLY. Do not wire this component into a public route until approval D-04:
- * verify customer consent, confidentiality, professional facts and case outcomes.
+ * Case text is supplied by the user-approved r5 master; retain previously approved C visual design.
  * The North American FP&A model must not be passed as an actual case.
  */
 export type ApprovedCaseStudy = {
   id: string;
+  detailHref?: string;
   number: string;
   category: string;
   categoryGroup: "accounting" | "control";
@@ -199,7 +199,7 @@ export default function CaseGallery({
               {selected.outputs && <ul className="my-5 list-disc space-y-2 pl-5 text-sm leading-7 text-[#475569]">
                 {selected.outputs.map((x)=><li key={x}>{x}</li>)}
               </ul>}
-              <p className="mt-4 text-xs leading-6 text-[#475569]">※ 掲載内容を確認中です。実際の成果物や公開範囲は、事実確認・許諾後に確定します。</p>
+              {selected.detailHref && <a href={selected.detailHref} className={styles.next}>この事例の詳細ページを見る ↗</a>}
               <div className={styles.tagList}>
                 {selected.tags.map((tag) => <em className={styles.tag} key={tag}>{tag}</em>)}
               </div>
