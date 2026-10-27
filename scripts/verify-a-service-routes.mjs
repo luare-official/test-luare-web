@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // A班専用の静的出力QA。ネットワーク・外部メール・本番変更は一切行わない。
-// Next.jsの out/ を対象にホームの29リンク、r5集約後の7親ページ、ID/アンカーを照合する。
+// Next.jsの out/ を対象にホームの29リンク、既存BPOを含む8親ページ、ID/アンカーを照合する。
 import {readFileSync, existsSync} from "node:fs";
 import path from "node:path";
 
@@ -26,7 +26,7 @@ const idCount=(html,id)=>{
 };
 assert(entries.length===29,`Service catalog expected 29, got ${entries.length}`);
 assert(new Set(entries.map(x=>x.id)).size===entries.length,"Duplicate service IDs in catalog");
-assert(new Set(entries.map(x=>x.page)).size===7,"Expected 7 actual destinations for the reorganized service catalog (including contact)");
+assert(new Set(entries.map(x=>x.page)).size===8,"Expected 8 existing service destinations including BPO, audit and contact");
 
 const homeFile="out/index.html";
 assert(existsSync(homeFile),`Missing ${homeFile}`);
