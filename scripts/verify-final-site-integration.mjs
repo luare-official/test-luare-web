@@ -55,7 +55,7 @@ for(const [page,html] of pages){
 const home=pages.get("index.html")||"";
 assert(!home.includes("Professional 01"),"Unapproved expert mockup published");
 assert(home.includes("luare-hero-consulting-male-20261025.webp"),"Approved male photo disappeared");
-// Guard against unsolicited representative-page and service-card redesigns.
+// Guard representative layout and the explicitly approved expanded service-card design.
 const jpAboutSource=readFileSync("src/app/about/page.tsx","utf8");
 const zhAboutSource=readFileSync("src/app/zh/about/page.tsx","utf8");
 for(const [locale,profile] of [["ja",jpAboutSource],["zh",zhAboutSource]]){
@@ -68,7 +68,7 @@ for(const [locale,profile] of [["ja",jpAboutSource],["zh",zhAboutSource]]){
  assert(!profile.includes("luare-v6-philosophy"),locale+" explicitly removed philosophy returned");
 }
 const directorySource=readFileSync("src/components/ServiceDirectory.tsx","utf8");
-assert(directorySource.includes("min-h-[58px]")&&!directorySource.includes("min-h-[126px]"),"Existing compact service-card styling was altered");
+assert(directorySource.includes("min-h-[126px]")&&directorySource.includes("serviceRoutes[number]"),"User-approved large five-card service directory was altered");
 assert(directorySource.includes("serviceRoutes[number]"),"Service cards no longer open requested detail pages");
 const nav=readFileSync("src/components/Navbar.tsx","utf8");
 assert(!nav.includes("/for-audit-firms"),"Protected audit-partner nav became visible");
