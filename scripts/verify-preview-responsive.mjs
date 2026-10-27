@@ -17,6 +17,7 @@ const pages=[
  {path:"/zh/cases",tag:"cases-zh"},
  {path:"/zh/pricing",tag:"pricing-zh"},
  {path:"/zh/about",tag:"profile-zh"},
+ {path:"/en/about",tag:"profile-en"},
  {path:"/ads/internal-control",tag:"advertising-lp"}
 ];
 const profiles=[{label:"desktop",width:1440,height:900},{label:"mobile",width:390,height:844}];
@@ -39,7 +40,7 @@ for(const profile of profiles){
   const filename="qa-artifacts/draft-r5/"+p.tag+"-"+profile.label+".png";
   await page.screenshot({path:filename,fullPage:true,animations:"disabled"});
   console.log("CAPTURE",filename,"docWidth",metrics.doc,"viewport",metrics.view);
-  if(p.tag==="profile-jp"||p.tag==="profile-zh"){
+  if(["profile-jp","profile-zh","profile-en"].includes(p.tag)){
    const positioning=await page.evaluate(()=>{
     const picture=document.querySelector(".luare-v6-rep-photo");
     const text=document.querySelector(".luare-v6-rep-copy");
