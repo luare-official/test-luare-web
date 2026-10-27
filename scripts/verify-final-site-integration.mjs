@@ -100,6 +100,9 @@ assert(!!adJsox,"Archived advertising LP is missing");
 assert(adJsox.includes('href="/privacy"'),"Advertising LP missing privacy link");
 assert(adJsox.includes('action="https://formspree.io/f/mojppoor"'),"Advertising LP form destination changed");
 assert(existsSync("out/robots.txt")&&existsSync("out/sitemap.xml"),"SEO crawler files missing");
+const zhHomeSource=readFileSync("src/app/zh/page.tsx","utf8");
+const zhHomeDesign=["luare-who-band","luare-services-photo","InteractiveServiceGalleryZh","luare-v6-why-row","luare-v6-cases","luare-v6-steps","luare-v6-faq"];
+for(const cls of zhHomeDesign)assert(zhHomeSource.includes(cls),"Chinese homepage diverged from approved Japanese design: "+cls);
 const gallerySource=readFileSync("src/app/cases/page.tsx","utf8");
 const cDesign=readFileSync("src/components/cases/CaseGallery.tsx","utf8");
 assert(gallerySource.includes("CaseGallery cases={approvedCases}")&&cDesign.includes("className={styles.filter}"),
