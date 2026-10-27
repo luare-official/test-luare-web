@@ -10,7 +10,7 @@ export const dynamicParams=false;
 export function generateStaticParams(){return r5Cases.map(c=>({slug:c.id}));}
 export async function generateMetadata({params}:Props):Promise<Metadata>{
  const c=findR5Case((await params).slug);
- return c?{title:c.title+" | 支援事例 | Luare Consulting",description:c.impact,robots:{index:false,follow:false},alternates:{canonical:"https://luare-consulting.com/cases/"+c.id}}:{title:"支援事例が見つかりません"};
+ return c?{title:c.title+" | 支援事例 | Luare Consulting",description:c.impact,alternates:{canonical:"https://luare-consulting.com/cases/"+c.id}}:{title:"支援事例が見つかりません"};
 }
 type Illustration={status:string,challenge:string,left:string,leftDesc:string,right:string,rightDesc:string,support:string[],result:string};
 const illustrations:Record<string,Illustration>={
