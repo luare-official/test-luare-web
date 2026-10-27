@@ -2912,3 +2912,17 @@ body {background-color:var(--background);color:var(--foreground);font-family:var
   .luare-who-band-list li{padding:12px 0 12px 16px}
   .luare-who-band-list li::before{top:21px}
 }
+
+/* 2026-10-27: bring hero text over the existing portrait (desktop and mobile). */
+.luare-unicell-hero-copy{
+  top:42%;bottom:auto;left:6%;width:min(78%,980px);
+  z-index:9;
+  text-shadow:0 1px 18px rgba(255,255,255,.98),0 1px 6px rgba(255,255,255,.9);
+}
+@media(max-width:900px){.luare-unicell-hero-copy{top:45%;bottom:auto;left:6%;width:88%;}}
+@media(max-width:580px){.luare-unicell-hero-copy{top:47%;bottom:auto;left:6%;width:90%;}}
+/* Subpage header: button typography must match sibling navigation links. */
+.luare-service-menu-standard>button.luare-nav-link {
+  font-family:var(--luare-font);font-size:11px;line-height:inherit;
+  font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+}
