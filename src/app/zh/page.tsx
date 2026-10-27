@@ -1,5 +1,7 @@
 import type {Metadata} from "next";
 import Link from "next/link";
+import ScrollReveal from "@/components/ScrollReveal";
+import InteractiveServiceGalleryZh from "@/components/zh/InteractiveServiceGalleryZh";
 import Navbar from "@/components/Navbar";
 import FooterZh from "@/components/zh/FooterZh";
 import {zhServices,zhCases,zhArticles} from "@/lib/zhSite";
@@ -11,21 +13,27 @@ export const metadata:Metadata={
  alternates:{canonical:"https://luare-consulting.com/zh"}
 };
 const who=[
-["在日本设立子公司的外资企业","希望统筹日本公司的财务结算、审计协调及总部报告。"],
-["拥有海外总部的日本法人","需要与海外总部沟通财务信息、合并报表及内部控制事项。"],
-["在海外经营的日本企业","希望加强子公司治理、结算流程和集团管理报告。"],
-["使用IFRS及US GAAP的企业","需要针对会计准则差异、内部管理与审计准备获得支持。"]
+"在日本经营业务的外资企业",
+"拥有海外母公司的日本法人",
+"正在拓展海外业务的日本企业",
+"需要对应IFRS / US-GAAP的企业",
+"需要用英语或中文与海外总部沟通的企业",
+"希望统一协调财务、税务和审计事务的企业"
 ];
 const why=[
-["丰富的国际业务经验","拥有事务所、全球企业及实际经营管理部门的工作经验。"],
-["覆盖财务与内部控制的多个领域","从实际财务运营、结算、内部控制到集团管理报告，以具体需求为起点。"],
-["日英中三语沟通","在日本法人、海外总部和相关专业人员之间协调专业议题。"],
-["兼顾专业深度与执行能力","不仅整理问题，也重视流程、资料和职责在日常业务中真正落地。"]
+["01","具备国际会计经验的专业团队","支持IFRS、US-GAAP、跨国财务管理及相关专业业务。"],
+["02","拥有事务所、跨国企业和实际经营部门经验","既熟悉专业咨询，也理解企业一线的财务工作。"],
+["03","可直接使用日语、英语和中文沟通","协助日本法人及海外总部协调专业财务事项。"],
+["04","统筹审计、税务、会计及Finance相关课题","根据需要与相关专业人员合作，减少沟通成本。"],
+["05","兼顾专业能力与费用合理性","先厘清实际工作范围，再针对个别项目提出报价。"]
 ];
 const faq=[
-["可以只委托一个具体项目吗？","可以。我们会根据贵公司所需的工作范围、预计工时及期间单独提出方案。"],
-["可以与海外总部使用中文或英语沟通吗？","我们可使用日语、英语、中文协调会计和财务相关事务。"],
-["首次咨询是否收费？","首次咨询免费。实际服务费用在确认工作范围之后另行报价。"]
+["首次咨询是否收费？","首次咨询通常免费，约一小时。我们会了解需求后提出工作范围与报价。"],
+["已有合作税务师，还可以委托Luare吗？","可以。可就国际会计、IFRS及US-GAAP等特定领域进行单独咨询。"],
+["可以直接用英语与海外总部沟通吗？","可以。我们能够使用日语、英语及中文支持相关财务沟通。"],
+["规模较小的日本法人也能委托吗？","可以。可根据公司规模和实际范围提出支持方案。"],
+["可以只委托特定项目吗？","可以。内部控制、财务报告、尽职调查及估值等项目可单独洽谈。"],
+["可以先获取报价吗？","可以。首次咨询及报价通常不收费。"]
 ];
 export default function HomeZh(){return <>
 <Navbar heroStyle/>
@@ -42,41 +50,95 @@ export default function HomeZh(){return <>
   <div className="luare-unicell-scroll" aria-hidden="true">SCROLL</div>
  </div>
 </section>
-<section className="luare-v6-section luare-v6-soft" id="who-we-help"><div className="luare-v6-container">
- <div className="luare-v6-section-head"><p className="luare-v6-eyebrow">WHO WE HELP</p><h2>我们支持这样的企业</h2></div>
- <div className="grid gap-4 sm:grid-cols-2">{who.map(([title,desc])=><article key={title} className="rounded-lg border border-[#CBD5E1] bg-white p-6"><h3 className="text-lg font-semibold text-[#0B3158]">{title}</h3><p className="mt-3 text-sm leading-8 text-[#475569]">{desc}</p></article>)}</div>
+<section className="luare-v6-section luare-who-band" id="who-we-help">
+<div className="luare-v6-container">
+<ScrollReveal className="luare-who-band-inner">
+<div className="luare-who-band-head"><p className="luare-v6-eyebrow">WHO WE HELP</p>
+<h2>我们为这样的企业<br/>提供专业支持。</h2></div>
+<ul className="luare-who-band-list">{who.map(title=><li key={title}>{title}</li>)}</ul>
+</ScrollReveal></div></section>
+
+<section className="luare-v6-section luare-services-photo" id="services">
+<div className="luare-v6-container">
+<ScrollReveal className="luare-v6-section-head">
+<p className="luare-v6-eyebrow">SERVICES</p>
+<h2>为跨国企业提供<br/>一站式会计与财务服务。</h2>
+</ScrollReveal>
+<InteractiveServiceGalleryZh/>
+<ScrollReveal><Link href="/zh/contact" className="luare-v6-primary-cta luare-v6-section-cta">咨询专业服务 <span>→</span></Link></ScrollReveal>
 </div></section>
-<section className="luare-v6-section" id="services"><div className="luare-v6-container">
- <div className="luare-v6-section-head"><p className="luare-v6-eyebrow">SERVICES</p><h2>我们的专业服务</h2><p className="mt-4 text-sm leading-8 text-[#475569]">结合企业现阶段的课题，支持财务业务、内部控制和经营管理体系的建设及日常运营。</p></div>
- <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{zhServices.map((s,i)=><Link key={s.slug} href={"/zh/services/"+s.slug} className="flex flex-col rounded-lg border border-[#CBD5E1] bg-white p-6 hover:border-[#1766A0] hover:bg-[#EDF5FC]">
-  <span className="text-sm font-bold text-[#1766A0]">{String(i+1).padStart(2,"0")}</span>
-  <h3 className="mt-3 text-lg font-semibold leading-7 text-[#0B3158]">{s.title}</h3><p className="mt-3 flex-1 text-sm leading-7 text-[#475569]">{s.lead}</p><span className="mt-4 text-sm font-semibold text-[#1766A0]">查看服务内容 ↗</span>
- </Link>)}</div>
- <div className="mt-7 text-center"><Link href="/zh/services" className="inline-flex border border-[#0B3158] px-7 py-3 text-sm font-semibold text-[#0B3158]">查看全部服务 ↗</Link></div>
+
+<section className="luare-v6-section luare-v6-why" id="why-luare">
+<div className="luare-v6-container">
+<ScrollReveal className="luare-v6-section-head">
+<p className="luare-v6-eyebrow luare-v6-eyebrow-light">WHY LUARE</p><h2>为什么选择 Luare Consulting？</h2>
+</ScrollReveal>
+<div className="luare-v6-why-list">
+{why.map(([no,title,desc],index)=><ScrollReveal key={no} delay={index*40}>
+<article className="luare-v6-why-row"><span>{no}</span><h3>{title}</h3><p>{desc}</p></article>
+</ScrollReveal>)}
+</div></div></section>
+
+<section className="luare-v6-section luare-v6-soft" id="case-studies">
+<div className="luare-v6-container">
+<ScrollReveal className="luare-v6-section-head">
+<p className="luare-v6-eyebrow">CASE STUDIES</p><h2>支持案例</h2>
+</ScrollReveal>
+<div className="luare-v6-cases">
+{r5Cases.filter(c=>c.id!=="case-fpa").map((srcCase,index)=>{
+const item=zhCases[srcCase.id];return <ScrollReveal key={srcCase.id} delay={index*55}>
+<article className="luare-v6-case">
+<div className="luare-v6-case-label">CASE {srcCase.index}｜{item.type}</div>
+<div><h3>{item.title}</h3><p><strong>支持</strong><br/>{item.actions.join("、")}</p>
+<Link href={"/zh/cases/"+srcCase.id} className="mt-4 inline-block border-b border-current pb-1 text-sm font-semibold text-[#0B3158] hover:opacity-70">查看案例详情 ↗</Link></div>
+<div><p><strong>课题</strong><br/>{item.issues.join("、")}</p><span>{item.type}</span></div>
+</article></ScrollReveal>})}
+</div>
+<p className="luare-v6-note">※FP&amp;A为服务模式说明，并非已实施的客户案例。</p>
+<div className="mt-8 text-center"><Link href="/zh/cases" className="inline-flex items-center justify-center border border-[#0B3158] px-7 py-3 text-sm font-semibold text-[#0B3158] hover:bg-[#0B3158] hover:text-white">查看支持案例 <span className="ml-3">→</span></Link></div>
 </div></section>
-<section className="luare-v6-section luare-v6-soft" id="why-luare"><div className="luare-v6-container">
- <div className="luare-v6-section-head"><p className="luare-v6-eyebrow">WHY LUARE</p><h2>选择 Luare Consulting 的理由</h2></div>
- <div className="grid gap-4 sm:grid-cols-2">{why.map(([title,desc],i)=><article key={title} className="rounded-lg border border-[#CBD5E1] bg-white p-6"><span className="text-xs font-bold text-[#1766A0]">{String(i+1).padStart(2,"0")}</span><h3 className="mt-3 text-lg font-semibold text-[#0B3158]">{title}</h3><p className="mt-3 text-sm leading-8 text-[#475569]">{desc}</p></article>)}</div>
+
+<section className="luare-v6-section" id="home-articles">
+<div className="luare-v6-container">
+<ScrollReveal className="luare-v6-section-head">
+<p className="luare-v6-eyebrow">INSIGHTS</p><h2>新闻与专业文章</h2><p className="mt-3 text-sm leading-8 text-[#475569]">分享会计、内部控制及日本法人实际运营方面的见解。</p>
+</ScrollReveal>
+<div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+{zhArticles.slice(0,3).map((article,i)=><ScrollReveal key={article.slug} delay={i*50}>
+<Link href={"/zh/insights/"+article.slug} className="group block h-full rounded-md border border-[#CBD5E1] bg-white p-6 shadow-[0_8px_25px_rgba(21,61,79,.035)] transition-colors hover:bg-[#EDF5FC]">
+<span className="text-xs font-semibold text-[#1766A0]">{article.category}</span>
+<h3 className="mt-4 text-lg font-semibold leading-8 text-[#0B3158]">{article.title}</h3>
+<p className="mt-3 text-sm leading-7 text-[#475569]">{article.excerpt}</p>
+<span className="mt-6 inline-flex text-sm font-semibold text-[#0B3158] group-hover:underline">阅读文章 ↗</span>
+</Link></ScrollReveal>)}</div>
+<p className="mt-6 text-xs leading-6 text-[#475569]">※部分文章仍待专业审核，内容可能调整。</p>
+<div className="mt-7 text-center"><Link href="/zh/insights" className="inline-flex items-center rounded-full border border-[#CBD5E1] px-6 py-3 text-sm font-semibold text-[#0B3158] hover:bg-[#EDF5FC]">查看全部文章 ↗</Link></div>
 </div></section>
-<section className="luare-v6-section" id="case-studies"><div className="luare-v6-container">
- <div className="luare-v6-section-head"><p className="luare-v6-eyebrow">CASE STUDIES</p><h2>支持案例与服务模式</h2></div>
- <div className="grid gap-4 sm:grid-cols-2">{r5Cases.map(s=>{const c=zhCases[s.id];return <Link key={s.id} href={"/zh/cases/"+s.id} className="flex flex-col rounded-lg border border-[#CBD5E1] bg-white p-6 hover:bg-[#EDF5FC]">
-  <span className="text-xs font-bold text-[#1766A0]">{c.model?"SUPPORT MODEL":"CASE "+s.index}</span><h3 className="mt-3 text-lg font-semibold leading-8 text-[#0B3158]">{c.title}</h3><p className="mt-3 flex-1 text-sm leading-7 text-[#475569]">{c.impact}</p><span className="mt-4 text-sm font-semibold text-[#1766A0]">查看详情 ↗</span>
- </Link>})}</div><p className="mt-5 text-xs leading-6 text-[#475569]">※FP&A为服务模式，并非客户实绩。</p>
- <div className="mt-7 text-center"><Link href="/zh/cases" className="inline-flex border border-[#0B3158] px-7 py-3 text-sm font-semibold text-[#0B3158]">支持案例一览 ↗</Link></div>
+
+<section className="luare-v6-section luare-v6-soft" id="flow">
+<div className="luare-v6-container">
+<ScrollReveal className="luare-v6-section-head"><p className="luare-v6-eyebrow">FLOW</p><h2>从咨询到项目启动</h2></ScrollReveal>
+<div className="luare-v6-steps">
+{[["01","联系我们","通过咨询表单介绍贵公司的需求。"],["02","首次免费咨询","在线或面谈，了解当前状况和主要课题。"],["03","明确服务与报价","确认工作范围、职责分工、费用及计划。"],["04","签约并开始服务","在双方确认条件后，由专业人员开展支持工作。"]].map(([no,title,desc],index)=><ScrollReveal key={no} delay={index*60}>
+<article className="luare-v6-step"><span>{no}</span><h3>{title}</h3><p>{desc}</p></article>
+</ScrollReveal>)}
+</div></div></section>
+
+<section className="luare-v6-section" id="faq">
+<div className="luare-v6-container">
+<ScrollReveal className="luare-v6-section-head"><p className="luare-v6-eyebrow">FAQ</p><h2>常见问题</h2></ScrollReveal>
+<ScrollReveal className="luare-v6-faq">
+{faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}
+</ScrollReveal>
 </div></section>
-<section className="luare-v6-section luare-v6-soft" id="insights"><div className="luare-v6-container">
- <div className="luare-v6-section-head"><p className="luare-v6-eyebrow">INSIGHTS</p><h2>财务与内部控制文章</h2></div>
- <div className="grid gap-4 md:grid-cols-3">{zhArticles.slice(0,3).map(a=><Link key={a.slug} href={"/zh/insights/"+a.slug} className="flex flex-col rounded-lg border border-[#CBD5E1] bg-white p-6 hover:bg-[#F5F9FC]">
-  <span className="text-xs text-[#1766A0]">{a.category}</span><h3 className="mt-3 text-lg font-semibold leading-8 text-[#0B3158]">{a.title}</h3><p className="mt-3 flex-1 text-sm leading-7 text-[#475569]">{a.excerpt}</p><span className="mt-4 text-sm font-semibold text-[#1766A0]">阅读全文 ↗</span>
- </Link>)}</div>
- <div className="mt-7 text-center"><Link href="/zh/insights" className="inline-flex border border-[#0B3158] px-7 py-3 text-sm font-semibold text-[#0B3158]">阅读全部文章 ↗</Link></div>
-</div></section>
-<section className="luare-v6-section" id="flow"><div className="luare-v6-container"><div className="luare-v6-section-head"><p className="luare-v6-eyebrow">HOW WE WORK</p><h2>合作流程</h2></div>
-<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{[["01","联系我们","介绍贵公司的现状及需求。"],["02","首次免费咨询","沟通问题、背景及项目目标。"],["03","工作范围与报价","明确工作内容、分工、费用及计划。"],["04","签约并开始支持","依据协商结果开展具体工作。"]].map(([no,title,desc])=><article key={no} className="border-t-2 border-[#1766A0] p-5"><span className="text-xl font-bold text-[#1766A0]">{no}</span><h3 className="mt-3 font-semibold text-[#0B3158]">{title}</h3><p className="mt-3 text-sm leading-7 text-[#475569]">{desc}</p></article>)}</div>
-</div></section>
-<section className="luare-v6-section luare-v6-soft" id="faq"><div className="luare-v6-container"><div className="luare-v6-section-head"><p className="luare-v6-eyebrow">FAQ</p><h2>常见问题</h2></div>
-<div className="space-y-3">{faq.map(([q,a])=><details key={q} className="rounded-lg border border-[#CBD5E1] bg-white p-5"><summary className="cursor-pointer font-semibold text-[#0B3158]">{q}</summary><p className="mt-4 text-sm leading-8 text-[#475569]">{a}</p></details>)}</div>
-</div></section>
-<section className="luare-v6-final" id="contact"><div className="luare-v6-container"><p className="luare-v6-eyebrow luare-v6-eyebrow-light">CONTACT</p><h2>正在寻找熟悉国际业务的<br/>财务与会计合作伙伴？</h2><p>我们可以使用日语、英语和中文，协助梳理实际问题并讨论适合的服务方案。</p><Link href="/zh/contact" className="luare-v6-primary-cta luare-v6-final-cta">首次免费咨询 →</Link><small>日本語 / English / 中文</small></div></section>
+
+<section className="luare-v6-final" id="contact">
+<div className="luare-v6-container"><ScrollReveal>
+<p className="luare-v6-eyebrow luare-v6-eyebrow-light">CONTACT</p>
+<h2>正在寻找熟悉国际业务的<br/>会计与财务合作伙伴？</h2>
+<p>即使尚未明确需要委托哪些业务，也欢迎联系。我们将了解实际情况并协助整理可行的支持方式。</p>
+<Link href="/zh/contact" className="luare-v6-primary-cta luare-v6-final-cta">首次免费咨询 <span>→</span></Link>
+<small>日本語 / English / 中文</small>
+</ScrollReveal></div></section>
+<Link href="/zh/contact" className="luare-v6-mobile-cta">首次免费咨询</Link>
 </main><FooterZh/></>}
