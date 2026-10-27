@@ -6,7 +6,8 @@ const root="http://127.0.0.1:4173";
 const pages=[
  {path:"/",tag:"home-jp"},
  {path:"/services",tag:"services-jp"},
- {path:"/services/internal-control",tag:"internal-control-jp"},
+ {path:"/services/internal-control",tag:"advertising-lp-original"},
+ {path:"/services/internal-control/overview",tag:"internal-control-jp"},
  {path:"/cases",tag:"cases-jp"},
  {path:"/cases/case-jsox",tag:"case-jsox-jp"},
  {path:"/pricing",tag:"pricing-jp"},
