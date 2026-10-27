@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const support = [
-  {id: "listed", title: "内部統制・J-SOX構築", description: "対象業務のリスク、既存ルール、責任分担を整理し、企業規模と運用実態に応じた内部統制の構築を支援します。"},
+  {id: "internal", title: "内部統制・J-SOX構築", description: "対象業務のリスク、既存ルール、責任分担を整理し、企業規模と運用実態に応じた内部統制の構築を支援します。"},
   {id: "three-documents", title: "3点セット作成・更新", description: "業務担当者へのヒアリングを通じて、業務記述書・フローチャート・RCMを整備し、業務変更に合わせた更新まで対応します。"},
   {id: "evaluation", title: "整備・運用評価支援", description: "統制目的と実際の運用を照合し、必要な証憑や確認履歴を踏まえた評価・改善を支援します。"},
   {id: "internal-audit", title: "内部監査・統制高度化", description: "リスクに応じた確認範囲の整理から、内部監査実務の支援、改善状況のフォローまで対応します。"},
@@ -40,6 +40,7 @@ export default function InternalControlServicePage() {
           <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">SCOPE</p>
           <h2 className="mt-3 text-2xl font-semibold">主な支援内容</h2>
           <p className="mt-3 text-sm leading-7 text-[#475569]">各項目を開くと、詳しい説明をご覧いただけます。</p>
+          <span id="listed" className="block scroll-mt-28" aria-hidden="true" />
           <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
             {support.map(item => (
               <details id={item.id} key={item.id} className="group scroll-mt-28 rounded-lg border border-[#CBD5E1] bg-white open:bg-[#EDF5FC]">
