@@ -1,5 +1,5 @@
 /** 简体中文网站内容：以2026-10-27修订后的日文站点和用户提供的r5稿为依据。
- * 本数据仅用于未发布的测试分支；客户案例和报价仍需最终批准。
+ * 客户案例与价格内容已获网站刊载许可；本分支尚未获正式发布批准。
  */
 export type ZhService={slug:string;title:string;lead:string;items:{title:string;description:string}[]};
 export const zhServices:ZhService[]=[
