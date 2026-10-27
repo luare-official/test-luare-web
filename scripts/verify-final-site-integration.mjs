@@ -101,7 +101,7 @@ assert(adJsox.includes('href="/privacy"'),"Advertising LP missing privacy link")
 assert(adJsox.includes('action="https://formspree.io/f/mojppoor"'),"Advertising LP form destination changed");
 assert(existsSync("out/robots.txt")&&existsSync("out/sitemap.xml"),"SEO crawler files missing");
 const cases=pages.get("cases.html")||"";
-assert(cases.includes("noindex"),"Unreviewed cases are no longer noindex");
+assert(!cases.includes("noindex"),"Approved published cases should not remain noindex");
 if(errors.length){console.error("FAILED static QA: "+errors.length);for(const e of errors.slice(0,100))console.error(" - "+e);process.exitCode=1;}
 else{console.log("PASS: "+pages.size+" static pages, links/anchors/images, multilingual forms, privacy and noindex gates");
  console.log("NOTE: Remote HTTP status, responsive screenshots and real Formspree delivery need separate checks.");}
