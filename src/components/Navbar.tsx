@@ -48,8 +48,9 @@ export default function Navbar({
     if (baseRoute.startsWith("/en")) baseRoute = baseRoute.replace("/en", "");
     else if (baseRoute.startsWith("/zh")) baseRoute = baseRoute.replace("/zh", "");
     if (baseRoute === "") baseRoute = "/";
-    if (targetLang === "JP") return baseRoute;
+    if (targetLang === "JP") return baseRoute === "/services/internal-control" ? "/services/internal-control/overview" : baseRoute;
     if (targetLang === "ZH") {
+      if (baseRoute === "/services/internal-control/overview") return "/zh/services/internal-control";
       // Every Japanese core page has a corresponding updated Simplified Chinese route.
       const hasTranslation = baseRoute === "/" ||
         ["/services", "/cases", "/pricing", "/about", "/contact", "/insights"].some(
@@ -92,7 +93,7 @@ export default function Navbar({
   const serviceMenu = serviceCategories.map(({ number, title }) => ({
     number,
     label: title,
-    href: ({ "01": "/services/internal-control", "02": "/services/accounting-management", "03": "/services/finance-ops", "04": "/services/global-finance", "05": "/services/audit-assurance" } as Record<string,string>)[number] || "/services",
+    href: ({ "01": "/services/internal-control/overview", "02": "/services/accounting-management", "03": "/services/finance-ops", "04": "/services/global-finance", "05": "/services/audit-assurance" } as Record<string,string>)[number] || "/services",
   }));
 
   if (heroStyle) {
