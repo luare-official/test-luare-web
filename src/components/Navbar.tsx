@@ -49,10 +49,16 @@ export default function Navbar({
     else if (baseRoute.startsWith("/zh")) baseRoute = baseRoute.replace("/zh", "");
     if (baseRoute === "") baseRoute = "/";
     if (targetLang === "JP") return baseRoute;
-    // Only home, about, and contact currently have translated routes.
-    // Other locale switches go to the target-language home instead of a 404.
-    const localeHome = targetLang === "EN" ? "/en" : "/zh";
-    return baseRoute === "/about" || baseRoute === "/contact" ? localeHome + baseRoute : localeHome;
+    if (targetLang === "ZH") {
+      // Every Japanese core page has a corresponding updated Simplified Chinese route.
+      const hasTranslation = baseRoute === "/" ||
+        ["/services", "/cases", "/pricing", "/about", "/contact", "/insights"].some(
+          route => baseRoute === route || baseRoute.startsWith(route + "/")
+        );
+      return hasTranslation ? "/zh" + (baseRoute === "/" ? "" : baseRoute) : "/zh";
+    }
+    // English remains on the pre-existing home/about/contact route set.
+    return baseRoute === "/about" || baseRoute === "/contact" ? "/en" + baseRoute : "/en";
   };
 
   const prefix = currentLang === "JP" ? "" : currentLang === "EN" ? "/en" : "/zh";
@@ -68,11 +74,19 @@ export default function Navbar({
         ["/pricing", "料金"],
         ["/about", "代表プロフィール"],
       ]
-    : [
-        [prefix + "/#services", "Services"],
-        ["/insights", currentLang === "ZH" ? "ブログ（日本語）" : "Insights (JP)"],
-        [prefix + "/about", currentLang === "ZH" ? "关于我们" : "About"],
-      ];
+    : currentLang === "ZH"
+      ? [
+          ["/zh/services", "服务"],
+          ["/zh/cases", "支持案例"],
+          ["/zh/insights", "文章"],
+          ["/zh/pricing", "费用"],
+          ["/zh/about", "代表简介"],
+        ]
+      : [
+          ["/en/#services", "Services"],
+          ["/insights", "Insights (JP)"],
+          ["/en/about", "About"],
+        ];
 
   // Keep the four main categories consistent with the husband's r5 structure.
   const serviceMenu = serviceCategories.map(({ number, title }) => ({
@@ -153,15 +167,21 @@ export default function Navbar({
         </div>
         {isMenuOpen && (
           <nav className="luare-unicell-hero-mobile-menu" aria-label="モバイルメニュー">
-            <Link href="/" onClick={()=>setIsMenuOpen(false)}>ホーム</Link>
-            <Link href="/services" onClick={()=>setIsMenuOpen(false)}>サービス</Link>
-            {serviceMenu.map(({href,label,number})=>(
-              <Link key={href} href={href} onClick={()=>setIsMenuOpen(false)} className="luare-unicell-mobile-subnav">{number} {label}</Link>
-            ))}
-            <Link href="/cases" onClick={()=>setIsMenuOpen(false)}>支援事例</Link>
-            <Link href="/insights" onClick={()=>setIsMenuOpen(false)}>ブログ</Link>
-            <Link href="/pricing" onClick={()=>setIsMenuOpen(false)}>料金</Link>
-            <Link href={"/about"} onClick={()=>setIsMenuOpen(false)}>代表プロフィール</Link>
+            <Link href={currentLang === "ZH" ? "/zh" : "/"} onClick={()=>setIsMenuOpen(false)}>{currentLang === "ZH" ? "首页" : "ホーム"}</Link>
+            {currentLang === "ZH" ? (
+              navItems.map(([href,label]) => <Link key={href} href={href} onClick={()=>setIsMenuOpen(false)}>{label}</Link>)
+            ) : (
+              <>
+                <Link href="/services" onClick={()=>setIsMenuOpen(false)}>サービス</Link>
+                {serviceMenu.map(({href,label,number})=>(
+                  <Link key={href} href={href} onClick={()=>setIsMenuOpen(false)} className="luare-unicell-mobile-subnav">{number} {label}</Link>
+                ))}
+                <Link href="/cases" onClick={()=>setIsMenuOpen(false)}>支援事例</Link>
+                <Link href="/insights" onClick={()=>setIsMenuOpen(false)}>ブログ</Link>
+                <Link href="/pricing" onClick={()=>setIsMenuOpen(false)}>料金</Link>
+                <Link href="/about" onClick={()=>setIsMenuOpen(false)}>代表プロフィール</Link>
+              </>
+            )}
           </nav>
         )}
       </header>
@@ -197,11 +217,19 @@ export default function Navbar({
           ["/pricing", "料金"],
           ["/about", "代表プロフィール"],
         ]
-      : [
-          [prefix + "/#services", "Services"],
-          ["/insights", currentLang === "ZH" ? "ブログ（日本語）" : "Insights (JP)"],
-          [prefix + "/about", currentLang === "ZH" ? "代表简介 / 关于我们" : "About Us"],
-        ];
+      : currentLang === "ZH"
+        ? [
+            ["/zh/services", "服务"],
+            ["/zh/cases", "支持案例"],
+            ["/zh/insights", "文章"],
+            ["/zh/pricing", "费用"],
+            ["/zh/about", "代表简介"],
+          ]
+        : [
+            ["/en/#services", "Services"],
+            ["/insights", "Insights (JP)"],
+            ["/en/about", "About Us"],
+          ];
 
   return (
     <header className={"fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 " + headerBg}>
@@ -217,7 +245,7 @@ export default function Navbar({
 
         <div className="hidden items-center gap-3 xl:flex xl:gap-6">
           <nav className="flex items-center gap-3 xl:gap-5">
-            {currentLang === "JP" && <Link href="/" className={"luare-nav-link " + linkColor}>ホーム</Link>}
+            {currentLang !== "EN" && <Link href={currentLang === "ZH" ? "/zh" : "/"} className={"luare-nav-link " + linkColor}>{currentLang === "ZH" ? "首页" : "ホーム"}</Link>}
             {currentLang === "JP" && (
               <div className={"luare-service-menu luare-service-menu-standard " + (isServiceOpen ? "is-open" : "")}>
                 <button
