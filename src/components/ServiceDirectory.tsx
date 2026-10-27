@@ -3,7 +3,7 @@ import { serviceCategories } from "@/lib/serviceCatalog";
 
 // The five directory cards navigate to standalone service detail pages.
 const serviceRoutes: Record<string,string> = {
-  "01": "/services/internal-control",
+  "01": "/services/internal-control/overview",
   "02": "/services/accounting-management",
   "03": "/services/finance-ops",
   "04": "/services/global-finance",
