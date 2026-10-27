@@ -285,7 +285,7 @@ export default function HomeSections() {
                   <div>
                     <h3>{item.title}</h3>
                     <p><strong>支援</strong><br />{item.support}</p>
-                    <Link href={`/cases#/case/${item.id}`} className="mt-4 inline-block border-b border-current pb-1 text-sm font-semibold text-[#0B3158] hover:opacity-70">事例の詳細を見る ↗</Link>
+                    <Link href={"/cases/" + (item.id === "accounting-operations" ? "case-close" : item.id === "global-internal-control" ? "case-music" : item.id === "overseas-jsox" ? "case-jsox" : item.id)} className="mt-4 inline-block border-b border-current pb-1 text-sm font-semibold text-[#0B3158] hover:opacity-70">事例の詳細を見る ↗</Link>
                   </div>
                   <div>
                     <p><strong>課題</strong><br />{item.issue}</p>
