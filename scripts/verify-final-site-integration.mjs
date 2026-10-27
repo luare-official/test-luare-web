@@ -55,6 +55,21 @@ for(const [page,html] of pages){
 const home=pages.get("index.html")||"";
 assert(!home.includes("Professional 01"),"Unapproved expert mockup published");
 assert(home.includes("luare-hero-consulting-male-20261025.webp"),"Approved male photo disappeared");
+// Guard against unsolicited representative-page and service-card redesigns.
+const jpAboutSource=readFileSync("src/app/about/page.tsx","utf8");
+const zhAboutSource=readFileSync("src/app/zh/about/page.tsx","utf8");
+for(const [locale,profile] of [["ja",jpAboutSource],["zh",zhAboutSource]]){
+ assert(profile.includes("luare-v6-rep-grid")&&profile.includes("luare-v6-rep-photo"),locale+" representative must reuse original homepage photo-and-text layout");
+ assert(profile.includes("luare-v6-rep-name")&&profile.includes("luare-v6-qual"),locale+" representative credentials/name must sit beside portrait");
+ assert(profile.includes("luare-v6-bio"),locale+" original biography paragraph was removed");
+ assert(!profile.includes("CAREER TIMELINE")&&!profile.includes("space-y-10"),locale+" unsolicited career timeline returned");
+ assert(!profile.includes("bg-gradient-to-t")&&!profile.includes("Bottom gradient overlay"),locale+" photo name-overlay returned");
+ assert(!profile.includes("Role badge below photo"),locale+" role badge below portrait returned");
+ assert(!profile.includes("luare-v6-philosophy"),locale+" explicitly removed philosophy returned");
+}
+const directorySource=readFileSync("src/components/ServiceDirectory.tsx","utf8");
+assert(directorySource.includes("min-h-[58px]")&&!directorySource.includes("min-h-[126px]"),"Existing compact service-card styling was altered");
+assert(directorySource.includes("serviceRoutes[number]"),"Service cards no longer open requested detail pages");
 const nav=readFileSync("src/components/Navbar.tsx","utf8");
 assert(!nav.includes("/for-audit-firms"),"Protected audit-partner nav became visible");
 assert(!nav.includes("--font-inter"),"Legacy font variable still in navbar");
