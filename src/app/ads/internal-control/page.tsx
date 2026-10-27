@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import JsoxLandingPage from "@/components/JsoxLandingPage";
-import RelatedCaseLinks from "@/components/RelatedCaseLinks";
 
 // Preserved 2026-10-27 advertising LP. The standard service page is separate.
 // Do not change or remove without an explicit advertising-LP decision.
@@ -12,5 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default function InternalControlAdLandingPage() {
-  return <><JsoxLandingPage /><RelatedCaseLinks topic="internal" /></>;
+  return <JsoxLandingPage />;
 }
