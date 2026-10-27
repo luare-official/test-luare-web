@@ -24,11 +24,21 @@ function Diagram({id}:{id:string}){
  const fpa=id==="case-fpa";
  return <div className="rounded-lg border border-[#CBD5E1] bg-white p-4 sm:p-7">
    <div className="bg-[#0B3158] px-5 py-4 text-white"><p className="text-[11px] font-bold tracking-widest text-white/70">{d.status}</p><p className="mt-1 text-base font-semibold leading-7">{d.challenge}</p></div>
-   <div className="my-5 grid items-center gap-3 text-center md:grid-cols-[1fr_70px_1fr]">
-    <div className="border border-[#CBD5E1] bg-[#F8FAFC] px-4 py-6"><strong>{d.left}</strong><p className="mt-2 text-xs leading-6 text-[#475569]">{d.leftDesc}</p></div>
-    <div className="text-center text-lg font-bold text-[#1766A0]">{fpa?"→":"⇄"}<p className="text-[10px]">{fpa?"データ・KPI":"LUARE"}</p></div>
-    <div className="border border-[#CBD5E1] bg-[#F8FAFC] px-4 py-6"><strong>{d.right}</strong><p className="mt-2 text-xs leading-6 text-[#475569]">{d.rightDesc}</p></div>
-   </div>
+   {fpa ? (
+    <div className="my-5 grid items-center gap-2 text-center md:grid-cols-[1fr_35px_1fr_35px_1fr]">
+     <div className="border border-[#CBD5E1] bg-[#F8FAFC] px-3 py-6"><strong>{d.left}</strong><p className="mt-2 text-xs leading-6 text-[#475569]">{d.leftDesc}</p></div>
+     <span className="text-2xl font-semibold text-[#1766A0]">→</span>
+     <div className="border border-[#CBD5E1] bg-[#F8FAFC] px-3 py-6"><strong>データ・KPI</strong><p className="mt-2 text-xs leading-6 text-[#475569]">定義統一・精度向上</p></div>
+     <span className="text-2xl font-semibold text-[#1766A0]">→</span>
+     <div className="border border-[#CBD5E1] bg-[#F8FAFC] px-3 py-6"><strong>{d.right}</strong><p className="mt-2 text-xs leading-6 text-[#475569]">{d.rightDesc}</p></div>
+    </div>
+   ) : (
+    <div className="my-5 grid items-center gap-3 text-center md:grid-cols-[1fr_70px_1fr]">
+     <div className="border border-[#CBD5E1] bg-[#F8FAFC] px-4 py-6"><strong>{d.left}</strong><p className="mt-2 text-xs leading-6 text-[#475569]">{d.leftDesc}</p></div>
+     <div className="text-center text-lg font-bold text-[#1766A0]">⇄<p className="text-[10px]">LUARE</p></div>
+     <div className="border border-[#CBD5E1] bg-[#F8FAFC] px-4 py-6"><strong>{d.right}</strong><p className="mt-2 text-xs leading-6 text-[#475569]">{d.rightDesc}</p></div>
+    </div>
+   )}
    <div className="flex flex-wrap items-center gap-2 bg-[#EDF5FC] px-4 py-4"><strong className="mr-3 text-xs">LUARE の支援</strong>{d.support.map(x=><span key={x} className="border border-[#CBD5E1] bg-white px-3 py-2 text-xs leading-5">{x}</span>)}</div>
    <div className="mt-4 bg-[#DFEFF9] px-5 py-4"><span className="text-xs font-bold text-[#1766A0]">TO BE</span><p className="mt-1 font-semibold leading-7">{d.result}</p></div>
  </div>;
