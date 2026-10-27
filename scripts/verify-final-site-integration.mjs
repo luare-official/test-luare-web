@@ -13,7 +13,7 @@ const findPage=path=>{
  if(pages.has(file))return file;
  return pages.has(stem+"/index.html")?stem+"/index.html":null;
 };
-const required=["/","/services","/services/internal-control","/services/audit-assurance","/bpo","/about","/cases","/insights","/contact","/privacy","/en","/zh","/en/about","/zh/about","/en/contact","/zh/contact","/pricing","/for-audit-firms"];
+const required=["/","/services","/services/internal-control","/services/internal-control/overview","/services/audit-assurance","/bpo","/about","/cases","/insights","/contact","/privacy","/en","/zh","/en/about","/zh/about","/en/contact","/zh/contact","/pricing","/for-audit-firms"];
 for(const path of required)assert(!!findPage(path),"Missing exported route "+path);
 const checked=new Set();
 for(const [page,html] of pages){
@@ -92,9 +92,12 @@ for(const lang of ["","en/","zh/"]){
  assert(html.includes('href="/privacy"'),page+" missing privacy link");
  assert(html.includes('action="https://formspree.io/f/mojppoor"'),page+" Formspree action changed");
 }
-const jsox=pages.get("services/internal-control.html")||"";
-assert(jsox.includes('href="/privacy"'),"Standard J-SOX service page missing privacy link");
-assert(jsox.includes('href="/contact"'),"Standard J-SOX service consultation link changed");
+const jsox=pages.get("services/internal-control/overview.html")||"";
+assert(jsox.includes('href="/privacy"'),"J-SOX r5 overview missing privacy link");
+assert(jsox.includes('href="/contact"'),"J-SOX r5 overview consultation link changed");
+const originalJsox=pages.get("services/internal-control.html")||"";
+assert(originalJsox.includes('action="https://formspree.io/f/mojppoor"'),"Original advertised J-SOX landing form no longer exists");
+assert(originalJsox.includes('href="/privacy"'),"Original advertised J-SOX landing privacy link missing");
 const adJsox=pages.get("ads/internal-control.html")||"";
 assert(!!adJsox,"Archived advertising LP is missing");
 assert(adJsox.includes('href="/privacy"'),"Advertising LP missing privacy link");
