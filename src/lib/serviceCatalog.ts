@@ -31,7 +31,7 @@ const topics: readonly [string,string,string,string][] = [
   ["evaluation","整備・運用評価支援","統制目的と実際の運用を照合し、必要な証憑や確認履歴を踏まえた評価・改善を支援します。","internal-control"],
   ["internal-audit","内部監査・統制高度化","リスクに応じた確認範囲の整理から、内部監査実務の支援、改善状況のフォローまで対応します。","internal-control"],
   ["training","内部統制研修","役割別の研修を通じて、統制の目的・必要な作業・証拠の残し方を実務担当者と共有します。","internal-control"],
-  ["accounting-advisory","会計アドバイザリー・監査対応支援","会計上の論点整理、監査法人向け資料準備、照会対応に必要な根拠整理を支援します。","accounting-management"],
+  ["accounting-advisory","会計アドバイザリー・監査対応支援","会計上の論点整理、監査法人向け資料準備、照会対応に必要な根拠整理を支援します。","audit-assurance"],
   ["group-audit","Group Audit・海外監査人対応","海外Group Auditorとの照会や提出資料の準備、日本法人と監査人との調整を支援します。","audit-assurance"],
   ["statutory-audit","法定監査（会社法監査等）","法定監査が必要な企業に対し、提携監査法人と連携して適切な監査体制をご案内します。監査証明は監査法人が実施します。","contact"],
   ["voluntary-audit","任意監査","任意監査の目的や対象範囲を伺い、提携監査法人と連携して監査体制をご案内します。","contact"],
@@ -51,10 +51,10 @@ const topics: readonly [string,string,string,string][] = [
   ["finance-setup","Finance Setup・経理体制構築","勘定科目、会計システム要件、決算・承認フローを整備し、経理業務の立上げを支援します。","global-finance"],
   ["hq-reporting","海外子会社管理・本社報告","グループ報告の要件と現地データを照合し、月次報告や経営管理に必要な情報を整理します。","global-finance"],
   ["coordination","日英中での業務・プロジェクト調整","言語や商習慣の違いを踏まえ、本社・現地・専門家間の認識をそろえ、実務の実行を支援します。","global-finance"],
-  ["outsourcing","経理・財務実務支援／アウトソーシング","経理担当者の不足や業務集中に対応し、運用条件と責任分担を明確にしたうえで実務を支援します。","accounting-management"],
+  ["outsourcing","経理・財務実務支援／アウトソーシング","経理担当者の不足や業務集中に対応し、運用条件と責任分担を明確にしたうえで実務を支援します。","bpo"],
   ["ai","AIを活用した経理業務効率化","データ機密性や確認手順を考慮し、適切な作業にAI・自動化ツールを組み合わせます。","finance-ops"],
   ["operating-model","業務ルール・運用体制の整備","承認・照合・引継ぎの方法を明確にし、改善後の業務が継続できる管理体制づくりを支援します。","finance-ops"],
-  ["reporting","記帳・決算・レポーティング代行","日本法人の月次決算から海外本社向け報告資料の作成まで、日常業務と報告を一体で支援します。","global-finance"],
+  ["reporting","記帳・決算・レポーティング代行","日本法人の月次決算から海外本社向け報告資料の作成まで、日常業務と報告を一体で支援します。","bpo"],
 ];
 
 function route(page:string,id:string):string {
