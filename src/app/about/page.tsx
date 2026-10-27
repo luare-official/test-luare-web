@@ -143,61 +143,6 @@ export default function AboutPage() {
                     </div>
                   </div>
                 </div>
-
-                {/* ── Divider ── */}
-                <div className="w-full h-px bg-slate-100 mb-12" />
-
-                {/* ── Biography ── */}
-                <div className="mb-12">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div
-                      className="w-6 h-[1.5px] shrink-0"
-                      style={{ backgroundColor:"#1766A0" }}
-                    />
-                    <h3 className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
-                      Biography
-                    </h3>
-                  </div>
-                  <p className="text-sm sm:text-[15px] text-brand-slate leading-[1.9] tracking-wide">
-                    オーストラリアにて経営学士号を取得後、日系上場専門商社および米国系製造大手の日本法人にてグローバル経理実務を経験。その後、KPMGあずさ監査法人にて会計アドバイザリー業務に従事し、数々の多国籍企業の内部統制・財務基盤構築を支援。
-                  </p>
-                  <p className="text-sm sm:text-[15px] text-brand-slate leading-[1.9] tracking-wide mt-4">
-                    さらに、三菱UFJモルガン・スタンレー証券の投資銀行部門、米国系ベンチャー会計事務所を経て独立、Luare
-                    Consultingを設立。
-                  </p>
-                </div>
-
-                {/* ── Divider ── */}
-                <div className="w-full h-px bg-slate-100 mb-12" />
-
-                {/* ── Philosophy ── */}
-                <div>
-                  <div className="flex items-center gap-3 mb-6">
-                    <div
-                      className="w-6 h-[1.5px] shrink-0"
-                      style={{ backgroundColor:"#1766A0" }}
-                    />
-                    <h3 className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
-                      Philosophy
-                    </h3>
-                  </div>
-
-                  <blockquote
-                    className="border-l-[3px] pl-6 mb-5"
-                    style={{ borderColor:"#1766A0" }}
-                  >
-                    <p className="font-serif text-lg sm:text-xl font-medium text-brand-charcoal leading-relaxed tracking-wide">
-                      「見えない経理リスク」から、
-                      <br />
-                      経営者を解放するパートナーへ。
-                    </p>
-                  </blockquote>
-
-                  <p className="text-sm sm:text-[15px] text-brand-slate leading-[1.9] tracking-wide">
-                    採用難や退職による体制崩壊リスクなど、経理部門が抱える慢性的な課題。私たちは、グローバル基準のプロの伴走とテクノロジーの力でこれらの不安を根本から取り除き、経営の意思決定を加速させるクリアな財務オペレーションを構築します。
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </section>
