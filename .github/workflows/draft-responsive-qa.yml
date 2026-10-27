@@ -25,7 +25,7 @@ jobs:
           npx playwright install --with-deps chromium
       - name: Start local-only preview
         run: |
-          python3 -m http.server 4173 --directory out --bind 127.0.0.1 > /tmp/luare-preview-http.log 2>&1 &
+          python3 scripts/serve-static-preview.py > /tmp/luare-preview-http.log 2>&1 &
           sleep 2
       - name: Responsive page and image QA
         run: node scripts/verify-preview-responsive.mjs
