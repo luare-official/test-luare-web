@@ -62,6 +62,13 @@ export default function PricingPage() {
           </div>
         </section>
 
+        <section className="mx-auto max-w-[1080px] px-5 pt-12 sm:px-10 sm:pt-16" aria-label="基本料金">
+          <div className="rounded-xl border border-[#CBD5E1] bg-[#EDF5FC] px-7 py-9 sm:px-11">
+            <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">HOURLY RATE / 基本料金の目安</p>
+            <p className="mt-4 text-[clamp(33px,5vw,52px)] font-semibold leading-tight text-[#0B3158]">12,000円〜<span className="ml-2 text-base font-medium">／時間</span></p>
+            <p className="mt-3 text-[13px] leading-7 text-[#475569]">税別。業務内容、担当範囲、必要工数に応じて個別にお見積りします。</p>
+          </div>
+        </section>
         <section className="mx-auto max-w-[1080px] px-5 py-14 sm:px-10 sm:py-20">
           <div className="mb-9">
             <h2 className="text-2xl font-semibold text-[#0B3158]">支援内容別の参考試算</h2>
