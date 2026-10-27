@@ -58,7 +58,8 @@ assert(home.includes("luare-hero-consulting-male-20261025.webp"),"Approved male 
 // Guard representative layout and the explicitly approved expanded service-card design.
 const jpAboutSource=readFileSync("src/app/about/page.tsx","utf8");
 const zhAboutSource=readFileSync("src/app/zh/about/page.tsx","utf8");
-for(const [locale,profile] of [["ja",jpAboutSource],["zh",zhAboutSource]]){
+const enAboutSource=readFileSync("src/app/en/about/page.tsx","utf8");
+for(const [locale,profile] of [["ja",jpAboutSource],["zh",zhAboutSource],["en",enAboutSource]]){
  assert(profile.includes("luare-v6-rep-grid")&&profile.includes("luare-v6-rep-photo"),locale+" representative must reuse original homepage photo-and-text layout");
  assert(profile.includes("luare-v6-rep-name")&&profile.includes("luare-v6-qual"),locale+" representative credentials/name must sit beside portrait");
  assert(profile.includes("luare-v6-bio"),locale+" original biography paragraph was removed");
@@ -70,6 +71,7 @@ for(const [locale,profile] of [["ja",jpAboutSource],["zh",zhAboutSource]]){
 const directorySource=readFileSync("src/components/ServiceDirectory.tsx","utf8");
 assert(directorySource.includes("min-h-[126px]")&&directorySource.includes("serviceRoutes[number]"),"User-approved large five-card service directory was altered");
 assert(directorySource.includes("serviceRoutes[number]"),"Service cards no longer open requested detail pages");
+assert(directorySource.includes("id={`category-${number}`}"),"Historical /services#category-xx deep links were removed");
 const nav=readFileSync("src/components/Navbar.tsx","utf8");
 assert(!nav.includes("/for-audit-firms"),"Protected audit-partner nav became visible");
 assert(!nav.includes("--font-inter"),"Legacy font variable still in navbar");
@@ -98,6 +100,7 @@ assert(jsox.includes('href="/contact"'),"J-SOX r5 overview consultation link cha
 const originalJsox=pages.get("services/internal-control.html")||"";
 assert(originalJsox.includes('action="https://formspree.io/f/mojppoor"'),"Original advertised J-SOX landing form no longer exists");
 assert(originalJsox.includes('href="/privacy"'),"Original advertised J-SOX landing privacy link missing");
+assert(nav.includes('"01": "/services/internal-control/overview"'),"Service navigation no longer points to separate r5 overview");
 const adJsox=pages.get("ads/internal-control.html")||"";
 assert(!!adJsox,"Archived advertising LP is missing");
 assert(adJsox.includes('href="/privacy"'),"Advertising LP missing privacy link");
@@ -108,6 +111,7 @@ const zhHomeDesign=["luare-who-band","luare-services-photo","InteractiveServiceG
 for(const cls of zhHomeDesign)assert(zhHomeSource.includes(cls),"Chinese homepage diverged from approved Japanese design: "+cls);
 const gallerySource=readFileSync("src/app/cases/page.tsx","utf8");
 const cDesign=readFileSync("src/components/cases/CaseGallery.tsx","utf8");
+assert(cDesign.includes("accounting-operations")&&cDesign.includes("global-internal-control")&&cDesign.includes("overseas-jsox"),"Legacy case deep-link aliases are missing");
 assert(gallerySource.includes("CaseGallery cases={approvedCases}")&&cDesign.includes("className={styles.filter}"),
  "Previously approved B-team C case-card and filtering design must be preserved");
 assert(!home.includes("掲載内容は確認用の仮原稿です"),"Case homepage notice incorrectly claims approval pending");
