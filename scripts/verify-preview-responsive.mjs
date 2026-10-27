@@ -37,6 +37,24 @@ for(const profile of profiles){
   }));
   if(metrics.doc>metrics.view+3||metrics.body>metrics.view+3)record(profile.label+" "+p.path+" horizontal overflow "+JSON.stringify(metrics));
   if(metrics.images.length)record(profile.label+" "+p.path+" broken images "+metrics.images.join(" "));
+  // Full-page screenshots do NOT simulate scrolling. Trigger each existing
+  // ScrollReveal with real scroll positions before taking the design-review image,
+  // otherwise lower sections look blank despite working on a normal visit.
+  await page.evaluate(async()=>{
+   const nodes=[...document.querySelectorAll(".luare-reveal")];
+   for(const node of nodes){
+    node.scrollIntoView({block:"center",behavior:"instant"});
+    await new Promise(resolve=>setTimeout(resolve,55));
+   }
+   window.scrollTo({top:0,behavior:"instant"});
+  });
+  await page.waitForTimeout(180);
+  const hiddenReveals=await page.evaluate(()=>
+   [...document.querySelectorAll(".luare-reveal:not(.is-visible)")]
+     .filter(node=>getComputedStyle(node).display!=="none")
+     .length
+  );
+  if(hiddenReveals)record(profile.label+" "+p.path+" hidden ScrollReveal sections after scroll: "+hiddenReveals);
   const filename="qa-artifacts/draft-r5/"+p.tag+"-"+profile.label+".png";
   await page.screenshot({path:filename,fullPage:true,animations:"disabled"});
   console.log("CAPTURE",filename,"docWidth",metrics.doc,"viewport",metrics.view);
