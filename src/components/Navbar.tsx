@@ -170,8 +170,12 @@ export default function Navbar({
             ))}
           </div>
 
-          <button type="button" className="luare-unicell-hero-menu-toggle" aria-expanded={isMenuOpen} aria-label="メニューを開く" onClick={()=>setIsMenuOpen(open=>!open)}>
-            {isMenuOpen?"閉じる ×":"メニュー ☰"}
+          <button type="button" className="luare-unicell-hero-menu-toggle" aria-expanded={isMenuOpen}
+            aria-label={currentLang === "EN" ? "Open menu" : currentLang === "ZH" ? "打开菜单" : "メニューを開く"}
+            onClick={()=>setIsMenuOpen(open=>!open)}>
+            {isMenuOpen
+              ? currentLang === "EN" ? "Close ×" : currentLang === "ZH" ? "关闭 ×" : "閉じる ×"
+              : currentLang === "EN" ? "Menu ☰" : currentLang === "ZH" ? "菜单 ☰" : "メニュー ☰"}
           </button>
           <Link href={contactLink} className="luare-unicell-contact">{contactText}</Link>
         </div>
