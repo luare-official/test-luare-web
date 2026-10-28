@@ -17,6 +17,11 @@ const pages=[
  {path:"/zh/cases",tag:"cases-zh"},
  {path:"/zh/pricing",tag:"pricing-zh"},
  {path:"/zh/about",tag:"profile-zh"},
+ {path:"/en",tag:"home-en"},
+ {path:"/en/services",tag:"services-en"},
+ {path:"/en/cases",tag:"cases-en"},
+ {path:"/en/pricing",tag:"pricing-en"},
+ {path:"/en/insights",tag:"insights-en"},
  {path:"/en/about",tag:"profile-en"},
  {path:"/ads/internal-control",tag:"advertising-lp"}
 ];
@@ -37,6 +42,15 @@ for(const profile of profiles){
   }));
   if(metrics.doc>metrics.view+3||metrics.body>metrics.view+3)record(profile.label+" "+p.path+" horizontal overflow "+JSON.stringify(metrics));
   if(metrics.images.length)record(profile.label+" "+p.path+" broken images "+metrics.images.join(" "));
+  if(p.tag==="home-en"){
+   const current=await page.evaluate(()=>({
+    hero:!!document.querySelector(".luare-unicell-talk-photo img"),
+    sections:["who-we-help","services","why-luare","case-studies","flow","faq"].every(id=>!!document.getElementById(id)),
+    oldText:document.body.textContent?.includes("Zero Local Hiring Risk")||false
+   }));
+   if(!current.hero||!current.sections||current.oldText)record(profile.label+" /en stale homepage structure "+JSON.stringify(current));
+  }
+
   // Full-page screenshots do NOT simulate scrolling. Trigger each existing
   // ScrollReveal with real scroll positions before taking the design-review image,
   // otherwise lower sections look blank despite working on a normal visit.
