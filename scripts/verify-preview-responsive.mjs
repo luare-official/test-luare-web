@@ -8,6 +8,8 @@ const pages=[
  {path:"/services",tag:"services-jp"},
  {path:"/services/internal-control",tag:"advertising-lp-original"},
  {path:"/services/internal-control/overview",tag:"internal-control-jp"},
+ {path:"/services/audit-assurance",tag:"audit-approved-jp"},
+
  {path:"/cases",tag:"cases-jp"},
  {path:"/cases/case-jsox",tag:"case-jsox-jp"},
  {path:"/pricing",tag:"pricing-jp"},
