@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
  * APPROVED 2026-10-28: main-content text and order follow the user's HTML preview:
  * Luare_監査ページ_統一デザイン_プレビュー.html.
  * Production Navbar/Footer replace the prototype's stand-in navigation only.
- * No "監査サービスの特長" section.
+ * Do not restore the removed benefits section.
  */
 export const metadata: Metadata = {
   title: "監査・保証業務 | Luare Consulting",
