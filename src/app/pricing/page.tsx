@@ -15,7 +15,7 @@ const yen=(value:number)=>value.toLocaleString("ja-JP")+"円";
 const links:Record<string,string>={
  "quote-fpa":"/services/accounting-management#fpa",
  "quote-close":"/services/accounting-management#closing",
- "quote-jsox":"/services/internal-control/overview#three-documents"
+ "quote-jsox":"/services/internal-control/overview"
 };
 export default function PricingPage(){
 return <><Navbar solid/>
