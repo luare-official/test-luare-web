@@ -223,9 +223,7 @@ export default function HomeSections() {
             <ul className="luare-who-band-list">
               {whoWeHelp.map(([, title]) => (
                 <li key={title}>
-                  {title === "英語で本社とのやり取りが必要な企業"
-                    ? "英語・中国語で本社とのやり取りが必要な企業"
-                    : title}
+                  {title}
                 </li>
               ))}
             </ul>
