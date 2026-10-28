@@ -55,6 +55,12 @@ for(const [page,html] of pages){
 const home=pages.get("index.html")||"";
 assert(!home.includes("Professional 01"),"Unapproved expert mockup published");
 assert(home.includes("luare-hero-consulting-male-20261025.webp"),"Approved male photo disappeared");
+for(const [locale,page] of [["ja","index.html"],["zh","zh.html"],["en","en.html"]]){
+ const html=pages.get(page)||"";
+ assert(!html.includes('class="luare-unicell-side-caption"')&&!html.includes('class="luare-unicell-scroll"'),locale+" homepage retained decorative caption or scroll label");
+}
+const heroCss=readFileSync("src/app/globals.css","utf8");
+assert(heroCss.includes("min-height:clamp(620px,70svh,740px)")&&heroCss.includes("min-height:clamp(600px,75svh,740px)"),"Compact desktop/mobile hero stage sizing was lost");
 // Guard representative layout and the explicitly approved expanded service-card design.
 const jpAboutSource=readFileSync("src/app/about/page.tsx","utf8");
 const zhAboutSource=readFileSync("src/app/zh/about/page.tsx","utf8");
