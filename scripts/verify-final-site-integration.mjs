@@ -110,10 +110,19 @@ const zhHomeSource=readFileSync("src/app/zh/page.tsx","utf8");
 const zhHomeDesign=["luare-who-band","luare-services-photo","InteractiveServiceGalleryZh","luare-v6-why-row","luare-v6-cases","luare-v6-steps","luare-v6-faq"];
 for(const cls of zhHomeDesign)assert(zhHomeSource.includes(cls),"Chinese homepage diverged from approved Japanese design: "+cls);
 const gallerySource=readFileSync("src/app/cases/page.tsx","utf8");
-const cDesign=readFileSync("src/components/cases/CaseGallery.tsx","utf8");
-assert(cDesign.includes("accounting-operations")&&cDesign.includes("global-internal-control")&&cDesign.includes("overseas-jsox"),"Legacy case deep-link aliases are missing");
-assert(gallerySource.includes("CaseGallery cases={approvedCases}")&&cDesign.includes("className={styles.filter}"),
- "Previously approved B-team C case-card and filtering design must be preserved");
+const r5Style=readFileSync("src/components/cases/R5CaseLayout.module.css","utf8");
+const legacy=readFileSync("src/components/cases/LegacyCaseHashRedirect.tsx","utf8");
+assert(gallerySource.includes("r5Cases.filter")&&gallerySource.includes("styles.grid3")&&gallerySource.includes("styles.grid2"),"Husband r5 original case-list cards / separate FP&A model have changed");
+assert(gallerySource.includes("CASE STUDIES")&&gallerySource.includes("SERVICE MODEL"),"Original r5 case labels are missing");
+assert(r5Style.includes(".card .industry")&&r5Style.includes(".card .impact"),"Original r5 card styling missing");
+assert(legacy.includes("accounting-operations")&&legacy.includes("global-internal-control")&&legacy.includes("overseas-jsox"),"Legacy case deep-link aliases missing");
+for(const path of ["about.html","en/about.html","zh/about.html"]){
+ const html=pages.get(path)||"";
+ assert(!html.includes("US.CPA"),"Deprecated dotted USCPA is still displayed on "+path);
+ assert(html.includes("USCPA"),"Correct USCPA designation missing on "+path);
+}
+const mobileHeroCss=readFileSync("src/app/globals.css","utf8");
+assert(mobileHeroCss.includes("object-position:82% 48%"),"Mobile hero crop lost the right-side interlocutor");
 assert(!home.includes("掲載内容は確認用の仮原稿です"),"Case homepage notice incorrectly claims approval pending");
 const cases=pages.get("cases.html")||"";
 assert(!cases.includes("noindex"),"Approved published cases should not remain noindex");
