@@ -26,11 +26,11 @@ for (const file of files) {
   const html = readFileSync(file, "utf8");
   const opening = html.match(/<html\b[^>]*>/i)?.[0];
   if (!opening) throw new Error("No HTML opening tag in " + rel);
-  if (!/\blang=["']ja["']/i.test(opening) && !new RegExp('\\blang=["\\']' + lang + '["\\']', 'i').test(opening)) {
+  if (!/\blang=["\x27]ja["\x27]/i.test(opening) && !opening.includes(\x27lang="\x27 + lang + \x27"\x27)) {
     throw new Error("Unexpected lang attribute in " + rel + ": " + opening);
   }
   const fixed = html.replace(/(<html\b[^>]*\blang=)["']ja["']/i, '$1"' + lang + '"');
-  if (!new RegExp('<html\\b[^>]*\\blang=["\\']' + lang + '["\\']', 'i').test(fixed)) {
+  if (!fixed.includes(\x27lang="\x27 + lang + \x27"\x27)) {
     throw new Error("Language export check failed: " + rel);
   }
   if (fixed !== html) writeFileSync(file, fixed);
