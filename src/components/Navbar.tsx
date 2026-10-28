@@ -59,7 +59,9 @@ export default function Navbar({
       return hasTranslation ? "/zh" + (baseRoute === "/" ? "" : baseRoute) : "/zh";
     }
     // English remains on the pre-existing home/about/contact route set.
-    return baseRoute === "/about" || baseRoute === "/contact" ? "/en" + baseRoute : "/en";
+    const hasEnglish = baseRoute === "/" || ["/services", "/cases", "/pricing", "/about", "/contact", "/insights"].some(route => baseRoute === route || baseRoute.startsWith(route + "/"));
+    const englishRoute = baseRoute === "/services/internal-control/overview" ? "/services/internal-control" : baseRoute;
+    return hasEnglish ? "/en" + (englishRoute === "/" ? "" : englishRoute) : "/en";
   };
 
   const prefix = currentLang === "JP" ? "" : currentLang === "EN" ? "/en" : "/zh";
@@ -84,8 +86,10 @@ export default function Navbar({
           ["/zh/about", "代表简介"],
         ]
       : [
-          ["/en/#services", "Services"],
-          ["/insights", "Insights (JP)"],
+          ["/en/services", "Services"],
+          ["/en/cases", "Case studies"],
+          ["/en/insights", "Insights"],
+          ["/en/pricing", "Pricing"],
           ["/en/about", "About"],
         ];
 
@@ -168,8 +172,8 @@ export default function Navbar({
         </div>
         {isMenuOpen && (
           <nav className="luare-unicell-hero-mobile-menu" aria-label="モバイルメニュー">
-            <Link href={currentLang === "ZH" ? "/zh" : "/"} onClick={()=>setIsMenuOpen(false)}>{currentLang === "ZH" ? "首页" : "ホーム"}</Link>
-            {currentLang === "ZH" ? (
+            <Link href={prefix || "/"} onClick={()=>setIsMenuOpen(false)}>{currentLang === "ZH" ? "首页" : currentLang === "EN" ? "Home" : "ホーム"}</Link>
+            {currentLang === "ZH" || currentLang === "EN" ? (
               navItems.map(([href,label]) => <Link key={href} href={href} onClick={()=>setIsMenuOpen(false)}>{label}</Link>)
             ) : (
               <>
@@ -227,9 +231,11 @@ export default function Navbar({
             ["/zh/about", "代表简介"],
           ]
         : [
-            ["/en/#services", "Services"],
-            ["/insights", "Insights (JP)"],
-            ["/en/about", "About Us"],
+            ["/en/services", "Services"],
+            ["/en/cases", "Case studies"],
+            ["/en/insights", "Insights"],
+            ["/en/pricing", "Pricing"],
+            ["/en/about", "About"],
           ];
 
   return (
@@ -246,7 +252,7 @@ export default function Navbar({
 
         <div className="hidden items-center gap-3 xl:flex xl:gap-6">
           <nav className="flex items-center gap-3 xl:gap-5">
-            {currentLang !== "EN" && <Link href={currentLang === "ZH" ? "/zh" : "/"} className={"luare-nav-link " + linkColor}>{currentLang === "ZH" ? "首页" : "ホーム"}</Link>}
+            {<Link href={prefix || "/"} className={"luare-nav-link " + linkColor}>{currentLang === "ZH" ? "首页" : currentLang === "EN" ? "Home" : "ホーム"}</Link>}
             {currentLang === "JP" && (
               <div className={"luare-service-menu luare-service-menu-standard " + (isServiceOpen ? "is-open" : "")}>
                 <button
