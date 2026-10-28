@@ -2914,3 +2914,8 @@ body {background-color:var(--background);color:var(--foreground);font-family:var
  .luare-en-hero-copy {top:44%;left:5%;width:92%;}
  .luare-en-hero-copy h1 {font-size:clamp(23px,6vw,27px);line-height:1.36;}
 }
+
+/* Consistent fixed consultation rail and clearance — 2026-10-28 */
+@media(min-width:761px){.luare-consult-rail{width:60px;padding:11px 7px 10px;border-radius:15px 0 0 15px}.luare-consult-video{width:34px;height:34px}.luare-consult-video::before{left:8px;top:10px;width:14px;height:12px}.luare-consult-video::after{right:5px;top:12px}.luare-consult-rail>strong{font-size:12px;margin-top:9px}.luare-consult-rule{width:31px;margin:9px 0 7px}.luare-line-flag{width:28px;height:19px}.luare-consult-language+ .luare-consult-language{margin-top:5px;padding-top:5px}.luare-consult-popover{right:71px}.luare-home-v6 .luare-v6-container,.luare-footer .luare-container{padding-right:max(90px,calc((100vw - 1200px)/2 + 82px))}.luare-home-v6 .luare-v6-faq summary{padding-right:12px}}
+.luare-service-menu>button{font:inherit;line-height:inherit;vertical-align:middle;display:inline-flex;align-items:center;gap:4px}.luare-service-menu-standard>button{font-family:var(--luare-font);font-size:inherit;font-weight:inherit}.luare-service-menu-hero>button{font-family:inherit;font-size:inherit;font-weight:inherit}
+@media(max-width:760px){.luare-consult-rail{width:54px;padding:8px 5px}.luare-consult-rail>strong{font-size:11px}}
