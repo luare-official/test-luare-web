@@ -103,6 +103,20 @@ for(const lang of ["","en/","zh/"]){
 const jsox=pages.get("services/internal-control/overview.html")||"";
 assert(jsox.includes('href="/privacy"'),"J-SOX r5 overview missing privacy link");
 assert(jsox.includes('href="/contact"'),"J-SOX r5 overview consultation link changed");
+const approvedAudit=pages.get("services/audit-assurance.html")||"";
+const approvedAuditSource=readFileSync("src/app/services/audit-assurance/page.tsx","utf8");
+assert(!!approvedAudit,"Approved audit service page missing");
+for(const name of ["監査・保証業務","会社法監査（法定監査）","連結子会社監査・海外親会社対応","IFRS・US-GAAP対応監査","ファンド・SPC監査","任意監査","監査費用は個別お見積りです。"]){
+ assert(approvedAudit.includes(name),"Approved audit HTML copy missing: "+name);
+}
+assert(!approvedAudit.includes("監査サービスの特長"),"Removed audit benefits section returned");
+assert(!approvedAudit.includes("OUR STRENGTHS"),"Legacy audit-specific sections returned");
+assert(approvedAuditSource.includes('name="audit-scope"'),"Approved audit 5-item accordion was replaced");
+for(const anchor of ["scope","related","audit-readiness","statutory-audit","group-audit","accounting-advisory"]){
+ assert(approvedAudit.includes('id="'+anchor+'"'),"Previously linked audit anchor missing: "+anchor);
+}
+assert(approvedAudit.includes('href="/privacy"'),"Audit page lacks shared privacy link");
+assert((approvedAudit.match(/<footer\b/g)||[]).length===1,"Audit page has duplicate/missing footer");
 const originalJsox=pages.get("services/internal-control.html")||"";
 assert(originalJsox.includes('action="https://formspree.io/f/mojppoor"'),"Original advertised J-SOX landing form no longer exists");
 assert(originalJsox.includes('href="/privacy"'),"Original advertised J-SOX landing privacy link missing");
