@@ -22,7 +22,7 @@ export default function Page(){
     <main className="bg-white text-[#0B3158]">
       <nav aria-label="専門サービス" className="border-b border-[#CBD5E1] bg-white px-5 pt-24 sm:px-8 sm:pt-28">
         <div className="mx-auto flex max-w-6xl gap-1 overflow-x-auto">
-          <Link href="/services/internal-control" className="border-b-2 border-transparent text-[#475569] hover:text-[#1766A0] shrink-0 px-3 py-3 text-xs font-semibold sm:px-4">内部統制・J-SOX</Link>
+          <Link href="/services/internal-control/overview" className="border-b-2 border-transparent text-[#475569] hover:text-[#1766A0] shrink-0 px-3 py-3 text-xs font-semibold sm:px-4">内部統制・J-SOX</Link>
           <Link href="/services/audit-assurance" className="border-b-2 border-transparent text-[#475569] hover:text-[#1766A0] shrink-0 px-3 py-3 text-xs font-semibold sm:px-4">会計監査対応</Link>
           <Link href="/services/accounting-management" className="border-b-2 border-transparent text-[#475569] hover:text-[#1766A0] shrink-0 px-3 py-3 text-xs font-semibold sm:px-4">決算・FP&A</Link>
           <Link href="/services/finance-ops" aria-current="page" className="border-b-2 border-[#1766A0] bg-[#EDF5FC] text-[#1766A0] shrink-0 px-3 py-3 text-xs font-semibold sm:px-4">業務改善・AI</Link>

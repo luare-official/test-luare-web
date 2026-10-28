@@ -64,7 +64,7 @@ function route(page:string,id:string):string {
   if(page==="audit-assurance" && id==="group-audit-consultation") return "/services/audit-assurance#group-audit";
   if(page==="audit-assurance" && id==="audit-readiness-consultation") return "/services/audit-assurance#audit-readiness";
   // Parent page opens at its top; subtopics jump directly to the matching section.
-  if(page==="internal-control"&&id==="internal")return "/services/internal-control";
+  if(page==="internal-control")return `/services/internal-control/overview#${id}`;
   return `/services/${page}#${id}`;
 }
 export const serviceItems: readonly ServiceItem[] = topics.map(([id,name,description,page])=>({

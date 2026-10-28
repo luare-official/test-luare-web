@@ -13,7 +13,7 @@ const findPage=path=>{
  if(pages.has(file))return file;
  return pages.has(stem+"/index.html")?stem+"/index.html":null;
 };
-const required=["/","/services","/services/internal-control","/services/audit-assurance","/bpo","/about","/cases","/insights","/contact","/privacy","/en","/zh","/en/about","/zh/about","/en/contact","/zh/contact","/pricing","/for-audit-firms"];
+const required=["/","/services","/services/internal-control","/services/internal-control/overview","/services/audit-assurance","/bpo","/about","/cases","/insights","/contact","/privacy","/en","/zh","/en/about","/zh/about","/en/contact","/zh/contact","/pricing","/for-audit-firms"];
 for(const path of required)assert(!!findPage(path),"Missing exported route "+path);
 const checked=new Set();
 for(const [page,html] of pages){
@@ -55,6 +55,23 @@ for(const [page,html] of pages){
 const home=pages.get("index.html")||"";
 assert(!home.includes("Professional 01"),"Unapproved expert mockup published");
 assert(home.includes("luare-hero-consulting-male-20261025.webp"),"Approved male photo disappeared");
+// Guard representative layout and the explicitly approved expanded service-card design.
+const jpAboutSource=readFileSync("src/app/about/page.tsx","utf8");
+const zhAboutSource=readFileSync("src/app/zh/about/page.tsx","utf8");
+const enAboutSource=readFileSync("src/app/en/about/page.tsx","utf8");
+for(const [locale,profile] of [["ja",jpAboutSource],["zh",zhAboutSource],["en",enAboutSource]]){
+ assert(profile.includes("luare-v6-rep-grid")&&profile.includes("luare-v6-rep-photo"),locale+" representative must reuse original homepage photo-and-text layout");
+ assert(profile.includes("luare-v6-rep-name")&&profile.includes("luare-v6-qual"),locale+" representative credentials/name must sit beside portrait");
+ assert(profile.includes("luare-v6-bio"),locale+" original biography paragraph was removed");
+ assert(!profile.includes("CAREER TIMELINE")&&!profile.includes("space-y-10"),locale+" unsolicited career timeline returned");
+ assert(!profile.includes("bg-gradient-to-t")&&!profile.includes("Bottom gradient overlay"),locale+" photo name-overlay returned");
+ assert(!profile.includes("Role badge below photo"),locale+" role badge below portrait returned");
+ assert(!profile.includes("luare-v6-philosophy"),locale+" explicitly removed philosophy returned");
+}
+const directorySource=readFileSync("src/components/ServiceDirectory.tsx","utf8");
+assert(directorySource.includes("min-h-[126px]")&&directorySource.includes("serviceRoutes[number]"),"User-approved large five-card service directory was altered");
+assert(directorySource.includes("serviceRoutes[number]"),"Service cards no longer open requested detail pages");
+assert(directorySource.includes("id={`category-${number}`}"),"Historical /services#category-xx deep links were removed");
 const nav=readFileSync("src/components/Navbar.tsx","utf8");
 assert(!nav.includes("/for-audit-firms"),"Protected audit-partner nav became visible");
 assert(!nav.includes("--font-inter"),"Legacy font variable still in navbar");
@@ -77,12 +94,38 @@ for(const lang of ["","en/","zh/"]){
  assert(html.includes('href="/privacy"'),page+" missing privacy link");
  assert(html.includes('action="https://formspree.io/f/mojppoor"'),page+" Formspree action changed");
 }
-const jsox=pages.get("services/internal-control.html")||"";
-assert(jsox.includes('href="/privacy"'),"J-SOX LP missing privacy link");
-assert(jsox.includes('action="https://formspree.io/f/mojppoor"'),"J-SOX form destination changed");
+const jsox=pages.get("services/internal-control/overview.html")||"";
+assert(jsox.includes('href="/privacy"'),"J-SOX r5 overview missing privacy link");
+assert(jsox.includes('href="/contact"'),"J-SOX r5 overview consultation link changed");
+const originalJsox=pages.get("services/internal-control.html")||"";
+assert(originalJsox.includes('action="https://formspree.io/f/mojppoor"'),"Original advertised J-SOX landing form no longer exists");
+assert(originalJsox.includes('href="/privacy"'),"Original advertised J-SOX landing privacy link missing");
+assert(nav.includes('"01": "/services/internal-control/overview"'),"Service navigation no longer points to separate r5 overview");
+const adJsox=pages.get("ads/internal-control.html")||"";
+assert(!!adJsox,"Archived advertising LP is missing");
+assert(adJsox.includes('href="/privacy"'),"Advertising LP missing privacy link");
+assert(adJsox.includes('action="https://formspree.io/f/mojppoor"'),"Advertising LP form destination changed");
 assert(existsSync("out/robots.txt")&&existsSync("out/sitemap.xml"),"SEO crawler files missing");
+const zhHomeSource=readFileSync("src/app/zh/page.tsx","utf8");
+const zhHomeDesign=["luare-who-band","luare-services-photo","InteractiveServiceGalleryZh","luare-v6-why-row","luare-v6-cases","luare-v6-steps","luare-v6-faq"];
+for(const cls of zhHomeDesign)assert(zhHomeSource.includes(cls),"Chinese homepage diverged from approved Japanese design: "+cls);
+const gallerySource=readFileSync("src/app/cases/page.tsx","utf8");
+const r5Style=readFileSync("src/components/cases/R5CaseLayout.module.css","utf8");
+const legacy=readFileSync("src/components/cases/LegacyCaseHashRedirect.tsx","utf8");
+assert(gallerySource.includes("r5Cases.filter")&&gallerySource.includes("styles.grid3")&&gallerySource.includes("styles.grid2"),"Husband r5 original case-list cards / separate FP&A model have changed");
+assert(gallerySource.includes("CASE STUDIES")&&gallerySource.includes("SERVICE MODEL"),"Original r5 case labels are missing");
+assert(r5Style.includes(".card .industry")&&r5Style.includes(".card .impact"),"Original r5 card styling missing");
+assert(legacy.includes("accounting-operations")&&legacy.includes("global-internal-control")&&legacy.includes("overseas-jsox"),"Legacy case deep-link aliases missing");
+for(const path of ["about.html","en/about.html","zh/about.html"]){
+ const html=pages.get(path)||"";
+ assert(!html.includes("US.CPA"),"Deprecated dotted USCPA is still displayed on "+path);
+ assert(html.includes("USCPA"),"Correct USCPA designation missing on "+path);
+}
+const mobileHeroCss=readFileSync("src/app/globals.css","utf8");
+assert(mobileHeroCss.includes("object-position:89% 48%"),"Mobile hero crop lost the right-side interlocutor");
+assert(!home.includes("掲載内容は確認用の仮原稿です"),"Case homepage notice incorrectly claims approval pending");
 const cases=pages.get("cases.html")||"";
-assert(cases.includes("noindex"),"Unreviewed cases are no longer noindex");
+assert(!cases.includes("noindex"),"Approved published cases should not remain noindex");
 if(errors.length){console.error("FAILED static QA: "+errors.length);for(const e of errors.slice(0,100))console.error(" - "+e);process.exitCode=1;}
 else{console.log("PASS: "+pages.size+" static pages, links/anchors/images, multilingual forms, privacy and noindex gates");
  console.log("NOTE: Remote HTTP status, responsive screenshots and real Formspree delivery need separate checks.");}

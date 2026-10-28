@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // A班専用の静的出力QA。ネットワーク・外部メール・本番変更は一切行わない。
-// Next.jsの out/ を対象にホームの29リンク、8親ページ、ID/アンカーを照合する。
+// Next.jsの out/ を対象にホームの29リンク、既存BPOを含む8親ページ、ID/アンカーを照合する。
 import {readFileSync, existsSync} from "node:fs";
 import path from "node:path";
 
@@ -10,7 +10,7 @@ const entries=matches.map(([,id,page])=>({id,page}));
 const problems=[];
 const assert=(condition,message)=>{if(!condition)problems.push(message);};
 const htmlCache=new Map();
-const outputFile=page=>page==="bpo"?"out/bpo.html":page==="contact"?"out/contact.html":`out/services/${page}.html`;
+const outputFile=page=>page==="bpo"?"out/bpo.html":page==="contact"?"out/contact.html":page==="internal-control"?"out/services/internal-control/overview.html":`out/services/${page}.html`;
 const content=page=>{
   if(!htmlCache.has(page)){
     const filename=outputFile(page);
@@ -26,7 +26,7 @@ const idCount=(html,id)=>{
 };
 assert(entries.length===29,`Service catalog expected 29, got ${entries.length}`);
 assert(new Set(entries.map(x=>x.id)).size===entries.length,"Duplicate service IDs in catalog");
-assert(new Set(entries.map(x=>x.page)).size===8,"Expected 8 independent parent pages (including contact)");
+assert(new Set(entries.map(x=>x.page)).size===8,"Expected 8 existing service destinations including BPO, audit and contact");
 
 const homeFile="out/index.html";
 assert(existsSync(homeFile),`Missing ${homeFile}`);
@@ -39,7 +39,7 @@ for(const {id,page} of entries){
     id==="audit-readiness-consultation"?"audit-readiness":id;
   const href=page==="bpo"?`/bpo#${id}`:
     page==="contact"?"/contact":
-    page==="internal-control"&&id==="internal"?"/services/internal-control":
+    page==="internal-control"?`/services/internal-control/overview#${id}`:
     `/services/${page}#${targetId}`;
   const pageHtml=content(page);
   const normalizedHref=href.replace(/&/g,"&amp;");
@@ -56,25 +56,30 @@ for(const {id,page} of entries){
 for(const p of ["audit-assurance","accounting-management","finance-ops","global-finance"]){
   const html=content(p);
   for(const tab of ["internal-control","audit-assurance","accounting-management","finance-ops","global-finance"]){
-    assert(html.includes(`href="/services/${tab}"`),`Missing five-service navigation /services/${tab} on ${p}`);
+    const url=tab==="internal-control"?"/services/internal-control/overview":`/services/${tab}`;
+    assert(html.includes(`href="${url}"`),`Missing five-service navigation ${url} on ${p}`);
   }
 }
 const jsox=content("internal-control");
-for(const element of ["three-documents","evaluation","internal-audit","training","faq"]){
+for(const element of ["internal","three-documents","evaluation","internal-audit","training"]){
   assert(idCount(jsox,element)===1,`Missing J-SOX target ${element}`);
 }
-// Earlier LPs used a /contact link. The approved A layout embeds a compact
-// form, wired to exactly the same Formspree destination as /contact.
-const hasContactLink=jsox.includes('href="/contact"');
-const hasEmbeddedContactForm=
-  jsox.includes('action="https://formspree.io/f/mojppoor"') &&
-  jsox.includes('method="POST"') &&
-  jsox.includes('name="company"') &&
-  jsox.includes('name="email"') &&
-  jsox.includes('name="language"') &&
-  jsox.includes('name="topic"') &&
-  jsox.includes('type="submit"');
-assert(hasContactLink||hasEmbeddedContactForm,"J-SOX contact CTA and live contact form are both missing");
+// Protect the original ad landing URL and the separate service overview.
+assert(jsox.includes('href="/contact"'),"Standard J-SOX service page lost its contact CTA");
+const adPath="out/services/internal-control.html";
+assert(existsSync(adPath),"Preserved advertising LP route is missing");
+if(existsSync(adPath)){
+  const adHtml=readFileSync(adPath,"utf8");
+  assert(adHtml.includes("Jsox") || adHtml.includes("内部統制"),"Original advertising landing page is empty");
+  for(const id of ["internal","faq","consult-form"]){
+    assert(idCount(adHtml,id)===1,"Preserved advertising LP missing "+id);
+  }
+  assert(adHtml.includes('action="https://formspree.io/f/mojppoor"') &&
+    adHtml.includes('method="POST"') &&
+    adHtml.includes('name="company"') && adHtml.includes('name="email"') &&
+    adHtml.includes('name="language"') && adHtml.includes('name="topic"'),
+    "Preserved advertising LP form contract changed");
+}
 
 // Protect the approved, low-profile /for-audit-firms route from stale PRs.
 // Check source for both PC and mobile navigation because closed mobile menus

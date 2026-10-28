@@ -3,11 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import FooterEn from "@/components/en/FooterEn";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Company Profile | Luare Consulting",
   description:
-    "Profile of Yanqing Lu (US.CPA, Inactive), Managing Partner of Luare Consulting. Providing next-generation AI accounting BPO combining AI agents and expert teams.",
+    "Profile of Yanqing Lu (USCPA, Inactive), Managing Partner of Luare Consulting. Providing next-generation AI accounting BPO combining AI agents and expert teams.",
   alternates: {
     canonical: "https://luare-consulting.com/en/about",
     languages: {
@@ -24,275 +25,33 @@ export default function AboutPageEn() {
     <>
       <Navbar theme="light" solid={true} />
 
-      <main className="flex-1" lang="en">
-        {/* ══════════════════════════════════════════════════════════════
-            HERO SECTION
-           ══════════════════════════════════════════════════════════════ */}
-        <section className="relative pt-20 overflow-hidden">
-          {/* Background: navy + subtle skyline */}
-          <div className="absolute inset-0 bg-brand-navy">
-            <Image
-              src="/images/global_cities_skyline.png"
-              alt=""
-              fill
-              className="object-cover object-center opacity-[0.08]"
-              priority
-            />
-          </div>
-
-          <div className="relative z-10 mx-auto max-w-5xl px-6 sm:px-10 py-28 sm:py-36 text-center">
-            {/* Gold accent label */}
-            <span
-              className="inline-block text-[10px] font-bold uppercase tracking-[0.5em] mb-6"
-              style={{ color:"#EDF5FC" }}
-            >
-              Company Profile & Representative Biography
-            </span>
-
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-wider text-brand-platinum leading-tight">
-              About Us
-            </h1>
-
-            {/* Thin gold divider */}
-            <div
-              className="mx-auto mt-8 w-16 h-[1.5px]"
-              style={{ backgroundColor:"#1766A0" }}
-            />
-          </div>
-        </section>
-
-        {/* ══════════════════════════════════════════════════════════════
-            MAIN 2-COLUMN SECTION
-           ══════════════════════════════════════════════════════════════ */}
-        <section className="bg-brand-white py-24 sm:py-32">
-          <div className="mx-auto max-w-6xl px-6 sm:px-10">
-            <div className="flex flex-col lg:flex-row gap-16 lg:gap-20 items-start">
-              {/* ─── LEFT COLUMN: Portrait ─── */}
-              <div className="w-full lg:w-[38%] shrink-0">
-                <div className="relative">
-                  {/* Gold accent frame behind the photo */}
-                  <div
-                    className="absolute -top-3 -left-3 w-full h-full rounded-sm border"
-                    style={{ borderColor: "rgba(23,102,160,0.35)" }}
-                  />
-
-                  {/* Photo container */}
-                  <div className="relative overflow-hidden rounded-sm shadow-2xl">
-                    <Image
-                      src="/images/Photo.png"
-                      alt="Yanqing Lu — Managing Partner"
-                      width={560}
-                      height={700}
-                      className="w-full h-auto object-cover"
-                      priority
-                      unoptimized={true}
-                    />
-
-                    {/* Bottom gradient overlay with name */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/40 to-transparent px-6 pt-20 pb-6">
-                      <h2 className="font-serif text-2xl sm:text-3xl font-medium text-brand-platinum tracking-wider">
-                        Yanqing Lu
-                      </h2>
-                      <span className="text-xs font-medium tracking-[0.15em] text-brand-silver/80 mt-1 block">
-                        US.CPA (Inactive)
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Role badge below photo */}
-                  <div className="mt-6 flex items-center gap-3">
-                    <div
-                      className="w-8 h-[1.5px] shrink-0"
-                      style={{ backgroundColor:"#1766A0" }}
-                    />
-                    <span
-                      className="text-[11px] font-bold uppercase tracking-[0.25em]"
-                      style={{ color:"#1766A0" }}
-                    >
-                      Managing Partner
-                    </span>
-                  </div>
-                </div>
+      <main className="flex-1 pt-20" lang="en">
+      <section className="luare-v6-section" id="representative">
+        <div className="luare-v6-container">
+          <ScrollReveal><p className="luare-v6-eyebrow">REPRESENTATIVE</p></ScrollReveal>
+          <div className="luare-v6-rep-grid">
+            <ScrollReveal>
+              <div className="luare-v6-rep-photo">
+                <Image src="/images/Photo.png" alt="Yanqing Lu, Luare Consulting representative" width={900} height={1125} unoptimized />
               </div>
+            </ScrollReveal>
 
-              {/* ─── RIGHT COLUMN: Biography ─── */}
-              <div className="w-full lg:w-[62%]">
-                {/* ── Credentials Block ── */}
-                <div className="mb-12">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                    {/* Qualification */}
-                    <div className="border-l-2 pl-5" style={{ borderColor:"#1766A0" }}>
-                      <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-slate/50 block mb-2">
-                        Qualifications
-                      </span>
-                      <p className="text-sm font-medium text-brand-charcoal leading-relaxed">
-                        US Certified Public Accountant
-                        <br />
-                        (USCPA, Inactive, Guam)
-                      </p>
-                    </div>
-
-                    {/* Education */}
-                    <div className="border-l-2 pl-5" style={{ borderColor:"#1766A0" }}>
-                      <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-brand-slate/50 block mb-2">
-                        Education
-                      </span>
-                      <p className="text-sm font-medium text-brand-charcoal leading-relaxed">
-                        University of South Australia
-                        <br />
-                        Bachelor of Business
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* ── Divider ── */}
-                <div className="w-full h-px bg-slate-100 mb-12" />
-
-                {/* ── Biography ── */}
-                <div className="mb-12">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div
-                      className="w-6 h-[1.5px] shrink-0"
-                      style={{ backgroundColor:"#1766A0" }}
-                    />
-                    <h3 className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
-                      Biography
-                    </h3>
-                  </div>
-                  <p className="text-sm sm:text-[15px] text-brand-slate leading-[1.9] tracking-wide">
-                    After earning a Bachelor of Business in Australia, Yanqing gained global accounting experience at a listed Japanese trading company and the Japanese subsidiary of a major US manufacturing firm. Subsequently, at KPMG AZSA LLC, he engaged in accounting advisory services, supporting numerous multinational corporations in building internal controls and financial infrastructures.
-                  </p>
-                  <p className="text-sm sm:text-[15px] text-brand-slate leading-[1.9] tracking-wide mt-4">
-                    Following his tenure in the investment banking division of Mitsubishi UFJ Morgan Stanley Securities and a US-affiliated venture accounting firm, he founded Luare Consulting.
-                  </p>
-                </div>
-
-                {/* ── Divider ── */}
-                <div className="w-full h-px bg-slate-100 mb-12" />
-
-                {/* ── Philosophy ── */}
-                <div>
-                  <div className="flex items-center gap-3 mb-6">
-                    <div
-                      className="w-6 h-[1.5px] shrink-0"
-                      style={{ backgroundColor:"#1766A0" }}
-                    />
-                    <h3 className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
-                      Philosophy
-                    </h3>
-                  </div>
-
-                  <blockquote
-                    className="border-l-[3px] pl-6 mb-5"
-                    style={{ borderColor:"#1766A0" }}
-                  >
-                    <p className="font-serif text-lg sm:text-xl font-medium text-brand-charcoal leading-relaxed tracking-wide">
-                      A partner freeing executives from
-                      <br />
-                      &quot;unseen accounting risks&quot;.
-                    </p>
-                  </blockquote>
-
-                  <p className="text-sm sm:text-[15px] text-brand-slate leading-[1.9] tracking-wide">
-                    Chronic challenges such as hiring difficulties and the risk of system collapse due to turnover plague accounting departments. By combining global-standard professional support with the power of technology, we fundamentally eliminate these uncertainties and build clear financial operations that accelerate management decision-making.
-                  </p>
-                </div>
+            <ScrollReveal delay={80}>
+              <div className="luare-v6-rep-copy">
+                <p className="luare-v6-label">Luare Consulting Representative</p>
+                <h2 className="luare-v6-rep-name">Yanqing Lu</h2>
+                <p className="luare-v6-qual">US Certified Public Accountant (USCPA, Inactive, Guam)</p>
+                <p className="luare-v6-label">Education</p>
+                <p><strong>University of South Australia (now Adelaide University)<br />Bachelor of Business</strong></p>
+                <p className="luare-v6-label luare-v6-label-spaced">Biography</p>
+                <p className="luare-v6-bio">
+                  After earning a Bachelor of Business in Australia, Yanqing gained global accounting experience at a listed Japanese trading company and the Japanese subsidiary of a major US manufacturing firm. Subsequently, at KPMG AZSA LLC, he engaged in accounting advisory services, supporting numerous multinational corporations in building internal controls and financial infrastructures. Following his tenure in the investment banking division of Mitsubishi UFJ Morgan Stanley Securities and a US-affiliated venture accounting firm, he founded Luare Consulting.
+                </p>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
-        </section>
-
-        {/* ══════════════════════════════════════════════════════════════
-            CAREER TIMELINE
-           ══════════════════════════════════════════════════════════════ */}
-        <section className="bg-slate-50 border-t border-slate-100 py-24 sm:py-28">
-          <div className="mx-auto max-w-5xl px-6 sm:px-10">
-            <div className="flex items-center gap-3 mb-14">
-              <div
-                className="w-8 h-[1.5px] shrink-0"
-                style={{ backgroundColor:"#1766A0" }}
-              />
-              <h3 className="text-[10px] font-bold uppercase tracking-[0.35em] text-brand-slate/60">
-                Career Highlights
-              </h3>
-            </div>
-
-            <div className="relative">
-              {/* Vertical gold line */}
-              <div
-                className="absolute left-[11px] top-2 bottom-2 w-[1.5px]"
-                style={{ backgroundColor: "rgba(23,102,160,0.25)" }}
-              />
-
-              <div className="space-y-10">
-                {[
-                  {
-                    label: "Education",
-                    title: "University of South Australia",
-                    desc: "Earned a Bachelor of Business in Australia",
-                  },
-                  {
-                    label: "Global Accounting",
-                    title: "Listed Japanese Trading Co. / Major US Manufacturer",
-                    desc: "Experienced in global accounting operations",
-                  },
-                  {
-                    label: "Big 4 Advisory / US CPA",
-                    title: "KPMG AZSA LLC",
-                    desc: "Obtained USCPA license; provided accounting advisory, supporting multinational companies in building internal controls and financial foundations",
-                  },
-                  {
-                    label: "Investment Banking",
-                    title: "Mitsubishi UFJ Morgan Stanley Securities",
-                    desc: "Engaged in M&A advisory in the Investment Banking Division",
-                  },
-                  {
-                    label: "Venture",
-                    title: "US-affiliated Venture Accounting Firm",
-                    desc: "Engaged in general accounting consulting services (audit, internal control construction support, accounting outsourcing, M&A, etc.)",
-                  },
-                  {
-                    label: "Founder",
-                    title: "Founded Luare Consulting Co., Ltd.",
-                    desc: "Established an accounting/finance consulting & AI agent firm",
-                  },
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-6 group">
-                    {/* Dot */}
-                    <div className="relative shrink-0 mt-1">
-                      <div
-                        className="w-[23px] h-[23px] rounded-full border-[2px] flex items-center justify-center bg-white transition-all duration-300 group-hover:scale-110"
-                        style={{ borderColor:"#1766A0" }}
-                      >
-                        <div
-                          className="w-[7px] h-[7px] rounded-full"
-                          style={{ backgroundColor:"#1766A0" }}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div>
-                      <span
-                        className="text-[9px] font-bold uppercase tracking-[0.3em] block mb-1"
-                        style={{ color:"#1766A0" }}
-                      >
-                        {item.label}
-                      </span>
-                      <h4 className="text-sm sm:text-base font-bold text-brand-charcoal tracking-wide mb-1">
-                        {item.title}
-                      </h4>
-                      <p className="text-xs sm:text-sm text-brand-slate/70 leading-relaxed">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        </div>
+      </section>
 
         {/* ══════════════════════════════════════════════════════════════
             COMPANY INFORMATION
@@ -325,7 +84,7 @@ export default function AboutPageEn() {
                 </div>
                 <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-xs font-bold uppercase tracking-wider text-brand-slate/70">Representative</dt>
-                  <dd className="mt-1 text-sm font-medium text-brand-charcoal sm:col-span-2 sm:mt-0">Yanqing Lu (US.CPA, Inactive)</dd>
+                  <dd className="mt-1 text-sm font-medium text-brand-charcoal sm:col-span-2 sm:mt-0">Yanqing Lu (USCPA, Inactive)</dd>
                 </div>
               </dl>
             </div>

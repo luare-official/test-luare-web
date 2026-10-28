@@ -13,10 +13,13 @@ export default function FooterZh() {
           </div>
           <nav className="luare-footer-links" aria-label="页脚导航">
             <Link href="/zh">首页</Link>
-            <Link href="/zh#services">服务介绍</Link>
+            <Link href="/zh/services">专业服务</Link>
+            <Link href="/zh/cases">支持案例</Link>
+            <Link href="/zh/insights">文章</Link>
+            <Link href="/zh/pricing">费用说明</Link>
             <Link href="/zh/about">关于我们</Link>
             <Link href="/zh/contact">联系我们</Link>
-            <Link href="/insights">博客（日文）</Link>
+            
             <Link href="/privacy">隐私政策 / Privacy Policy</Link>
           </nav>
         </div>

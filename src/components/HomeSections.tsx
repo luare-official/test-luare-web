@@ -271,45 +271,6 @@ export default function HomeSections() {
         </div>
       </section>
 
-      <section className="luare-v6-section" id="representative">
-        <div className="luare-v6-container">
-          <ScrollReveal><p className="luare-v6-eyebrow">REPRESENTATIVE</p></ScrollReveal>
-          <div className="luare-v6-rep-grid">
-            <ScrollReveal>
-              <div className="luare-v6-rep-photo">
-                <Image src="/images/Photo.png" alt="Luare Consulting 代表 陸 沿青" width={900} height={1125} unoptimized />
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={80}>
-              <div className="luare-v6-rep-copy">
-                <p className="luare-v6-label">Luare Consulting 代表</p>
-                <h2 className="luare-v6-rep-name">陸 沿青</h2>
-                <p className="luare-v6-qual">米国公認会計士（USCPA, Inactive, グアム州）</p>
-                <p className="luare-v6-label">学歴</p>
-                <p><strong>南オーストラリア大学（現：アデレード大学）<br />経営学部 卒業</strong></p>
-                <p className="luare-v6-label luare-v6-label-spaced">Biography</p>
-                <p className="luare-v6-bio">
-                  オーストラリアにて経営学士号を取得後、日系上場専門商社および米国系製造大手の日本法人にて
-                  グローバル経理実務を経験。その後、KPMGあずさ監査法人にて会計アドバイザリー業務に従事し、
-                  数々の多国籍企業の内部統制・財務基盤構築を支援。さらに、三菱UFJモルガン・スタンレー証券の
-                  投資銀行部門、米国系ベンチャー会計事務所を経て独立、Luare Consultingを設立。
-                </p>
-                <div className="luare-v6-philosophy">
-                  <p className="luare-v6-eyebrow">PHILOSOPHY</p>
-                  <blockquote>「見えない経理リスク」から、<br />経営者を解放するパートナーへ。</blockquote>
-                  <p>
-                    採用難や退職による体制崩壊リスクなど、経理部門が抱える慢性的な課題。
-                    私たちは、グローバル基準のプロの伴走とテクノロジーの力でこれらの不安を根本から取り除き、
-                    経営の意思決定を加速させるクリアな財務オペレーションを構築します。
-                  </p>
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
       <section className="luare-v6-section luare-v6-soft" id="case-studies">
         <div className="luare-v6-container">
           <ScrollReveal className="luare-v6-section-head">
@@ -324,7 +285,7 @@ export default function HomeSections() {
                   <div>
                     <h3>{item.title}</h3>
                     <p><strong>支援</strong><br />{item.support}</p>
-                    <Link href={`/cases#/case/${item.id}`} className="mt-4 inline-block border-b border-current pb-1 text-sm font-semibold text-[#0B3158] hover:opacity-70">事例の詳細を見る ↗</Link>
+                    <Link href={"/cases/" + (item.id === "accounting-operations" ? "case-close" : item.id === "global-internal-control" ? "case-music" : item.id === "overseas-jsox" ? "case-jsox" : item.id)} className="mt-4 inline-block border-b border-current pb-1 text-sm font-semibold text-[#0B3158] hover:opacity-70">事例の詳細を見る ↗</Link>
                   </div>
                   <div>
                     <p><strong>課題</strong><br />{item.issue}</p>
@@ -334,7 +295,7 @@ export default function HomeSections() {
               </ScrollReveal>
             ))}
           </div>
-          <p className="luare-v6-note">※掲載内容は確認用の仮原稿です。個別企業の実績や成果は、事実関係と掲載許諾の確認後に更新します。</p>
+          <p className="luare-v6-note">※個別企業名は掲載していません。事例の内容は実際の支援範囲を紹介しています。</p>
           <div className="mt-8 text-center">
             <Link href="/#services" className="inline-flex items-center justify-center border border-[#0B3158] px-7 py-3 text-sm font-semibold text-[#0B3158] transition-colors hover:bg-[#0B3158] hover:text-white">
               支援内容を詳しく見る <span className="ml-3" aria-hidden="true">→</span>

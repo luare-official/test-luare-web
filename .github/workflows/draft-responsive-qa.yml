@@ -1,0 +1,39 @@
+name: Draft HP responsive QA (no deployment)
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  screenshot-qa:
+    name: Visual screenshots and navigation safety
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - name: Install project dependencies
+        run: npm ci
+      - name: Static build - no deploy
+        run: npm run build
+      - name: Install Playwright and Chromium
+        run: |
+          npm install --no-save --package-lock=false playwright@1.58.2
+          npx playwright install --with-deps chromium
+      - name: Start local-only preview
+        run: |
+          python3 scripts/serve-static-preview.py > /tmp/luare-preview-http.log 2>&1 &
+          sleep 2
+      - name: Responsive page and image QA
+        run: node scripts/verify-preview-responsive.mjs
+      - name: Upload draft screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: draft-r5-desktop-mobile-screenshots
+          path: qa-artifacts/draft-r5
+          retention-days: 14
+          if-no-files-found: warn

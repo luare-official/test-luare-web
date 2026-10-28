@@ -6,8 +6,8 @@ export const dynamic = "force-static";
 /**
  * Only include currently public, indexable pages.
  *
- * The /cases page and unreviewed /insights/[slug] drafts are intentionally
- * omitted while their review/noindex gates remain in place.
+ * Reviewed /cases pages are public; unreviewed /insights/[slug] drafts
+ * remain omitted while their review/noindex gates are in place.
  * Do not add draft URLs or invented lastModified timestamps.
  */
 const origin = "https://luare-consulting.com";
@@ -16,6 +16,7 @@ const publicPaths = [
   "/",
   "/services",
   "/services/internal-control",
+  "/services/internal-control/overview",
   "/bpo",
   "/services/accounting-management",
   "/services/finance-ops",
@@ -26,6 +27,11 @@ const publicPaths = [
   "/about",
   "/contact",
   "/pricing",
+  "/cases",
+  "/cases/case-close",
+  "/cases/case-music",
+  "/cases/case-jsox",
+  "/cases/case-fpa",
   "/insights",
   "/privacy",
   "/en",
@@ -34,6 +40,20 @@ const publicPaths = [
   "/zh",
   "/zh/about",
   "/zh/contact",
+  "/zh/services",
+  "/zh/services/internal-control",
+  "/zh/services/accounting-management",
+  "/zh/services/finance-ops",
+  "/zh/services/global-finance",
+  "/zh/services/audit-assurance",
+  "/zh/services/ma-finance",
+  "/zh/pricing",
+  "/zh/cases",
+  "/zh/cases/case-close",
+  "/zh/cases/case-music",
+  "/zh/cases/case-jsox",
+  "/zh/cases/case-fpa",
+  "/zh/insights",
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {

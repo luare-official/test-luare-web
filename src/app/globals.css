@@ -1957,7 +1957,7 @@ body {background-color:var(--background);color:var(--foreground);font-family:var
     border-radius:58px 58px 84px 84px / 50px 50px 68px 68px;
   }
   .luare-unicell-talk-photo img{
-    object-position:67% 48%;
+    object-position:80% 48%;
   }
   .luare-unicell-small-copy{
     left:7%;
@@ -2009,7 +2009,8 @@ body {background-color:var(--background);color:var(--foreground);font-family:var
     border-radius:52px 52px 72px 72px / 44px 44px 60px 60px;
   }
   .luare-unicell-talk-photo img{
-    object-position:65% 48%;
+    /* Keep both participants in frame on small screens; include the right-hand person’s ear. */
+    object-position:89% 48%;
   }
   .luare-unicell-small-copy,
   .luare-unicell-vertical{
@@ -2911,4 +2912,26 @@ body {background-color:var(--background);color:var(--foreground);font-family:var
   .luare-who-band-list{grid-template-columns:1fr}
   .luare-who-band-list li{padding:12px 0 12px 16px}
   .luare-who-band-list li::before{top:21px}
+}
+
+/* 2026-10-27: bring hero text over the existing portrait (desktop and mobile). */
+.luare-unicell-hero-copy{
+  top:42%;bottom:auto;left:6%;width:min(78%,980px);
+  z-index:9;
+  text-shadow:0 1px 18px rgba(255,255,255,.98),0 1px 6px rgba(255,255,255,.9);
+}
+@media(max-width:900px){.luare-unicell-hero-copy{top:45%;bottom:auto;left:6%;width:88%;}}
+@media(max-width:580px){.luare-unicell-hero-copy{top:47%;bottom:auto;left:6%;width:90%;}}
+/* Subpage header: button typography must match sibling navigation links. */
+.luare-service-menu-standard>button.luare-nav-link {
+  font-family:var(--luare-font);font-size:11px;line-height:inherit;
+  font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+}
+
+/* Simplified Chinese home: same visual language and portrait as Japanese version. */
+.luare-zh-hero-copy h1 { font-family:var(--luare-font); letter-spacing:-.03em; }
+@media (max-width:580px) {
+ .luare-zh-hero-copy { top:44%; bottom:auto; left:5%; width:92%; }
+ .luare-zh-hero-copy h1 { font-size:clamp(24px,6.1vw,32px); line-height:1.42; }
+ .luare-zh-hero-copy h1 span { white-space:normal; }
 }
