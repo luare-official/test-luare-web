@@ -6,18 +6,6 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-/**
- * B-10: Only link to verified published service URLs/anchors.
- * These slugs are editorial topics, not claims of client delivery.
- */
-const relatedServices: Record<string, string> = {
-  "china-japan-market-entry": "/services/global-finance#finance-setup",
-  "governance-overseas-subsidiaries": "/services/internal-control#three-documents",
-  "close-process-early-improvement": "/services/finance-ops#close-improvement",
-  "overseas-jsox-three-documents": "/services/internal-control#three-documents",
-  "japan-subsidiary-finance-setup": "/services/global-finance#finance-setup",
-};
-
 // Next.js App Router dynamic params generation
 export function generateStaticParams() {
   const slugs = getAllSlugs();
@@ -59,7 +47,8 @@ export default async function InsightPostPage({
     notFound();
   }
 
-  const relatedServiceHref = relatedServices[post.slug] ?? "/#services";
+  // Consistent entrypoint: users select their service line from the current 5-category directory.
+  const relatedServiceHref = "/services";
 
   return (
     <>
@@ -93,11 +82,6 @@ export default async function InsightPostPage({
             </h1>
           </header>
 
-          {post.review && (
-            <div className="mb-10 border border-[#CBD5E1] bg-[#f2f7f4] px-5 py-4 text-sm leading-relaxed text-[#475569]">
-              この記事は、代表による専門監修前の確認用原稿です。内容は今後修正される場合があります。
-            </div>
-          )}
 
           {/* ══════════ ARTICLE CONTENT (Markdown) ══════════ */}
           <div

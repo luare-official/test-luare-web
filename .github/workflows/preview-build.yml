@@ -25,6 +25,8 @@ jobs:
         run: npm run build
       - name: Confirm localized static HTML languages before deployment
         run: node scripts/fix-static-locale-lang.mjs
+      - name: Audit every internal link, blog cleanup and service breadcrumbs
+        run: node scripts/verify-navigation-editorial.mjs
       - name: Verify refreshed English HP and links
         run: node scripts/verify-english-home.mjs
       - name: Verify husband's original r5 pricing and service wording

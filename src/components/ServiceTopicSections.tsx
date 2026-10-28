@@ -88,7 +88,7 @@ export default function ServiceTopicSections({page,compact=false}: Props){
   return <section className="luare-guide-detail" aria-label={meta.title}>
     <div className="luare-guide-detail-inner">
       {!compact && <nav className="luare-guide-detail-breadcrumb" aria-label="パンくずリスト">
-        <Link href="/">ホーム</Link><span aria-hidden="true">/</span><Link href="/#services">サービス</Link>
+        <Link href="/">ホーム</Link><span aria-hidden="true">/</span><Link href="/services">サービス</Link>
         <span aria-hidden="true">/</span><span aria-current="page">{meta.title}</span>
       </nav>}
       <p className="luare-guide-detail-kicker">SERVICE DETAILS</p>

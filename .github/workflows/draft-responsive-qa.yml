@@ -29,6 +29,8 @@ jobs:
           sleep 2
       - name: Responsive page and image QA
         run: node scripts/verify-preview-responsive.mjs
+      - name: Click-through every unique internal link and key interactive controls
+        run: node scripts/verify-clickable-navigation.mjs
       - name: Upload draft screenshots
         if: always()
         uses: actions/upload-artifact@v4

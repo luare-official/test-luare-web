@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import Link from "next/link";
-import { serviceCategories, serviceItems } from "@/lib/serviceCatalog";
+import { serviceCategories, serviceItems, serviceCategoryItemHref } from "@/lib/serviceCatalog";
 
 /** Photo-free service directory – approved design A. */
 export default function InteractiveServiceGallery() {
@@ -51,7 +51,7 @@ export default function InteractiveServiceGallery() {
                     {service.itemIds.map(id=>{
                       const item=serviceItems.find(row=>row.id===id);
                       if(!item)return null;
-                      return <Link href={item.href} key={id} className="luare-guide-link">
+                      return <Link href={serviceCategoryItemHref(service.number,id)} key={id} className="luare-guide-link">
                         <span>{item.name}</span><span className="luare-guide-link-icon" aria-hidden="true">↗</span>
                       </Link>;
                     })}
