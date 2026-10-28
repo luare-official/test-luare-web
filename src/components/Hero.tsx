@@ -23,13 +23,6 @@ export default function Hero() {
           </h1>
           <p>We stand by your finance.</p>
         </ScrollReveal>
-
-        <div className="luare-unicell-side-caption" aria-hidden="true">
-          GLOBAL ACCOUNTING &amp; FINANCE
-        </div>
-        <div className="luare-unicell-scroll" aria-hidden="true">
-          SCROLL
-        </div>
       </div>
     </section>
   );
