@@ -2916,6 +2916,15 @@ body {background-color:var(--background);color:var(--foreground);font-family:var
 }
 
 /* Consistent fixed consultation rail and clearance — 2026-10-28 */
-@media(min-width:761px){.luare-consult-rail{width:60px;padding:11px 7px 10px;border-radius:15px 0 0 15px}.luare-consult-video{width:34px;height:34px}.luare-consult-video::before{left:8px;top:10px;width:14px;height:12px}.luare-consult-video::after{right:5px;top:12px}.luare-consult-rail>strong{font-size:12px;margin-top:9px}.luare-consult-rule{width:31px;margin:9px 0 7px}.luare-line-flag{width:28px;height:19px}.luare-consult-language+ .luare-consult-language{margin-top:5px;padding-top:5px}.luare-consult-popover{right:71px}.luare-home-v6 .luare-v6-container,.luare-footer .luare-container{padding-right:max(90px,calc((100vw - 1200px)/2 + 82px))}.luare-home-v6 .luare-v6-faq summary{padding-right:12px}}
+@media(min-width:761px){.luare-consult-rail{width:60px;padding:11px 7px 10px;border-radius:15px 0 0 15px}.luare-consult-video{width:34px;height:34px}.luare-consult-video::before{left:8px;top:10px;width:14px;height:12px}.luare-consult-video::after{right:5px;top:12px}.luare-consult-rail>strong{font-size:12px;margin-top:9px}.luare-consult-rule{width:31px;margin:9px 0 7px}.luare-line-flag{width:28px;height:19px}.luare-consult-language+ .luare-consult-language{margin-top:5px;padding-top:5px}.luare-consult-popover{right:71px}.luare-home-v6 .luare-v6-container,.luare-footer .luare-container{padding-right:inherit}.luare-home-v6 .luare-v6-faq summary{padding-right:12px}}
 .luare-service-menu>button{font:inherit;line-height:inherit;vertical-align:middle;display:inline-flex;align-items:center;gap:4px}.luare-service-menu-standard>button{font-family:var(--luare-font);font-size:inherit;font-weight:inherit}.luare-service-menu-hero>button{font-family:inherit;font-size:inherit;font-weight:inherit}
 @media(max-width:760px){.luare-consult-rail{width:54px;padding:8px 5px}.luare-consult-rail>strong{font-size:11px}}
+
+/* 2026-10-28 layout correction: true horizontal centering; fixed rail may overlay only the outer gutter */
+@media(min-width:761px){
+ .luare-home-v6 .luare-v6-container{width:min(1120px,calc(100% - 152px));margin-left:auto;margin-right:auto;padding-left:0;padding-right:0}
+ .luare-footer .luare-container{padding-left:24px;padding-right:24px;margin-left:auto;margin-right:auto}
+ .luare-unicell-nav-bubble .luare-service-menu-hero>button{display:inline-flex;align-items:center;justify-content:center;gap:4px;box-sizing:border-box;margin:0;padding:14px 14px;color:#0B3158;font-family:var(--luare-font);font-size:13px;font-weight:700;line-height:normal;letter-spacing:normal;white-space:nowrap}
+ .luare-unicell-nav-bubble .luare-service-menu-hero>button span{margin:0;font-size:11px;line-height:1}
+}
+@media(min-width:761px) and (max-width:1100px){.luare-home-v6 .luare-v6-container{width:calc(100% - 126px)}}
