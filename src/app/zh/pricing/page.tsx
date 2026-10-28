@@ -2,36 +2,29 @@ import type {Metadata} from "next";
 import Link from "next/link";
 import ZhPageFrame from "@/components/zh/ZhPageFrame";
 import {r5Quotes} from "@/lib/r5Cases";
+
 export const metadata:Metadata={
- title:"费用说明与参考报价 | Luare Consulting",
- description:"基本小时费率12,000日元起（不含税）。J-SOX、财务结算及FP&A的项目示例报价。",
+ title:"费用说明 | Luare Consulting",
+ description:"根据专业要求、服务团队及工时单独报价。提供按项目划分的费用参考。",
  alternates:{canonical:"https://luare-consulting.com/zh/pricing"}
 };
 const yen=(num:number)=>num.toLocaleString("ja-JP")+"日元";
-const zhQuotes:Record<string,{title:string,subtitle:string,slug:string}>={
- "quote-jsox":{title:"J-SOX三件套建设支持",subtitle:"业务访谈、文件编制、评价准备与相关方协调",slug:"internal-control"},
- "quote-close":{title:"财务结算与流程优化",subtitle:"结算业务、现金流资料、流程梳理和改善",slug:"accounting-management"},
- "quote-fpa":{title:"FP&A及KPI分析支持",subtitle:"预算分析、业务KPI管理与指标优化",slug:"accounting-management"}
+const translated:Record<string,{title:string,industry:string,scope:string,href:string}>={
+ "quote-fpa":{title:"北美业务FP&A及KPI提升支持",industry:"娱乐产业相关｜北美业务",scope:"与北美业务负责人及总部相关人员合作，支持预算与实际差异分析、业务KPI分析及指标准确度提升时",href:"/zh/services/accounting-management#scope-3"},
+ "quote-close":{title:"企业集团结算实务及流程改善支持",industry:"日本国内企业集团",scope:"支持结算相关实务、现金流资料、结算流程可视化及改善措施研究与执行时",href:"/zh/services/accounting-management#scope-1"},
+ "quote-jsox":{title:"海外业务据点J-SOX三件套建设",industry:"拥有海外业务法人的金融科技相关集团",scope:"支持业务访谈、从零编制三件套、评价准备及相关方协调时",href:"/zh/services/internal-control#scope-2"}
 };
-export default function PricingZh(){
-return <ZhPageFrame label="PRICING" title="费用说明与参考报价" lead="费用依据服务内容、专业要求、工作范围和预计工时单独核算。以下金额为便于理解的参考示例。">
-<section className="mx-auto max-w-[1080px] px-5 pt-12 sm:px-10 sm:pt-16">
-<div className="rounded-xl border border-[#CBD5E1] bg-[#EDF5FC] px-7 py-9 sm:px-11">
-<p className="text-xs font-semibold tracking-widest text-[#1766A0]">HOURLY RATE / 基本费率参考</p>
-<p className="mt-4 text-[clamp(30px,5vw,50px)] font-semibold leading-tight text-[#0B3158]">12,000日元起 <span className="text-base font-medium">／小时</span></p>
-<p className="mt-3 text-sm leading-7 text-[#475569]">不含税。具体费率、工作范围和所需工时以单独报价为准。</p></div>
+export default function PricingZh(){return <ZhPageFrame label="FEES" title="费用说明" lead="根据业务专业性、服务团队与所需工时分别报价。">
+<section id="price-base" className="mx-auto max-w-[1080px] scroll-mt-28 px-5 py-14 sm:px-10 sm:py-16">
+<p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">PRICING POLICY</p><h2 className="mt-3 text-2xl font-semibold">基本收费方式</h2>
+<div className="mt-8 rounded-xl border border-[#CBD5E1] bg-[#EDF5FC] px-7 py-9 sm:px-10"><p className="text-xs font-semibold tracking-[.18em] text-[#1766A0]">HOURLY RATE</p><p className="mt-3 text-[clamp(30px,5vw,50px)] font-semibold">12,000日元起 <span className="text-base font-medium">／小时</span></p><p className="mt-3 text-sm leading-7 text-[#475569]">不含税。根据服务内容及负责范围进行报价。</p></div>
 </section>
-<section className="mx-auto max-w-[1080px] px-5 py-14 sm:px-10 sm:py-20">
-<h2 className="text-2xl font-semibold">按服务内容划分的费用示例</h2>
-<p className="mt-3 text-sm leading-7 text-[#475569]">示例总额仅依据假设工时计算，不代表统一定价、历史成交金额或最终合同价格。</p>
-<div className="mt-8 grid gap-5 lg:grid-cols-3">
-{r5Quotes.map(q=>{const x=zhQuotes[q.id];const hours="hoursTotal" in q?q.hoursTotal:q.hoursMonth*q.months;return <article key={q.id} className="flex flex-col rounded-lg border border-[#CBD5E1] bg-white p-6">
-<h3 className="text-lg font-semibold leading-7">{x.title}</h3><p className="mt-3 min-h-[4rem] text-sm leading-7 text-[#475569]">{x.subtitle}</p>
-<div className="mt-5 border-t border-[#CBD5E1] pt-5"><p className="text-xs text-[#475569]">参考总额（不含税）</p><strong className="mt-2 block text-3xl">{yen(q.rate*hours)}</strong>
-<p className="mt-3 text-sm leading-7 text-[#475569]">{yen(q.rate)}／小时 × {"hoursTotal" in q?q.hoursTotal+"小时（总计）":q.hoursMonth+"小时／月"}</p>
-<p className="mt-1 text-xs text-[#475569]">预计期间：{q.months}个月</p></div>
-<Link href={"/zh/services/"+x.slug} className="mt-6 border-t border-[#CBD5E1] pt-4 text-sm font-semibold hover:underline">查看服务详情 ↗</Link>
-</article>})}</div>
-<p className="mt-6 rounded-lg bg-[#EDF5FC] p-5 text-xs leading-7 text-[#475569]">※实际工作范围、工时、期间、税费和合同条件均需单独确认。</p>
-</section></ZhPageFrame>;
-}
+<section id="price-cases" className="scroll-mt-28 bg-[#EDF5FC] py-14 sm:py-20"><div className="mx-auto max-w-[1080px] px-5 sm:px-10">
+<p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">REFERENCE FEES</p><h2 className="mt-3 text-2xl font-semibold">按项目划分的费用参考</h2>
+<div className="mt-8 grid gap-5 lg:grid-cols-3">{r5Quotes.map(q=>{const h="hoursTotal" in q?q.hoursTotal:q.hoursMonth*q.months;const t=translated[q.id];return <article key={q.id} className="flex flex-col rounded-lg border border-[#CBD5E1] bg-white p-6">
+<p className="text-xs font-semibold tracking-[.16em] text-[#1766A0]">PROJECT EXAMPLE</p><h3 className="mt-3 min-h-[3.8rem] text-lg font-semibold leading-7">{t.title}</h3><p className="mt-2 text-sm leading-7 text-[#475569]">{t.industry}</p>
+<div className="mt-5 flex flex-wrap gap-2 text-xs text-[#1766A0]"><span className="bg-[#EDF5FC] px-3 py-1.5">{yen(q.rate)}／小时</span><span className="bg-[#EDF5FC] px-3 py-1.5">{"hoursTotal" in q?h+"小时（合计）":q.hoursMonth+"小时／月"}</span><span className="bg-[#EDF5FC] px-3 py-1.5">{q.months}个月</span></div>
+<p className="mt-6 border-t border-[#CBD5E1] pt-5 text-xs text-[#475569]">{q.months}个月总额（不含税）</p><p className="mt-2 text-[29px] font-bold">{yen(q.rate*h)}</p><p className="mt-4 flex-1 text-sm leading-8 text-[#475569]">{t.scope}</p><Link href={t.href} className="mt-6 border-t border-[#CBD5E1] pt-4 text-sm font-semibold text-[#1766A0] hover:underline">查看服务内容 ↗</Link>
+</article>})}</div></div></section>
+<section id="price-terms" className="mx-auto max-w-[1080px] scroll-mt-28 px-5 py-14 sm:px-10 sm:py-20"><p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">ENGAGEMENT</p><h2 className="mt-3 text-2xl font-semibold">关于报价</h2><p className="mt-5 max-w-3xl text-base leading-9 text-[#475569]">我们会确认项目目标、交付成果、涉及据点及所需工时，在明确服务内容后提供单独方案。</p><div className="mt-7 flex flex-wrap gap-3"><Link href="/zh/contact" className="rounded-md border border-[#9CBDD4] bg-[#EDF5FC] px-5 py-3 text-sm font-semibold">联系我们 ↗</Link><Link href="/zh/cases" className="rounded-md border border-[#9CBDD4] bg-[#EDF5FC] px-5 py-3 text-sm font-semibold">查看支持案例 ↗</Link></div></section>
+</ZhPageFrame>}

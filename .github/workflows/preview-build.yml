@@ -27,6 +27,8 @@ jobs:
         run: node scripts/fix-static-locale-lang.mjs
       - name: Verify refreshed English HP and links
         run: node scripts/verify-english-home.mjs
+      - name: Verify husband's original r5 pricing and service wording
+        run: node scripts/verify-r5-source-copy.mjs
       - name: Ensure required localized routes exist
         run: |
           test -f out/index.html

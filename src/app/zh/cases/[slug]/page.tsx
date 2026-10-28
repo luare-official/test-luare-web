@@ -36,7 +36,7 @@ return <ZhPageFrame label={c.model?"SUPPORT MODEL":"CASE STUDIES / "+original.in
 <div className="mt-6 grid gap-4 sm:grid-cols-3"><div className="bg-[#EDF5FC] p-4"><small>小时费率（不含税）</small><p className="mt-2 text-lg font-bold">{yen(q.rate)}</p></div>
 <div className="bg-[#EDF5FC] p-4"><small>预计工时</small><p className="mt-2 text-lg font-bold">{"hoursTotal" in q?q.hoursTotal+"小时／总计":q.hoursMonth+"小时／月"}</p></div>
 <div className="bg-[#EDF5FC] p-4"><small>支持期间</small><p className="mt-2 text-lg font-bold">{q.months}个月</p></div></div>
-<p className="mt-6 text-xs text-[#475569]">预计总额（不含税）</p><p className="mt-2 text-3xl font-semibold">{yen(q.rate*("hoursTotal" in q?q.hoursTotal:q.hoursMonth*q.months))}</p><p className="mt-3 text-xs leading-6 text-[#475569]">以上仅为示例。实际范围、人员配置与费用按项目单独报价。</p></div></div></section>}
+<p className="mt-6 text-xs text-[#475569]">预计总额（不含税）</p><p className="mt-2 text-3xl font-semibold">{yen(q.rate*("hoursTotal" in q?q.hoursTotal:q.hoursMonth*q.months))}</p><p className="mt-3 text-xs leading-6 text-[#475569]">具体范围、人员配置与所需工时按项目单独报价。</p></div></div></section>}
 <section className="mx-auto max-w-[1140px] px-5 py-12 sm:px-10"><h2 className="text-xl font-semibold">相关页面</h2><div className="mt-5 flex flex-wrap gap-3">
 <Link href="/zh/cases" className="border border-[#CBD5E1] px-4 py-3 text-sm">返回案例列表 ↗</Link><Link href="/zh/services" className="border border-[#CBD5E1] px-4 py-3 text-sm">专业服务 ↗</Link><Link href="/zh/pricing" className="border border-[#CBD5E1] px-4 py-3 text-sm">费用说明 ↗</Link></div></section>
 </ZhPageFrame>;
