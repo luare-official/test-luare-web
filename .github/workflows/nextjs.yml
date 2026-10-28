@@ -61,6 +61,8 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+      - name: Localize static HTML language (English/Chinese)
+        run: node scripts/fix-static-locale-lang.mjs
       - name: Write CNAME for custom domain
         # GitHub Pages requires a CNAME file in the published root for custom domains.
         # This runs after `next build` so it writes into the ./out directory.
