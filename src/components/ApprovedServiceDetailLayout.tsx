@@ -50,7 +50,7 @@ export default function ApprovedServiceDetailLayout({page}:LayoutProps){
     </nav>
     <div className={styles.breadcrumb}>
       <Link href="/">ホーム</Link><span aria-hidden="true">/</span>
-      <Link href="/#services">サービス</Link><span aria-hidden="true">/</span>
+      <Link href="/services">サービス</Link><span aria-hidden="true">/</span>
       <span aria-current="page">{title}</span>
     </div>
     <section className={styles.hero}>
