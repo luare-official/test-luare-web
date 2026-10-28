@@ -24,42 +24,41 @@ const idCount=(html,id)=>{
   const escaped=escapeRegExp(id);
   return [...html.matchAll(new RegExp(`\\bid=(?:"${escaped}"|'${escaped}')(?=[\\s>])`,"g"))].length;
 };
-assert(entries.length===29,`Service catalog expected 29, got ${entries.length}`);
+assert(entries.length===30,`Expected 30 catalog topic definitions, got ${entries.length}`);
 assert(new Set(entries.map(x=>x.id)).size===entries.length,"Duplicate service IDs in catalog");
-assert(new Set(entries.map(x=>x.page)).size===8,"Expected 8 existing service destinations including BPO, audit and contact");
-
+assert(new Set(entries.map(x=>x.page)).size===8,"Expected 8 existing service destination types including BPO/audit/contact");
+const categories=[
+ {n:"01",page:"internal-control",ids:["internal","three-documents","evaluation","internal-audit","training"]},
+ {n:"02",page:"accounting-management",ids:["closing","outsourcing","fpa","cashflow","accounting-advisory"]},
+ {n:"03",page:"finance-ops",ids:["close-improvement","process","ai","system-implementation","operating-model"]},
+ {n:"04",page:"global-finance",ids:["market-entry","finance-setup","reporting","hq-reporting","coordination"]},
+ {n:"05",page:"audit-assurance",ids:["statutory-audit","group-audit-consultation","ifrs-audit","fund-spc","voluntary-audit"]}
+];
 const homeFile="out/index.html";
-assert(existsSync(homeFile),`Missing ${homeFile}`);
+assert(existsSync(homeFile),"Missing homepage static HTML");
 const home=existsSync(homeFile)?readFileSync(homeFile,"utf8"):"";
+const hrefFor=(c,id)=>{
+ const base=c.page==="internal-control"?"/services/internal-control/overview":`/services/${c.page}`;
+ const anchor=id==="group-audit-consultation"?"group-audit":id==="ifrs-audit"?"accounting-advisory":id;
+ return base+"#"+anchor;
+};
 let checked=0;
-for(const {id,page} of entries){
-  // New 05 audit/assurance consultations use the existing contact form or
-  // audit LP anchors. Never infer /services/contact or synthetic anchors.
-  const targetId=id==="group-audit-consultation"?"group-audit":
-    id==="audit-readiness-consultation"?"audit-readiness":id;
-  const href=page==="bpo"?`/bpo#${id}`:
-    page==="contact"?"/contact":
-    page==="internal-control"?`/services/internal-control/overview#${id}`:
-    `/services/${page}#${targetId}`;
-  const pageHtml=content(page);
-  const normalizedHref=href.replace(/&/g,"&amp;");
-  assert(home.includes(`href="${normalizedHref}"`)||home.includes(`href='${normalizedHref}'`),`Homepage link missing: ${href}`);
-  if(page==="contact"){
-    assert(pageHtml.includes('name="email"')&&pageHtml.includes('name="company"'),
-      "Contact form fields missing on the destination for audit consultation");
-  }else{
-    assert(idCount(pageHtml,targetId)===1,`Expected exactly 1 section id="${targetId}" in ${outputFile(page)}, found ${idCount(pageHtml,targetId)}`);
-  }
+for(const category of categories){
+ const pageHtml=content(category.page);
+ const source=catalog.match(new RegExp('number:"'+category.n+'",[^\\n]*itemIds:\\[([^\\]]+)\\]'))?.[1]||"";
+ const actual=[...source.matchAll(/"([^"]+)"/g)].map(m=>m[1]);
+ assert(JSON.stringify(actual)===JSON.stringify(category.ids),"Service "+category.n+" title/menu scope diverged from approved details: "+JSON.stringify(actual));
+ for(const id of category.ids){
+  const href=hrefFor(category,id);
+  const target=href.split("#")[1];
+  assert(home.includes('href="'+href+'"'),"Homepage selected topic does not link to its own service line: "+href);
+  assert(idCount(pageHtml,target)===1,"Missing or duplicate clicked topic anchor "+href+" count "+idCount(pageHtml,target));
   checked++;
+ }
+ assert(pageHtml.includes('href="/services"'),"Service breadcrumb must return to service directory /services: "+category.n);
+ assert(pageHtml.includes('aria-current="page"'),"Current service breadcrumb missing: "+category.n);
 }
-// Common checks for all approved service pages and the J-SOX LP.
-for(const p of ["audit-assurance","accounting-management","finance-ops","global-finance"]){
-  const html=content(p);
-  for(const tab of ["internal-control","audit-assurance","accounting-management","finance-ops","global-finance"]){
-    const url=tab==="internal-control"?"/services/internal-control/overview":`/services/${tab}`;
-    assert(html.includes(`href="${url}"`),`Missing five-service navigation ${url} on ${p}`);
-  }
-}
+assert(checked===25,"Expected to verify 25 clickable homepage topic links");
 const jsox=content("internal-control");
 for(const element of ["internal","three-documents","evaluation","internal-audit","training"]){
   assert(idCount(jsox,element)===1,`Missing J-SOX target ${element}`);
@@ -110,10 +109,10 @@ assert(auditCollaborationSource.includes("openGraph:") &&
 assert(!/noindex/i.test(auditCollaborationSource),
   "Audit-firm page must remain indexable and must not include noindex");
 
-console.log(`A班 static QA: checked ${checked} homepage routes, ${htmlCache.size} parent pages and 5 service tabs.`);
+console.log(`A班 static QA: verified ${checked} visible category links, ${entries.length} topic definitions, 5 current-location breadcrumbs.`);
 if(problems.length){
   for(const message of problems) console.error("FAIL:",message);
   process.exitCode=1;
 }else{
-  console.log("PASS: 29/29 catalog items map to existing pages, contact routes and actual anchors; no duplicate service IDs.");
+  console.log("PASS: all 25 homepage submenu clicks stay in their selected service lines, actual anchors exist and breadcrumbs return to /services.");
 }
