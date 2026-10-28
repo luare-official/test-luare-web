@@ -15,7 +15,7 @@ const candidates=new Map();
 for(const file of docs){
  const rel=relative("out",file).replaceAll("\\","/");
  // Next.js generates 404 fallback pages containing ordinary nav links; they must not be treated as a clickable source URL.
- if(/(^|\\/)(404|500|_not-found)\\.html$/.test(rel))continue;
+ if(["404.html","500.html","_not-found.html"].some(x=>rel===x||rel.endsWith("/"+x)))continue;
  const source=rel==="index.html"?"/":"/"+rel.replace(/(?:\/index)?\.html$/,"");
  const html=readFileSync(file,"utf8");
  for(const m of html.matchAll(/\bhref="([^"]+)"/g)){
