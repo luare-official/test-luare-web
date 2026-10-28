@@ -8,7 +8,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 export const metadata: Metadata = {
   title: "Company Profile | Luare Consulting",
   description:
-    "Profile of Yanqing Lu (US.CPA, Inactive), Managing Partner of Luare Consulting. Providing next-generation AI accounting BPO combining AI agents and expert teams.",
+    "Profile of Yanqing Lu (USCPA, Inactive), Managing Partner of Luare Consulting. Providing next-generation AI accounting BPO combining AI agents and expert teams.",
   alternates: {
     canonical: "https://luare-consulting.com/en/about",
     languages: {
@@ -84,7 +84,7 @@ export default function AboutPageEn() {
                 </div>
                 <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-xs font-bold uppercase tracking-wider text-brand-slate/70">Representative</dt>
-                  <dd className="mt-1 text-sm font-medium text-brand-charcoal sm:col-span-2 sm:mt-0">Yanqing Lu (US.CPA, Inactive)</dd>
+                  <dd className="mt-1 text-sm font-medium text-brand-charcoal sm:col-span-2 sm:mt-0">Yanqing Lu (USCPA, Inactive)</dd>
                 </div>
               </dl>
             </div>
