@@ -15,7 +15,7 @@ import Script from "next/script";
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ja" className={notoSans.variable + " h-full antialiased"}>
+    <html lang="ja" suppressHydrationWarning className={notoSans.variable + " h-full antialiased"}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
