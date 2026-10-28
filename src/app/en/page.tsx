@@ -47,8 +47,6 @@ export default function HomeEn(){
     <h1><span>Making accounting and finance</span><span>simpler for global<br className="luare-unicell-mobile-break"/> businesses in Japan.</span></h1>
     <p>We stand by your finance.</p>
    </div>
-   <div className="luare-unicell-side-caption" aria-hidden="true">GLOBAL ACCOUNTING &amp; FINANCE</div>
-   <div className="luare-unicell-scroll" aria-hidden="true">SCROLL</div>
   </div>
  </section>
  <section className="luare-v6-section luare-who-band" id="who-we-help">
