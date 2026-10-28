@@ -9,7 +9,7 @@ mkdirSync(out,{recursive:true});
 const views=[{name:"pc",width:1440,height:900,mobile:false},{name:"sp",width:390,height:844,mobile:true}];
 const paths=["/","/services","/services/internal-control","/services/audit-assurance",
 "/bpo","/contact","/about","/cases","/insights","/privacy",
-"/en","/en/about","/en/contact","/zh","/zh/about","/zh/contact"];
+"/en","/en/about","/en/contact","/en/services","/en/cases","/en/pricing","/en/insights","/zh","/zh/about","/zh/contact"];
 const failures=[],warnings=[],results=[];
 const browser=await chromium.launch({headless:true,args:["--no-sandbox"]});
 for(const v of views){
