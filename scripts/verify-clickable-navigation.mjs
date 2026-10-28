@@ -59,9 +59,9 @@ for(const {source,href,target} of candidates.values()){
 }
 // Real visible click flows with semantic assertions (not just href existence).
 const critical=[
- ["/pricing",'a[href="/services/internal-control/overview"]',"/services/internal-control/overview"],
+ ["/pricing",'main a[href="/services/internal-control/overview"]',"/services/internal-control/overview"],
  ...["close-process-early-improvement","japan-subsidiary-finance-setup","overseas-jsox-three-documents","governance-overseas-subsidiaries","china-japan-market-entry"].map(s=>
- ["/insights/"+s,'a[href="/services"]',"/services"]),
+ ["/insights/"+s,'main a[href="/services"]',"/services"]),
  ...["internal-control/overview","accounting-management","finance-ops","global-finance","audit-assurance"].map(s=>
  ["/services/"+s,'nav[aria-label="パンくずリスト"] a[href="/services"]',"/services"])
 ];
