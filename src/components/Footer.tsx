@@ -17,7 +17,7 @@ export default function Footer() {
           </div>
           <nav className="luare-footer-links" aria-label="Footer navigation">
             <Link href="/">ホーム</Link>
-            <Link href="/services">サービス（全5領域）</Link>
+            <Link href="/services">サービス</Link>
             <Link href="/cases">支援事例</Link>
             <Link href="/insights">ブログ</Link>
             <Link href="/pricing">料金</Link>
