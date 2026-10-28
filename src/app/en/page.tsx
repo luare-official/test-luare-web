@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import ScrollReveal from "@/components/ScrollReveal";
 import FooterEn from "@/components/en/FooterEn";
+import FreeConsultationRail from "@/components/FreeConsultationRail";
 import InteractiveServiceGalleryEn from "@/components/en/InteractiveServiceGalleryEn";
 import { enCases, enInsights } from "@/lib/enSite";
 import { r5Cases } from "@/lib/r5Cases";
@@ -15,10 +16,10 @@ export const metadata:Metadata={
 const who=[
 "Foreign-owned companies operating in Japan",
 "Japanese subsidiaries with overseas parent companies",
-"Japanese businesses expanding internationally",
+"Overseas companies entering the Japanese market",
 "Organizations adopting IFRS or US GAAP",
-"Teams reporting to headquarters in English or Chinese",
-"Companies coordinating accounting, tax and audit support"
+"Teams communicating with overseas parent companies or subsidiaries in English or Chinese",
+"Companies seeking coordinated accounting and tax support"
 ];
 const why=[
 ["01","Specialists in international accounting","Support for IFRS, US GAAP, internal controls and cross-border finance."],
@@ -131,6 +132,7 @@ export default function HomeEn(){
  </section>
  <Link href="/en/contact" className="luare-v6-mobile-cta">Free consultation</Link>
  </main>
+ <FreeConsultationRail language="EN"/>
  <FooterEn/>
  </>;
 }
