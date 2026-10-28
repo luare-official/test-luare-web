@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { serviceCategories } from "@/lib/serviceCatalog";
+import { enInsights } from "@/lib/enSite";
 
 interface NavbarProps {
   theme?: "light" | "dark";
@@ -59,6 +60,10 @@ export default function Navbar({
       return hasTranslation ? "/zh" + (baseRoute === "/" ? "" : baseRoute) : "/zh";
     }
     // English remains on the pre-existing home/about/contact route set.
+    if (baseRoute.startsWith("/insights/")) {
+      const slug = baseRoute.slice("/insights/".length);
+      return enInsights.some(item => item.slug === slug) ? "/en" + baseRoute : "/en/insights";
+    }
     const hasEnglish = baseRoute === "/" || ["/services", "/cases", "/pricing", "/about", "/contact", "/insights"].some(route => baseRoute === route || baseRoute.startsWith(route + "/"));
     const englishRoute = baseRoute === "/services/internal-control/overview" ? "/services/internal-control" : baseRoute;
     return hasEnglish ? "/en" + (englishRoute === "/" ? "" : englishRoute) : "/en";
