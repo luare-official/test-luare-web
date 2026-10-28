@@ -46,8 +46,6 @@ export default function HomeZh(){return <>
    <h1><span>让外资企业与跨国集团的</span><span>会计和财务管理，<br className="luare-unicell-mobile-break"/>更顺畅。</span></h1>
    <p>We stand by your finance.</p>
   </div>
-  <div className="luare-unicell-side-caption" aria-hidden="true">GLOBAL ACCOUNTING &amp; FINANCE</div>
-  <div className="luare-unicell-scroll" aria-hidden="true">SCROLL</div>
  </div>
 </section>
 <section className="luare-v6-section luare-who-band" id="who-we-help">

@@ -51,6 +51,21 @@ for(const profile of profiles){
    if(!current.hero||!current.sections||current.oldText)record(profile.label+" /en stale homepage structure "+JSON.stringify(current));
   }
 
+  if(["home-jp","home-zh","home-en"].includes(p.tag)){
+   const hero=await page.evaluate(()=>{
+    const stage=document.querySelector(".luare-unicell-stage");
+    const photo=document.querySelector(".luare-unicell-talk-photo");
+    if(!stage||!photo)return null;
+    const a=stage.getBoundingClientRect(),b=photo.getBoundingClientRect();
+    return {blankBelowPhoto:Math.round(a.bottom-b.bottom),
+      stageHeight:Math.round(a.height),
+      hasOldCaption:!!document.querySelector(".luare-unicell-side-caption"),
+      hasOldScroll:!!document.querySelector(".luare-unicell-scroll")};
+   });
+   const maxGap=profile.label==="desktop"?190:190;
+   if(!hero||hero.blankBelowPhoto>maxGap||hero.hasOldCaption||hero.hasOldScroll)
+      record(profile.label+" "+p.path+" hero whitespace/removed labels regression "+JSON.stringify(hero));
+  }
   // Full-page screenshots do NOT simulate scrolling. Trigger each existing
   // ScrollReveal with real scroll positions before taking the design-review image,
   // otherwise lower sections look blank despite working on a normal visit.
