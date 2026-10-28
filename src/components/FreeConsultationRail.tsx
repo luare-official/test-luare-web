@@ -1,0 +1,44 @@
+"use client";
+import { useEffect, useState } from "react";
+export default function FreeConsultationRail({ language = "JP" }: { language?: "JP" | "EN" | "ZH" }) {
+  const contactHref = language === "EN" ? "/en/contact" : language === "ZH" ? "/zh/contact" : "/contact";
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const update = () => setVisible(window.scrollY > Math.max(420, window.innerHeight * 0.72));
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => { window.removeEventListener("scroll", update); window.removeEventListener("resize", update); };
+  }, []);
+
+  return (
+    <>
+      <a className={"luare-consult-rail " + (visible ? "is-visible" : "")} href={contactHref} aria-label={language === "EN" ? "Free online consultation" : language === "ZH" ? "免费在线咨询" : "無料オンライン相談"}>
+        <span className="luare-consult-video" aria-hidden="true"><i /></span>
+        <strong>{language === "EN" ? "Free online consultation" : language === "ZH" ? "免费在线咨询" : "無料オンライン相談"}</strong>
+        <span className="luare-consult-rule" />
+        <span className="luare-consult-languages" aria-label="日本語、英語、中国語に対応">
+          <span className="luare-consult-language">
+            <i className="luare-line-flag luare-line-flag-jp" aria-hidden="true" />
+            <b>JP</b>
+          </span>
+          <span className="luare-consult-language">
+            <i className="luare-line-flag luare-line-flag-en" aria-hidden="true"><em /></i>
+            <b>EN</b>
+          </span>
+          <span className="luare-consult-language">
+            <i className="luare-line-flag luare-line-flag-cn" aria-hidden="true" />
+            <b>中</b>
+          </span>
+        </span>
+      </a>
+      <div className={"luare-consult-popover " + (visible ? "is-rail-visible" : "")} aria-hidden="true">
+        <button type="button" tabIndex={-1} aria-hidden="true">×</button>
+        <span className="luare-consult-people" aria-hidden="true"><i /><i /><i /></span>
+        <strong>オンラインで<br />気軽に相談</strong>
+        <p>会計・財務の専門家が、<br />日本語・英語・中国語の<br />3言語で対応します。</p>
+      </div>
+    </>
+  );
+}
