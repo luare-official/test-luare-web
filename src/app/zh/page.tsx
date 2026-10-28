@@ -4,6 +4,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import InteractiveServiceGalleryZh from "@/components/zh/InteractiveServiceGalleryZh";
 import Navbar from "@/components/Navbar";
 import FooterZh from "@/components/zh/FooterZh";
+import FreeConsultationRail from "@/components/FreeConsultationRail";
 import {zhServices,zhCases,zhArticles} from "@/lib/zhSite";
 import {r5Cases} from "@/lib/r5Cases";
 
@@ -15,10 +16,10 @@ export const metadata:Metadata={
 const who=[
 "在日本经营业务的外资企业",
 "拥有海外母公司的日本法人",
-"正在拓展海外业务的日本企业",
+"计划进入日本市场的海外企业",
 "需要对应IFRS / US-GAAP的企业",
-"需要用英语或中文与海外总部沟通的企业",
-"希望统一协调财务、税务和审计事务的企业"
+"需要用英语或中文与海外母公司或子公司沟通的企业",
+"希望获得财务与税务专业支持的企业"
 ];
 const why=[
 ["01","具备国际会计经验的专业团队","支持IFRS、US-GAAP、跨国财务管理及相关专业业务。"],
@@ -139,4 +140,4 @@ const item=zhCases[srcCase.id];return <ScrollReveal key={srcCase.id} delay={inde
 <small>日本語 / English / 中文</small>
 </ScrollReveal></div></section>
 <Link href="/zh/contact" className="luare-v6-mobile-cta">首次免费咨询</Link>
-</main><FooterZh/></>}
+</main><FreeConsultationRail language="ZH"/><FooterZh/></>}
