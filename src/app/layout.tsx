@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Luare Consulting | 外資系・グローバル企業の会計・財務支援",
   description: "IFRS / US-GAAP、海外親会社向けレポーティング、監査・税務、M&A・Valuationなど、外資系・グローバル企業の複雑な会計・財務課題を支援します。",
   keywords: ["外資系企業", "グローバル企業", "IFRS", "US-GAAP", "監査", "国際税務", "M&A", "Valuation", "HQ Reporting", "USCPA", "Luare Consulting"],
+  verification: { google: "9el0Y1SZihQN2-jq1RRNgA9IYm96uNMSDtJOmfxSJAk" },
 };
 
 import ScrollToTop from "@/components/ScrollToTop";
