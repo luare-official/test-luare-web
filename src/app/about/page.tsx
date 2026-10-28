@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "会社概要 | Luare Consulting",
   description:
-    "Luare Consulting 代表取締役 陸 沿青（US.CPA）の経歴。KPMG、三菱UFJモルガン・スタンレー証券等を経て、AIエージェントと専門家チームによる次世代型AI経理BPOを提供。",
+    "Luare Consulting 代表取締役 陸 沿青（USCPA）の経歴。KPMG、三菱UFJモルガン・スタンレー証券等を経て、AIエージェントと専門家チームによる次世代型AI経理BPOを提供。",
   alternates: {
     canonical: "https://luare-consulting.com/about",
     languages: {
@@ -87,7 +87,7 @@ export default function AboutPage() {
                 </div>
                 <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-xs font-bold uppercase tracking-wider text-brand-slate/70">代表</dt>
-                  <dd className="mt-1 text-sm font-medium text-brand-charcoal sm:col-span-2 sm:mt-0">陸 沿青 (US.CPA)</dd>
+                  <dd className="mt-1 text-sm font-medium text-brand-charcoal sm:col-span-2 sm:mt-0">陸 沿青 (USCPA)</dd>
                 </div>
               </dl>
             </div>
