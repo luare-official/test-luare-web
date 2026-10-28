@@ -1,0 +1,20 @@
+import type {Metadata} from "next";
+import {notFound} from "next/navigation";
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import FooterEn from "@/components/en/FooterEn";
+import styles from "@/components/cases/R5CaseLayout.module.css";
+import {r5Cases,findR5Quote} from "@/lib/r5Cases";
+import {enCases} from "@/lib/enSite";
+type Props={params:Promise<{slug:string}>};
+export const dynamicParams=false;
+export function generateStaticParams(){return r5Cases.map(c=>({slug:c.id}));}
+export async function generateMetadata({params}:Props):Promise<Metadata>{const slug=(await params).slug;const c=enCases[slug];return c?{title:c.title+" | Luare Consulting",description:c.impact,alternates:{canonical:"https://luare-consulting.com/en/cases/"+slug}}:{title:"Case not found"};}
+export default async function CaseEn({params}:Props){const slug=(await params).slug;const x=enCases[slug];const source=r5Cases.find(c=>c.id===slug);if(!x||!source)notFound();const quote=findR5Quote(source.price);const model=!!x.model;return <><Navbar solid/><main className={styles.page+" flex-1 pt-20"} lang="en">
+<div className={styles.hero}><div className={styles.shell}><nav aria-label="Breadcrumb" className={styles.breadcrumb}><Link href="/en">Home</Link><span>/</span><Link href="/en/cases">Case Studies</Link><span>/</span><span>{x.title}</span></nav><p className={styles.eyebrow}>{model?"SERVICE MODEL":"CASE STUDIES / "+source.index}</p><h1>{x.title}</h1><p>{x.impact}</p>{model&&<p className="mt-3 text-xs">Illustrative model only; not a completed client project.</p>}</div></div>
+<section className={styles.section}><div className={styles.shell}><div className={styles.sectionTop}><div><p className={styles.eyebrow}>OVERVIEW</p><h2>Project overview</h2></div></div><div className={styles.caseSummary}><div><span className={styles.badgebg}>{x.type}</span><h2>{x.industry}</h2><p>{x.intro}</p></div><aside className={styles.statPanel}><small>Focus</small><strong>{x.type}</strong><p>{x.impact}</p></aside></div></div></section>
+<section className={styles.section+" "+styles.alt}><div className={styles.shell}><div className={styles.sectionTop}><div><p className={styles.eyebrow}>CHALLENGES</p><h2>Issues addressed</h2></div></div><ul className={styles.detailList}>{x.issues.map(a=><li key={a}>{a}</li>)}</ul></div></section>
+<section className={styles.section}><div className={styles.shell}><div className={styles.sectionTop}><div><p className={styles.eyebrow}>OUR SUPPORT</p><h2>How Luare supports the work</h2></div></div><ul className={styles.detailList}>{x.actions.map(a=><li key={a}>{a}</li>)}</ul></div></section>
+{quote&&<section className={styles.section+" "+styles.alt}><div className={styles.shell}><div className={styles.sectionTop}><div><p className={styles.eyebrow}>REFERENCE FEE</p><h2>Illustrative fee calculation</h2></div></div><div className={styles.priceCard}><p>Calculated from a project-specific hourly rate, estimated hours and duration. This is not a historical fee or guaranteed quotation.</p><div className={styles.priceFacts}><span>¥{quote.rate.toLocaleString("en-US")}/hour (before tax)</span><span>{("hoursTotal" in quote)?quote.hoursTotal+" hours total":quote.hoursMonth+" hours/month"}</span><span>{quote.months} months</span></div><div className={styles.quoteTotal}>¥{(("hoursTotal" in quote)?quote.hoursTotal:quote.hoursMonth*quote.months)*quote.rate===0?"0":((("hoursTotal" in quote)?quote.hoursTotal:quote.hoursMonth*quote.months)*quote.rate).toLocaleString("en-US")}</div></div></div></section>}
+<section className={styles.section}><div className={styles.shell}><h2 className="text-2xl font-semibold">Related services</h2><div className={styles.related}><Link href="/en/services">Service overview</Link><Link href="/en/pricing">Pricing examples</Link><Link href="/en/contact">Contact</Link></div></div></section>
+<section className={styles.closing}><h2>Discuss a similar challenge</h2><p>We'll help identify the appropriate work scope and next steps.</p><Link href="/en/contact" className={styles.closingLink}>Contact us</Link></section></main><FooterEn/></>}
