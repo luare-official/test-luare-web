@@ -1,117 +1,75 @@
-import type { Metadata } from "next";
+import type {Metadata} from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import {r5Quotes} from "@/lib/r5Cases";
 
-export const metadata: Metadata = {
-  title: "料金・参考費用 | Luare Consulting",
-  description: "内部統制・J-SOX、決算改善、FP&A支援の参考費用を、想定単価・工数・期間とあわせてご案内。案件の範囲に応じて個別にお見積りします。",
-  alternates: { canonical: "https://luare-consulting.com/pricing" },
+// Titles, project descriptions, amounts, order and section text are directly
+// transcribed from the user's Luare_HP_Public_Preview_r5.html / content_master_r5.json.
+export const metadata:Metadata={
+ title:"料金のご案内 | Luare Consulting",
+ description:"業務の専門性、支援体制、必要工数に応じて個別にお見積りします。プロジェクト別の費用目安をご案内します。",
+ alternates:{canonical:"https://luare-consulting.com/pricing"}
 };
-
-const examples = [
-  {
-    id:"jsox",
-    title:"J-SOX 3点セット構築支援",
-    subtitle:"業務ヒアリング・3点セット作成・評価準備など",
-    price:"288万円",
-    condition:"16,000円／時間 × 合計180時間",
-    period:"想定期間：6か月",
-    href:"/services/internal-control",
-  },
-  {
-    id:"closing",
-    title:"決算実務・改善支援",
-    subtitle:"決算関連実務・CF資料・締め工程の可視化と改善など",
-    price:"576万円",
-    condition:"12,000円／時間 × 月80時間 × 6か月",
-    period:"想定期間：6か月",
-    href:"/services/accounting-management",
-  },
-  {
-    id:"fpa",
-    title:"FP&A・KPI高度化支援",
-    subtitle:"予実分析・事業KPI分析・指標の精度改善など",
-    price:"648万円",
-    condition:"18,000円／時間 × 月60時間 × 6か月",
-    period:"想定期間：6か月",
-    href:"/services/accounting-management#fpa",
-  }
-] as const;
-
-export default function PricingPage() {
-  return (
-    <>
-      <Navbar solid />
-      <main className="flex-1 bg-white pt-20">
-        <section className="border-b border-[#CBD5E1] bg-[#EDF5FC]">
-          <div className="mx-auto max-w-[1080px] px-5 pb-14 pt-10 sm:px-10">
-            <nav aria-label="パンくずリスト" className="mb-10 flex gap-3 text-xs text-[#475569]">
-              <Link href="/" className="hover:underline">ホーム</Link><span>/</span><span aria-current="page">料金</span>
-            </nav>
-            <p className="text-[11px] font-semibold tracking-[.2em] text-[#1766A0]">PRICING</p>
-            <h1 className="mt-3 text-[clamp(32px,4.4vw,46px)] font-semibold text-[#0B3158]">料金・参考費用</h1>
-            <p className="mt-5 max-w-3xl text-sm leading-8 text-[#475569] sm:text-base">
-              業務の専門性、対象範囲、必要な工数に応じてお見積りします。
-              以下はご相談内容をイメージいただくための参考試算です。
-            </p>
-          </div>          <div className="mx-auto max-w-[1080px] px-5 pb-8 sm:px-10">
-            <p className="mt-3 max-w-3xl text-xs leading-7 text-[#475569]">
-              参考金額は「対象業務ごとの時間単価 × 想定工数」によって計算しています。時間単価は支援内容によって異なるため、すべての業務に共通する一律単価ではありません。
-            </p>
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-[1080px] px-5 pt-12 sm:px-10 sm:pt-16" aria-label="基本料金">
-          <div className="rounded-xl border border-[#CBD5E1] bg-[#EDF5FC] px-7 py-9 sm:px-11">
-            <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">HOURLY RATE / 基本料金の目安</p>
-            <p className="mt-4 text-[clamp(33px,5vw,52px)] font-semibold leading-tight text-[#0B3158]">12,000円〜<span className="ml-2 text-base font-medium">／時間</span></p>
-            <p className="mt-3 text-[13px] leading-7 text-[#475569]">税別。業務内容、担当範囲、必要工数に応じて個別にお見積りします。</p>
-          </div>
-        </section>
-        <section className="mx-auto max-w-[1080px] px-5 py-14 sm:px-10 sm:py-20">
-          <div className="mb-9">
-            <h2 className="text-2xl font-semibold text-[#0B3158]">支援内容別の参考試算</h2>
-            <p className="mt-3 text-sm leading-7 text-[#475569]">各例は想定条件に基づく計算です。定額プラン・お約束する見積額・過去の実績金額ではありません。</p>
-          </div>
-          <div className="grid gap-5 lg:grid-cols-3">
-            {examples.map(example=>(
-              <article key={example.id} className="flex flex-col rounded-lg border border-[#CBD5E1] bg-white p-6 shadow-[0_5px_25px_rgba(25,61,81,.035)]">
-                <h3 className="min-h-[3.3rem] text-lg font-semibold leading-7 text-[#0B3158]">{example.title}</h3>
-                <p className="mt-2 min-h-[5rem] text-[13px] leading-7 text-[#475569]">{example.subtitle}</p>
-                <div className="mt-5 border-t border-[#CBD5E1] pt-5">
-                  <p className="text-xs font-semibold text-[#475569]">参考試算総額</p>
-                  <p className="mt-2 text-[31px] font-semibold tracking-tight text-[#0B3158]">{example.price}</p>
-                  <p className="mt-3 text-[13px] leading-7 text-[#475569]">{example.condition}</p>
-                  <p className="mt-1 text-xs text-[#475569]">{example.period}</p>
-                </div>
-                <Link href={example.href} className="mt-7 inline-flex items-center gap-2 border-t border-[#CBD5E1] pt-5 text-sm font-semibold text-[#0B3158] hover:underline">
-                  支援内容を見る <span aria-hidden="true">↗</span>
-                </Link>
-              </article>
-            ))}
-          </div>
-          <p className="mt-6 rounded-lg bg-[#EDF5FC] p-5 text-xs leading-7 text-[#475569]">
-            ※上記はご相談を具体化するための参考例です。実際の業務範囲・工数・支援期間・消費税区分・実費や契約条件は個別のお見積りで確認します。表示金額は最終的な契約価格ではありません。
-          </p>
-        </section>
-
-        <section className="bg-[#EDF5FC] py-14 sm:py-20">
-          <div className="mx-auto max-w-[1080px] px-5 sm:px-10">
-            <p className="text-xs font-semibold tracking-widest text-[#1766A0]">HOW WE WORK</p>
-            <h2 className="mt-3 text-2xl font-semibold text-[#0B3158]">必要な業務から、ご相談ください。</h2>
-            <p className="mt-5 max-w-3xl text-sm leading-8 text-[#475569]">
-              すべての業務を一括で依頼いただく必要はありません。現在の体制やご希望を伺い、
-              対象業務・担当体制・必要な期間を整理したうえで、個別にご提案します。
-              仲介会社を介さず、担当窓口と直接ご相談いただけます。
-            </p>
-            <Link href="/contact" className="mt-8 inline-flex items-center gap-4 rounded-full bg-[#1766A0] px-8 py-4 text-sm font-semibold text-white hover:bg-[#0B3158]">
-              料金・支援範囲を相談する <span aria-hidden="true">↗</span>
-            </Link>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
-  );
+const yen=(value:number)=>value.toLocaleString("ja-JP")+"円";
+const links:Record<string,string>={
+ "quote-fpa":"/services/accounting-management#fpa",
+ "quote-close":"/services/accounting-management#closing",
+ "quote-jsox":"/services/internal-control/overview#three-documents"
+};
+export default function PricingPage(){
+return <><Navbar solid/>
+<main lang="ja" className="flex-1 bg-white pt-20 text-[#0B3158]">
+ <header className="border-b border-[#CBD5E1] bg-[#EDF5FC]">
+  <div className="mx-auto max-w-[1080px] px-5 pb-12 pt-10 sm:px-10 sm:py-14">
+   <nav aria-label="パンくずリスト" className="mb-8 flex gap-2 text-xs text-[#475569]"><Link href="/">ホーム</Link><span>／</span><span>料金</span></nav>
+   <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">FEES</p>
+   <h1 className="mt-3 text-[clamp(30px,4.4vw,46px)] font-semibold">料金のご案内</h1>
+   <p className="mt-5 max-w-3xl text-base leading-8 text-[#475569]">業務の専門性、支援体制、必要工数に応じて個別にお見積りします。</p>
+  </div>
+ </header>
+ <section id="price-base" className="scroll-mt-28 mx-auto max-w-[1080px] px-5 py-14 sm:px-10 sm:py-16">
+  <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">PRICING POLICY</p>
+  <h2 className="mt-3 text-2xl font-semibold">基本的な料金体系</h2>
+  <div className="mt-8 rounded-xl border border-[#CBD5E1] bg-[#EDF5FC] px-7 py-9 sm:px-10">
+   <p className="text-xs font-semibold tracking-[.18em] text-[#1766A0]">HOURLY RATE</p>
+   <p className="mt-3 text-[clamp(32px,5vw,50px)] font-semibold text-[#0B3158]">12,000円～ <span className="text-base font-medium">/ 時間</span></p>
+   <p className="mt-3 text-sm leading-7 text-[#475569]">税別。業務内容や担当範囲に応じてお見積りします。</p>
+  </div>
+ </section>
+ <section id="price-cases" className="scroll-mt-28 bg-[#EDF5FC] py-14 sm:py-20">
+  <div className="mx-auto max-w-[1080px] px-5 sm:px-10">
+   <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">REFERENCE FEES</p>
+   <h2 className="mt-3 text-2xl font-semibold">プロジェクト別の費用目安</h2>
+   <div className="mt-8 grid gap-5 lg:grid-cols-3">
+    {r5Quotes.map(q=>{
+     const hours=("hoursTotal" in q)?q.hoursTotal:q.hoursMonth*q.months;
+     return <article key={q.id} className="flex flex-col rounded-lg border border-[#CBD5E1] bg-white p-6">
+      <span className="text-xs font-semibold tracking-[.16em] text-[#1766A0]">PROJECT EXAMPLE</span>
+      <h3 className="mt-3 min-h-[3.8rem] text-lg font-semibold leading-7">{q.title}</h3>
+      <p className="mt-2 text-sm leading-7 text-[#475569]">{q.industry}</p>
+      <div className="mt-5 flex flex-wrap gap-2 text-xs text-[#1766A0]">
+       <span className="bg-[#EDF5FC] px-3 py-1.5">{yen(q.rate)}／時間</span>
+       <span className="bg-[#EDF5FC] px-3 py-1.5">{("hoursTotal" in q)?hours+"時間・合計":q.hoursMonth+"時間／月"}</span>
+       <span className="bg-[#EDF5FC] px-3 py-1.5">{q.months}か月</span>
+      </div>
+      <p className="mt-6 border-t border-[#CBD5E1] pt-5 text-xs text-[#475569]">{q.months}か月総額（税別）</p>
+      <p className="mt-2 text-[29px] font-bold text-[#0B3158]">{yen(hours*q.rate)}</p>
+      <p className="mt-4 flex-1 text-sm leading-8 text-[#475569]">{q.scope}</p>
+      <Link href={links[q.id]} className="mt-6 border-t border-[#CBD5E1] pt-4 text-sm font-semibold text-[#1766A0] hover:underline">サービス内容を見る ↗</Link>
+     </article>;
+    })}
+   </div>
+  </div>
+ </section>
+ <section id="price-terms" className="scroll-mt-28 mx-auto max-w-[1080px] px-5 py-14 sm:px-10 sm:py-20">
+  <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">ENGAGEMENT</p>
+  <h2 className="mt-3 text-2xl font-semibold">お見積りについて</h2>
+  <p className="mt-5 max-w-3xl text-base leading-9 text-[#475569]">プロジェクトの目的、成果物、対象拠点、必要工数を確認し、支援内容を明確にした上で個別にご提案します。</p>
+  <div className="mt-7 flex flex-wrap gap-3">
+   <Link href="/contact" className="rounded-md border border-[#9CBDD4] bg-[#EDF5FC] px-5 py-3 text-sm font-semibold text-[#0B3158] hover:bg-[#E5F1FA]">ご相談はこちら ↗</Link>
+   <Link href="/cases" className="rounded-md border border-[#9CBDD4] bg-[#EDF5FC] px-5 py-3 text-sm font-semibold text-[#0B3158] hover:bg-[#E5F1FA]">支援事例を見る ↗</Link>
+  </div>
+ </section>
+</main><Footer/></>;
 }
