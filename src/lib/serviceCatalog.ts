@@ -22,7 +22,7 @@ export const serviceCategories: readonly ServiceCategory[] = [
   { number:"02", title:"会計・決算・経営管理支援", lead:"数字を作る実務から、意思決定に使える経営情報の整備まで。", itemIds:["closing","outsourcing","fpa","cashflow","accounting-advisory"] },
   { number:"03", title:"業務改善・AI・システム支援", lead:"現場の工程を見極め、仕組みとテクノロジーの両面から改善。", itemIds:["close-improvement","process","ai","system-implementation","operating-model"] },
   { number:"04", title:"日本進出・海外拠点支援", lead:"日本と海外、現地実務と本社経営管理の接点を整備。", itemIds:["market-entry","finance-setup","reporting","hq-reporting","coordination"] },
-  { number:"05", title:"監査・保証業務", lead:"法定監査・任意監査などのご相談に、提携監査法人と連携して対応。", itemIds:["statutory-audit","voluntary-audit","group-audit-consultation","audit-readiness-consultation","assurance-consultation"] },
+  { number:"05", title:"監査・保証業務", lead:"法定監査・任意監査などのご相談に、提携監査法人と連携して対応。", itemIds:["statutory-audit","group-audit-consultation","accounting-advisory","fund-spc","voluntary-audit"] },
 ] as const;
 
 const topics: readonly [string,string,string,string][] = [
@@ -37,7 +37,7 @@ const topics: readonly [string,string,string,string][] = [
   ["voluntary-audit","任意監査","任意監査の目的や対象範囲を伺い、提携監査法人と連携して監査体制をご案内します。","contact"],
   ["group-audit-consultation","連結子会社監査・Group Audit","国内外のグループ監査ニーズについて、監査人との連携や必要な資料・調整業務をご相談いただけます。","audit-assurance"],
   ["audit-readiness-consultation","監査準備・監査対応支援","PBC資料の準備や会計論点の整理、日英中での監査照会・海外監査人対応を実務面から支援します。","audit-assurance"],
-  ["assurance-consultation","その他の保証業務のご相談","対象業務や目的に応じて、提携する専門家・監査法人と対応可能な範囲を確認します。","contact"],
+  ["fund-spc","ファンド・SPC監査","ファンドや特別目的会社（SPC）の財務諸表監査について、スキームや必要な監査範囲を伺い、担当監査法人との連携を図ります。","audit-assurance"],
   ["closing","月次・年次・連結決算支援","日々の集計から月次・年次・連結決算まで、計上根拠の確認や関係部門との調整を含めて支援します。","accounting-management"],
   ["fpa","予算管理・FP&A／事業KPI分析","事業活動と会計数値のつながりを把握し、予実差異・KPIの定義と分析フローの整備を支援します。","accounting-management"],
   ["cashflow","キャッシュ・フロー作成支援","BS・PL・補助資料の整合を確認し、営業・投資・財務キャッシュフローの作成プロセスを支援します。","accounting-management"],
@@ -67,6 +67,22 @@ function route(page:string,id:string):string {
   if(page==="internal-control")return `/services/internal-control/overview#${id}`;
   return `/services/${page}#${id}`;
 }
+/** Home and service-directory card links must stay inside the category the visitor chose.
+ * Never send a selected internal-control topic to the separate advertising LP.
+ */
+export function serviceCategoryItemHref(number:string,id:string):string {
+  const destinations:Record<string,string> = {
+    "01":"/services/internal-control/overview",
+    "02":"/services/accounting-management",
+    "03":"/services/finance-ops",
+    "04":"/services/global-finance",
+    "05":"/services/audit-assurance",
+  };
+  const base=destinations[number]||"/services";
+  const target=id==="group-audit-consultation"?"group-audit":id;
+  return base+"#"+target;
+}
+
 export const serviceItems: readonly ServiceItem[] = topics.map(([id,name,description,page])=>({
   id,name,description,page,href:route(page,id)
 }));
