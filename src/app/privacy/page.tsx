@@ -26,6 +26,8 @@ export default function PrivacyPage() {
             <section><h2 className="mb-2 text-lg font-bold text-[#0B3158]">2. 利用目的</h2><p>お問い合わせへの回答、サービスのご案内、相談に関する連絡と業務上の調整、サイトの利用状況の分析と改善に使用します。</p></section>
             <section><h2 className="mb-2 text-lg font-bold text-[#0B3158]">3. 外部サービスの利用</h2><p>フォーム送信にはFormspreeを使用し、入力された情報は同サービスを通じて処理されます。サイトの利用状況の分析にはGoogle アナリティクスを使用しています。これらのサービスでは、サービス提供に必要な情報やアクセス情報が取り扱われる場合があります。</p></section>
             <section><h2 className="mb-2 text-lg font-bold text-[#0B3158]">4. 安全管理と情報提供</h2><p>取得した情報の適切な管理に努めます。法令に基づく場合、ご本人の同意がある場合、お問い合わせの処理に必要な外部サービスを利用する場合などを除き、目的外の第三者提供を行いません。</p></section>
+            <section><h2 className="mb-2 text-lg font-bold text-[#0B3158]">Cookie・アクセス解析</h2><p>当サイトでは、利用状況の把握と改善のため、Google アナリティクスによりCookie等を利用してアクセスに関する情報を取得する場合があります。取得される情報には閲覧ページ、利用端末・ブラウザに関する情報等が含まれます。Cookieはブラウザの設定で無効にできるほか、Googleが提供するオプトアウト手段をご利用いただけます。アクセス情報の取扱いについてはGoogleのプライバシーポリシーもご参照ください。</p></section>
+            <section><h2 className="mb-2 text-lg font-bold text-[#0B3158]">外部委託・外国にある事業者による処理</h2><p>お問い合わせフォームやアクセス解析に利用する外部サービスの提供事業者が、国外で情報を処理する場合があります。当社は、業務に必要な範囲で外部サービスを利用し、利用目的に応じた取扱いに努めます。</p></section>
             <section><h2 className="mb-2 text-lg font-bold text-[#0B3158]">5. お問い合わせ</h2><p>情報の取扱いや開示・訂正・削除等に関するご相談は、<Link href="/contact" className="font-semibold text-[#1766A0] underline">お問い合わせフォーム</Link>からご連絡ください。</p></section>
             <section><h2 className="mb-2 text-lg font-bold text-[#0B3158]">6. 改定</h2><p>サービスの変更や関連法令などに応じて本方針を見直す場合があります。</p></section>
           </div>
@@ -35,7 +37,7 @@ export default function PrivacyPage() {
             <h2 className="mt-5 font-bold text-[#0B3158]">隐私说明（中文）</h2>
             <p>Luare Consulting收集通过联系表单提交的公司名称、姓名、邮箱、可选联系电话及咨询内容，用于回复咨询。网站使用Formspree处理表单，使用Google Analytics分析访问情况。如对信息处理有疑问，请<Link href="/zh/contact" className="font-semibold text-[#1766A0] underline">联系我们</Link>。</p>
           </div>
-          <p className="mt-9 text-xs text-[#475569]">制定：2026年10月25日</p>
+          <p className="mt-9 text-xs text-[#475569]">制定：2026年10月25日 ／ 更新：2026年10月28日</p>
         </div>
       </main>
       <Footer />
