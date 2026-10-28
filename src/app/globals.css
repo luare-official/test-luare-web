@@ -2935,3 +2935,17 @@ body {background-color:var(--background);color:var(--foreground);font-family:var
  .luare-zh-hero-copy h1 { font-size:clamp(24px,6.1vw,32px); line-height:1.42; }
  .luare-zh-hero-copy h1 span { white-space:normal; }
 }
+
+/* English hero: retain the approved Japanese visual composition while allowing
+   longer translated headings to wrap safely on desktop and mobile. */
+.luare-en-hero-copy h1 {font-size:clamp(31px,3.2vw,49px);letter-spacing:-.035em;}
+.luare-en-hero-copy h1 span {white-space:normal;}
+@media(max-width:760px){
+ .luare-en-hero-copy {top:43%;left:5%;width:92%;}
+ .luare-en-hero-copy h1 {font-size:clamp(27px,5.8vw,35px);line-height:1.32;}
+ .luare-en-hero-copy h1 span {white-space:normal;}
+}
+@media(max-width:580px){
+ .luare-en-hero-copy {top:44%;left:5%;width:92%;}
+ .luare-en-hero-copy h1 {font-size:clamp(23px,6vw,27px);line-height:1.36;}
+}

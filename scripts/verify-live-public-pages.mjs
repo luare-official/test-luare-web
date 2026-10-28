@@ -6,7 +6,7 @@ const paths=[
   "/","/about","/services","/services/internal-control","/services/audit-assurance",
   "/services/accounting-management","/services/finance-ops","/services/global-finance",
   "/services/ma-finance","/bpo","/cases","/insights","/pricing","/privacy","/contact",
-  "/for-audit-firms","/en","/en/about","/en/contact","/zh","/zh/about","/zh/contact",
+  "/for-audit-firms","/en","/en/about","/en/contact","/en/services","/en/services/internal-control","/en/services/accounting-management","/en/services/finance-ops","/en/services/global-finance","/en/services/audit-assurance","/en/services/ma-finance","/en/cases","/en/cases/case-close","/en/cases/case-music","/en/cases/case-jsox","/en/cases/case-fpa","/en/pricing","/en/insights","/zh","/zh/about","/zh/contact",
   ...readdirSync("src/content/insights").filter(f=>f.endsWith(".md")).filter(f=>{
     const text=readFileSync("src/content/insights/"+f,"utf8");
     return !/^draft:\s*true\b/m.test(text);
