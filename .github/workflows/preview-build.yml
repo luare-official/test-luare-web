@@ -23,6 +23,8 @@ jobs:
         run: npm ci
       - name: Static export and type validation (no deployment)
         run: npm run build
+      - name: Confirm localized static HTML languages before deployment
+        run: node scripts/fix-static-locale-lang.mjs
       - name: Ensure required localized routes exist
         run: |
           test -f out/index.html
