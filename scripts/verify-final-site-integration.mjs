@@ -122,7 +122,7 @@ for(const path of ["about.html","en/about.html","zh/about.html"]){
  assert(html.includes("USCPA"),"Correct USCPA designation missing on "+path);
 }
 const mobileHeroCss=readFileSync("src/app/globals.css","utf8");
-assert(mobileHeroCss.includes("object-position:82% 48%"),"Mobile hero crop lost the right-side interlocutor");
+assert(mobileHeroCss.includes("object-position:89% 48%"),"Mobile hero crop lost the right-side interlocutor");
 assert(!home.includes("掲載内容は確認用の仮原稿です"),"Case homepage notice incorrectly claims approval pending");
 const cases=pages.get("cases.html")||"";
 assert(!cases.includes("noindex"),"Approved published cases should not remain noindex");
