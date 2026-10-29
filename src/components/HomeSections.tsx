@@ -321,7 +321,6 @@ export default function HomeSections() {
               </ScrollReveal>
             ))}
           </div>
-          <p className="mt-6 text-xs leading-6 text-[#475569]">※ 専門監修前の確認用記事を含みます。記載内容は今後更新される場合があります。</p>
           <div className="mt-7 text-center"><Link href="/insights" className="inline-flex items-center rounded-full border border-[#CBD5E1] px-6 py-3 text-sm font-semibold text-[#0B3158] hover:bg-[#EDF5FC]">記事一覧を見る ↗</Link></div>
         </div>
       </section>
