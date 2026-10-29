@@ -110,7 +110,6 @@ const item=zhCases[srcCase.id];return <ScrollReveal key={srcCase.id} delay={inde
 <p className="mt-3 text-sm leading-7 text-[#475569]">{article.excerpt}</p>
 <span className="mt-6 inline-flex text-sm font-semibold text-[#0B3158] group-hover:underline">阅读文章 ↗</span>
 </Link></ScrollReveal>)}</div>
-<p className="mt-6 text-xs leading-6 text-[#475569]">※部分文章仍待专业审核，内容可能调整。</p>
 <div className="mt-7 text-center"><Link href="/zh/insights" className="inline-flex items-center rounded-full border border-[#CBD5E1] px-6 py-3 text-sm font-semibold text-[#0B3158] hover:bg-[#EDF5FC]">查看全部文章 ↗</Link></div>
 </div></section>
 
