@@ -36,7 +36,7 @@ export default function InternalControlServicePage() {
             <p className="mt-5 max-w-3xl text-base leading-8 text-[#475569]">構築から評価・改善まで、実務に根付く内部統制を支援。</p>
           </div>
         </header>
-        <section className="mx-auto max-w-[1140px] px-5 py-16 sm:px-10">
+        <section className="mx-auto max-w-[1140px] px-5 py-12 sm:px-10">
           <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">SCOPE</p>
           <h2 className="mt-3 text-2xl font-semibold">主な支援内容</h2>
           <span id="listed" className="block scroll-mt-28" aria-hidden="true" />
@@ -49,7 +49,7 @@ export default function InternalControlServicePage() {
             ))}
           </div>
         </section>
-        <section className="bg-[#EDF5FC] py-14 sm:py-16">
+        <section className="bg-[#EDF5FC] py-12 sm:py-14">
           <div className="mx-auto max-w-[1140px] px-5 sm:px-10">
             <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">RELATED INFORMATION</p>
             <h2 className="mt-3 text-2xl font-semibold">関連情報</h2>
