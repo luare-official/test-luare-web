@@ -30,7 +30,7 @@ export default function R5ServiceDetail({kind}:{kind:Kind}){
      <p className="mt-5 max-w-3xl text-base leading-8 text-[#475569]">{category.lead}</p>
     </div>
    </header>
-   <section id="service-menu" className="mx-auto max-w-[1140px] scroll-mt-28 px-5 py-16 sm:px-10">
+   <section id="service-menu" className="mx-auto max-w-[1140px] scroll-mt-28 px-5 py-12 sm:px-10">
     <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">SCOPE</p>
     <h2 className="mt-3 text-2xl font-semibold">主な支援内容</h2>
     <span id="service-details" className="block scroll-mt-28" aria-hidden="true"/>
@@ -41,7 +41,7 @@ export default function R5ServiceDetail({kind}:{kind:Kind}){
      </article>)}
     </div>
    </section>
-   <section id="service-next" className="scroll-mt-28 bg-[#EDF5FC] py-14 sm:py-16">
+   <section id="service-next" className="scroll-mt-28 bg-[#EDF5FC] py-12 sm:py-14">
     <div className="mx-auto max-w-[1140px] px-5 sm:px-10">
      <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">RELATED INFORMATION</p>
      <h2 className="mt-3 text-2xl font-semibold">関連情報</h2>
