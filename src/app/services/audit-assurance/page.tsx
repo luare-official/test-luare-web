@@ -68,7 +68,7 @@ export default function AuditAssurancePage() {
           </div>
         </section>
 
-        <section id="scope" className="mx-auto max-w-[1140px] px-5 py-16 sm:px-10">
+        <section id="scope" className="mx-auto max-w-[1140px] px-5 py-12 sm:px-10">
           <p className="text-xs font-bold tracking-[.2em] text-[#1766A0]">SCOPE</p>
           <h2 className="mt-3 text-[25px] font-semibold leading-normal">主な支援内容</h2>
           <div className="mt-8 grid grid-cols-1 items-start gap-4 md:grid-cols-2">
@@ -81,7 +81,7 @@ export default function AuditAssurancePage() {
           </div>
         </section>
 
-        <section id="related" className="bg-[#EDF5FC] py-[60px] sm:pb-16">
+        <section id="related" className="bg-[#EDF5FC] py-12 sm:py-14">
           <div className="mx-auto max-w-[1140px] px-5 sm:px-10">
             <p className="text-xs font-bold tracking-[.2em] text-[#1766A0]">RELATED INFORMATION</p>
             <h2 className="mt-3 text-[25px] font-semibold leading-normal">関連情報</h2>
