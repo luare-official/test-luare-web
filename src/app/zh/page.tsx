@@ -4,7 +4,6 @@ import ScrollReveal from "@/components/ScrollReveal";
 import InteractiveServiceGalleryZh from "@/components/zh/InteractiveServiceGalleryZh";
 import Navbar from "@/components/Navbar";
 import FooterZh from "@/components/zh/FooterZh";
-import FreeConsultationRail from "@/components/FreeConsultationRail";
 import {zhServices,zhCases,zhArticles} from "@/lib/zhSite";
 import {r5Cases} from "@/lib/r5Cases";
 
@@ -139,4 +138,4 @@ const item=zhCases[srcCase.id];return <ScrollReveal key={srcCase.id} delay={inde
 <small>日本語 / English / 中文</small>
 </ScrollReveal></div></section>
 <Link href="/zh/contact" className="luare-v6-mobile-cta">首次免费咨询</Link>
-</main><FreeConsultationRail language="ZH"/><FooterZh/></>}
+</main><FooterZh/></>}
