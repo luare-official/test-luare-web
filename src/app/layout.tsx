@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
-
-const notoSans = Noto_Sans_JP({ variable: "--font-noto-sans", weight: ["400", "500", "700"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Luare Consulting | 外資系・グローバル企業の会計・財務支援",
@@ -17,10 +14,11 @@ import Script from "next/script";
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ja" suppressHydrationWarning className={notoSans.variable + " h-full antialiased"}>
+    <html lang="ja" suppressHydrationWarning className="h-full antialiased">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" />
       </head>
       <body className="min-h-full flex flex-col bg-brand-white text-brand-charcoal font-sans selection:bg-brand-navy selection:text-white">
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-39MBNBLCY1" strategy="afterInteractive" />
