@@ -10,10 +10,7 @@ export default function InteractiveServiceGalleryEn() {
   const inputMethod=useRef<"mouse"|"touch"|"pen"|null>(null);
   return (
     <div className="luare-guide" aria-label="Professional services">
-      <div className="luare-guide-intro">
-        <h3>Explore our services</h3>
-        <p>Hover over a service to view the scope of support. Tap a category on mobile.</p>
-      </div>
+      
       <div className="luare-guide-list">
         {enServices.map((svc,index)=>{
           const open=active===index;
