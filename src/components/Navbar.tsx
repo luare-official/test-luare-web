@@ -52,7 +52,7 @@ export default function Navbar(_props:NavbarProps) {
         <span className="block whitespace-nowrap text-[15px] font-semibold tracking-[.02em] sm:text-[17px]">Luare Consulting</span>
         <span className="mt-1 block text-[8px] font-medium tracking-[.17em] text-[#516982]">ACCOUNTING &amp; FINANCE</span>
       </Link>
-      <nav className="hidden min-w-0 flex-1 items-center justify-center gap-5 xl:flex 2xl:gap-6" aria-label={lang==="JP"?"メインメニュー":lang==="EN"?"Main navigation":"主导航"}>
+      <nav className="ml-auto hidden min-w-0 items-center justify-end gap-5 xl:flex 2xl:gap-6" aria-label={lang==="JP"?"メインメニュー":lang==="EN"?"Main navigation":"主导航"}>
         {labels.map(([label,href])=><Link key={href} href={href} aria-current={selected(href)?"page":undefined}
           className="flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap py-3 text-[12px] font-semibold text-[#0B3158] hover:text-[#1766A0] focus-visible:underline 2xl:text-[13px]">{label}</Link>)}
       </nav>
