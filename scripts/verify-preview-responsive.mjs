@@ -139,7 +139,6 @@ for(const width of [1280,1360,1440]){
   for(let i=0;i<6;i++)if(Math.max(...centers.map(x=>x[i]))-Math.min(...centers.map(x=>x[i]))>4)
    record("Header tabs move on language switch at "+width+" tab "+i);
  }
- }
  await check.close();
 }
 await browser.close();
