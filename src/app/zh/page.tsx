@@ -44,23 +44,16 @@ export default function HomeZh(){return <>
   <div className="luare-unicell-talk-photo"><img src="/images/luare-hero-consulting-male-20261025.webp" alt=""/></div>
   <div className="luare-unicell-hero-copy luare-zh-hero-copy">
    <h1><span>让外资企业与跨国集团的</span><span>会计和财务管理，<br className="luare-unicell-mobile-break"/>更顺畅。</span></h1>
-   <p>We stand by your finance.</p>
+   <p>Your Trusted Accounting & Finance Partner.</p>
   </div>
  </div>
 </section>
-<section className="luare-v6-section luare-who-band" id="who-we-help">
-<div className="luare-v6-container">
-<ScrollReveal className="luare-who-band-inner">
-<div className="luare-who-band-head"><p className="luare-v6-eyebrow">WHO WE HELP</p>
-<h2>我们为这样的企业<br/>提供专业支持。</h2></div>
-<ul className="luare-who-band-list">{who.map(title=><li key={title}>{title}</li>)}</ul>
-</ScrollReveal></div></section>
 
 <section className="luare-v6-section luare-services-photo" id="services">
 <div className="luare-v6-container">
 <ScrollReveal className="luare-v6-section-head">
 <p className="luare-v6-eyebrow">SERVICES</p>
-<h2>为跨国企业提供<br/>一站式会计与财务服务。</h2>
+<h2>服务领域</h2>
 </ScrollReveal>
 <InteractiveServiceGalleryZh/>
 <ScrollReveal><Link href="/zh/contact" className="luare-v6-primary-cta luare-v6-section-cta">咨询专业服务 <span>→</span></Link></ScrollReveal>
