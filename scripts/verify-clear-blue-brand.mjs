@@ -19,7 +19,7 @@ for(const [name,hex] of Object.entries(colors)){
 }
 assert(css.includes("--color-brand-navy:#0B3158"),"Tailwind navy diverges");
 assert(css.includes("--color-brand-gold:#1766A0"),"Legacy Tailwind accent diverges");
-assert(layout.includes('import { Noto_Sans_JP } from "next/font/google"'),"Noto Sans JP missing");
+assert(layout.includes("fonts.googleapis.com/css2?family=Noto+Sans+JP")&&!layout.includes("next/font/google")&&css.includes('--font-noto-sans:"Noto Sans JP"'),"Runtime Noto Sans JP and Meiryo fallback missing or build-time remote font dependency returned");
 assert(!/Noto_Serif_JP|Zen.Kaku.Gothic|const inter\s*=/.test(layout),"Legacy font unexpectedly imported");
 assert(css.includes("--luare-font:var(--font-noto-sans), Meiryo, sans-serif"),"Meiryo fallback missing");
 assert(jsox.includes("--navy:#0B3158")&&jsox.includes("--blue:#1766A0"),"J-SOX palette mismatch");
