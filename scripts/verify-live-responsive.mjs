@@ -52,13 +52,13 @@ for(const v of views){
    if(path.includes("contact")&&data.forms.some(x=>x.action!=="https://formspree.io/f/mojppoor"))
      failures.push(v.name+" "+path+" form destination changed");
    if(v.mobile&&["/","/services/internal-control","/en/contact","/zh/contact"].includes(path)){
-      const button=page.locator('button[aria-label="Toggle navigation menu"],button[aria-label="メニューを開く"]').first();
+      const button=page.locator('button[aria-controls="luare-mobile-menu"],button[aria-label="Toggle navigation menu"],button[aria-label="メニューを開く"]').first();
       if(await button.count()){
         await button.click();
         const expanded=await button.getAttribute("aria-expanded");
-        const menu=page.locator('nav[aria-label="モバイルメニュー"]');
+        const menu=page.locator('#luare-mobile-menu,nav[aria-label="モバイルメニュー"]');
         if(expanded!==null&&expanded!=="true")failures.push("mobile menu not expanded "+path);
-        if(path==="/"&&await menu.count()&&!(await menu.isVisible()))failures.push("hero mobile menu hidden "+path);
+        if(await menu.count()&&!(await menu.first().isVisible()))failures.push("mobile menu hidden "+path);
         await button.click();
       }else failures.push("mobile hamburger not found "+path);
    }

@@ -37,18 +37,18 @@ return <><Navbar solid/>
    <p className="mt-3 text-sm leading-7 text-[#475569]">税別。業務内容や担当範囲に応じてお見積りします。</p>
   </div>
  </section>
- <section id="price-cases" className="scroll-mt-28 bg-[#EDF5FC] py-14 sm:py-20">
+ <section id="price-cases" className="scroll-mt-28 bg-[#EDF5FC] py-12 sm:py-16">
   <div className="mx-auto max-w-[1080px] px-5 sm:px-10">
    <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">REFERENCE FEES</p>
    <h2 className="mt-3 text-2xl font-semibold">支援実績からの報酬目安</h2>
    <div className="mt-8 grid gap-5 lg:grid-cols-3">
     {r5Quotes.map(q=>{
      const hours=("hoursTotal" in q)?q.hoursTotal:q.hoursMonth*q.months;
-     return <article key={q.id} className="flex h-full flex-col rounded-lg border border-[#CBD5E1] bg-white p-6">
+     return <article key={q.id} className="luare-fee-card flex h-full flex-col rounded-lg border border-[#CBD5E1] bg-white p-6">
       <span className="text-xs font-semibold tracking-[.16em] text-[#1766A0]">PROJECT EXPERIENCE</span>
-      <h3 className="mt-3 min-h-[4rem] text-lg font-semibold leading-7">{q.title}</h3>
-      <p className="mt-2 min-h-[3rem] text-sm leading-7 text-[#475569]">{q.industry}</p>
-      <div className="mt-5 flex flex-wrap gap-2 text-xs text-[#1766A0]">
+      <h3 className="luare-fee-title mt-3 text-lg font-semibold leading-7">{q.title}</h3>
+      <p className="luare-fee-industry mt-2 text-sm leading-7 text-[#475569]">{q.industry}</p>
+      <div className="luare-fee-facts mt-5 flex flex-wrap content-start gap-2 text-xs text-[#1766A0]">
        <span className="bg-[#EDF5FC] px-3 py-1.5">{yen(q.rate)}／時間</span>
        <span className="bg-[#EDF5FC] px-3 py-1.5">{("hoursTotal" in q)?hours+"時間・合計":q.hoursMonth+"時間／月"}</span>
        <span className="bg-[#EDF5FC] px-3 py-1.5">{q.months}か月</span>

@@ -112,7 +112,9 @@ for(const name of ["監査・保証業務","会社法監査（法定監査）","
 }
 assert(!approvedAudit.includes("監査サービスの特長"),"Removed audit benefits section returned");
 assert(!approvedAudit.includes("OUR STRENGTHS"),"Legacy audit-specific sections returned");
-assert(approvedAuditSource.includes('name="audit-scope"'),"Approved audit 5-item accordion was replaced");
+assert(!approvedAuditSource.includes("<details")&&approvedAuditSource.includes("<article"),"Audit support descriptions must remain visible as cards");
+const controlSource=readFileSync("src/app/services/internal-control/overview/page.tsx","utf8");
+assert(!controlSource.includes("<details")&&controlSource.includes("<article"),"Standard internal-control scope must remain expanded");
 for(const anchor of ["scope","related","audit-readiness","statutory-audit","group-audit","accounting-advisory"]){
  assert(approvedAudit.includes('id="'+anchor+'"'),"Previously linked audit anchor missing: "+anchor);
 }
@@ -128,9 +130,25 @@ assert(!!adJsox,"Archived advertising LP is missing");
 assert(adJsox.includes('href="/privacy"'),"Advertising LP missing privacy link");
 assert(adJsox.includes('action="https://formspree.io/f/mojppoor"'),"Advertising LP form destination changed");
 assert(existsSync("out/robots.txt")&&existsSync("out/sitemap.xml"),"SEO crawler files missing");
-const zhHomeSource=readFileSync("src/app/zh/page.tsx","utf8");
+const zhHomeCaseSource=readFileSync("src/app/zh/page.tsx","utf8");
 const zhHomeDesign=["luare-services-photo","InteractiveServiceGalleryZh","luare-v6-why-row","luare-v6-cases","luare-v6-steps","luare-v6-faq"];
-for(const cls of zhHomeDesign)assert(zhHomeSource.includes(cls),"Chinese homepage diverged from approved Japanese design: "+cls);
+for(const cls of zhHomeDesign)assert(zhHomeCaseSource.includes(cls),"Chinese homepage diverged from approved Japanese design: "+cls);
+const jpHomeSource=readFileSync("src/components/HomeSections.tsx","utf8");
+const enHomeSource=readFileSync("src/app/en/page.tsx","utf8");
+assert(!jpHomeSource.includes('label:"CASE 0'),"Numbered Japanese homepage case labels returned");
+assert(!enHomeSource.includes("CASE {c.index}"),"Numbered English homepage case labels returned");
+assert(!zhHomeCaseSource.includes("CASE {srcCase.index}"),"Numbered Chinese homepage case labels returned");
+const railSource=readFileSync("src/components/FreeConsultationRail.tsx","utf8");
+assert(railSource.includes('Quick Advice')&&railSource.includes('luare-consult-popover'),"Short consultation label or hover help was lost");
+const jpBlogSource=readFileSync("src/app/insights/page.tsx","utf8");
+assert(jpBlogSource.includes("bg-[#EDF5FC]")&&jpBlogSource.includes("会計・経理・内部統制の実務記事"),"Japanese insight design or descriptive SEO title reverted");
+const zhFeeSource=readFileSync("src/app/zh/pricing/page.tsx","utf8");
+const enFeeSource=readFileSync("src/app/en/pricing/page.tsx","utf8");
+const jpFeeSource=readFileSync("src/app/pricing/page.tsx","utf8");
+for(const [locale,source] of [["ja",jpFeeSource],["en",enFeeSource],["zh",zhFeeSource]]) {
+ for(const cls of ["luare-fee-card","luare-fee-title","luare-fee-industry","luare-fee-facts"])
+  assert(source.includes(cls),locale+" fee card alignment missing "+cls);
+}
 const gallerySource=readFileSync("src/app/cases/page.tsx","utf8");
 const r5Style=readFileSync("src/components/cases/R5CaseLayout.module.css","utf8");
 const legacy=readFileSync("src/components/cases/LegacyCaseHashRedirect.tsx","utf8");

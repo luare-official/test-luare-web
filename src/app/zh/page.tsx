@@ -79,7 +79,7 @@ export default function HomeZh(){return <>
 {r5Cases.filter(c=>c.id!=="case-fpa").map((srcCase,index)=>{
 const item=zhCases[srcCase.id];return <ScrollReveal key={srcCase.id} delay={index*55}>
 <article className="luare-v6-case">
-<div className="luare-v6-case-label">CASE {srcCase.index}｜{item.type}</div>
+<div className="luare-v6-case-label">{item.type}</div>
 <div><h3>{item.title}</h3><p><strong>支持</strong><br/>{item.actions.join("、")}</p>
 <Link href={"/zh/cases/"+srcCase.id} className="mt-4 inline-block border-b border-current pb-1 text-sm font-semibold text-[#0B3158] hover:opacity-70">查看案例详情 ↗</Link></div>
 <div><p><strong>课题</strong><br/>{item.issues.join("、")}</p><span>{item.type}</span></div>

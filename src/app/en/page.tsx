@@ -70,7 +70,7 @@ export default function HomeEn(){
    <div className="luare-v6-cases">
     {r5Cases.filter(c=>c.id!=="case-fpa").map((c,i)=>{const x=enCases[c.id];return <ScrollReveal key={c.id} delay={i*55}>
      <article className="luare-v6-case">
-      <div className="luare-v6-case-label">CASE {c.index} | {x.type}</div>
+      <div className="luare-v6-case-label">{x.type}</div>
       <div><h3>{x.title}</h3><p><strong>Our support</strong><br/>{x.actions.join("; ")}</p>
        <Link href={"/en/cases/"+c.id} className="mt-4 inline-block border-b border-current pb-1 text-sm font-semibold text-[#0B3158] hover:opacity-70">Read case study ↗</Link>
       </div>

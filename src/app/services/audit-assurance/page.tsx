@@ -68,27 +68,20 @@ export default function AuditAssurancePage() {
           </div>
         </section>
 
-        <section id="scope" className="mx-auto max-w-[1140px] px-5 py-16 sm:px-10">
+        <section id="scope" className="mx-auto max-w-[1140px] px-5 py-12 sm:px-10">
           <p className="text-xs font-bold tracking-[.2em] text-[#1766A0]">SCOPE</p>
           <h2 className="mt-3 text-[25px] font-semibold leading-normal">主な支援内容</h2>
-          <p className="mt-3 text-sm leading-[1.95] text-[#475569]">
-            各項目を開くと、詳しい説明をご覧いただけます。
-          </p>
           <div className="mt-8 grid grid-cols-1 items-start gap-4 md:grid-cols-2">
             {auditItems.map(({id, title, description}) => (
-              <details name="audit-scope" id={id} key={id}
-                className="group scroll-mt-28 rounded-lg border border-[#CBD5E1] bg-white open:bg-[#EDF5FC]">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-[21px] text-[15px] font-semibold leading-[1.7] marker:hidden">
-                  {title}
-                  <span aria-hidden="true" className="shrink-0 text-[23px] font-normal leading-none text-[#1766A0] transition-transform group-open:rotate-45">＋</span>
-                </summary>
-                <p className="px-5 pb-[25px] text-sm leading-[2] text-[#475569]">{description}</p>
-              </details>
+              <article id={id} key={id} className="scroll-mt-28 rounded-lg border border-[#CBD5E1] bg-white p-6">
+                <h3 className="text-lg font-semibold leading-8">{title}</h3>
+                <p className="mt-3 text-sm leading-8 text-[#475569]">{description}</p>
+              </article>
             ))}
           </div>
         </section>
 
-        <section id="related" className="bg-[#EDF5FC] py-[60px] sm:pb-16">
+        <section id="related" className="bg-[#EDF5FC] py-12 sm:py-14">
           <div className="mx-auto max-w-[1140px] px-5 sm:px-10">
             <p className="text-xs font-bold tracking-[.2em] text-[#1766A0]">RELATED INFORMATION</p>
             <h2 className="mt-3 text-[25px] font-semibold leading-normal">関連情報</h2>

@@ -36,23 +36,20 @@ export default function InternalControlServicePage() {
             <p className="mt-5 max-w-3xl text-base leading-8 text-[#475569]">構築から評価・改善まで、実務に根付く内部統制を支援。</p>
           </div>
         </header>
-        <section className="mx-auto max-w-[1140px] px-5 py-16 sm:px-10">
+        <section className="mx-auto max-w-[1140px] px-5 py-12 sm:px-10">
           <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">SCOPE</p>
           <h2 className="mt-3 text-2xl font-semibold">主な支援内容</h2>
-          <p className="mt-3 text-sm leading-7 text-[#475569]">各項目を開くと、詳しい説明をご覧いただけます。</p>
           <span id="listed" className="block scroll-mt-28" aria-hidden="true" />
           <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
             {support.map(item => (
-              <details id={item.id} key={item.id} className="group scroll-mt-28 rounded-lg border border-[#CBD5E1] bg-white open:bg-[#EDF5FC]">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-5 text-[15px] font-semibold marker:hidden">
-                  {item.title}<span aria-hidden="true" className="text-xl font-normal text-[#1766A0] group-open:rotate-45">＋</span>
-                </summary>
-                <p className="px-5 pb-6 text-sm leading-8 text-[#475569]">{item.description}</p>
-              </details>
+              <article id={item.id} key={item.id} className="scroll-mt-28 rounded-lg border border-[#CBD5E1] bg-white p-6">
+                <h3 className="text-lg font-semibold leading-8">{item.title}</h3>
+                <p className="mt-3 text-sm leading-8 text-[#475569]">{item.description}</p>
+              </article>
             ))}
           </div>
         </section>
-        <section className="bg-[#EDF5FC] py-14 sm:py-16">
+        <section className="bg-[#EDF5FC] py-12 sm:py-14">
           <div className="mx-auto max-w-[1140px] px-5 sm:px-10">
             <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">RELATED INFORMATION</p>
             <h2 className="mt-3 text-2xl font-semibold">関連情報</h2>

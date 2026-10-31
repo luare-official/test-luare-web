@@ -137,7 +137,7 @@ const why = [
 const cases = [
   {
     id:"accounting-operations",
-    label:"CASE 01｜決算・業務改善",
+    label:"決算・業務改善",
     title:"複雑な事業データと決算工程をつなぎ、早期化を支援",
     issue:"事業ごとに異なる売上集計、限られた人員、部門間の締め工程のずれ。",
     support:"決算・CF資料の作成と、事業部門から経理部門へデータが届く工程の整理を支援。",
@@ -145,7 +145,7 @@ const cases = [
   },
   {
     id:"global-internal-control",
-    label:"CASE 02｜グローバル内部統制",
+    label:"グローバル内部統制",
     title:"グローバル方針を現場で継続できる内部統制の運用へ",
     issue:"本社方針と国内現場の運用、各部門の役割や証跡の管理に課題。",
     support:"統制上の論点、運用プロセス、責任分担、改善事項を実務に沿って整理。",
@@ -153,7 +153,7 @@ const cases = [
   },
   {
     id:"overseas-jsox",
-    label:"CASE 03｜海外拠点のJ-SOX",
+    label:"海外拠点のJ-SOX",
     title:"海外事業拠点のJ-SOX 3点セットをゼロから構築",
     issue:"言語・商習慣の異なる海外拠点で、実際の業務を把握して文書化・評価準備を進める。",
     support:"現地へのヒアリング、業務記述書・フローチャート・RCMの整備、監査関係者との論点整理を支援。",
