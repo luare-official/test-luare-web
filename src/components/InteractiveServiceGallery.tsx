@@ -11,10 +11,7 @@ export default function InteractiveServiceGallery() {
   function activate(index:number) { setActive(index); }
   return (
     <div className="luare-guide" aria-label="専門サービス一覧">
-      <div className="luare-guide-intro">
-        <h3>サービスを探す</h3>
-        <p>気になる分野にカーソルを合わせると、主な支援内容が開きます。スマートフォンではタップしてご覧ください。</p>
-      </div>
+      
       <div className="luare-guide-list">
         {serviceCategories.map((service,index)=>{
           const open=active===index;
