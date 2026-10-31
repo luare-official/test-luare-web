@@ -71,30 +71,24 @@ for(const [source,selector,target] of critical){
   await loc.click();await page.waitForURL(u=>u.pathname===target,{timeout:4500});counts.criticalFlows++;
  }catch(e){fail("Critical flow "+source+" -> "+target+" : "+String(e).slice(0,170))}
 }
-// Approved 2026-10-31: Japanese finance/operations/global services now show
-// all five descriptions as open cards, matching EN/ZH. Internal-control and audit
-// pages retain their established controls; no form submits occur.
-for(const path of ["/services/accounting-management","/services/finance-ops","/services/global-finance"]){
+// All five standard Japanese service detail pages show full descriptions without interaction.
+for(const [path,selector] of [
+ ["/services/accounting-management","#service-menu article[id]"],
+ ["/services/finance-ops","#service-menu article[id]"],
+ ["/services/global-finance","#service-menu article[id]"],
+ ["/services/internal-control/overview","article[id]"],
+ ["/services/audit-assurance","#scope article[id]"]
+]){
  await page.goto(ROOT+path,{waitUntil:"domcontentloaded"});
- const cards=page.locator('#service-menu article[id]');
+ const cards=page.locator(selector);
  const n=await cards.count();
- if(n!==5)fail("Expected five fully visible service cards on "+path+" got "+n);
+ if(n!==5)fail("Expected five visible scope cards on "+path+" got "+n);
  for(let i=0;i<n;i++){
   if(!await cards.nth(i).locator("h3").isVisible()||!await cards.nth(i).locator("p").isVisible())
-   fail("Service card title/description hidden "+path+" #"+i);
+   fail("Service title or description hidden "+path+" #"+i);
   else counts.detailsClicked++;
  }
-}
-for(const path of ["/services/internal-control/overview","/services/audit-assurance"]){
- await page.goto(ROOT+path,{waitUntil:"domcontentloaded"});
- const summaries=page.locator("details > summary");
- const n=await summaries.count();
- if(n!==5)fail("Expected five protected service items on "+path+" got "+n);
- for(let i=0;i<n;i++){
-  try{await summaries.nth(i).click();if(!await summaries.nth(i).evaluate(el=>el.parentElement.open))
-   fail("Protected service disclosure did not expand "+path+" #"+i);else counts.detailsClicked++;
-  }catch(e){fail("Protected disclosure "+path+" #"+i+" "+String(e).slice(0,140))}
- }
+ if(await page.locator("details > summary").count())fail("Unexpected legacy scope accordion on "+path);
 }
 // Mobile menu per language; no contact submission.
 const mobile=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,reducedMotion:"reduce"});
