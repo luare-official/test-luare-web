@@ -115,29 +115,33 @@ for(const profile of profiles){
  await page.close();
 }
 
-// Targeted multilingual navigation QA at intermediate desktop widths.
+// Compact navigation: labels keep their natural width, while the entire
+// menu stays centered between the logo and language controls.
 for(const width of [1280,1360,1440]){
- const centers=[];
  const check=await browser.newPage({viewport:{width,height:900}});
  for(const locale of ["/","/en","/zh"]){
   await check.goto(root+locale,{waitUntil:"domcontentloaded"});
-  const rect=await check.evaluate(()=>{
+  const info=await check.evaluate(()=>{
    const menu=document.querySelector('header nav[aria-label="メインメニュー"],header nav[aria-label="Main navigation"],header nav[aria-label="主导航"]');
    const navLanguage=document.querySelector('header nav[aria-label="Language"]');
-   const links=menu?[...menu.querySelectorAll("a")]:[];
-   const arr=links.map(el=>{const b=el.getBoundingClientRect();return {left:b.left,right:b.right,center:b.left+b.width/2,scroll:el.scrollWidth,box:el.clientWidth}});
-   const lang=navLanguage?.getBoundingClientRect();
-   return {arr,languageLeft:lang?.left??0,right:Math.max(...arr.map(x=>x.right),0),body:document.documentElement.scrollWidth,viewport:window.innerWidth};
+   const items=menu?[...menu.querySelectorAll("a")]:[];
+   const arr=items.map(el=>{const b=el.getBoundingClientRect();return {left:b.left,right:b.right,scroll:el.scrollWidth,box:el.clientWidth}});
+   const b=menu?.getBoundingClientRect();
+   const lan=navLanguage?.getBoundingClientRect();
+   const groupCenter=arr.length?(arr[0].left+arr[arr.length-1].right)/2:null;
+   return {arr,groupCenter,menuCenter:b?(b.left+b.right)/2:null,languageLeft:lan?.left??0,body:document.documentElement.scrollWidth,viewport:window.innerWidth};
   });
-  if(rect.arr.length!==6)record("Header missing six equal tabs at "+width+" "+locale);
-  if(rect.body>rect.viewport+3)record("Header overflow at "+width+" "+locale);
-  if(rect.right>rect.languageLeft+2)record("Header overlaps language links at "+width+" "+locale);
-  if(rect.arr.some(x=>x.scroll>x.box+3))record("Header text clipped at "+width+" "+locale);
-  centers.push(rect.arr.map(x=>x.center));
- }
- if(centers.every(x=>x.length===6)){
-  for(let i=0;i<6;i++)if(Math.max(...centers.map(x=>x[i]))-Math.min(...centers.map(x=>x[i]))>4)
-   record("Header tabs move on language switch at "+width+" tab "+i);
+  if(info.arr.length!==6)record("Expected six natural-width header links at "+width+" "+locale);
+  if(info.body>info.viewport+3)record("Horizontal overflow at "+width+" "+locale);
+  if(info.arr.length){
+   if(info.arr[info.arr.length-1].right>info.languageLeft+2)record("Menu overlaps language switch at "+width+" "+locale);
+   if(info.arr.some(x=>x.scroll>x.box+3))record("Menu text clipped at "+width+" "+locale);
+   if(Math.abs(info.groupCenter-info.menuCenter)>4)record("Menu group not centered at "+width+" "+locale);
+   for(let i=0;i<info.arr.length-1;i++){
+    const gap=info.arr[i+1].left-info.arr[i].right;
+    if(gap<18||gap>28)record("Menu item gap not 20-24px at "+width+" "+locale+" gap="+gap.toFixed(1));
+   }
+  }
  }
  await check.close();
 }
