@@ -114,6 +114,34 @@ for(const profile of profiles){
  }
  await page.close();
 }
+
+// Targeted multilingual navigation QA at intermediate desktop widths.
+for(const width of [1280,1360,1440]){
+ const centers=[];
+ const check=await browser.newPage({viewport:{width,height:900}});
+ for(const locale of ["/","/en","/zh"]){
+  await check.goto(root+locale,{waitUntil:"domcontentloaded"});
+  const rect=await check.evaluate(()=>{
+   const menu=document.querySelector('header nav[aria-label="メインメニュー"],header nav[aria-label="Main navigation"],header nav[aria-label="主导航"]');
+   const navLanguage=document.querySelector('header nav[aria-label="Language"]');
+   const links=menu?[...menu.querySelectorAll("a")]:[];
+   const arr=links.map(el=>{const b=el.getBoundingClientRect();return {left:b.left,right:b.right,center:b.left+b.width/2,scroll:el.scrollWidth,box:el.clientWidth}});
+   const lang=navLanguage?.getBoundingClientRect();
+   return {arr,languageLeft:lang?.left??0,right:Math.max(...arr.map(x=>x.right),0),body:document.documentElement.scrollWidth,viewport:window.innerWidth};
+  });
+  if(rect.arr.length!==6)record("Header missing six equal tabs at "+width+" "+locale);
+  if(rect.body>rect.viewport+3)record("Header overflow at "+width+" "+locale);
+  if(rect.right>rect.languageLeft+2)record("Header overlaps language links at "+width+" "+locale);
+  if(rect.arr.some(x=>x.scroll>x.box+3))record("Header text clipped at "+width+" "+locale);
+  centers.push(rect.arr.map(x=>x.center));
+ }
+ if(centers.every(x=>x.length===6)){
+  for(let i=0;i<6;i++)if(Math.max(...centers.map(x=>x[i]))-Math.min(...centers.map(x=>x[i]))>4)
+   record("Header tabs move on language switch at "+width+" tab "+i);
+ }
+ }
+ await check.close();
+}
 await browser.close();
 writeFileSync("qa-artifacts/draft-r5/qa-report.json",JSON.stringify({checked:pages.length*profiles.length,failures},null,2));
 if(failures.length)process.exitCode=1; else console.log("PASS: "+pages.length*profiles.length+" draft PC/mobile captures without basic overflow or image failures.");
