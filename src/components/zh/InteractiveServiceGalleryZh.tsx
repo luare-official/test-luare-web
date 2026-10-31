@@ -10,10 +10,7 @@ export default function InteractiveServiceGalleryZh() {
   const inputMethod=useRef<"mouse"|"touch"|"pen"|null>(null);
   return (
     <div className="luare-guide" aria-label="专业服务列表">
-      <div className="luare-guide-intro">
-        <h3>选择服务</h3>
-        <p>将鼠标移至服务领域可展开具体内容。手机端请点击相应领域。</p>
-      </div>
+      
       <div className="luare-guide-list">
         {zhServices.map((svc,index)=>{
           const open=active===index;
