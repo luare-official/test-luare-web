@@ -115,8 +115,8 @@ for(const profile of profiles){
  await page.close();
 }
 
-// Compact navigation: labels keep their natural width, while the entire
-// menu stays centered between the logo and language controls.
+// Right-aligned navigation: content-width links sit directly to the left
+// of the language switch, without moving the logo or consultation button.
 for(const width of [1280,1360,1440]){
  const check=await browser.newPage({viewport:{width,height:900}});
  for(const locale of ["/","/en","/zh"]){
@@ -128,15 +128,17 @@ for(const width of [1280,1360,1440]){
    const arr=items.map(el=>{const b=el.getBoundingClientRect();return {left:b.left,right:b.right,scroll:el.scrollWidth,box:el.clientWidth}});
    const b=menu?.getBoundingClientRect();
    const lan=navLanguage?.getBoundingClientRect();
-   const groupCenter=arr.length?(arr[0].left+arr[arr.length-1].right)/2:null;
-   return {arr,groupCenter,menuCenter:b?(b.left+b.right)/2:null,languageLeft:lan?.left??0,body:document.documentElement.scrollWidth,viewport:window.innerWidth};
+   const logo=document.querySelector('header a[aria-label="Luare Consulting"]')?.getBoundingClientRect();
+   return {arr,menuRight:b?.right??0,languageLeft:lan?.left??0,logoRight:logo?.right??0,body:document.documentElement.scrollWidth,viewport:window.innerWidth};
   });
   if(info.arr.length!==6)record("Expected six natural-width header links at "+width+" "+locale);
   if(info.body>info.viewport+3)record("Horizontal overflow at "+width+" "+locale);
   if(info.arr.length){
    if(info.arr[info.arr.length-1].right>info.languageLeft+2)record("Menu overlaps language switch at "+width+" "+locale);
    if(info.arr.some(x=>x.scroll>x.box+3))record("Menu text clipped at "+width+" "+locale);
-   if(Math.abs(info.groupCenter-info.menuCenter)>4)record("Menu group not centered at "+width+" "+locale);
+   if(info.arr[0].left<info.logoRight+10)record("Menu overlaps logo at "+width+" "+locale);
+   const languageGap=info.languageLeft-info.arr[info.arr.length-1].right;
+   if(languageGap<10||languageGap>23)record("Menu not adjacent to language switch at "+width+" "+locale+" gap="+languageGap.toFixed(1));
    for(let i=0;i<info.arr.length-1;i++){
     const gap=info.arr[i+1].left-info.arr[i].right;
     if(gap<18||gap>28)record("Menu item gap not 20-24px at "+width+" "+locale+" gap="+gap.toFixed(1));
