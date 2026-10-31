@@ -24,7 +24,12 @@ export default function ContactPageZh() {
               <div><label htmlFor="zh-company" className="text-sm font-semibold text-[#0B3158]">公司名称 <span className="text-xs text-[#475569]">（必填）</span></label><input id="zh-company" className={inputClass} type="text" autoComplete="organization" name="company" required /></div>
               <div><label htmlFor="zh-name" className="text-sm font-semibold text-[#0B3158]">姓名 <span className="text-xs text-[#475569]">（必填）</span></label><input id="zh-name" className={inputClass} type="text" autoComplete="name" name="name" required /></div>
               <div><label htmlFor="zh-email" className="text-sm font-semibold text-[#0B3158]">邮箱地址 <span className="text-xs text-[#475569]">（必填）</span></label><input id="zh-email" className={inputClass} type="email" autoComplete="email" name="email" required /></div>
-              <div><label htmlFor="zh-phone" className="text-sm font-semibold text-[#0B3158]">联系电话 <span className="text-xs text-[#475569]">（选填）</span></label><input id="zh-phone" className={inputClass} type="tel" autoComplete="tel" name="phone" /></div>
+              <div><label htmlFor="zh-service" className="text-sm font-semibold text-[#0B3158]">咨询服务 <span className="text-xs text-[#475569]">（必填）</span></label>
+              <select id="zh-service" className={inputClass} name="service" defaultValue="" required>
+                <option value="" disabled>请选择服务领域</option><option>内部控制・J-SOX</option>
+                <option>会计结算与经营管理</option><option>业务优化、AI与系统</option>
+                <option>日本市场进入与海外财务</option><option>审计与鉴证协调</option><option>其他</option>
+              </select></div>
             </div>
             <div className="mt-7"><label htmlFor="zh-message" className="text-sm font-semibold text-[#0B3158]">咨询内容 <span className="text-xs text-[#475569]">（必填）</span></label><textarea id="zh-message" className={inputClass + " min-h-[176px] resize-y"} name="message" required /></div>
             <div className="mt-8 border-t border-[#CBD5E1] pt-7">
