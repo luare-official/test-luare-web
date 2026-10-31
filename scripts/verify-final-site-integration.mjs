@@ -132,10 +132,9 @@ assert(adJsox.includes('action="https://formspree.io/f/mojppoor"'),"Advertising 
 assert(existsSync("out/robots.txt")&&existsSync("out/sitemap.xml"),"SEO crawler files missing");
 const zhHomeCaseSource=readFileSync("src/app/zh/page.tsx","utf8");
 const zhHomeDesign=["luare-services-photo","InteractiveServiceGalleryZh","luare-v6-why-row","luare-v6-cases","luare-v6-steps","luare-v6-faq"];
-for(const cls of zhHomeDesign)assert(zhHomeSource.includes(cls),"Chinese homepage diverged from approved Japanese design: "+cls);
+for(const cls of zhHomeDesign)assert(zhHomeCaseSource.includes(cls),"Chinese homepage diverged from approved Japanese design: "+cls);
 const jpHomeSource=readFileSync("src/components/HomeSections.tsx","utf8");
 const enHomeSource=readFileSync("src/app/en/page.tsx","utf8");
-const zhHomeSource=readFileSync("src/app/zh/page.tsx","utf8");
 assert(!jpHomeSource.includes('label:"CASE 0'),"Numbered Japanese homepage case labels returned");
 assert(!enHomeSource.includes("CASE {c.index}"),"Numbered English homepage case labels returned");
 assert(!zhHomeCaseSource.includes("CASE {srcCase.index}"),"Numbered Chinese homepage case labels returned");
