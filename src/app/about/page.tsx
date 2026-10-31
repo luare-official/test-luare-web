@@ -59,7 +59,7 @@ export default function AboutPage() {
         {/* ══════════════════════════════════════════════════════════════
             COMPANY INFORMATION
            ══════════════════════════════════════════════════════════════ */}
-        <section className="bg-brand-white py-24 sm:py-32">
+        <section className="bg-brand-white py-16 sm:py-20">
           <div className="mx-auto max-w-5xl px-6 sm:px-10">
             <div className="flex items-center gap-3 mb-12">
               <div
