@@ -19,7 +19,7 @@ export default function PricingZh(){return <ZhPageFrame label="FEES" title="费�
 <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">PRICING POLICY</p><h2 className="mt-3 text-2xl font-semibold">基本收费方式</h2>
 <div className="mt-8 rounded-xl border border-[#CBD5E1] bg-[#EDF5FC] px-7 py-9 sm:px-10"><p className="text-xs font-semibold tracking-[.18em] text-[#1766A0]">HOURLY RATE</p><p className="mt-3 text-[clamp(30px,5vw,50px)] font-semibold">12,000日元起 <span className="text-base font-medium">／小时</span></p><p className="mt-3 text-sm leading-7 text-[#475569]">不含税。根据服务内容及负责范围进行报价。</p></div>
 </section>
-<section id="price-cases" className="scroll-mt-28 bg-[#EDF5FC] py-14 sm:py-20"><div className="mx-auto max-w-[1080px] px-5 sm:px-10">
+<section id="price-cases" className="scroll-mt-28 bg-[#EDF5FC] py-12 sm:py-16"><div className="mx-auto max-w-[1080px] px-5 sm:px-10">
 <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">REFERENCE FEES</p><h2 className="mt-3 text-2xl font-semibold">基于支援实绩的报酬参考</h2>
 <div className="mt-8 grid gap-5 lg:grid-cols-3">{r5Quotes.map(q=>{const h="hoursTotal" in q?q.hoursTotal:q.hoursMonth*q.months;const t=translated[q.id];return <article key={q.id} className="luare-fee-card flex h-full flex-col rounded-lg border border-[#CBD5E1] bg-white p-6">
 <p className="text-xs font-semibold tracking-[.16em] text-[#1766A0]">PROJECT EXPERIENCE</p><h3 className="luare-fee-title mt-3 text-lg font-semibold leading-7">{t.title}</h3><p className="luare-fee-industry mt-2 text-sm leading-7 text-[#475569]">{t.industry}</p>
