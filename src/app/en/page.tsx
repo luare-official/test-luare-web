@@ -78,7 +78,6 @@ export default function HomeEn(){
      </article>
     </ScrollReveal>})}
    </div>
-   <p className="luare-v6-note">FP&amp;A is presented as an illustrative service model, not a completed client engagement.</p>
    <div className="mt-8 text-center"><Link href="/en/cases" className="inline-flex items-center justify-center border border-[#0B3158] px-7 py-3 text-sm font-semibold text-[#0B3158] hover:bg-[#0B3158] hover:text-white">Explore case studies <span className="ml-3">→</span></Link></div>
   </div>
  </section>
