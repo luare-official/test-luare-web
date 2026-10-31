@@ -5,7 +5,7 @@ import {r5Quotes} from "@/lib/r5Cases";
 
 export const metadata:Metadata={
  title:"费用说明 | Luare Consulting",
- description:"根据专业要求、服务团队及工时单独报价。提供按项目划分的费用参考。",
+ description:"根据专业要求、服务团队及工时单独报价。提供基于项目经验的服务报酬参考。",
  alternates:{canonical:"https://luare-consulting.com/zh/pricing"}
 };
 const yen=(num:number)=>num.toLocaleString("ja-JP")+"日元";
@@ -21,7 +21,7 @@ export default function PricingZh(){return <ZhPageFrame label="FEES" title="费�
 </section>
 <section id="price-cases" className="scroll-mt-28 bg-[#EDF5FC] py-14 sm:py-20"><div className="mx-auto max-w-[1080px] px-5 sm:px-10">
 <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">REFERENCE FEES</p><h2 className="mt-3 text-2xl font-semibold">按项目划分的费用参考</h2>
-<div className="mt-8 grid gap-5 lg:grid-cols-3">{r5Quotes.map(q=>{const h="hoursTotal" in q?q.hoursTotal:q.hoursMonth*q.months;const t=translated[q.id];return <article key={q.id} className="flex flex-col rounded-lg border border-[#CBD5E1] bg-white p-6">
+<div className="mt-8 grid gap-5 lg:grid-cols-3">{r5Quotes.map(q=>{const h="hoursTotal" in q?q.hoursTotal:q.hoursMonth*q.months;const t=translated[q.id];return <article key={q.id} className="flex h-full flex-col rounded-lg border border-[#CBD5E1] bg-white p-6">
 <p className="text-xs font-semibold tracking-[.16em] text-[#1766A0]">PROJECT EXAMPLE</p><h3 className="mt-3 min-h-[3.8rem] text-lg font-semibold leading-7">{t.title}</h3><p className="mt-2 text-sm leading-7 text-[#475569]">{t.industry}</p>
 <div className="mt-5 flex flex-wrap gap-2 text-xs text-[#1766A0]"><span className="bg-[#EDF5FC] px-3 py-1.5">{yen(q.rate)}／小时</span><span className="bg-[#EDF5FC] px-3 py-1.5">{"hoursTotal" in q?h+"小时（合计）":q.hoursMonth+"小时／月"}</span><span className="bg-[#EDF5FC] px-3 py-1.5">{q.months}个月</span></div>
 <p className="mt-6 border-t border-[#CBD5E1] pt-5 text-xs text-[#475569]">{q.months}个月总额（不含税）</p><p className="mt-2 text-[29px] font-bold">{yen(q.rate*h)}</p><p className="mt-4 flex-1 text-sm leading-8 text-[#475569]">{t.scope}</p><Link href={t.href} className="mt-6 border-t border-[#CBD5E1] pt-4 text-sm font-semibold text-[#1766A0] hover:underline">查看服务内容 ↗</Link>
