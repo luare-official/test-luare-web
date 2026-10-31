@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 // The husband's Luare_HP_Public_Preview_r5.html is the source of the
-// page copy, layout order, r5 cards and the FP&A model section.
+// page copy and cards, with the FP&A engagement included in the unified project list.
 // The common production Navbar/Footer remain outside the original r5 page body.
 function CaseCard({ c }: { c: (typeof r5Cases)[number] }) {
   return (
