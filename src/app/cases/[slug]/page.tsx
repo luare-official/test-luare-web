@@ -74,7 +74,7 @@ function SectionHead({caption,title}:{caption:string,title:string}){
 export default async function CaseDetail({params}:Props){
  const c=findR5Case((await params).slug);if(!c)notFound();
  const q=findR5Quote(c.price);
- const model=("model" in c&&c.model);
+ 
  const hours=q?("hoursTotal" in q?q.hoursTotal:q.hoursMonth*q.months):0;
  return <>
   <Navbar theme="dark" solid />
@@ -83,9 +83,9 @@ export default async function CaseDetail({params}:Props){
     <nav className={styles.breadcrumb} aria-label="パンくずリスト">
      <Link href="/">ホーム</Link><span>／</span><Link href="/cases">支援事例</Link><span>／</span><span>{c.title}</span>
     </nav>
-    <p className={styles.eyebrow}>CASE STUDIES / {c.index}</p>
+    <p className={styles.eyebrow}>CASE STUDIES</p>
     <h1>{c.title}</h1><p>{c.impact}</p>
-    {model&&<p className="mt-3 text-xs">※顧客実績ではなく支援モデルのご紹介です。</p>}
+    
    </div></div>
    <section className={styles.section} id="case-overview"><div className={styles.shell}>
     <SectionHead caption="OVERVIEW" title="プロジェクト概要"/>
@@ -104,7 +104,7 @@ export default async function CaseDetail({params}:Props){
     <ul className={styles.detailList}>{c.luareActions.map(x=><li key={x}>{x}</li>)}</ul>
    </div></section>
    {q&&<section className={styles.section+" "+styles.alt} id="case-fee"><div className={styles.shell}>
-    <SectionHead caption="REFERENCE FEE" title="同種業務の費用目安"/>
+    <SectionHead caption="REFERENCE FEE" title="当該事例の支援報酬目安"/>
     <div className={styles.priceCard}>
      <div className={styles.eyebrow}>ENGAGEMENT FEE</div>
      <h3>{q.title}</h3><p>{q.scope}</p>
