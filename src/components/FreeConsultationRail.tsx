@@ -1,44 +1,31 @@
 "use client";
-import { useEffect, useState } from "react";
-export default function FreeConsultationRail({ language = "JP" }: { language?: "JP" | "EN" | "ZH" }) {
-  const contactHref = language === "EN" ? "/en/contact" : language === "ZH" ? "/zh/contact" : "/contact";
-  const [visible, setVisible] = useState(false);
+import {useEffect,useState} from "react";
+import {usePathname} from "next/navigation";
 
-  useEffect(() => {
-    const update = () => setVisible(window.scrollY > Math.max(420, window.innerHeight * 0.72));
+/** One global consultation entry on all routes. Only home hero hides it until scrolled. */
+export default function FreeConsultationRail() {
+  const path=usePathname()||"/";
+  const lang=path.startsWith("/en")?"EN":path.startsWith("/zh")?"ZH":"JP";
+  const home=["/","/en","/zh"].includes(path.replace(/\/$/,"")||"/");
+  const label=lang==="EN"?"Free online consultation":lang==="ZH"?"免费在线咨询":"無料オンライン相談";
+  const contact=lang==="EN"?"/en/contact":lang==="ZH"?"/zh/contact":"/contact";
+  const [visible,setVisible]=useState(!home);
+  useEffect(()=>{
+    const update=()=>setVisible(!home || window.scrollY>Math.max(420,window.innerHeight*0.72));
     update();
-    window.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
-    return () => { window.removeEventListener("scroll", update); window.removeEventListener("resize", update); };
-  }, []);
-
-  return (
-    <>
-      <a className={"luare-consult-rail " + (visible ? "is-visible" : "")} href={contactHref} aria-label={language === "EN" ? "Free online consultation" : language === "ZH" ? "免费在线咨询" : "無料オンライン相談"}>
-        <span className="luare-consult-video" aria-hidden="true"><i /></span>
-        <strong>{language === "EN" ? "Free online consultation" : language === "ZH" ? "免费在线咨询" : "無料オンライン相談"}</strong>
-        <span className="luare-consult-rule" />
-        <span className="luare-consult-languages" aria-label="日本語、英語、中国語に対応">
-          <span className="luare-consult-language">
-            <i className="luare-line-flag luare-line-flag-jp" aria-hidden="true" />
-            <b>JP</b>
-          </span>
-          <span className="luare-consult-language">
-            <i className="luare-line-flag luare-line-flag-en" aria-hidden="true"><em /></i>
-            <b>EN</b>
-          </span>
-          <span className="luare-consult-language">
-            <i className="luare-line-flag luare-line-flag-cn" aria-hidden="true" />
-            <b>中</b>
-          </span>
-        </span>
-      </a>
-      <div className={"luare-consult-popover " + (visible ? "is-rail-visible" : "")} aria-hidden="true">
-        <button type="button" tabIndex={-1} aria-hidden="true">×</button>
-        <span className="luare-consult-people" aria-hidden="true"><i /><i /><i /></span>
-        <strong>オンラインで<br />気軽に相談</strong>
-        <p>会計・財務の専門家が、<br />日本語・英語・中国語の<br />3言語で対応します。</p>
-      </div>
-    </>
-  );
+    window.addEventListener("scroll",update,{passive:true});
+    window.addEventListener("resize",update);
+    return ()=>{window.removeEventListener("scroll",update);window.removeEventListener("resize",update);};
+  },[home,path]);
+  return <a href={contact} className={"luare-consult-rail "+(visible?"is-visible":"")}
+    aria-label={label} tabIndex={visible?0:-1} aria-hidden={!visible}>
+    <span className="luare-consult-video" aria-hidden="true"><i/></span>
+    <strong>{label}</strong>
+    <span className="luare-consult-rule" aria-hidden="true"/>
+    <span className="luare-consult-languages" aria-label="Japanese, English, Chinese">
+      <span className="luare-consult-language"><b>JP</b></span>
+      <span className="luare-consult-language"><b>EN</b></span>
+      <span className="luare-consult-language"><b>中文</b></span>
+    </span>
+  </a>;
 }
