@@ -15,6 +15,7 @@
   --font-mono:var(--font-noto-sans), Meiryo, sans-serif;
 }
 :root {
+  --font-noto-sans:"Noto Sans JP";
   --luare-main:#0B3158;
   --luare-accent:#1766A0;
   --luare-pale:#EDF5FC;
