@@ -2945,11 +2945,11 @@ body {background-color:var(--background);color:var(--foreground);font-family:var
  .luare-consult-language b{font-size:11px}
 }
 
-/* Final HP QA 2026-10-31: equal fee-card rhythm in JP/EN/ZH. */
+/* Keep three pricing cards aligned without excessive blank space (JP/EN/ZH). */
 @media(min-width:1024px) {
- .luare-fee-card .luare-fee-title{min-height:5.75rem}
- .luare-fee-card .luare-fee-industry{min-height:4.25rem}
- .luare-fee-card .luare-fee-facts{min-height:5.5rem}
+ .luare-fee-card .luare-fee-title{min-height:4rem}
+ .luare-fee-card .luare-fee-industry{min-height:3.5rem}
+ .luare-fee-card .luare-fee-facts{min-height:4.25rem}
 }
 @media(max-width:1023px) {
  .luare-fee-card .luare-fee-title,
