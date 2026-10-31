@@ -4,7 +4,6 @@ import ScrollReveal from "@/components/ScrollReveal";
 import InteractiveServiceGalleryZh from "@/components/zh/InteractiveServiceGalleryZh";
 import Navbar from "@/components/Navbar";
 import FooterZh from "@/components/zh/FooterZh";
-import FreeConsultationRail from "@/components/FreeConsultationRail";
 import {zhServices,zhCases,zhArticles} from "@/lib/zhSite";
 import {r5Cases} from "@/lib/r5Cases";
 
@@ -45,23 +44,16 @@ export default function HomeZh(){return <>
   <div className="luare-unicell-talk-photo"><img src="/images/luare-hero-consulting-male-20261025.webp" alt=""/></div>
   <div className="luare-unicell-hero-copy luare-zh-hero-copy">
    <h1><span>让外资企业与跨国集团的</span><span>会计和财务管理，<br className="luare-unicell-mobile-break"/>更顺畅。</span></h1>
-   <p>We stand by your finance.</p>
+   <p>Your Trusted Accounting & Finance Partner.</p>
   </div>
  </div>
 </section>
-<section className="luare-v6-section luare-who-band" id="who-we-help">
-<div className="luare-v6-container">
-<ScrollReveal className="luare-who-band-inner">
-<div className="luare-who-band-head"><p className="luare-v6-eyebrow">WHO WE HELP</p>
-<h2>我们为这样的企业<br/>提供专业支持。</h2></div>
-<ul className="luare-who-band-list">{who.map(title=><li key={title}>{title}</li>)}</ul>
-</ScrollReveal></div></section>
 
 <section className="luare-v6-section luare-services-photo" id="services">
 <div className="luare-v6-container">
 <ScrollReveal className="luare-v6-section-head">
 <p className="luare-v6-eyebrow">SERVICES</p>
-<h2>为跨国企业提供<br/>一站式会计与财务服务。</h2>
+<h2>服务领域</h2>
 </ScrollReveal>
 <InteractiveServiceGalleryZh/>
 <ScrollReveal><Link href="/zh/contact" className="luare-v6-primary-cta luare-v6-section-cta">咨询专业服务 <span>→</span></Link></ScrollReveal>
@@ -93,7 +85,6 @@ const item=zhCases[srcCase.id];return <ScrollReveal key={srcCase.id} delay={inde
 <div><p><strong>课题</strong><br/>{item.issues.join("、")}</p><span>{item.type}</span></div>
 </article></ScrollReveal>})}
 </div>
-<p className="luare-v6-note">※FP&amp;A为服务模式说明，并非已实施的客户案例。</p>
 <div className="mt-8 text-center"><Link href="/zh/cases" className="inline-flex items-center justify-center border border-[#0B3158] px-7 py-3 text-sm font-semibold text-[#0B3158] hover:bg-[#0B3158] hover:text-white">查看支持案例 <span className="ml-3">→</span></Link></div>
 </div></section>
 
@@ -139,4 +130,4 @@ const item=zhCases[srcCase.id];return <ScrollReveal key={srcCase.id} delay={inde
 <small>日本語 / English / 中文</small>
 </ScrollReveal></div></section>
 <Link href="/zh/contact" className="luare-v6-mobile-cta">首次免费咨询</Link>
-</main><FreeConsultationRail language="ZH"/><FooterZh/></>}
+</main><FooterZh/></>}

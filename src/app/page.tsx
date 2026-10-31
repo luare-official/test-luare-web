@@ -5,7 +5,6 @@ import Hero from "@/components/Hero";
 import HomeSections from "@/components/HomeSections";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
-import FreeConsultationRail from "@/components/FreeConsultationRail";
 
 
 export default function Home() {
@@ -31,7 +30,6 @@ export default function Home() {
         <Hero />
         <HomeSections />
       </main>
-      <FreeConsultationRail />
       <Footer />
     </>
   );

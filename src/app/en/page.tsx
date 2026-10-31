@@ -3,7 +3,6 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import ScrollReveal from "@/components/ScrollReveal";
 import FooterEn from "@/components/en/FooterEn";
-import FreeConsultationRail from "@/components/FreeConsultationRail";
 import InteractiveServiceGalleryEn from "@/components/en/InteractiveServiceGalleryEn";
 import { enCases, enInsights } from "@/lib/enSite";
 import { r5Cases } from "@/lib/r5Cases";
@@ -46,21 +45,13 @@ export default function HomeEn(){
    <div className="luare-unicell-talk-photo"><img src="/images/luare-hero-consulting-male-20261025.webp" alt=""/></div>
    <div className="luare-unicell-hero-copy luare-en-hero-copy">
     <h1><span>Making accounting and finance</span><span>simpler for global<br className="luare-unicell-mobile-break"/> businesses in Japan.</span></h1>
-    <p>We stand by your finance.</p>
+    <p>Your Trusted Accounting & Finance Partner.</p>
    </div>
-  </div>
- </section>
- <section className="luare-v6-section luare-who-band" id="who-we-help">
-  <div className="luare-v6-container">
-   <ScrollReveal className="luare-who-band-inner">
-    <div className="luare-who-band-head"><p className="luare-v6-eyebrow">WHO WE HELP</p><h2>Supporting companies<br/>like yours.</h2></div>
-    <ul className="luare-who-band-list">{who.map(x=><li key={x}>{x}</li>)}</ul>
-   </ScrollReveal>
   </div>
  </section>
  <section className="luare-v6-section luare-services-photo" id="services">
   <div className="luare-v6-container">
-   <ScrollReveal className="luare-v6-section-head"><p className="luare-v6-eyebrow">SERVICES</p><h2>Integrated accounting and finance<br/>for global businesses.</h2></ScrollReveal>
+   <ScrollReveal className="luare-v6-section-head"><p className="luare-v6-eyebrow">SERVICES</p><h2>Our Services</h2></ScrollReveal>
    <InteractiveServiceGalleryEn/>
    <ScrollReveal><Link href="/en/contact" className="luare-v6-primary-cta luare-v6-section-cta">Discuss your needs <span>→</span></Link></ScrollReveal>
   </div>
@@ -87,7 +78,6 @@ export default function HomeEn(){
      </article>
     </ScrollReveal>})}
    </div>
-   <p className="luare-v6-note">FP&amp;A is presented as an illustrative service model, not a completed client engagement.</p>
    <div className="mt-8 text-center"><Link href="/en/cases" className="inline-flex items-center justify-center border border-[#0B3158] px-7 py-3 text-sm font-semibold text-[#0B3158] hover:bg-[#0B3158] hover:text-white">Explore case studies <span className="ml-3">→</span></Link></div>
   </div>
  </section>
@@ -102,7 +92,6 @@ export default function HomeEn(){
      </Link>
     </ScrollReveal>)}
    </div>
-   <p className="mt-6 text-xs leading-6 text-[#475569]">Some articles are subject to further professional review and may be updated.</p>
    <div className="mt-7 text-center"><Link href="/en/insights" className="inline-flex items-center rounded-full border border-[#CBD5E1] px-6 py-3 text-sm font-semibold text-[#0B3158] hover:bg-[#EDF5FC]">All articles ↗</Link></div>
   </div>
  </section>
@@ -132,7 +121,7 @@ export default function HomeEn(){
  </section>
  <Link href="/en/contact" className="luare-v6-mobile-cta">Free consultation</Link>
  </main>
- <FreeConsultationRail language="EN"/>
+
  <FooterEn/>
  </>;
 }

@@ -33,15 +33,12 @@ export default function R5ServiceDetail({kind}:{kind:Kind}){
    <section id="service-menu" className="mx-auto max-w-[1140px] scroll-mt-28 px-5 py-16 sm:px-10">
     <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">SCOPE</p>
     <h2 className="mt-3 text-2xl font-semibold">主な支援内容</h2>
-    <p className="mt-3 text-sm leading-7 text-[#475569]">各項目をクリック（スマートフォンではタップ）すると、詳しい説明をご覧いただけます。</p>
     <span id="service-details" className="block scroll-mt-28" aria-hidden="true"/>
     <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
-     {content.map(item=><details key={item.id} id={item.id} className="group scroll-mt-28 rounded-lg border border-[#CBD5E1] bg-white open:bg-[#EDF5FC]">
-      <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-5 text-[15px] font-semibold marker:hidden">
-       {item.name}<span aria-hidden="true" className="text-xl font-normal text-[#1766A0] group-open:rotate-45">＋</span>
-      </summary>
-      <p className="px-5 pb-6 text-sm leading-8 text-[#475569]">{item.description}</p>
-     </details>)}
+     {content.map(item=><article key={item.id} id={item.id} className="scroll-mt-28 rounded-lg border border-[#CBD5E1] bg-white p-6">
+      <h3 className="text-lg font-semibold leading-8 text-[#0B3158]">{item.name}</h3>
+      <p className="mt-3 text-sm leading-8 text-[#475569]">{item.description}</p>
+     </article>)}
     </div>
    </section>
    <section id="service-next" className="scroll-mt-28 bg-[#EDF5FC] py-14 sm:py-16">

@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 };
 
 import ScrollToTop from "@/components/ScrollToTop";
+import FreeConsultationRail from "@/components/FreeConsultationRail";
 import Script from "next/script";
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           {"window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-39MBNBLCY1');"}
         </Script>
         {children}
+        <FreeConsultationRail />
         <ScrollToTop />
       </body>
     </html>

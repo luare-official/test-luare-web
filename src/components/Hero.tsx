@@ -21,7 +21,7 @@ export default function Hero() {
               もっとスムーズに。
             </span>
           </h1>
-          <p>We stand by your finance.</p>
+          <p>Your Trusted Accounting & Finance Partner.</p>
         </ScrollReveal>
       </div>
     </section>

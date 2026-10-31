@@ -13,12 +13,12 @@ export const metadata: Metadata = {
 };
 
 // The husband's Luare_HP_Public_Preview_r5.html is the source of the
-// page copy, layout order, r5 cards and the FP&A model section.
+// page copy and cards, with the FP&A engagement included in the unified project list.
 // The common production Navbar/Footer remain outside the original r5 page body.
 function CaseCard({ c }: { c: (typeof r5Cases)[number] }) {
   return (
     <Link href={"/cases/" + c.id} className={styles.card}>
-      <span className={styles.index}>CASE {c.index}</span>
+      <span className={styles.index}>{c.type}</span>
       <p className={styles.industry}>{c.industry}</p>
       <h3>{c.title}</h3>
       <p className={styles.impact}>{c.impact}</p>
@@ -48,18 +48,8 @@ export default function CasesPage() {
             <header className={styles.sectionTop}>
               <div><div className={styles.eyebrow}>PROJECTS</div><h2>プロジェクト紹介</h2></div>
             </header>
-            <div className={styles.grid3}>
-              {r5Cases.filter(c => !("model" in c && c.model)).map(c => <CaseCard key={c.id} c={c} />)}
-            </div>
-          </div>
-        </section>
-        <section className={styles.section + " " + styles.alt} id="case-model">
-          <div className={styles.shell} id="fpa-model">
-            <header className={styles.sectionTop}>
-              <div><div className={styles.eyebrow}>SERVICE MODEL</div><h2>支援モデル</h2></div>
-            </header>
             <div className={styles.grid2}>
-              {r5Cases.filter(c => "model" in c && c.model).map(c => <CaseCard key={c.id} c={c} />)}
+              {r5Cases.map(c => <CaseCard key={c.id} c={c} />)}
             </div>
           </div>
         </section>

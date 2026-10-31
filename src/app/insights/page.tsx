@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "会計・経理・内部統制の読みもの | Luare Consulting",
+  title: "関連記事 | Luare Consulting",
   description:
     "日本法人の経理体制、海外子会社管理、内部統制など、会計・財務の実務に関する記事をご紹介します。",
   alternates: { canonical: "https://luare-consulting.com/insights" },
@@ -41,7 +41,7 @@ export default function InsightsPage() {
             </span>
 
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-wider text-brand-platinum leading-tight">
-              会計・経理の読みもの
+              関連記事
             </h1>
 
             <p className="mt-6 text-sm sm:text-base text-brand-silver/70 tracking-wider max-w-xl mx-auto leading-relaxed">

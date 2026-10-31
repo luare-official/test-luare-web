@@ -71,17 +71,29 @@ for(const [source,selector,target] of critical){
   await loc.click();await page.waitForURL(u=>u.pathname===target,{timeout:4500});counts.criticalFlows++;
  }catch(e){fail("Critical flow "+source+" -> "+target+" : "+String(e).slice(0,170))}
 }
-// Click each visible service topic disclosure on its destination (25 topics).
-for(const path of ["/services/internal-control/overview","/services/accounting-management",
-"/services/finance-ops","/services/global-finance","/services/audit-assurance"]){
+// Approved 2026-10-31: Japanese finance/operations/global services now show
+// all five descriptions as open cards, matching EN/ZH. Internal-control and audit
+// pages retain their established controls; no form submits occur.
+for(const path of ["/services/accounting-management","/services/finance-ops","/services/global-finance"]){
  await page.goto(ROOT+path,{waitUntil:"domcontentloaded"});
- const list=page.locator("details > summary");
- const n=await list.count();
- if(n!==5)fail("Expected 5 expandable service items on "+path+" got "+n);
+ const cards=page.locator('#service-menu article[id]');
+ const n=await cards.count();
+ if(n!==5)fail("Expected five fully visible service cards on "+path+" got "+n);
  for(let i=0;i<n;i++){
-  try{await list.nth(i).click();const expanded=await list.nth(i).evaluate(el=>el.parentElement.open);
-  if(!expanded)fail("Service detail didn't expand "+path+" #"+i);else counts.detailsClicked++;
-  }catch(e){fail("Service disclosure "+path+" #"+i+" "+String(e).slice(0,140))}
+  if(!await cards.nth(i).locator("h3").isVisible()||!await cards.nth(i).locator("p").isVisible())
+   fail("Service card title/description hidden "+path+" #"+i);
+  else counts.detailsClicked++;
+ }
+}
+for(const path of ["/services/internal-control/overview","/services/audit-assurance"]){
+ await page.goto(ROOT+path,{waitUntil:"domcontentloaded"});
+ const summaries=page.locator("details > summary");
+ const n=await summaries.count();
+ if(n!==5)fail("Expected five protected service items on "+path+" got "+n);
+ for(let i=0;i<n;i++){
+  try{await summaries.nth(i).click();if(!await summaries.nth(i).evaluate(el=>el.parentElement.open))
+   fail("Protected service disclosure did not expand "+path+" #"+i);else counts.detailsClicked++;
+  }catch(e){fail("Protected disclosure "+path+" #"+i+" "+String(e).slice(0,140))}
  }
 }
 // Mobile menu per language; no contact submission.
@@ -91,10 +103,10 @@ const sp=await mobile.newPage();
 for(const path of ["/","/en","/zh"]){
  try{
   await sp.goto(ROOT+path,{waitUntil:"domcontentloaded"});
-  const menu=sp.locator("button.luare-unicell-hero-menu-toggle");
+  const menu=sp.locator('button[aria-controls="luare-mobile-menu"]');
   await menu.click();
   if(await menu.getAttribute("aria-expanded")!=="true")fail("Mobile menu failed to open "+path);
-  const nav=sp.locator('nav[aria-label="モバイルメニュー"]');
+  const nav=sp.locator('#luare-mobile-menu');
   if(!await nav.isVisible())fail("Mobile navigation hidden "+path);
   await menu.click();
   if(await menu.getAttribute("aria-expanded")!=="false")fail("Mobile menu failed to close "+path);

@@ -17,8 +17,8 @@ const yen=(n:number)=>n.toLocaleString("ja-JP")+"日元";
 export default async function CaseDetailZh({params}:Props){
 const slug=(await params).slug;const c=zhCases[slug];const original=r5Cases.find(x=>x.id===slug);if(!c||!original)notFound();
 const q=findR5Quote(original.price);
-return <ZhPageFrame label={c.model?"SUPPORT MODEL":"CASE STUDIES / "+original.index} title={c.title} lead={c.impact} parent={{title:"支持案例",href:"/zh/cases"}}>
-{c.model&&<p className="mx-auto max-w-[1140px] px-5 pt-6 text-sm font-semibold text-[#1766A0] sm:px-10">这是服务模式说明，并非实际客户案例。</p>}
+return <ZhPageFrame label={"CASE STUDIES"} title={c.title} lead={c.impact} parent={{title:"支持案例",href:"/zh/cases"}}>
+
 <section className="mx-auto max-w-[1140px] px-5 py-14 sm:px-10"><p className="text-xs font-bold text-[#1766A0]">OVERVIEW</p><h2 className="mt-3 text-2xl font-semibold">项目概要</h2>
 <div className="mt-7 grid gap-6 md:grid-cols-[1fr_270px]"><div><span className="bg-[#EDF5FC] px-3 py-2 text-xs text-[#1766A0]">{c.type}</span><h3 className="mt-5 text-lg font-semibold">{c.industry}</h3><p className="mt-4 text-sm leading-8 text-[#475569]">{c.intro}</p></div>
 <aside className="border border-[#CBD5E1] bg-[#EDF5FC] p-6"><p className="text-xs text-[#475569]">支持目标</p><p className="mt-3 text-sm leading-8">{c.objective}</p></aside></div></section>
@@ -31,7 +31,7 @@ return <ZhPageFrame label={c.model?"SUPPORT MODEL":"CASE STUDIES / "+original.in
 <section className="mx-auto max-w-[1140px] px-5 py-14 sm:px-10"><p className="text-xs font-bold text-[#1766A0]">OUR SUPPORT</p><h2 className="mt-3 text-2xl font-semibold">Luare的支持内容</h2>
 <p className="mt-4 text-sm leading-8 text-[#475569]">{c.intro}</p><ul className="mt-6 grid gap-3 md:grid-cols-2">{c.actions.map(x=><li key={x} className="border-l-[3px] border-[#1766A0] bg-[#EDF5FC] p-5 text-sm leading-7">{x}</li>)}</ul>
 {c.outcomes.length>0&&<><h3 className="mt-9 font-semibold">整理内容与交付资料</h3><div className="mt-4 flex flex-wrap gap-3">{c.outcomes.map(x=><span key={x} className="border border-[#CBD5E1] px-4 py-3 text-sm">{x}</span>)}</div></>}</section>
-{q&&<section className="bg-[#EDF5FC] py-14"><div className="mx-auto max-w-[1140px] px-5 sm:px-10"><p className="text-xs font-bold text-[#1766A0]">REFERENCE FEE</p><h2 className="mt-3 mb-7 text-2xl font-semibold">同类服务费用参考</h2>
+{q&&<section className="bg-[#EDF5FC] py-14"><div className="mx-auto max-w-[1140px] px-5 sm:px-10"><p className="text-xs font-bold text-[#1766A0]">REFERENCE FEE</p><h2 className="mt-3 mb-7 text-2xl font-semibold">该案例的服务报酬参考</h2>
 <div className="rounded-lg border border-[#CBD5E1] bg-white p-6 sm:p-9"><h3 className="text-lg font-semibold">{quoteZh[q.id].name}</h3><p className="mt-3 text-sm leading-7 text-[#475569]">{quoteZh[q.id].scope}</p>
 <div className="mt-6 grid gap-4 sm:grid-cols-3"><div className="bg-[#EDF5FC] p-4"><small>小时费率（不含税）</small><p className="mt-2 text-lg font-bold">{yen(q.rate)}</p></div>
 <div className="bg-[#EDF5FC] p-4"><small>预计工时</small><p className="mt-2 text-lg font-bold">{"hoursTotal" in q?q.hoursTotal+"小时／总计":q.hoursMonth+"小时／月"}</p></div>

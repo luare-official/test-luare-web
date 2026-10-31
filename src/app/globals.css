@@ -2928,3 +2928,18 @@ body {background-color:var(--background);color:var(--foreground);font-family:var
  .luare-unicell-nav-bubble .luare-service-menu-hero>button span{margin:0;font-size:11px;line-height:1}
 }
 @media(min-width:761px) and (max-width:1100px){.luare-home-v6 .luare-v6-container{width:calc(100% - 126px)}}
+
+/* 2026-10-31: Unified C-style navigation and consistent hero/consultation spacing. */
+.luare-unicell-hero{padding:88px 15px 15px;}
+.luare-unicell-stage{border-radius:18px;}
+/* Remove the white decoration behind the portrait, retaining its crop and layout. */
+.luare-unicell-white-shape{background:transparent!important;}
+/* Bring section rhythm into line without changing individual service cards. */
+.luare-home-v6 .luare-v6-section{padding-top:clamp(52px,6vw,76px);padding-bottom:clamp(52px,6vw,76px);}
+.luare-home-v6 .luare-v6-final{padding-top:clamp(55px,6vw,80px);padding-bottom:clamp(55px,6vw,80px);}
+@media(max-width:760px){
+ .luare-unicell-hero{padding:78px 0 0;}
+ .luare-unicell-stage{border-radius:0;}
+ .luare-consult-rail{width:55px;padding:10px 6px;}
+ .luare-consult-language b{font-size:11px}
+}

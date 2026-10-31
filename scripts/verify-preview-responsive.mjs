@@ -47,7 +47,7 @@ for(const profile of profiles){
   if(p.tag==="home-en"){
    const current=await page.evaluate(()=>({
     hero:!!document.querySelector(".luare-unicell-talk-photo img"),
-    sections:["who-we-help","services","why-luare","case-studies","flow","faq"].every(id=>!!document.getElementById(id)),
+    sections:["services","why-luare","case-studies","flow","faq"].every(id=>!!document.getElementById(id)),
     oldText:document.body.textContent?.includes("Zero Local Hiring Risk")||false
    }));
    if(!current.hero||!current.sections||current.oldText)record(profile.label+" /en stale homepage structure "+JSON.stringify(current));
@@ -104,8 +104,8 @@ for(const profile of profiles){
     record(profile.label+" "+p.path+" mobile portrait/biography stacking invalid: "+JSON.stringify(positioning));
   }
   if(profile.label==="desktop" && p.tag==="services-jp"){
-   const home=page.locator('header a.luare-nav-link').filter({hasText:"ホーム"}).first();
-   const service=page.locator('header button.luare-nav-link').filter({hasText:"サービス"}).first();
+   const home=page.locator('header nav a').filter({hasText:"ホーム"}).first();
+   const service=page.locator('header nav a').filter({hasText:"サービス"}).first();
    if(await home.count()&&await service.count()){
     const sizes=await Promise.all([home.evaluate(el=>getComputedStyle(el).fontSize),service.evaluate(el=>getComputedStyle(el).fontSize)]);
     if(sizes[0]!==sizes[1])record("Subpage nav font size mismatch: "+sizes);

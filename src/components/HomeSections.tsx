@@ -213,29 +213,12 @@ export default function HomeSections() {
       </section>
       )}
 
-      <section className="luare-v6-section luare-who-band" id="who-we-help" aria-labelledby="who-we-help-title">
-        <div className="luare-v6-container">
-          <ScrollReveal className="luare-who-band-inner">
-            <div className="luare-who-band-head">
-              <p className="luare-v6-eyebrow">WHO WE HELP</p>
-              <h2 id="who-we-help-title">このような企業を<br />ご支援しています。</h2>
-            </div>
-            <ul className="luare-who-band-list">
-              {whoWeHelp.map(([, title]) => (
-                <li key={title}>
-                  {title}
-                </li>
-              ))}
-            </ul>
-          </ScrollReveal>
-        </div>
-      </section>
 
       <section className="luare-v6-section luare-services-photo" id="services">
         <div className="luare-v6-container">
           <ScrollReveal className="luare-v6-section-head">
             <p className="luare-v6-eyebrow">SERVICES</p>
-            <h2>グローバル企業の会計・財務を、<br />ワンストップで。</h2>
+            <h2>サービスライン</h2>
           </ScrollReveal>
 
           <InteractiveServiceGallery />

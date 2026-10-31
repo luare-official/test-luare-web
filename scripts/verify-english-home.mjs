@@ -17,13 +17,14 @@ const failures=[];
 const check=(v,msg)=>{if(!v)failures.push(msg);};
 const html=(p)=>{const s=p.replace(/^\//,"");const candidates=["out/"+(s?s+".html":"index.html"),"out/"+s+"/index.html"];const file=candidates.find(x=>existsSync(x));return file?load(file):"";};
 for(const path of allPaths)check(!!html(path),"Missing English page "+path);
-for(const section of ["luare-unicell-hero","luare-who-band","luare-services-photo","luare-v6-why","luare-v6-cases","luare-v6-steps","luare-v6-faq","luare-v6-final"])
+for(const section of ["luare-unicell-hero","luare-services-photo","luare-v6-why","luare-v6-cases","luare-v6-steps","luare-v6-faq","luare-v6-final"])
 check(homeSource.includes(section),"English home lacks current Japanese design section "+section);
 for(const old of ["Zero Local Hiring Risk","Absolute Financial Compliance in Japan","abstract_tokyo_wireframe_bg","GlobalDataPipelineEn","ComparisonMatrixEn","Insights (JP)"])
 check(!homeSource.includes(old)&&!navSource.includes(old),"Obsolete English marketing or link remains: "+old);
 check(homeSource.includes("InteractiveServiceGalleryEn"),"English home service accordion missing");
 check(enServiceSource.includes("Internal Control, J-SOX")&&enServiceSource.includes("Audit & Assurance"),"Five translated service areas incomplete");
-const en=html("/en");check(en.includes("Making accounting and finance"),"New English hero content is not visible in exported page");check(!en.includes("Zero Local Hiring Risk"),"Old English landing copy is still exported");
+const en=html("/en");check(en.includes("Your Trusted Accounting"),"Trusted partner tagline missing");
+check(en.includes("Making accounting and finance"),"New English hero content is not visible in exported page");check(!en.includes("Zero Local Hiring Risk"),"Old English landing copy is still exported");
 check(en.includes("luare-unicell-talk-photo"),"Approved photograph not used on English home");
 for(const path of allPaths)check(!html(path).includes("US.CPA"),"Deprecated dotted USCPA on "+path);
 const sitemap=load("src/app/sitemap.ts");

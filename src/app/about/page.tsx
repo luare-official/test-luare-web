@@ -39,10 +39,10 @@ export default function AboutPage() {
             <ScrollReveal delay={80}>
               <div className="luare-v6-rep-copy">
                 <p className="luare-v6-label">Luare Consulting 代表</p>
-                <h2 className="luare-v6-rep-name">陸 沿青</h2>
+                <h2 className="luare-v6-rep-name"><ruby>陸 沿青<rt className="text-xs font-normal tracking-normal">りく えんせい</rt></ruby></h2>
                 <p className="luare-v6-qual">米国公認会計士（USCPA, Inactive, グアム州）</p>
                 <p className="luare-v6-label">学歴</p>
-                <p><strong>南オーストラリア大学（現：アデレード大学）<br />経営学部 卒業</strong></p>
+                <p><strong>アデレード大学<br />経営学部 卒業</strong></p>
                 <p className="luare-v6-label luare-v6-label-spaced">Biography</p>
                 <p className="luare-v6-bio">
                   オーストラリアにて経営学士号を取得後、日系上場専門商社および米国系製造大手の日本法人にて

@@ -12,7 +12,7 @@ const en=read("en/pricing");
 const zh=read("zh/pricing");
 const fail=[];
 const ok=(t,msg)=>{if(!t)fail.push(msg);};
-for(const t of ["料金のご案内","基本的な料金体系","プロジェクト別の費用目安","お見積りについて","業務の専門性、支援体制、必要工数に応じて個別にお見積りします。","プロジェクトの目的、成果物、対象拠点、必要工数を確認し、支援内容を明確にした上で個別にご提案します。"])
+for(const t of ["料金のご案内","基本的な料金体系","支援実績からの報酬目安","お見積りについて","業務の専門性、支援体制、必要工数に応じて個別にお見積りします。","プロジェクトの目的、成果物、対象拠点、必要工数を確認し、支援内容を明確にした上で個別にご提案します。"])
  ok(price.includes(t),"Missing original r5 fee text: "+t);
 const titles=["北米事業のFP&amp;A・KPI高度化支援","企業グループの決算実務・改善支援","海外事業拠点のJ-SOX 3点セット構築"];
 const norm=price.replaceAll("&amp;","&");
