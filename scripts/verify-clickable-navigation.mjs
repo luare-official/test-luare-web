@@ -103,7 +103,7 @@ const sp=await mobile.newPage();
 for(const path of ["/","/en","/zh"]){
  try{
   await sp.goto(ROOT+path,{waitUntil:"domcontentloaded"});
-  const menu=sp.locator("button[aria-controls="luare-mobile-menu"]");
+  const menu=sp.locator('button[aria-controls="luare-mobile-menu"]');
   await menu.click();
   if(await menu.getAttribute("aria-expanded")!=="true")fail("Mobile menu failed to open "+path);
   const nav=sp.locator('#luare-mobile-menu');
