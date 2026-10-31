@@ -85,7 +85,6 @@ const item=zhCases[srcCase.id];return <ScrollReveal key={srcCase.id} delay={inde
 <div><p><strong>课题</strong><br/>{item.issues.join("、")}</p><span>{item.type}</span></div>
 </article></ScrollReveal>})}
 </div>
-<p className="luare-v6-note">※FP&amp;A为服务模式说明，并非已实施的客户案例。</p>
 <div className="mt-8 text-center"><Link href="/zh/cases" className="inline-flex items-center justify-center border border-[#0B3158] px-7 py-3 text-sm font-semibold text-[#0B3158] hover:bg-[#0B3158] hover:text-white">查看支持案例 <span className="ml-3">→</span></Link></div>
 </div></section>
 
