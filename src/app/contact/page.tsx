@@ -90,18 +90,16 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="contact-phone" className={labelStyle}>
-                    電話番号
-                    <span className="ml-2 text-[11px] font-medium text-[#475569]">任意</span>
-                  </label>
-                  <input
-                    id="contact-phone"
-                    type="tel"
-                    name="phone"
-                    autoComplete="tel"
-                    className={inputStyle}
-                    placeholder="03-1234-5678"
-                  />
+                  <label htmlFor="contact-service" className={labelStyle}>ご相談サービス<Required /></label>
+                  <select id="contact-service" name="service" className={inputStyle} defaultValue="" required>
+                    <option value="" disabled>選択してください</option>
+                    <option>内部統制・J-SOX・内部監査</option>
+                    <option>会計・決算・経営管理支援</option>
+                    <option>業務改善・AI・システム支援</option>
+                    <option>日本進出・海外拠点支援</option>
+                    <option>監査・保証業務</option>
+                    <option>その他</option>
+                  </select>
                 </div>
               </div>
 
