@@ -8,7 +8,7 @@ import LegacyCaseHashRedirect from "@/components/cases/LegacyCaseHashRedirect";
 
 export const metadata: Metadata = {
   title: "支援事例 | Luare Consulting",
-  description: "企業の課題、Luareの支援、得られる成果物。プロジェクトの要点を図と短い文章でご紹介します。",
+  description: "Luare Consultingの支援実績をご紹介します。",
   alternates: { canonical: "https://luare-consulting.com/cases" },
 };
 
@@ -40,7 +40,7 @@ export default function CasesPage() {
             </nav>
             <div className={styles.eyebrow}>CASE STUDIES</div>
             <h1>支援事例</h1>
-            <p>企業の課題、Luareの支援、得られる成果物。プロジェクトの要点を図と短い文章でご紹介します。</p>
+            <p>Luare Consultingの支援実績をご紹介します。</p>
           </div>
         </div>
         <section className={styles.section} id="case-list">

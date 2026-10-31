@@ -9,7 +9,7 @@ function Card({id,num}:{id:string;num:string}){const c=zhCases[id];return <Link 
 <p className="mt-3 text-xs leading-6 text-[#475569]">{c.industry}</p><h3 className="mt-3 text-lg font-semibold leading-8">{c.title}</h3>
 <p className="mt-4 flex-1 text-sm leading-7 text-[#475569]">{c.impact}</p><span className="mt-5 text-sm font-semibold text-[#1766A0]">查看详细内容 ↗</span>
 </Link>}
-export default function CasesZh(){return <ZhPageFrame label="CASE STUDIES" title="支持案例" lead="通过项目概要、实际课题、支持方法及交付资料，介绍我们的工作方式。">
+export default function CasesZh(){return <ZhPageFrame label="CASE STUDIES" title="支持案例" lead="了解Luare Consulting的项目支持案例。">
 <section className="mx-auto max-w-[1140px] px-5 py-14 sm:px-10 sm:py-20"><h2 className="mb-7 text-2xl font-semibold">项目介绍</h2><div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
 {r5Cases.map(c=><Card key={c.id} id={c.id} num={c.index}/>)}
 </div></section></ZhPageFrame>}
