@@ -8,7 +8,7 @@ import {r5Quotes} from "@/lib/r5Cases";
 // transcribed from the user's Luare_HP_Public_Preview_r5.html / content_master_r5.json.
 export const metadata:Metadata={
  title:"料金のご案内 | Luare Consulting",
- description:"業務の専門性、支援体制、必要工数に応じて個別にお見積りします。プロジェクト別の費用目安をご案内します。",
+ description:"業務の専門性、支援体制、必要工数に応じて個別にお見積りします。支援実績に基づく報酬目安をご案内します。",
  alternates:{canonical:"https://luare-consulting.com/pricing"}
 };
 const yen=(value:number)=>value.toLocaleString("ja-JP")+"円";
@@ -40,14 +40,14 @@ return <><Navbar solid/>
  <section id="price-cases" className="scroll-mt-28 bg-[#EDF5FC] py-14 sm:py-20">
   <div className="mx-auto max-w-[1080px] px-5 sm:px-10">
    <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">REFERENCE FEES</p>
-   <h2 className="mt-3 text-2xl font-semibold">プロジェクト別の費用目安</h2>
+   <h2 className="mt-3 text-2xl font-semibold">支援実績からの報酬目安</h2>
    <div className="mt-8 grid gap-5 lg:grid-cols-3">
     {r5Quotes.map(q=>{
      const hours=("hoursTotal" in q)?q.hoursTotal:q.hoursMonth*q.months;
-     return <article key={q.id} className="flex flex-col rounded-lg border border-[#CBD5E1] bg-white p-6">
-      <span className="text-xs font-semibold tracking-[.16em] text-[#1766A0]">PROJECT EXAMPLE</span>
-      <h3 className="mt-3 min-h-[3.8rem] text-lg font-semibold leading-7">{q.title}</h3>
-      <p className="mt-2 text-sm leading-7 text-[#475569]">{q.industry}</p>
+     return <article key={q.id} className="flex h-full flex-col rounded-lg border border-[#CBD5E1] bg-white p-6">
+      <span className="text-xs font-semibold tracking-[.16em] text-[#1766A0]">PROJECT EXPERIENCE</span>
+      <h3 className="mt-3 min-h-[4rem] text-lg font-semibold leading-7">{q.title}</h3>
+      <p className="mt-2 min-h-[3rem] text-sm leading-7 text-[#475569]">{q.industry}</p>
       <div className="mt-5 flex flex-wrap gap-2 text-xs text-[#1766A0]">
        <span className="bg-[#EDF5FC] px-3 py-1.5">{yen(q.rate)}／時間</span>
        <span className="bg-[#EDF5FC] px-3 py-1.5">{("hoursTotal" in q)?hours+"時間・合計":q.hoursMonth+"時間／月"}</span>
