@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "関連記事 | Luare Consulting",
+  title: "会計・経理・内部統制の実務記事 | Luare Consulting",
   description:
     "日本法人の経理体制、海外子会社管理、内部統制など、会計・財務の実務に関する記事をご紹介します。",
   alternates: { canonical: "https://luare-consulting.com/insights" },
@@ -19,56 +18,34 @@ export default function InsightsPage() {
     <>
       <Navbar theme="light" solid={true} />
 
-      <main className="flex-1">
-        {/* ══════════ HERO ══════════ */}
-        <section className="relative pt-20 overflow-hidden">
-          <div className="absolute inset-0 bg-brand-navy">
-            <Image
-              src="/images/global_cities_skyline.png"
-              alt=""
-              fill
-              className="object-cover object-center opacity-[0.08]"
-              priority
-            />
-          </div>
-
-          <div className="relative z-10 mx-auto max-w-5xl px-6 sm:px-10 py-28 sm:py-36 text-center">
-            <span
-              className="inline-block text-[10px] font-bold uppercase tracking-[0.5em] mb-6"
-              style={{ color:"#EDF5FC" }}
-            >
-              専門知見
-            </span>
-
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-medium tracking-wider text-brand-platinum leading-tight">
-              関連記事
-            </h1>
-
-            <p className="mt-6 text-sm sm:text-base text-brand-silver/70 tracking-wider max-w-xl mx-auto leading-relaxed">
-              日本法人の経理体制や海外子会社管理、内部統制など、実務に役立つテーマをご紹介します。
+      <main className="flex-1 pt-20">
+        <section className="border-b border-[#CBD5E1] bg-[#EDF5FC]">
+          <div className="mx-auto max-w-[1140px] px-5 py-12 sm:px-10 sm:py-16">
+            <nav aria-label="パンくずリスト" className="mb-8 flex gap-2 text-xs text-[#475569]">
+              <Link href="/">ホーム</Link><span>／</span><span>関連記事</span>
+            </nav>
+            <p className="text-xs font-semibold tracking-widest text-[#1766A0]">INSIGHTS</p>
+            <h1 className="mt-3 text-[clamp(30px,4vw,44px)] font-semibold text-[#0B3158]">関連記事</h1>
+            <p className="mt-5 max-w-3xl text-sm leading-8 text-[#475569]">
+              会計・決算・内部統制、海外子会社管理など、実務に役立つ記事をご紹介します。
             </p>
-
-            <div
-              className="mx-auto mt-8 w-16 h-[1.5px]"
-              style={{ backgroundColor:"#1766A0" }}
-            />
           </div>
         </section>
 
         {/* ══════════ ARTICLE GRID ══════════ */}
-        <section className="bg-brand-white py-24 sm:py-28">
-          <div className="mx-auto max-w-6xl px-6 sm:px-10">
+        <section className="bg-white py-14 sm:py-16">
+          <div className="mx-auto max-w-[1140px] px-5 sm:px-10">
             {posts.length === 0 ? (
               <p className="text-center text-brand-slate/60 text-sm tracking-wide">
                 記事は現在準備中です。
               </p>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+              <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {posts.map((post) => (
                   <Link
                     key={post.slug}
                     href={`/insights/${post.slug}`}
-                    className="group flex flex-col bg-white rounded-sm border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden"
+                    className="group flex flex-col rounded-lg border border-[#CBD5E1] bg-white shadow-sm transition-colors hover:bg-[#EDF5FC] overflow-hidden"
                   >
                     {/* Card top accent */}
                     <div
