@@ -3,7 +3,6 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import ScrollReveal from "@/components/ScrollReveal";
 import FooterEn from "@/components/en/FooterEn";
-import FreeConsultationRail from "@/components/FreeConsultationRail";
 import InteractiveServiceGalleryEn from "@/components/en/InteractiveServiceGalleryEn";
 import { enCases, enInsights } from "@/lib/enSite";
 import { r5Cases } from "@/lib/r5Cases";
@@ -132,7 +131,7 @@ export default function HomeEn(){
  </section>
  <Link href="/en/contact" className="luare-v6-mobile-cta">Free consultation</Link>
  </main>
- <FreeConsultationRail language="EN"/>
+
  <FooterEn/>
  </>;
 }
