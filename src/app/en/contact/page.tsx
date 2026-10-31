@@ -24,7 +24,12 @@ export default function ContactPageEn() {
               <div><label htmlFor="en-company" className="text-sm font-semibold text-[#0B3158]">Company Name <span className="text-xs text-[#475569]">(Required)</span></label><input id="en-company" className={inputClass} type="text" autoComplete="organization" name="company" required /></div>
               <div><label htmlFor="en-name" className="text-sm font-semibold text-[#0B3158]">Your Name <span className="text-xs text-[#475569]">(Required)</span></label><input id="en-name" className={inputClass} type="text" autoComplete="name" name="name" required /></div>
               <div><label htmlFor="en-email" className="text-sm font-semibold text-[#0B3158]">Email Address <span className="text-xs text-[#475569]">(Required)</span></label><input id="en-email" className={inputClass} type="email" autoComplete="email" name="email" required /></div>
-              <div><label htmlFor="en-phone" className="text-sm font-semibold text-[#0B3158]">Phone Number <span className="text-xs text-[#475569]">(Optional)</span></label><input id="en-phone" className={inputClass} type="tel" autoComplete="tel" name="phone" /></div>
+              <div><label htmlFor="en-service" className="text-sm font-semibold text-[#0B3158]">Service of Interest <span className="text-xs text-[#475569]">(Required)</span></label>
+              <select id="en-service" className={inputClass} name="service" defaultValue="" required>
+                <option value="" disabled>Please select a service</option><option>Internal Control / J-SOX</option>
+                <option>Accounting, Closing &amp; Management</option><option>Process Improvement, AI &amp; Systems</option>
+                <option>Japan Market Entry &amp; Global Finance</option><option>Audit &amp; Assurance Coordination</option><option>Other</option>
+              </select></div>
             </div>
             <div className="mt-7"><label htmlFor="en-message" className="text-sm font-semibold text-[#0B3158]">Message <span className="text-xs text-[#475569]">(Required)</span></label><textarea id="en-message" className={inputClass + " min-h-[176px] resize-y"} name="message" required /></div>
             <div className="mt-8 border-t border-[#CBD5E1] pt-7">
