@@ -9,6 +9,6 @@ export default function InsightsZh(){return <ZhPageFrame label="INSIGHTS" title=
 <span className="text-xs font-semibold text-[#1766A0]">{a.category}</span>
 <h2 className="mt-4 text-lg font-semibold leading-8">{a.title}</h2>
 <p className="mt-3 flex-1 text-sm leading-7 text-[#475569]">{a.excerpt}</p>
-{a.review&&<p className="mt-3 text-xs text-[#475569]">内容仍在专业审核中</p>}
+
 <span className="mt-5 text-sm font-semibold text-[#1766A0]">阅读全文 ↗</span></Link>)}
 </div></section></ZhPageFrame>}
