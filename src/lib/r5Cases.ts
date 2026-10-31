@@ -86,11 +86,11 @@ export const r5Cases = [
   {
     "id": "case-fpa",
     "index": "04",
-    "type": "FP&A支援モデル",
-    "industry": "北米事業｜FP&A支援モデル",
+    "type": "FP&A・経営管理支援",
+    "industry": "北米事業｜FP&A・KPI管理",
     "title": "北米事業の現場データを経営判断につなぐFP&A体制",
     "impact": "現場の活動からKPI・予算分析まで、持続的な管理サイクルを設計。",
-    "intro": "北米現地の事業責任者と日本本社の経営管理部門が、時差・言語・業務慣行を越えて同じ指標を共有するための支援モデル。現場業務が会計数値に反映されるまでを可視化し、予実管理とPDCAを組み合わせます。",
+    "intro": "北米現地の事業責任者と日本本社の経営管理部門が、時差・言語・業務慣行を越えて同じ指標を共有するための支援。現場業務が会計数値に反映されるまでを可視化し、予実管理とPDCAを組み合わせます。",
     "objective": "現場で使えるKPIを整え、HQの分析負荷を軽減しながら北米事業の意思決定を支える。",
     "clientIssues": [
       "現地とHQの時差・言語・意思決定の差",
@@ -104,7 +104,7 @@ export const r5Cases = [
     ],
     "outcomes": [],
     "price": "quote-fpa",
-    "model": true
+    "model": false
   }
 ] as const;
 export const r5Quotes = [
