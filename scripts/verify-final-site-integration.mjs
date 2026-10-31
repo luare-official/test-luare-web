@@ -91,12 +91,13 @@ for(const page of special){
 for(const lang of ["","en/","zh/"]){
  const page=lang+"contact.html",html=pages.get(page)||"";
  assert(!!html,"Missing "+page);
- for(const field of ["company","name","email","phone","message"])
+ for(const field of ["company","name","email","service","message"])
   assert(html.includes('name="'+field+'"'),page+" lacks "+field);
- for(const field of ["company","name","email","message"]){
-  const tag=html.match(new RegExp("<(?:input|textarea)[^>]*name=[\"']"+field+"[\"'][^>]*>","i"))?.[0]||"";
+ for(const field of ["company","name","email","service","message"]){
+  const tag=html.match(new RegExp("<(?:input|textarea|select)[^>]*name=[\"']"+field+"[\"'][^>]*>","i"))?.[0]||"";
   assert(tag.includes("required"),page+" missing required flag on "+field);
  }
+ assert(!html.includes('name="phone"'),page+" contains removed phone field");
  assert(html.includes('href="/privacy"'),page+" missing privacy link");
  assert(html.includes('action="https://formspree.io/f/mojppoor"'),page+" Formspree action changed");
 }
@@ -120,20 +121,21 @@ assert((approvedAudit.match(/<footer\b/g)||[]).length===1,"Audit page has duplic
 const originalJsox=pages.get("services/internal-control.html")||"";
 assert(originalJsox.includes('action="https://formspree.io/f/mojppoor"'),"Original advertised J-SOX landing form no longer exists");
 assert(originalJsox.includes('href="/privacy"'),"Original advertised J-SOX landing privacy link missing");
-assert(nav.includes('"01": "/services/internal-control/overview"'),"Service navigation no longer points to separate r5 overview");
+assert(nav.includes('["サービス","/services"]')&&nav.includes('["Services","/en/services"]')&&nav.includes('["服务","/zh/services"]'),"Direct service navigation missing");
+assert(!nav.includes("luare-service-dropdown"),"Removed services dropdown returned");
 const adJsox=pages.get("ads/internal-control.html")||"";
 assert(!!adJsox,"Archived advertising LP is missing");
 assert(adJsox.includes('href="/privacy"'),"Advertising LP missing privacy link");
 assert(adJsox.includes('action="https://formspree.io/f/mojppoor"'),"Advertising LP form destination changed");
 assert(existsSync("out/robots.txt")&&existsSync("out/sitemap.xml"),"SEO crawler files missing");
 const zhHomeSource=readFileSync("src/app/zh/page.tsx","utf8");
-const zhHomeDesign=["luare-who-band","luare-services-photo","InteractiveServiceGalleryZh","luare-v6-why-row","luare-v6-cases","luare-v6-steps","luare-v6-faq"];
+const zhHomeDesign=["luare-services-photo","InteractiveServiceGalleryZh","luare-v6-why-row","luare-v6-cases","luare-v6-steps","luare-v6-faq"];
 for(const cls of zhHomeDesign)assert(zhHomeSource.includes(cls),"Chinese homepage diverged from approved Japanese design: "+cls);
 const gallerySource=readFileSync("src/app/cases/page.tsx","utf8");
 const r5Style=readFileSync("src/components/cases/R5CaseLayout.module.css","utf8");
 const legacy=readFileSync("src/components/cases/LegacyCaseHashRedirect.tsx","utf8");
-assert(gallerySource.includes("r5Cases.filter")&&gallerySource.includes("styles.grid3")&&gallerySource.includes("styles.grid2"),"Husband r5 original case-list cards / separate FP&A model have changed");
-assert(gallerySource.includes("CASE STUDIES")&&gallerySource.includes("SERVICE MODEL"),"Original r5 case labels are missing");
+assert(gallerySource.includes("r5Cases.map")&&gallerySource.includes("styles.grid2"),"Unified four-case list missing");
+assert(gallerySource.includes("CASE STUDIES")&&!gallerySource.includes("<h2>支援モデル</h2>"),"Unified project list changed");
 assert(r5Style.includes(".card .industry")&&r5Style.includes(".card .impact"),"Original r5 card styling missing");
 assert(legacy.includes("accounting-operations")&&legacy.includes("global-internal-control")&&legacy.includes("overseas-jsox"),"Legacy case deep-link aliases missing");
 for(const path of ["about.html","en/about.html","zh/about.html"]){
