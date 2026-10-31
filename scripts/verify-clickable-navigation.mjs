@@ -52,7 +52,12 @@ for(const {source,href,target} of candidates.values()){
     const a=[...document.querySelectorAll("a[href]")].find(el=>el.getAttribute("href")===h);
     return a?.closest("[inert]")?"inert":a&&getComputedStyle(a).display==="none"?"hidden":"visible";
    },href);
-   if(anchorState!=="inert"&&anchorState!=="hidden")fail("Clicked "+source+" "+href+" but stayed at "+now.pathname+now.hash);
+   // A client navigation may settle just after waitForURL times out. Check
+   // the actual settled URL once more before reporting a genuine failure.
+   const arrived=now.pathname.replace(/\/$/,"")===target.pathname.replace(/\/$/,"") &&
+    (!target.hash||decodeURIComponent(now.hash)===decodeURIComponent(target.hash));
+   if(!arrived&&anchorState!=="inert"&&anchorState!=="hidden")
+    fail("Clicked "+source+" "+href+" but stayed at "+now.pathname+now.hash);
   }
   counts.linksClicked++;
  }catch(e){fail("Click exception "+source+" "+href+" : "+String(e).slice(0,140))}
