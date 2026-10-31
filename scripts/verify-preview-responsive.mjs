@@ -147,6 +147,46 @@ for(const width of [1280,1360,1440]){
  }
  await check.close();
 }
+// Pricing desktop comparison: three cards must share identical vertical starts
+// for title, industry, fact chips, fee label, amount, scope and final CTA.
+// A common height alone does not prevent misaligned fees.
+for(const width of [1024,1280,1440]){
+ const check=await browser.newPage({viewport:{width,height:950}});
+ for(const locale of ["/pricing","/en/pricing","/zh/pricing"]){
+  await check.goto(root+locale,{waitUntil:"domcontentloaded"});
+  await check.evaluate(async()=>{await document.fonts.ready});
+  const layout=await check.evaluate(()=>{
+   const cards=[...document.querySelectorAll("#price-cases .luare-fee-card")];
+   return {viewport:window.innerWidth,body:document.documentElement.scrollWidth,
+    cards:cards.map(card=>({
+     display:getComputedStyle(card).display,
+     rect:{top:card.getBoundingClientRect().top,bottom:card.getBoundingClientRect().bottom},
+     rows:[...card.children].map(child=>({
+      top:child.getBoundingClientRect().top,
+      bottom:child.getBoundingClientRect().bottom,
+      visible:getComputedStyle(child).visibility!=="hidden",
+      overflow:child.scrollHeight-child.clientHeight
+     }))
+    }))};
+  });
+  if(layout.cards.length!==3){record("Pricing must have three cards at "+width+" "+locale);continue;}
+  if(layout.body>layout.viewport+3)record("Pricing horizontal overflow at "+width+" "+locale);
+  if(layout.cards.some(c=>c.display!=="grid"||c.rows.length!==8))
+   record("Pricing subgrid rows missing at "+width+" "+locale);
+  for(let i=0;i<8;i++){
+   const tops=layout.cards.map(c=>c.rows[i]?.top).filter(n=>typeof n==="number");
+   if(tops.length===3&&Math.max(...tops)-Math.min(...tops)>2)
+    record("Pricing row "+(i+1)+" not aligned at "+width+" "+locale+": "+tops.map(n=>n.toFixed(1)).join(","));
+  }
+  const bottoms=layout.cards.map(c=>c.rect.bottom);
+  if(Math.max(...bottoms)-Math.min(...bottoms)>2)record("Pricing card bottoms differ at "+width+" "+locale);
+  if(layout.cards.some(c=>c.rows.some(row=>!row.visible||row.overflow>3)))
+   record("Pricing row clipped or hidden at "+width+" "+locale);
+  if(width===1440&&locale==="/en/pricing")
+   await check.screenshot({path:"qa-artifacts/draft-r5/pricing-en-aligned-desktop.png",fullPage:true,animations:"disabled"});
+ }
+ await check.close();
+}
 await browser.close();
 writeFileSync("qa-artifacts/draft-r5/qa-report.json",JSON.stringify({checked:pages.length*profiles.length,failures},null,2));
 if(failures.length)process.exitCode=1; else console.log("PASS: "+pages.length*profiles.length+" draft PC/mobile captures without basic overflow or image failures.");

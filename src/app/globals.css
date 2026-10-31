@@ -2945,11 +2945,20 @@ body {background-color:var(--background);color:var(--foreground);font-family:var
  .luare-consult-language b{font-size:11px}
 }
 
-/* Keep three pricing cards aligned without excessive blank space (JP/EN/ZH). */
+/* Fee cards: match the positions of all eight content rows across JP/EN/ZH.
+   Subgrid uses the tallest real content for each shared row, not guessed
+   minimum heights that leave gaps or push amounts out of alignment. */
 @media(min-width:1024px) {
- .luare-fee-card .luare-fee-title{min-height:4rem}
- .luare-fee-card .luare-fee-industry{min-height:3.5rem}
- .luare-fee-card .luare-fee-facts{min-height:4.25rem}
+ .luare-fee-grid{row-gap:0}
+ .luare-fee-grid>.luare-fee-card{
+  display:grid;
+  grid-row:span 8;
+  grid-template-rows:subgrid;
+  row-gap:0;
+ }
+ .luare-fee-card .luare-fee-title,
+ .luare-fee-card .luare-fee-industry,
+ .luare-fee-card .luare-fee-facts{min-height:0}
 }
 @media(max-width:1023px) {
  .luare-fee-card .luare-fee-title,

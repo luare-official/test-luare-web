@@ -41,7 +41,7 @@ return <><Navbar solid/>
   <div className="mx-auto max-w-[1080px] px-5 sm:px-10">
    <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">REFERENCE FEES</p>
    <h2 className="mt-3 text-2xl font-semibold">支援実績からの報酬目安</h2>
-   <div className="mt-8 grid gap-5 lg:grid-cols-3">
+   <div className="luare-fee-grid mt-8 grid gap-5 lg:grid-cols-3">
     {r5Quotes.map(q=>{
      const hours=("hoursTotal" in q)?q.hoursTotal:q.hoursMonth*q.months;
      return <article key={q.id} className="luare-fee-card flex h-full flex-col rounded-lg border border-[#CBD5E1] bg-white p-6">
