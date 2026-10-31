@@ -37,7 +37,7 @@ return <><Navbar solid/>
    <p className="mt-3 text-sm leading-7 text-[#475569]">税別。業務内容や担当範囲に応じてお見積りします。</p>
   </div>
  </section>
- <section id="price-cases" className="scroll-mt-28 bg-[#EDF5FC] py-14 sm:py-20">
+ <section id="price-cases" className="scroll-mt-28 bg-[#EDF5FC] py-12 sm:py-16">
   <div className="mx-auto max-w-[1080px] px-5 sm:px-10">
    <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">REFERENCE FEES</p>
    <h2 className="mt-3 text-2xl font-semibold">支援実績からの報酬目安</h2>
