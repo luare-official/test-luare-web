@@ -58,7 +58,7 @@ export default function AuditAssurancePage() {
               <span>／</span>
               <span aria-current="page">監査・保証業務</span>
             </nav>
-            <p className="text-xs font-bold tracking-[.2em] text-[#1766A0]">SERVICE / 05</p>
+            <p className="text-xs font-bold tracking-[.2em] text-[#1766A0]">SERVICE / 06</p>
             <h1 className="mt-4 text-[clamp(28px,4.6vw,46px)] font-semibold leading-[1.4] tracking-[-.015em]">
               監査・保証業務
             </h1>

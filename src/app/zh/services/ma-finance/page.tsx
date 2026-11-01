@@ -16,7 +16,7 @@ return <ZhPageFrame label="M&A / FINANCE ADVISORY" title="并购财务调查、�
 <section className="mx-auto max-w-[1140px] px-5 py-14 sm:px-10 sm:py-20">
  <p className="text-xs font-bold tracking-widest text-[#1766A0]">SCOPE</p><h2 className="mt-3 text-2xl font-semibold">主要支持内容</h2>
  <div className="mt-8 grid gap-4 sm:grid-cols-3">
- {topics.map(([title,desc],i)=><article key={title} className="rounded-lg border border-[#CBD5E1] bg-white p-6"><span className="text-sm font-bold text-[#1766A0]">0{i+1}</span><h3 className="mt-3 text-lg font-semibold leading-8">{title}</h3><p className="mt-3 text-sm leading-8 text-[#475569]">{desc}</p></article>)}
+ {topics.map(([title,desc],i)=><article key={title} id={"scope-"+(i+1)} className="scroll-mt-28 rounded-lg border border-[#CBD5E1] bg-white p-6"><span className="text-sm font-bold text-[#1766A0]">0{i+1}</span><h3 className="mt-3 text-lg font-semibold leading-8">{title}</h3><p className="mt-3 text-sm leading-8 text-[#475569]">{desc}</p></article>)}
  </div>
  <p className="mt-8 text-sm text-[#475569]">本页面用于保持现有日文M&A专业服务页面与中文导航的对应关系。</p>
  <div className="mt-7 flex gap-4"><Link href="/zh/services" className="text-sm font-semibold text-[#1766A0]">全部专业服务 ↗</Link><Link href="/zh/contact" className="text-sm font-semibold text-[#1766A0]">联系我们 ↗</Link></div>

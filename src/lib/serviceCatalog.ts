@@ -22,7 +22,8 @@ export const serviceCategories: readonly ServiceCategory[] = [
   { number:"02", title:"会計・決算・経営管理支援", lead:"数字を作る実務から、意思決定に使える経営情報の整備まで。", itemIds:["closing","outsourcing","fpa","cashflow","accounting-advisory"] },
   { number:"03", title:"業務改善・AI・システム支援", lead:"現場の工程を見極め、仕組みとテクノロジーの両面から改善。", itemIds:["close-improvement","process","ai","system-implementation","operating-model"] },
   { number:"04", title:"日本進出・海外拠点支援", lead:"日本と海外、現地実務と本社経営管理の接点を整備。", itemIds:["market-entry","finance-setup","reporting","hq-reporting","coordination"] },
-  { number:"05", title:"監査・保証業務", lead:"法定監査・任意監査などのご相談に、提携監査法人と連携して対応。", itemIds:["statutory-audit","group-audit-consultation","ifrs-audit","fund-spc","voluntary-audit"] },
+  { number:"05", title:"M&A・Finance Advisory", lead:"財務デューデリジェンスから企業価値評価、PMIまで、M&Aに伴う財務課題を支援。", itemIds:["fdd","valuation","pmi"] },
+  { number:"06", title:"監査・保証業務", lead:"法定監査・任意監査などのご相談に、提携監査法人と連携して対応。", itemIds:["statutory-audit","group-audit-consultation","ifrs-audit","fund-spc","voluntary-audit"] },
 ] as const;
 
 const topics: readonly [string,string,string,string][] = [
@@ -78,7 +79,8 @@ export function serviceCategoryItemHref(number:string,id:string):string {
     "02":"/services/accounting-management",
     "03":"/services/finance-ops",
     "04":"/services/global-finance",
-    "05":"/services/audit-assurance",
+    "05":"/services/ma-finance",
+    "06":"/services/audit-assurance",
   };
   const base=destinations[number]||"/services";
   const target=id==="group-audit-consultation"?"group-audit":id==="ifrs-audit"?"accounting-advisory":id;

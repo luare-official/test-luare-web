@@ -24,6 +24,11 @@ export const enServices=[
 ["Bookkeeping, Closing and HQ Reporting","Support Japan subsidiary bookkeeping, monthly close and management reports for overseas headquarters."],
 ["Overseas Subsidiary Management","Reconcile group reporting requirements with local finance information and reporting packages."],
 ["Japanese / English / Chinese Coordination","Facilitate clear communication among headquarters, Japan teams and professional advisers."]]},
+{slug:"ma-finance",title:"M&A and Financial Advisory",lead:"Practical support for cross-border transactions, financial evaluation and stakeholder coordination.",items:[
+["Financial due diligence support","Organize financial information and address key issues arising during transaction reviews."],
+["Valuation and financial analysis","Support business plan analysis, valuation inputs and management discussions."],
+["Cross-border transaction coordination","Help stakeholders coordinate financial and accounting issues across languages and jurisdictions."],
+["Post-transaction finance integration","Support reporting processes, control responsibilities and finance operations after a transaction."]]},
 {slug:"audit-assurance",title:"Audit & Assurance Coordination",lead:"Coordinate appropriate statutory, voluntary and group audit support with partner audit firms.",items:[
 ["Statutory Audit Inquiries","Clarify statutory audit requirements and connect clients with an appropriate partner audit firm."],
 ["Voluntary Audit Inquiries","Discuss the purpose and scope of voluntary audits and coordinate the engagement approach."],

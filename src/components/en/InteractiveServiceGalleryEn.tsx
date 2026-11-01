@@ -54,10 +54,6 @@ export default function InteractiveServiceGalleryEn() {
           );
         })}
       </div>
-      <div className="mt-9 border-t border-[#CBD5E1] pt-6">
-        <p className="mb-3 text-xs font-semibold tracking-wide text-[#475569]">Additional advisory services</p>
-        <Link href="/en/services/ma-finance" className="text-[13px] font-semibold text-[#0B3158] hover:underline">M&A and financial advisory ↗</Link>
-      </div>
     </div>
   );
 }

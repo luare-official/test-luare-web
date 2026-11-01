@@ -5,7 +5,7 @@ import ZhPageFrame from "@/components/zh/ZhPageFrame";
 import {zhServices} from "@/lib/zhSite";
 type Props={params:Promise<{slug:string}>};
 export const dynamicParams=false;
-export function generateStaticParams(){return zhServices.map(s=>({slug:s.slug}));}
+export function generateStaticParams(){return zhServices.filter(s=>s.slug!=="ma-finance").map(s=>({slug:s.slug}));}
 export async function generateMetadata({params}:Props):Promise<Metadata>{const slug=(await params).slug;const s=zhServices.find(x=>x.slug===slug);return s?{title:s.title+" | Luare Consulting",description:s.lead,alternates:{canonical:"https://luare-consulting.com/zh/services/"+slug}}:{title:"未找到服务"};}
 export default async function ZhServiceDetail({params}:Props){
 const slug=(await params).slug;const s=zhServices.find(x=>x.slug===slug);if(!s)notFound();

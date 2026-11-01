@@ -6,7 +6,7 @@ import FooterEn from "@/components/en/FooterEn";
 import {enServices} from "@/lib/enSite";
 type Props={params:Promise<{slug:string}>};
 export const dynamicParams=false;
-export function generateStaticParams(){return enServices.map(s=>({slug:s.slug}));}
+export function generateStaticParams(){return enServices.filter(s=>s.slug!=="ma-finance").map(s=>({slug:s.slug}));}
 export async function generateMetadata({params}:Props):Promise<Metadata>{const slug=(await params).slug;const svc=enServices.find(s=>s.slug===slug);return svc?{title:svc.title+" | Luare Consulting",description:svc.lead,alternates:{canonical:"https://luare-consulting.com/en/services/"+slug}}:{title:"Service not found"};}
 export default async function ServiceDetailEn({params}:Props){const slug=(await params).slug;const svc=enServices.find(s=>s.slug===slug);if(!svc)notFound();
 return <><Navbar solid/><main className="flex-1 bg-white pt-20" lang="en">

@@ -2,7 +2,7 @@ import type {Metadata} from "next";
 import Link from "next/link";
 import ZhPageFrame from "@/components/zh/ZhPageFrame";
 import {zhServices} from "@/lib/zhSite";
-export const metadata:Metadata={title:"专业服务 | Luare Consulting",description:"日本法人、内部控制、财务结算、AI业务改进及审计相关服务。",alternates:{canonical:"https://luare-consulting.com/zh/services"}};
+export const metadata:Metadata={title:"专业服务 | Luare Consulting",description:"日本法人、内部控制、财务结算、AI业务改进、并购财务咨询及审计相关服务。",alternates:{canonical:"https://luare-consulting.com/zh/services"}};
 export default function ZhServices(){
 return <ZhPageFrame label="OUR SERVICES" title="专业服务" lead="结合企业所处阶段与管理课题，从财务、内部控制、经营管理及业务改进等方面提供支持。">
 <section className="mx-auto max-w-[1140px] px-5 py-14 sm:px-10 sm:py-20">

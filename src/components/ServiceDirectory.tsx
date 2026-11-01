@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { serviceCategories } from "@/lib/serviceCatalog";
 
-// The five directory cards navigate to standalone service detail pages.
+// All six directory cards navigate to standalone service detail pages.
 const serviceRoutes: Record<string,string> = {
   "01": "/services/internal-control/overview",
   "02": "/services/accounting-management",
   "03": "/services/finance-ops",
   "04": "/services/global-finance",
-  "05": "/services/audit-assurance",
+  "05": "/services/ma-finance",
+  "06": "/services/audit-assurance",
 };
 export default function ServiceDirectory() {
   return (

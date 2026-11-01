@@ -54,10 +54,6 @@ export default function InteractiveServiceGalleryZh() {
           );
         })}
       </div>
-      <div className="mt-9 border-t border-[#CBD5E1] pt-6">
-        <p className="mb-3 text-xs font-semibold tracking-wide text-[#475569]">其他专业服务</p>
-        <Link href="/zh/services/ma-finance" className="text-[13px] font-semibold text-[#0B3158] hover:underline">并购与财务咨询 ↗</Link>
-      </div>
     </div>
   );
 }
