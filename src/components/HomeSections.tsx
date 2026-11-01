@@ -277,11 +277,6 @@ export default function HomeSections() {
             ))}
           </div>
           <p className="luare-v6-note">※個別企業名は掲載していません。事例の内容は実際の支援範囲を紹介しています。</p>
-          <div className="mt-8 text-center">
-            <Link href="/#services" className="inline-flex items-center justify-center border border-[#0B3158] px-7 py-3 text-sm font-semibold text-[#0B3158] transition-colors hover:bg-[#0B3158] hover:text-white">
-              支援内容を詳しく見る <span className="ml-3" aria-hidden="true">→</span>
-            </Link>
-          </div>
         </div>
       </section>
 
