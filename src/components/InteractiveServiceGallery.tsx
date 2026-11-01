@@ -1,14 +1,12 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { serviceCategories, serviceItems, serviceCategoryItemHref } from "@/lib/serviceCatalog";
 
 /** Photo-free service directory – approved design A. */
 export default function InteractiveServiceGallery() {
   const [active,setActive] = useState(0);
-  const inputMethod=useRef<"mouse"|"touch"|"pen"|null>(null);
-  function activate(index:number) { setActive(index); }
   return (
     <div className="luare-guide" aria-label="専門サービス一覧">
       
@@ -17,19 +15,11 @@ export default function InteractiveServiceGallery() {
           const open=active===index;
           return <section className={"luare-guide-row"+(open?" is-open":"")}
             key={service.number}
-            onPointerEnter={(event)=>{if(event.pointerType==="mouse")activate(index);}}>
+            >
             <h4 className="luare-guide-row-heading">
               <button type="button" aria-expanded={open}
                 aria-controls={`luare-guide-panel-${index}`}
-                onFocus={()=>{if(!open)activate(index);}}
-                onPointerDown={(event)=>{inputMethod.current=event.pointerType as "mouse"|"touch"|"pen";}}
-                onClick={(event)=>{
-                  // Mouse hover has already opened the row: clicking must not unexpectedly close it.
-                  if(inputMethod.current==="mouse")activate(index);
-                  else if(event.detail===0)setActive(open?-1:index); // keyboard Space/Enter
-                  else setActive(open?-1:index); // touch/pen
-                  inputMethod.current=null;
-                }}
+                onClick={()=>setActive(previous=>previous===index?-1:index)}
                 className="luare-guide-trigger">
                 <span className="luare-guide-number">{service.number}</span>
                 <span className="luare-guide-main">
