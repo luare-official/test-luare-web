@@ -8,6 +8,9 @@ export default function FreeConsultationRail() {
   const lang=path.startsWith("/en")?"EN":path.startsWith("/zh")?"ZH":"JP";
   const home=["/","/en","/zh"].includes(path.replace(/\/$/,"")||"/");
   const label=lang==="EN"?"Quick Advice":lang==="ZH"?"免费咨询":"無料オンライン相談";
+  // The approved two-line copy applies to smartphones only; desktop rail remains unchanged.
+  const mobileLabel=lang==="EN"?"Free Online Consultation":lang==="ZH"?"免费在线咨询":"無料オンライン相談";
+  const mobileLanguages=lang==="EN"?"Japanese · English · Chinese":lang==="ZH"?"支持日语、英语和中文":"日本語・英語・中国語対応";
   const title=lang==="EN"?"Speak with a finance specialist":lang==="ZH"?"欢迎咨询财务与会计问题":"会計・財務の専門家に相談";
   const description=lang==="EN"?"Discuss your accounting, internal control or finance needs. Your first consultation is free.":lang==="ZH"?"会计、内部控制与财务方面的疑问，欢迎咨询。首次咨询免费。":"会計・内部統制・経理体制など、お気軽にご相談ください。初回相談は無料です。";
   const contact=lang==="EN"?"/en/contact":lang==="ZH"?"/zh/contact":"/contact";
@@ -29,6 +32,14 @@ export default function FreeConsultationRail() {
         <span className="luare-consult-language"><b>JP</b></span>
         <span className="luare-consult-language"><b>EN</b></span>
         <span className="luare-consult-language"><b>中文</b></span>
+      </span>
+      {/* One centered icon-and-two-line group on phones, consistent across all languages. */}
+      <span className="luare-consult-mobile-content">
+        <span className="luare-consult-video" aria-hidden="true"><i/></span>
+        <span className="luare-consult-mobile-copy">
+          <strong className="luare-consult-mobile-title">{mobileLabel}</strong>
+          <span className="luare-consult-mobile-subtitle">{mobileLanguages}</span>
+        </span>
       </span>
     </a>
     <div className={"luare-consult-popover "+(visible?"is-rail-visible":"")} aria-hidden={!visible} role="note">
