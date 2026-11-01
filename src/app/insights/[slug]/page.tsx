@@ -134,7 +134,7 @@ export default async function InsightPostPage({
                   color:"#1766A0",
                 }}
               >
-                関連サービスを見る
+                サービス一覧を見る
               </Link>
               <Link
                 href="/contact"
