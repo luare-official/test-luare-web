@@ -366,7 +366,6 @@ export default function HomeSections() {
         </div>
       </section>
 
-      <Link href="/contact" className="luare-v6-mobile-cta">初回無料相談をする</Link>
     </>
   );
 }

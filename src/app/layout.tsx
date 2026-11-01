@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./mobile-overrides.css";
 
 export const metadata: Metadata = {
   title: "Luare Consulting | 外資系・グローバル企業の会計・財務支援",

@@ -13,7 +13,7 @@ export default function FreeConsultationRail() {
   const contact=lang==="EN"?"/en/contact":lang==="ZH"?"/zh/contact":"/contact";
   const [visible,setVisible]=useState(!home);
   useEffect(()=>{
-    const update=()=>setVisible(!home || window.scrollY>Math.max(420,window.innerHeight*0.72));
+    const update=()=>setVisible(window.innerWidth<=760 || !home || window.scrollY>Math.max(420,window.innerHeight*0.72));
     update();
     window.addEventListener("scroll",update,{passive:true});
     window.addEventListener("resize",update);
