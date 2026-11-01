@@ -294,3 +294,8 @@
   .luare-footer-links a:nth-child(7),.luare-footer-links a:nth-child(9) {grid-column:1/-1;}
   .luare-footer-copy {margin-top:20px !important;padding-bottom:100px !important;}
 }
+
+/* Services landing intro: compact mobile paragraph leading only. */
+@media (max-width:760px) {
+  main > section:first-child p.max-w-3xl {line-height:1.65 !important;}
+}
