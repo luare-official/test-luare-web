@@ -67,7 +67,7 @@ const critical=[
  ["/pricing",'main a[href="/services/internal-control/overview"]',"/services/internal-control/overview"],
  ...["close-process-early-improvement","japan-subsidiary-finance-setup","overseas-jsox-three-documents","governance-overseas-subsidiaries","china-japan-market-entry"].map(s=>
  ["/insights/"+s,'main a[href="/services"]',"/services"]),
- ...["internal-control/overview","accounting-management","finance-ops","global-finance","audit-assurance"].map(s=>
+ ...["internal-control/overview","accounting-management","finance-ops","global-finance","ma-finance","audit-assurance"].map(s=>
  ["/services/"+s,'nav[aria-label="パンくずリスト"] a[href="/services"]',"/services"])
 ];
 for(const [source,selector,target] of critical){
@@ -76,18 +76,20 @@ for(const [source,selector,target] of critical){
   await loc.click();await page.waitForURL(u=>u.pathname===target,{timeout:4500});counts.criticalFlows++;
  }catch(e){fail("Critical flow "+source+" -> "+target+" : "+String(e).slice(0,170))}
 }
-// All five standard Japanese service detail pages show full descriptions without interaction.
+// All six standard Japanese service detail pages show full descriptions without interaction.
 for(const [path,selector] of [
  ["/services/accounting-management","#service-menu article[id]"],
  ["/services/finance-ops","#service-menu article[id]"],
  ["/services/global-finance","#service-menu article[id]"],
  ["/services/internal-control/overview","article[id]"],
+ ["/services/ma-finance","#service-details article[id]"],
  ["/services/audit-assurance","#scope article[id]"]
 ]){
  await page.goto(ROOT+path,{waitUntil:"domcontentloaded"});
  const cards=page.locator(selector);
  const n=await cards.count();
- if(n!==5)fail("Expected five visible scope cards on "+path+" got "+n);
+ const expected=path==="/services/ma-finance"?3:5;
+ if(n!==expected)fail("Expected "+expected+" visible scope cards on "+path+" got "+n);
  for(let i=0;i<n;i++){
   if(!await cards.nth(i).locator("h3").isVisible()||!await cards.nth(i).locator("p").isVisible())
    fail("Service title or description hidden "+path+" #"+i);

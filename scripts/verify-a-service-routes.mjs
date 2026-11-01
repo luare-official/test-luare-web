@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // A班専用の静的出力QA。ネットワーク・外部メール・本番変更は一切行わない。
-// Next.jsの out/ を対象にホームの29リンク、既存BPOを含む8親ページ、ID/アンカーを照合する。
+// Next.jsの out/ を対象にホームの28サービス項目リンク、既存BPOを含む8親ページ、ID/アンカーを照合する。
 import {readFileSync, existsSync} from "node:fs";
 import path from "node:path";
 
@@ -32,7 +32,8 @@ const categories=[
  {n:"02",page:"accounting-management",ids:["closing","outsourcing","fpa","cashflow","accounting-advisory"]},
  {n:"03",page:"finance-ops",ids:["close-improvement","process","ai","system-implementation","operating-model"]},
  {n:"04",page:"global-finance",ids:["market-entry","finance-setup","reporting","hq-reporting","coordination"]},
- {n:"05",page:"audit-assurance",ids:["statutory-audit","group-audit-consultation","ifrs-audit","fund-spc","voluntary-audit"]}
+ {n:"05",page:"ma-finance",ids:["fdd","valuation","pmi"]},
+ {n:"06",page:"audit-assurance",ids:["statutory-audit","group-audit-consultation","ifrs-audit","fund-spc","voluntary-audit"]}
 ];
 const homeFile="out/index.html";
 assert(existsSync(homeFile),"Missing homepage static HTML");
@@ -58,7 +59,7 @@ for(const category of categories){
  assert(pageHtml.includes('href="/services"'),"Service breadcrumb must return to service directory /services: "+category.n);
  assert(pageHtml.includes('aria-current="page"'),"Current service breadcrumb missing: "+category.n);
 }
-assert(checked===25,"Expected to verify 25 clickable homepage topic links");
+assert(checked===28,"Expected to verify 28 clickable homepage topic links across six categories");
 const jsox=content("internal-control");
 for(const element of ["internal","three-documents","evaluation","internal-audit","training"]){
   assert(idCount(jsox,element)===1,`Missing J-SOX target ${element}`);
@@ -109,10 +110,10 @@ assert(auditCollaborationSource.includes("openGraph:") &&
 assert(!/noindex/i.test(auditCollaborationSource),
   "Audit-firm page must remain indexable and must not include noindex");
 
-console.log(`A班 static QA: verified ${checked} visible category links, ${entries.length} topic definitions, 5 current-location breadcrumbs.`);
+console.log(`A班 static QA: verified ${checked} visible category links, ${entries.length} topic definitions, 6 current-location breadcrumbs.`);
 if(problems.length){
   for(const message of problems) console.error("FAIL:",message);
   process.exitCode=1;
 }else{
-  console.log("PASS: all 25 homepage submenu clicks stay in their selected service lines, actual anchors exist and breadcrumbs return to /services.");
+  console.log("PASS: all 28 homepage submenu clicks stay in their selected service lines, actual anchors exist and breadcrumbs return to /services.");
 }

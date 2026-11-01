@@ -13,7 +13,7 @@ const findPage=path=>{
  if(pages.has(file))return file;
  return pages.has(stem+"/index.html")?stem+"/index.html":null;
 };
-const required=["/","/services","/services/internal-control","/services/internal-control/overview","/services/audit-assurance","/bpo","/about","/cases","/insights","/contact","/privacy","/en","/zh","/en/about","/zh/about","/en/contact","/zh/contact","/pricing","/for-audit-firms"];
+const required=["/","/services","/services/internal-control","/services/internal-control/overview","/services/audit-assurance","/services/ma-finance","/en/services/ma-finance","/zh/services/ma-finance","/bpo","/about","/cases","/insights","/contact","/privacy","/en","/zh","/en/about","/zh/about","/en/contact","/zh/contact","/pricing","/for-audit-firms"];
 for(const path of required)assert(!!findPage(path),"Missing exported route "+path);
 const checked=new Set();
 for(const [page,html] of pages){
@@ -75,7 +75,7 @@ for(const [locale,profile] of [["ja",jpAboutSource],["zh",zhAboutSource],["en",e
  assert(!profile.includes("luare-v6-philosophy"),locale+" explicitly removed philosophy returned");
 }
 const directorySource=readFileSync("src/components/ServiceDirectory.tsx","utf8");
-assert(directorySource.includes("min-h-[126px]")&&directorySource.includes("serviceRoutes[number]"),"User-approved large five-card service directory was altered");
+assert(directorySource.includes("min-h-[126px]")&&directorySource.includes("serviceRoutes[number]"),"User-approved large six-card service directory was altered");
 assert(directorySource.includes("serviceRoutes[number]"),"Service cards no longer open requested detail pages");
 assert(directorySource.includes("id={`category-${number}`}"),"Historical /services#category-xx deep links were removed");
 const nav=readFileSync("src/components/Navbar.tsx","utf8");
