@@ -28,7 +28,8 @@ export default function ContactPageEn() {
               <select id="en-service" className={inputClass} name="service" defaultValue="" required>
                 <option value="" disabled>Please select a service</option><option>Internal Control / J-SOX</option>
                 <option>Accounting, Closing &amp; Management</option><option>Process Improvement, AI &amp; Systems</option>
-                <option>Japan Market Entry &amp; Global Finance</option><option>Audit &amp; Assurance Coordination</option><option>Other</option>
+                <option>Japan Market Entry &amp; Global Finance</option><option>M&amp;A and Financial Advisory</option>
+                <option>Audit &amp; Assurance Coordination</option><option>Other</option>
               </select></div>
             </div>
             <div className="mt-7"><label htmlFor="en-message" className="text-sm font-semibold text-[#0B3158]">Message <span className="text-xs text-[#475569]">(Required)</span></label><textarea id="en-message" className={inputClass + " min-h-[176px] resize-y"} name="message" required /></div>

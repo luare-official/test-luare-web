@@ -28,7 +28,8 @@ export default function ContactPageZh() {
               <select id="zh-service" className={inputClass} name="service" defaultValue="" required>
                 <option value="" disabled>请选择服务领域</option><option>内部控制・J-SOX</option>
                 <option>会计结算与经营管理</option><option>业务优化、AI与系统</option>
-                <option>日本市场进入与海外财务</option><option>审计与鉴证协调</option><option>其他</option>
+                <option>日本市场进入与海外财务</option><option>并购与财务咨询</option>
+                <option>审计与鉴证协调</option><option>其他</option>
               </select></div>
             </div>
             <div className="mt-7"><label htmlFor="zh-message" className="text-sm font-semibold text-[#0B3158]">咨询内容 <span className="text-xs text-[#475569]">（必填）</span></label><textarea id="zh-message" className={inputClass + " min-h-[176px] resize-y"} name="message" required /></div>

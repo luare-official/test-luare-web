@@ -97,6 +97,7 @@ export default function ContactPage() {
                     <option>会計・決算・経営管理支援</option>
                     <option>業務改善・AI・システム支援</option>
                     <option>日本進出・海外拠点支援</option>
+                    <option>M&A・Finance Advisory</option>
                     <option>監査・保証業務</option>
                     <option>その他</option>
                   </select>
