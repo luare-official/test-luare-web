@@ -347,7 +347,7 @@ export default function HomeSections() {
         <div className="luare-v6-container">
           <ScrollReveal>
             <p className="luare-v6-eyebrow luare-v6-eyebrow-light">CONTACT</p>
-            <h2>海外が絡む会計・税務・監査で<br />お困りではありませんか？</h2>
+            <h2><span className="luare-contact-heading-desktop">海外が絡む会計・税務・監査で<br />お困りではありませんか？</span><span className="luare-contact-heading-mobile">海外が絡む<br />会計・税務・監査で<br />お困りではありませんか？</span></h2>
             <p>
               「誰に相談すればいいかわからない」という段階でも構いません。
               現在の状況をお伺いし、Luare Consultingで対応できること、
