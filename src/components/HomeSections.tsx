@@ -235,7 +235,7 @@ export default function HomeSections() {
         <div className="luare-v6-container">
           <ScrollReveal className="luare-v6-section-head">
             <p className="luare-v6-eyebrow luare-v6-eyebrow-light">WHY LUARE</p>
-            <h2>なぜ、Luare Consultingなのか。</h2>
+            <h2>Luare Consultingが選ばれる理由</h2>
           </ScrollReveal>
 
           <div className="luare-v6-why-list">
