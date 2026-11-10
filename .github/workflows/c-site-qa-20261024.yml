@@ -1,0 +1,39 @@
+name: C班｜既存問い合わせ・本番PC/SP QA（送信禁止）
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/c-site-qa-20261024.yml'
+      - 'scripts/qa/c-site-qa-20261024.mjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  read-only-live-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      CI: 'true'
+      SEND_ENABLED: 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - name: Install Chromium for read-only browser QA
+        run: |
+          npm install --no-save --package-lock=false playwright@1.58.2
+          npx playwright install --with-deps chromium
+      - name: Check existing contact form, live mobile UI and SEO (never submit forms)
+        run: node scripts/qa/c-site-qa-20261024.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: c-20261024-site-contact-qa
+          path: qa-artifacts/c-20261024/
+          retention-days: 7
+          if-no-files-found: warn
