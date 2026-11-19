@@ -8,10 +8,10 @@ import { useRef } from "react";
 
 type Lang = "ja" | "en" | "zh";
 type Info = {name:string; qualification:string; affiliation:string; specialties:string[]; bio:string; career:string[]};
-type Member = {id:string; roman:string; image:string; link:string; focus:string; info:Record<Lang,Info>};
+type Member = {id:string; roman:string; image:string; link:string; photoBg:string; info:Record<Lang,Info>};
 
 const members: Member[] = [
-  { id:"nemoto", roman:"Shunichi Nemoto", image:"/images/members/nemoto.webp", focus:"translate-y-[2%] scale-[1.25]",
+  { id:"nemoto", roman:"Shunichi Nemoto", image:"/images/members/nemoto.webp", photoBg:"#CBD5E9",
     link:"https://www.n-cpa.com/introduction/nemoto/",
     info:{
       ja:{name:"根本 俊一",qualification:"公認会計士・税理士・米国公認会計士（ワシントン州）",affiliation:"日本橋国際会計事務所 代表／J-Bridge国際監査法人 代表社員",specialties:["会計監査","J-SOX・内部統制","IFRS・国際会計","企業価値評価"],bio:"国内外の監査法人で監査・IPO支援・財務アドバイザリーを経験後、独立。シンガポール上場企業のCFOとして決算開示、IR、内部統制の実務にも従事しています。",career:["2000年 BDO International 東京事務所 入所","2004年 監査法人トーマツ 入所","2014年 シンガポール上場企業 CFO就任","2019年 日本橋国際会計事務所 開設","2024年 J-Bridge国際監査法人 代表社員就任"]},
@@ -19,7 +19,7 @@ const members: Member[] = [
       zh:{name:"根本 俊一",qualification:"日本注册会计师・税理士・美国注册会计师（华盛顿州）",affiliation:"日本桥国际会计事务所 代表／J-Bridge国际审计法人 代表合伙人",specialties:["财务审计","J-SOX与内部控制","IFRS与国际会计","企业估值"],bio:"曾在国际会计师事务所从事审计、IPO支持和财务咨询，后独立执业。亦曾担任新加坡上市公司首席财务官，负责财务披露、投资者关系及内部控制。",career:["2000年 加入BDO International东京事务所","2004年 加入德勤日本审计法人","2014年 出任新加坡上市企业CFO","2019年 创立日本桥国际会计事务所","2024年 就任J-Bridge国际审计法人代表合伙人"]}
     }
   },
-  { id:"shoji", roman:"Takanao Shoji", image:"/images/members/shoji.webp", focus:"scale-[1.25]",
+  { id:"shoji", roman:"Takanao Shoji", image:"/images/members/shoji.webp", photoBg:"#D3DBE1",
     link:"https://www.n-cpa.com/introduction/shoji/",
     info:{
       ja:{name:"小路 隆巨",qualification:"米国公認会計士（ワシントン州）",affiliation:"日本橋国際会計事務所",specialties:["クロスボーダーM&A","経営戦略・PMI","海外子会社管理","事業開発"],bio:"ブリヂストンで海外営業・海外子会社の設立と経営管理に長年携わり、中国拠点の総経理を経験。海外企業のM&AやPMI、新規事業のグローバル展開を実務責任者として推進してきました。",career:["2002年 ブリヂストン 入社","2010年 中国拠点に駐在し総経理を担当","2015年以降 事業戦略・M&Aを主導","2022年 MUFG経営企画部門 在籍","2024年 日本橋国際会計事務所 参画"]},
@@ -27,7 +27,7 @@ const members: Member[] = [
       zh:{name:"小路 隆巨",qualification:"美国注册会计师（华盛顿州）",affiliation:"日本桥国际会计事务所",specialties:["跨境并购","经营战略与并购后整合","海外子公司管理","新业务开发"],bio:"长期任职于普利司通，负责海外销售、海外子公司设立及经营管理，并曾担任中国业务总经理。拥有跨境并购、并购后整合及全球新业务开发的实践经验。",career:["2002年 加入普利司通","2010年 驻中国担任业务总经理","2015年起 主导经营战略及并购项目","2022年 在三菱日联金融集团经营企划部门任职","2024年 加入日本桥国际会计事务所"]}
     }
   },
-  { id:"matayoshi", roman:"Atsushi Matayoshi", image:"/images/members/matayoshi.webp", focus:"-translate-y-[12%] scale-[1.25]",
+  { id:"matayoshi", roman:"Atsushi Matayoshi", image:"/images/members/matayoshi.webp", photoBg:"#ECF5F6",
     link:"https://www.n-cpa.com/introduction/matayoshi/",
     info:{
       ja:{name:"又吉 敦史",qualification:"公認会計士・税理士",affiliation:"J-Bridge国際監査法人 パートナー／日本橋国際会計事務所 アドバイザー",specialties:["会計監査・J-SOX","上場企業CFO","決算・開示","財務ガバナンス"],bio:"EY新日本有限責任監査法人で監査・J-SOX評価を担当した後、上場企業の財務経理部長やCFOを歴任。監査を行う側と事業会社の経営を担う側、双方の実務経験があります。",career:["2008年 新日本有限責任監査法人 入所","2011年 公認会計士登録","2016年 上場企業の財務経理部長 就任","2020年 同社 CFO 就任","2024年 独立開業・日本橋国際会計事務所 参画","2026年 J-Bridge国際監査法人 パートナー就任"]},
@@ -35,7 +35,7 @@ const members: Member[] = [
       zh:{name:"又吉 敦史",qualification:"日本注册会计师・税理士",affiliation:"J-Bridge国际审计法人 合伙人／日本桥国际会计事务所 顾问",specialties:["审计与J-SOX","上市企业CFO","财务结算与披露","财务治理"],bio:"曾在EY新日本审计法人从事审计及J-SOX评价，之后担任上市公司财务经理及首席财务官。兼具审计机构与企业财务管理的实践经验。",career:["2008年 加入新日本审计法人","2011年 注册为日本公认会计士","2016年 就任上市公司财务经理","2020年 就任该公司CFO","2024年 独立执业并加入日本桥国际会计事务所","2026年 成为J-Bridge国际审计法人合伙人"]}
     }
   },
-  { id:"oh", roman:"Senrin Oh", image:"/images/members/oh.webp", focus:"-translate-y-[7%] scale-[1.25]",
+  { id:"oh", roman:"Senrin Oh", image:"/images/members/oh.webp", photoBg:"#F4F8FB",
     link:"https://www.dojima.gr.jp/lawyer/o-senrin/",
     info:{
       ja:{name:"王 宣麟",qualification:"弁護士",affiliation:"堂島法律事務所 アソシエイト",specialties:["企業法務・M&A","中国・シンガポール法務","個人情報保護","契約・コンプライアンス"],bio:"大阪大学法学部・京都大学法科大学院で学び、2017年に弁護士登録。中国人民大学で中国法LL.M.を修了し、中国各地およびシンガポールの法律事務所でも研修・実務を経験しています。",career:["2017年 弁護士登録・堂島法律事務所 入所","2022〜2024年 中国各地の法律事務所で研修","2024年 中国人民大学法学院 LL.M.修了","2024〜2025年 シンガポールの法律事務所に出向","2025年 堂島法律事務所に復帰"]},
@@ -94,10 +94,16 @@ export default function MemberPage({ lang }: {lang:Lang}) {
                   aria-haspopup="dialog"
                   onClick={()=>open(person.id)}
                   className="group relative block w-full cursor-pointer overflow-hidden text-left focus-visible:outline focus-visible:outline-3 focus-visible:outline-[#1766A0] focus-visible:outline-offset-4">
-                  <span className="relative block aspect-[3/4] overflow-hidden bg-[#E5F1FA]">
-                    <Image src={person.image} alt={info.name} fill sizes="(max-width: 640px) 48vw, (max-width: 1024px) 45vw, 270px"
-                      unoptimized className={"object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.29] "+person.focus} />
-                    <span aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[44%] bg-gradient-to-t from-[#073558]/95 via-[#073558]/70 to-transparent"/>
+                  <span className="relative block aspect-[3/4] overflow-hidden" style={{backgroundColor:person.photoBg}}>
+                    {/* The source photos are pre-normalized to the same face size.
+                        Never scale/hover-zoom: that crops hair and changes apparent size.
+                        A thin color-matched top inset preserves the entire head. */}
+                    <span className="absolute inset-x-0 bottom-0 top-[16px]">
+                      <Image src={person.image} alt={info.name} fill sizes="(max-width: 640px) 48vw, (max-width: 1024px) 45vw, 270px"
+                        unoptimized className="object-cover object-center" />
+                    </span>
+                    {/* Restrict the dark overlay to the name area, entirely below faces. */}
+                    <span aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[27%] bg-gradient-to-t from-[#092A46]/95 via-[#092A46]/80 to-transparent"/>
                     <span className="absolute bottom-4 left-3 right-12 z-10 block text-white sm:bottom-5 sm:left-5 sm:right-14">
                       <span className="block text-[10px] tracking-[.045em] text-[#D9ECF8] sm:text-xs">{person.roman}</span>
                       <span className="mt-1 block text-lg font-semibold tracking-[.06em] sm:text-[21px]">{info.name}</span>
@@ -126,8 +132,10 @@ export default function MemberPage({ lang }: {lang:Lang}) {
           </div>
           <div className="grid gap-7 p-6 sm:grid-cols-[240px_1fr] sm:gap-9 sm:p-10">
             <div>
-              <div className="relative aspect-[3/4] overflow-hidden bg-[#E7F4FB]">
-                <Image src={person.image} alt={info.name} fill sizes="240px" unoptimized className={"object-cover object-center "+person.focus}/>
+              <div className="relative aspect-[3/4] overflow-hidden" style={{backgroundColor:person.photoBg}}>
+                <span className="absolute inset-x-0 bottom-0 top-[14px]">
+                  <Image src={person.image} alt={info.name} fill sizes="240px" unoptimized className="object-cover object-center"/>
+                </span>
               </div>
             </div>
             <div>
