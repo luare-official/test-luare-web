@@ -99,7 +99,7 @@ export default function MemberPage({ lang }: {lang:Lang}) {
                         within the same crop, without touching the shared card dimensions. */}
                     <span className="absolute inset-x-0 bottom-0 top-[16px]">
                       <Image src={person.image} alt={info.name} fill sizes="(max-width: 640px) 48vw, (max-width: 1024px) 45vw, 270px"
-                        unoptimized className="object-cover object-center" style={{transform: person.id==="matayoshi"?"translateY(-13%) scale(1.22)":person.id==="oh"?"scale(1.38)":undefined, transformOrigin: person.id==="matayoshi"?"center 20%":person.id==="oh"?"center 17%":undefined}} />
+                        unoptimized className="object-cover object-center" style={{transform: person.id==="matayoshi"?"translateY(-13%) scale(1.14)":person.id==="oh"?"translateY(-12%) scale(1.34)":undefined, transformOrigin: person.id==="matayoshi"?"center 20%":person.id==="oh"?"center 17%":undefined}} />
                     </span>
                     {/* Restrict the dark overlay to the name area, entirely below faces. */}
                     <span aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[27%] bg-gradient-to-t from-[#092A46]/95 via-[#092A46]/80 to-transparent"/>
@@ -133,7 +133,7 @@ export default function MemberPage({ lang }: {lang:Lang}) {
             <div>
               <div className="relative aspect-[3/4] overflow-hidden" style={{backgroundColor:person.photoBg}}>
                 <span className="absolute inset-x-0 bottom-0 top-[14px]">
-                  <Image src={person.image} alt={info.name} fill sizes="240px" unoptimized className="object-cover object-center" style={{transform: person.id==="matayoshi"?"translateY(-13%) scale(1.18)":person.id==="oh"?"scale(1.33)":undefined, transformOrigin: person.id==="matayoshi"?"center 20%":person.id==="oh"?"center 17%":undefined}}/>
+                  <Image src={person.image} alt={info.name} fill sizes="240px" unoptimized className="object-cover object-center" style={{transform: person.id==="matayoshi"?"translateY(-13%) scale(1.10)":person.id==="oh"?"translateY(-12%) scale(1.29)":undefined, transformOrigin: person.id==="matayoshi"?"center 20%":person.id==="oh"?"center 17%":undefined}}/>
                 </span>
               </div>
             </div>
