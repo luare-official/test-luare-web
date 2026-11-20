@@ -99,12 +99,12 @@ export default function MemberPage({ lang }: {lang:Lang}) {
                         within the same crop, without touching the shared card dimensions. */}
                     <span className="absolute inset-x-0 bottom-0 top-[16px]">
                       <Image src={person.image} alt={info.name} fill sizes="(max-width: 640px) 48vw, (max-width: 1024px) 45vw, 270px"
-                        unoptimized className="object-cover object-center" style={{transform: person.id==="matayoshi"?"translateY(-16%) scale(1.10)":person.id==="oh"?"translateY(-12%) scale(1.30)":undefined, transformOrigin: person.id==="matayoshi"?"center 20%":person.id==="oh"?"center 17%":undefined}} />
+                        unoptimized className="object-cover object-center" style={{transform: person.id==="matayoshi"?"translateY(-16%) scale(1.06)":person.id==="oh"?"translateY(-12%) scale(1.26)":undefined, transformOrigin: person.id==="matayoshi"?"center 20%":person.id==="oh"?"center 17%":undefined}} />
                     </span>
                     {/* Restrict the dark overlay to the name area, entirely below faces. */}
                     <span aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[27%] bg-gradient-to-t from-[#092A46]/95 via-[#092A46]/80 to-transparent"/>
                     <span className="absolute bottom-4 left-3 right-12 z-10 block text-white sm:bottom-5 sm:left-5 sm:right-14">
-                      <span className="block text-[10px] tracking-[.045em] text-[#D9ECF8] sm:text-xs">{person.roman}</span>
+                      <span className="inline-block max-w-full self-start rounded-sm bg-[#072B48]/85 px-2 py-1 text-[10px] font-semibold leading-[1.3] tracking-[.035em] text-white sm:text-[11px]">{person.roman}</span>
                       <span className="mt-1 block text-lg font-semibold tracking-[.06em] sm:text-[21px]">{info.name}</span>
                       <span className="mt-2 block text-[9px] font-semibold uppercase tracking-[.17em] text-[#BFE4F9]">PROFILE</span>
                     </span>
@@ -133,7 +133,7 @@ export default function MemberPage({ lang }: {lang:Lang}) {
             <div>
               <div className="relative aspect-[3/4] overflow-hidden" style={{backgroundColor:person.photoBg}}>
                 <span className="absolute inset-x-0 bottom-0 top-[14px]">
-                  <Image src={person.image} alt={info.name} fill sizes="240px" unoptimized className="object-cover object-center" style={{transform: person.id==="matayoshi"?"translateY(-16%) scale(1.06)":person.id==="oh"?"translateY(-12%) scale(1.25)":undefined, transformOrigin: person.id==="matayoshi"?"center 20%":person.id==="oh"?"center 17%":undefined}}/>
+                  <Image src={person.image} alt={info.name} fill sizes="240px" unoptimized className="object-cover object-center" style={{transform: person.id==="matayoshi"?"translateY(-16%) scale(1.02)":person.id==="oh"?"translateY(-12%) scale(1.21)":undefined, transformOrigin: person.id==="matayoshi"?"center 20%":person.id==="oh"?"center 17%":undefined}}/>
                 </span>
               </div>
             </div>
