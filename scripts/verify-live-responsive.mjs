@@ -7,9 +7,9 @@ const BASE="https://luare-consulting.com";
 const out="qa-artifacts/final-site";
 mkdirSync(out,{recursive:true});
 const views=[{name:"pc",width:1440,height:900,mobile:false},{name:"sp",width:390,height:844,mobile:true}];
-const paths=["/","/services","/services/internal-control","/services/audit-assurance",
+const paths=["/","/members","/services","/services/internal-control","/services/audit-assurance",
 "/bpo","/contact","/about","/cases","/insights","/privacy",
-"/en","/en/about","/en/contact","/en/services","/en/cases","/en/pricing","/en/insights","/zh","/zh/about","/zh/contact"];
+"/en","/en/members","/en/about","/en/contact","/en/services","/en/cases","/en/pricing","/en/insights","/zh","/zh/members","/zh/about","/zh/contact"];
 const failures=[],warnings=[],results=[];
 const browser=await chromium.launch({headless:true,args:["--no-sandbox"]});
 for(const v of views){
@@ -61,6 +61,22 @@ for(const v of views){
         if(await menu.count()&&!(await menu.first().isVisible()))failures.push("mobile menu hidden "+path);
         await button.click();
       }else failures.push("mobile hamburger not found "+path);
+   }
+   // Verify the four approved experts open directly from the homepage or expert page.
+   if(["/","/members","/en","/en/members","/zh","/zh/members"].includes(path)) {
+     const expected=path.startsWith("/en")?"Collaborating with Luare Consulting":path.startsWith("/zh")?"Luare Consulting开展协作":"Luare Consultingと協業";
+     for(const id of ["nemoto","shoji","matayoshi","oh"]) {
+       const trigger=page.locator('button[data-expert="'+id+'"]');
+       const dialog=page.locator('#expert-dialog-'+id);
+       if(await trigger.count()!==1||await dialog.count()!==1) {
+         failures.push(v.name+" "+path+" expert trigger/dialog missing: "+id);continue;
+       }
+       await trigger.click();
+       if(!await dialog.evaluate(el=>el.open))failures.push(v.name+" "+path+" expert dialog not opened: "+id);
+       if(!(await dialog.innerText()).includes(expected))failures.push(v.name+" "+path+" expert collaboration wording mismatch: "+id);
+       await page.keyboard.press("Escape");
+       if(await dialog.evaluate(el=>el.open))failures.push(v.name+" "+path+" expert dialog failed to close: "+id);
+     }
    }
    await page.screenshot({path:join(out,label+"-"+v.name+".png"),fullPage:true,animations:"disabled"});
   }catch(e){failures.push(v.name+" "+path+" exception "+String(e).slice(0,160));}
