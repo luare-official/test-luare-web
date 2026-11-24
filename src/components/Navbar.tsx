@@ -39,10 +39,10 @@ export default function Navbar(_props:NavbarProps) {
   };
 
   const labels=lang==="JP"
-    ? [["ホーム","/"],["サービス","/services"],["支援事例","/cases"],["ブログ","/insights"],["料金","/pricing"],["代表プロフィール","/about"]]
+    ? [["ホーム","/"],["サービス","/services"],["支援事例","/cases"],["ブログ","/insights"],["料金","/pricing"],["専門家紹介","/members"],["代表プロフィール","/about"]]
     :lang==="EN"
-    ? [["Home","/en"],["Services","/en/services"],["Case studies","/en/cases"],["Insights","/en/insights"],["Pricing","/en/pricing"],["About","/en/about"]]
-    : [["首页","/zh"],["服务","/zh/services"],["支持案例","/zh/cases"],["文章","/zh/insights"],["费用","/zh/pricing"],["代表简介","/zh/about"]];
+    ? [["Home","/en"],["Services","/en/services"],["Case studies","/en/cases"],["Insights","/en/insights"],["Pricing","/en/pricing"],["Our Experts","/en/members"],["About","/en/about"]]
+    : [["首页","/zh"],["服务","/zh/services"],["支持案例","/zh/cases"],["文章","/zh/insights"],["费用","/zh/pricing"],["专家介绍","/zh/members"],["代表简介","/zh/about"]];
   const contact=prefix+"/contact";
   const cta=lang==="EN"?"Free consultation":lang==="ZH"?"免费在线咨询":"無料オンライン相談";
   const selected=(href:string)=>pathname===href;
