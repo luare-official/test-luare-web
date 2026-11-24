@@ -322,7 +322,9 @@ export default function ExpertCollection({ lang, homepage = false }: {lang:Lang;
     document.body.style.overflow="";
     triggerRefs.current[id]?.focus();
   };
-  const cardPhoto = (id:string) => id==="matayoshi" ? {transform:"scale(1.13)", transformOrigin:"center 12%"} : id==="oh" ? {transform:"scale(1.22)",transformOrigin:"center 12%"} : undefined;
+  // Centre-anchored crop lifts Matayoshi and Oh into the same face-height range as Nemoto and Shoji.
+  // Applies to both the homepage cards and the expert directory; original images remain untouched.
+  const cardPhoto = (id:string) => id==="matayoshi" ? {transform:"scale(1.27)", transformOrigin:"center 48%"} : id==="oh" ? {transform:"scale(1.25)",transformOrigin:"center 48%"} : undefined;
   const modalPhoto = (id:string) => id==="matayoshi" ? {objectPosition:"center 15%"} : id==="oh" ? {objectPosition:"center 13%"} : {objectPosition:"center 12%"};
   return <>
     <section id={homepage?"experts":"members"} aria-label={c.heading} className={homepage?"bg-[#EDF5FC] py-20 sm:py-24 lg:py-28":"bg-[#F5FAFE] py-14 sm:py-16 lg:py-20"}>
