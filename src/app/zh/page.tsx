@@ -1,3 +1,4 @@
+import ExpertCollection from "@/components/members/ExpertCollection";
 import type {Metadata} from "next";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -49,6 +50,7 @@ export default function HomeZh(){return <>
  </div>
 </section>
 
+<ExpertCollection lang="zh" homepage />
 <section className="luare-v6-section luare-services-photo" id="services">
 <div className="luare-v6-container">
 <ScrollReveal className="luare-v6-section-head">

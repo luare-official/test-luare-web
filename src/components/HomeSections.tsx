@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ExpertCollection from "./members/ExpertCollection";
 import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
 import InteractiveServiceGallery from "./InteractiveServiceGallery";
@@ -104,17 +104,6 @@ function LineIcon({ name }: { name: IconName }) {
   );
 }
 
-// Keep the approved five-card layout and image slots for partner photographs.
-// Hide unverified names, roles and dummy photographs until authentic content is provided.
-const SHOW_APPROVED_PROFESSIONALS = false;
-const people = [
-  ["Professional 01", "CPA / Partner", "監査 / Assurance"],
-  ["Professional 02", "Tax Professional", "国際税務"],
-  ["Professional 03", "Accounting Advisory", "IFRS / US-GAAP"],
-  ["Professional 04", "Finance Advisory", "M&A / Valuation"],
-  ["Professional 05", "Global Finance", "HQ Reporting"],
-];
-
 const whoWeHelp = [
   ["building", "外資系企業の日本法人", "日本での会社設立から、経理・税務や本社報告まで相談したい。"],
   ["arrows", "海外親会社を持つ日本法人", "海外本社とのコミュニケーションや連結パッケージ対応に課題がある。"],
@@ -179,39 +168,7 @@ const faqs = [
 export default function HomeSections() {
   return (
     <>
-      {SHOW_APPROVED_PROFESSIONALS && (
-      <section className="luare-v6-section luare-people-horizontal" id="people">
-        <div className="luare-v6-container">
-          <ScrollReveal className="luare-people-horizontal-head">
-            <p className="luare-v6-eyebrow">PEOPLE</p>
-            <h2>Meet our professionals.</h2>
-            <p>国際業務の現場を知る専門家が、会計・財務の課題を直接支援します。</p>
-          </ScrollReveal>
-
-          <div className="luare-people-horizontal-track">
-            {people.map(([name, role, strength], index) => (
-              <ScrollReveal key={name} delay={index * 55}>
-                <article className={"luare-people-horizontal-card luare-people-horizontal-card-" + (index + 1)}>
-                  <div className="luare-people-horizontal-photo">
-                    <Image
-                      src="/images/luare-hero-consulting.avif"
-                      alt="専門家プロフィール写真（仮）"
-                      width={900}
-                      height={1125}
-                      unoptimized
-                    />
-                  </div>
-                  <h3>{name}</h3>
-                  <p>{role}</p>
-                  <span>{strength}</span>
-                </article>
-              </ScrollReveal>
-            ))}
-          </div>
-          <p className="luare-people-horizontal-note">※現在はレイアウト確認用のダミー写真・プロフィールです。正式公開前に許諾済みの専門家情報へ差し替えます。</p>
-        </div>
-      </section>
-      )}
+      <ExpertCollection lang="ja" homepage />
 
 
       <section className="luare-v6-section luare-services-photo" id="services">
