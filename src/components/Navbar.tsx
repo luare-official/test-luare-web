@@ -34,7 +34,7 @@ export default function Navbar(_props:NavbarProps) {
       return enInsights.some(x=>x.slug===slug) ? "/en"+route : "/en/insights";
     }
     if(route==="/services/internal-control/overview") route="/services/internal-control";
-    const available=route==="/" || ["/services","/cases","/pricing","/about","/contact","/insights"].some(x=>route===x||route.startsWith(x+"/"));
+    const available=route==="/" || ["/services","/cases","/pricing","/about","/contact","/insights","/members"].some(x=>route===x||route.startsWith(x+"/"));
     return available ? "/"+target.toLowerCase()+(route==="/"?"":route) : "/"+target.toLowerCase();
   };
 
