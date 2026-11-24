@@ -85,7 +85,7 @@ jobs:
 
   verify-live:
     needs: deploy
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout (for public route catalog)
         uses: actions/checkout@v4
