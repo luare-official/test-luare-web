@@ -1,3 +1,4 @@
+import ExpertCollection from "@/components/members/ExpertCollection";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
@@ -49,7 +50,8 @@ export default function HomeEn(){
    </div>
   </div>
  </section>
- <section className="luare-v6-section luare-services-photo" id="services">
+ <ExpertCollection lang="en" homepage />
+<section className="luare-v6-section luare-services-photo" id="services">
   <div className="luare-v6-container">
    <ScrollReveal className="luare-v6-section-head"><p className="luare-v6-eyebrow">SERVICES</p><h2>Our Services</h2></ScrollReveal>
    <InteractiveServiceGalleryEn/>
