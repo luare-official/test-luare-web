@@ -8,7 +8,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 export const metadata: Metadata = {
   title: "Company Profile | Luare Consulting",
   description:
-    "Profile and background of Yanqing Lu (USCPA, Inactive), representative of Luare Consulting. International accounting, internal control and cross-border finance advisory in Japan.",
+    "Profile and background of Yanqing Lu, representative of Luare Consulting. International accounting, internal control and cross-border finance advisory in Japan.",
   alternates: {
     canonical: "https://luare-consulting.com/en/about",
     languages: {
@@ -40,7 +40,7 @@ export default function AboutPageEn() {
               <div className="luare-v6-rep-copy">
                 <p className="luare-v6-label">Luare Consulting Representative</p>
                 <h2 className="luare-v6-rep-name">Yanqing Lu</h2>
-                <p className="luare-v6-qual">US Certified Public Accountant (USCPA, Inactive, Guam)</p>
+                <p className="luare-v6-qual">Passed the U.S. Uniform CPA Examination</p>
                 <p className="luare-v6-label">Education</p>
                 <p><strong>University of South Australia (now Adelaide University)<br />Bachelor of Business</strong></p>
                 <p className="luare-v6-label luare-v6-label-spaced">Biography</p>
@@ -84,7 +84,7 @@ export default function AboutPageEn() {
                 </div>
                 <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-xs font-bold uppercase tracking-wider text-brand-slate/70">Representative</dt>
-                  <dd className="mt-1 text-sm font-medium text-brand-charcoal sm:col-span-2 sm:mt-0">Yanqing Lu (USCPA, Inactive)</dd>
+                  <dd className="mt-1 text-sm font-medium text-brand-charcoal sm:col-span-2 sm:mt-0">Yanqing Lu</dd>
                 </div>
               </dl>
             </div>
