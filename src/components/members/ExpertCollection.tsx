@@ -339,10 +339,6 @@ const representative:Member = {
   }
 };
 
-// Original faces and clothing are kept intact. A subtle white-and-green generated
-// backdrop shows through feathered photo edges, making the cards feel consistent.
-const plantBackdrop = "data:image/webp;base64,UklGRhgDAABXRUJQVlA4IAwDAADQGgCdASqqANQAPxmMvlmsqSc1I5LYiqAjCWdu3V9+ftvo4FGgQrczHWH9GBzw5lyPZbiXCaCU5Qe4B+LHiFq9YBCHkfPyDq4Y/V6q24vdQuh4kv6Z61dUl73Ni2s8SHV88GhS3AXckrt+7Atlt1rNAhnviN9/5/C6f1XqNy2i5Cx229RcTuI4tXL3TyE7vBkKwqdg8gnFYK566EPOUsPyN6HYOR2fTL7gFsOW9vjUuv9a0Lq/rCgFU0TQRrRshcwdawTE5ZQSZdL/PUn8WP8fZIHohhhXCV9N03lY36gAAP7wMA4X+efMExbCPwJCMKetViHGR4Th0NC/s9nnANClEEU0WiIsiyXb8PWfaw63G/OOvuR1nSlFj6gVgaBs5wjVcia2dxI4tRz4gn4JRwM/QjTeMBHZNx8XUE3zic3C/5zOLxLL3GDiXgt6DMq7ocB9wNdOCAyElaibBZ/9D07xSJ37ExMLs1wB7RiwtU+iO0Hnk5BwDzAdXN2yr0VnGmQVh29WOKeGL/Mlbjd1EgBasA8dllwbafhg/exQqZuMfaUKLJS5tYNw4wb/H2l1l0pcFsXXsymGuREPv/wanBX1MYiTJj6hoLdn2Sg8DqcYwMMOcG644x7N8SZdNol022q/IuHT3qNGp8L25x9uYgH61bt2ihlZ+815QilV8GyLvv6qAsWWOncxQ6iTVDw3GlH3buk8ddD28pBmfjr8W+QuvfuGq+KtWdbvTzL+9YSmq2s4qgOVcwoIHqe2pT4SEPKzaZjExTU7URGU3ul2tTQH0704GhlFfB06vHmOa4tRE8hWDY0DYiQNHfaZrSzMShGawEoThkGb/M4UgTiwWcKgatSjJ1rNXrgooT3KF29sj6Nw5TSvngIRNTvTN7Y4WDZqM1eIORyNZBuy2y6GzNa2ACx/MpF2XzkPhdCxI6BMc1DRQgu8GMefIIZlxNdyg0BnxVXYMmLY8lhKQooQrXiCMyEeAIreqsHp2eVoQWaORyJAT68sijdZg+EsCL+Pe1ZesNf+XhfPtQkIAAA=";
-const imageEdgeMask = "linear-gradient(to right, transparent 0%, black 17%, black 80%, transparent 100%)";
 
 const ui:Record<Lang,{heading:string;label:string;profile:string;spec:string;career:string;close:string;view:string}> = {
   "ja": {
@@ -412,12 +408,12 @@ export default function ExpertCollection({ lang, homepage = false }: {lang:Lang;
                 aria-label={info.name+c.view} aria-haspopup="dialog" aria-controls={"expert-dialog-"+person.id}
                 onClick={()=>open(person.id)} data-expert={person.id}
                 className="group relative block w-full cursor-pointer overflow-hidden text-left focus-visible:outline focus-visible:outline-3 focus-visible:outline-[#1766A0] focus-visible:outline-offset-2">
-                <span className="relative block aspect-[.76] overflow-hidden" style={{backgroundImage:`url("${plantBackdrop}")`,backgroundSize:"cover",backgroundPosition:"center",backgroundColor:"#F9FAF6"}}>
+                <span className="relative block aspect-[.76] overflow-hidden" style={{backgroundColor:person.id==="matayoshi"?"#192238":person.photoBg}}>
                   <Image src={person.image} alt="" fill sizes="(max-width: 640px) 48vw, (max-width: 1024px) 45vw, 280px" unoptimized
                     className="object-cover object-[center_15%] transition-[filter,transform] duration-300 group-hover:brightness-105"
-                    style={{...cardPhoto(person.id),maskImage:imageEdgeMask,WebkitMaskImage:imageEdgeMask}}/>
+                    style={cardPhoto(person.id)}/>
                   <span aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[52%] bg-gradient-to-t from-[#071A2B]/90 via-[#071A2B]/30 to-transparent"/>
-                  {person.id==="lu"&&<span className="absolute left-3 top-3 rounded bg-white/90 px-2 py-1 text-[10px] font-semibold tracking-[.04em] text-[#0B3158]">{lang==="ja"?"代表取締役":lang==="en"?"Representative":"代表董事"}</span>}
+                  
                   <span className="absolute bottom-4 left-3 right-9 z-10 block text-white sm:bottom-5 sm:left-5 sm:right-11">
                     <span className="block text-[clamp(15px,1.8vw,22px)] font-semibold tracking-[.055em] leading-snug">{person.info.ja.name}</span>
                     <span className="mt-1.5 block text-[10px] tracking-[.04em] text-[#DEE8F0]">{person.roman}</span>
