@@ -337,7 +337,7 @@ export default function ExpertCollection({ lang, homepage = false }: {lang:Lang;
         <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 lg:grid-cols-4 lg:gap-6">
           {members.map(person=>{
             const info=person.info[lang];
-            const qual=lang==="ja"&&person.id==="nemoto" ? ["公認会計士","税理士","米国公認会計士（ワシントン州）"] : [info.qualification];
+            const qual=lang==="ja"&&person.id==="nemoto" ? ["公認会計士・税理士","米国公認会計士（ワシントン州）"] : [info.qualification];
             return <article key={person.id} className="min-w-0">
               <button type="button" ref={el=>{triggerRefs.current[person.id]=el;}}
                 aria-label={info.name+c.view} aria-haspopup="dialog" aria-controls={"expert-dialog-"+person.id}
