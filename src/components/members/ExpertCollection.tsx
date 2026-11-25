@@ -322,9 +322,10 @@ export default function ExpertCollection({ lang, homepage = false }: {lang:Lang;
     document.body.style.overflow="";
     triggerRefs.current[id]?.focus();
   };
-  // Centre-anchored crop lifts Matayoshi and Oh into the same face-height range as Nemoto and Shoji.
-  // Applies to both the homepage cards and the expert directory; original images remain untouched.
-  const cardPhoto = (id:string) => id==="matayoshi" ? {transform:"scale(1.27)", transformOrigin:"center 48%"} : id==="oh" ? {transform:"scale(1.25)",transformOrigin:"center 48%"} : undefined;
+  // Matayoshi: keep his face comparable in size to the other experts while shifting the head higher.
+  // The lower 15% is covered by a suit-coloured backdrop under the existing dark name gradient.
+  // Applies to the homepage and directory cards only; the source photos and modals are unchanged.
+  const cardPhoto = (id:string) => id==="matayoshi" ? {transform:"translateY(-15%) scale(1)", transformOrigin:"center center"} : id==="oh" ? {transform:"scale(1.25)",transformOrigin:"center 48%"} : undefined;
   const modalPhoto = (id:string) => id==="matayoshi" ? {objectPosition:"center 15%"} : id==="oh" ? {objectPosition:"center 13%"} : {objectPosition:"center 12%"};
   return <>
     <section id={homepage?"experts":"members"} aria-label={c.heading} className={homepage?"bg-[#EDF5FC] py-20 sm:py-24 lg:py-28":"bg-[#F5FAFE] py-14 sm:py-16 lg:py-20"}>
@@ -342,7 +343,7 @@ export default function ExpertCollection({ lang, homepage = false }: {lang:Lang;
                 aria-label={info.name+c.view} aria-haspopup="dialog" aria-controls={"expert-dialog-"+person.id}
                 onClick={()=>open(person.id)} data-expert={person.id}
                 className="group relative block w-full cursor-pointer overflow-hidden text-left focus-visible:outline focus-visible:outline-3 focus-visible:outline-[#1766A0] focus-visible:outline-offset-2">
-                <span className="relative block aspect-[.76] overflow-hidden" style={{backgroundColor:person.photoBg}}>
+                <span className="relative block aspect-[.76] overflow-hidden" style={{backgroundColor:person.id==="matayoshi"?"#192238":person.photoBg}}>
                   <Image src={person.image} alt="" fill sizes="(max-width: 640px) 48vw, (max-width: 1024px) 45vw, 280px" unoptimized
                     className="object-cover object-[center_15%] transition-[filter,transform] duration-300 group-hover:brightness-105"
                     style={cardPhoto(person.id)}/>
