@@ -276,6 +276,74 @@ const members:Member[] = [
   }
 ];
 
+const representative:Member = {
+  "id": "lu",
+  "roman": "Yanqing Lu",
+  "image": "/images/Photo.png",
+  "photoBg": "#F8F9F4",
+  "info": {
+    "ja": {
+      "name": "陸 沿青",
+      "qualification": "代表取締役／米国公認会計士（USCPA、グアム州・Inactive）",
+      "specialties": [
+        "J-SOX・内部統制",
+        "グローバル経理",
+        "会計アドバイザリー",
+        "財務基盤構築"
+      ],
+      "bio": "オーストラリアで経営学士号を取得後、日系上場専門商社および米国系大手製造企業の日本法人でグローバル経理実務を経験。KPMGあずさ監査法人での会計アドバイザリー、三菱UFJモルガン・スタンレー証券の投資銀行部門、米国系ベンチャー会計事務所を経てLuare Consultingを設立。",
+      "career": [
+        "オーストラリアにて経営学士号を取得",
+        "日系上場専門商社および米国系製造企業日本法人で経理実務を担当",
+        "KPMGあずさ監査法人で会計アドバイザリーに従事",
+        "三菱UFJモルガン・スタンレー証券の投資銀行部門に在籍",
+        "米国系ベンチャー会計事務所を経てLuare Consultingを設立"
+      ]
+    },
+    "en": {
+      "name": "Yanqing Lu",
+      "qualification": "Representative Director · U.S. CPA (Guam, Inactive)",
+      "specialties": [
+        "J-SOX & internal controls",
+        "Global accounting operations",
+        "Accounting advisory",
+        "Finance infrastructure"
+      ],
+      "bio": "After earning a business degree in Australia, he gained international accounting experience at a listed Japanese trading company and the Japanese subsidiary of a major U.S. manufacturer. He then worked in accounting advisory at KPMG AZSA, followed by Mitsubishi UFJ Morgan Stanley Securities' investment banking division and a U.S.-affiliated venture accounting firm, before establishing Luare Consulting.",
+      "career": [
+        "Earned a bachelor's degree in business in Australia",
+        "Worked in international accounting at Japanese trading and U.S. manufacturing companies",
+        "Provided accounting advisory services at KPMG AZSA",
+        "Worked in investment banking at Mitsubishi UFJ Morgan Stanley Securities",
+        "Established Luare Consulting following experience at a U.S.-affiliated accounting firm"
+      ]
+    },
+    "zh": {
+      "name": "陆 沿青",
+      "qualification": "代表董事／美国注册会计师（关岛，Inactive）",
+      "specialties": [
+        "J-SOX与内部控制",
+        "国际财务会计实务",
+        "会计咨询",
+        "财务管理基础建设"
+      ],
+      "bio": "在澳大利亚取得商学学士学位后，曾在日本上市专业商社及美国大型制造企业日本分公司积累国际会计实务经验。随后在毕马威KPMG Azsa审计法人提供会计咨询服务，并在三菱UFJ摩根士丹利证券投资银行部及美资会计事务所任职，之后创立Luare Consulting。",
+      "career": [
+        "在澳大利亚取得商学学士学位",
+        "在日本上市商社及美国制造企业日本分公司从事会计实务",
+        "在毕马威KPMG Azsa审计法人从事会计咨询",
+        "在三菱UFJ摩根士丹利证券投资银行部任职",
+        "经历美资会计事务所后创立Luare Consulting"
+      ]
+    }
+  }
+};
+
+// Original faces and clothing are kept intact. A subtle white-and-green generated
+// backdrop shows through feathered photo edges, making the cards feel consistent.
+const plantBackdrop = "data:image/webp;base64,UklGRhgDAABXRUJQVlA4IAwDAADQGgCdASqqANQAPxmMvlmsqSc1I5LYiqAjCWdu3V9+ftvo4FGgQrczHWH9GBzw5lyPZbiXCaCU5Qe4B+LHiFq9YBCHkfPyDq4Y/V6q24vdQuh4kv6Z61dUl73Ni2s8SHV88GhS3AXckrt+7Atlt1rNAhnviN9/5/C6f1XqNy2i5Cx229RcTuI4tXL3TyE7vBkKwqdg8gnFYK566EPOUsPyN6HYOR2fTL7gFsOW9vjUuv9a0Lq/rCgFU0TQRrRshcwdawTE5ZQSZdL/PUn8WP8fZIHohhhXCV9N03lY36gAAP7wMA4X+efMExbCPwJCMKetViHGR4Th0NC/s9nnANClEEU0WiIsiyXb8PWfaw63G/OOvuR1nSlFj6gVgaBs5wjVcia2dxI4tRz4gn4JRwM/QjTeMBHZNx8XUE3zic3C/5zOLxLL3GDiXgt6DMq7ocB9wNdOCAyElaibBZ/9D07xSJ37ExMLs1wB7RiwtU+iO0Hnk5BwDzAdXN2yr0VnGmQVh29WOKeGL/Mlbjd1EgBasA8dllwbafhg/exQqZuMfaUKLJS5tYNw4wb/H2l1l0pcFsXXsymGuREPv/wanBX1MYiTJj6hoLdn2Sg8DqcYwMMOcG644x7N8SZdNol022q/IuHT3qNGp8L25x9uYgH61bt2ihlZ+815QilV8GyLvv6qAsWWOncxQ6iTVDw3GlH3buk8ddD28pBmfjr8W+QuvfuGq+KtWdbvTzL+9YSmq2s4qgOVcwoIHqe2pT4SEPKzaZjExTU7URGU3ul2tTQH0704GhlFfB06vHmOa4tRE8hWDY0DYiQNHfaZrSzMShGawEoThkGb/M4UgTiwWcKgatSjJ1rNXrgooT3KF29sj6Nw5TSvngIRNTvTN7Y4WDZqM1eIORyNZBuy2y6GzNa2ACx/MpF2XzkPhdCxI6BMc1DRQgu8GMefIIZlxNdyg0BnxVXYMmLY8lhKQooQrXiCMyEeAIreqsHp2eVoQWaORyJAT68sijdZg+EsCL+Pe1ZesNf+XhfPtQkIAAA=";
+const imageEdgeMask = "linear-gradient(to right, transparent 0%, black 17%, black 80%, transparent 100%)";
+
 const ui:Record<Lang,{heading:string;label:string;profile:string;spec:string;career:string;close:string;view:string}> = {
   "ja": {
     "heading": "専門家紹介",
@@ -308,6 +376,7 @@ const ui:Record<Lang,{heading:string;label:string;profile:string;spec:string;car
 
 export default function ExpertCollection({ lang, homepage = false }: {lang:Lang; homepage?:boolean}) {
   const c = ui[lang];
+  const visibleMembers = homepage ? [representative, ...members] : members;
   const dialogRefs = useRef<Record<string,HTMLDialogElement|null>>({});
   const triggerRefs = useRef<Record<string,HTMLButtonElement|null>>({});
   const open = (id:string) => {
@@ -334,20 +403,21 @@ export default function ExpertCollection({ lang, homepage = false }: {lang:Lang;
           <p className="mb-4 text-[11px] font-semibold tracking-[.2em] text-[#1766A0]">{c.label}</p>
           <h2 className="text-[clamp(34px,4vw,54px)] font-normal leading-tight text-[#0B3158]">{c.heading}</h2>
         </header>}
-        <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 lg:grid-cols-4 lg:gap-6">
-          {members.map(person=>{
+        <div className={"grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 "+(homepage?"lg:grid-cols-5 lg:gap-5":"lg:grid-cols-4 lg:gap-6")}>
+          {visibleMembers.map(person=>{
             const info=person.info[lang];
-            const qual=lang==="ja"&&person.id==="nemoto" ? ["公認会計士・税理士","米国公認会計士（ワシントン州）"] : [info.qualification];
+            const qual=lang==="ja"&&person.id==="nemoto" ? ["公認会計士・税理士","米国公認会計士（ワシントン州）"] : lang==="ja"&&person.id==="lu" ? ["代表取締役","米国公認会計士（USCPA・Inactive）"] : [info.qualification];
             return <article key={person.id} className="min-w-0">
               <button type="button" ref={el=>{triggerRefs.current[person.id]=el;}}
                 aria-label={info.name+c.view} aria-haspopup="dialog" aria-controls={"expert-dialog-"+person.id}
                 onClick={()=>open(person.id)} data-expert={person.id}
                 className="group relative block w-full cursor-pointer overflow-hidden text-left focus-visible:outline focus-visible:outline-3 focus-visible:outline-[#1766A0] focus-visible:outline-offset-2">
-                <span className="relative block aspect-[.76] overflow-hidden" style={{backgroundColor:person.id==="matayoshi"?"#192238":person.photoBg}}>
+                <span className="relative block aspect-[.76] overflow-hidden" style={{backgroundImage:`url("${plantBackdrop}")`,backgroundSize:"cover",backgroundPosition:"center",backgroundColor:"#F9FAF6"}}>
                   <Image src={person.image} alt="" fill sizes="(max-width: 640px) 48vw, (max-width: 1024px) 45vw, 280px" unoptimized
                     className="object-cover object-[center_15%] transition-[filter,transform] duration-300 group-hover:brightness-105"
-                    style={cardPhoto(person.id)}/>
+                    style={{...cardPhoto(person.id),maskImage:imageEdgeMask,WebkitMaskImage:imageEdgeMask}}/>
                   <span aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[52%] bg-gradient-to-t from-[#071A2B]/90 via-[#071A2B]/30 to-transparent"/>
+                  {person.id==="lu"&&<span className="absolute left-3 top-3 rounded bg-white/90 px-2 py-1 text-[10px] font-semibold tracking-[.04em] text-[#0B3158]">{lang==="ja"?"代表取締役":lang==="en"?"Representative":"代表董事"}</span>}
                   <span className="absolute bottom-4 left-3 right-9 z-10 block text-white sm:bottom-5 sm:left-5 sm:right-11">
                     <span className="block text-[clamp(15px,1.8vw,22px)] font-semibold tracking-[.055em] leading-snug">{person.info.ja.name}</span>
                     <span className="mt-1.5 block text-[10px] tracking-[.04em] text-[#DEE8F0]">{person.roman}</span>
@@ -355,7 +425,7 @@ export default function ExpertCollection({ lang, homepage = false }: {lang:Lang;
                   <span aria-hidden="true" className="absolute bottom-5 right-3 z-10 text-lg font-light leading-none text-white/85 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 sm:right-4">↗</span>
                 </span>
               </button>
-              <div className="min-h-[82px] border border-t-0 border-[#D7E8F4] bg-white px-3 py-3.5 sm:px-5 sm:py-4">
+              <div className="h-[116px] sm:h-[112px] border border-t-0 border-[#D7E8F4] bg-white px-3 py-3.5 sm:px-5 sm:py-4">
                 {qual.map(q=><p key={q} className="text-[11px] font-semibold leading-[1.8] text-[#0B3158] sm:text-[12px]">{q}</p>)}
               </div>
             </article>;
@@ -363,7 +433,7 @@ export default function ExpertCollection({ lang, homepage = false }: {lang:Lang;
         </div>
       </div>
     </section>
-    {members.map(person=>{
+    {visibleMembers.map(person=>{
       const info=person.info[lang];
       return <dialog key={person.id} id={"expert-dialog-"+person.id}
         ref={el=>{dialogRefs.current[person.id]=el;}} onClose={()=>afterClose(person.id)}
