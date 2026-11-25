@@ -91,16 +91,18 @@ for(const v of views){
          failures.push(v.name+" "+path+" representative link wrong destination");
        if(await page.locator('#expert-dialog-lu').count()!==0)
          failures.push(v.name+" "+path+" unexpected representative popup still present");
-       const photo=repLink.locator('> span').first();
+       const photo=repLink.locator('span.relative').first();
        if(await photo.count()===1 && (await photo.evaluate(el=>getComputedStyle(el).backgroundImage))!=="none")
          failures.push(v.name+" "+path+" generated greenery background still present");
        if(await repLink.locator('span').filter({hasText:/^(代表取締役|Representative|代表董事)$/}).count()!==0)
          failures.push(v.name+" "+path+" representative corner badge still present");
        await repLink.click();
        await page.waitForURL(url=>url.pathname===expectedHref,{timeout:12000});
+       await page.locator('.luare-v6-rep-photo').waitFor({state:"attached",timeout:12000});
        if(await page.locator('.luare-v6-rep-photo').count()!==1)
          failures.push(v.name+" "+path+" destination representative profile not found");
        await page.goBack({waitUntil:"domcontentloaded"});
+       await page.locator('a[data-expert="lu"]').waitFor({state:"attached",timeout:12000});
      }
      if(v.name==="pc" && await cards.count()===5) {
        const count=await cards.first().evaluate(el=>getComputedStyle(el.parentElement?.parentElement||el).gridTemplateColumns.split(" ").length);
