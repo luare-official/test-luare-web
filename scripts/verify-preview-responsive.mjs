@@ -131,7 +131,7 @@ for(const width of [1280,1360,1440]){
    const logo=document.querySelector('header a[aria-label="Luare Consulting"]')?.getBoundingClientRect();
    return {arr,menuRight:b?.right??0,languageLeft:lan?.left??0,logoRight:logo?.right??0,body:document.documentElement.scrollWidth,viewport:window.innerWidth};
   });
-  if(info.arr.length!==6)record("Expected six natural-width header links at "+width+" "+locale);
+  if(info.arr.length!==7)record("Expected seven natural-width header links at "+width+" "+locale);
   if(info.body>info.viewport+3)record("Horizontal overflow at "+width+" "+locale);
   if(info.arr.length){
    if(info.arr[info.arr.length-1].right>info.languageLeft+2)record("Menu overlaps language switch at "+width+" "+locale);
