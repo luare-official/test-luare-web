@@ -40,7 +40,7 @@ export default function AboutPageZh() {
               <div className="luare-v6-rep-copy">
                 <p className="luare-v6-label">Luare Consulting 代表董事</p>
                 <h2 className="luare-v6-rep-name">陆 沿青</h2>
-                <p className="luare-v6-qual">美国注册会计师（USCPA, Inactive, 关岛）</p>
+                <p className="luare-v6-qual">通过美国注册会计师统一考试（USCPA）</p>
                 <p className="luare-v6-label">教育背景</p>
                 <p><strong>南澳大利亚大学（现：阿德莱德大学）<br />商学学士</strong></p>
                 <p className="luare-v6-label luare-v6-label-spaced">个人经历</p>
@@ -84,7 +84,7 @@ export default function AboutPageZh() {
                 </div>
                 <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-xs font-bold uppercase tracking-wider text-brand-slate/70">公司代表</dt>
-                  <dd className="mt-1 text-sm font-medium text-brand-charcoal sm:col-span-2 sm:mt-0">陆 沿青 (USCPA, Inactive)</dd>
+                  <dd className="mt-1 text-sm font-medium text-brand-charcoal sm:col-span-2 sm:mt-0">陆 沿青</dd>
                 </div>
               </dl>
             </div>
