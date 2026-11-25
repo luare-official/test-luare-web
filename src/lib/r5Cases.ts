@@ -112,7 +112,7 @@ export const r5Quotes = [
     "id": "quote-fpa",
     "title": "北米事業のFP&A・KPI高度化支援",
     "industry": "エンターテインメント関連｜北米事業",
-    "rate": 18000,
+    "rate": 25000,
     "hoursMonth": 60,
     "months": 6,
     "scope": "北米事業責任者と本社側関係者と連携し、予実分析、事業KPI分析、指標の精度改善を支援する場合"
