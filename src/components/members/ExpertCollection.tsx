@@ -390,7 +390,7 @@ export default function ExpertCollection({ lang, homepage = false }: {lang:Lang;
   // Matayoshi: keep his face comparable in size to the other experts while shifting the head higher.
   // The lower 15% is covered by a suit-coloured backdrop under the existing dark name gradient.
   // Applies to the homepage and directory cards only; the source photos and modals are unchanged.
-  const cardPhoto = (id:string) => id==="matayoshi" ? {transform:"translateY(-15%) scale(1)", transformOrigin:"center center"} : id==="oh" ? {transform:"scale(1.25)",transformOrigin:"center 48%"} : undefined;
+  const cardPhoto = (id:string) => id==="lu" ? {transform:"scale(1.42)",transformOrigin:"center 15%"} : id==="matayoshi" ? {transform:"translateY(-15%) scale(1)", transformOrigin:"center center"} : id==="oh" ? {transform:"scale(1.25)",transformOrigin:"center 48%"} : undefined;
   const modalPhoto = (id:string) => id==="matayoshi" ? {objectPosition:"center 15%"} : id==="oh" ? {objectPosition:"center 13%"} : {objectPosition:"center 12%"};
   return <>
     <section id={homepage?"experts":"members"} aria-label={c.heading} className={homepage?"bg-[#EDF5FC] py-20 sm:py-24 lg:py-28":"bg-[#F5FAFE] py-14 sm:py-16 lg:py-20"}>
@@ -402,7 +402,7 @@ export default function ExpertCollection({ lang, homepage = false }: {lang:Lang;
         <div className={"grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 "+(homepage?"lg:grid-cols-5 lg:gap-5":"lg:grid-cols-4 lg:gap-6")}>
           {visibleMembers.map(person=>{
             const info=person.info[lang];
-            const qual=lang==="ja"&&person.id==="nemoto" ? ["公認会計士・税理士","米国公認会計士（ワシントン州）"] : lang==="ja"&&person.id==="lu" ? ["代表取締役","米国公認会計士（USCPA・Inactive）"] : [info.qualification];
+            const qual=lang==="ja"&&person.id==="nemoto" ? ["公認会計士・税理士","米国公認会計士（ワシントン州）"] : lang==="ja"&&person.id==="lu" ? ["代表取締役","米国公認会計士（USCPA）"] : [info.qualification];
             return <article key={person.id} className="min-w-0">
               <button type="button" ref={el=>{triggerRefs.current[person.id]=el;}}
                 aria-label={info.name+c.view} aria-haspopup="dialog" aria-controls={"expert-dialog-"+person.id}
