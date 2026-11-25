@@ -78,31 +78,54 @@ for(const v of views){
        if(await dialog.evaluate(el=>el.open))failures.push(v.name+" "+path+" expert dialog failed to close: "+id);
      }
    }
-   // Homepage: representative card links to the existing localized About page.
+   // Homepage: the representative uses the same localized modal as the other experts.
    if(["/","/en","/zh"].includes(path)) {
      const cards=page.locator('[data-expert]');
      if(await cards.count()!==5)failures.push(v.name+" "+path+" homepage expert card count must be five");
-     if(await cards.first().getAttribute('data-expert')!=="lu")failures.push(v.name+" "+path+" representative not first");
-     const repLink=page.locator('a[data-expert="lu"]');
-     const expectedHref=path==="/"?"/about":path+"/about";
-     if(await repLink.count()!==1)failures.push(v.name+" "+path+" representative profile link missing");
+     if(await cards.count()>0 && await cards.first().getAttribute('data-expert')!=="lu")failures.push(v.name+" "+path+" representative not first");
+     const trigger=page.locator('button[data-expert="lu"]');
+     const dialog=page.locator('#expert-dialog-lu');
+     const locale=path==="/en"?"en":path==="/zh"?"zh":"ja";
+     const expected={
+       ja:{heading:"主な専門領域",close:"閉じる",name:"陸 沿青",tags:["J-SOX・内部統制","海外子会社管理","IFRS・国際会計","経理財務管理"]},
+       en:{heading:"Key areas of expertise",close:"Close",name:"Yanqing Lu",tags:["J-SOX & internal controls","Overseas subsidiary management","IFRS & international accounting","Accounting & financial management"]},
+       zh:{heading:"主要专业领域",close:"关闭",name:"陆 沿青",tags:["J-SOX与内部控制","海外子公司管理","IFRS与国际会计","财务会计管理"]}
+     }[locale];
+     const fail=message=>failures.push(v.name+" "+path+" "+message);
+     if(await trigger.count()!==1||await dialog.count()!==1)fail("representative trigger/dialog missing");
      else {
-       if(await repLink.getAttribute("href")!==expectedHref)
-         failures.push(v.name+" "+path+" representative link wrong destination");
-       if(await page.locator('#expert-dialog-lu').count()!==0)
-         failures.push(v.name+" "+path+" unexpected representative popup still present");
-       const photo=repLink.locator('span.relative').first();
+       if(await trigger.getAttribute("aria-haspopup")!=="dialog"||await trigger.getAttribute("aria-controls")!=="expert-dialog-lu")
+         fail("representative dialog accessibility attributes incorrect");
+       const photo=trigger.locator('span.relative').first();
        if(await photo.count()===1 && (await photo.evaluate(el=>getComputedStyle(el).backgroundImage))!=="none")
-         failures.push(v.name+" "+path+" generated greenery background still present");
-       if(await repLink.locator('span').filter({hasText:/^(代表取締役|Representative|代表董事)$/}).count()!==0)
-         failures.push(v.name+" "+path+" representative corner badge still present");
-       await repLink.click();
-       await page.waitForURL(url=>url.pathname===expectedHref,{timeout:12000});
-       await page.locator('.luare-v6-rep-photo').waitFor({state:"attached",timeout:12000});
-       if(await page.locator('.luare-v6-rep-photo').count()!==1)
-         failures.push(v.name+" "+path+" destination representative profile not found");
-       await page.goBack({waitUntil:"domcontentloaded"});
-       await page.locator('a[data-expert="lu"]').waitFor({state:"attached",timeout:12000});
+         fail("generated greenery background still present");
+       if(await trigger.locator('span').filter({hasText:/^(代表取締役|Representative|代表董事)$/}).count()!==0)
+         fail("representative corner badge still present");
+       const originalURL=page.url();
+       await trigger.click();
+       await dialog.waitFor({state:"visible",timeout:12000});
+       if(!(await dialog.evaluate(el=>el.open)))fail("representative dialog not opened");
+       if(page.url()!==originalURL)fail("representative dialog unexpectedly navigated");
+       if(!(await dialog.getByRole("heading",{name:expected.name,exact:true}).isVisible()))fail("representative name missing");
+       const heading=dialog.getByRole("heading",{name:expected.heading,exact:true});
+       const tags=await heading.locator("xpath=following-sibling::*[1]").locator("span").allTextContents();
+       if(JSON.stringify(tags.map(t=>t.trim()))!==JSON.stringify(expected.tags))
+         fail("representative specialties mismatch: "+JSON.stringify(tags));
+       const fit=await dialog.evaluate(el=>{
+         const r=el.getBoundingClientRect();
+         return r.left>=-1&&r.top>=-1&&r.right<=window.innerWidth+1&&r.bottom<=window.innerHeight+1&&el.scrollWidth<=el.clientWidth+2;
+       });
+       if(!fit)fail("representative dialog exceeds viewport or has horizontal overflow");
+       await page.screenshot({path:join(out,label+"-representative-"+v.name+".png"),animations:"disabled"});
+       await dialog.getByRole("button",{name:expected.close,exact:true}).click();
+       await dialog.waitFor({state:"hidden",timeout:12000});
+       if(await dialog.evaluate(el=>el.open))fail("representative dialog failed to close with close button");
+       await trigger.click();
+       await dialog.waitFor({state:"visible",timeout:12000});
+       await page.keyboard.press("Escape");
+       await dialog.waitFor({state:"hidden",timeout:12000});
+       if(await dialog.evaluate(el=>el.open))fail("representative dialog failed to close with Escape");
+       if(page.url()!==originalURL)fail("representative dialog changed page URL");
      }
      if(v.name==="pc" && await cards.count()===5) {
        const count=await cards.first().evaluate(el=>getComputedStyle(el.parentElement?.parentElement||el).gridTemplateColumns.split(" ").length);
