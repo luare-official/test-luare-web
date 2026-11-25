@@ -391,7 +391,7 @@ export default function ExpertCollection({ lang, homepage = false }: {lang:Lang;
   // Matayoshi: keep his face comparable in size to the other experts while shifting the head higher.
   // The lower 15% is covered by a suit-coloured backdrop under the existing dark name gradient.
   // Applies to the homepage and directory cards only; the source photos and modals are unchanged.
-  const cardPhoto = (id:string) => id==="lu" ? {transform:"scale(1.23)",transformOrigin:"center 15%"} : id==="matayoshi" ? {transform:"translateY(-15%) scale(1)", transformOrigin:"center center"} : id==="oh" ? {transform:"scale(1.25)",transformOrigin:"center 48%"} : undefined;
+  const cardPhoto = (id:string) => id==="lu" ? {transform:"translateY(3%) scale(1.23)",transformOrigin:"center 15%"} : id==="matayoshi" ? {transform:"translateY(-15%) scale(1)", transformOrigin:"center center"} : id==="oh" ? {transform:"scale(1.25)",transformOrigin:"center 48%"} : undefined;
   const modalPhoto = (id:string) => id==="matayoshi" ? {objectPosition:"center 15%"} : id==="oh" ? {objectPosition:"center 13%"} : {objectPosition:"center 12%"};
   return <>
     <section id={homepage?"experts":"members"} aria-label={c.heading} className={homepage?"bg-[#EDF5FC] py-20 sm:py-24 lg:py-28":"bg-[#F5FAFE] py-14 sm:py-16 lg:py-20"}>
