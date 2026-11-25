@@ -94,8 +94,10 @@ for(const v of views){
        if(await dialog.evaluate(el=>el.open))failures.push(v.name+" "+path+" representative dialog did not close");
      } else failures.push(v.name+" "+path+" representative dialog missing");
      const photo=page.locator('button[data-expert="lu"] > span').first();
-     if(await photo.count()===1&& !(await photo.evaluate(el=>getComputedStyle(el).backgroundImage)).includes('data:image/webp'))
-       failures.push(v.name+" "+path+" greenery background not applied");
+     if(await photo.count()===1 && (await photo.evaluate(el=>getComputedStyle(el).backgroundImage))!=="none")
+       failures.push(v.name+" "+path+" generated greenery background still present");
+     if(await page.locator('button[data-expert="lu"] span').filter({hasText:/^(代表取締役|Representative|代表董事)$/}).count()!==0)
+       failures.push(v.name+" "+path+" representative corner badge still present");
      if(v.name==="pc" && await cards.count()===5) {
        const count=await cards.first().evaluate(el=>getComputedStyle(el.parentElement?.parentElement||el).gridTemplateColumns.split(" ").length);
        if(count!==5)failures.push(v.name+" "+path+" expected five desktop columns, got "+count);
