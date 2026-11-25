@@ -78,26 +78,30 @@ for(const v of views){
        if(await dialog.evaluate(el=>el.open))failures.push(v.name+" "+path+" expert dialog failed to close: "+id);
      }
    }
-   // Homepage has the representative first, then four independent collaborators.
+   // Homepage: representative card links to the existing localized About page.
    if(["/","/en","/zh"].includes(path)) {
-     const cards=page.locator('button[data-expert]');
+     const cards=page.locator('[data-expert]');
      if(await cards.count()!==5)failures.push(v.name+" "+path+" homepage expert card count must be five");
      if(await cards.first().getAttribute('data-expert')!=="lu")failures.push(v.name+" "+path+" representative not first");
-     const trigger=page.locator('button[data-expert="lu"]');
-     const dialog=page.locator('#expert-dialog-lu');
-     if(await trigger.count()===1&&await dialog.count()===1) {
-       await trigger.click();
-       if(!await dialog.evaluate(el=>el.open))failures.push(v.name+" "+path+" representative profile did not open");
-       const representativeWord=path==="/"?"代表取締役":path==="/en"?"Representative Director":"代表董事";
-       if(!(await dialog.innerText()).includes(representativeWord))failures.push(v.name+" "+path+" representative role missing");
-       await page.keyboard.press("Escape");
-       if(await dialog.evaluate(el=>el.open))failures.push(v.name+" "+path+" representative dialog did not close");
-     } else failures.push(v.name+" "+path+" representative dialog missing");
-     const photo=page.locator('button[data-expert="lu"] > span').first();
-     if(await photo.count()===1 && (await photo.evaluate(el=>getComputedStyle(el).backgroundImage))!=="none")
-       failures.push(v.name+" "+path+" generated greenery background still present");
-     if(await page.locator('button[data-expert="lu"] span').filter({hasText:/^(代表取締役|Representative|代表董事)$/}).count()!==0)
-       failures.push(v.name+" "+path+" representative corner badge still present");
+     const repLink=page.locator('a[data-expert="lu"]');
+     const expectedHref=path==="/"?"/about":path+"/about";
+     if(await repLink.count()!==1)failures.push(v.name+" "+path+" representative profile link missing");
+     else {
+       if(await repLink.getAttribute("href")!==expectedHref)
+         failures.push(v.name+" "+path+" representative link wrong destination");
+       if(await page.locator('#expert-dialog-lu').count()!==0)
+         failures.push(v.name+" "+path+" unexpected representative popup still present");
+       const photo=repLink.locator('> span').first();
+       if(await photo.count()===1 && (await photo.evaluate(el=>getComputedStyle(el).backgroundImage))!=="none")
+         failures.push(v.name+" "+path+" generated greenery background still present");
+       if(await repLink.locator('span').filter({hasText:/^(代表取締役|Representative|代表董事)$/}).count()!==0)
+         failures.push(v.name+" "+path+" representative corner badge still present");
+       await repLink.click();
+       await page.waitForURL(url=>url.pathname===expectedHref,{timeout:12000});
+       if(await page.locator('.luare-v6-rep-photo').count()!==1)
+         failures.push(v.name+" "+path+" destination representative profile not found");
+       await page.goBack({waitUntil:"domcontentloaded"});
+     }
      if(v.name==="pc" && await cards.count()===5) {
        const count=await cards.first().evaluate(el=>getComputedStyle(el.parentElement?.parentElement||el).gridTemplateColumns.split(" ").length);
        if(count!==5)failures.push(v.name+" "+path+" expected five desktop columns, got "+count);
