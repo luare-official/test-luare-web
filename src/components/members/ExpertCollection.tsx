@@ -294,10 +294,13 @@ const representative:Member = {
       "bio": "オーストラリアで経営学士号を取得後、日系上場専門商社および米国系大手製造企業の日本法人でグローバル経理実務を経験。KPMGあずさ監査法人での会計アドバイザリー、三菱UFJモルガン・スタンレー証券の投資銀行部門、米国系ベンチャー会計事務所を経てLuare Consultingを設立。",
       "career": [
         "オーストラリアにて経営学士号を取得",
-        "日系上場専門商社および米国系製造企業日本法人で経理実務を担当",
-        "KPMGあずさ監査法人で会計アドバイザリーに従事",
-        "三菱UFJモルガン・スタンレー証券の投資銀行部門に在籍",
-        "米国系ベンチャー会計事務所を経てLuare Consultingを設立"
+        "2015年 日系上場専門商社で連結経理を担当",
+        "2016年 米国系製造企業日本法人で経理実務を担当",
+        "2018年 KPMGあずさ監査法人で会計アドバイザリーに従事",
+        "2023年 三菱UFJモルガン・スタンレー証券の投資銀行部門に在籍",
+        "2024年 米国進出専門の会計事務所に在籍",
+        "2025年 独立し、会計・コンサルティング業務を開始",
+        "2026年 株式会社Luare Consultingを設立"
       ]
     },
     "en": {
@@ -312,10 +315,13 @@ const representative:Member = {
       "bio": "After earning a business degree in Australia, he gained international accounting experience at a listed Japanese trading company and the Japanese subsidiary of a major U.S. manufacturer. He then worked in accounting advisory at KPMG AZSA, followed by Mitsubishi UFJ Morgan Stanley Securities' investment banking division and a U.S.-affiliated venture accounting firm, before establishing Luare Consulting.",
       "career": [
         "Earned a bachelor's degree in business in Australia",
-        "Worked in international accounting at Japanese trading and U.S. manufacturing companies",
-        "Provided accounting advisory services at KPMG AZSA",
-        "Worked in investment banking at Mitsubishi UFJ Morgan Stanley Securities",
-        "Established Luare Consulting following experience at a U.S.-affiliated accounting firm"
+        "2015 — Worked in consolidated accounting at a listed Japanese trading company",
+        "2016 — Worked in accounting at the Japanese subsidiary of a U.S. manufacturer",
+        "2018 — Provided accounting advisory services at KPMG AZSA",
+        "2023 — Worked in investment banking at Mitsubishi UFJ Morgan Stanley Securities",
+        "2024 — Joined an accounting firm specializing in U.S. market entry",
+        "2025 — Began independent accounting and consulting work",
+        "2026 — Established Luare Consulting Co., Ltd."
       ]
     },
     "zh": {
@@ -330,10 +336,13 @@ const representative:Member = {
       "bio": "在澳大利亚取得商学学士学位后，曾在日本上市专业商社及美国大型制造企业日本分公司积累国际会计实务经验。随后在毕马威KPMG Azsa审计法人提供会计咨询服务，并在三菱UFJ摩根士丹利证券投资银行部及美资会计事务所任职，之后创立Luare Consulting。",
       "career": [
         "在澳大利亚取得商学学士学位",
-        "在日本上市商社及美国制造企业日本分公司从事会计实务",
-        "在毕马威KPMG Azsa审计法人从事会计咨询",
-        "在三菱UFJ摩根士丹利证券投资银行部任职",
-        "经历美资会计事务所后创立Luare Consulting"
+        "2015年 在日本上市专业商社负责合并会计",
+        "2016年 在美国制造企业日本法人从事会计实务",
+        "2018年 在毕马威KPMG Azsa审计法人从事会计咨询",
+        "2023年 在三菱UFJ摩根士丹利证券投资银行部任职",
+        "2024年 加入专注美国市场拓展的会计事务所",
+        "2025年 独立开展会计及咨询业务",
+        "2026年 设立Luare Consulting株式会社"
       ]
     }
   }
