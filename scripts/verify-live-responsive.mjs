@@ -78,6 +78,33 @@ for(const v of views){
        if(await dialog.evaluate(el=>el.open))failures.push(v.name+" "+path+" expert dialog failed to close: "+id);
      }
    }
+   // Homepage has the representative first, then four independent collaborators.
+   if(["/","/en","/zh"].includes(path)) {
+     const cards=page.locator('button[data-expert]');
+     if(await cards.count()!==5)failures.push(v.name+" "+path+" homepage expert card count must be five");
+     if(await cards.first().getAttribute('data-expert')!=="lu")failures.push(v.name+" "+path+" representative not first");
+     const trigger=page.locator('button[data-expert="lu"]');
+     const dialog=page.locator('#expert-dialog-lu');
+     if(await trigger.count()===1&&await dialog.count()===1) {
+       await trigger.click();
+       if(!await dialog.evaluate(el=>el.open))failures.push(v.name+" "+path+" representative profile did not open");
+       const representativeWord=path==="/"?"代表取締役":path==="/en"?"Representative Director":"代表董事";
+       if(!(await dialog.innerText()).includes(representativeWord))failures.push(v.name+" "+path+" representative role missing");
+       await page.keyboard.press("Escape");
+       if(await dialog.evaluate(el=>el.open))failures.push(v.name+" "+path+" representative dialog did not close");
+     } else failures.push(v.name+" "+path+" representative dialog missing");
+     const photo=page.locator('button[data-expert="lu"] > span').first();
+     if(await photo.count()===1&& !(await photo.evaluate(el=>getComputedStyle(el).backgroundImage)).includes('data:image/webp'))
+       failures.push(v.name+" "+path+" greenery background not applied");
+     if(v.name==="pc" && await cards.count()===5) {
+       const count=await cards.first().evaluate(el=>getComputedStyle(el.parentElement?.parentElement||el).gridTemplateColumns.split(" ").length);
+       if(count!==5)failures.push(v.name+" "+path+" expected five desktop columns, got "+count);
+     }
+   }
+   if(["/members","/en/members","/zh/members"].includes(path)) {
+     if(await page.locator('button[data-expert]').count()!==4)
+       failures.push(v.name+" "+path+" independent expert directory should retain four cards");
+   }
    await page.screenshot({path:join(out,label+"-"+v.name+".png"),fullPage:true,animations:"disabled"});
   }catch(e){failures.push(v.name+" "+path+" exception "+String(e).slice(0,160));}
  }
