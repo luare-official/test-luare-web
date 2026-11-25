@@ -45,7 +45,7 @@ export default function AboutPageZh() {
                 <p><strong>南澳大利亚大学（现：阿德莱德大学）<br />商学学士</strong></p>
                 <p className="luare-v6-label luare-v6-label-spaced">个人经历</p>
                 <p className="luare-v6-bio">
-                  在澳大利亚取得商学学士学位后，曾就职于日本上市专业商社及美国大型制造企业日本分公司，积累全球财务会计实务经验。随后在毕马威（KPMG）Azsa审计法人从事会计咨询业务，协助多家跨国企业构建内部控制及财务基础架构。此后历经三菱UFJ摩根士丹利证券投资银行部、美资创投会计师事务所，最终独立创办Luare Consulting。
+                  在澳大利亚取得商学学士学位后，曾就职于日本上市专业商社及美国大型制造企业日本分公司，积累全球财务会计实务经验。随后在毕马威（KPMG）Azsa审计法人从事会计咨询业务，协助多家跨国企业构建内部控制及财务基础架构。此后历经三菱UFJ摩根士丹利证券投资银行部、美资会计师事务所，最终独立创办Luare Consulting。
                 </p>
               </div>
             </ScrollReveal>

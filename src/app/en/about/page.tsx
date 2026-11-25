@@ -45,7 +45,7 @@ export default function AboutPageEn() {
                 <p><strong>University of South Australia (now Adelaide University)<br />Bachelor of Business</strong></p>
                 <p className="luare-v6-label luare-v6-label-spaced">Biography</p>
                 <p className="luare-v6-bio">
-                  After earning a Bachelor of Business in Australia, Yanqing gained global accounting experience at a listed Japanese trading company and the Japanese subsidiary of a major US manufacturing firm. Subsequently, at KPMG AZSA LLC, he engaged in accounting advisory services, supporting numerous multinational corporations in building internal controls and financial infrastructures. Following his tenure in the investment banking division of Mitsubishi UFJ Morgan Stanley Securities and a US-affiliated venture accounting firm, he founded Luare Consulting.
+                  After earning a Bachelor of Business in Australia, Yanqing gained global accounting experience at a listed Japanese trading company and the Japanese subsidiary of a major US manufacturing firm. Subsequently, at KPMG AZSA LLC, he engaged in accounting advisory services, supporting numerous multinational corporations in building internal controls and financial infrastructures. Following his tenure in the investment banking division of Mitsubishi UFJ Morgan Stanley Securities and a US-affiliated accounting firm, he founded Luare Consulting.
                 </p>
               </div>
             </ScrollReveal>
