@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRef } from "react";
 
 export type Lang = "ja" | "en" | "zh";
@@ -390,7 +391,7 @@ export default function ExpertCollection({ lang, homepage = false }: {lang:Lang;
   // Matayoshi: keep his face comparable in size to the other experts while shifting the head higher.
   // The lower 15% is covered by a suit-coloured backdrop under the existing dark name gradient.
   // Applies to the homepage and directory cards only; the source photos and modals are unchanged.
-  const cardPhoto = (id:string) => id==="lu" ? {transform:"scale(1.42)",transformOrigin:"center 15%"} : id==="matayoshi" ? {transform:"translateY(-15%) scale(1)", transformOrigin:"center center"} : id==="oh" ? {transform:"scale(1.25)",transformOrigin:"center 48%"} : undefined;
+  const cardPhoto = (id:string) => id==="lu" ? {transform:"scale(1.23)",transformOrigin:"center 15%"} : id==="matayoshi" ? {transform:"translateY(-15%) scale(1)", transformOrigin:"center center"} : id==="oh" ? {transform:"scale(1.25)",transformOrigin:"center 48%"} : undefined;
   const modalPhoto = (id:string) => id==="matayoshi" ? {objectPosition:"center 15%"} : id==="oh" ? {objectPosition:"center 13%"} : {objectPosition:"center 12%"};
   return <>
     <section id={homepage?"experts":"members"} aria-label={c.heading} className={homepage?"bg-[#EDF5FC] py-20 sm:py-24 lg:py-28":"bg-[#F5FAFE] py-14 sm:py-16 lg:py-20"}>
@@ -404,10 +405,27 @@ export default function ExpertCollection({ lang, homepage = false }: {lang:Lang;
             const info=person.info[lang];
             const qual=lang==="ja"&&person.id==="nemoto" ? ["公認会計士・税理士","米国公認会計士（ワシントン州）"] : lang==="ja"&&person.id==="lu" ? ["代表取締役","米国公認会計士（USCPA）"] : [info.qualification];
             return <article key={person.id} className="min-w-0">
-              <button type="button" ref={el=>{triggerRefs.current[person.id]=el;}}
-                aria-label={info.name+c.view} aria-haspopup="dialog" aria-controls={"expert-dialog-"+person.id}
-                onClick={()=>open(person.id)} data-expert={person.id}
-                className="group relative block w-full cursor-pointer overflow-hidden text-left focus-visible:outline focus-visible:outline-3 focus-visible:outline-[#1766A0] focus-visible:outline-offset-2">
+              {person.id==="lu" ? (
+                <Link href={lang==="ja"?"/about":`/${lang}/about`} aria-label={lang==="ja"?"陸 沿青の代表プロフィールを見る":lang==="en"?"View Yanqing Lu's representative profile":"查看陆沿青的代表简介"} data-expert={person.id}
+                  className="group relative block w-full cursor-pointer overflow-hidden text-left focus-visible:outline focus-visible:outline-3 focus-visible:outline-[#1766A0] focus-visible:outline-offset-2">
+                <span className="relative block aspect-[.76] overflow-hidden" style={{backgroundColor:person.photoBg}}>
+                  <Image src={person.image} alt="" fill sizes="(max-width: 640px) 48vw, (max-width: 1024px) 45vw, 280px" unoptimized
+                    className="object-cover object-[center_15%] transition-[filter,transform] duration-300 group-hover:brightness-105"
+                    style={cardPhoto(person.id)}/>
+                  <span aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[52%] bg-gradient-to-t from-[#071A2B]/90 via-[#071A2B]/30 to-transparent"/>
+                  
+                  <span className="absolute bottom-4 left-3 right-9 z-10 block text-white sm:bottom-5 sm:left-5 sm:right-11">
+                    <span className="block text-[clamp(15px,1.8vw,22px)] font-semibold tracking-[.055em] leading-snug">{person.info.ja.name}</span>
+                    <span className="mt-1.5 block text-[10px] tracking-[.04em] text-[#DEE8F0]">{person.roman}</span>
+                  </span>
+                  <span aria-hidden="true" className="absolute bottom-5 right-3 z-10 text-lg font-light leading-none text-white/85 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 sm:right-4">↗</span>
+                </span>
+                </Link>
+              ) : (
+                <button type="button" ref={el=>{triggerRefs.current[person.id]=el;}}
+                  aria-label={info.name+c.view} aria-haspopup="dialog" aria-controls={"expert-dialog-"+person.id}
+                  onClick={()=>open(person.id)} data-expert={person.id}
+                  className="group relative block w-full cursor-pointer overflow-hidden text-left focus-visible:outline focus-visible:outline-3 focus-visible:outline-[#1766A0] focus-visible:outline-offset-2">
                 <span className="relative block aspect-[.76] overflow-hidden" style={{backgroundColor:person.id==="matayoshi"?"#192238":person.photoBg}}>
                   <Image src={person.image} alt="" fill sizes="(max-width: 640px) 48vw, (max-width: 1024px) 45vw, 280px" unoptimized
                     className="object-cover object-[center_15%] transition-[filter,transform] duration-300 group-hover:brightness-105"
@@ -420,7 +438,8 @@ export default function ExpertCollection({ lang, homepage = false }: {lang:Lang;
                   </span>
                   <span aria-hidden="true" className="absolute bottom-5 right-3 z-10 text-lg font-light leading-none text-white/85 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 sm:right-4">↗</span>
                 </span>
-              </button>
+                </button>
+              )}
               <div className="h-[116px] sm:h-[112px] border border-t-0 border-[#D7E8F4] bg-white px-3 py-3.5 sm:px-5 sm:py-4">
                 {qual.map(q=><p key={q} className="text-[11px] font-semibold leading-[1.8] text-[#0B3158] sm:text-[12px]">{q}</p>)}
               </div>
@@ -429,7 +448,7 @@ export default function ExpertCollection({ lang, homepage = false }: {lang:Lang;
         </div>
       </div>
     </section>
-    {visibleMembers.map(person=>{
+    {members.map(person=>{
       const info=person.info[lang];
       return <dialog key={person.id} id={"expert-dialog-"+person.id}
         ref={el=>{dialogRefs.current[person.id]=el;}} onClose={()=>afterClose(person.id)}
