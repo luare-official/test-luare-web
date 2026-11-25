@@ -408,7 +408,7 @@ export default function ExpertCollection({ lang, homepage = false }: {lang:Lang;
               {person.id==="lu" ? (
                 <Link href={lang==="ja"?"/about":`/${lang}/about`} aria-label={lang==="ja"?"陸 沿青の代表プロフィールを見る":lang==="en"?"View Yanqing Lu's representative profile":"查看陆沿青的代表简介"} data-expert={person.id}
                   className="group relative block w-full cursor-pointer overflow-hidden text-left focus-visible:outline focus-visible:outline-3 focus-visible:outline-[#1766A0] focus-visible:outline-offset-2">
-                <span className="relative block aspect-[.76] overflow-hidden" style={{backgroundColor:person.id==="matayoshi"?"#192238":person.photoBg}}>
+                <span className="relative block aspect-[.76] overflow-hidden" style={{backgroundColor:person.photoBg}}>
                   <Image src={person.image} alt="" fill sizes="(max-width: 640px) 48vw, (max-width: 1024px) 45vw, 280px" unoptimized
                     className="object-cover object-[center_15%] transition-[filter,transform] duration-300 group-hover:brightness-105"
                     style={cardPhoto(person.id)}/>
