@@ -28,15 +28,6 @@ return <><Navbar solid/>
    <p className="mt-5 max-w-3xl text-base leading-8 text-[#475569]">業務の専門性、支援体制、必要工数に応じて個別にお見積りします。</p>
   </div>
  </header>
- <section id="price-base" className="scroll-mt-28 mx-auto max-w-[1080px] px-5 py-14 sm:px-10 sm:py-16">
-  <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">PRICING POLICY</p>
-  <h2 className="mt-3 text-2xl font-semibold">基本的な料金体系</h2>
-  <div className="mt-8 rounded-xl border border-[#CBD5E1] bg-[#EDF5FC] px-7 py-9 sm:px-10">
-   <p className="text-xs font-semibold tracking-[.18em] text-[#1766A0]">HOURLY RATE</p>
-   <p className="mt-3 text-[clamp(32px,5vw,50px)] font-semibold text-[#0B3158]">12,000円～ <span className="text-base font-medium">/ 時間</span></p>
-   <p className="mt-3 text-sm leading-7 text-[#475569]">税別。業務内容や担当範囲に応じてお見積りします。</p>
-  </div>
- </section>
  <section id="price-cases" className="scroll-mt-28 bg-[#EDF5FC] py-12 sm:py-16">
   <div className="mx-auto max-w-[1080px] px-5 sm:px-10">
    <p className="text-xs font-semibold tracking-[.2em] text-[#1766A0]">REFERENCE FEES</p>
