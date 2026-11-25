@@ -287,9 +287,9 @@ const representative:Member = {
       "qualification": "代表取締役／米国公認会計士（USCPA、グアム州）",
       "specialties": [
         "J-SOX・内部統制",
-        "グローバル経理",
-        "会計アドバイザリー",
-        "財務基盤構築"
+        "海外子会社管理",
+        "IFRS・国際会計",
+        "経理財務管理"
       ],
       "bio": "オーストラリアで経営学士号を取得後、日系上場専門商社および米国系大手製造企業の日本法人でグローバル経理実務を経験。KPMGあずさ監査法人での会計アドバイザリー、三菱UFJモルガン・スタンレー証券の投資銀行部門、米国系会計事務所を経てLuare Consultingを設立。",
       "career": [
@@ -305,9 +305,9 @@ const representative:Member = {
       "qualification": "Representative Director · U.S. CPA (Guam)",
       "specialties": [
         "J-SOX & internal controls",
-        "Global accounting operations",
-        "Accounting advisory",
-        "Finance infrastructure"
+        "Overseas subsidiary management",
+        "IFRS & international accounting",
+        "Accounting & financial management"
       ],
       "bio": "After earning a business degree in Australia, he gained international accounting experience at a listed Japanese trading company and the Japanese subsidiary of a major U.S. manufacturer. He then worked in accounting advisory at KPMG AZSA, followed by Mitsubishi UFJ Morgan Stanley Securities' investment banking division and a U.S.-affiliated accounting firm, before establishing Luare Consulting.",
       "career": [
@@ -323,9 +323,9 @@ const representative:Member = {
       "qualification": "代表董事／美国注册会计师（关岛）",
       "specialties": [
         "J-SOX与内部控制",
-        "国际财务会计实务",
-        "会计咨询",
-        "财务管理基础建设"
+        "海外子公司管理",
+        "IFRS与国际会计",
+        "财务会计管理"
       ],
       "bio": "在澳大利亚取得商学学士学位后，曾在日本上市专业商社及美国大型制造企业日本分公司积累国际会计实务经验。随后在毕马威KPMG Azsa审计法人提供会计咨询服务，并在三菱UFJ摩根士丹利证券投资银行部及美资会计事务所任职，之后创立Luare Consulting。",
       "career": [
